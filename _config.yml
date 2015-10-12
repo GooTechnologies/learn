@@ -14,3 +14,10 @@ sass:
     sass_dir: _sass
 
 highlighter: pygments
+
+defaults:
+  -
+    scope:
+      path: "manual"
+    values:
+      layout: "page"
