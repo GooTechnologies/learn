@@ -1,0 +1,11 @@
+# Site settings
+title: Goo Learn
+email: create@goocreate.com
+description: Goat technologies
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: GooTechnologies
+github_username:  GooTechnologies
+
+# Build settings
+markdown: kramdown
