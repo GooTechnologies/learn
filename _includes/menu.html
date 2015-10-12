@@ -1,27 +1,17 @@
-{% assign pages = site.pages | sort: 'url' %}
-{% assign level = -1 %}
-{% assign lastLevel = -1 %}
-
-{% for page in pages %}
-  {% if page.url contains 'manual' %}
-    {% assign level = page.url | split: '/' | size %}
-    {% if lastLevel == -1 %}
-      {% assign lastLevel = level %}
-    {% endif %}
-    
-    {% if level != lastLevel %}
-      <ul>
-    {% endif %}
-
-    <li>
-      <a href="{{ page.url | prepend: site.baseurl | remove: 'index.html' | remove: '.html' }}">{{ page.url }} <!--{{ page.url | remove: 'index.html' | remove: '.html' }}--></a>
-    </li>
-
-    {% if level != lastLevel %}
-      </ul>
-    {% endif %}
-    
-    {% assign lastLevel = level %}
-
-  {% endif %}
-{% endfor %}
+<ul>
+  <li><a href="{{ '/manual' | prepend: site.baseurl }}">User manual</a></li>
+  <ul>
+    <li><a href="{{ '/manual/audio/' | prepend: site.baseurl }}">Audio</a></li>
+    <li><a href="{{ '/manual/graphics/' | prepend: site.baseurl }}">Graphics</a></li>
+    <li><a href="{{ '/manual/physics/' | prepend: site.baseurl }}">Physics</a></li>
+    <ul>
+      <li><a href="{{ '/manual/scripting/parameters/' | prepend: site.baseurl }}">Parameters</a></li>
+    </ul>
+  </ul>
+</ul>
+<ul>
+  <li><a href="{{ '/tutorials' | prepend: site.baseurl }}">Tutorials</a></li>
+  <ul>
+    <li><a href="{{ '/tutorials/scripting/' | prepend: site.baseurl }}">Scripting</a></li>
+  </ul>
+</ul>

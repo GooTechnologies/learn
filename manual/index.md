@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Manual
-weight: 1
 ---
 
-asdasdasdasdasd
+Welcome to the manual.
