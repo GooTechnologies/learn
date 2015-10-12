@@ -1,0 +1,4 @@
+{
+	"3d_files": [".3ds", ".fbx", ".dae", ".abc", ".obj"],
+	"images": [".jpg", ".jpeg", ".tga", ".png", ".tga"]
+}
