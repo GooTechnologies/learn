@@ -1,0 +1,222 @@
+[
+	{
+		"url": "/manual",
+		"title": "User manual",
+		"indent": 0
+	},
+	{
+		"url": "/manual/dashboard",
+		"title": "Dashboard",
+		"indent": 1
+	},
+	{
+		"url": "/manual/dashboard/newscene",
+		"title": "Creating a new scene",
+		"indent": 2
+	},
+	{
+		"url": "/manual/dashboard/templates",
+		"title": "Templates",
+		"indent": 2
+	},
+	{
+		"url": "/manual/dashboard/organizations",
+		"title": "Organizations",
+		"indent": 2
+	},
+	{
+		"url": "/manual/dashboard/drafts",
+		"title": "Drafts",
+		"indent": 2
+	},
+	{
+		"url": "/manual/dashboard/settings",
+		"title": "Settings",
+		"indent": 2
+	},
+	{
+		"url": "/manual/dashboard/searching",
+		"title": "Searching",
+		"indent": 2
+	},
+	{
+		"url": "/manual/editor",
+		"title": "Editor",
+		"indent": 0
+	},
+	{
+		"url": "/manual/editor/viewport",
+		"title": "Viewport",
+		"indent": 1
+	},
+	{
+		"url": "/manual/editor/hierarchy",
+		"title": "Hierarchy",
+		"indent": 1
+	},
+	{
+		"url": "/manual/editor/assetbin",
+		"title": "Asset bin",
+		"indent": 1
+	},
+	{
+		"url": "/manual/editor/publishing",
+		"title": "Publishing",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene",
+		"title": "Scene",
+		"indent": 0
+	},
+	{
+		"url": "/manual/scene/entities",
+		"title": "Entities",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/components",
+		"title": "Components",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/components/animation",
+		"title": "Animation",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/camera",
+		"title": "Camera",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/collider",
+		"title": "Collider",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/geometry",
+		"title": "Geometry",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/html",
+		"title": "HTML",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/light",
+		"title": "Light",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/material",
+		"title": "Material",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/rigidbody",
+		"title": "Rigid body",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/script",
+		"title": "Script",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/sound",
+		"title": "Sound",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/statemachine",
+		"title": "State Machine",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/components/transform",
+		"title": "Transform",
+		"indent": 2
+	},
+	{
+		"url": "/manual/scene/snapshots",
+		"title": "Snapshots",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/document",
+		"title": "Document",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/environment",
+		"title": "Environment",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/postfx",
+		"title": "Post Effects",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/size",
+		"title": "Size",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/stats",
+		"title": "Stats",
+		"indent": 1
+	},
+	{
+		"url": "/manual/scene/license",
+		"title": "License",
+		"indent": 1
+	},
+	{
+		"url": "/manual/assets",
+		"title": "Assets",
+		"indent": 0
+	},
+	{
+		"url": "/manual/assets/packs",
+		"title": "Packs",
+		"indent": 1
+	},
+	{
+		"url": "/manual/assets/material",
+		"title": "Material",
+		"indent": 1
+	},
+	{
+		"url": "/manual/assets/script",
+		"title": "Script",
+		"indent": 1
+	},
+	{
+		"url": "/manual/assets/skybox",
+		"title": "Skybox",
+		"indent": 1
+	},
+	{
+		"url": "/manual/assets/sound",
+		"title": "Sound",
+		"indent": 1
+	},
+	{
+		"url": "/manual/assets/texture",
+		"title": "Texture",
+		"indent": 1
+	},
+	{
+		"url": "/tutorials",
+		"title": "Tutorials",
+		"indent": 0
+	},
+	{
+		"url": "/tutorials/scripting",
+		"title": "Scripting",
+		"indent": 1
+	}
+]

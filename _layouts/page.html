@@ -1,14 +1,16 @@
 ---
 layout: default
 ---
-<div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
+<div class="col-xs-12 col-sm-9">
+  <p class="pull-right visible-xs">
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+  </p>
+  <h1>{{ page.title }}</h1>
+  <br>
+  <div class="row">
+    <div class="col-md-12 content">
+    	{{ content }}
+    </div>
+  </div>
 </div>

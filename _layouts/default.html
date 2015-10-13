@@ -7,16 +7,21 @@
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        
-        {% include menu.html %}
-
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
         {{ content }}
+        {% include themenu.html %}
       </div>
+      {% include footer.html %}
     </div>
 
-    {% include footer.html %}
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('[data-toggle="offcanvas"]').click(function () {
+          $('.row-offcanvas').toggleClass('active')
+        });
+      });
+    </script>
 
   </body>
 
