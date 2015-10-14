@@ -1,18 +1,24 @@
 {% assign i = '&middot;&nbsp;&nbsp;' %}
 {% assign i2 = '&middot;&nbsp;&middot;&nbsp;&nbsp;' %}
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+<div class="col-md-3">
+
   <div class="list-group">
-    {% for menuItem in site.data.menu %}
-      {% assign u = menuItem.url | append: '/index.html' %}
-      <a class="list-group-item {% if page.url == u %}active{% endif %}" href="{{ menuItem.url | prepend: site.baseurl }}">
-        {% case menuItem.indent %}
-        {% when 1 %}
-          {{ i }}
-        {% when 2 %}
-          {{ i2 }}
-        {% endcase %}
-        {{ menuItem.title }}
-      </a>
+    {% assign pp = site.pages | sort: 'weight' %}
+
+    {% for ppage in pp %}
+      {% if ppage.weight %}
+        {% assign u = ppage.url %}
+        <a class="list-group-item {% if page.url == u %}active{% endif %}" href="{{ ppage.url | prepend: site.baseurl }}">
+          {% case ppage.indent %}
+          {% when 1 %}
+            {{ i }}
+          {% when 2 %}
+            {{ i2 }}
+          {% endcase %}
+          {{ ppage.title }}
+        </a>
+      {% endif %}
     {% endfor %}
   </div>
+
 </div>

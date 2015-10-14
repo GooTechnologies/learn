@@ -2,15 +2,64 @@
 layout: default
 ---
 
-<div class="col-xs-12 col-sm-9">
-  <p class="pull-right visible-xs">
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
-  </p>
+<div class="col-md-9">
   <h1>{{ page.title }}</h1>
   <br>
   <div class="row">
     <div class="col-md-12 content">
     	{{ content }}
+
+      <div class="row">
+        <hr>
+        <div class="col-md-4 content">
+
+          {% assign pp = site.pages | sort: 'weight' %}
+
+          {% assign lastPageUrl = -1 %}
+          {% assign lastPageTitle = -1 %}
+          {% assign lastPageWeight = -1 %}
+          {% for ppage in pp %}
+
+            {% if lastPageWeight and ppage.weight and ppage.url == page.url %}
+              <a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}">
+                << {{ lastPageTitle }}
+              </a>
+            {% endif %}
+
+            {% assign lastPageUrl = ppage.url %}
+            {% assign lastPageTitle = ppage.title %}
+            {% assign lastPageWeight = ppage.weight %}
+          {% endfor %}
+
+        </div>
+        
+        <div class="col-md-4 content" style="margin-top:7px">
+          <p class="text-center">{{ page.title }}</p>
+        </div>
+
+        <div class="col-md-4 content">
+
+          {% assign lastPageUrl = -1 %}
+          {% assign lastPageTitle = -1 %}
+          {% assign lastPageWeight = -1 %}
+          {% for ppage in pp %}
+
+            {% if ppage.weight and lastPageUrl == page.url %}
+              <a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}">
+                {{ ppage.title }} >>
+              </a>
+            {% endif %}
+
+            {% assign lastPageUrl = ppage.url %}
+            {% assign lastPageTitle = ppage.title %}
+            {% assign lastPageWeight = ppage.weight %}
+          {% endfor %}
+
+        </div>
+        
+        <hr/>
+
+      </div>
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -25,7 +26,6 @@
       overflow-x: hidden; /* Prevent scroll on narrow devices */
     }
     body {
-      padding-top: 70px;
     }
     footer {
       padding: 30px 0;
@@ -80,6 +80,29 @@
       }
     }
 
+
+
+    /* anchor links */
+    .header-link {
+      color: black;
+      position: absolute;
+      left: -0.5em;
+      opacity: 0;
+      font-size: 24px;
+
+      -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+      -moz-transition: opacity 0.2s ease-in-out 0.1s;
+      -ms-transition: opacity 0.2s ease-in-out 0.1s;
+    }
+
+    h2:hover .header-link,
+    h3:hover .header-link,
+    h4:hover .header-link,
+    h5:hover .header-link,
+    h6:hover .header-link {
+      opacity: 1;
+    }
+    /* end anchor links */
 
 
 
