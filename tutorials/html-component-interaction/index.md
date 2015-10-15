@@ -18,7 +18,8 @@ This is the third tutorial of a four part tutorial series.
 
 The first thing we will do, is add another element to our existing HTML Entity. We will also modify the Style CSS, to add styling for the element. To do this, open the code editor for the HTML Entity, and change the code to this:
 
-<pre><code><style type="text/css">
+{% highlight css %}
+<style type="text/css">
 #button1{
 	position:absolute;
 	top:10px;
@@ -56,15 +57,14 @@ The first thing we will do, is add another element to our existing HTML Entity. 
 <div id='div1'>
 	<p id='text1'>You have selected:</p>
 	<p id='selected'>Nothing</p>
-</div></code></pre>
+</div>
+{% endhighlight %}
 
 Notice the CSS section we added for 'div1', as well as the 'div1', 'text1' and 'selected' elements. This will create a small white rectangle with rounded corners at the bottom-left of the screen, with the words 'You Have Selected:' in it.
 
 Next, we will need to add some entities to click on. I added a sphere, a box, a cone, and a cylinder.  I also swapped out the default material for the Polished Wood material from the Goo Library, and added some color:
 
 <a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedShapes.png"><img class="size-medium wp-image-1044 aligncenter" src="selectedShapes-300x166.png" alt="selectedShapes" /></a>
-
-&nbsp;
 
 There are several ways to implement this next part. The main two differences would be to use either Hardware picking or PrimitivePickLogic. We are using a camera, and don't need any fancy raycasting, so lets go with the Hardware picking.
 
@@ -123,7 +123,6 @@ Inside the click handler, there is a lot going on:
 	<li>Inside this callback function, we determine if there was a hit or not.  If there was a hit, we create an Object to store a reference to the entity hit, the point in space the hit happened, as well as the distance from the camera the hit occurred.</li>
 	<li>If there was a hit, we change the innerHTML for the 'selected' element to the name of the entity we clicked.  If there is no hit, we change it to 'Nothing'.</li>
 </ol>
-&nbsp;
 
 As always, anything we create in the setup, we destroy in the cleanup, so we remove the callback for clicking.
 

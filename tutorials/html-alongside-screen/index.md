@@ -14,31 +14,20 @@ This is the first tutorial of a four part tutorial series:
 
 <hr />
 
-&nbsp;
-
 In this example, we will be placing four buttons, along the sides of the screen.  First, we will need to create a new HTML Entity.  We do this by clicking '<strong>+ Create</strong>' at the top, center of the screen.  Next, we choose the HTML Entity inside the list.
 
-&nbsp;
-
 <a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/htmlEntity.png"><img class="alignnone size-medium wp-image-999" src="htmlEntity-256x300.png" alt="htmlEntity" /></a>
-
-&nbsp;
 
 This gives us an HTML Entity inside our project.  By default, the HTML Entity will be placed in 3d space.  For our purposes, we will need to set it to 2d space.  We do this by taking the check mark out of the 'Move with Transform' check box.
 
 In order to have our buttons align with the sides of the screen, inside the HTML Entity code, we'll need to set the CSS style and positioning for each button.  We do this by clicking the button 'Open in Editor':
 
-&nbsp;
-
 <a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/openInEditor.png"><img class="alignnone size-medium wp-image-1000" src="openInEditor-300x182.png" alt="openInEditor" /></a>
-
-&nbsp;
 
 Once the editor is open clear out the existing code and replace it with the following:
 
-&nbsp;
 
-<pre><code>
+{% highlight css %}
 <style type="text/css">
 #button1{
 	position:absolute;
@@ -65,9 +54,7 @@ Once the editor is open clear out the existing code and replace it with the foll
 <button id='button2'>Test Button 2</button>
 <button id='button3'>Test Button 3</button>
 <button id='button4'>Test Button 4</button>
-</code></pre>
-
-&nbsp;
+{% endhighlight %}
 
 The explanation for CSS and how it works is outside of the scope of this tutorial.  A summary of what we did: We told the CSS to position one button on each of the sides of the screen.
 

@@ -21,7 +21,7 @@ layout: default
           {% for ppage in pp %}
 
             {% if lastPageWeight and ppage.weight and ppage.url == page.url %}
-              <a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}">
+              <a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
                 << {{ lastPageTitle }}
               </a>
             {% endif %}
@@ -45,7 +45,7 @@ layout: default
           {% for ppage in pp %}
 
             {% if ppage.weight and lastPageUrl == page.url %}
-              <a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}">
+              <a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
                 {{ ppage.title }} >>
               </a>
             {% endif %}

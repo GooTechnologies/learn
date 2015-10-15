@@ -1,0 +1,24 @@
+<ol class="breadcrumb">
+
+{% assign pp = site.pages | sort: 'weight' %}
+{% assign parts = page.url | split: '/' %}
+
+{% for part in parts %}
+  {% if part contains '.html' %}
+  {% else %}
+    {% for ppage in pp %}
+      {% assign ppageurl = ppage.url | replace: '/index.html', '' %}
+      {% assign ppageparts = ppageurl | split: '/' %}
+      {% assign lastppagepart = ppageparts | last %}
+      {% if ppage.weight and lastppagepart == part %}
+        {% if ppage.url != page.url %}
+          <li><a href="{{ ppage.url | prepend: site.baseurl }}">{{ ppage.title }}</a></li>
+        {% else %}
+          <li class="active">{{ page.title }}</li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+</ol>

@@ -7,11 +7,10 @@ indent: 1
 
 There could be times when you will want to use Images from the scene with an HTML Entity.  In this example, we will create a 'Health Bar', which will shrink or grow in size based on the current 'health' variable.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_bar.png"><img class="size-medium wp-image-1045 aligncenter" src="health_bar-300x191.png" alt="health_bar" /></a>
-
-&nbsp;
+<a href="health_bar-300x191.png"><img class="size-medium wp-image-1045 aligncenter" src="health_bar-300x191.png" alt="health_bar" /></a>
 
 This is the fourth tutorial in a four part tutorial series.
+
 1. <a href="http://goolabs.wpengine.com/learn/?p=986">Placing HTML Entities Along the Borders of the Screen</a>
 2. <a href="http://goolabs.wpengine.com/learn/?p=1025">Using HTML Buttons to Affect the Scene</a>
 3. <a href="http://goolabs.wpengine.com/learn/?p=1026">Using Entities to Interact With an HTML Entity</a>
@@ -21,7 +20,7 @@ This is the fourth tutorial in a four part tutorial series.
 
 The first thing we will need to do, is create a new DIV in our HTML Entity to hold the health bars.  Inside this DIV, we will put place holders to store our 'empty' and 'full' images.  We have structured it this way, so we can easily re-position the health bar without having to touch the images themselves.
 
-<pre><code>
+{% highlight css %}
 <style stype="text/css">
 #button1 {
 	position:absolute;
@@ -85,7 +84,7 @@ The first thing we will need to do, is create a new DIV in our HTML Entity to ho
 	<img id='health_empty' />
 	<img id='health_full' />
 </div>
-</code></pre>
+{% endhighlight %}
 
 Notice both the new DIV and IMGs, as well as the CSS associated for them: 'health_bar', 'health_full' and 'health_empty'.
 

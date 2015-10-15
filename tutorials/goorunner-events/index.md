@@ -53,7 +53,7 @@ You can pause here, click around in your scene and explore the printed event det
 <h3>A Small GUI</h3>
 We'll create an HTML entity to display the intersection information. Create an HTML entity and uncheck the box <em>Move with Transform</em>. Open the editor and enter this simple HTML (we are not breaking exciting web design ground right now):
 
-<pre><code>
+{% highlight css %}
 <style>
 	#intersection-info {
 		font-family: Verdana;
@@ -67,7 +67,7 @@ We'll create an HTML entity to display the intersection information. Create an H
 	Point: <span id="intersection-point">?</span><br />
 	Depth: <span id="intersection-depth">?</span><br />
 </div>
-</code></pre>
+{% endhighlight %}
 
 This should give you this little information area in the top left corner:
 
