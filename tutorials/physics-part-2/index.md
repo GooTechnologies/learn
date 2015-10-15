@@ -65,9 +65,13 @@ Now we will add the script.
 
 Make sure you have selected the table entity. Now click on +ADD COMPONENT and select script. Inside the script component panel select ADD SCRIPT and select CUSTOM.
 
-Click on the edit button <a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg"><img class="alignnone size-full wp-image-1276" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg" alt="FlipperEditScript" /></a> and replace the existing script with this one:
+Click on the edit button
 
-<pre><code>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg"><img class="alignnone size-full wp-image-1276" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg" alt="FlipperEditScript" /></a>
+
+and replace the existing script with this one:
+
+{% highlight js %}
 'use strict';
 
 var setup = function(args, ctx, goo) {
@@ -165,8 +169,7 @@ var update = function(args, ctx, goo) {
 		ctx.checkTarget( ctx.rightFlipper, ctx.rightFlipper.start, ctx.speed, '>=');
 	}
 };
-
-</code></pre>
+{% endhighlight %}
 
 Click on play and you should have a working Goo Pinball Game !!
 
