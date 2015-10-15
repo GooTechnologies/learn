@@ -9,13 +9,13 @@ In <a title="Basic Physics in Goo Create" href="http://www.goocreate.com/learn/b
 
 Here is a screen shot of the entity hierarchy you should have so far if you followed the first part.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperHierarchy.png"><img class="alignnone wp-image-1268 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperHierarchy.png" alt="FlipperHierarchy" width="306" height="468" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperHierarchy.png"><img class="alignnone wp-image-1268 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperHierarchy.png" alt="FlipperHierarchy" /></a>
 
 In this part we will add the bottom flippers and slants and finally the script to give them the appropriate behavior.
 
 Remember: before we can add new entities to the table we have to reset the table tilt. The table tilt is set to 36 degrees on the X axis:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTableTilt.jpg"><img class="alignnone size-full wp-image-1269" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTableTilt.jpg" alt="FlipperTableTilt" width="283" height="131" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTableTilt.jpg"><img class="alignnone size-full wp-image-1269" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTableTilt.jpg" alt="FlipperTableTilt" /></a>
 
 Hint: To see this you have to click on the table in the entity hierarchy (on the right side) and open up the transform panel (on the left side).
 
@@ -27,31 +27,31 @@ Hint: If you want the game to be harder you can leave the slants out of course.
 
 To add the slants simply add another two boxes and give them a collider component and the following settings:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants.png"><img class="alignnone wp-image-1270 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants.png" alt="FlipperSlants" width="608" height="526" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants.png"><img class="alignnone wp-image-1270 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants.png" alt="FlipperSlants" /></a>
 
 &nbsp;
 
 It should look like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants2.jpg"><img class="alignnone size-medium wp-image-1271" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants2-300x76.jpg" alt="FlipperSlants2" width="300" height="76" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants2.jpg"><img class="alignnone size-medium wp-image-1271" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSlants2-300x76.jpg" alt="FlipperSlants2" /></a>
 
 OK, now it's time to add the actual flippers. Since a flipper needs to flip from the side we need to give them a parent entity or they would spin instead of flip.
 
 So let's first add two empty entities. Give them each a rigid body component and the following settings:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPivots.png"><img class="alignnone wp-image-1272 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPivots.png" alt="FlipperPivots" width="607" height="419" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPivots.png"><img class="alignnone wp-image-1272 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPivots.png" alt="FlipperPivots" /></a>
 
 &nbsp;
 
 Finally we add the flippers themselves. Add another two boxes. Give them fitting names like LeftFlipper and RightFlipper. Then nest them each under it's appropriate pivot entity. Then give them colliders and the following settings:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSettings.png"><img class="alignnone wp-image-1273 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSettings.png" alt="FlipperSettings" width="595" height="529" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSettings.png"><img class="alignnone wp-image-1273 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSettings.png" alt="FlipperSettings" /></a>
 
 Here is a screen shot of the final entity hierarchy:
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalHierarchy.jpg"><img class="alignnone wp-image-1274 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalHierarchy.jpg" alt="FlipperFinalHierarchy" width="214" height="646" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalHierarchy.jpg"><img class="alignnone wp-image-1274 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalHierarchy.jpg" alt="FlipperFinalHierarchy" /></a>
 
 OK, we are done with the entity hierarchy. It is time to tilt the pinball table again. Select the table entity and change the X rotation to 36 again.
 
@@ -59,15 +59,15 @@ Hint: If you want you can move the slants around to fit the flippers better.
 
 Here is my final result:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalTable.jpg"><img class="alignnone wp-image-1275" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalTable-780x1024.jpg" alt="FlipperFinalTable" width="400" height="525" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalTable.jpg"><img class="alignnone wp-image-1275" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFinalTable-780x1024.jpg" alt="FlipperFinalTable" /></a>
 
 Now we will add the script.
 
 Make sure you have selected the table entity. Now click on +ADD COMPONENT and select script. Inside the script component panel select ADD SCRIPT and select CUSTOM.
 
-Click on the edit button <a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg"><img class="alignnone size-full wp-image-1276" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg" alt="FlipperEditScript" width="228" height="103" /></a> and replace the existing script with this one:
+Click on the edit button <a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg"><img class="alignnone size-full wp-image-1276" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperEditScript.jpg" alt="FlipperEditScript" /></a> and replace the existing script with this one:
 
-[js]
+<pre><code>
 'use strict';
 
 var setup = function(args, ctx, goo) {
@@ -166,10 +166,10 @@ var update = function(args, ctx, goo) {
 	}
 };
 
-[/js]
+</code></pre>
 
 Click on play and you should have a working Goo Pinball Game !!
 
 PS: If you spend more time on details and involve a graphics artist you get this <a href="https://goote.ch/05779f4996204f14aabff73ee0333afe.scene" target="_blank">https://goote.ch/05779f4996204f14aabff73ee0333afe.scene</a>
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPretty.jpg"><img class="alignnone wp-image-1279 size-large" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPretty-627x1024.jpg" alt="FlipperPretty" width="627" height="1024" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPretty.jpg"><img class="alignnone wp-image-1279 size-large" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperPretty-627x1024.jpg" alt="FlipperPretty" /></a>

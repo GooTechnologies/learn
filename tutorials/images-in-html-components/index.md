@@ -7,7 +7,7 @@ indent: 1
 
 There could be times when you will want to use Images from the scene with an HTML Entity.  In this example, we will create a 'Health Bar', which will shrink or grow in size based on the current 'health' variable.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_bar.png"><img class="size-medium wp-image-1045 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/health_bar-300x191.png" alt="health_bar" width="300" height="191" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_bar.png"><img class="size-medium wp-image-1045 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/health_bar-300x191.png" alt="health_bar" /></a>
 
 &nbsp;
 
@@ -21,7 +21,7 @@ This is the fourth tutorial in a four part tutorial series.
 
 The first thing we will need to do, is create a new DIV in our HTML Entity to hold the health bars.  Inside this DIV, we will put place holders to store our 'empty' and 'full' images.  We have structured it this way, so we can easily re-position the health bar without having to touch the images themselves.
 
-[js]
+<pre><code>
 <style stype="text/css">
 #button1 {
 	position:absolute;
@@ -85,7 +85,7 @@ The first thing we will need to do, is create a new DIV in our HTML Entity to ho
 	<img id='health_empty' />
 	<img id='health_full' />
 </div>
-[/js]
+</code></pre>
 
 Notice both the new DIV and IMGs, as well as the CSS associated for them: 'health_bar', 'health_full' and 'health_empty'.
 
@@ -93,21 +93,21 @@ Now that we have our HTML place holders setup, we will need to create a script t
 
 Go ahead and add a new Custom script to the HTML Entity's ScriptComponent.  In this script, we will add two parameters for the two textures:
 
-[js]
+<pre><code>
 var parameters = [
  {key:'empty', type:'texture', default:null},
  {key:'full', type:'texture', default:null}];
-[/js]
+</code></pre>
 
 Here are the two images I am using for this tutorial:
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png"><img class="alignnone size-full wp-image-1031" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png" alt="health_empty" width="256" height="16" /></a>
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_full.png"><img class="alignnone size-full wp-image-1032" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_full.png" alt="health_full" width="256" height="16" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png"><img class="alignnone size-full wp-image-1031" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png" alt="health_empty" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_full.png"><img class="alignnone size-full wp-image-1032" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_full.png" alt="health_full" /></a>
 
 After you save the script, you will need to drag and drop them onto the Empty and Full texture slots which appeared in the Custom script, or else use the browse icon to search for them on your local hard drive.
 
 In addition to these two parameters, we will be using the setup function to set the HTML IMG src values and cleanup to clear them:
 
-[js]
+<pre><code>
 
 var setup = function(args, ctx, goo){
 document.getElementById('health_empty').src = args.empty.image.src;
@@ -119,13 +119,13 @@ document.getElementById('health_empty').src = '';
 document.getElementById('health_full').src = '';
 };
 
-[/js]
+</code></pre>
 
 All that is left, is implementing a way to detect when the health has changed, and clipping the 'full' health bar with the appropriate values.
 
 Here is the full Health Bar script:
 
-[js]var parameters = [
+<pre><code>var parameters = [
  {key:'empty', type:'texture', default:null},
  {key:'full', type:'texture', default:null}];
 
@@ -154,7 +154,7 @@ var cleanup = function(args, ctx, goo){
   document.getElementById('health_empty').src = '';
   document.getElementById('health_full').src = '';
 };
-[/js]
+</code></pre>
 
 In the setup function, we create a local variable for the maxHealth, then a world variable: ctx.worldData.health.  We also create a local variable: ctx.health.  Finally, we calculate a 'healthTic' to multiply the current health by in order to determine the size the health bar.  We also need to set the 'clip' style for the full health bar, so we can modify it later in the update function.
 
@@ -166,7 +166,7 @@ We can tap into the callback function we created in the second tutorial:  <a h
 
 Just change the callback function for the sound button like so:
 
-[js]ctx.playSound = function(){
+<pre><code>ctx.playSound = function(){
   sound['212600__pgi__machine-gun-001-triple-shot'].stop();
   sound['212600__pgi__machine-gun-001-triple-shot'].play();
   ctx.worldData.health -= (5 + Math.random() * 10);
@@ -174,7 +174,7 @@ Just change the callback function for the sound button like so:
     ctx.worldData.health += 100;
   }
 }
-[/js]
+</code></pre>
 
 We basically tell it to subtract some random value between 5 and 15 from the current ctx.worldData.health.  We then make sure that if the health falls below 0, we add +100 to it, to keep it from going into the negative.
 

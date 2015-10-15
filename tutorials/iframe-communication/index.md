@@ -8,7 +8,7 @@ indent: 1
 <h2>The Setup (A Project that Doesn't Work)</h2>
 We are going to use a very simple scene, were we control the color of a cube using the position of the mouse. The scene includes a simple box entity, with the following script attached to it:
 
-[js]
+<pre><code>
 var setup = function(args, ctx, goo) {
   ctx.width = window.innerWidth;
   ctx.height = window.innerHeight;
@@ -37,7 +37,7 @@ var cleanup = function(args, ctx, goo) {
     window.removeEventListener(k, ctx.windowListeners[k]);
   }
 };
-[/js]
+</code></pre>
 
 The result, contained in a small iframe, looks like this:
 <p style="text-align: center">[advanced_iframe src="https://goote.ch/0faa7841926b4bf9be6964056e212bb8.project/" securitykey="iframe" width="400" height="200" style="width:400px;height:200px;"]
@@ -46,7 +46,7 @@ As you can see, the color changes with the position as long as the mouse is hove
 <h2>A Project that Works</h2>
 We need to forward the info from this page to the iframe. This is what we have put on <em>this very tutorial page,</em> or the page containing the iframe:
 
-[js]
+<pre><code>
 function setupMousemoveProxy(iframe) {
   var width, height, mx, my;
   var mousemove = function() {
@@ -71,11 +71,11 @@ var iframe = document.getElementById('project_iframe');
 iframe.onload = function() {
   setupMousemoveProxy(iframe);
 };
-[/js]
+</code></pre>
 
 Then, we need to make some changes to the Create project code. We no longer use the iframe's data, but listen for the 'message' event instead. The code below explains the changes.
 
-[js]
+<pre><code>
 var setup = function(args, ctx, goo) {
   ctx.material = ctx.entity.meshRendererComponent.materials[0];
   ctx.windowListeners = {
@@ -110,7 +110,7 @@ var cleanup = function(args, ctx, goo) {
     window.removeEventListener(k, ctx.windowListeners[k]);
   }
 };
-[/js]
+</code></pre>
 
 The new project reacts to movements outside its own page!
 <p style="text-align: center">[advanced_iframe id="project_iframe" src="https://goote.ch/b50617b01c0f4aaeb05be87887ecc18f.project/" securitykey="iframe" width="400" height="200" style="width:400px;height:200px;"]
@@ -127,4 +127,4 @@ Want to take a look at the Create projects? Here they are!
 
 &nbsp;
 
-[/text_output][/vc_column][/vc_row][vc_row no_margin="true" padding_top="0px" padding_bottom="0px" border="none"][vc_column width="1/1"][vc_raw_js]JTNDc2NyaXB0JTIwdHlwZSUzRCUyMnRleHQlMkZqYXZhc2NyaXB0JTIyJTNFJTBBJTBBZnVuY3Rpb24lMjBzZXR1cE1vdXNlbW92ZVByb3h5JTI4aWZyYW1lJTI5JTIwJTdCJTBBJTIwJTIwJTIwJTIwdmFyJTIwd2lkdGglMkMlMjBoZWlnaHQlMkMlMjBteCUyQyUyMG15JTNCJTBBJTIwJTIwJTIwJTIwdmFyJTIwbW91c2Vtb3ZlJTIwJTNEJTIwZnVuY3Rpb24lMjglMjklMjAlN0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjB2YXIlMjBtc2clMjAlM0QlMjAlN0IlMjAlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjB0eXBlJTNBJTIwJTI3bW91c2Vtb3ZlJTI3JTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaW5uZXJXaWR0aCUzQSUyMHdpZHRoJTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaW5uZXJIZWlnaHQlM0ElMjBoZWlnaHQlMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjbGllbnRYJTNBJTIwbXglMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjbGllbnRZJTNBJTIwbXklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBpZnJhbWUuY29udGVudFdpbmRvdy5wb3N0TWVzc2FnZSUyOEpTT04uc3RyaW5naWZ5JTI4bXNnJTI5JTJDJTIwJTIyJTJBJTIyJTI5JTNCJTBBJTIwJTIwJTIwJTIwJTdEJTNCJTBBJTIwJTIwJTIwJTIwd2luZG93LmFkZEV2ZW50TGlzdGVuZXIlMjglMjdtb3VzZW1vdmUlMjclMkMlMjBmdW5jdGlvbiUyOGV2dCUyOSUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHdpZHRoJTIwJTNEJTIwd2luZG93LmlubmVyV2lkdGglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBoZWlnaHQlMjAlM0QlMjB3aW5kb3cuaW5uZXJIZWlnaHQlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBteCUyMCUzRCUyMGV2dC5jbGllbnRYJTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwbXklMjAlM0QlMjBldnQuY2xpZW50WSUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG1vdXNlbW92ZSUyOCUyOSUzQiUwQSUyMCUyMCUyMCUyMCU3RCUyOSUzQiUwQSU3RCUwQXZhciUyMGlmcmFtZSUyMCUzRCUyMGRvY3VtZW50LmdldEVsZW1lbnRCeUlkJTI4JTI3cHJvamVjdF9pZnJhbWUlMjclMjklM0IlMEFjb25zb2xlLmxvZyUyOCUyN2lmcmFtZSUyNyUyQyUyMGlmcmFtZSUyOSUzQiUwQWlmcmFtZS5vbmxvYWQlMjAlM0QlMjBmdW5jdGlvbiUyOCUyOSUyMCU3QiUwQSUyMCUyMCUyMCUyMGNvbnNvbGUubG9nJTI4JTI3aWZyYW1lJTIwb25sb2FkJTI3JTI5JTNCJTBBJTIwJTIwJTIwJTIwc2V0dXBNb3VzZW1vdmVQcm94eSUyOGlmcmFtZSUyOSUzQiUwQSU3RCUzQiUwQSUwQSUzQyUyRnNjcmlwdCUzRQ==[/vc_raw_js][/vc_column][/vc_row][vc_row][vc_column width="1/1"][author title="About the Author"][/vc_column][/vc_row]
+[/text_output][/vc_column][/vc_row][vc_row no_margin="true" padding_top="0px" padding_bottom="0px" border="none"][vc_column width="1/1"][vc_raw_js]JTNDc2NyaXB0JTIwdHlwZSUzRCUyMnRleHQlMkZqYXZhc2NyaXB0JTIyJTNFJTBBJTBBZnVuY3Rpb24lMjBzZXR1cE1vdXNlbW92ZVByb3h5JTI4aWZyYW1lJTI5JTIwJTdCJTBBJTIwJTIwJTIwJTIwdmFyJTIwd2lkdGglMkMlMjBoZWlnaHQlMkMlMjBteCUyQyUyMG15JTNCJTBBJTIwJTIwJTIwJTIwdmFyJTIwbW91c2Vtb3ZlJTIwJTNEJTIwZnVuY3Rpb24lMjglMjklMjAlN0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjB2YXIlMjBtc2clMjAlM0QlMjAlN0IlMjAlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjB0eXBlJTNBJTIwJTI3bW91c2Vtb3ZlJTI3JTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaW5uZXJXaWR0aCUzQSUyMHdpZHRoJTJDJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaW5uZXJIZWlnaHQlM0ElMjBoZWlnaHQlMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjbGllbnRYJTNBJTIwbXglMkMlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjbGllbnRZJTNBJTIwbXklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBpZnJhbWUuY29udGVudFdpbmRvdy5wb3N0TWVzc2FnZSUyOEpTT04uc3RyaW5naWZ5JTI4bXNnJTI5JTJDJTIwJTIyJTJBJTIyJTI5JTNCJTBBJTIwJTIwJTIwJTIwJTdEJTNCJTBBJTIwJTIwJTIwJTIwd2luZG93LmFkZEV2ZW50TGlzdGVuZXIlMjglMjdtb3VzZW1vdmUlMjclMkMlMjBmdW5jdGlvbiUyOGV2dCUyOSUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHdpZHRoJTIwJTNEJTIwd2luZG93LmlubmVyV2lkdGglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBoZWlnaHQlMjAlM0QlMjB3aW5kb3cuaW5uZXJIZWlnaHQlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBteCUyMCUzRCUyMGV2dC5jbGllbnRYJTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwbXklMjAlM0QlMjBldnQuY2xpZW50WSUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG1vdXNlbW92ZSUyOCUyOSUzQiUwQSUyMCUyMCUyMCUyMCU3RCUyOSUzQiUwQSU3RCUwQXZhciUyMGlmcmFtZSUyMCUzRCUyMGRvY3VtZW50LmdldEVsZW1lbnRCeUlkJTI4JTI3cHJvamVjdF9pZnJhbWUlMjclMjklM0IlMEFjb25zb2xlLmxvZyUyOCUyN2lmcmFtZSUyNyUyQyUyMGlmcmFtZSUyOSUzQiUwQWlmcmFtZS5vbmxvYWQlMjAlM0QlMjBmdW5jdGlvbiUyOCUyOSUyMCU3QiUwQSUyMCUyMCUyMCUyMGNvbnNvbGUubG9nJTI4JTI3aWZyYW1lJTIwb25sb2FkJTI3JTI5JTNCJTBBJTIwJTIwJTIwJTIwc2V0dXBNb3VzZW1vdmVQcm94eSUyOGlmcmFtZSUyOSUzQiUwQSU3RCUzQiUwQSUwQSUzQyUyRnNjcmlwdCUzRQ==[/vc_raw_js][/vc_column][/vc_row][vc_row][vc_column width="1/1"][/vc_column][/vc_row]

@@ -6,7 +6,7 @@ indent: 1
 ---
 There may be times when you will want to click something in the scene, and have it affect the HTML Entity. This example will show how to click different things in the scene, and have it tell us the name of the entity we clicked.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedDone.png"><img class="size-medium wp-image-1043 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/selectedDone-300x193.png" alt="selectedDone" width="300" height="193" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedDone.png"><img class="size-medium wp-image-1043 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/selectedDone-300x193.png" alt="selectedDone" /></a>
 
 This is the third tutorial of a four part tutorial series.
 1. <a href="http://goolabs.wpengine.com/learn/?p=986">Placing HTML Entities Along the Borders of the Screen</a>
@@ -18,7 +18,7 @@ This is the third tutorial of a four part tutorial series.
 
 The first thing we will do, is add another element to our existing HTML Entity. We will also modify the Style CSS, to add styling for the element. To do this, open the code editor for the HTML Entity, and change the code to this:
 
-[js]<style type="text/css">
+<pre><code><style type="text/css">
 #button1{
 	position:absolute;
 	top:10px;
@@ -56,13 +56,13 @@ The first thing we will do, is add another element to our existing HTML Entity. 
 <div id='div1'>
 	<p id='text1'>You have selected:</p>
 	<p id='selected'>Nothing</p>
-</div>[/js]
+</div></code></pre>
 
 Notice the CSS section we added for 'div1', as well as the 'div1', 'text1' and 'selected' elements. This will create a small white rectangle with rounded corners at the bottom-left of the screen, with the words 'You Have Selected:' in it.
 
 Next, we will need to add some entities to click on. I added a sphere, a box, a cone, and a cylinder.  I also swapped out the default material for the Polished Wood material from the Goo Library, and added some color:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedShapes.png"><img class="size-medium wp-image-1044 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/selectedShapes-300x166.png" alt="selectedShapes" width="300" height="166" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedShapes.png"><img class="size-medium wp-image-1044 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/selectedShapes-300x166.png" alt="selectedShapes" /></a>
 
 &nbsp;
 
@@ -78,7 +78,7 @@ At the bottom of the ScriptComponent, click the 'Add Script' button, and choose 
 
 Open the script for editing, clear out the current code, and paste this code in its place:
 
-[js]var setup = function(args, ctx, goo){
+<pre><code>var setup = function(args, ctx, goo){
 	ctx.infoBox = document.getElementById('selected');
 	ctx.handleClick = function(e){
 		var hit = null;
@@ -110,7 +110,7 @@ Open the script for editing, clear out the current code, and paste this code in 
 
 var cleanup = function(args, ctx, goo){
 	ctx.domElement.removeEventListener('click', ctx.handleClick);
-}[/js]
+}</code></pre>
 
 In the setup function, we first store a reference to the element with the id 'selected'. This is to use later, as we click around the scene.
 

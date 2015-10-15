@@ -28,13 +28,14 @@ Quaternions are great and Goo Engine has support for them in the sense that you 
 In contrast WebGL shaders have built-in support for matrices and matrix multiplication, that means that if you pass in a matrix to a shader you can simply use the star (*) symbol to use it in multiplications, the same is not true for Quaternions.
 
 Even better we can and do combine the three basic transformations into a single transform <a href="http://code.gooengine.com/latest/docs/Matrix4x4.html">Matrx4x4</a> and use it in our shader and can then apply all the basic transformations in one multiplication.
+
 <h3>So, why not combine a quaternion rotation into a transform matrix?</h3>
 Combining a translation, a scale and a <strong>quaternion</strong> <strong>rotation</strong> into a transform matrix is a bit <strong>slower </strong>than combining a translation, a scale and a <strong>Matrix3x3</strong> <strong>rotation</strong> into a transform matrix.
-<h3> What is the algorithm behind lookAt inside Matrix3x3:</h3>
+
+<h3>What is the algorithm behind lookAt inside Matrix3x3:</h3>
 The abbreviated algorithm is:
 
-[js]
-z.set(back_direction).normalize();
+<pre><code>z.set(back_direction).normalize();
 x.set(up).cross(z).normalize();
 y.set(z).cross(x);
 m[0] = x[0];
@@ -45,7 +46,8 @@ m[4] = y[1];
 m[5] = y[2];
 m[6] = z[0];
 m[7] = z[1];
-m[8] = z[2];
-[/js]
+m[8] = z[2];</code></pre>
 
-[alert type="info"]If you calculate the <a href="http://en.wikipedia.org/wiki/Cross_product">cross product</a> of two vectors the result is a vector orthogonal to both vectors even if the initial vectors are not orthogonal themselves.[/alert]
+<div class="alert alert-danger" role="alert">
+	If you calculate the <a href="http://en.wikipedia.org/wiki/Cross_product">cross product</a> of two vectors the result is a vector orthogonal to both vectors even if the initial vectors are not orthogonal themselves.
+</div>

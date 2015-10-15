@@ -32,11 +32,11 @@ First, expand the Script category.  At the bottom of all the camera settings, y
 
 Now we need to open and edit this script.  You do this by clicking the icon which looks like a pencil writing inside a square:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png"><img class="alignnone size-full wp-image-995" src="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png" alt="edit script" width="300" height="52" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png"><img class="alignnone size-full wp-image-995" src="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png" alt="edit script" /></a>
 
 Remove all the existing code from the code editor, and then paste this inside it:
 
-[js]
+<pre><code>
 var setup = function(args, ctx, goo){
 
   var sound = {};
@@ -57,7 +57,7 @@ var cleanup = function(args, ctx, goo){
   var button = document.getElementById('button1');
   button.removeEventListener('click', ctx.playSound);
 }
-[/js]
+</code></pre>
 
 In the setup() function, we first create a sound map, to map the sound names to the actual sound objects. This isn't so important in this demo, because we only have one single sound, but when you start adding more and more sounds, this becomes a necessary step.
 

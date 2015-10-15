@@ -40,7 +40,7 @@ Similar code can be used to generate <a href="https://github.com/evanw/csg.js/bl
 <h2>Surface of Revolution (or Lathe)</h2>
 The <a href="http://en.wikipedia.org/wiki/Surface_of_revolution">surface of revolution</a> technique uses a line or a spline curve and rotates it around an axis, for example the vertical axis. This technique is also known as lathing.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_0.png"><img class="size-full wp-image-522 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_0.png" alt="proc_geom_0" width="220" height="281" /></a>
+<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_0.png"><img class="size-full wp-image-522 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_0.png" alt="proc_geom_0" /></a>
 
 Here is an example using Goo Engine: <a href="http://goote.ch/b3ddad02a95e44eb7d85e6f99540650dc9aa6def/">http://goote.ch/b3ddad02a95e44eb7d85e6f99540650dc9aa6def/</a>
 
@@ -86,15 +86,15 @@ In this example the heightmap is generated using sine and cosine values. But you
 
 A great option for a library that provides CSG is <a href="http://evanw.github.io/csg.js/">CSG.js</a> from Evan Wallace.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_1.png"><img class="size-full wp-image-523 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_1.png" alt="proc_geom_1" width="250" height="222" /></a>
+<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_1.png"><img class="size-full wp-image-523 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_1.png" alt="proc_geom_1" /></a>
 <h2>Extrusion</h2>
 Extrusion is another great technique to generate 3D geometry from basic shapes like splines.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_2.gif"><img class="size-full wp-image-524 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_2.gif" alt="proc_geom_2" width="220" height="198" /></a>
+<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_2.gif"><img class="size-full wp-image-524 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_2.gif" alt="proc_geom_2" /></a>
 
 A great demo of this technique can be found at the great site <a href="http://acko.net">acko.net</a>
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_3.png"><img class="size-full wp-image-525 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_3.png" alt="proc_geom_3" width="481" height="221" /></a>
+<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_3.png"><img class="size-full wp-image-525 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/proc_geom_3.png" alt="proc_geom_3" /></a>
 
 Just note how fast the site loads and displays 3D content. This is a perfect example on how to use WebGL efficiently.
 <h4>Further Reading</h4>

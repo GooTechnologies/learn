@@ -9,7 +9,7 @@ Here's a quick example of a script using either the position of the mouse or the
 <p style="text-align: center;">[button style="margin-bottom: 15px;" type="flat" shape="rounded" size="medium" href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"][icon type="desktop"]Open in a New Window[/button] [button style="margin-bottom: 15px;" type="flat" shape="rounded" size="medium" href="https://create.goocreate.com/22307/a5b7c39669b04e5cb1e243f9a2d8454d.scene"][icon type="copy"]Scene to Duplicate[/button]</p>
 Setup: Create two entities, place them both where the camera should look. In the example scene, I've picked (0, 0, 0). Create a camera and arrange the entities like this:
 
-[caption id="attachment_1180" align="aligncenter" width="218"]<img class="size-full wp-image-1180" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-15_39_17-Goo-Create.jpg" alt="Entity hierarchy" width="218" height="93" /> Entity hierarchy[/caption]
+<img class="size-full wp-image-1180" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-15_39_17-Goo-Create.jpg" alt="Entity hierarchy" /> Entity hierarchy
 
 Why don't we do this with code? That'd be cleaner, perhaps, but wouldn't let us position the camera before pressing play as easily. If you're interested in how to do this without the helper entities, check out the source of the standard orbit-and-pan camera scripts, for example!
 
@@ -17,7 +17,7 @@ The camera radius (distance from the middle) is the adjusted by translating the 
 
 On the root entity, <em>Rot. Around Y</em> in our case, create a custom script. You can copy/paste the whole code below, set the camera as <strong>Main Camera</strong> and you're good to go!
 
-[js]
+<pre><code>
 var setup = function(args, ctx, goo) {
 
 	ctx.dir = args.invert ? 1 : -1;
@@ -164,6 +164,5 @@ var parameters = [
 	control: 'slider'
 }
 ];
-[/js]
+</code></pre>
 
-[author]

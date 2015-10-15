@@ -6,7 +6,7 @@ indent: 1
 ---
 This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the <a title="Cube Clicker Game" href="//www.goocreate.com/learn/cube-clicker-game/" target="_blank">Cube Clicker</a> game, but the concepts can of course be used as a foundation for lots more!
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/text50232.png"><img class="size-full wp-image-1123 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/text50232.png" alt="text5023" width="483" height="444" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/text50232.png"><img class="size-full wp-image-1123 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/text50232.png" alt="text5023" /></a>
 
 We will:
 <ul>
@@ -48,40 +48,40 @@ First, get Node.js and npm (included) from <a href="//nodejs.org/download/" targ
 <h3>Install Express</h3>
 Use npm to get Express, a framework for quick web server development. Assuming that npm works as it should, you only need to run the commands
 
-[js]
+<pre><code>
 npm install -g express
 npm install -g express-generator
-[/js]
+</code></pre>
 
 Note that -g makes the modules install globally. If you only want it in a specific directory, you can omit those flags.
 <h3>Use Express</h3>
 Make use of the Express and create an app called <em>highscore</em> (or something else). Navigate to the directory you want as <em>parent</em> directory to your app and run
 
-[js]
+<pre><code>
 express highscore
-[/js]
+</code></pre>
 
 <h3> Add Some App Dependencies</h3>
 Once the app is set up, it's easy to add more node modules to it. Navigate to the new app folder and open <em>package.json</em> in a text editor. The file contains some app info as well as all modules that the project is dependent on, and we want to add two more of those. Add the following lines under <em>dependencies</em>:
 
-[js]
+<pre><code>
 "mongodb": "*",
 "monk": "*"
-[/js]
+</code></pre>
 
 Then run the command
 
-[js]npm install[/js]
+<pre><code>npm install</code></pre>
 
 in the directory and all the dependencies will be automatically installed!
 <h3>Checkpoint: Start the App!</h3>
 Now is a good place to stop and see how we're doing. Simply run
 
-[js]npm start[/js]
+<pre><code>npm start</code></pre>
 
 and take a look at the command prompt or terminal output. If there seems to be no errors, open a web browser and navigate to <em>localhost:3000</em>. If you see a friendly message saying "Welcome to Express", you're doing good! If not, take a look at the error messages or refer to the <a href="//cwbuecheler.com/web/tutorials/2013/node-express-mongo/" target="_blank">tutorial</a> mentioned above for more details.
 
-[caption id="attachment_1112" align="aligncenter" width="729"]<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/welcome.jpg"><img class="wp-image-1112 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/welcome.jpg" alt="welcome" width="729" height="468" /></a> Hooray![/caption]
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/welcome.jpg"><img class="wp-image-1112 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/welcome.jpg" alt="welcome" /></a> Hooray!
 
 <a name="setting-up-the"></a>
 <h2>Setting Up the Database</h2>
@@ -89,23 +89,23 @@ The server is up and running. Great! Now it's time to set up the database. If yo
 <h3>Mongolab</h3>
 Mongolab is a provider of MongoDB hosting, and then have a free "sandbox" version that suits our purposes very well. So first, <a href="//mongolab.com/" target="_blank">create an account</a>. Then, go ahead and create a new deployment.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/mongodb.jpg"><img class="wp-image-1105 size-large aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/mongodb-1024x56.jpg" alt="mongodb" width="890" height="48" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/mongodb.jpg"><img class="wp-image-1105 size-large aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/mongodb-1024x56.jpg" alt="mongodb" /></a>
 
 The choice of <em>Cloud provider</em> isn't super important, I went with <em>Amazon</em> and the <em>EU Region</em>. Pick something that sounds nice. Next, select a <strong>single-node</strong>, <strong>sandbox</strong> plan and give your database a cool name.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/plan.jpg"><img class="size-full wp-image-1106 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/plan.jpg" alt="plan" width="704" height="672" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/plan.jpg"><img class="size-full wp-image-1106 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/plan.jpg" alt="plan" /></a>
 
 You'll probably see a list of your deployments, so go ahead and click on your new database. Now it's time to add a <em>user</em> to the database. Add a user with a name and password you'll remember. When you're done, it should look something like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/user.jpg"><img class="size-full wp-image-1107 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/user.jpg" alt="user" width="777" height="413" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/user.jpg"><img class="size-full wp-image-1107 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/user.jpg" alt="user" /></a>
 
 Awesome! One more thing. MongoDB databases use collections for storing stuff, so let's add one called <em>scores</em>.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/coll.jpg"><img class="size-full wp-image-1109 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/coll.jpg" alt="coll" width="778" height="200" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/coll.jpg"><img class="size-full wp-image-1109 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/coll.jpg" alt="coll" /></a>
 <h3>Entering some Test Data</h3>
 The first thing we want to do is make a simple GET function for the data, and for that to make sense we need to add some data to read. Open up the <em>scores </em>collection and click <em>Add document</em>. MongoDB uses pure JSON for storage, which makes web integration super easy! Our objects will just contain a name and a time for now. Enter something along the lines of this and click <em>Create and go back:</em>
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/adddoc.jpg"><img class="size-full wp-image-1111 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/adddoc.jpg" alt="adddoc" width="688" height="507" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/adddoc.jpg"><img class="size-full wp-image-1111 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/adddoc.jpg" alt="adddoc" /></a>
 <h3>Checkpoint: Look at that Data!</h3>
 You should now see your freshly entered data. Note that MongoDB has also inserted an unique <strong>_id</strong> field for your entry!
 
@@ -115,7 +115,7 @@ Alright! Time to open up the Node app again and see if we can connect to the dat
 <h3>Add the Database</h3>
 First, we need to require a couple of things. Add these lines before the app is created:
 
-[js]
+<pre><code>
 // app.js
 var mongodb = require('mongodb');
 var monk = require('monk'):
@@ -124,17 +124,17 @@ var db = monk(credentials.uri);
 
 // Add the above lines somewhere before this line
 var app = express();
-[/js]
+</code></pre>
 
 Committing the database credentials to an open repository is a <strong>bad idea</strong>. Therefore, I've created a very small module with this info in a separate file (credentials.js), to be able to skip that file when committing to git, for example. The file, added to .gitignore in my case, looks like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/cred.jpg"><img class="alignnone size-full wp-image-1113" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/cred.jpg" alt="cred" width="711" height="37" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/cred.jpg"><img class="alignnone size-full wp-image-1113" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/cred.jpg" alt="cred" /></a>
 
 Where the database URI, user and password are changed for the ones you got from Mongolab earlier.
 
 Next, we are going to intercept each request to the web server and attach our database to it. This is done in the following way:
 
-[js]
+<pre><code>
 
 // Intercept the requests and attach the database object
 app.use(function(req, res, next) {
@@ -145,12 +145,12 @@ app.use(function(req, res, next) {
 // Do the above before these lines
 app.use('/', routes);
 app.use('/users', users);
-[/js]
+</code></pre>
 
 <h3>Add a Route</h3>
 Alright, now let's hook up the GET route to use our database. Make a new file called scores.js and save it in the routes/ directory. The route will look like this:
 
-[js]
+<pre><code>
 var express = require('express');
 var router = express.Router();
 
@@ -175,7 +175,7 @@ router.get('/', function(req, res) {
 });
 
 module.exports = router;
-[/js]
+</code></pre>
 
 The route contains some syntax that might be new, please refer to the respective documentation for details. Basically, the <strong>find()</strong> function gets instructed to look for all entries (the empty object as search term), sort the entries by time and return the object as the variable <strong>docs</strong> in the callback. The server then sends the result using the nice <strong>json()</strong> function. Again, refer to the documentation of MongoDB, Monk, Express and Node.js for the inner workings!
 
@@ -183,33 +183,33 @@ Also note that the simple route has no error handling for when the database conn
 
 Now we need to tell the application yo use the route! We do this by following the already in-place pattern in app.js:
 
-[js]
+<pre><code>
 // We don't really use the index and users routes,
 // but we can leave them for now
 var routes = require("./routes/index");
 var users = require("./routes/users");
 // Require our new and shiny route
 var scores = require("./routes/scores");
-[/js]
+</code></pre>
 
 
-[js]
+<pre><code>
 app.use('/', routes);
 app.use('/users', users);
 // Hook the route up
 app.use('/scores', scores);
-[/js]
+</code></pre>
 
 <h3>Checkpoint: Test the Route</h3>
 This simple route can be tested in a browser, but I recomment using the Chrome plugin <a href="//www.getpostman.com/" target="_blank">Postman</a> (or something similar if you don't like Chrome) to make your route testing life easier. With it installed, one can easily connect to any URL and create GET, POST and other requests. If you choose to use Postman, start the server up and construct a simple GET request for <em>http://localhost:3000/scores</em>. If not, use your browser and navigate to the same URL. Watch your console for any debug output, and you should be able to see the test user we added to our cloud hosted database!
 
-[caption id="attachment_1114" align="alignnone" width="1028"]<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/get.jpg"><img class="wp-image-1114 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/get.jpg" alt="get" width="1028" height="640" /></a> Hooray![/caption]
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/get.jpg"><img class="wp-image-1114 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/get.jpg" alt="get" /></a> Hooray!
 
 <a name="add-more-routes"></a>
 <h2>Add More Routes</h2>
 To finish our simple API, we want to add some more routes. We need a way to add scores, and that's handled in a POST request. Also, assuming our game becomes a huge hit, we also want to add a way to just get the most important scores. We'll add some more routes for these two tasks. Let's start with the top scores route:
 
-[js]
+<pre><code>
 // GET a number of top scores
 // (the /top route without a number won't work unless we add it)
 router.get("/top/:number", function(req, res) {
@@ -228,15 +228,15 @@ router.get("/top/:number", function(req, res) {
 	  	}
 	});
 });
-[/js]
+</code></pre>
 
-[caption id="attachment_1115" align="aligncenter" width="414"]<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg"><img class="wp-image-1115 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg" alt="2014-10-14 11_16_54-Postman" width="414" height="436" /></a> Testing the GET top scores route.[/caption]
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg"><img class="wp-image-1115 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg" alt="2014-10-14 11_16_54-Postman" /></a> Testing the GET top scores route.
 
 After adding some more test users, we can test the route like so:
 <a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg">
 </a>Next, the POST route.
 
-[js]
+<pre><code>
 // POST a score
 router.post("/", function(req, res) {
 	console.log("POST score");
@@ -262,11 +262,11 @@ router.post("/", function(req, res) {
 		}
 	});
 });
-[/js]
+</code></pre>
 
 When posting to the route, we'll use the x-www-form-encoded form of parameter key/value pairs. If you know that your amount of parameters will grow, it might be a good idea to just use one parameter and put all data in one single JSON object. That way one could insert new forms of data into the dabatase without changing the routes (for better or worse)! Here's how the current POST request format is tested in Postman:
 
-[caption id="attachment_1116" align="aligncenter" width="419"]<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/post.jpg"><img class="wp-image-1116 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/post.jpg" alt="post" width="419" height="426" /></a> Testing the POST route, getting the inserted data back.[/caption]
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/post.jpg"><img class="wp-image-1116 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/post.jpg" alt="post" /></a> Testing the POST route, getting the inserted data back.
 
 <a name="using-the-api"></a>
 <h2>Using the API in Create</h2>
@@ -274,9 +274,9 @@ Phew, it's finally time to hook this up to a Create project! We have (almost) ev
 <h3>Setting up ngrok</h3>
 ngrok is a program/service that lets you expose a local web server to the internet. Very nice! Head over to <a href="//ngrok.com/" target="_blank">ngrok.com</a> and get ngrok going. There are plenty of instructions. Once you're done, you can simply start your Node.js server again, open a new terminal/command window, and launch ngrok:
 
-[js]ngrok -subdomain highscore 3000[/js]
+<pre><code>ngrok -subdomain highscore 3000</code></pre>
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/tunnel.jpg"><img class="alignnone size-full wp-image-1117" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/tunnel.jpg" alt="tunnel" width="875" height="173" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/tunnel.jpg"><img class="alignnone size-full wp-image-1117" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/tunnel.jpg" alt="tunnel" /></a>
 
 What this means is that you can open up Postman again and instead of using localhost:3000, enter https://highscore.ngrok.com and test the routes there instead. Neat, huh? This little tunneling exercise makes it easy to connect to your own server from Create (and debug using the console output in real time)!
 <h3>The Create Project</h3>
@@ -284,15 +284,15 @@ We'll use the Cube Clicker game from <a title="Cube Clicker Game" href="http://w
 <h3>Cross-Domain Problems</h3>
 We won't be allowed to work with data from another domain unless the server says it's OK. This is done using <em>CORS headers</em>, and the simplest and quickest (but not the safest) way to do this is to use a node module called cors. Add the following to <em>package.json</em>:
 
-[js]"cors": "*"[/js]
+<pre><code>"cors": "*"</code></pre>
 
 and run
 
-[js]npm install[/js]
+<pre><code>npm install</code></pre>
 
 again. Then open up your scores.js routing file and add the following (to all routes);
 
-[js]
+<pre><code>
 
 var express = require('express');
 var router = express.Router();
@@ -300,12 +300,12 @@ var cors = require('cors');
 
 // GET all scores, sorted by time
 router.get('/', cors(), function(req, res) {
-...[/js]
+...</code></pre>
 
 <h3>The Request Functions</h3>
 The two key functions will use <a href="//www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp" target="_blank">AJAX </a>requests, and for simplicity we'll use <a href="//api.jquery.com/jquery.ajax/" target="_blank">jQuery </a>to set these up quickly. These should be pretty self-explanatory if you've made it this far! Worth to notice is that we need to use HTTPS, that the URLs are hardcoded here but should probably be arguments, and that the functions naturally are asynchrynous.
 
-[js]
+<pre><code>
 // ctx.topScores is defined in the setup() function and is used to cache and display the fetched results.
 
 // Get a number of top scores
@@ -350,11 +350,11 @@ var postScore = function(ctx, name, time, callback) {
 	});
 
 };
-[/js]
+</code></pre>
 
 The previous setState() function will get a new state handler, responsible for getting the player's name and calling the post and get functions (in order, using callbacks).
 
-[js]
+<pre><code>
 ...
 } else if (ctx.gameState === ctx.STATE_SUBMITTING) {
 	if (!ctx.name) {
@@ -367,11 +367,11 @@ The previous setState() function will get a new state handler, responsible for g
 	});
 	displaySubmitting(ctx);
 }
-[/js]
+</code></pre>
 
 Showing the highscores is done by functions like this one, simply manipulating the contents of defined GUI HTML elements.
 
-[js]
+<pre><code>
 var updateSubmittedTopListDisplay = function(ctx) {
 	var topList = '';
 	ctx.topScores.forEach(function(v, i) {
@@ -379,7 +379,7 @@ var updateSubmittedTopListDisplay = function(ctx) {
 	});
 	ctx.submittedTopListElement.innerHTML = topList;
 };
-[/js]
+</code></pre>
 
 <h3>The Complete App</h3>
 There's of course more methods to make everything work. <a href="https://app.goocreate.com/tutorials/24503577d6724d18a60d1bddfa30648f.project" target="_blank">This project</a> is set up to display and submit scores. Beware of not-so-pretty code, as the integration was done during one of our <a href="//www.goocreate.com/learn/goofy-projects/" target="_blank">Goofy Days!</a> Also, as we'll touch on later, the security is clearly sub-par, so don't be surprised if something seems off.
@@ -391,17 +391,17 @@ If you take a look at the project linked above, you'll notice that the URLs are 
 
 First, sign up for a free account. Next, click the plus sign in the top right and create a new app. Give it a name, choose a region and hit <em>Create App</em>.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg"><img class="size-full wp-image-1118 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg" alt="2014-10-14 14_29_21-Create a New App _ Heroku" width="915" height="424" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg"><img class="size-full wp-image-1118 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg" alt="2014-10-14 14_29_21-Create a New App _ Heroku" /></a>
 
 &nbsp;
 
 Next, follow the instructions to install the Heroku Toolbelt, initialize a git repository and push your app to Heroku. Done! Now you can open the app by typing
 
-[js]heroku open[/js]
+<pre><code>heroku open</code></pre>
 
 in the command prompt. Should anything go wrong, access the server logs by typing
 
-[js]heroku logs[/js]
+<pre><code>heroku logs</code></pre>
 
 <a name="security-concerns"></a>
 <h2>Security Concerns</h2>
@@ -411,4 +411,3 @@ As you might have suspected by now, this app is in no way secure. The API is com
 <h2>Wrap-Up</h2>
 With stability and security concerns aside, we've built something pretty cool. Three different cloud services (the server, the database, and Create) are set up to communicate between each other. Hopefully this tutorials has given you some ideas of fun data-driven apps, and some insight in how one get get them up and running quickly. If there are any bugs, uncertainties or other thoughs, please let us know in the comments!
 
-[author]

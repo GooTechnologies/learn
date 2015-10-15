@@ -5,7 +5,7 @@ weight: 6000
 indent: 1
 ---
 This tutorial will explain how to place HTML Entities along the border of the screen.
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/side-buttons.png"><img class="size-medium wp-image-1001 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/side-buttons-300x236.png" alt="side buttons" width="300" height="236" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/side-buttons.png"><img class="size-medium wp-image-1001 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/side-buttons-300x236.png" alt="side buttons" /></a>
 This is the first tutorial of a four part tutorial series:
 1. Placing HTML Entities Along the Borders of the Screen
 2. <a href="http://goolabs.wpengine.com/learn/?p=1025">Using HTML Buttons to Affect the Scene</a>
@@ -20,7 +20,7 @@ In this example, we will be placing four buttons, along the sides of the screen.
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/htmlEntity.png"><img class="alignnone size-medium wp-image-999" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/htmlEntity-256x300.png" alt="htmlEntity" width="256" height="300" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/htmlEntity.png"><img class="alignnone size-medium wp-image-999" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/htmlEntity-256x300.png" alt="htmlEntity" /></a>
 
 &nbsp;
 
@@ -30,7 +30,7 @@ In order to have our buttons align with the sides of the screen, inside the HTML
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/openInEditor.png"><img class="alignnone size-medium wp-image-1000" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/openInEditor-300x182.png" alt="openInEditor" width="300" height="182" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/openInEditor.png"><img class="alignnone size-medium wp-image-1000" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/openInEditor-300x182.png" alt="openInEditor" /></a>
 
 &nbsp;
 
@@ -38,7 +38,7 @@ Once the editor is open clear out the existing code and replace it with the foll
 
 &nbsp;
 
-[js]
+<pre><code>
 <style type="text/css">
 #button1{
 	position:absolute;
@@ -65,7 +65,7 @@ Once the editor is open clear out the existing code and replace it with the foll
 <button id='button2'>Test Button 2</button>
 <button id='button3'>Test Button 3</button>
 <button id='button4'>Test Button 4</button>
-[/js]
+</code></pre>
 
 &nbsp;
 
@@ -75,7 +75,7 @@ Due to the current Parent - Child relationship the HTML Entity has with the ctx.
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addComponent.png"><img class="alignnone size-medium wp-image-1002" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/addComponent-300x189.png" alt="addComponent" width="300" height="189" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addComponent.png"><img class="alignnone size-medium wp-image-1002" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/addComponent-300x189.png" alt="addComponent" /></a>
 
 &nbsp;
 
@@ -83,7 +83,7 @@ Next choose 'Script' from the drop down list which pops up. When the Script cate
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addScript.png"><img class="alignnone size-medium wp-image-1003" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/addScript-300x82.png" alt="addScript" width="300" height="82" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addScript.png"><img class="alignnone size-medium wp-image-1003" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/addScript-300x82.png" alt="addScript" /></a>
 
 &nbsp;
 
@@ -91,13 +91,13 @@ In the list of scripts which comes up, choose 'Custom' from the choices. This wi
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png"><img class="alignnone size-full wp-image-995" src="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png" alt="edit script" width="300" height="52" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png"><img class="alignnone size-full wp-image-995" src="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png" alt="edit script" /></a>
 
 &nbsp;
 
 Once the code editor opens, clear out what is already there, and paste the following code:
 
-[js]var setup = function(args, ctx, goo){
+<pre><code>var setup = function(args, ctx, goo){
   ctx.children = [];
   var parent = ctx.entity.htmlComponent.domElement;
   for(var i = parent.children.length; i >= 0; i--){
@@ -118,7 +118,7 @@ var cleanup = function(args, ctx, goo){
     }
   }
   ctx.children.length = 0;
-}[/js]
+}</code></pre>
 
 In the setup function, we take all the children elements in the HTML Entity, and transfer them to the ctx.domElement.parentNode.  It also stores references to each element in the array ctx.children.  We put this variable on the 'ctx' scope, so we can reference it later in the cleanup function.
 

@@ -54,5 +54,3 @@ We will go over many ways to accomplish this goal in detail in this article seri
 A very important development approach for WebGL applications which also <strong>need to run on mobile platforms</strong> is to test them as soon as possible on the target devices. In fact, they should be the primary test platform while developing, because they have <strong>much lower limits</strong> on many aspects of the resources listed above. First of all, there is a much smaller pool of memory. Second, the CPU and GPU and less powerful. Third, WebGL allows for a lot of leeway on the implementation limits of certain parameters, for example the "<strong>Max Texture Size</strong>" or the “<strong>Max Vertex Uniform Vectors</strong>” (<a href="http://www.browserleaks.com/webgl">Click here for your numbers</a>).
 
 So if it runs good on mobile devices it will run great on desktops as well. The reverse does not necessarily hold true. While it is not impossible to "port" a WebGL application to mobile devices, it is much less work if you develop and test on mobile devices right from the start.
-
-Next: <a href="../reducing-code-size/">Reducing Code Size</a>
