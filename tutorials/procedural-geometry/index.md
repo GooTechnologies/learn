@@ -5,7 +5,9 @@ weight: 5500
 indent: 1
 ---
 A great way to reduce load times is to use procedurally generated geometry. There are many ways to generate geometry. Let’s go over the most important ones:
-<h2>Direct</h2>
+
+## Direct
+
 The most basic approach is to generate the vertices directly. Here is a simple example generating the data for a 3D <a href="https://github.com/evanw/csg.js/blob/master/csg.js#L173">cube</a>.
 
 The resulting data includes the vertices, the normals and the texture coordinates.
@@ -111,5 +113,3 @@ There are many more ways to procedurally generate 3D content, like fractals and 
 <a href="http://verbnurbs.com/">http://verbnurbs.com/</a>
 
 <a href="https://github.com/pboyer/verb">https://github.com/pboyer/verb</a>
-
-Next: <a href="../procedural-textures/">Procedural Textures</a>
