@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Basic Physics Part 1
+title: Multiplayer FPS
 weight: 5999
 indent: 1
 ---
@@ -158,12 +158,3 @@ The code if full of TODOs. Here are some suggestions for improvement.
 <h2>Wrap-Up</h2>
 The article is not very exhaustive, but should have briefed you about the most imporant techniques. The code is fairly well-commented, and the sources mentioned above should bring give you deeper knowledge about the networking tricks. We'ld love to hear your comments and see your improvements!
 
-
-
-&nbsp;
-<h2></h2>
-&nbsp;
-
-&nbsp;
-
-&nbsp;
