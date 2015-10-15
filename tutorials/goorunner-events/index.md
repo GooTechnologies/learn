@@ -49,7 +49,7 @@ var cleanup = function(args, ctx, goo) {
 
 You can pause here, click around in your scene and explore the printed event details using the developer console in your browser. We have all the info we need, but we'll do something a little more visual with it in a minute.
 
-<img class="wp-image-193 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/picking-console1.jpg" alt="picking-console" /> Console printed picking event information
+<img class="wp-image-193 size-full" src="picking-console1.jpg" alt="picking-console" /> Console printed picking event information
 <h3>A Small GUI</h3>
 We'll create an HTML entity to display the intersection information. Create an HTML entity and uncheck the box <em>Move with Transform</em>. Open the editor and enter this simple HTML (we are not breaking exciting web design ground right now):
 
@@ -71,7 +71,7 @@ We'll create an HTML entity to display the intersection information. Create an H
 
 This should give you this little information area in the top left corner:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/html-info.jpg"><img class="size-full wp-image-191 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/html-info.jpg" alt="html-info" /></a>
+<a href="html-info.jpg"><img class="size-full wp-image-191 aligncenter" src="html-info.jpg" alt="html-info" /></a>
 Now we need to add a simple function to our script in order to display the info we got from the event object.
 
 <pre><code>
@@ -111,7 +111,7 @@ ctx.runnerListeners = {
 
 Firing this script up and clicking any entity in the scene, we should now have the HTML entity populated:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/html-populated.jpg"><img class="size-full wp-image-194 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/html-populated.jpg" alt="html-populated" /></a>
+<a href="html-populated.jpg"><img class="size-full wp-image-194 aligncenter" src="html-populated.jpg" alt="html-populated" /></a>
 <h3>An Intersection Marker</h3>
 Something you might want to do is to manipulate your 3D scene depending on a picking result. For example, you could move the camera to a point of interest, make a game character move or fire a weapon, or maybe setting the point of gravity! One simple thing we can do to visualize the point is to add a simple intersection marker. We'll use a sphere for this.
 

@@ -44,7 +44,7 @@ Click on one of the feet and you should have selected the Vincent model and wit
 
 After you've changed the scale you can press <strong>F</strong> to center and position the camera on the scene.
 
-Now press the play button on the bottom <a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png"><img class="alignnone size-full wp-image-427" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png" alt="press_play" /></a> and you should see Vincent dancing !
+Now press the play button on the bottom <a href="press_play.png"><img class="alignnone size-full wp-image-427" src="press_play.png" alt="press_play" /></a> and you should see Vincent dancing !
 
 <a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/dancing.jpg"><img class="size-full wp-image-981 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/08/dancing.jpg" alt="dancing" /></a>
 

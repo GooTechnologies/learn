@@ -7,7 +7,7 @@ indent: 1
 
 There could be times when you will want to use Images from the scene with an HTML Entity.  In this example, we will create a 'Health Bar', which will shrink or grow in size based on the current 'health' variable.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_bar.png"><img class="size-medium wp-image-1045 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/09/health_bar-300x191.png" alt="health_bar" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_bar.png"><img class="size-medium wp-image-1045 aligncenter" src="health_bar-300x191.png" alt="health_bar" /></a>
 
 &nbsp;
 

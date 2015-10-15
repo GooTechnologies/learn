@@ -10,7 +10,7 @@ I will list some common ways to make this happen for the most common operating s
 <h2 id="windows">HFS (Windows)</h2>
 My favorite free web server on Windows is <a href="http://www.rejetto.com/hfs/">HFS</a>.
 
-<img class="alignnone size-medium wp-image-338" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/hfs-300x266.png" alt="hfs" />
+<img class="alignnone size-medium wp-image-338" src="hfs-300x266.png" alt="hfs" />
 
 You basically drag and drop a project folder on the HFS window and it will get served.
 
@@ -28,7 +28,7 @@ Alternatively you can use the free edition mongoose:
 
 This one is really simple, just execute the program and it will serve the files in the current directory and below.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/mongoose.png"><img class="alignnone size-full wp-image-339" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/mongoose.png" alt="mongoose" /></a>
+<a href="mongoose.png"><img class="alignnone size-full wp-image-339" src="mongoose.png" alt="mongoose" /></a>
 
 You will get a little Systray icon where you can stop it or edit settings.
 <h2 id="operating-system-independent">NodeJS</h2>

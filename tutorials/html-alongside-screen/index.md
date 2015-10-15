@@ -5,7 +5,7 @@ weight: 6000
 indent: 1
 ---
 This tutorial will explain how to place HTML Entities along the border of the screen.
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/side-buttons.png"><img class="size-medium wp-image-1001 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/side-buttons-300x236.png" alt="side buttons" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/side-buttons.png"><img class="size-medium wp-image-1001 aligncenter" src="side-buttons-300x236.png" alt="side buttons" /></a>
 This is the first tutorial of a four part tutorial series:
 1. Placing HTML Entities Along the Borders of the Screen
 2. <a href="http://goolabs.wpengine.com/learn/?p=1025">Using HTML Buttons to Affect the Scene</a>
@@ -20,7 +20,7 @@ In this example, we will be placing four buttons, along the sides of the screen.
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/htmlEntity.png"><img class="alignnone size-medium wp-image-999" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/htmlEntity-256x300.png" alt="htmlEntity" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/htmlEntity.png"><img class="alignnone size-medium wp-image-999" src="htmlEntity-256x300.png" alt="htmlEntity" /></a>
 
 &nbsp;
 
@@ -30,7 +30,7 @@ In order to have our buttons align with the sides of the screen, inside the HTML
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/openInEditor.png"><img class="alignnone size-medium wp-image-1000" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/openInEditor-300x182.png" alt="openInEditor" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/openInEditor.png"><img class="alignnone size-medium wp-image-1000" src="openInEditor-300x182.png" alt="openInEditor" /></a>
 
 &nbsp;
 
@@ -75,7 +75,7 @@ Due to the current Parent - Child relationship the HTML Entity has with the ctx.
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addComponent.png"><img class="alignnone size-medium wp-image-1002" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/addComponent-300x189.png" alt="addComponent" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addComponent.png"><img class="alignnone size-medium wp-image-1002" src="addComponent-300x189.png" alt="addComponent" /></a>
 
 &nbsp;
 
@@ -83,7 +83,7 @@ Next choose 'Script' from the drop down list which pops up. When the Script cate
 
 &nbsp;
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addScript.png"><img class="alignnone size-medium wp-image-1003" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/08/addScript-300x82.png" alt="addScript" /></a>
+<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/addScript.png"><img class="alignnone size-medium wp-image-1003" src="addScript-300x82.png" alt="addScript" /></a>
 
 &nbsp;
 

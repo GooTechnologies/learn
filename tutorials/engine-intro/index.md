@@ -8,7 +8,7 @@ Hello and welcome, this tutorial will show you how to create a simple solar syst
 <h2>Introduction</h2>
 Goo Engine is built using what many consider the holy grail of game engine design: The Entity-Component-System. The <a href="http://en.wikipedia.org/wiki/Entity_component_system">Entity-Component-System</a> is a software design pattern that favors <strong>composition over inheritance</strong>. Users instantiate simple <a href="//code.gooengine.com/latest/docs/Entity.html"><strong>entities</strong></a> and then add powerful but focused <a href="//code.gooengine.com/latest/docs/Component.html"><strong>components</strong></a> to enable specific features. Finally, single purpose <a href="//code.gooengine.com/latest/docs/System.html"><strong>systems</strong></a> update all entities which have a matching <strong>component</strong>.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/ECS.png"><img class="size-medium wp-image-397 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/ECS-300x231.png" alt="ECS" /></a>
+<a href="ECS.png"><img class="size-medium wp-image-397 aligncenter" src="ECS-300x231.png" alt="ECS" /></a>
 <h2>Now contrast this with the traditional way of thinking:</h2>
 <em>"The traditional way of thinking about games is fairly intuitive. You represent objects in the game as objects in code. If you have a player, you'll create a player class that contains all the player's attributes; things like position, health, ammo, etc. Then you create an update() method that calls other methods like shoot() or jump() that read and change those attributes. To avoid repeating yourself, you'll probably end up creating some base classes because entities in a game often have many different variations with small differences."</em>
 <h2>The problem</h2>
@@ -144,7 +144,7 @@ sun.attachChild(earth);
 </code></pre>
 Here we create earth, at half the size of the sun. Yes, I know this is slightly inaccurate :-). We also pass in the earth texture we loaded before. Then we translate the entity 5 units to the right - along the X axis. Goo by default uses a <em>right hand</em> coordinate system:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/coords.gif"><img class="alignnone size-medium wp-image-398" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/coords-300x254.gif" alt="coords" /></a>
+<a href="coords.gif"><img class="alignnone size-medium wp-image-398" src="coords-300x254.gif" alt="coords" /></a>
 
 The earth texture was fine, but because we only have one light in the scene, earth was a bit dark, so I set the ambient color to white. Finally, we attach the earth entity to the sun. So if we rotate or move the sun, earth will be rotated and moved as well. In our case it will be rotated.
 <h2>Moon</h2>

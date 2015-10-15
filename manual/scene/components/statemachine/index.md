@@ -34,7 +34,7 @@ Controls such as shading mode, gizmo switch, camera selection can be found in th
 <p style="color: #363b40">State machines are added via <em>State machine components</em> attached to entities. State machines are good for adding interactivity without coding, and let you work with a large selection of predefined <em>actions</em>. Actions are activated when certain <em>states</em> become active, and states are in turn are encapsulated by <em>behaviors</em>.</p>
 
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/goon.png"><img class="wp-image-518 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/goon.png" alt="goon" /></a> A Goon with a state machine
+<a href="goon.png"><img class="wp-image-518 size-full" src="goon.png" alt="goon" /></a> A Goon with a state machine
 <h2>The Building Blocks</h2>
 <p style="color: #363b40">It’s difficult to explain the state machine concepts independently, so it might be worth reading through the following explanations twice to solidify the way things are connected.</p>
 
@@ -66,7 +66,7 @@ Controls such as shading mode, gizmo switch, camera selection can be found in th
 <p style="color: #363b40">There is a convenient way of communicating between states, between scripts and state machines, between the timeline and scripts, and even between behaviors. By emitting and listening to messages on the system bus, any type of actions and scripts can be triggered. The state machine facilitates this by providing Emit Message and Listen actions, both capable of transitions.</p>
 
 <h3>An Example</h3>
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/graph12.png"><img class="wp-image-517 size-large" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/graph12-1024x615.png" alt="" /></a> Application example, explained below (click to open large image)
+<a href="graph12.png"><img class="wp-image-517 size-large" src="graph12-1024x615.png" alt="" /></a> Application example, explained below (click to open large image)
 
 The picture above shows a (simplified) little application. The idea is the following: A character can either take cover, move or be dead. If some key is pressed while the character is taking cover, the player enters the “moving” state and starts moving. If the key is released while moving, the character goes back to taking cover. If the system bus emits on the channel “explode”, the character goes into the “dead” state. Here, it waits for some amount of time and then awakes from the dead and moves into the “taking cover” state.
 <p style="color: #363b40;text-align: left">The other behavior is separate, and might belong to another entity. This behavior moves a bomb between three states; disarmed, armed and exploding. The bomb can be armed or disarmed by pressing a key. If the bomb is armed long enough, it will explode and emit a message on the “explode” channel. It is up to other behaviors to listen to this message and react to it, as in the case with the character.</p>

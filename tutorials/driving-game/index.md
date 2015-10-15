@@ -18,31 +18,31 @@ Start Goo Create here:  <a href="//create.goocreate.com/">create.goocreate.com<
 Click on "+NEW PROJECT" top left and select "Default project". After the project has opened, click on the name of the project "Default Goo Project" and rename it to <strong>Scooter.</strong> Then click on "+IMPORT" and select the <em>Goo</em> library in the drop-down menu.
 
 Add the <strong>Hills</strong> skybox or any other skybox you like. Then add the <strong>Car</strong>, the <strong>Goo Logo</strong> and the <strong>Star</strong>.
-<p style="text-align: left"><a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/asset_lib.png"><img class="size-medium wp-image-436 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/asset_lib-300x264.png" alt="asset_lib" /></a></p>
+<p style="text-align: left"><a href="asset_lib.png"><img class="size-medium wp-image-436 aligncenter" src="asset_lib-300x264.png" alt="asset_lib" /></a></p>
 
 [alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: You can rotate the view with the right mouse button and select entities with the left.</span><br style="color: #000000" /><span style="color: #000000">You can also move the view with the middle mouse button.</span> [/alert]
 
 Your scene should look somewhat like this:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_0.png"><img class="size-medium wp-image-437 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_0-192x300.png" alt="scooter_0" /></a>
+<a href="scooter_0.png"><img class="size-medium wp-image-437 aligncenter" src="scooter_0-192x300.png" alt="scooter_0" /></a>
 
 Move the entities away from each other by selecting them and clicking and dragging the red arrow.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_1.png"><img class="size-medium wp-image-438 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_1-300x157.png" alt="scooter_1" /></a>
+<a href="scooter_1.png"><img class="size-medium wp-image-438 aligncenter" src="scooter_1-300x157.png" alt="scooter_1" /></a>
 
 Now select the Goo logo, scale it and turn it sideways by changing the values in the text fields under the Transform section in the Entity panel. Change the X and Y values for the scale to 100 and change the X value for the rotation to 90.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_2.png"><img class="size-full wp-image-441 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_2.png" alt="scooter_2" /></a>
+<a href="scooter_2.png"><img class="size-full wp-image-441 aligncenter" src="scooter_2.png" alt="scooter_2" /></a>
 
 It should now look like this:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_3.png"><img class="size-medium wp-image-442 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_3-300x203.png" alt="scooter_3" /></a>
+<a href="scooter_3.png"><img class="size-medium wp-image-442 aligncenter" src="scooter_3-300x203.png" alt="scooter_3" /></a>
 
 We will use the sideways Goo logo as a track to drive on. If you fall off the track, you lose! We will also place stars over the track to push around.
 
 But let's first add a PointLight: Click on "+CREATE" and click on "POINT" under the "LIGHTS" section. Drag it above the scene using the arrows or set the position using the transform panel and set the light's range to 500. Here are the values we're using;
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_light.png"><img class="size-medium wp-image-443 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_light-174x300.png" alt="scooter_light" /></a>
+<a href="scooter_light.png"><img class="size-medium wp-image-443 aligncenter" src="scooter_light-174x300.png" alt="scooter_light" /></a>
 
 [alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: We recommend to delete the "Default Lights", this will increase performance on mobile devices.</span><br style="color: #000000" /><span style="color: #000000">Select the "Default Lights" and click on the little trashcan icon top right.</span> [/alert]
 
@@ -50,11 +50,11 @@ Move the car over the track and rotate it a bit on it's Y axis. Lift the car up 
 
 Your scene should look something like this:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_4.png"><img class="size-medium wp-image-444 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_4-300x179.png" alt="scooter_4" /></a>
+<a href="scooter_4.png"><img class="size-medium wp-image-444 aligncenter" src="scooter_4-300x179.png" alt="scooter_4" /></a>
 
 Now is a good time to take a project screen shot so we can find the project again in the project dashboard. Click on the project name "SCOOTER" at the top and then click on "TAKE SCREENSHOT" to the left.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_5.png"><img class="size-medium wp-image-445 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_5-222x300.png" alt="scooter_5" /></a>
+<a href="scooter_5.png"><img class="size-medium wp-image-445 aligncenter" src="scooter_5-222x300.png" alt="scooter_5" /></a>
 
 OK, we are ready to take over with JavaScript.
 <h2>Add ScriptComponents</h2>
@@ -62,7 +62,7 @@ Let's start with something easy. Did you notice the little propeller on the car 
 
 Click on the little triangle next to the <strong>Car</strong> entity in the hierarchy panel. You should see three child entities and one of them is called <strong>prop<em>mesh</em></strong>. Select the propmesh entity and add a new ScriptComponent using the button ADD COMPONENT in the left entity panel. Then add a new "custom script" and click on the edit symbol.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_edit_script.png"><img class="size-medium wp-image-446 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_edit_script-252x300.png" alt="scooter_edit_script" /></a>
+<a href="scooter_edit_script.png"><img class="size-medium wp-image-446 aligncenter" src="scooter_edit_script-252x300.png" alt="scooter_edit_script" /></a>
 
 This should open up a new script editor window. Replace the example script contents with this content:
 
@@ -93,7 +93,7 @@ Save the script and click on the play button at the bottom of the Goo Create win
 
 Next, we will make the camera chase the car. Click on the "Default Camera" in the right hierarchy panel. Now open up the SCRIPT panel on the left side and delete the OrbitNPan camera control script:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_delete_orbit_script.png"><img class="size-medium wp-image-447 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_delete_orbit_script-240x300.png" alt="scooter_delete_orbit_script" /></a>
+<a href="scooter_delete_orbit_script.png"><img class="size-medium wp-image-447 aligncenter" src="scooter_delete_orbit_script-240x300.png" alt="scooter_delete_orbit_script" /></a>
 
 Instead add a new custom script and replace the example script contents with this content:
 
@@ -322,7 +322,7 @@ That's it, you are ready to push some stars of the goo logo with your car!
 
 Click on EXPORT and then PUBLISH YOUR PROJECT:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_publish.png"><img class="size-medium wp-image-448 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scooter_publish-261x300.png" alt="scooter_publish" /></a>
+<a href="scooter_publish.png"><img class="size-medium wp-image-448 aligncenter" src="scooter_publish-261x300.png" alt="scooter_publish" /></a>
 
 Now try out the game!
 

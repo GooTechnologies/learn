@@ -31,7 +31,7 @@ If you don't want to set the scene up yourself, it can be found <a href="https:/
 <h2>Making a Rotation Script</h2>
 The rest of this tutorial will be focused on scripting. We will use the same script to rotate the model as well as set up the controls for it. Let's start by adding a script component to the ColorCube model, and then adding a custom script to the new component. Doing those two things should and naming the script will leave us with an entity looking like this:
 
-<img class="wp-image-299 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/entity_with_script.png" alt="entity_with_script" /> The ColorCube entity with an empty custom script
+<img class="wp-image-299 size-full" src="entity_with_script.png" alt="entity_with_script" /> The ColorCube entity with an empty custom script
 
 We'll start by writing a script for the rotation, and then test it without any buttons. In general, trying to write parts of an application and testing them individually before moving on is a very good idea! We'll call the function rotate.
 
@@ -120,7 +120,7 @@ var parameters = [{
 
 That's it for the rotation part! The script in the component panel should now look like this:
 
-<img class="wp-image-300 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/rotation_script.png" alt="rotation_script" /> Controls for the rotation
+<img class="wp-image-300 size-full" src="rotation_script.png" alt="rotation_script" /> Controls for the rotation
 
 Now press play, and you should see the cube in action.
 <p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/8ca9bba522acfb9fcacd28c6a51d873a1f68cb15/" width="600" height="300"]</p>
@@ -251,7 +251,7 @@ We have the rotation and we have the buttons. However, our hunger for cool stuff
 <h3>Button Color Picker</h3>
 One of the type of controls we can create in the component panel is a color picker.
 
-<img class="size-full wp-image-297 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/colorpicker.png" alt="colorpicker" />
+<img class="size-full wp-image-297 aligncenter" src="colorpicker.png" alt="colorpicker" />
 
 The parameter object looks like this:
 
@@ -329,7 +329,7 @@ for (var easing in easings) {
 
 You should now be able to see a bunch of different easings in a drop-down menu:
 
-<img class="size-full wp-image-298 aligncenter" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/easings.png" alt="easings" />
+<img class="size-full wp-image-298 aligncenter" src="easings.png" alt="easings" />
 
 Now we need to convert the strings back into easing objects from the library, and we'll do this with this slightly contrived code:
 

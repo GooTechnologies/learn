@@ -21,13 +21,13 @@ A Component is made for a specific purpose. There are many types of Components, 
 </ul>
 Each type of Component is meant to be simple in isolation, but Entities can of course have several components attached to it. A camera entity would need a TransformComponent and a CameraComponent, for example.
 
-<img class="wp-image-423 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/light1.png" alt="light" /> A light Entity typically consists of a TransformComponent and a LightComponent  <em> </em>
+<img class="wp-image-423 size-full" src="light1.png" alt="light" /> A light Entity typically consists of a TransformComponent and a LightComponent  <em> </em>
 <h2>Systems</h2>
 Systems keep track of the components. Since each type of Component takes care of one specific thing, it makes sense to also have a System for each component type. When adding new Components to Entities, the Components get registered with the corresponding System. The Systems run continuously and make sure to update the Components when needed. As you might have guessed, isolating functionality in this manner provides excellent encapsulation between different kinds of features. Each System type can also be optimized to solve its specific tasks fast and efficient.
 
 Remember when you were told that each System has one matching Component? That was a simplification. In reality, one System can be interested in multiple Component types. The image below shows a very simple scene; a sphere and a camera. Both these objects are represented with Entities, and their features are represented with Components. The following happens: A TransformSystem keeps track of all transforms, a CameraSystem handles the single camera and a RenderSystem takes take of both the vertex data (MeshDataComponent) and the material (MeshRendererComponent) of the sphere.
 
-<img class="wp-image-422 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/graph21.png" alt="graph2" /> A simple scene with two entities, their components and the needed systems
+<img class="wp-image-422 size-full" src="graph21.png" alt="graph2" /> A simple scene with two entities, their components and the needed systems
 <h2 style="text-align: left">The World and the Runner</h2>
 <h3>The World</h3>
 The World harbors all Entities and provides a 3D world coordinate system for everything to lived in. This means that the World is the access point for all Entities when we want to modify them.
@@ -42,6 +42,6 @@ var allEntities = gooRunner.world.getEntities();
 <h2>How it all fits together</h2>
 This image below illustrated how the main parts fit together. GooRunner holds the world, which in turn contains the Entities. Entities in turn consist of different Components. To make everything run, GooRunner updates the World and its Systems, and each type of System takes care of the corresponding type of Component.
 
-<img class="wp-image-421 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/graph11.png" alt="graph1" /> A schematic overview of the main parts in Goo Engine
+<img class="wp-image-421 size-full" src="graph11.png" alt="graph1" /> A schematic overview of the main parts in Goo Engine
 <h2>Details and Disclaimers</h2>
 This article is a high-level description of what's going on, and intentionally leaves a lot of details out. For example, the components in Create look a little different than in engine code. The MeshDataComponent is represented by Geometry, and the MeshRendererComponent functionality is reached via Materials. These are just some simplifications that makes Create easier to work with, but it is useful to know what goes on behind the scenes. Another example of something that the article leaves out is Managers, who is the actual link for selecting Entities in the World.

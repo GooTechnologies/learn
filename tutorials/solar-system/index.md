@@ -8,7 +8,7 @@ Hi fellow Goons,
 
 In this tutorial, we will show you how you can use the <em>ScriptComponent</em> to make a solar system, just like in the <a href="http://learn.goocreate.com/engine-intro-tutorial/">Hello World engine tutorial</a>
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/solar.png"><img class="alignnone wp-image-411 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/solar.png" alt="solar" /></a>
+<a href="solar.png"><img class="alignnone wp-image-411 size-full" src="solar.png" alt="solar" /></a>
 
 The ScriptComponent is a component that you can add to an entity in <a href="//app.goocreate.com">Goo Create</a>. It allows you use the programming language JavaScript together with a subset of the Goo Engine API to control the behavior of your Goo entities in real time. In comparison to the State Machine the ScriptComponent is more powerful and provides a very high level of flexibility.
 
@@ -28,7 +28,7 @@ We will add three spheres. They will represent the Sun, Earth and the Moon.
 
 To add a sphere, click on <strong>+CREATE</strong> and then select the <em>sphere</em> icon:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/sphere_icon.png"><img class="alignnone wp-image-412 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/sphere_icon.png" alt="sphere_icon" /></a>
+<a href="sphere_icon.png"><img class="alignnone wp-image-412 size-full" src="sphere_icon.png" alt="sphere_icon" /></a>
 
 This will be our Sun, so let’s call the entity <em>Sun.</em>
 
@@ -36,13 +36,13 @@ If you want to, open up the <strong>Geometry</strong> settings and increase the 
 
 Next, we will add earth: Click on <strong>Create</strong> again and add another sphere. Then increase the X and Y samples and give it the name <em>Earth</em>. After that, go to the <strong>Transform</strong> settings and set the X translation to 4 and scale X,Y,Z to 0.4:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/earth_transform.png"><img class="alignnone wp-image-414 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/earth_transform.png" alt="earth_transform" /></a>
+<a href="earth_transform.png"><img class="alignnone wp-image-414 size-full" src="earth_transform.png" alt="earth_transform" /></a>
 
 Next we will add the Moon.
 
 Click on +<strong>CREATE</strong> again and add another sphere. Increase the X and Y samples and give it the name <em>Moon</em>. Then go to the <strong>Transform</strong> settings again and set the X translation to 2 and scale X,Y,Z to 0.1:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/moon_transform.png"><img class="alignnone wp-image-415 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/moon_transform.png" alt="moon_transform" /></a>
+<a href="moon_transform.png"><img class="alignnone wp-image-415 size-full" src="moon_transform.png" alt="moon_transform" /></a>
 
 [alert type="info"]Please note: The moon will look to be very close to the sun, but don’t worry, once we nest the Moon as a child entity to the Earth entity it will look correct again. Nesting the entities will be done as one of the last steps in the tutorial.[/alert]
 
@@ -50,7 +50,7 @@ Next, we will add a <em>point light</em> to make the Sun appear to shine light o
 
 To add a point light click on <strong>Create</strong> and click the <strong>Point</strong> button:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/point_light.png"><img class="alignnone wp-image-418 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/point_light.png" alt="point_light" /></a>
+<a href="point_light.png"><img class="alignnone wp-image-418 size-full" src="point_light.png" alt="point_light" /></a>
 
 [alert type="info"]If you are wondering where the point light is: It is inside the sun and will shine through the Sun model onto Earth and the Moon[/alert]
 <h2>Add some Materials</h2>
@@ -64,7 +64,7 @@ We will use the same textures as in the Hello World tutorial. You can download t
 
 To assign the Sun texture in the material settings, click on the <em>Sun</em> entity and open up the <strong>Material</strong> settings: Then drag and drop the <em>sun.png</em> file onto the color texture slot:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/drop_texture.png"><img class="alignnone wp-image-419 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/drop_texture.png" alt="drop_texture" /></a>
+<a href="drop_texture.png"><img class="alignnone wp-image-419 size-full" src="drop_texture.png" alt="drop_texture" /></a>
 
 Next, go to the ambient settings and change the color to bright yellow. This will make the Sun appear bright even though the light is inside the model and is not lighting up the sun itself. Next, select the Earth sphere and open up the <strong>Material</strong> settings and drag and drop the Earth texture onto the color texture slot. You will notice that the earth appears to be turned to the side by 90 degrees. Don’t worry, we will fix this in a later step.
 
@@ -74,13 +74,13 @@ Finally, repeat the process for the moon.
 <h2>Add a ScriptComponent to the first two spheres</h2>
 Okay, now we get to talk about the ScriptComponent. Select the sun again and click on <strong>Add Component</strong> and click on <strong>Script</strong>.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/add_component.png"><img class="alignnone wp-image-420 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/add_component.png" alt="add_component" /></a>
+<a href="add_component.png"><img class="alignnone wp-image-420 size-full" src="add_component.png" alt="add_component" /></a>
 
 Open up the new ScriptComponent's settings and select <strong>Add Script</strong> and click on <strong>Custom</strong>.
 
 Once you have added a script, you can click on the <strong>Edit</strong> symbol to open up a new window with the script editor.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/edit_script.png"><img class="alignnone wp-image-426 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/edit_script.png" alt="edit_script" /></a>
+<a href="edit_script.png"><img class="alignnone wp-image-426 size-full" src="edit_script.png" alt="edit_script" /></a>
 
 [alert type="info"]Please note: You can leave the script editor window open, it will automatically switch to new contents when you change entities.[/alert]
 
@@ -96,7 +96,7 @@ var parameters = [];
 </code></pre>
 The <strong>setup</strong> function can be used to initialize variables, state and anything else you want to initialize. It will be called every time you press the <strong>play</strong> button in Create or when running an exported project.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png"><img class="alignnone wp-image-427 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png" alt="press_play" /></a>
+<a href="press_play.png"><img class="alignnone wp-image-427 size-full" src="press_play.png" alt="press_play" /></a>
 
 The <strong>cleanup</strong> function can be used to clean up state and anything else you want to clean up. It will be called every time you press the <em>stop</em> button in Create or delete a script. It usually is used to reset the entities position and rotation after you changed them in the update or setup function. It can also be used to removed anything you created using scripting, or to remove event listeners et cetera.
 
@@ -135,11 +135,11 @@ Repeat the script process in exactly the same way for the Earth entity to finish
 </code></pre>
 The difference between the Sun script and this script for Earth is because Earth appears to be turned to the side by 90 degrees. With the function setRotation we can fix this, by rotating the earth around the X axis by -90 degrees. Goo uses a 3D math library where every angle needs to be in <a href="http://en.wikipedia.org/wiki/Radian">radians</a>. As the second parameter we pass in the time property of the ctx.world object which is similar to the ctx.world.tpf property but instead of containing the time per frame it contains the time since the program started in floating point seconds.
 
-Ok, time to test: Click on the <strong>play</strong> button and look closely at the Sun and Earth and you should see them slowly rotating: <a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png"><img class="alignnone wp-image-427 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png" alt="press_play" /></a>
+Ok, time to test: Click on the <strong>play</strong> button and look closely at the Sun and Earth and you should see them slowly rotating: <a href="press_play.png"><img class="alignnone wp-image-427 size-full" src="press_play.png" alt="press_play" /></a>
 <h2>Nest the spheres</h2>
 This step is very easy: Inside the <em>Hierarchy</em> window, drag and drop the Earth entity onto the Sun entity. Then drag and drop the moon entity onto the Earth entity:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/nested_spheres.png"><img class="alignnone wp-image-428 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/nested_spheres.png" alt="nested_spheres" /></a>
+<a href="nested_spheres.png"><img class="alignnone wp-image-428 size-full" src="nested_spheres.png" alt="nested_spheres" /></a>
 
 [alert type="info"]You can click on the little triangle in front of an entity to show its children.[/alert]
 
@@ -153,7 +153,7 @@ The reason is that nested entities have their parents transformation applied to 
 <h2>Add a Bloom post effect and a Skybox</h2>
 Ok, for the last step we will add a bit of eye candy: In your <em>Hierarchy</em> window click on the entity called <strong>Scene</strong> and you should see a <strong>Post Effect</strong> settings panel on the left side of Goo Create.
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/postfx.png"><img class="alignnone size-full wp-image-429" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/postfx.png" alt="postfx" /></a>
+<a href="postfx.png"><img class="alignnone size-full wp-image-429" src="postfx.png" alt="postfx" /></a>
 
 Click on <strong>Add Effect</strong> and click on <strong>Bloom</strong>. You should immediately get a nice glow effect around your sun.
 
@@ -161,4 +161,4 @@ Finally click on <strong>Import</strong> and click on <strong>Import From Asset 
 
 And here, again, is the beautiful result:
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/solar.png"><img class="alignnone wp-image-411 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/solar.png" alt="solar" /></a>
+<a href="solar.png"><img class="alignnone wp-image-411 size-full" src="solar.png" alt="solar" /></a>
