@@ -36,7 +36,7 @@ Now we need to open and edit this script.  You do this by clicking the icon whi
 
 Remove all the existing code from the code editor, and then paste this inside it:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo){
 
   var sound = {};
@@ -57,7 +57,7 @@ var cleanup = function(args, ctx, goo){
   var button = document.getElementById('button1');
   button.removeEventListener('click', ctx.playSound);
 }
-</code></pre>
+{% endhighlight %}
 
 In the setup() function, we first create a sound map, to map the sound names to the actual sound objects. This isn't so important in this demo, because we only have one single sound, but when you start adding more and more sounds, this becomes a necessary step.
 
