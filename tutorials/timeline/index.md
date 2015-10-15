@@ -5,13 +5,16 @@ weight: 5500
 indent: 1
 ---
 In this tutorial, we will go over the basics of the timeline, and see how keyframes can be used to control animations.
-<h2>Setting Up</h2>
-We will be using a small scene with the Earth and an UFO. The easiest way to get a hold of the scene is logging in to Create, <a href="https://app.goocreate.com/4768/642b84f5a9944f12b5c3b84deb8ad7d3.scene" target="_blank">opening this link</a> and duplicating the scene. That will copy the whole thing into a project of your own, so that you can edit it.
-<p style="text-align: center"><img class="alignnone size-full wp-image-332" src="fresh_project.jpg" alt="fresh_project" /></p>
-<p style="text-align: center"><em>The scene can be duplicated from <a href="https://app.goocreate.com/4768/642b84f5a9944f12b5c3b84deb8ad7d3.scene" target="_blank">here</a>.</em></p>
-Now take a look at the hierarchy on the right side. There are two UFO entities, and both are children of the World. The idea is the following: The UFOWorldCenter entity is placed in the center of the World, so rotating it will do so relative to that center. Try it! The UFO will seem to orbit. The UFORelative entity has a transform relative to the center, so when changing it's Y axis translation, the height above the surface is affected. Rotating this entity will only rotate the UFO locally. These nested transforms make it very nice to work with the animations, as we will see soon. Feel free to move the transforms around to get a feel for how they work!
 
-&nbsp;
+<h2>Setting Up</h2>
+
+We will be using a small scene with the Earth and an UFO. The easiest way to get a hold of the scene is logging in to Create, <a href="https://app.goocreate.com/4768/642b84f5a9944f12b5c3b84deb8ad7d3.scene" target="_blank">opening this link</a> and duplicating the scene. That will copy the whole thing into a project of your own, so that you can edit it.
+
+<img class="alignnone size-full wp-image-332" src="fresh_project.jpg" alt="fresh_project" />
+
+<em>The scene can be duplicated from <a href="https://app.goocreate.com/4768/642b84f5a9944f12b5c3b84deb8ad7d3.scene" target="_blank">here</a>.</em>
+
+Now take a look at the hierarchy on the right side. There are two UFO entities, and both are children of the World. The idea is the following: The UFOWorldCenter entity is placed in the center of the World, so rotating it will do so relative to that center. Try it! The UFO will seem to orbit. The UFORelative entity has a transform relative to the center, so when changing it's Y axis translation, the height above the surface is affected. Rotating this entity will only rotate the UFO locally. These nested transforms make it very nice to work with the animations, as we will see soon. Feel free to move the transforms around to get a feel for how they work!
 
 <img class="wp-image-335 size-full" src="worldcenter.jpg" alt="worldcenter" /> The parent UFO transform is anchored at the World's center
 <h2>Adding Two Timelines</h2>
