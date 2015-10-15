@@ -18,7 +18,8 @@ Start Goo Create here:  <a href="//create.goocreate.com/">create.goocreate.com<
 Click on "+NEW PROJECT" top left and select "Default project". After the project has opened, click on the name of the project "Default Goo Project" and rename it to <strong>Scooter.</strong> Then click on "+IMPORT" and select the <em>Goo</em> library in the drop-down menu.
 
 Add the <strong>Hills</strong> skybox or any other skybox you like. Then add the <strong>Car</strong>, the <strong>Goo Logo</strong> and the <strong>Star</strong>.
-<p style="text-align: left"><a href="asset_lib.png"><img class="size-medium wp-image-436 aligncenter" src="asset_lib-300x264.png" alt="asset_lib" /></a></p>
+
+<a href="asset_lib.png"><img class="size-medium wp-image-436 aligncenter" src="asset_lib-300x264.png" alt="asset_lib" /></a>
 
 [alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: You can rotate the view with the right mouse button and select entities with the left.</span><br style="color: #000000" /><span style="color: #000000">You can also move the view with the middle mouse button.</span> [/alert]
 
