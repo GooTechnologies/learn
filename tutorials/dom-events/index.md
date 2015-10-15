@@ -30,7 +30,7 @@ The <strong>evt</strong> object will contain properties of the event. For exampl
 <h3>Scene Setup</h3>
 The scene we're going to work with is super simple. Just add any 3D entity of choice and choose a nice camera angle. We'll use a simple <strong>box</strong> for illustration. Next, we need to add a <strong>script component</strong> to the box and add a <strong>custom script</strong> to the script component. Let's call the script <em>Spinner.</em>
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scene-setup1.jpg"><img class="wp-image-174 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/scene-setup1.jpg" alt="scene-setup" /></a> After adding a box, choosing some nice colors and creating a customscript. Red circles indicate buttons for adding a script component and adding a script
+<a href="scene-setup1.jpg"><img class="wp-image-174 size-full" src="scene-setup1.jpg" alt="scene-setup" /></a> After adding a box, choosing some nice colors and creating a customscript. Red circles indicate buttons for adding a script component and adding a script
 <h3>Adding and Removing Event Listeners</h3>
 Using DOM event listeners in script inside Create is not complicated, but there are some things we need to keep in mind. For example, remember that scripts have a <strong>setup</strong> and a <strong>cleanup</strong> function which run when pressing play or stop, respectively. That makes the setup function is perfect for adding event listeners, but it also means that we need to remove them in cleanup, because otherwise the <em>added</em> <em>event listeners will persist</em> and we'll get another set everytime we press play!
 
@@ -66,7 +66,7 @@ var cleanup = function(args, ctx, goo) {
 
 If you add the functions above to the script and run it, you can open up the console and check out the triggered mouse events!
 
-<a href="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/console.jpg"><img class="wp-image-175 size-full" src="http://goolabs.wpengine.com/learn/wp-content/uploads/sites/2/2014/07/console.jpg" alt="console" /></a> Testing the basic event listener structure using the console
+<a href="console.jpg"><img class="wp-image-175 size-full" src="console.jpg" alt="console" /></a> Testing the basic event listener structure using the console
 
 If everything seems to work correctly (testing is <em>important</em>), we can go on with adding some more interesting functionality to the script.
 <h3>Spinning with Speed</h3>
