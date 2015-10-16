@@ -1,6 +1,8 @@
 ---
 title: State Machine Component
 layout: manual
+weight: 1403
+indent: 3
 ---
 
 The state machine is a visual programming tool that makes it really fast for you to prototype your project.

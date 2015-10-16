@@ -1,7 +1,8 @@
 ---
 title: The 3D viewport
-indent: 1000
 layout: manual
+weight: 901
+indent: 2
 ---
 
 In the center of the editor, the WebGL-rendered viewport is located. Here you can nagivate, inspect and preview the contents of your scene.

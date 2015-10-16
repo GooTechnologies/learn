@@ -1,6 +1,6 @@
 ---
 title: Editor
-indent: 0
+indent: 1
 weight: 900
 layout: manual
 ---

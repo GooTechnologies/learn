@@ -1,6 +1,8 @@
 ---
 title: Environment panel
 layout: manual
+weight: 1404
+indent: 2
 ---
 
 ![Environment panel](environment-panel-expanded.png)

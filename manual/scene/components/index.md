@@ -1,8 +1,8 @@
 ---
 layout: manual
 title: Components
-weight: 1401
-indent: 1
+weight: 1402
+indent: 2
 layout: manual
 ---
 Entities and Components are the two fundamental building blocks in the Goo World. Goo Engine uses them at a core level, and the interface of Goo Create approximately reflects their relationship as well.

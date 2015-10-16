@@ -1,8 +1,9 @@
 ---
 title: Parameters
 layout: manual
+indent: 2
+weight: 4010
 ---
-
 To define custom parameters in a Create script, the <em>parameter array </em>and the <em>args </em>object are used.
 
 <pre><code>

@@ -1,5 +1,6 @@
 {% assign i = '&nbsp;&nbsp;&nbsp;&nbsp;' %}
 {% assign i2 = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' %}
+{% assign i3 = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' %}
 <div class="col-md-4">
 
   <div class="list-group">
@@ -14,6 +15,8 @@
             {{ i }}
           {% when 2 %}
             {{ i2 }}
+          {% when 3 %}
+            {{ i3 }}
           {% endcase %}
           {{ ppage.title }}
         </a>

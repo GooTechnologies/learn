@@ -4,8 +4,8 @@ weight: 3600
 indent: 1
 layout: manual
 ---
-<h2>Asset Types</h2>
 <h3>Meshes</h3>
+
 A mesh is a set of points (vertices) which defines the <em>geometry</em> of a 3D model. Every renderable 3D entity must therefore have a mesh (and a material, which we'll discuss later). Mesh data is handled by the <a href="http://code.gooengine.com/latest/docs/MeshDataComponent.html" target="_blank">MeshDataComponent </a> in the engine. Mesh data not only includes vertices, but also normals and the local bounding volume, for example. At the time of writing, mesh data can not be modified directly in the Create interface. The exceptions are some primitives, where some <em>geometry parameters</em> can be adjusted.
 
 <a href="wireframe.jpg"><img class="wp-image-677 size-full" src="wireframe.jpg" alt="" /></a> 
