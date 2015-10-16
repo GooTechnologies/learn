@@ -6,7 +6,7 @@ weight: 4010
 ---
 To define custom parameters in a Create script, the <em>parameter array </em>and the <em>args </em>object are used.
 
-<pre><code>
+{% highlight js %}
 parameters = [{
 	name: "Velocity",
 	key: "velocity",
@@ -17,9 +17,11 @@ parameters = [{
 var setup = function(args, ctx, goo) {
     console.log(args.velocity);
 };
-</code></pre>
+{% endhighlight %}
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/07/velocity1.jpg"><img class="wp-image-779 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/07/velocity1.jpg" alt="" /></a> Defined parameters show up in the script component panel!
+<a href="velocity1.jpg"><img class="wp-image-779 size-full" src="velocity1.jpg" alt="" /></a>
+
+Defined parameters show up in the script component panel!
 
 All parameters that are declared in the <em>parameters</em> array are accessed via the <strong>args </strong>object and are also displayed the <em>script component panel</em> in Create. This makes scripts much easier to work with, and it enables customization of scripts without having to change any code! Below you can read more about what the custom parameters lets you do.
 <h2>Parameter Format</h2>
@@ -54,35 +56,41 @@ Different types can have different controls which in turn have several different
 
 <strong>"slider"</strong> - A slider for numbers. The specific options <em>scale</em> and <em>exponential</em> can be used with it, in addition to the number options <em>min,</em> <em>max </em>and<em> precision</em>.
 
-<pre><code>
+{% highlight js %}
 var parameters = [{ key: "magnitude", name: "Magnitude", type: "float",
     default: 10.0, min: 5.0, max: 15.0, control: "slider" }];
-</code></pre>
+{% endhighlight %}
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/07/slider1.jpg"><img class="wp-image-784 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/07/slider1.jpg" alt="" /></a> "slider" control type
+<a href="slider1.jpg"><img class="wp-image-784 size-full" src="slider1.jpg" alt="" /></a>
+
+"slider" control type
 
 <strong>"color"</strong> - Brings up an RBG color picker for the <em>vec3</em> type.
 
-<pre><code>
+{% highlight js %}
 var parameters = [{ key: "playerColor", name: "Player Color",
 	type: "vec3", default: [0, 1, 0], control: "color" }];
-</code></pre>
+{% endhighlight %}
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/07/color.jpg"><img class="size-full wp-image-781" src="http://goocreate.com/wp-content/uploads/sites/3/2014/07/color.jpg" alt="&quot;color&quot; control option" /></a> "color" control type
+<a href="color.jpg"><img class="size-full wp-image-781" src="color.jpg" alt="&quot;color&quot; control option" /></a>
+
+"color" control type
 
 <strong>"select" </strong>or<strong> "dropdown"</strong> - Used to define a list of options of the selected type.  Use the options array to define the available options.
 
-<pre><code>
+{% highlight js %}
 var parameters = [{ key: "weapon", name: "Weapon",
 	type: "string", default: "Wooden Sword", control: "select",
 	options: ["Wooden Sword", "Banana", "Laser Bazooka"]}];
-</code></pre>
+{% endhighlight %}
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/07/option.jpg"><img class="size-full wp-image-782" src="http://goocreate.com/wp-content/uploads/sites/3/2014/07/option.jpg" alt="&quot;select&quot; control" /></a> "select" control type
+<a href="option.jpg"><img class="size-full wp-image-782" src="option.jpg" alt="&quot;select&quot; control" /></a>
+
+"select" control type
 
 When using the <strong>select,</strong> the options can be created dynamically, which can be useful sometimes (example from the <a title="HTML and CSS Buttons (Rotating Cube)" href="http://goolabs.wpengine.com/learn/html-and-css-buttons-rotating-cube/" target="_blank">Rotating Cube tutorial</a>):
 
-<pre><code>
+{% highlight js %}
 var easingNames = [];
 var easings = window.TWEEN.Easing;
 for (var easing in easings) {
@@ -104,8 +112,10 @@ var parameters = [{
     options: easingNames,
     default: easingNames[0]
 }];
-</code></pre>
+{% endhighlight %}
 
 <strong>"jointSelector</strong>" or <strong>"joint"</strong> - used together with an int, to get the ID of a joint. Needs to be used on scripts whose parent entities have joints.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/07/joint.jpg"><img class="size-full wp-image-1148" src="http://goocreate.com/wp-content/uploads/sites/3/2014/07/joint.jpg" alt="Joint selector on the Goon" /></a> Joint selector on the Goon
+<a href="joint.jpg"><img class="size-full wp-image-1148" src="joint.jpg" alt="Joint selector on the Goon" /></a>
+
+Joint selector on the Goon

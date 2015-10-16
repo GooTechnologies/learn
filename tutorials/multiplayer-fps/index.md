@@ -53,30 +53,30 @@ For game client, our obvious choice is <em>Goo Create</em>. The server is a <em
 <h3>Client-Side Communication and Events</h3>
 On the Create side, things are (somewhat) organized into scripts, and sending messages to the server is done with a global (ctx.worldData scope) function:
 
-<pre><code>
+{% highlight js %}
 ctx.worldData.pushMessage = function(message, data) {
 	ctx.ws.send(JSON.stringify({message: message, data: data}));
 	ctx.seq++;
 };
-</code></pre>
+{% endhighlight %}
 
 As you can tell, a message may and often will come with some data. More about that later. The important point is that the communication is handled using JSON.
 
 When a message comes back from the server, something similar happens:
 
-<pre><code>
+{% highlight js %}
 ctx.ws.onmessage = function(messageString) {
 	var message = JSON.parse(messageString.data).message;
 	var data = JSON.parse(messageString.data).data;
 	handleMessage(ctx, message, data);
 };
-</code></pre>
+{% endhighlight %}
 
 The message is split up into the actual message and the data, and then a function is called to handle the message. The <strong>handleMessage</strong> function makes heavy use of the System Bus to first set some state from the server and then emit a message that something changed. The rest of the scripts may then do as they please with the information. Look at the <em>Connection and Messaging</em> script to get the general idea.
 <h3>Server Connections</h3>
 The Node server uses the ws module for WebSockets communication. After setting up the server (please refer to the source code) the server is ready to accept events.
 
-<pre><code>
+{% highlight js %}
 
 wss.on('connection', function(ws) {
 	var socket_id, player, init_data;
@@ -109,7 +109,7 @@ wss.on('connection', function(ws) {
 	send_to_one(socket_id, 's_init', init_data);
 	send_to_all('s_player_connected', player);
 });
-</code></pre>
+{% endhighlight %}
 
 The main flow of events when a client connects is:
 1. The connection (the ws object) it stored by a simple ID.

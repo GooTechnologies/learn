@@ -11,7 +11,7 @@ A great way to reduce load times is to use procedurally generated geometry. Ther
 The most basic approach is to generate the vertices directly. Here is a simple example generating the data for a 3D <a href="https://github.com/evanw/csg.js/blob/master/csg.js#L173">cube</a>.
 
 The resulting data includes the vertices, the normals and the texture coordinates.
-<pre><code>function pushVertices( obj, v, n) {
+{% highlight js %}function pushVertices( obj, v, n) {
   for ( var i = 0; i&lt;v.length; i++) {
     obj.v.push( 2*!(v[i]&amp;1)-1, 2*!(v[i]&amp;2)-1, 2*!(v[i]&amp;4)-1 ); // vertices
     obj.n.push.apply( obj.n, n); // normals
@@ -35,7 +35,7 @@ function generateCube() {
   }
   return obj;
 }
-</code></pre>
+{% endhighlight %}
 Similar code can be used to generate <a href="https://github.com/evanw/csg.js/blob/master/csg.js#L210">spheres</a> and <a href="https://github.com/evanw/csg.js/blob/master/csg.js#L252">cylinders</a> and many other basic shapes.
 <h2>Surface of Revolution (or Lathe)</h2>
 The <a href="http://en.wikipedia.org/wiki/Surface_of_revolution">surface of revolution</a> technique uses a line or a spline curve and rotates it around an axis, for example the vertical axis. This technique is also known as lathing.
@@ -45,7 +45,7 @@ The <a href="http://en.wikipedia.org/wiki/Surface_of_revolution">surface of revo
 Here is an example using Goo Engine: <a href="http://goote.ch/b3ddad02a95e44eb7d85e6f99540650dc9aa6def/">http://goote.ch/b3ddad02a95e44eb7d85e6f99540650dc9aa6def/</a>
 
 The relevant code is this:
-<pre><code>var section = goo.PolyLine.fromCubicSpline([
+{% highlight js %}var section = goo.PolyLine.fromCubicSpline([
   3 + 0, -1, 0,
   3 + 1,  0, 0,
   3 + 1,  1, 0,
@@ -58,13 +58,13 @@ var latheMeshData = section.lathe(20);
 var material = new goo.Material(goo.ShaderLib.simpleLit);
 material.cullState.enabled = false;
 ctx.world.createEntity(latheMeshData, material).addToWorld();
-</code></pre>
+{% endhighlight %}
 Note: Because we can see the inside of the geometry the code turns of back face culling.
 <h2>Heightmap</h2>
 Another great option especially for terrain is to use a heightmap to generate geometry. The basic task of a 3D heightmap function is to convert a map of values to an area of triangles. Here is an <a href="http://code.gooengine.com/latest/visual-test/goo/geometrypack/Surface/HeightMap-vtest.html">example</a> using Goo Engine:
 
 The relevant code for this is:
-<pre><code>function getHeightMap(nLin, nCol) {
+{% highlight js %}function getHeightMap(nLin, nCol) {
     var matrix = [];
     for (var i = 0; i &lt; nLin; i++) {
         matrix.push([]);
@@ -79,7 +79,7 @@ var matrix = getHeightMap(64,64);
 var meshData = Surface.createFromHeightMap(matrix);
 var material = new Material(ShaderLib.simpleLit);
 world.createEntity(meshData, material).addToWorld();
-</code></pre>
+{% endhighlight %}
 In this example the heightmap is generated using sine and cosine values. But you can also use gray scale images as input.
 <h2>Constructive Solid Geometry (CSG)</h2>
 <a href="http://en.wikipedia.org/wiki/Constructive_solid_geometry">CSG</a> is a process where one can use shapes and combine them together or subtract them from one another. The basic operations are <strong>union</strong>, <strong>subtract</strong>, and <strong>intersect</strong>.

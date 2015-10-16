@@ -20,7 +20,7 @@ Typically most engines support View Frustum Culling automatically. Additionally,
 The best thing to do is to combine different entities into one entity using something like a <a href="//code.gooengine.com/latest/docs/MeshBuilder.html">MeshBuilder</a> or <a href="//code.gooengine.com/latest/docs/EntityCombiner.html">EntityCombiner</a>.
 <h2>MeshBuilder</h2>
 The MeshBuilder is a class that takes vertex attribute arrays from different sources and combines them into one vertex attribute array. Here is an example:
-<pre><code>var meshBuilder = new MeshBuilder();
+{% highlight js %}var meshBuilder = new MeshBuilder();
 var transform = new Transform();
 
 var box1 = new Box(0.3, 1, 1.6);
@@ -36,7 +36,7 @@ meshBuilder.addMeshData(box2, transform);
 
 var meshData = meshBuilder.build()[0];
 gooRunner.world.createEntity(meshData, new Material(ShaderLib.simpleLit)).addToWorld();
-</code></pre>
+{% endhighlight %}
 The only problem with this approach is that you can only use one diffuse color texture with the resulting mesh. Therefore, the best way to use this is with meshes that use and share the same <a href="//en.wikipedia.org/wiki/Texture_atlas">texture atlas</a>.
 A popular tool to generate a texture atlas is the <a href="//www.codeandweb.com/texturepacker">TexturePacker</a> from CodeAndWeb.
 And here is a <a href="http://blog.kalio.net/post/31067884387/yet-another-texture-atlas-packer">python script</a> to create a texture atlas.
@@ -44,17 +44,17 @@ And here is a <a href="http://blog.kalio.net/post/31067884387/yet-another-textur
 To make life a bit easier Goo Engine includes a utility called the EntityCombiner. It traverses the scene graph and finds all entities that share the same material and combines them using the MeshBuilder.
 
 To test the effect you can create a scene with many entities and initialize the GooRunner with the showStats flag:
-<pre><code>var gooRunner = new GooRunner({showStats : true});
+{% highlight js %}var gooRunner = new GooRunner({showStats : true});
 var material = Material.createMaterial(ShaderLib.simpleLit);
 for(var i=0; i&lt;1000; i++) {
     gooRunner.world.createEntity( new Box(1, 1, 1), [1+(i*0.01),1+(i*0.01),1+(i*0.1)], material).addToWorld();
 }
-</code></pre>
+{% endhighlight %}
 If you run this you should see a stats widget saying that the scene is using 1000 draw calls. Next add this piece of code:
-<pre><code>document.addEventListener('keypress', function(){
+{% highlight js %}document.addEventListener('keypress', function(){
     new EntityCombiner(gooRunner.world).combine();
 }, false);
-</code></pre>
+{% endhighlight %}
 If you refresh the scene in your browser you should still see 1000 draw calls, but after pressing any key you should see that it drops down to one and that the frame rate improves dramatically. When testing on a rather old machine it jumps from 27 FPS to a solid 60 FPS.
 
 Keep this approach very much in mind if you create static models and make them share a single texture atlas to benefit from this feature.

@@ -10,7 +10,7 @@ The most basic message consists of only a <strong>channel name</strong>, represe
 
 Here's a simple example, emitting a message (roughly) every second:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	ctx.interval = 1;
 	ctx.lastUpdate = ctx.world.time;
@@ -23,12 +23,12 @@ var update = function(args, ctx, goo) {
 		ctx.lastUpdate = ctx.world.time;
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 <h2>Listening to a Channel</h2>
 Any script or state in the State Machine can listen to a channel, and do whatever it wants with the information. Using the "it_is_time" channel from the example above, we can for example rotate an entity every time it happens. Note that this script can be placed on a different entity than the first one, <strong>everything in the same scene uses the same bus!</strong>
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	ctx.rotate = function() {
 		ctx.entity.addRotation(0, 0.1, 0);
@@ -39,13 +39,13 @@ var setup = function(args, ctx, goo) {
 var cleanup = function(args, ctx, goo) {
 	goo.SystemBus.removeListener('it_is_time', ctx.rotate);
 };
-</code></pre>
+{% endhighlight %}
 
 Note that we<strong> must remove the listeners we create</strong>, otherwise we'd get duplicates every time we press play!
 <h2> Sending Data in Events</h2>
 In addition to the channel name, we can send an Object with the emitted events. If we for example were sending messages every time entities in our scene collides, we could send the names of the colliding entities and the point of collision with the event. Expanding on the previous example, we can add some more code to let our time ticker send some extra data, and have the listening entity react to some of this data:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	ctx.interval = 1;
 	ctx.lastUpdate = ctx.world.time;
@@ -62,11 +62,11 @@ var update = function(args, ctx, goo) {
 		ctx.lastUpdate = ctx.world.time;
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 The listening entity:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	ctx.rotate = function(data) {
 		if (data.parity === 'even') {
@@ -81,7 +81,7 @@ var setup = function(args, ctx, goo) {
 var cleanup = function(args, ctx, goo) {
 	goo.SystemBus.removeListener('it_is_time', ctx.rotate);
 };
-</code></pre>
+{% endhighlight %}
 
 The above additions sends some data about the event (whether the world time seconds are even or odd, and what the actual delta is), and the listening entity recieves this data and decides how to act on it.
 <h2> Using the Bus to Trigger State Machine Transitions</h2>
@@ -105,7 +105,7 @@ Now we need to set up the transitions, and this is where the System Bus comes in
 
 We can use the same event triggering mechanism as before, but I suggest changing the interval to be more than a second:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	ctx.interval = 6;
 	ctx.lastUpdate = ctx.world.time;
@@ -122,7 +122,7 @@ var update = function(args, ctx, goo) {
 		ctx.lastUpdate = ctx.world.time;
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 Note here that our State Machine does not use the data, only the channel name. We can still keep the data around in case other entities are interested! We should now be able to play our scene and have the Goon both switch animations and play different sounds. Here's a link to the published version - I've added some extra light effects using another state machine bus listener.
 <h3 style="text-align: center;"><a href="https://goote.ch/c27b938433b34bbc8e99c5ce8c9460c1.scene/" target="_blank">Open the Scene</a></h3>

@@ -35,7 +35,7 @@ Combining a translation, a scale and a <strong>quaternion</strong> <strong>rotat
 <h3>What is the algorithm behind lookAt inside Matrix3x3:</h3>
 The abbreviated algorithm is:
 
-<pre><code>z.set(back_direction).normalize();
+{% highlight js %}z.set(back_direction).normalize();
 x.set(up).cross(z).normalize();
 y.set(z).cross(x);
 m[0] = x[0];
@@ -46,7 +46,7 @@ m[4] = y[1];
 m[5] = y[2];
 m[6] = z[0];
 m[7] = z[1];
-m[8] = z[2];</code></pre>
+m[8] = z[2];{% endhighlight %}
 
 <div class="alert alert-danger" role="alert">
 	If you calculate the <a href="http://en.wikipedia.org/wiki/Cross_product">cross product</a> of two vectors the result is a vector orthogonal to both vectors even if the initial vectors are not orthogonal themselves.

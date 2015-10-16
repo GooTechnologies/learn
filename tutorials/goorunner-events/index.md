@@ -23,7 +23,7 @@ The scene does not really matter. Create any scene with a few entities or use an
 <h3>Adding Listeners to GooRunner</h3>
 Add an empty entity, attach a script component, and add an empty script. We'll start by adding a simple event listener in the setup function, in the same manner as in the DOM Event Listener tutorial:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
     console.clear();
     ctx.runnerListeners = {
@@ -35,17 +35,17 @@ var setup = function(args, ctx, goo) {
 for (var l in ctx.runnerListeners) {
     ctx.world.gooRunner.addEventListener(l, ctx.runnerListeners[l]);
 }
-</code></pre>
+{% endhighlight %}
 
 Also, let's remember to clean up after ourselves:
 
-<pre><code>
+{% highlight js %}
 var cleanup = function(args, ctx, goo) {
 	for (var l in ctx.runnerListeners) {
 		ctx.world.gooRunner.removeEventListener(l, ctx.runnerListeners[l]);
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 You can pause here, click around in your scene and explore the printed event details using the developer console in your browser. We have all the info we need, but we'll do something a little more visual with it in a minute.
 
@@ -74,7 +74,7 @@ This should give you this little information area in the top left corner:
 <a href="html-info.jpg"><img class="size-full wp-image-191 aligncenter" src="html-info.jpg" alt="html-info" /></a>
 Now we need to add a simple function to our script in order to display the info we got from the event object.
 
-<pre><code>
+{% highlight js %}
 var displayIntersectionInfo = function(screenCoords, entity, point, depth) {
 	var coordsDiv = document.getElementById('intersection-screen');
 	var entityDiv = document.getElementById('intersection-entity');
@@ -86,11 +86,11 @@ var displayIntersectionInfo = function(screenCoords, entity, point, depth) {
             point[1].toFixed(2) + ', ' + point[2].toFixed(2) + ')';
 	depthDiv.innerHTML = depth.toFixed(2);
 };
-</code></pre>
+{% endhighlight %}
 
 And then, of course, we add some code to the event listener callback to pass the variables. We also do some checking to handle the case where a pick ray misses all entities, or picks an HTML entity which has no 3D point.
 
-<pre><code>
+{% highlight js %}
 ctx.runnerListeners = {
 	click: function(evt) {
 		console.log('Click event', evt);
@@ -107,7 +107,7 @@ ctx.runnerListeners = {
 		displayIntersectionInfo([evt.x, evt.y], name, point, depth);
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 Firing this script up and clicking any entity in the scene, we should now have the HTML entity populated:
 
@@ -117,7 +117,7 @@ Something you might want to do is to manipulate your 3D scene depending on a pic
 
 Start by creating some mesh data and a simple material for the sphere in the setup function:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	console.clear();
 
@@ -128,11 +128,11 @@ var setup = function(args, ctx, goo) {
 	ctx.markerMaterial.uniforms.materialSpecular = [0, 0, 0, 1];
 
     // ...
-</code></pre>
+{% endhighlight %}
 
 Then, write functions to create and/or show the sphere at a certain point, or remove it.
 
-<pre><code>
+{% highlight js %}
 var showMarker = function(ctx, pos) {
 	if (!ctx.markerEntity) {
 		ctx.markerEntity = ctx.world.createEntity(
@@ -147,11 +147,11 @@ var showMarker = function(ctx, pos) {
 var hideMarker = function(ctx) {
 	if (ctx.markerEntity) ctx.markerEntity.removeFromWorld();
 };
-</code></pre>
+{% endhighlight %}
 
 Finally, hook these funcions up in the event callback:
 
-<pre><code>
+{% highlight js %}
 ctx.runnerListeners = {
 		click: function(evt) {
 			console.log('Click event', evt);
@@ -170,13 +170,13 @@ ctx.runnerListeners = {
 			displayIntersectionInfo([evt.x, evt.y], name, point, depth);
 		}
 	};
-</code></pre>
+{% endhighlight %}
 
 When picking entities now, the small red sphere should show up at the picked point, just like in the example project at the top of this page.
 <h2>Done!</h2>
 Sometimes it's useful to see the complete script. Check it out! And as always, <a href="https://app.goocreate.com/4768/236807da94f14e82b50867556e32289f.scene" target="_blank">here's a complete scene</a> in case you want to duplicate it.
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	console.clear();
 
@@ -245,4 +245,4 @@ var displayIntersectionInfo = function(screenCoords, entity, point, depth) {
 		point[1].toFixed(2) + ', ' + point[2].toFixed(2) + ')';
 	depthDiv.innerHTML = depth.toFixed(2);
 };
-</code></pre>
+{% endhighlight %}

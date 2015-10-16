@@ -35,15 +35,15 @@ The rest of this tutorial will be focused on scripting. We will use the same scr
 
 We'll start by writing a script for the rotation, and then test it without any buttons. In general, trying to write parts of an application and testing them individually before moving on is a very good idea! We'll call the function rotate.
 
-<pre><code>
+{% highlight js %}
 var rotate = function(ctx, goo, angle) {};
-</code></pre>
+{% endhighlight %}
 
 We need to pass in the ctx parameter to get a hold of context variables (we'll see this later) and the goo parameter to be able to use Goo Engine classes and functions. The angle variable is of course the desired angle of rotation. Let's assume for simplicity's sake that the axis will always be the Y-axis.
 <h3>Tweening</h3>
 The rotation will make use of tweening. Tweening is short for inbetweening and is basically a way to make animations smooth. Since we don't want the cube to just appear at it's new orientation, we'll use the TweenJS library (already running in the engine) to interpolate the animation. This is what the complete rotate function will look like:
 
-<pre><code>
+{% highlight js %}
 var rotate = function(ctx, goo, angle) {
     // Don't do anything if a rotation is already active.
     if (ctx.tweenActive) return;
@@ -64,13 +64,13 @@ var rotate = function(ctx, goo, angle) {
         })
         .start(ctx.world.time * 1000);
 }
-</code></pre>
+{% endhighlight %}
 
 So what's really happening here? First of, the animation will take some time to finish. We want to make sure that we don't try to launch a new rotation if we're not done with the last one, so we'll keep track of that state using the ctx.tweenActive variable. The interpolation is launched using the ctx.tween object, declared in the setup function. It will interpolate a variable t from 0 to 1 over ctx.rotationTime milliseconds, and we have access to that function in the onUpdate() function. In that function, we use the interpolated t variable to slowly set the rotation to the final one. The ctx.rotation variable simply keeps track of the current rotation, and is also declared in the setup function. When the tweening is done and t=1, the onComplete() function is triggered. Here, we signal that we're done with the rotation and update the ctx.rotation variable. The start() needs the Goo time for the updating to be handled properly.
 
 That's the rotating functionality in all its glory, but there are some things missing. To be able to use the ctx variables, we need to set them up. We'll do this in the setup() function, which will run every time the play button is pressed, or when running an exported project.
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
     // Keep track of current rotation angle
     ctx.rotation = 0;
@@ -86,19 +86,19 @@ var setup = function(args, ctx, goo) {
         rotate(ctx, goo, ctx.rotationAngle);
     }, 2000);
 };
-</code></pre>
+{% endhighlight %}
 
 The ctx variables are declared here. We see that the rotation angle and time are fetched from the args parameters, and attached to the ctx object as well. The ctx.tween is a TweenJS object, and we'll get more into the easing later in this tutorial. We test the rotation by setting up a timed launch of the rotate() function. This is temporary, but it's nice to clean up after we're done:
 
-<pre><code>
+{% highlight js %}
 var cleanup = function(args, ctx, goo) {
     window.clearInterval(ctx.testRotation);
 };
-</code></pre>
+{% endhighlight %}
 
 This how we set up the parameters:
 
-<pre><code>
+{% highlight js %}
 var parameters = [{
     key: 'rotationTime',
     name: 'Time',
@@ -116,7 +116,7 @@ var parameters = [{
     min: 0,
     max: 360
 }];
-</code></pre>
+{% endhighlight %}
 
 That's it for the rotation part! The script in the component panel should now look like this:
 
@@ -131,7 +131,7 @@ It might be hard to get all the code into the right spots, so <a href="https://a
 <h2>Adding Buttons</h2>
 Now that we are confident that the rotating functionality is perfect, let's move on to creating the CSS buttons. We'll need some more variables, so let's start by adding the following lines to the setup() function. Make sure to remove the setInterval call we used for testing, too.
 
-<pre><code>
+{% highlight js %}
 // Buttons and button params
 ctx.buttons = [];
 ctx.buttonSize = args.buttonSize;
@@ -141,11 +141,11 @@ ctx.buttonMargin = args.buttonMargin;
 ctx.oldCanvasHeight = ctx.domElement.height;
 
 createButtons(ctx, goo);
-</code></pre>
+{% endhighlight %}
 
 The creation will of course be done in the createButtons() function. Again, we pass in the ctx and goo parameters to access the context and Goo classes. The function body is fairly straightforward. It will create two CSS triangles using JavaScript and attach it to the DOM. The canvas is accessed via the ctx.domElement variable, and the buttons will be attached to its parent. The buttons will call the rotate() function with different values for the angle. Note that we push the created elements to an array. This is so that we can delete them when the script stops. Otherwise, we'd get more buttons every time we pressed play.
 
-<pre><code>
+{% highlight js %}
 var createButtons = function(ctx, goo) {
     // Create two triangles using CSS.
     // http://css-tricks.com/snippets/css/css-triangle/
@@ -182,11 +182,11 @@ var createButtons = function(ctx, goo) {
     ctx.buttons.push(rightButton);
 
 };
-</code></pre>
+{% endhighlight %}
 
 The cleanup() function is responsible for not leaving a mess in the DOM:
 
-<pre><code>
+{% highlight js %}
 var cleanup = function(args, ctx, goo) {
     // Remove things we added
     for (var i=0; i<ctx.buttons.length; i++) {
@@ -194,11 +194,11 @@ var cleanup = function(args, ctx, goo) {
         ctx.domElement.parentNode.removeChild(ctx.buttons[i]);
     }
 };
-</code></pre>
+{% endhighlight %}
 
 The buttons should be aligned along the edges. We have locked the canvas size in our project, but when exporting, the canvas size might need to be updated. Therefore, and in case we don't want to used a locked canvas, we'll add some code to handle repositioning of the buttons. The ctx.oldCanvasHeight variable is declared in the setup.
 
-<pre><code>
+{% highlight js %}
 var updateButtons = function(ctx) {
 
     var h = ctx.domElement.height / window.devicePixelRatio;
@@ -211,20 +211,20 @@ var updateButtons = function(ctx) {
         ctx.oldCanvasHeight = h;
     }
 };
-</code></pre>
+{% endhighlight %}
 
 This extra function is called by update() function every frame:
 
-<pre><code>
+{% highlight js %}
 var update = function(args, ctx, goo) {
     // Update button position
     updateButtons(ctx);
 };
-</code></pre>
+{% endhighlight %}
 
 And, finally, here's the code for the new parameters:
 
-<pre><code>
+{% highlight js %}
 {
     key: 'buttonSize',
     name: 'Button Size',
@@ -240,7 +240,7 @@ And, finally, here's the code for the new parameters:
     min: 0,
     max: 500
 }
-</code></pre>
+{% endhighlight %}
 
 Press play, and voila! The rotation can now be triggered by these awesome buttons:
 <p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/d62a1cc980b32510b43ef3ae75d3384446b1c347/" width="600" height="300"]</p>
@@ -255,7 +255,7 @@ One of the type of controls we can create in the component panel is a color pick
 
 The parameter object looks like this:
 
-<pre><code>
+{% highlight js %}
 {
     key: 'buttonColor',
     name: 'Button Color',
@@ -263,22 +263,22 @@ The parameter object looks like this:
     control: 'color',
     default: [0.5, 0.5, 0.5]
 }
-</code></pre>
+{% endhighlight %}
 
 The args.buttonColor variable now contains an array with three floats. To use in CSS, we'll define a simple helper function:
 
-<pre><code>
+{% highlight js %}
 var vecToCss = function(vec) {
     return 'rgb(' +
     Math.round(vec[0] * 255) + ',' +
     Math.round(vec[1] * 255) + ',' +
     Math.round(vec[2] * 255) + ')';
 };
-</code></pre>
+{% endhighlight %}
 
 Now we need to add two lines of code and change another:
 
-<pre><code>
+{% highlight js %}
 // Add to setup()
 ctx.buttonColor = args.buttonColor;
 
@@ -288,7 +288,7 @@ var c = vecToCss(ctx.buttonColor);
 // Change the border color lines
 leftButton.style.borderRight = s + 'px solid ' + c;
 rightButton.style.borderRight = s + 'px solid ' + c;
-</code></pre>
+{% endhighlight %}
 
 That's it for the color picker!
 <h3>Easings</h3>
@@ -296,7 +296,7 @@ The rotation might be smoothly animated, but it's kind of straight forward. Easi
 
 The selections will be made into another type of parameter:
 
-<pre><code>
+{% highlight js %}
 {
     key: 'easing',
     name: 'Easing',
@@ -305,14 +305,14 @@ The selections will be made into another type of parameter:
     options: easingNames,
     default: easingNames[0]
 }
-</code></pre>
+{% endhighlight %}
 
 Of course, we need to create the easingNames array and populate it with the right stuff. This is the code for it:
 
 // Generate a list of all TweenJS easings. Easings have both a base type
 // and a few direction variations (none/in/out/in-out).
 
-<pre><code>
+{% highlight js %}
 var easingNames = [];
 var easings = window.TWEEN.Easing;
 for (var easing in easings) {
@@ -325,7 +325,7 @@ for (var easing in easings) {
         }
     }
 }
-</code></pre>
+{% endhighlight %}
 
 You should now be able to see a bunch of different easings in a drop-down menu:
 
@@ -333,11 +333,11 @@ You should now be able to see a bunch of different easings in a drop-down menu:
 
 Now we need to convert the strings back into easing objects from the library, and we'll do this with this slightly contrived code:
 
-<pre><code>
+{% highlight js %}
 // In setup()
 var easingSplit = args.easing.split('.');
 ctx.easing = window.TWEEN.Easing[easingSplit[0]][easingSplit[1]];
-</code></pre>
+{% endhighlight %}
 
 Phew! That's all, folks. Try out some of the easings! A really cool one, and the one we use in the final project, is Bounce.Out. By the way, the final scene can be found <a href="https://app.goocreate.com/4768/1a910cf043334213aa88ea28f82e6b25.scene" target="_blank">here</a>, or a published version <a href="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/" target="_blank">here</a>.
 <p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/" width="600" height="300"]</p>

@@ -78,7 +78,7 @@ At the bottom of the ScriptComponent, click the 'Add Script' button, and choose 
 
 Open the script for editing, clear out the current code, and paste this code in its place:
 
-<pre><code>var setup = function(args, ctx, goo){
+{% highlight js %}var setup = function(args, ctx, goo){
 	ctx.infoBox = document.getElementById('selected');
 	ctx.handleClick = function(e){
 		var hit = null;
@@ -110,7 +110,7 @@ Open the script for editing, clear out the current code, and paste this code in 
 
 var cleanup = function(args, ctx, goo){
 	ctx.domElement.removeEventListener('click', ctx.handleClick);
-}</code></pre>
+}{% endhighlight %}
 
 In the setup function, we first store a reference to the element with the id 'selected'. This is to use later, as we click around the scene.
 

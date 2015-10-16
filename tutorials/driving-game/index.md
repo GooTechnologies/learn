@@ -68,16 +68,16 @@ Click on the little triangle next to the <strong>Car</strong> entity in the hier
 This should open up a new script editor window. Replace the example script contents with this content:
 
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {};
 var cleanup = function(args, ctx, goo) {};
 var update = function(args, ctx, goo) {
     ctx.entity.addRotation( 0, -ctx.world.tpf*5, 0);
 };
 var parameters = [];
-</code></pre>
+{% endhighlight %}
 
-<pre><code> </code></pre>
+{% highlight js %} {% endhighlight %}
 As you can see we have a call to <strong>addRotation</strong> on the object <strong>ctx.entity</strong>. <strong>addRotation</strong> is a useful function of the Goo Engine injected into the entity by the <a href="//code.gooengine.com/latest/docs/TransformComponent.html">TransformComponent</a>.
 
 [alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000"><em>ctx</em> stands for <em>context</em> and it hosts a couple of cool objects. Mainly the current entity to which this script belongs. If you create a new script you can read the comments for other objects it contains.</span>[/alert]
@@ -99,7 +99,7 @@ Next, we will make the camera chase the car. Click on the "Default Camera" in th
 Instead add a new custom script and replace the example script contents with this content:
 
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
     ctx.aboveCar = new goo.Vector3();
     ctx.behindCar = new goo.Vector3();
@@ -122,7 +122,7 @@ var update = function(args, ctx, goo) {
 };
 
 var parameters = [];
-</code></pre>
+{% endhighlight %}
 
 
 The code above creates a script that makes the camera follow the car.
@@ -164,7 +164,7 @@ Feel free to take a look at the code of the second file to see what it does.
 OK, now that we got that out of the way we will add the main code to make the Scooter game work. Replace the script code of our "Main Game Code" entity with this:
 
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	if( window.ammoSystem)
 		window.ammoSystem.passive = false;
@@ -222,7 +222,7 @@ var update = function(args, ctx, goo) {
 };
 
 var parameters = [];
-</code></pre>
+{% endhighlight %}
 
 
 So what is going on in that big piece of code there? Great question, let's dive in!
@@ -284,7 +284,7 @@ The key codes 38 and 40 are cursor up and cursor down. They key codes 37 and 39 
 The last piece of code we will add is there to detect keyboard input. Add one more custom script to the "Main Game Code" entity and replace the script with this:
 
 
-<pre><code>
+{% highlight js %}
 var keys = new Array(127).join('0').split('').map(parseFloat);
 
 var keyHandler = function (e) {
@@ -306,7 +306,7 @@ var update = function(args, ctx, goo) {
 };
 
 var parameters = [];
-</code></pre>
+{% endhighlight %}
 
 
 The code above initializes an array called <strong>keys</strong> with 127 zeros.

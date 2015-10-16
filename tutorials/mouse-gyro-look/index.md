@@ -17,7 +17,7 @@ The camera radius (distance from the middle) is the adjusted by translating the 
 
 On the root entity, <em>Rot. Around Y</em> in our case, create a custom script. You can copy/paste the whole code below, set the camera as <strong>Main Camera</strong> and you're good to go!
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 
 	ctx.dir = args.invert ? 1 : -1;
@@ -164,5 +164,5 @@ var parameters = [
 	control: 'slider'
 }
 ];
-</code></pre>
+{% endhighlight %}
 

@@ -85,7 +85,7 @@ Once you have added a script, you can click on the <strong>Edit</strong> symbol 
 [alert type="info"]Please note: You can leave the script editor window open, it will automatically switch to new contents when you change entities.[/alert]
 
 You should see a big wall of JavaScript source code, but don’t get scared. Most of it is just documentation. Essentially, you have control over three functions and one array:
-<pre><code>/* Implement this method to do initializing. */
+{% highlight js %}/* Implement this method to do initializing. */
 var setup = function(args, ctx, goo) {};
 /* Implement this method to do cleanup. Called on script stop and delete. */
 var cleanup = function(args, ctx, goo) {};
@@ -93,7 +93,7 @@ var cleanup = function(args, ctx, goo) {};
 var update = function(args, ctx, goo) {};
 /* Parameters defined here will be available on the 'args' object. */
 var parameters = [];
-</code></pre>
+{% endhighlight %}
 The <strong>setup</strong> function can be used to initialize variables, state and anything else you want to initialize. It will be called every time you press the <strong>play</strong> button in Create or when running an exported project.
 
 <a href="press_play.png"><img class="alignnone wp-image-427 size-full" src="press_play.png" alt="press_play" /></a>
@@ -105,7 +105,7 @@ The <strong>update</strong> function can be used to update state, your Goo entit
 For our Solar System we don’t need the <em>cleanup</em> or <em>setup</em> functions, but only the <strong>update</strong> function. For our use case we want to rotate the Sun and with it all nested entities. We will later attach the Earth entity to the Sun and thus the Earth will be rotated around the Sun.
 
 Select <strong>all text</strong> in the script code editor and replace it with this:
-<pre><code>/* Implement this method to do initializing. */
+{% highlight js %}/* Implement this method to do initializing. */
 var setup = function(args, ctx, goo) {};
 /* Implement this method to do cleanup. Called on script stop and delete. */
 var cleanup = function(args, ctx, goo) {};
@@ -115,7 +115,7 @@ var update = function(args, ctx, goo) {
 };
 /* Parameters defined here will be available on the 'args' object. */
 var parameters = [];
-</code></pre>
+{% endhighlight %}
 As you can see we added a call to <strong>addRotation</strong> on the object <strong>ctx.entity</strong>.
 
 <strong>addRotation</strong> is a useful function of the Goo Engine injected into the entity by the <a href="//code.gooengine.com/latest/docs/TransformComponent.html">TransformComponent</a>.
@@ -129,10 +129,10 @@ As a parameter to the rotation around the Y axis we give it <strong>0.75 * ctx.w
 The reason we use the <strong>tpf</strong> as part of our parameter to addRotation is to make the code <em>frame rate independent</em>. If we always use tpf as part of our animation code it will run at the same speed regardless of how long it takes to render the scene. So this is a good practice to remember!
 
 Repeat the script process in exactly the same way for the Earth entity to finish this step, but use this slightly altered update function instead:
-<pre><code>var update = function(args, ctx, goo) {
+{% highlight js %}var update = function(args, ctx, goo) {
     ctx.entity.setRotation( -Math.PI/2, ctx.world.time, 0);
 };
-</code></pre>
+{% endhighlight %}
 The difference between the Sun script and this script for Earth is because Earth appears to be turned to the side by 90 degrees. With the function setRotation we can fix this, by rotating the earth around the X axis by -90 degrees. Goo uses a 3D math library where every angle needs to be in <a href="http://en.wikipedia.org/wiki/Radian">radians</a>. As the second parameter we pass in the time property of the ctx.world object which is similar to the ctx.world.tpf property but instead of containing the time per frame it contains the time since the program started in floating point seconds.
 
 Ok, time to test: Click on the <strong>play</strong> button and look closely at the Sun and Earth and you should see them slowly rotating: <a href="press_play.png"><img class="alignnone wp-image-427 size-full" src="press_play.png" alt="press_play" /></a>

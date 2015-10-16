@@ -39,7 +39,7 @@ Right click the code inside the Script Editor and choose ‘Select All’. Next 
 
 Now we will need to copy and paste the following code into the Script Editor, and then save it again by clicking the Save button:
 
-<pre><code>
+{% highlight js %}
 var parameters = [
     {key:'texture', type:'texture', default:null},
     {key:'particleCount', 'type':'int', default:100},
@@ -177,7 +177,7 @@ function cleanup(args, ctx, goo){
         delete ctx.pEnt;
     }
 }
-</code></pre>
+{% endhighlight %}
 
 After you have saved the code, and go back to Goo Create, you will see several options for our Custom script:
 

@@ -84,7 +84,7 @@ In the list of scripts which comes up, choose 'Custom' from the choices. This wi
 
 Once the code editor opens, clear out what is already there, and paste the following code:
 
-<pre><code>var setup = function(args, ctx, goo){
+{% highlight js %}var setup = function(args, ctx, goo){
   ctx.children = [];
   var parent = ctx.entity.htmlComponent.domElement;
   for(var i = parent.children.length; i >= 0; i--){
@@ -105,7 +105,7 @@ var cleanup = function(args, ctx, goo){
     }
   }
   ctx.children.length = 0;
-}</code></pre>
+}{% endhighlight %}
 
 In the setup function, we take all the children elements in the HTML Entity, and transfer them to the ctx.domElement.parentNode.  It also stores references to each element in the array ctx.children.  We put this variable on the 'ctx' scope, so we can reference it later in the cleanup function.
 

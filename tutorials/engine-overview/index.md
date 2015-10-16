@@ -34,10 +34,10 @@ The World harbors all Entities and provides a 3D world coordinate system for eve
 <h3>The Runner</h3>
 The Runner (or GooRunner) is responsible for running the game loop, making sure the Systems run, calling the renderers and that everything happens in the correct order. The Runner pulls the threads to make things happen, basically. The World is a member of the GooRunner (created automatically). Accessing the World (and from there everything in it) is typically done through the runner:
 
-<pre><code>
+{% highlight js %}
 var gooRunner = new GooRunner();
 var allEntities = gooRunner.world.getEntities();
-</code></pre>
+{% endhighlight %}
 
 <h2>How it all fits together</h2>
 This image below illustrated how the main parts fit together. GooRunner holds the world, which in turn contains the Entities. Entities in turn consist of different Components. To make everything run, GooRunner updates the World and its Systems, and each type of System takes care of the corresponding type of Component.

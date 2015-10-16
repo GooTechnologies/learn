@@ -8,7 +8,7 @@ indent: 1
 <h2>The Setup (A Project that Doesn't Work)</h2>
 We are going to use a very simple scene, were we control the color of a cube using the position of the mouse. The scene includes a simple box entity, with the following script attached to it:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
   ctx.width = window.innerWidth;
   ctx.height = window.innerHeight;
@@ -37,7 +37,7 @@ var cleanup = function(args, ctx, goo) {
     window.removeEventListener(k, ctx.windowListeners[k]);
   }
 };
-</code></pre>
+{% endhighlight %}
 
 The result, contained in a small iframe, looks like this:
 <p style="text-align: center">[advanced_iframe src="https://goote.ch/0faa7841926b4bf9be6964056e212bb8.project/" securitykey="iframe" width="400" height="200" style="width:400px;height:200px;"]
@@ -46,7 +46,7 @@ As you can see, the color changes with the position as long as the mouse is hove
 <h2>A Project that Works</h2>
 We need to forward the info from this page to the iframe. This is what we have put on <em>this very tutorial page,</em> or the page containing the iframe:
 
-<pre><code>
+{% highlight js %}
 function setupMousemoveProxy(iframe) {
   var width, height, mx, my;
   var mousemove = function() {
@@ -71,11 +71,11 @@ var iframe = document.getElementById('project_iframe');
 iframe.onload = function() {
   setupMousemoveProxy(iframe);
 };
-</code></pre>
+{% endhighlight %}
 
 Then, we need to make some changes to the Create project code. We no longer use the iframe's data, but listen for the 'message' event instead. The code below explains the changes.
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
   ctx.material = ctx.entity.meshRendererComponent.materials[0];
   ctx.windowListeners = {
@@ -110,7 +110,7 @@ var cleanup = function(args, ctx, goo) {
     window.removeEventListener(k, ctx.windowListeners[k]);
   }
 };
-</code></pre>
+{% endhighlight %}
 
 The new project reacts to movements outside its own page!
 <p style="text-align: center">[advanced_iframe id="project_iframe" src="https://goote.ch/b50617b01c0f4aaeb05be87887ecc18f.project/" securitykey="iframe" width="400" height="200" style="width:400px;height:200px;"]

@@ -15,11 +15,11 @@ At the end of this tutorial, we'll have a super simple Create scene with which w
 <h2>JavaScript Event Listeners</h2>
 Event handlers can be attached to elements (such as <strong>divs</strong> or <strong>canvases</strong>), to the <strong>document</strong> or to the <strong>window</strong> object. Event listeners are added by using certain event names and callback functions which execute when the selected event triggers. For example, adding a simple <strong>mousedown</strong> event listener to the window object might look like this:
 
-<pre><code>
+{% highlight js %}
 window.addEventListener('mousedown', function(evt) {
 	console.log('Mouse down event triggered!', evt);
 }
-</code></pre>
+{% endhighlight %}
 
 The <strong>evt</strong> object will contain properties of the event. For example, the coordinates where the mouse down event occured. Each type of event has its own set of properties and can be attached to a certain set of elements. Refer to the excellent <em>MDN</em> for full details, or use the console like above to print the evt object.
 
@@ -38,7 +38,7 @@ When removing event listeners, one needs a stored handle to them. That means tha
 
 Let's open the <em>script editor</em> and write some code. Since we'll need the script handles in both the setup and in the cleanup functions, the script-wide ctx objects is a good candidate to use for storage. Let's start by adding some event listeners by first storing them as properties on the ctx object, and then using a simple loop to attach them to the <strong>canvas</strong>, and another one to clean them up.
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 
     ctx.evtListeners = {
@@ -62,7 +62,7 @@ var cleanup = function(args, ctx, goo) {
 		ctx.domElement.removeEventListener(handle, ctx.evtListeners[handle]);
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 If you add the functions above to the script and run it, you can open up the console and check out the triggered mouse events!
 
@@ -72,16 +72,16 @@ If everything seems to work correctly (testing is <em>important</em>), we can go
 <h3>Spinning with Speed</h3>
 We will combine the mousedown, mouseup and mousemove events and their touch counterparts to let the user spin the 3D object with some simple inertia. The idea is to track the x position where the user started to drag, and use the dragging distance to add some rotation speed. For this, we'll need a few variables. Let's add the following lines at the top of the setup function. Their use will become apparent when we use them.
 
-<pre><code>
+{% highlight js %}
 ctx.dragging = false;
 ctx.velocity = 0;
 ctx.lastX = 0;
 ctx.currentX = 0;
-</code></pre>
+{% endhighlight %}
 
 We will also need two customizable parameters. The first one, the <em>sensitivity</em>, will control the speed in relation to the dragging distance. The second one, the <em>damping</em>, will make sure that the box does not spin forever. Go ahead and add the parameters:
 
-<pre><code>
+{% highlight js %}
 var parameters = [
 {
     key: 'sensitivity',
@@ -102,11 +102,11 @@ var parameters = [
     default: 0.05
 }
 ];
-</code></pre>
+{% endhighlight %}
 
 Now, let's write the functions that will do the actual work.
 
-<pre><code>
+{% highlight js %}
 var startDrag = function(ctx, x) {
 	ctx.dragging = true;
 	ctx.currentX = x;
@@ -135,13 +135,13 @@ var update = function(args, ctx, goo) {
 	ctx.velocity *= (1-args.damping);
 };
 
-</code></pre>
+{% endhighlight %}
 
 As you can see, the dragging functions roughly correspond to mousedown, mouseup and mousemove. For good reason! We don't write them directly in the mouse event callbacks because we want to use them for touches later. The only things these functions are concerned with are the ctx object and the event x coordinate. The <strong>update </strong>function is one of the standard, pre-defined script functions and runs once every frame. Here, it does not care about the dragging functionality, but only uses the velocity to rotate the entity.
 
 Now, let's hook up the functions. Since we did write nice functions, it's fairly easy to add touch events (for mobile devices) too! We just need to access the x coordinate in a slightly different way. The event listener object in the setup function will look like this:
 
-<pre><code>
+{% highlight js %}
 ctx.evtListeners = {
 	mousedown: function(evt) {
 		startDrag(ctx, evt.clientX);
@@ -165,7 +165,7 @@ ctx.evtListeners = {
 		drag(ctx, evt.touches[0].clientX);
 	}
 };
-</code></pre>
+{% endhighlight %}
 
 Note that the loops which add and remove the listeners don't need to be changed. Nice. The touch events have one extra layer before we get to the coordinate. This is because the touches store information for multiple touches. We are going to be happy with one! If you want to test the touch functionality (and you should), check out your browser's emulation capabillities!
 <h2>Finish!</h2>
@@ -173,7 +173,7 @@ That's all the needed code for the app at the beginning of the page. If you have
 
 Here's the simple script in its entireity, with some space-saving skipping of newlines:
 
-<pre><code>
+{% highlight js %}
 var setup = function(args, ctx, goo) {
 	ctx.dragging = false;
 	ctx.velocity = 0;
@@ -229,7 +229,7 @@ var parameters = [
 	{key: 'damping', name: 'Damping', type: 'float', control: 'slider',
 	min: 0,max: 1,default: 0.05}
 ];
-</code></pre>
+{% endhighlight %}
 
 <h2>Next Steps</h2>
 Of course, there are tons of things you can do from here. We recommend to check out the GooRunner Event Listeners tutorial to see how more advanced scene interaction can be achieved. Additionally, here are some ideas for extending the scene we just made:

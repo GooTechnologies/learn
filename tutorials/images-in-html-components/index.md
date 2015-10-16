@@ -92,11 +92,11 @@ Now that we have our HTML place holders setup, we will need to create a script t
 
 Go ahead and add a new Custom script to the HTML Entity's ScriptComponent.  In this script, we will add two parameters for the two textures:
 
-<pre><code>
+{% highlight js %}
 var parameters = [
  {key:'empty', type:'texture', default:null},
  {key:'full', type:'texture', default:null}];
-</code></pre>
+{% endhighlight %}
 
 Here are the two images I am using for this tutorial:
 <a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png"><img class="alignnone size-full wp-image-1031" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png" alt="health_empty" /></a>
@@ -106,7 +106,7 @@ After you save the script, you will need to drag and drop them onto the Empty an
 
 In addition to these two parameters, we will be using the setup function to set the HTML IMG src values and cleanup to clear them:
 
-<pre><code>
+{% highlight js %}
 
 var setup = function(args, ctx, goo){
 document.getElementById('health_empty').src = args.empty.image.src;
@@ -118,13 +118,13 @@ document.getElementById('health_empty').src = '';
 document.getElementById('health_full').src = '';
 };
 
-</code></pre>
+{% endhighlight %}
 
 All that is left, is implementing a way to detect when the health has changed, and clipping the 'full' health bar with the appropriate values.
 
 Here is the full Health Bar script:
 
-<pre><code>var parameters = [
+{% highlight js %}var parameters = [
  {key:'empty', type:'texture', default:null},
  {key:'full', type:'texture', default:null}];
 
@@ -153,7 +153,7 @@ var cleanup = function(args, ctx, goo){
   document.getElementById('health_empty').src = '';
   document.getElementById('health_full').src = '';
 };
-</code></pre>
+{% endhighlight %}
 
 In the setup function, we create a local variable for the maxHealth, then a world variable: ctx.worldData.health.  We also create a local variable: ctx.health.  Finally, we calculate a 'healthTic' to multiply the current health by in order to determine the size the health bar.  We also need to set the 'clip' style for the full health bar, so we can modify it later in the update function.
 
@@ -165,7 +165,7 @@ We can tap into the callback function we created in the second tutorial:  <a h
 
 Just change the callback function for the sound button like so:
 
-<pre><code>ctx.playSound = function(){
+{% highlight js %}ctx.playSound = function(){
   sound['212600__pgi__machine-gun-001-triple-shot'].stop();
   sound['212600__pgi__machine-gun-001-triple-shot'].play();
   ctx.worldData.health -= (5 + Math.random() * 10);
@@ -173,7 +173,7 @@ Just change the callback function for the sound button like so:
     ctx.worldData.health += 100;
   }
 }
-</code></pre>
+{% endhighlight %}
 
 We basically tell it to subtract some random value between 5 and 15 from the current ctx.worldData.health.  We then make sure that if the health falls below 0, we add +100 to it, to keep it from going into the negative.
 

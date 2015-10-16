@@ -58,7 +58,7 @@ deleted(entity) is called when an Entity no longer meets the list of interested 
 To help demonstrate how the ECS works as a whole, we'll be creating our own HealthComponent, RegenerationComponent, and HealthSystem.  The HealthComponent will store the currentHealth and maxHealth, as well as some utility functions to remove from or add to the currentHealth.  The RegenerationComponent will store the amount of health to regenerate per 'tick'.  If the currentHealth is under maxHealth, the HealthSystem will increment the currentHealth back up to maxHealth by a set amount per 'tick'.
 <strong>The first thing  we will create is the HealthComponent:</strong>
 
-<pre><code>var HealthComponent = function(maxHealth){
+{% highlight js %}var HealthComponent = function(maxHealth){
 	goo.Component.apply(this, arguments);
 	this.maxHealth = this.currentHealth = maxHealth;
 	this.dead = false;
@@ -67,15 +67,15 @@ To help demonstrate how the ECS works as a whole, we'll be creating our own Heal
 HealthComponent.prototype = Object.create(goo.Component.prototype);
 HealthComponent.prototype.constructor = HealthComponent;
 HealthComponent.prototype.type = 'HealthComponent';
-</code></pre>
+{% endhighlight %}
 
 The first thing to notice here, is that we are inheriting from the goo.Component.prototype, and our constructor is the HealthComponent.  To make the inheritance work, we need to apply 'this' to the goo.Component, and pass in the arguments Object.  This basically takes care of some internal engine code for the Component.  Next we set the current and max health to the maxHealth passed in.  Notice how we set the type of the component.prototype to 'HealthComponent'.  This is needed for Goo Engine to alert Systems when this Component has been attached to Entities.
 
 &nbsp;
 
-<pre><code>HealthComponent.prototype.attached = function(entity){
+{% highlight js %}HealthComponent.prototype.attached = function(entity){
 	this.entity = entity;
-};</code></pre>
+};{% endhighlight %}
 
 &nbsp;
 
@@ -83,7 +83,7 @@ We're taking advantage of the Abstract 'attached' function here, by grabbing a r
 
 &nbsp;
 
-<pre><code>HealthComponent.prototype.addHealth = function(amt){
+{% highlight js %}HealthComponent.prototype.addHealth = function(amt){
 	if(amt < 0){return;}
 	console.log(this.entity.name+" Refilling "+amt+" hitpoints.");
 	this.currentHealth = Math.min(this.currentHealth + amt, this.maxHealth);
@@ -97,7 +97,7 @@ HealthComponent.prototype.removeHealth = function(amt){
 		this.dead = true;
 		console.log(this.entity.name+" has died :(");
 	}
-};</code></pre>
+};{% endhighlight %}
 
 &nbsp;
 
@@ -105,7 +105,7 @@ These are utility functions to add and remove health.  We make sure the user is
 <strong>Next we'll create the RegenerationComponent:</strong>
 
 
-<pre><code>var RegenerationComponent = function(amount, tick){
+{% highlight js %}var RegenerationComponent = function(amount, tick){
 	goo.Component.apply(this, arguments);
 	this.amount = amount;
 	this.tick = tick;
@@ -116,7 +116,7 @@ These are utility functions to add and remove health.  We make sure the user is
 
 RegenerationComponent.prototype = Object.create(goo.Component.prototype);
 RegenerationComponent.prototype.constructor = RegenerationComponent;
-RegenerationComponent.prototype.type = "RegenerationComponent";</code></pre>
+RegenerationComponent.prototype.type = "RegenerationComponent";{% endhighlight %}
 
 &nbsp;
 
@@ -125,33 +125,33 @@ Most of this is identical to the HealthComponent, and will be identical to every
 &nbsp;
 
 
-<pre><code>RegenerationComponent.prototype.attached = function(entity){
+{% highlight js %}RegenerationComponent.prototype.attached = function(entity){
 	this.world = entity._world;
-};</code></pre>
+};{% endhighlight %}
 
 In the attached() function, we now have access to the world the entity belongs to, because it is a variable on the entity passed in.  We assign it to this.world and that's all for the RegenerationComponent!
 <strong>Next, we'll create the System:</strong>
 
-<pre><code>var HealthSystem = function(){
+{% highlight js %}var HealthSystem = function(){
 	goo.System.call(this, 'HealthSystem', ['HealthComponent', 'RegenerationComponent']);
 }
 HealthSystem.prototype = Object.create(goo.System.prototype);
 HealthSystem.prototype.constructor = HealthSystem;
-HealthSystem.prototype.priority = 1000;</code></pre>
+HealthSystem.prototype.priority = 1000;{% endhighlight %}
 
 At first glance, this looks similar to the Component creation process, and it is, but there are a couple differences.  The first is that we inherit from goo.System instead of goo.Component.  The System has several built in functions the engine needs to operate, so we need those for sure.  Instead of using 'apply' we use 'call'.  This is because we are passing in a list of arguments, instead of the arguments Object.  The first argument is the name used to represent the system to Goo.  In this case, its 'HealthSystem'.  The second argument is an array of the 'interested' Components.  So the HealthSystem is interested in all Entities in the world with a HealthComponent and a RegenerationComponent.  Notice we don't need to set the HealthSystem.prototype.type.
 
 Every goo.System has a priority.  The HealthSystem.prototype.priority is set to 1000.  By default the goo.System.prototype sets the priority to 0.  By setting the priority of our HealthSystem to 1000, we can be sure it is called after most other Systems which may influence the Entity.  This priority value may become important if you have many Systems working together.  For example, if we wanted add a 'CombatSystem', we would probably want that to have the CombatSystem process AFTER the HealthSystem.  This way we could remove any Entities with 0 health.
 
-<pre><code>HealthSystem.prototype.inserted = function(entity){
+{% highlight js %}HealthSystem.prototype.inserted = function(entity){
 	entity.regenerationComponent.hc = entity.healthComponent;
-};</code></pre>
+};{% endhighlight %}
 
 Here we can safely reference the HealthComponent from within the RegenerationComponent, because if they both didn't exist, this function wouldn't have been called yet.  So we apply the hc variable on the RegenerationComponent to the HealthComponent.
 
 &nbsp;
 
-<pre><code>HealthSystem.prototype.process = function(entityList, tpf){
+{% highlight js %}HealthSystem.prototype.process = function(entityList, tpf){
 	for(var i = entityList.length; i--;){
 		var entity = entityList[i];
 		var regen = entity.regenerationComponent;
@@ -162,7 +162,7 @@ Here we can safely reference the HealthComponent from within the RegenerationCom
 			}
 		}
 	}
-};</code></pre>
+};{% endhighlight %}
 
 We first iterate through the entityList.  I chose to do it backwards, in case we decide to remove an entity while the list is iterating, we don't need to worry about 'index out of range' or other array related issues.  Next, we check if the time in the world is greater than the time of the nextTic on the RegenerationComponent.  If the time has expired, we add some health to the HealthComponent, and set the nextTic time.
 
@@ -177,7 +177,7 @@ To package all of these scripts up into an easy to use 'drag and drop' asset, le
 Here is the final code to copy and paste into an external script, or else right inside a Custom Script(outside of any functions):
 
 
-<pre><code>(function(window, undefined){
+{% highlight js %}(function(window, undefined){
 	var HealthComponent = function(maxHealth){
 		goo.Component.apply(this, arguments);
 		this.maxHealth = this.currentHealth = maxHealth;
@@ -253,7 +253,7 @@ Here is the final code to copy and paste into an external script, or else right 
 		RegenerationComponent:RegenerationComponent,
 		HealthSystem:HealthSystem
 	};
-}(window));</code></pre>
+}(window));{% endhighlight %}
 
 Here is a demo of just this code, I've removed 70 health at the start of the document, so in the console, you will first see that the cube has taken 70 damage, then you will see the HealthSystem tick off 7 times as it refills the health.
 
