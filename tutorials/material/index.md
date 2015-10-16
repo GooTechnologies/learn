@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Material
-weight: 5600
+weight: 5870
 indent: 1
 ---
 

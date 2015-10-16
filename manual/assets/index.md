@@ -2,6 +2,7 @@
 title: Assets
 weight: 3600
 indent: 1
+layout: manual
 ---
 <h2>Asset Types</h2>
 <h3>Meshes</h3>

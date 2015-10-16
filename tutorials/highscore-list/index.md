@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Highscore list
-weight: 6000
+weight: 5750
 indent: 1
 ---
 This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the <a title="Cube Clicker Game" href="//www.goocreate.com/learn/cube-clicker-game/" target="_blank">Cube Clicker</a> game, but the concepts can of course be used as a foundation for lots more!

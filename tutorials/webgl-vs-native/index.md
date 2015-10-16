@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: WebGL vs Native
-weight: 5500
+weight: 6110
 indent: 1
 ---
 The biggest difference between a WebGL and a native 3D application is in the way the data is loaded. A native 3D application loads its data from the hard drive. Hard drives have become so fast they can transfer up to <strong>500 MB per second</strong>. Overhead for accessing individual files goes towards zero. But for a WebGL application the data typically comes from a server over the Internet. This usually means around <strong>1 MB per second</strong> for broadband and DSL connections and each individual file has some HTTP header and sometimes even reconnection <strong>overhead</strong>. If HTTPS is used <strong>data encryption</strong> comes into the mix as well costing additional load time.

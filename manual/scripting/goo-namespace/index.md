@@ -2,6 +2,7 @@
 title: The goo object
 indent: 2
 weight: 900
+layout: manual
 ---
 The <strong>goo </strong>object provides access to most of the <a href="http://code.gooengine.com/latest/docs/" target="_blank">Goo Engine API</a>. For example, one can create entities and access math functions.
 

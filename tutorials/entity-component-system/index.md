@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Entity Component System Tutorial
-weight: 60001
+weight: 5710
 indent: 1
 ---
 

@@ -2,6 +2,7 @@
 title: Packs
 weight: 3700
 indent: 2
+layout: manual
 ---
 
 An *Asset Pack* is a smart folder that lets you publish one or more assets (and their dependencies) to the asset lib.

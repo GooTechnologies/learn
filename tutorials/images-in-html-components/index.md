@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Images in HTML components
-weight: 5500
+weight: 5800
 indent: 1
 ---
 

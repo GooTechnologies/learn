@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Reducing Code Size
-weight: 6000
+weight: 5960
 indent: 1
 ---
 

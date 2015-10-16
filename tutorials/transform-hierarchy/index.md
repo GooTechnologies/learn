@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Transform Hierarchy
-weight: 5500
+weight: 6090
 indent: 1
 ---
 The hierarchy functionality in Goo Create lets us build <em>scene graphs</em>. In short, the hierarchy makes it possible to make entities follow other entities when moved, by connecting their 3D transforms in a graph structure. In this tutorial, we'll have a look at the basics of the hierarchy and some of its uses.

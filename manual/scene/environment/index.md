@@ -1,5 +1,6 @@
 ---
 title: Environment panel
+layout: manual
 ---
 
 ![Environment panel](environment-panel-expanded.png)

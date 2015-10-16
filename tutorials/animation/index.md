@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Animation
-weight: 5600
+weight: 5610
 indent: 1
 ---
 

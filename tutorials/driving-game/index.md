@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Driving Game
-weight: 5500
+weight: 5680
 indent: 1
 ---
 This tutorial will show you how you can use Goo Create with the ScriptComponent to make a little Scooter driving game.

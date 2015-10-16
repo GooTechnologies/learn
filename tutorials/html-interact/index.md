@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: HTML Component Interact
-weight: 6000
+weight: 5760
 indent: 1
 ---
 There will be times when you may want to use an HTML Entity to do something inside your scene.  In this example, we will use a button to play a sound on an Entities SoundComponent.

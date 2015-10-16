@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Engine Intro
-weight: 5500
+weight: 5690
 indent: 1
 ---
 Hello and welcome, this tutorial will show you how to create a simple solar system using Goo Engine. Please note that it much easier to <a href="http://create.goocreate.com">create this scene in Goo Create</a> and that it is recommended to use Goo Create for most use cases anyways. But if you really want to or must use the Goo Engine directly this tutorial will get you started.

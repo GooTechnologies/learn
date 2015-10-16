@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Importing
-weight: 5600
+weight: 5810
 indent: 1
 ---
 

@@ -1,0 +1,24 @@
+{% assign i = '&nbsp;&nbsp;&nbsp;&nbsp;' %}
+{% assign i2 = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' %}
+<div class="col-md-4">
+
+  <div class="list-group">
+    {% assign pp = site.pages | sort: 'weight' %}
+
+    {% for ppage in pp %}
+      {% if ppage.weight and ppage.url contains '/manual' %}
+        {% assign u = ppage.url %}
+        <a class="list-group-item {% if page.url == u %}active{% endif %}" href="{{ ppage.url | prepend: site.baseurl }}">
+          {% case ppage.indent %}
+          {% when 1 %}
+            {{ i }}
+          {% when 2 %}
+            {{ i2 }}
+          {% endcase %}
+          {{ ppage.title }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</div>

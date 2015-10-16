@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Procedural textures
-weight: 6000
+weight: 5950
 indent: 1
 ---
 A great way to <strong>reduce load times</strong> is to use procedurally generated textures.

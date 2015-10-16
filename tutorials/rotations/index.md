@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Rotations
-weight: 6000
+weight: 6020
 indent: 1
 ---
 <h3 style="text-align: center">This article will list frequently asked questions about the <a title="Everything you always wanted to know about rotation" href="http://www.goocreate.com/learn/everything-you-always-wanted-to-know-about-rotation/"><strong>Everything you always wanted to know about rotation</strong></a> article:</h3>

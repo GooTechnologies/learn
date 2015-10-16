@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Local Web Server
-weight: 5500
+weight: 5860
 indent: 1
 ---
 When developing a Goo Engine application it is very handy to have a local web server so that the test cycles are very short. With a local web server you can edit a script or HTML file and reload the browser and immediately see your change.

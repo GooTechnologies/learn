@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Hierarchy
-weight: 5600
+weight: 5740
 indent: 1
 ---
 

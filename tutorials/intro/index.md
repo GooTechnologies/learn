@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Intro
-weight: 5600
+weight: 5830
 indent: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Creating Santa (Christmas Special)
-weight: 6000
+weight: 5600
 indent: 1
 ---
 

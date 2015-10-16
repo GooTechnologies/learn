@@ -2,6 +2,7 @@
 title: Editor
 indent: 0
 weight: 900
+layout: manual
 ---
 
 This tutorial will briefly go over the main features of the Goo Create interface. Keep in mind that the product is always evolving and changing, so there might be small details that have changed! With that in mind, let's have a look at the interface.

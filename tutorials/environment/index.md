@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Environment
-weight: 5600
+weight: 5720
 indent: 1
 ---
 

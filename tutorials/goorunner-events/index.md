@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: GooRunner events
-weight: 5500
+weight: 5730
 indent: 1
 ---
 Hello! We recommend that you are somewhat familiar with the basics of the DOM Event Listeners first, so please check out the tutorial <a title="DOM Event Listeners" href="http://goolabs.wpengine.com/learn/dom-event-listeners/">DOM Event Listeners</a> if you haven't already. Now, assuming that's done, let's learn how to use event listeners to do some more advanced interaction with Goo scenes.

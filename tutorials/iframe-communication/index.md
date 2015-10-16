@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Iframe Communication
-weight: 6000
+weight: 5790
 indent: 1
 ---
 [vc_row no_margin="true" padding_top="0px" padding_bottom="0px" border="none"][vc_column width="1/1"][text_output]By default, scripts can't communicate across pages unless they're all from the same host, use the same protocols, et cetera. This poses a problem if we'd like to include a published Create project in an iframe, but have the project react to input coming from the rest of the page. The solution for this is called <strong>postMessage</strong> (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage" target="_blank">read about it here</a>). This tutorial will explain how to use it for communicating with a project in an iframe.

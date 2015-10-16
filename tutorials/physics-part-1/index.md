@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Basic Physics Part 1
-weight: 5999
+layout: tutorial
+title: Physics Part 1
+weight: 5920
 indent: 1
 ---
 

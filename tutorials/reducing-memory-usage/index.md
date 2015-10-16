@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Reducing Memory Usage
-weight: 5500
+weight: 5990
 indent: 1
 ---
 <h2>Object Creation and Garbage Collection</h2>

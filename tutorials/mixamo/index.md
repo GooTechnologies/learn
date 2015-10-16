@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Mixamo models
-weight: 6000
+weight: 5880
 indent: 1
 ---
 Mixamo is an online platform to buy or easily create your own animated human-like models. With Mixamo you can mix and match existing or new models with a plethora of ready to use animations.

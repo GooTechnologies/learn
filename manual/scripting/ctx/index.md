@@ -2,6 +2,7 @@
 title: The ctx object
 indent: 2
 weight: 900
+layout: manual
 ---
 The <strong>ctx</strong> (short for <em>context</em>) object is one of the useful pre-defined objects used in scripting. This tutorial will explain what's already on there, what one might add to it and some of the use cases.
 <h2>Context Lifespan</h2>

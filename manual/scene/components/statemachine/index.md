@@ -1,5 +1,6 @@
 ---
 title: State Machine Component
+layout: manual
 ---
 
 The state machine is a visual programming tool that makes it really fast for you to prototype your project.

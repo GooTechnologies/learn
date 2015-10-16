@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Reducing Draw Calls
-weight: 5500
+weight: 5980
 indent: 1
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Parameters
+layout: manual
 ---
 
 To define custom parameters in a Create script, the <em>parameter array </em>and the <em>args </em>object are used.

@@ -2,6 +2,7 @@
 title: Organizations
 indent: 2
 weight: 500
+layout: manual
 ---
 With the collaboration and sharing feature <em>Organizations</em> just released, we thought it would be a good idea to go over some of the basics of how to work with it.
 <h2>What are Organizations?</h2>

@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Solar System
-weight: 5500
+weight: 6050
 indent: 1
 ---
 Hi fellow Goons,

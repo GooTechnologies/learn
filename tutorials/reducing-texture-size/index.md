@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: tutorial
 title: Reducing Texture Size
-weight: 5500
+weight: 6000
 indent: 1
 ---
 One of the easiest things to do, to cut down on load times, is to reduce the file size of your textures.
