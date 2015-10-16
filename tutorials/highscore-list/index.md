@@ -6,7 +6,7 @@ indent: 1
 ---
 This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the <a title="Cube Clicker Game" href="//www.goocreate.com/learn/cube-clicker-game/" target="_blank">Cube Clicker</a> game, but the concepts can of course be used as a foundation for lots more!
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/text50232.png"><img class="size-full wp-image-1123 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/text50232.png" alt="text5023" /></a>
+<a href="text50232.png"><img class="size-full wp-image-1123 aligncenter" src="text50232.png" alt="text5023" /></a>
 
 We will:
 <ul>
@@ -23,7 +23,9 @@ We will NOT:
 	<li>Put effort into making nice modules and resusable code</li>
 	<li>End up with a <em>secure</em> API</li>
 </ul>
+
 All the NOT:s can of course be fixed with a little more time and effort. With that in mind, let's start!
+
 <h2>Table of Contents</h2>
 <ol>
 	<li><a href="#a-good-place">A Good Place to Start</a></li>
@@ -81,7 +83,7 @@ Now is a good place to stop and see how we're doing. Simply run
 
 and take a look at the command prompt or terminal output. If there seems to be no errors, open a web browser and navigate to <em>localhost:3000</em>. If you see a friendly message saying "Welcome to Express", you're doing good! If not, take a look at the error messages or refer to the <a href="//cwbuecheler.com/web/tutorials/2013/node-express-mongo/" target="_blank">tutorial</a> mentioned above for more details.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/welcome.jpg"><img class="wp-image-1112 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/welcome.jpg" alt="welcome" /></a> Hooray!
+<a href="welcome.jpg"><img class="wp-image-1112 size-full" src="welcome.jpg" alt="welcome" /></a> Hooray!
 
 <a name="setting-up-the"></a>
 <h2>Setting Up the Database</h2>
@@ -89,23 +91,23 @@ The server is up and running. Great! Now it's time to set up the database. If yo
 <h3>Mongolab</h3>
 Mongolab is a provider of MongoDB hosting, and then have a free "sandbox" version that suits our purposes very well. So first, <a href="//mongolab.com/" target="_blank">create an account</a>. Then, go ahead and create a new deployment.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/mongodb.jpg"><img class="wp-image-1105 size-large aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/mongodb-1024x56.jpg" alt="mongodb" /></a>
+<a href="mongodb.jpg"><img class="wp-image-1105 size-large aligncenter" src="mongodb.jpg" alt="mongodb" /></a>
 
 The choice of <em>Cloud provider</em> isn't super important, I went with <em>Amazon</em> and the <em>EU Region</em>. Pick something that sounds nice. Next, select a <strong>single-node</strong>, <strong>sandbox</strong> plan and give your database a cool name.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/plan.jpg"><img class="size-full wp-image-1106 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/plan.jpg" alt="plan" /></a>
+<a href="plan.jpg"><img class="size-full wp-image-1106 aligncenter" src="plan.jpg" alt="plan" /></a>
 
 You'll probably see a list of your deployments, so go ahead and click on your new database. Now it's time to add a <em>user</em> to the database. Add a user with a name and password you'll remember. When you're done, it should look something like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/user.jpg"><img class="size-full wp-image-1107 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/user.jpg" alt="user" /></a>
+<a href="user.jpg"><img class="size-full wp-image-1107 aligncenter" src="user.jpg" alt="user" /></a>
 
 Awesome! One more thing. MongoDB databases use collections for storing stuff, so let's add one called <em>scores</em>.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/coll.jpg"><img class="size-full wp-image-1109 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/coll.jpg" alt="coll" /></a>
+<a href="coll.jpg"><img class="size-full wp-image-1109 aligncenter" src="coll.jpg" alt="coll" /></a>
 <h3>Entering some Test Data</h3>
 The first thing we want to do is make a simple GET function for the data, and for that to make sense we need to add some data to read. Open up the <em>scores </em>collection and click <em>Add document</em>. MongoDB uses pure JSON for storage, which makes web integration super easy! Our objects will just contain a name and a time for now. Enter something along the lines of this and click <em>Create and go back:</em>
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/adddoc.jpg"><img class="size-full wp-image-1111 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/adddoc.jpg" alt="adddoc" /></a>
+<a href="adddoc.jpg"><img class="size-full wp-image-1111 aligncenter" src="adddoc.jpg" alt="adddoc" /></a>
 <h3>Checkpoint: Look at that Data!</h3>
 You should now see your freshly entered data. Note that MongoDB has also inserted an unique <strong>_id</strong> field for your entry!
 
@@ -128,7 +130,7 @@ var app = express();
 
 Committing the database credentials to an open repository is a <strong>bad idea</strong>. Therefore, I've created a very small module with this info in a separate file (credentials.js), to be able to skip that file when committing to git, for example. The file, added to .gitignore in my case, looks like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/cred.jpg"><img class="alignnone size-full wp-image-1113" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/cred.jpg" alt="cred" /></a>
+<a href="cred.jpg"><img class="alignnone size-full wp-image-1113" src="cred.jpg" alt="cred" /></a>
 
 Where the database URI, user and password are changed for the ones you got from Mongolab earlier.
 
@@ -203,7 +205,7 @@ app.use('/scores', scores);
 <h3>Checkpoint: Test the Route</h3>
 This simple route can be tested in a browser, but I recomment using the Chrome plugin <a href="//www.getpostman.com/" target="_blank">Postman</a> (or something similar if you don't like Chrome) to make your route testing life easier. With it installed, one can easily connect to any URL and create GET, POST and other requests. If you choose to use Postman, start the server up and construct a simple GET request for <em>http://localhost:3000/scores</em>. If not, use your browser and navigate to the same URL. Watch your console for any debug output, and you should be able to see the test user we added to our cloud hosted database!
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/get.jpg"><img class="wp-image-1114 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/get.jpg" alt="get" /></a> Hooray!
+<a href="get.jpg"><img class="wp-image-1114 size-full" src="get.jpg" alt="get" /></a> Hooray!
 
 <a name="add-more-routes"></a>
 <h2>Add More Routes</h2>
@@ -230,10 +232,10 @@ router.get("/top/:number", function(req, res) {
 });
 {% endhighlight %}
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg"><img class="wp-image-1115 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg" alt="2014-10-14 11_16_54-Postman" /></a> Testing the GET top scores route.
+<a href="2014-10-14-11_16_54-Postman.jpg"><img class="wp-image-1115 size-full" src="2014-10-14-11_16_54-Postman.jpg" alt="2014-10-14 11_16_54-Postman" /></a> Testing the GET top scores route.
 
 After adding some more test users, we can test the route like so:
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-11_16_54-Postman.jpg">
+<a href="2014-10-14-11_16_54-Postman.jpg">
 </a>Next, the POST route.
 
 {% highlight js %}
@@ -266,7 +268,7 @@ router.post("/", function(req, res) {
 
 When posting to the route, we'll use the x-www-form-encoded form of parameter key/value pairs. If you know that your amount of parameters will grow, it might be a good idea to just use one parameter and put all data in one single JSON object. That way one could insert new forms of data into the dabatase without changing the routes (for better or worse)! Here's how the current POST request format is tested in Postman:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/post.jpg"><img class="wp-image-1116 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/post.jpg" alt="post" /></a> Testing the POST route, getting the inserted data back.
+<a href="post.jpg"><img class="wp-image-1116 size-full" src="post.jpg" alt="post" /></a> Testing the POST route, getting the inserted data back.
 
 <a name="using-the-api"></a>
 <h2>Using the API in Create</h2>
@@ -276,7 +278,7 @@ ngrok is a program/service that lets you expose a local web server to the intern
 
 {% highlight js %}ngrok -subdomain highscore 3000{% endhighlight %}
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/tunnel.jpg"><img class="alignnone size-full wp-image-1117" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/tunnel.jpg" alt="tunnel" /></a>
+<a href="tunnel.jpg"><img class="alignnone size-full wp-image-1117" src="tunnel.jpg" alt="tunnel" /></a>
 
 What this means is that you can open up Postman again and instead of using localhost:3000, enter https://highscore.ngrok.com and test the routes there instead. Neat, huh? This little tunneling exercise makes it easy to connect to your own server from Create (and debug using the console output in real time)!
 <h3>The Create Project</h3>
@@ -383,7 +385,9 @@ var updateSubmittedTopListDisplay = function(ctx) {
 
 <h3>The Complete App</h3>
 There's of course more methods to make everything work. <a href="https://app.goocreate.com/tutorials/24503577d6724d18a60d1bddfa30648f.project" target="_blank">This project</a> is set up to display and submit scores. Beware of not-so-pretty code, as the integration was done during one of our <a href="//www.goocreate.com/learn/goofy-projects/" target="_blank">Goofy Days!</a> Also, as we'll touch on later, the security is clearly sub-par, so don't be surprised if something seems off.
-<p style="text-align: center">[advanced_iframe src="https://goote.ch/24503577d6724d18a60d1bddfa30648f.project/" securitykey="iframe" height=500]
+
+<iframe src="https://goote.ch/24503577d6724d18a60d1bddfa30648f.project/"></iframe>
+
 <a href="https://app.goocreate.com/4768/fd52a3558452455faa84a2453fd6f312.scene" target="_blank">Create scene</a></p>
 <a name="hosting-the-highscore"></a>
 <h2>Hosting the Highscore App on Heroku</h2>
@@ -391,7 +395,7 @@ If you take a look at the project linked above, you'll notice that the URLs are 
 
 First, sign up for a free account. Next, click the plus sign in the top right and create a new app. Give it a name, choose a region and hit <em>Create App</em>.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg"><img class="size-full wp-image-1118 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/10/2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg" alt="2014-10-14 14_29_21-Create a New App _ Heroku" /></a>
+<a href="2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg"><img class="size-full wp-image-1118 aligncenter" src="2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg" alt="2014-10-14 14_29_21-Create a New App _ Heroku" /></a>
 
 &nbsp;
 

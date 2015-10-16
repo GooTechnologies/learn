@@ -4,8 +4,10 @@ title: Creating a Goon
 weight: 5650
 indent: 1
 ---
-[alert type="warning" close="true" heading="Warning"]Create has been updated many times since the original writing of this tutorial. While the concepts still are similar, there might be slight differences in certain interface and feature details. At this time template projects no longer exist, but you can still create the scene yourself.[/alert]
+<div class="alert alert-danger" role="alert">Create has been updated many times since the original writing of this tutorial. While the concepts still are similar, there might be slight differences in certain interface and feature details. At this time template projects no longer exist, but you can still create the scene yourself.</div>
+
 <h2>The Goal</h2>
+
 As in any good cooking show, we have prepared the final result beforehand. The<strong> template project</strong> <em>Creating a Goon</em> is already ready to use, accessible from the project list. The project features a Goon with super special, light emitting glasses. After pressing <strong>play</strong>, the Goon can be controlled with the W, A and D buttons.
 
 <img class="wp-image-490 size-full" src="templates.png" alt="templates" /> Template projects - for the practically minded

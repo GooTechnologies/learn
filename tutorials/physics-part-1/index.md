@@ -56,14 +56,14 @@ Please note: There is currently a bug where the  table entity also needs a rigi
 
 Click on +CREATE again to add a box shape to the scene. Rename the box entity to "Floor" and with the box still selected open up the TRANSFORM panel to the left in Goo Create. Change the scaling to be 20, 1, 40.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFloorScaling.jpg"><img class="alignnone size-full wp-image-1251" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFloorScaling.jpg" alt="FlipperFloorScaling" /></a>
+<a href="FlipperFloorScaling.jpg"><img src="FlipperFloorScaling.jpg" /></a>
 
 Next we add a collider component. Under the transform settings please click on the +ADD COMPONENT button and select COLLIDER:
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperCollider.jpg"><img class="alignnone size-medium wp-image-1255" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperCollider-247x300.jpg" alt="FlipperCollider" /></a>
+<a href="FlipperCollider-247x300.jpg"><img src="FlipperCollider-247x300.jpg" /></a>
 
 Please change the restitution and the friction to zero:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFloorCollider.jpg"><img class="alignnone size-full wp-image-1256" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperFloorCollider.jpg" alt="FlipperFloorCollider" /></a>
+<a href="FlipperFloorCollider.jpg"><img src="FlipperFloorCollider.jpg" /></a>
 
 Friction is the resistance that one surface or object encounters when moving over another. Restitution in the context of physics is best described as "bouncyness".
 
@@ -71,7 +71,7 @@ We set both to zero since we don't want the ball to bounce on the pinball flippe
 
 Ok, now we are ready to create the walls. Create another box and change the name to LeftWall. Then give it the following transform values:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperLeftWall.jpg"><img class="alignnone size-full wp-image-1257" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperLeftWall.jpg" alt="FlipperLeftWall" /></a>
+<a href="FlipperLeftWall.jpg"><img src="FlipperLeftWall.jpg" /></a>
 
 Also add a collider component and set the friction to zero and the restitution to 0.5 so the ball bounces of the wall.
 
@@ -79,13 +79,13 @@ Repeat these steps for the right wall, the only difference is the X position: I
 
 Finally we add the TopWall. Add another box and give it these transform settings:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTopWall.jpg"><img class="alignnone size-full wp-image-1258" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTopWall.jpg" alt="FlipperTopWall" /></a>
+<a href="FlipperTopWall.jpg"><img src="FlipperTopWall.jpg" /></a>
 
 Give it the same collider settings as the other walls.
 
 Your scene should now look like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSceneMS1.jpg"><img class="alignnone size-medium wp-image-1259" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperSceneMS1-300x164.jpg" alt="FlipperSceneMS1" /></a>
+<a href="FlipperSceneMS1-300x164.jpg"><img src="FlipperSceneMS1-300x164.jpg" /></a>
 
 Ok, let's test our scene. For this we will nest the floor and walls under the empty Table entity we added at the start of this tutorial.
 
@@ -93,7 +93,7 @@ Then we will tilt the pinball table 36 degrees and add a ball.
 
 To nest an entity under another entity you simply drag and drop the entity (child) onto the other (parent). Repeat this for the floor and all the walls. Then click on the Table entity and rename it to "Table". Finally go to the transform settings and change the X rotation to be 36. This should have resulted in your table to be tilted like  this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTableTilted.jpg"><img class="alignnone size-medium wp-image-1260" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperTableTilted-279x300.jpg" alt="FlipperTableTilted" /></a>
+<a href="FlipperTableTilted-279x300.jpg"><img src="FlipperTableTilted-279x300.jpg" /></a>
 
 Finally let's add the ball. Click on +CREATE and select the sphere shape. Rename it to "Ball", set the transform settings to 0, 8.5, -8.5 and change the scale to 1.5, 1.5, 1.5.
 
@@ -101,7 +101,7 @@ For the ball to behave properly we need to give it two components: A collider a
 
 Change the "Shape" setting to "Sphere". Set the friction to zero and the restitution to 0.5. Next add the RIGID BODY component and set the mass to 2.5. You can imagine the mass to represent weight in kilos.
 
-Well, let's press play <a href="http://www.goocreate.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png"><img class="alignnone size-full wp-image-427" src="http://www.goocreate.com/learn/wp-content/uploads/sites/2/2014/07/press_play.png" alt="press_play" /></a> (at the bottom) and see what happens. :-)
+Well, let's press play <a href="press_play.png"><img src="press_play.png" /></a> (at the bottom) and see what happens. :-)
 
 If everything works as expected you should see the ball dropping onto and rolling along and finally falling off of the floor.
 
@@ -115,13 +115,13 @@ So reset the tilt of the Table entity by setting the X rotation to zero. Then c
 
 Rename the "Cylinder" to "Bumper1" and then go to the transform setting and set the following:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperBumper1.jpg"><img class="alignnone size-full wp-image-1261" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperBumper1.jpg" alt="FlipperBumper1" /></a>
+<a href="FlipperBumper1.jpg"><img src="FlipperBumper1.jpg" /></a>
 
 ( Note: of course you can place your bumpers where ever you like. Just make sure to keep the 1.5 for the Y translation and the 90 for the X rotation. )
 
 You should now have your first bumper and it should look something like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperBumper1Scene.jpg"><img class="alignnone size-medium wp-image-1262" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperBumper1Scene-300x178.jpg" alt="FlipperBumper1Scene" /></a>
+<a href="FlipperBumper1Scene-300x178.jpg"><img src="FlipperBumper1Scene-300x178.jpg" /></a>
 
 Next we add a collider component to the bumper. Set the friction to zero and the restitution to 2, this will make the bumpers very bouncy, just like we want them to behave. Fell free to play around with even higher values.
 
@@ -143,13 +143,13 @@ Another nice trick is to change the Material for one of the walls, for example t
 
 And another trick to fake a metal ball is to import any Skybox from the Asset Library and then set the Reflectivity like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperBallMaterial.jpg"><img class="alignnone size-full wp-image-1263" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/FlipperBallMaterial.jpg" alt="FlipperBallMaterial" /></a>
+<a href="FlipperBallMaterial.jpg"><img src="FlipperBallMaterial.jpg" /></a>
 
 Let's duplicate one of the bumpers two more times. Set the translation to -2.375, 1.5, -4 and to 2.375, 1.5, -4 respectively.
 
 After tilting the table again, my scene now looks like this:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/Flipper5Bumpers.jpg"><img class="alignnone size-medium wp-image-1264" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/Flipper5Bumpers-300x207.jpg" alt="Flipper5Bumpers" /></a>
+<a href="Flipper5Bumpers-300x207.jpg"><img src="Flipper5Bumpers-300x207.jpg" /></a>
 
 Pressing play reveals a problem of course: The bumper and the ball are perfectly aligned, so the the ball never stops bouncing on it. The fix is simple, we just move the ball a bit to the side. Let's try -1.88 for the X translation.
 

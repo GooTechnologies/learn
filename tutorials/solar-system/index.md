@@ -44,7 +44,7 @@ Click on +<strong>CREATE</strong> again and add another sphere. Increase the X a
 
 <a href="moon_transform.png"><img class="alignnone wp-image-415 size-full" src="moon_transform.png" alt="moon_transform" /></a>
 
-[alert type="info"]Please note: The moon will look to be very close to the sun, but don’t worry, once we nest the Moon as a child entity to the Earth entity it will look correct again. Nesting the entities will be done as one of the last steps in the tutorial.[/alert]
+<div class="alert alert-info" role="alert">Please note: The moon will look to be very close to the sun, but don’t worry, once we nest the Moon as a child entity to the Earth entity it will look correct again. Nesting the entities will be done as one of the last steps in the tutorial.</div>
 
 Next, we will add a <em>point light</em> to make the Sun appear to shine light on Earth and the Moon.
 
@@ -52,7 +52,8 @@ To add a point light click on <strong>Create</strong> and click the <strong>Poin
 
 <a href="point_light.png"><img class="alignnone wp-image-418 size-full" src="point_light.png" alt="point_light" /></a>
 
-[alert type="info"]If you are wondering where the point light is: It is inside the sun and will shine through the Sun model onto Earth and the Moon[/alert]
+<div class="alert alert-info" role="alert">If you are wondering where the point light is: It is inside the sun and will shine through the Sun model onto Earth and the Moon</div>
+
 <h2>Add some Materials</h2>
 We will use the same textures as in the Hello World tutorial. You can download the individual images here:
 
@@ -70,7 +71,7 @@ Next, go to the ambient settings and change the color to bright yellow. This wil
 
 Finally, repeat the process for the moon.
 
-[alert type="info"]If you have trouble selecting the Moon sphere, remember that you can always select an entity using the *Hierarchy* panel to the right.[/alert]
+<div class="alert alert-info" role="alert">If you have trouble selecting the Moon sphere, remember that you can always select an entity using the *Hierarchy* panel to the right.</div>
 <h2>Add a ScriptComponent to the first two spheres</h2>
 Okay, now we get to talk about the ScriptComponent. Select the sun again and click on <strong>Add Component</strong> and click on <strong>Script</strong>.
 
@@ -82,7 +83,7 @@ Once you have added a script, you can click on the <strong>Edit</strong> symbol 
 
 <a href="edit_script.png"><img class="alignnone wp-image-426 size-full" src="edit_script.png" alt="edit_script" /></a>
 
-[alert type="info"]Please note: You can leave the script editor window open, it will automatically switch to new contents when you change entities.[/alert]
+<div class="alert alert-info" role="alert">Please note: You can leave the script editor window open, it will automatically switch to new contents when you change entities.</div>
 
 You should see a big wall of JavaScript source code, but don’t get scared. Most of it is just documentation. Essentially, you have control over three functions and one array:
 {% highlight js %}/* Implement this method to do initializing. */
@@ -120,7 +121,7 @@ As you can see we added a call to <strong>addRotation</strong> on the object <st
 
 <strong>addRotation</strong> is a useful function of the Goo Engine injected into the entity by the <a href="//code.gooengine.com/latest/docs/TransformComponent.html">TransformComponent</a>.
 
-[alert type="info"]*ctx* stands for *context* and it hosts a couple of cool objects. Mainly the current entity to which this script belongs. If you create a new script you can read the comments for other objects it contains.[/alert]
+<div class="alert alert-info" role="alert">*ctx* stands for *context* and it hosts a couple of cool objects. Mainly the current entity to which this script belongs. If you create a new script you can read the comments for other objects it contains.</div>
 
 As a parameter to the rotation around the Y axis we give it <strong>0.75 * ctx.world.tpf</strong>.
 
@@ -141,15 +142,15 @@ This step is very easy: Inside the <em>Hierarchy</em> window, drag and drop the 
 
 <a href="nested_spheres.png"><img class="alignnone wp-image-428 size-full" src="nested_spheres.png" alt="nested_spheres" /></a>
 
-[alert type="info"]You can click on the little triangle in front of an entity to show its children.[/alert]
+<div class="alert alert-info" role="alert">You can click on the little triangle in front of an entity to show its children.</div>
 
 Now click <strong>play</strong> again and you should see Earth rotating around the Sun and the Moon rotating around Earth.
 
-[alert type="info"]Of course this simulation is not an accurate representation of our real solar system. It merely serves as a nice playground for our ScriptComponent demo. :-)[/alert]
+<div class="alert alert-info" role="alert">Of course this simulation is not an accurate representation of our real solar system. It merely serves as a nice playground for our ScriptComponent demo. :-)</div>
 <h4>Why does nesting entities have such an effect?</h4>
 The reason is that nested entities have their parents transformation applied to them as well, but only after their own transformation is applied. So for example, Earth is first rotated around its center and then moved 4 units along the X axis. Then it is rotated around the suns center. This behavior of nested entities is a nice trick we can use to make our simple little solar system.
 
-[alert type="info"]The same technique is also used to animate realistic hands for example. The fingers are nested under the palm entity and only moved relative to the palm. If the arm or palm is moved then the fingers move with it, but if only the fingers are moved then the palm is not affected.[/alert]
+<div class="alert alert-info" role="alert">The same technique is also used to animate realistic hands for example. The fingers are nested under the palm entity and only moved relative to the palm. If the arm or palm is moved then the fingers move with it, but if only the fingers are moved then the palm is not affected.</div>
 <h2>Add a Bloom post effect and a Skybox</h2>
 Ok, for the last step we will add a bit of eye candy: In your <em>Hierarchy</em> window click on the entity called <strong>Scene</strong> and you should see a <strong>Post Effect</strong> settings panel on the left side of Goo Create.
 

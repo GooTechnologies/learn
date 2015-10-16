@@ -99,8 +99,8 @@ var parameters = [
 {% endhighlight %}
 
 Here are the two images I am using for this tutorial:
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png"><img class="alignnone size-full wp-image-1031" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_empty.png" alt="health_empty" /></a>
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_full.png"><img class="alignnone size-full wp-image-1032" src="http://goocreate.com/wp-content/uploads/sites/3/2014/09/health_full.png" alt="health_full" /></a>
+<a href="health_empty.png"><img src="health_empty.png" /></a>
+<a href="health_full.png"><img src="health_full.png" /></a>
 
 After you save the script, you will need to drag and drop them onto the Empty and Full texture slots which appeared in the Custom script, or else use the browse icon to search for them on your local hard drive.
 

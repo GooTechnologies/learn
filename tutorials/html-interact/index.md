@@ -32,7 +32,7 @@ First, expand the Script category.  At the bottom of all the camera settings, y
 
 Now we need to open and edit this script.  You do this by clicking the icon which looks like a pencil writing inside a square:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png"><img class="alignnone size-full wp-image-995" src="http://goocreate.com/wp-content/uploads/sites/3/2014/08/edit-script.png" alt="edit script" /></a>
+<a href="edit-script.png"><img src="edit-script.png" /></a>
 
 Remove all the existing code from the code editor, and then paste this inside it:
 

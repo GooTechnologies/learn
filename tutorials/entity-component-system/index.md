@@ -11,11 +11,11 @@ The main difference between an ECS and typical Inheritance programming, is that 
 
 In inheritance programming, an Entity could be an Object.  Sub-classA would inherit from Object, adding its own layer of properties and functions.  Yet another Sub-ClassB could inherit from Sub-ClassA, again adding its own layer of properties and functions.  If you were to talk about the final Entity, you could say the Entity 'is a' Sub-ClassB.  The Entity 'is a' Sub-ClassA.  The Entity 'is a' Object.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/oinheritance.jpg"><img class=" size-full wp-image-1287 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/oinheritance.jpg" alt="oinheritance" /></a>
+<a href="oinheritance.jpg"><img src="oinheritance.jpg" /></a>
 
 In the ECS approach, there is no inheritance.  An entity is given various Components of data, based on what it is needed to do.  Sometimes these Components will contain utility functions, to manipulate the data to make life easier.  Finally, Systems process this data, adding functionality to the Entity.  If we were to talk about the final Entity, we could say the Entity 'has a' MeshDataComponent.  The Entity 'has a' TransformComponent'.  The Entity 'has a' MeshRendererComponent.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2015/03/ecs.jpg"><img class=" size-full wp-image-1281 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2015/03/ecs.jpg" alt="ecs" /></a>
+<a href="ecs.jpg"><img src="ecs.jpg" /></a>
 
 Through the ECS approach, Entities are no longer confined by rigid inheritance chains, and are more dynamic in nature.  Systems can run more efficiently and independently from on another,  because they only interact with the Components they have an interest in.  Also, memory allocation and access is better, because Components are stored in an Array, instead of spread all over the place.
 

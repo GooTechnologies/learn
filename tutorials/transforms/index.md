@@ -18,7 +18,7 @@ var update = function(args, ctx, goo) {
 };
 {% endhighlight %}
 
-<p style="text-align: center">[advanced_iframe style="width: 400px;" securitykey="iframe" src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a/" width="400" height="200"][/advanced_iframe]</p>
+<iframe src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a/"></iframe>
 
 <h3>Rotation</h3>
 The rotation is used to specify an entity's rotation around the x, y and z axises. It is represented by a <em>3x3 matrix</em> (<a href="http://code.gooengine.com/latest/docs/Matrix3x3.html" target="_blank">Matrix3x3</a>), called the rotation matrix (<a href="http://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions" target="_blank">Wikipedia link</a>). All the underlying math is actually represented by matrices and vectors! If you take a look at the Wikipedia article, you'll see that three individual matrices can be used for rotations around the axises. These three are then multiplied together to form the rotation matrix representing the total rotation. If you're familiar with linear algebra, you'll know that the order of multiplication matters! If you're not, now you're informed. Luckily, you won't have to care too much about the details if you don't want to. <a href="http://code.gooengine.com/latest/docs/Matrix3x3.html" target="_blank">The Matrix3x3 class</a> has plenty of useful functions. For example, <strong>rotateX(<em>number </em>rad)</strong> which builds the correct matrix and multiplies the current rotation matrix with it for you.
@@ -31,7 +31,7 @@ var update = function(args, ctx, goo) {
 };
 {% endhighlight %}
 
-<p style="text-align: center">[advanced_iframe style="width: 400px;" securitykey="iframe" src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01/" width="400" height="200"][/advanced_iframe]</p>
+<iframe src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01/"></iframe>
 
 <h3>Scale</h3>
 The scale is, like the translation, a three-dimensional vector. It starts as the vector <strong>(1, 1, 1)</strong> meaning that an entity's scale along each axis is one, unchanged. If we would use the vector <strong>(2, 2, 2)</strong> instead, that would mean that the entity is <em>twice as big in each direction</em>!
@@ -44,7 +44,7 @@ var update = function(args, ctx, goo) {
 };
 {% endhighlight %}
 
-<p style="text-align: center">[advanced_iframe style="width: 400px;" securitykey="iframe" src="//goote.ch/853e0744b31b6fd66ddd1a18d709439710aa0a64/" width="400" height="200"][/advanced_iframe]</p>
+<iframe src="//goote.ch/853e0744b31b6fd66ddd1a18d709439710aa0a64/"></iframe>
 
 <h2>The Transform</h2>
 <h3>The Transform Matrix</h3>
@@ -55,8 +55,8 @@ We have already seen that the matrix and vector classes already have some helper
 Transforms belong to the fundamentals of computer graphics, but Goo Engine (and other <a title="Goo Engine Architecture Overview" href="http://goolabs.wpengine.com/learn/goo-engine-architecture-overview/" target="_blank">entity-component-system</a> engines) implement this in the <a href="http://code.gooengine.com/latest/docs/TransformComponent.html" target="_blank">TransformComponent</a>. The component effectively takes care of all the low-level details, and makes sure everything happens in the correct order. The transform component integrates the transform into the rendering engine, and takes care of building the hierarchical scene graph. Moreover, the <a href="http://code.gooengine.com/latest/docs/TransformComponent.html" target="_blank">TransformComponent API</a> adds a lot of useful functions which also are accessible directly from the entity! This makes writing code considerably simpler and shorter.
 <h3>The TransformComponent API</h3>
 The API has functions for <strong>adding</strong> or directly <strong>setting</strong> rotation, translation or scale. There are also <strong>getters</strong> for accessing these values. To build hierarchies and parent/children relationships between entities, one uses the <strong>attachChild</strong> or <strong>detachChild</strong> functions. The function lookAt can be used to orient an entity in a certain direction.
-<p style="text-align: center">[advanced_iframe style="width: 400px;" securitykey="iframe" src="//goote.ch/1107233399a27f819dd36d3e10abf2088e1717c8/" width="400" height="200"][/advanced_iframe]</p>
 
+<iframe src="//goote.ch/1107233399a27f819dd36d3e10abf2088e1717c8/"></iframe>
 
 {% highlight js %}
 // Have the entity (Cone) look at the Sphere

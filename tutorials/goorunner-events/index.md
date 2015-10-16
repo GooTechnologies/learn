@@ -5,15 +5,18 @@ weight: 5730
 indent: 1
 ---
 Hello! We recommend that you are somewhat familiar with the basics of the DOM Event Listeners first, so please check out the tutorial <a title="DOM Event Listeners" href="http://goolabs.wpengine.com/learn/dom-event-listeners/">DOM Event Listeners</a> if you haven't already. Now, assuming that's done, let's learn how to use event listeners to do some more advanced interaction with Goo scenes.
-<p style="text-align: center;">[advanced_iframe securitykey="iframe" style="width:640px;" src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/" width="640" height="480"]
-Click around!</p>
+
+<iframe src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/"></iframe>
+
+Click around!
+
 The GooRunner event listeners work like regular DOM event listeners (and even contains the standard events), but also add some very useful stuff:
 <ul>
 	<li>The picked entity.</li>
 	<li>The point of intersection in the 3D scene.</li>
 	<li>The depth of the intersection.</li>
 </ul>
-[alert type="success, info, warning, danger, muted" close="true"]<a href="http://code.gooengine.com/latest/docs/GooRunner.html#addEventListener" target="_blank">Read about the details and available event types here!</a>[/alert]
+<div class="alert alert-info" role="alert"><a href="http://code.gooengine.com/latest/docs/GooRunner.html#addEventListener" target="_blank">Read about the details and available event types here!</a></div>
 <h2>Performance Warning</h2>
 A very important point - <strong>using GooRunner event listeners is considerably slower than using regular DOM event listeners!</strong> Always use the regular events if you can. For example, it's probably not a good idea to attach a GooRunner <em>mousemove </em>event unless you really have to, since that will fire all the picking and intersection logic as soon as the cursor is moved! again, remember that the GooRunner events do everything that regular events do, plus a lot more.
 <h2>A Simple Example</h2>

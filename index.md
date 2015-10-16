@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: Goo Create Learn
 ---
 
 Welcome To the Learn site! Here you can find tutorials and a reference manual. Everything you need to learn Goo Create.

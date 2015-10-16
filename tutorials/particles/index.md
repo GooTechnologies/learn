@@ -5,7 +5,9 @@ weight: 5910
 indent: 1
 ---
 This article will discuss how to use Particles inside Goo Create. For general information about Particles, please refer to the <a title="Particles in Goo Engine" href="http://www.goocreate.com/learn/particles-in-goo-engine/">Particle Tutorial</a>!
-<p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px" src="//goote.ch/4648b5ed45266a6cba5cc1dbd8fec0bdd9520226/" width="600" height="300"]</p>
+
+<iframe src="//goote.ch/4648b5ed45266a6cba5cc1dbd8fec0bdd9520226/"></iframe>
+
 <p style="text-align: center"><a href="//goote.ch/4648b5ed45266a6cba5cc1dbd8fec0bdd9520226/" target="_blank">Link to the result</a></p>
 The first thing we will need to do, is add an empty Entity to the scene. You can do this by clicking on the button '+ Create' on the top-left of the screen, and then clicking on the hexagon icon with the word EMPTY next to it:
 
@@ -202,7 +204,11 @@ To make things more interesting, try setting the ‘Max Angle’ to 30 degrees a
 The ‘Follow Rotation’ option will allow the emitter to emit outward, based on the rotation of the Star Emitter, instead of only up.
 
 The ‘One Off’ option will make it so the emitter will only emit one time, and then stop.
+
 <h3>Conclusion</h3>
+
 This tutorial and script is only the beginning. There are many other ways to fine tune or tailor this script based on your needs. Feel free to test out various settings, and change the code to see what happens.
-<p style="text-align: center"><img class="size-full wp-image-389 aligncenter" src="image_10.png" alt="image_10" />
-<a href="//goote.ch/4648b5ed45266a6cba5cc1dbd8fec0bdd9520226/" target="_blank">Link to the result</a></p>
+
+<img class="size-full wp-image-389 aligncenter" src="image_10.png" alt="image_10" />
+
+<a href="//goote.ch/4648b5ed45266a6cba5cc1dbd8fec0bdd9520226/" target="_blank">Link to the result</a>

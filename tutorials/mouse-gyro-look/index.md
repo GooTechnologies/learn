@@ -5,7 +5,9 @@ weight: 5890
 indent: 1
 ---
 Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera. To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
-<p style="text-align: center;">[advanced_iframe src="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/" securitykey="iframe" height="500"]</p>
+
+<iframe src="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"></iframe>
+
 <p style="text-align: center;">[button style="margin-bottom: 15px;" type="flat" shape="rounded" size="medium" href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"][icon type="desktop"]Open in a New Window[/button] [button style="margin-bottom: 15px;" type="flat" shape="rounded" size="medium" href="https://create.goocreate.com/22307/a5b7c39669b04e5cb1e243f9a2d8454d.scene"][icon type="copy"]Scene to Duplicate[/button]</p>
 Setup: Create two entities, place them both where the camera should look. In the example scene, I've picked (0, 0, 0). Create a camera and arrange the entities like this:
 

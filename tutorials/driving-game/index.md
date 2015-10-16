@@ -21,7 +21,7 @@ Add the <strong>Hills</strong> skybox or any other skybox you like. Then add the
 
 <a href="asset_lib.png"><img class="size-medium wp-image-436 aligncenter" src="asset_lib-300x264.png" alt="asset_lib" /></a>
 
-[alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: You can rotate the view with the right mouse button and select entities with the left.</span><br style="color: #000000" /><span style="color: #000000">You can also move the view with the middle mouse button.</span> [/alert]
+<div class="alert alert-info" role="alert">Hint: You can rotate the view with the right mouse button and select entities with the left.You can also move the view with the middle mouse button.</div>
 
 Your scene should look somewhat like this:
 
@@ -45,7 +45,7 @@ But let's first add a PointLight: Click on "+CREATE" and click on "POINT" under 
 
 <a href="scooter_light.png"><img class="size-medium wp-image-443 aligncenter" src="scooter_light-174x300.png" alt="scooter_light" /></a>
 
-[alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: We recommend to delete the "Default Lights", this will increase performance on mobile devices.</span><br style="color: #000000" /><span style="color: #000000">Select the "Default Lights" and click on the little trashcan icon top right.</span> [/alert]
+<div class="alert alert-danger" role="alert">Hint: We recommend to delete the "Default Lights", this will increase performance on mobile devices.Select the "Default Lights" and click on the little trashcan icon top right.</div>
 
 Move the car over the track and rotate it a bit on it's Y axis. Lift the car up a bit so it's wheels are not stuck inside the logo. Move the star over the track and duplicate it. The duplication icon is top right. Move the new star to a random spots on the track. Repeat this 2 more times so you end up with 4 stars in total.
 
@@ -80,7 +80,7 @@ var parameters = [];
 {% highlight js %} {% endhighlight %}
 As you can see we have a call to <strong>addRotation</strong> on the object <strong>ctx.entity</strong>. <strong>addRotation</strong> is a useful function of the Goo Engine injected into the entity by the <a href="//code.gooengine.com/latest/docs/TransformComponent.html">TransformComponent</a>.
 
-[alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000"><em>ctx</em> stands for <em>context</em> and it hosts a couple of cool objects. Mainly the current entity to which this script belongs. If you create a new script you can read the comments for other objects it contains.</span>[/alert]
+<div class="alert alert-info" role="alert"><span style="color: #000000"><em>ctx</em> stands for <em>context</em> and it hosts a couple of cool objects. Mainly the current entity to which this script belongs. If you create a new script you can read the comments for other objects it contains.</span></div>
 
 As a parameter to the rotation around the Y axis we give it <strong>-ctx.world.tpf*5</strong>.
 
@@ -88,7 +88,7 @@ As a parameter to the rotation around the Y axis we give it <strong>-ctx.world.
 
 The reason we use the <strong>tpf</strong> as part of our parameter to addRotation is to make the code <em>frame rate independent</em>. If we always use tpf as part of our animation code it will run at the same speed regardless of how long it takes to render the scene. So this is a good practice to remember!
 
-[alert type="success, info, warning, danger, muted" close="true"] Hint: You can give the script a useful name by clicking on it, I will name it "prop_mesh"[/alert]
+<div class="alert alert-info" role="alert"> Hint: You can give the script a useful name by clicking on it, I will name it "prop_mesh"</div>
 
 Save the script and click on the play button at the bottom of the Goo Create window. You should see a little spinning car propeller. Press the <strong>stop</strong> button to continue working on the scene.
 
@@ -139,7 +139,7 @@ we pass in a vector with a negative z value.
 
 You can imagine that we use applyPost to put the vector into the a local coordinate system of the car.
 
-[alert type="success, info, warning, danger, muted" close="true"] <span style="color: #000000">Hint: Don't worry if you don't understand the code completely but do think about researching and understanding it later.</span><br style="color: #000000" /><span style="color: #000000">Goo Create tries to make creating 3D content as easy as possible but to do the really fancy stuff you will probably not get around learning some 3D math.</span>[/alert]
+<div class="alert alert-info" role="alert"> <span style="color: #000000">Hint: Don't worry if you don't understand the code completely but do think about researching and understanding it later.</span><br style="color: #000000" /><span style="color: #000000">Goo Create tries to make creating 3D content as easy as possible but to do the really fancy stuff you will probably not get around learning some 3D math.</span></div>
 
 Save the script and click on the <strong>play</strong> button at the bottom of the Goo Create window. You should see that the camera rapidly moves behind the car and then stays there. Press the <strong>stop</strong> button to continue working on the scene.
 
@@ -153,7 +153,7 @@ There, in the Text Editor window at the bottom left, add three EXTERNAL RESOURC
 <a href="https://labs.gooengine.com/learn/VehicleHelper2.js">https://labs.gooengine.com/learn/VehicleHelper2.js</a>
 <a href="https://code.gooengine.com/0.10.3/lib/ammopack.js">https://code.gooengine.com/0.10.3/lib/ammopack.js</a>
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/07/external_resources.jpg"><img class="aligncenter wp-image-1194 size-full" src="http://goocreate.com/wp-content/uploads/sites/3/2014/07/external_resources.jpg" alt="external_resources" /></a>
+<a href="external_resources.jpg"><img src="external_resources.jpg" /></a>
 
 The first file is the Ammo.js physics engine. The second file is a little helper class I wrote to make
 using the btRaycastVehicle class from Bullet together with Goo easier. The btRaycastVehicle is a class that tries
@@ -243,17 +243,17 @@ The second initialization block queries the Goo world for the <strong>goo<em>log
 
 Giving an entity an AmmoComponent registers it with the AmmoSystem and makes the entity behave physically realistic. In this case we pass in two parameters: mass: 0 and useWorldTransform: true. An entity with an AmmoComponent of mass 0 means it will be static and will not be affected by gravity and other forces. Basically it will stay where it is in space but other entities with mass &gt; 0 will be able to collide with it. We also tell it to use the world transform as opposed to the local transform. This is usually the recommended setting for nested entities like the goo<em>logo</em>mesh so it inherits the parent transform settings we applied earlier to make the logo so big.
 
-[alert type="success, info, warning, danger, muted" close="true"]Hint: A user should not need to think about using useWorldTransform and the AmmoComponent will soon be improved to remove this setting![/alert]
+<div class="alert alert-info" role="alert">Hint: A user should not need to think about using useWorldTransform and the AmmoComponent will soon be improved to remove this setting!</div>
 
 Next we get the Car entity and clone it's current position vector into the variable <strong>pos</strong> so we can reset the car if we fall off the track.
 
-[alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: If we would not clone the car translation, pos would share the reference to the car translation.</span><br style="color: #000000" /><span style="color: #000000">If we clone the vector returned by getTranslation, pos references it's own independent vector and changes to the car position will not affect the pos vector.</span>[/alert]
+<div class="alert alert-info" role="alert"><span style="color: #000000">Hint: If we would not clone the car translation, pos would share the reference to the car translation.</span><br style="color: #000000" /><span style="color: #000000">If we clone the vector returned by getTranslation, pos references it's own independent vector and changes to the car position will not affect the pos vector.</span></div>
 
 Then we give the car an AmmoComponent as well. We set the mass to 350 kilos and we tell it to use the world bounding box for the collision detection.
 
 The benefit of using the world bounding box is that it includes all children (like the propeller) and takes every transform (like scale) into account.
 
-[alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: Again, a user should not need to think about useWorldBounds and the AmmoComponent will soon be improved to remove this setting!</span><br style="color: #000000" /><span style="color: #000000">If you want to see the bounds used you can set showBounds to true.</span>[/alert]
+<div class="alert alert-info" role="alert"><span style="color: #000000">Hint: Again, a user should not need to think about useWorldBounds and the AmmoComponent will soon be improved to remove this setting!</span><br style="color: #000000" /><span style="color: #000000">If you want to see the bounds used you can set showBounds to true.</span></div>
 
 Finally we get all entities named "Star" and for each one we assign a new AmmoComponent with mass: 1 and useWorldBounds: true.
 
@@ -261,7 +261,7 @@ This concludes this initialization step and we set <strong>init1Done</strong> to
 
 Next we check for <strong>ctx.car.ammoComponent.body</strong> to make sure the car AmmoComponent was properly processed before we go on.
 
-[alert type="success, info, warning, danger, muted" close="true"]<span style="color: #000000">Hint: Adding and removing entities and components are deferred inside the Goo Engine to improve performance !</span><br style="color: #000000" /><span style="color: #000000">So sometimes you need to wait a frame or two for these changes to take effect.</span>[/alert]
+<div class="alert alert-info" role="alert"><span style="color: #000000">Hint: Adding and removing entities and components are deferred inside the Goo Engine to improve performance !</span><br style="color: #000000" /><span style="color: #000000">So sometimes you need to wait a frame or two for these changes to take effect.</span></div>
 
 Then we enter the third initialization step. In this step we create an instance of the VehicleHelper class. The VehicleHelper class contains methods to accelerate, steer and break a vehicle. The parameters to the constructor are: ammoSystem, vehicle_entity, wheelRadius:2 and suspensionLength:0.6.
 

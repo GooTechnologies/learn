@@ -6,32 +6,39 @@ indent: 1
 ---
 This tutorial will cover how to create CSS buttons and use them to rotate a model. It will also include how to make smooth animations with the TweenJS library. To get the most out of this tutorial, it is useful to know the absolute basics of Create, and also know some JavaScript and a bit of CSS. The tutorial will contain a lot of code and is broken up into five chapters, all with corresponding projects to look at:
 
-<a href="#starting-off">Starting Off</a>
-<a href="#making-a-rotation-script">Making a Rotation Script</a>
-<a href="#adding-buttons">Adding Buttons</a>
-<a href="#finishing-touches">Finishing Touches</a>
-<a href="#wrap-up">Wrap-up</a>
+* <a href="#starting-off">Starting Off</a>
+* <a href="#making-a-rotation-script">Making a Rotation Script</a>
+* <a href="#adding-buttons">Adding Buttons</a>
+* <a href="#finishing-touches">Finishing Touches</a>
+* <a href="#wrap-up">Wrap-up</a>
 
-&nbsp;
 <h2>What We'll Do</h2>
-<p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/" width="600" height="300"]</p>
-<p style="text-align: center"><em>The end result. Try it!</em></p>
+
+<iframe src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/"></iframe>
+
+<em>The end result. Try it!</em>
+
 The end result will be a simple scene with a cube, which can be rotated using two buttons. To get an idea of what we're trying to do, have a look at the end result above before starting.
 
-<a name="starting-off"></a>
-<h2>Starting Off</h2>
+## Starting Off
+
 We will start by setting up the scene. The 3D model we will use in this tutorial is a cube, made out of six quads with different colors. We have first made an empty entity, named ColorCube. Then, six quads with different colors have been created, rotated and placed to make up the sides of the cube. The individual sides have then been made children of the ColorCube entity, so that we can manipulate them all at once. Remember that quads only can be seen from one side, so it can be a little tricky getting all the sides oriented correctly.
 
 In addition, a fixed camera has been set up, overlooking the cube slightly from the side. At last, the canvas has been set to 600x300 pixels and has been given a dark gray background.
 
 If you don't want to set the scene up yourself, it can be found <a href="https://app.goocreate.com/4768/e3cb2c2744bd4fa0b8250b3dc6ee70e3.scene" target="_blank">here</a>. Of course, you can also use your own 3D model instead of the cube if you want to.
-<p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/1b1d89c829df385d72cdf028f964760378b45d71/" width="600" height="300"]</p>
-<p style="text-align: center"><em>The starting scene</em></p>
+
+<iframe src="//goote.ch/1b1d89c829df385d72cdf028f964760378b45d71/"></iframe>
+
+<em>The starting scene</em>
+
 <a name="making-a-rotation-script"></a>
 <h2>Making a Rotation Script</h2>
 The rest of this tutorial will be focused on scripting. We will use the same script to rotate the model as well as set up the controls for it. Let's start by adding a script component to the ColorCube model, and then adding a custom script to the new component. Doing those two things should and naming the script will leave us with an entity looking like this:
 
-<img class="wp-image-299 size-full" src="entity_with_script.png" alt="entity_with_script" /> The ColorCube entity with an empty custom script
+<img class="wp-image-299 size-full" src="entity_with_script.png" alt="entity_with_script" />
+
+The ColorCube entity with an empty custom script
 
 We'll start by writing a script for the rotation, and then test it without any buttons. In general, trying to write parts of an application and testing them individually before moving on is a very good idea! We'll call the function rotate.
 
@@ -123,7 +130,9 @@ That's it for the rotation part! The script in the component panel should now lo
 <img class="wp-image-300 size-full" src="rotation_script.png" alt="rotation_script" /> Controls for the rotation
 
 Now press play, and you should see the cube in action.
-<p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/8ca9bba522acfb9fcacd28c6a51d873a1f68cb15/" width="600" height="300"]</p>
+
+<iframe src="//goote.ch/8ca9bba522acfb9fcacd28c6a51d873a1f68cb15/"></iframe>
+
 <p style="text-align: center"><em>The rotation works, hopefully.</em></p>
 It might be hard to get all the code into the right spots, so <a href="https://app.goocreate.com/4768/634702606f30485893c2c8f2caae2fe0.scene" target="_blank">here's a scene</a> matching the tutorial's current state.
 
@@ -243,8 +252,11 @@ And, finally, here's the code for the new parameters:
 {% endhighlight %}
 
 Press play, and voila! The rotation can now be triggered by these awesome buttons:
-<p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/d62a1cc980b32510b43ef3ae75d3384446b1c347/" width="600" height="300"]</p>
-<p style="text-align: center"><em>Function and style in a beautiful combination</em></p>
+
+<iframe src="//goote.ch/d62a1cc980b32510b43ef3ae75d3384446b1c347/"></iframe>
+
+<em>Function and style in a beautiful combination</em>
+
 Not working? Don't worry. We have prepared a <a href="https://app.goocreate.com/4768/f2e3e7c864f74b38aa4d7e44702f6ffe.scene" target="_blank">scene that you can check out</a>.
 <h2>Finishing Touches</h2>
 We have the rotation and we have the buttons. However, our hunger for cool stuff is not fully satisfied yet. That's why we'll add two more things: A color picker for the buttons and an easing option for the animation.
@@ -291,7 +303,9 @@ rightButton.style.borderRight = s + 'px solid ' + c;
 {% endhighlight %}
 
 That's it for the color picker!
+
 <h3>Easings</h3>
+
 The rotation might be smoothly animated, but it's kind of straight forward. Easings are used to control the interpolation speed. TweenJS comes with a lot of different cool options, so we'll write some code to pull the options from the library, make strings of them and then put them back into easing selections.
 
 The selections will be made into another type of parameter:
@@ -340,11 +354,10 @@ ctx.easing = window.TWEEN.Easing[easingSplit[0]][easingSplit[1]];
 {% endhighlight %}
 
 Phew! That's all, folks. Try out some of the easings! A really cool one, and the one we use in the final project, is Bounce.Out. By the way, the final scene can be found <a href="https://app.goocreate.com/4768/1a910cf043334213aa88ea28f82e6b25.scene" target="_blank">here</a>, or a published version <a href="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/" target="_blank">here</a>.
-<p style="text-align: center">[advanced_iframe securitykey="iframe" style="width:600px;" src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/" width="600" height="300"]</p>
+
+<iframe src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/"></iframe>
+
 <a name="wrap-up"></a>
 <h2>Wrap-up</h2>
+
 After quite some code, we've created CSS buttons to control animations, using tweening to make the animations nice. There are a lot of ways to create buttons. One is to use HTML components which are built into Create, but we think that this tutorial illustrates how easy it is to create and manipulate any HTML object using the powerful scripting in Create. Scenes like these can be used for simple but efficient ads and product showcases, or even navigation menus. We hope you liked it!
-
-If there are any questions, let us know over at Goo Q&amp;A!
-
-Over and out!

@@ -16,7 +16,11 @@ Goo Engine is built using what many consider the holy grail of game engine desig
 <h2>The solution</h2>
 An Entity-Component-System provides the ultimate flexibility in game design: Mix and match the pre-built functionality (components) to suit your needs. Want an object that emits sound? Add a SoundComponent. Want the same object to be acting as a light source? Simply add a LightComponent. Use one of the pre-packaged components or simply <a href="http://labs.gooengine.com/examples/ECSDemo.zip">write your own</a>.
 <h2>Let's get started</h2>
-In this tutorial we will create a little solar system with a sun, a world and a moon. Here is a preview: [advanced_iframe securitykey="iframe" src="//labs.gooengine.com/learn/GooFiddle/" width="600" height="300"] [alert type="danger"]You should see a yellow sun orbited by a world looking like earth which in turn is orbited by a little moon. If you don't see this, check if you have a WebGL compatible browser: <a href="http://get.webgl.org">get.webgl.org</a>[/alert] To the left you should see the code for the demo in an online code editor. [alert type="info" heading="Please Notice"]If you change something in the code, the demo above should update after half a second. If you break something and can't fix it, don't worry, just reload this tutorial to reset the code. Feel free to experiment![/alert]
+In this tutorial we will create a little solar system with a sun, a world and a moon. Here is a preview:
+
+<iframe src="//labs.gooengine.com/learn/GooFiddle/"></iframe>
+
+<div class="alert alert-info" role="alert">You should see a yellow sun orbited by a world looking like earth which in turn is orbited by a little moon. If you don't see this, check if you have a WebGL compatible browser: <a href="http://get.webgl.org">get.webgl.org</a>[/alert] To the left you should see the code for the demo in an online code editor. [alert type="info" heading="Please Notice"]If you change something in the code, the demo above should update after half a second. If you break something and can't fix it, don't worry, just reload this tutorial to reset the code. Feel free to experiment!</div>
 
 If you want the editor to be bigger, open up this link in a new tab: <a href="http://labs.gooengine.com/learn/GooFiddle/">GooFiddle</a>.
 <h4>Code explanation</h4>
@@ -172,26 +176,33 @@ entity.setComponent(new goo.TransformComponent());
 entity.setComponent(new goo.LightComponent(light));
 {% endhighlight %}
 A <a href="http://code.gooengine.com/latest/docs/LightComponent.html"><strong>LightComponent</strong></a> is very simple and only contains a reference to the used light.
+
 <h2>And finally we add the camera</h2>
-{% highlight js %}var camera = new goo.Camera(45, 1, 0.1, 1000);
+
+{% highlight js %}
+var camera = new goo.Camera(45, 1, 0.1, 1000);
 var orbitScript = goo.Scripts.create(goo.OrbitCamControlScript, {lookAtDistance:15});
 world.createEntity(camera, orbitScript, [0,0,15]).addToWorld();
 {% endhighlight %}
+
 The <a href="http://code.gooengine.com/latest/docs/Camera.html">camera</a> is arguably the most important part of a scene. Without it you can't see anything. The scene will be rendered from the perspective of the camera. The parameters for the Camera constructor are <strong>fov, aspect, near </strong>and<strong> far</strong>. <strong>Fov</strong> stands for <a href="http://en.wikipedia.org/wiki/Field_of_view">field-of-view</a> and is the extent of the observable world that is seen at any given moment. Here it is set in degrees. Try setting it to 90! <strong>Aspect</strong> stands for <a href="http://en.wikipedia.org/wiki/Aspect_ratio">Aspect-Ratio</a> and this parameter reflects the ratio of the width of the WebGL canvas to its height. It used to be an important parameter, but now the system automatically checks and sets it, so we and you can just pass 1. <strong>near</strong> and <strong>far</strong> determine the distances at which entities will still be rendered. Usually 0.1 and 1000 are good values. After we have our <strong>camera</strong> instance we pass it over to our trusty helper <strong>createEntity</strong> of course. But we also give it two more parameters, namely an<strong> OrbitCamControlScript</strong> and the array <strong>[0, 0, 15]</strong>. This is what happens under the covers:
-{% highlight js %}var entity = new goo.Entity(world);
+
+{% highlight js %}
+var entity = new goo.Entity(world);
 entity.setComponent(new TransformComponent());
 entity.setComponent(new CameraComponent(camera));
 entity.setComponent(new ScriptComponent(orbitScript));
 entity.setTranslation([0,0,15]);
 {% endhighlight %}
+
 The <strong>TransformComponent</strong> is useful, of course, to position the camera in and make it look at our scene. The <a href="http://code.gooengine.com/latest/docs/CameraComponent.html"><strong>CameraComponent</strong></a> is very simple again and (almost) only contains the reference to our camera. Next, we set a <strong>ScriptComponent</strong> with an instance of an <strong>OrbitCamControlScript </strong>created by the Goo Scripts class. The <strong>OrbitCamControlScript</strong> allows you to <strong>orbit</strong> the camera <strong>around a point</strong> in space if you drag the mouse or to <strong>zoom</strong> in and out using the mouse wheel. Try removing the script, like this and see what happens:
-{% highlight js %}world.createEntity( camera, [0,0,15]).addToWorld();
+
+{% highlight js %}
+world.createEntity( camera, [0,0,15]).addToWorld();
 {% endhighlight %}
+
 The last line shows you what happens when you pass an array with 3 elements to <strong>createEntity</strong>: It will be used to call <strong>setTranslation</strong>. It is a nice little trick to set the initial position of an entity.
 
 Finally we <strong>add</strong> the cameraEntity to the <strong>world</strong> and we are...
-<h4>Done!</h4>
-That's it, you've done it! Please take a moment to pat yourself on the back.
-If you have any questions about this or your own project please send it to us on our <a href="https://answers.goocreate.com/">QA section</a>.
 
-[vc_row][vc_column width="1/1"][/vc_column][/vc_row]
+<h4>Done!</h4>

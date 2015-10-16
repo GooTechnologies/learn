@@ -1,7 +1,8 @@
 # Site settings
 title: Goo Create Learn
 email: create@goocreate.com
-description: Goo Technologies Learn
+description: Goo Learn | Resources for Learning Goo Create and Goo Engine
+copyright_notice: © Copyright 2015 Goo Technologies.
 baseurl: "/learn"
 url: "http://gootechnologies.github.io/learn"
 twitter_username: GooTechnologies

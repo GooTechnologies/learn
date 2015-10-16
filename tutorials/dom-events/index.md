@@ -9,7 +9,9 @@ User input (from mouse, keyboard, touch et cetera) is handled through JavaScript
 In addition to pure and raw DOM events, Goo Engine adds some extra functionality for interacting with objects in the scene (entity picking, scene intersections and more). These types of events are covered in the tutorial <a title="GooRunner Event Listeners" href="/learn/goorunner-event-listeners/">GooRunner Event Listeners</a>. The tutorial you're currently reading will focus on the standard, unembellished, DOM events.
 <h2>The Goal</h2>
 At the end of this tutorial, we'll have a super simple Create scene with which we can interact by clicking (or touching) and dragging.
-<p style="text-align: center;">[advanced_iframe securitykey="iframe" style="width:640px;" src="//goote.ch/88bde37c06e6b111432dc6804dbb40846231fd22/" width="640" height="480"]</p>
+
+<iframe src="//goote.ch/88bde37c06e6b111432dc6804dbb40846231fd22/"></iframe>
+
 <p style="text-align: center;">Click and drag!</p>
 
 <h2>JavaScript Event Listeners</h2>

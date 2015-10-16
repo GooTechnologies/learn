@@ -6,7 +6,7 @@ indent: 1
 ---
 Today we'll have a look a few interesting topics and techniques involved in crafting a multiplayer first-person-shooter game using Goo Create and Node.js. Here's what the gameplay looks like!
 
-[advanced_iframe securitykey="iframe" src="//player.vimeo.com/video/114006218" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen]
+<iframe src="//player.vimeo.com/video/114006218"></iframe>
 
 Prefer playing live? Try this project, and invite a friend or two. Press arrow up/down to increase/decrease the number of bots. Press F to re-lock the mouse if needed.
 <p style="text-align: center"><a href="https://goote.ch/30fda7504cc04fa1b5ddde499eb88f28.scene/" target="_blank">[PUBLISHED SCENE]</a></p>
