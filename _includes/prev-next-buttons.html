@@ -12,7 +12,7 @@
 
             {% if lastPageWeight and ppage.weight and ppage.url == page.url %}
               <a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
-                << {{ lastPageTitle }}
+                Previous: {{ lastPageTitle }}
               </a>
             {% endif %}
 
@@ -36,7 +36,7 @@
 
             {% if ppage.weight and lastPageUrl == page.url %}
               <a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
-                {{ ppage.title }} >>
+                Next: {{ ppage.title }}
               </a>
             {% endif %}
 

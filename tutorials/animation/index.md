@@ -4,10 +4,14 @@ title: Animation
 weight: 5610
 indent: 1
 ---
+![](Animation-storyboard2.001.jpg)
 
-<img src="Animation-storyboard2.001.jpg" />
-<img src="Animation-storyboard2.002.jpg" />
-<img src="Animation-storyboard2.003.jpg" />
-<img src="Animation-storyboard2.004.jpg" />
-<img src="Animation-storyboard2.005.jpg" />
-<img src="Animation-storyboard2.006.jpg" />
+![](Animation-storyboard2.002.jpg)
+
+![](Animation-storyboard2.003.jpg)
+
+![](Animation-storyboard2.004.jpg)
+
+![](Animation-storyboard2.005.jpg)
+
+![](Animation-storyboard2.006.jpg)

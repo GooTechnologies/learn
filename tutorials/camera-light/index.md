@@ -5,10 +5,16 @@ weight: 5640
 indent: 1
 ---
 
-<img src="CameraLight-storyboard.001.jpg" />
-<img src="CameraLight-storyboard.002.jpg" />
-<img src="CameraLight-storyboard.003.jpg" />
-<img src="CameraLight-storyboard.004.jpg" />
-<img src="CameraLight-storyboard.005.jpg" />
-<img src="CameraLight-storyboard.006.jpg" />
-<img src="CameraLight-storyboard.007.jpg" />
+![](CameraLight-storyboard.001.jpg)
+
+![](CameraLight-storyboard.002.jpg)
+
+![](CameraLight-storyboard.003.jpg)
+
+![](CameraLight-storyboard.004.jpg)
+
+![](CameraLight-storyboard.005.jpg)
+
+![](CameraLight-storyboard.006.jpg)
+
+![](CameraLight-storyboard.007.jpg)

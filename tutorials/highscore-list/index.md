@@ -4,50 +4,53 @@ title: Highscore list
 weight: 5750
 indent: 1
 ---
-This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the <a title="Cube Clicker Game" href="//www.goocreate.com/learn/cube-clicker-game/" target="_blank">Cube Clicker</a> game, but the concepts can of course be used as a foundation for lots more!
+This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the [Cube Clicker](//www.goocreate.com/learn/cube-clicker-game/ "Cube Clicker Game") game, but the concepts can of course be used as a foundation for lots more!
 
-<a href="text50232.png"><img class="size-full wp-image-1123 aligncenter" src="text50232.png" alt="text5023" /></a>
+[![text5023](text50232.png)](text50232.png) We will:
 
-We will:
-<ul>
-	<li>Build a <a href="//nodejs.org" target="_blank">Node.js</a> server</li>
-	<li>Host the server on <a href="//www.heroku.com/" target="_blank">Heroku</a></li>
-	<li>Set up a <a href="//www.mongodb.com/" target="_blank">MongoDB </a>database and host it at <a href="//mongolab.com" target="_blank">Mongolab</a></li>
-	<li>Create a minimal <a href="//en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">RESTful</a> API to post and get game scores</li>
-	<li>Use <a href="//chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en" target="_blank">Postman </a>and <a href="//ngrok.com/" target="_blank">ngrok </a>to make development and testing easier</li>
-	<li>Call this API from a Create project and use the data</li>
-</ul>
+*   Build a [Node.js](//nodejs.org) server
+*   Host the server on [Heroku](//www.heroku.com/)
+*   Set up a [MongoDB](//www.mongodb.com/) database and host it at [Mongolab](//mongolab.com)
+*   Create a minimal [RESTful](//en.wikipedia.org/wiki/Representational_state_transfer) API to post and get game scores
+*   Use [Postman](//chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) and [ngrok](//ngrok.com/) to make development and testing easier
+*   Call this API from a Create project and use the data
+
 We will NOT:
-<ul>
-	<li>Create a robust and reliable server</li>
-	<li>Put effort into making nice modules and resusable code</li>
-	<li>End up with a <em>secure</em> API</li>
-</ul>
+
+*   Create a robust and reliable server
+*   Put effort into making nice modules and resusable code
+*   End up with a _secure_ API
 
 All the NOT:s can of course be fixed with a little more time and effort. With that in mind, let's start!
 
-<h2>Table of Contents</h2>
-<ol>
-	<li><a href="#a-good-place">A Good Place to Start</a></li>
-	<li><a href="#installing-node-and">Installing Node and Creating an App</a></li>
-	<li><a href="#setting-up-the">Setting Up the Database</a></li>
-	<li><a href="#connect-to-the">Connect to the Database</a></li>
-	<li><a href="#add-more-routes">Add More Routes</a></li>
-	<li><a href="#using-the-api">Using the API in Create</a></li>
-	<li><a href="#hosting-the-highscore">Hosting the Highscore App on Heroku</a></li>
-	<li><a href="#security-concerns">Security Concerns</a></li>
-	<li><a href="#wrap-up">Wrap-Up</a></li>
-</ol>
-<a name="a-good-place"></a>
-<h2>A Good Place to Start</h2>
-If you have never used Node.js, or have no idea what MongoDB is, I can highly recommend to start with quickly going through Christopher Buecheler's <a href="//cwbuecheler.com/web/tutorials/2013/node-express-mongo/" target="_blank">excellent tutorial</a> on setting up the server and database. In fact, most of the tutorial you're reading is based on the setup there. Please go there, at least if any of the following steps seem quick to you. Christopher does a nice job of going over the details, so I won't.
+## Table of Contents
 
-<a name="installing-node-and"></a>
-<h2>Installing Node and Creating an App</h2>
+1.  [A Good Place to Start](#a-good-place)
+2.  [Installing Node and Creating an App](#installing-node-and)
+3.  [Setting Up the Database](#setting-up-the)
+4.  [Connect to the Database](#connect-to-the)
+5.  [Add More Routes](#add-more-routes)
+6.  [Using the API in Create](#using-the-api)
+7.  [Hosting the Highscore App on Heroku](#hosting-the-highscore)
+8.  [Security Concerns](#security-concerns)
+9.  [Wrap-Up](#wrap-up)
+
+<a name="a-good-place"></a>
+
+## A Good Place to Start
+
+If you have never used Node.js, or have no idea what MongoDB is, I can highly recommend to start with quickly going through Christopher Buecheler's [excellent tutorial](//cwbuecheler.com/web/tutorials/2013/node-express-mongo/) on setting up the server and database. In fact, most of the tutorial you're reading is based on the setup there. Please go there, at least if any of the following steps seem quick to you. Christopher does a nice job of going over the details, so I won't.
+
+## Installing Node and Creating an App
+
 Assuming you have a grasp of the basics, these are the steps neccessary to get going with the development.
-<h3>Install Node.js and npm</h3>
-First, get Node.js and npm (included) from <a href="//nodejs.org/download/" target="_blank">here</a>, and install it. If you're on Windows, make sure to add the node folder to your PATH so you can run the program from anywhere in your command prompt.
-<h3>Install Express</h3>
+
+### Install Node.js and npm
+
+First, get Node.js and npm (included) from [here](//nodejs.org/download/), and install it. If you're on Windows, make sure to add the node folder to your PATH so you can run the program from anywhere in your command prompt.
+
+### Install Express
+
 Use npm to get Express, a framework for quick web server development. Assuming that npm works as it should, you only need to run the commands
 
 {% highlight js %}
@@ -56,15 +59,18 @@ npm install -g express-generator
 {% endhighlight %}
 
 Note that -g makes the modules install globally. If you only want it in a specific directory, you can omit those flags.
-<h3>Use Express</h3>
-Make use of the Express and create an app called <em>highscore</em> (or something else). Navigate to the directory you want as <em>parent</em> directory to your app and run
+
+### Use Express
+
+Make use of the Express and create an app called _highscore_ (or something else). Navigate to the directory you want as _parent_ directory to your app and run
 
 {% highlight js %}
 express highscore
 {% endhighlight %}
 
-<h3> Add Some App Dependencies</h3>
-Once the app is set up, it's easy to add more node modules to it. Navigate to the new app folder and open <em>package.json</em> in a text editor. The file contains some app info as well as all modules that the project is dependent on, and we want to add two more of those. Add the following lines under <em>dependencies</em>:
+###  Add Some App Dependencies
+
+Once the app is set up, it's easy to add more node modules to it. Navigate to the new app folder and open _package.json_ in a text editor. The file contains some app info as well as all modules that the project is dependent on, and we want to add two more of those. Add the following lines under _dependencies_:
 
 {% highlight js %}
 "mongodb": "*",
@@ -81,40 +87,42 @@ Now is a good place to stop and see how we're doing. Simply run
 
 {% highlight js %}npm start{% endhighlight %}
 
-and take a look at the command prompt or terminal output. If there seems to be no errors, open a web browser and navigate to <em>localhost:3000</em>. If you see a friendly message saying "Welcome to Express", you're doing good! If not, take a look at the error messages or refer to the <a href="//cwbuecheler.com/web/tutorials/2013/node-express-mongo/" target="_blank">tutorial</a> mentioned above for more details.
+and take a look at the command prompt or terminal output. If there seems to be no errors, open a web browser and navigate to _localhost:3000_. If you see a friendly message saying "Welcome to Express", you're doing good! If not, take a look at the error messages or refer to the [tutorial](//cwbuecheler.com/web/tutorials/2013/node-express-mongo/) mentioned above for more details.
 
-<a href="welcome.jpg"><img class="wp-image-1112 size-full" src="welcome.jpg" alt="welcome" /></a> Hooray!
+[![welcome](welcome.jpg)](welcome.jpg) Hooray! <a name="setting-up-the"></a>
 
-<a name="setting-up-the"></a>
-<h2>Setting Up the Database</h2>
-The server is up and running. Great! Now it's time to set up the database. If you want, you can set up a local database by installing some more stuff. I have chosen to skip this step and go straight for a web hosted solution. If you want to host the database locally, again refer to the <a href="//cwbuecheler.com/web/tutorials/2013/node-express-mongo/" target="_blank">detailed tutorial</a>.
-<h3>Mongolab</h3>
-Mongolab is a provider of MongoDB hosting, and then have a free "sandbox" version that suits our purposes very well. So first, <a href="//mongolab.com/" target="_blank">create an account</a>. Then, go ahead and create a new deployment.
+## Setting Up the Database
 
-<a href="mongodb.jpg"><img class="wp-image-1105 size-large aligncenter" src="mongodb.jpg" alt="mongodb" /></a>
+The server is up and running. Great! Now it's time to set up the database. If you want, you can set up a local database by installing some more stuff. I have chosen to skip this step and go straight for a web hosted solution. If you want to host the database locally, again refer to the [detailed tutorial](//cwbuecheler.com/web/tutorials/2013/node-express-mongo/).
 
-The choice of <em>Cloud provider</em> isn't super important, I went with <em>Amazon</em> and the <em>EU Region</em>. Pick something that sounds nice. Next, select a <strong>single-node</strong>, <strong>sandbox</strong> plan and give your database a cool name.
+### Mongolab
 
-<a href="plan.jpg"><img class="size-full wp-image-1106 aligncenter" src="plan.jpg" alt="plan" /></a>
+Mongolab is a provider of MongoDB hosting, and then have a free "sandbox" version that suits our purposes very well. So first, [create an account](//mongolab.com/). Then, go ahead and create a new deployment.
 
-You'll probably see a list of your deployments, so go ahead and click on your new database. Now it's time to add a <em>user</em> to the database. Add a user with a name and password you'll remember. When you're done, it should look something like this:
+[![mongodb](mongodb.jpg)](mongodb.jpg) The choice of _Cloud provider_ isn't super important, I went with _Amazon_ and the _EU Region_. Pick something that sounds nice. Next, select a **single-node**, **sandbox** plan and give your database a cool name.
 
-<a href="user.jpg"><img class="size-full wp-image-1107 aligncenter" src="user.jpg" alt="user" /></a>
+[![plan](plan.jpg)](plan.jpg) You'll probably see a list of your deployments, so go ahead and click on your new database. Now it's time to add a _user_ to the database. Add a user with a name and password you'll remember. When you're done, it should look something like this:
 
-Awesome! One more thing. MongoDB databases use collections for storing stuff, so let's add one called <em>scores</em>.
+[![user](user.jpg)](user.jpg) Awesome! One more thing. MongoDB databases use collections for storing stuff, so let's add one called _scores_.
 
-<a href="coll.jpg"><img class="size-full wp-image-1109 aligncenter" src="coll.jpg" alt="coll" /></a>
-<h3>Entering some Test Data</h3>
-The first thing we want to do is make a simple GET function for the data, and for that to make sense we need to add some data to read. Open up the <em>scores </em>collection and click <em>Add document</em>. MongoDB uses pure JSON for storage, which makes web integration super easy! Our objects will just contain a name and a time for now. Enter something along the lines of this and click <em>Create and go back:</em>
+[![coll](coll.jpg)](coll.jpg)
 
-<a href="adddoc.jpg"><img class="size-full wp-image-1111 aligncenter" src="adddoc.jpg" alt="adddoc" /></a>
-<h3>Checkpoint: Look at that Data!</h3>
-You should now see your freshly entered data. Note that MongoDB has also inserted an unique <strong>_id</strong> field for your entry!
+### Entering some Test Data
 
-<a name="connect-to-the"></a>
-<h2>Connect to the Database</h2>
-Alright! Time to open up the Node app again and see if we can connect to the database. The main app is handled in <em>app.js, </em>so open it up in a text editor. The parts are explained in the detailed tutorial, so I will go straight to the database stuff!
-<h3>Add the Database</h3>
+The first thing we want to do is make a simple GET function for the data, and for that to make sense we need to add some data to read. Open up the _scores _collection and click _Add document_. MongoDB uses pure JSON for storage, which makes web integration super easy! Our objects will just contain a name and a time for now. Enter something along the lines of this and click _Create and go back:_
+
+[![adddoc](adddoc.jpg)](adddoc.jpg)
+
+### Checkpoint: Look at that Data!
+
+You should now see your freshly entered data. Note that MongoDB has also inserted an unique **_id** field for your entry!<a name="connect-to-the"></a>
+
+## Connect to the Database
+
+Alright! Time to open up the Node app again and see if we can connect to the database. The main app is handled in _app.js, _so open it up in a text editor. The parts are explained in the detailed tutorial, so I will go straight to the database stuff!
+
+### Add the Database
+
 First, we need to require a couple of things. Add these lines before the app is created:
 
 {% highlight js %}
