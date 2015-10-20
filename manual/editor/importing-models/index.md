@@ -6,7 +6,7 @@ indent: 2
 
 ## The Process
 
-### Upload the model
+### 1. Upload the model
 
 There are two ways to upload your 3d model into Create.
 
@@ -16,7 +16,7 @@ There are two ways to upload your 3d model into Create.
 
 After you have selected your model and provided it to Create, the file will be uploaded to our servers.
 
-### Converting
+### 2. Converting
 
 To make the model useable in create, we will convert it to a format which is usable by our 3d-engine. This is all automatic and will take some time, depending on the model size and format.
 
@@ -26,14 +26,13 @@ You can follow the progress of the conversion in the status bar.
 
 Meshes will automatically be triangulated during the conversion process. Triangle meshes are a requirement for the engine.
 
-### Success
+### 3. Put it in your scene
 
 When the model is successfully converted, it will be included in your Asset Bin as a new pack. 
 
 Drag and drop the root node into the viewport to use the model in your scene.
 
 ## File Formats
-
 
 Due to the fact that we are using Autodesk's FBX SDK as a third-party library for importing model files,
 the FBX format will most likely work best.
@@ -64,8 +63,7 @@ Animation:
 
 ## Model Creation Tools
 
-While there are paid software out there for creating 3d models, 
-here are tips on free modelling tools:
+While there are several paid software out there for creating 3d models, here are some free ones:
 
 - http://www.blender.org
 - http://www.freecadweb.org
