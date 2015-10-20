@@ -44,4 +44,22 @@ Welcome To the Learn site! Here you can find tutorials and a reference manual. E
 			<img class="img-responsive" src="{{ '/tutorials/state-machine/thumb.jpg' | prepend: site.baseurl }}" />
 		</a>
 	</div>
+	<div class="col-md-4 col-sm-6">
+		<h3>Scene Hierarchy</h3>
+		<a href="{{ '/tutorials/hierarchy' | prepend: site.baseurl }}">
+			<img class="img-responsive" src="{{ '/tutorials/hierarchy/thumb.png' | prepend: site.baseurl }}" />
+		</a>
+	</div>
+	<div class="col-md-4 col-sm-6">
+		<h3>Environment</h3>
+		<a href="{{ '/tutorials/environment' | prepend: site.baseurl }}">
+			<img class="img-responsive" src="{{ '/tutorials/environment/thumb.png' | prepend: site.baseurl }}" />
+		</a>
+	</div>
+	<div class="col-md-4 col-sm-6">
+		<h3>Lights</h3>
+		<a href="{{ '/tutorials/lights' | prepend: site.baseurl }}">
+			<img class="img-responsive" src="{{ '/tutorials/lights/thumb.jpg' | prepend: site.baseurl }}" />
+		</a>
+	</div>
 </div>
