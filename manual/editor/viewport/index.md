@@ -18,7 +18,10 @@ By dragging and dropping files on the viewport you can issue an asset import of 
 
 The currently supported importable files include:
 
-- 3d-scene-files ({% for format in site.data.importable.3d_files %}{{ format }},{% endfor %})
+- 3d-models
+{% for format in site.data.importable.3d_files %}
+  : {{ format.suffix }}
+{% endfor %}
 - images 
 - sounds
 

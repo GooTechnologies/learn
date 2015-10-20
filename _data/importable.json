@@ -27,5 +27,7 @@
 		}
 	],
 
-	"images": [".jpg", ".jpeg", ".tga", ".png", ".tga"]
+	"images": [".jpg", ".jpeg", ".tga", ".png", ".tga"],
+
+	"audio": [".ogg", ".mp3", ".wave", ".wav"]
 }
