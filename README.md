@@ -1,17 +1,17 @@
-Goo Learn
----------
+# Goo Learn
+-----------
 
 ## Current version
 
 http://gootechnologies.github.io/learn/
 
 
-# Installation 
+## Installation 
 
 You will need Ruby >2.1
 
 
-# Running
+## Running
 
 To serve locally:
 

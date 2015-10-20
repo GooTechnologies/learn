@@ -1,4 +1,31 @@
 {
-	"3d_files": [".3ds", ".fbx", ".dae", ".abc", ".obj"],
+	"3d_files": [
+		{
+			"name": "3D Studio Max",
+			"suffix": ".3ds",
+			"url": "http://knowledge.autodesk.com/support/3ds-max"
+		},
+		{
+			"name": "FilmBox",
+			"suffix": ".fbx",
+			"url": "http://www.autodesk.com/products/fbx/overview"
+		},
+		{
+			"name": "COLLADA",
+			"suffix": ".dae",
+			"url": "https://www.khronos.org/collada/"
+		}, 
+		{
+			"name": "Alembic",
+			"suffix": ".abc",
+			"url": "http://www.alembic.io/"
+		},
+		{
+			"name": "Wavefront OBJ",
+			"suffix": ".obj",
+			"url": "https://en.wikipedia.org/wiki/Wavefront_.obj_file"
+		}
+	],
+
 	"images": [".jpg", ".jpeg", ".tga", ".png", ".tga"]
 }
