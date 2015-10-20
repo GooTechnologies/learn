@@ -4,7 +4,7 @@ title: System Bus
 indent: 1
 weight: 6070
 ---
-The SystemBus, a global instance of the <a href="http://code.gooengine.com/latest/docs/Bus.html" target="_blank">Bus class</a>, provides a way to communicate across scripts, state machines, and timelines. It's an event-driven mechanism which can be really useful when building interactive apps. This tutorial will provide some basic examples of its use.
+The SystemBus, a global instance of the <a href="http://code.gooengine.com/latest/docs/index.html?c=Bus" target="_blank">Bus class</a>, provides a way to communicate across scripts, state machines, and timelines. It's an event-driven mechanism which can be really useful when building interactive apps. This tutorial will provide some basic examples of its use.
 <h2>Emitting a Message</h2>
 The most basic message consists of only a <strong>channel name</strong>, represented by a string. This string is typically used to indicate that something happened, and does not imply any particular effect of the event. It's just a way for something to say "<em>this just happened, and whoever is listening may react however they wan</em>t"! This way of thinking aligns with the <a href="https://developer.mozilla.org/en/docs/Web/API/Event" target="_blank">DOM Event Mode</a>l, where for example events such as <em>mouseup</em>, <em>keydown</em>, <em>mousemove</em>, etc are emitted when a user interacts with the browser , and it's up to the listeners do decide what to to with the information.
 

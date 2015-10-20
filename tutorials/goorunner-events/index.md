@@ -14,7 +14,7 @@ Click around! The GooRunner event listeners work like regular DOM event listener
 *   The point of intersection in the 3D scene.
 *   The depth of the intersection.
 
-<div class="alert alert-info" role="alert">[Read about the details and available event types here!](http://code.gooengine.com/latest/docs/GooRunner.html#addEventListener)</div>
+<div class="alert alert-info" role="alert">[Read about the details and available event types here!](http://code.gooengine.com/latest/docs/index.html?c=GooRunner#addEventListener)</div>
 
 ## Performance Warning
 
