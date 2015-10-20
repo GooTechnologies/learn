@@ -25,11 +25,19 @@ A Component is made for a specific purpose. There are many types of Components, 
 *   A **ScriptComponent** makes it possible to add custom code to an Entity.
 *   ...and so on.
 
-Each type of Component is meant to be simple in isolation, but Entities can of course have several components attached to it. A camera entity would need a TransformComponent and a CameraComponent, for example. ![light](light1.png) A light Entity typically consists of a TransformComponent and a LightComponent  
+Each type of Component is meant to be simple in isolation, but Entities can of course have several components attached to it. A camera entity would need a TransformComponent and a CameraComponent, for example.
+
+![light](light1.png)
+
+A light Entity typically consists of a TransformComponent and a LightComponent  
 
 ## Systems
 
-Systems keep track of the components. Since each type of Component takes care of one specific thing, it makes sense to also have a System for each component type. When adding new Components to Entities, the Components get registered with the corresponding System. The Systems run continuously and make sure to update the Components when needed. As you might have guessed, isolating functionality in this manner provides excellent encapsulation between different kinds of features. Each System type can also be optimized to solve its specific tasks fast and efficient. Remember when you were told that each System has one matching Component? That was a simplification. In reality, one System can be interested in multiple Component types. The image below shows a very simple scene; a sphere and a camera. Both these objects are represented with Entities, and their features are represented with Components. The following happens: A TransformSystem keeps track of all transforms, a CameraSystem handles the single camera and a RenderSystem takes take of both the vertex data (MeshDataComponent) and the material (MeshRendererComponent) of the sphere. ![graph2](graph21.png) A simple scene with two entities, their components and the needed systems
+Systems keep track of the components. Since each type of Component takes care of one specific thing, it makes sense to also have a System for each component type. When adding new Components to Entities, the Components get registered with the corresponding System. The Systems run continuously and make sure to update the Components when needed. As you might have guessed, isolating functionality in this manner provides excellent encapsulation between different kinds of features. Each System type can also be optimized to solve its specific tasks fast and efficient. Remember when you were told that each System has one matching Component? That was a simplification. In reality, one System can be interested in multiple Component types. The image below shows a very simple scene; a sphere and a camera. Both these objects are represented with Entities, and their features are represented with Components. The following happens: A TransformSystem keeps track of all transforms, a CameraSystem handles the single camera and a RenderSystem takes take of both the vertex data (MeshDataComponent) and the material (MeshRendererComponent) of the sphere.
+
+![graph2](graph21.png)
+
+A simple scene with two entities, their components and the needed systems
 
 ## The World and the Runner
 
@@ -48,7 +56,11 @@ var allEntities = gooRunner.world.getEntities();
 
 ## How it all fits together
 
-This image below illustrated how the main parts fit together. GooRunner holds the world, which in turn contains the Entities. Entities in turn consist of different Components. To make everything run, GooRunner updates the World and its Systems, and each type of System takes care of the corresponding type of Component. ![graph1](graph11.png) A schematic overview of the main parts in Goo Engine
+This image below illustrated how the main parts fit together. GooRunner holds the world, which in turn contains the Entities. Entities in turn consist of different Components. To make everything run, GooRunner updates the World and its Systems, and each type of System takes care of the corresponding type of Component.
+
+![graph1](graph11.png)
+
+A schematic overview of the main parts in Goo Engine
 
 ## Details and Disclaimers
 

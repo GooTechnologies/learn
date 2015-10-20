@@ -4,7 +4,13 @@ title: Highscore list
 weight: 5750
 indent: 1
 ---
-This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the [Cube Clicker](//www.goocreate.com/learn/cube-clicker-game/ "Cube Clicker Game") game, but the concepts can of course be used as a foundation for lots more!
+<iframe src="//goote.ch/b5bb6d6a2f634e3280ad84c24060e250.project/"></iframe>
+
+[Open in new window](https://goote.ch/b5bb6d6a2f634e3280ad84c24060e250.project)
+
+[Open in Create](https://app.goocreate.com/4768/d32241d7c77141d991a7804f916c9236.scene)
+
+This tutorial will show you how to (kind of) quickly set up a cloud-hosted server and database, create a simple API for sending and recieving data, and then use it in a Create project. I have used this setup to create a basic high-score list for the Cube Clicker Game, but the concepts can of course be used as a foundation for lots more!
 
 [![text5023](text50232.png)](text50232.png) We will:
 
@@ -26,16 +32,14 @@ All the NOT:s can of course be fixed with a little more time and effort. With th
 ## Table of Contents
 
 1.  [A Good Place to Start](#a-good-place)
-2.  [Installing Node and Creating an App](#installing-node-and)
-3.  [Setting Up the Database](#setting-up-the)
-4.  [Connect to the Database](#connect-to-the)
+2.  [Installing Node and Creating an App](#installing-node-and-creating-an-app)
+3.  [Setting Up the Database](#setting-up-the-database)
+4.  [Connect to the Database](#connect-to-the-database)
 5.  [Add More Routes](#add-more-routes)
-6.  [Using the API in Create](#using-the-api)
-7.  [Hosting the Highscore App on Heroku](#hosting-the-highscore)
+6.  [Using the API in Create](#using-the-api-in-create)
+7.  [Hosting the Highscore App on Heroku](#hosting-the-highscore-app-on-heroku)
 8.  [Security Concerns](#security-concerns)
 9.  [Wrap-Up](#wrap-up)
-
-<a name="a-good-place"></a>
 
 ## A Good Place to Start
 
@@ -89,7 +93,9 @@ Now is a good place to stop and see how we're doing. Simply run
 
 and take a look at the command prompt or terminal output. If there seems to be no errors, open a web browser and navigate to _localhost:3000_. If you see a friendly message saying "Welcome to Express", you're doing good! If not, take a look at the error messages or refer to the [tutorial](//cwbuecheler.com/web/tutorials/2013/node-express-mongo/) mentioned above for more details.
 
-[![welcome](welcome.jpg)](welcome.jpg) Hooray! <a name="setting-up-the"></a>
+[![welcome](welcome.jpg)](welcome.jpg)
+
+Hooray!
 
 ## Setting Up the Database
 
@@ -115,7 +121,7 @@ The first thing we want to do is make a simple GET function for the data, and fo
 
 ### Checkpoint: Look at that Data!
 
-You should now see your freshly entered data. Note that MongoDB has also inserted an unique **_id** field for your entry!<a name="connect-to-the"></a>
+You should now see your freshly entered data. Note that MongoDB has also inserted an unique **_id** field for your entry!
 
 ## Connect to the Database
 
@@ -210,13 +216,14 @@ app.use('/users', users);
 app.use('/scores', scores);
 {% endhighlight %}
 
-<h3>Checkpoint: Test the Route</h3>
+### Checkpoint: Test the Route
+
 This simple route can be tested in a browser, but I recomment using the Chrome plugin <a href="//www.getpostman.com/" target="_blank">Postman</a> (or something similar if you don't like Chrome) to make your route testing life easier. With it installed, one can easily connect to any URL and create GET, POST and other requests. If you choose to use Postman, start the server up and construct a simple GET request for <em>http://localhost:3000/scores</em>. If not, use your browser and navigate to the same URL. Watch your console for any debug output, and you should be able to see the test user we added to our cloud hosted database!
 
 <a href="get.jpg"><img class="wp-image-1114 size-full" src="get.jpg" alt="get" /></a> Hooray!
 
-<a name="add-more-routes"></a>
-<h2>Add More Routes</h2>
+## Add More Routes
+
 To finish our simple API, we want to add some more routes. We need a way to add scores, and that's handled in a POST request. Also, assuming our game becomes a huge hit, we also want to add a way to just get the most important scores. We'll add some more routes for these two tasks. Let's start with the top scores route:
 
 {% highlight js %}
@@ -276,12 +283,16 @@ router.post("/", function(req, res) {
 
 When posting to the route, we'll use the x-www-form-encoded form of parameter key/value pairs. If you know that your amount of parameters will grow, it might be a good idea to just use one parameter and put all data in one single JSON object. That way one could insert new forms of data into the dabatase without changing the routes (for better or worse)! Here's how the current POST request format is tested in Postman:
 
-<a href="post.jpg"><img class="wp-image-1116 size-full" src="post.jpg" alt="post" /></a> Testing the POST route, getting the inserted data back.
+<a href="post.jpg"><img class="wp-image-1116 size-full" src="post.jpg" alt="post" /></a> 
 
-<a name="using-the-api"></a>
-<h2>Using the API in Create</h2>
+Testing the POST route, getting the inserted data back.
+
+## Using the API in Create
+
 Phew, it's finally time to hook this up to a Create project! We have (almost) everything we need for reading and writing scores. We won't deploy the app itself to the cloud yet, since there's a really neat way of using your local server when developing. The secret is called <strong>ngrok</strong>.
-<h3>Setting up ngrok</h3>
+
+### Setting up ngrok
+
 ngrok is a program/service that lets you expose a local web server to the internet. Very nice! Head over to <a href="//ngrok.com/" target="_blank">ngrok.com</a> and get ngrok going. There are plenty of instructions. Once you're done, you can simply start your Node.js server again, open a new terminal/command window, and launch ngrok:
 
 {% highlight js %}ngrok -subdomain highscore 3000{% endhighlight %}
@@ -289,9 +300,13 @@ ngrok is a program/service that lets you expose a local web server to the intern
 <a href="tunnel.jpg"><img class="alignnone size-full wp-image-1117" src="tunnel.jpg" alt="tunnel" /></a>
 
 What this means is that you can open up Postman again and instead of using localhost:3000, enter https://highscore.ngrok.com and test the routes there instead. Neat, huh? This little tunneling exercise makes it easy to connect to your own server from Create (and debug using the console output in real time)!
-<h3>The Create Project</h3>
-We'll use the Cube Clicker game from <a title="Cube Clicker Game" href="http://www.goocreate.com/learn/cube-clicker-game/">this tutorial</a>. The goal is to add some methods to post and get scores, and modify the simple interface to display this. The project can be <a href="https://app.goocreate.com/tutorials/b5bb6d6a2f634e3280ad84c24060e250.project" target="_blank">duplicated from here</a>! Note that this tutorial won't focus on the game and display of the data, but only on the key functions needed. The complete project with all the code will be available for duplication and examination at the end of the tutorial!
-<h3>Cross-Domain Problems</h3>
+
+### The Create Project
+
+The goal is to add some methods to post and get scores, and modify the simple interface to display this. Note that this tutorial won't focus on the game and display of the data, but only on the key functions needed. The complete project with all the code will be available for duplication and examination at the end of the tutorial!
+
+### Cross-Domain Problems
+
 We won't be allowed to work with data from another domain unless the server says it's OK. This is done using <em>CORS headers</em>, and the simplest and quickest (but not the safest) way to do this is to use a node module called cors. Add the following to <em>package.json</em>:
 
 {% highlight js %}"cors": "*"{% endhighlight %}
@@ -312,7 +327,8 @@ var cors = require('cors');
 router.get('/', cors(), function(req, res) {
 ...{% endhighlight %}
 
-<h3>The Request Functions</h3>
+### The Request Functions
+
 The two key functions will use <a href="//www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp" target="_blank">AJAX </a>requests, and for simplicity we'll use <a href="//api.jquery.com/jquery.ajax/" target="_blank">jQuery </a>to set these up quickly. These should be pretty self-explanatory if you've made it this far! Worth to notice is that we need to use HTTPS, that the URLs are hardcoded here but should probably be arguments, and that the functions naturally are asynchrynous.
 
 {% highlight js %}
@@ -391,35 +407,36 @@ var updateSubmittedTopListDisplay = function(ctx) {
 };
 {% endhighlight %}
 
-<h3>The Complete App</h3>
-There's of course more methods to make everything work. <a href="https://app.goocreate.com/tutorials/24503577d6724d18a60d1bddfa30648f.project" target="_blank">This project</a> is set up to display and submit scores. Beware of not-so-pretty code, as the integration was done during one of our <a href="//www.goocreate.com/learn/goofy-projects/" target="_blank">Goofy Days!</a> Also, as we'll touch on later, the security is clearly sub-par, so don't be surprised if something seems off.
+### The Complete App
+
+There's of course more methods to make everything work. Also, as we'll touch on later, the security is clearly sub-par, so don't be surprised if something seems off.
 
 <iframe src="https://goote.ch/24503577d6724d18a60d1bddfa30648f.project/"></iframe>
 
-<a href="https://app.goocreate.com/4768/fd52a3558452455faa84a2453fd6f312.scene" target="_blank">Create scene</a></p>
-<a name="hosting-the-highscore"></a>
-<h2>Hosting the Highscore App on Heroku</h2>
+<a href="https://app.goocreate.com/4768/fd52a3558452455faa84a2453fd6f312.scene" target="_blank">Create scene</a>
+
+## Hosting the Highscore App on Heroku
+
 If you take a look at the project linked above, you'll notice that the URLs are not ngrok anymore, but from Heroku. This is because we obviously want to host our Node.js app somewhere else than locally. Like Mongolab, Heroku has the option to host a free app, and the process is pretty straight forward.
 
 First, sign up for a free account. Next, click the plus sign in the top right and create a new app. Give it a name, choose a region and hit <em>Create App</em>.
 
 <a href="2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg"><img class="size-full wp-image-1118 aligncenter" src="2014-10-14-14_29_21-Create-a-New-App-_-Heroku.jpg" alt="2014-10-14 14_29_21-Create a New App _ Heroku" /></a>
 
-&nbsp;
-
 Next, follow the instructions to install the Heroku Toolbelt, initialize a git repository and push your app to Heroku. Done! Now you can open the app by typing
 
-{% highlight js %}heroku open{% endhighlight %}
+{% highlight js %}
+heroku open
+{% endhighlight %}
 
 in the command prompt. Should anything go wrong, access the server logs by typing
 
 {% highlight js %}heroku logs{% endhighlight %}
 
-<a name="security-concerns"></a>
-<h2>Security Concerns</h2>
+## Security Concerns
+
 As you might have suspected by now, this app is in no way secure. The API is completely public, meaning that anyone with access to the API URLs can post any data they want and store it in your database. Furthermore, finding those URLs is really easy due to the nature of JavaScript. Making a secure high-score list is hard and out of the scope of this tutorial.
 
-<a name="wrap-up"></a>
-<h2>Wrap-Up</h2>
-With stability and security concerns aside, we've built something pretty cool. Three different cloud services (the server, the database, and Create) are set up to communicate between each other. Hopefully this tutorials has given you some ideas of fun data-driven apps, and some insight in how one get get them up and running quickly. If there are any bugs, uncertainties or other thoughs, please let us know in the comments!
+## Wrap-Up
 
+With stability and security concerns aside, we've built something pretty cool. Three different cloud services (the server, the database, and Create) are set up to communicate between each other. Hopefully this tutorials has given you some ideas of fun data-driven apps, and some insight in how one get get them up and running quickly. If there are any bugs, uncertainties or other thoughs, please let us know in the comments!

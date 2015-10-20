@@ -47,7 +47,9 @@ var rotate = function(ctx, goo, angle) {};
 {% endhighlight %}
 
 We need to pass in the ctx parameter to get a hold of context variables (we'll see this later) and the goo parameter to be able to use Goo Engine classes and functions. The angle variable is of course the desired angle of rotation. Let's assume for simplicity's sake that the axis will always be the Y-axis.
-<h3>Tweening</h3>
+
+### Tweening
+
 The rotation will make use of tweening. Tweening is short for inbetweening and is basically a way to make animations smooth. Since we don't want the cube to just appear at it's new orientation, we'll use the TweenJS library (already running in the engine) to interpolate the animation. This is what the complete rotate function will look like:
 
 {% highlight js %}
@@ -127,7 +129,9 @@ var parameters = [{
 
 That's it for the rotation part! The script in the component panel should now look like this:
 
-<img class="wp-image-300 size-full" src="rotation_script.png" alt="rotation_script" /> Controls for the rotation
+<img class="wp-image-300 size-full" src="rotation_script.png" alt="rotation_script" /> 
+
+Controls for the rotation
 
 Now press play, and you should see the cube in action.
 
@@ -258,9 +262,13 @@ Press play, and voila! The rotation can now be triggered by these awesome button
 <em>Function and style in a beautiful combination</em>
 
 Not working? Don't worry. We have prepared a <a href="https://app.goocreate.com/4768/f2e3e7c864f74b38aa4d7e44702f6ffe.scene" target="_blank">scene that you can check out</a>.
-<h2>Finishing Touches</h2>
+
+## Finishing Touches
+
 We have the rotation and we have the buttons. However, our hunger for cool stuff is not fully satisfied yet. That's why we'll add two more things: A color picker for the buttons and an easing option for the animation.
-<h3>Button Color Picker</h3>
+
+### Button Color Picker
+
 One of the type of controls we can create in the component panel is a color picker.
 
 <img class="size-full wp-image-297 aligncenter" src="colorpicker.png" alt="colorpicker" />
@@ -304,7 +312,7 @@ rightButton.style.borderRight = s + 'px solid ' + c;
 
 That's it for the color picker!
 
-<h3>Easings</h3>
+### Easings
 
 The rotation might be smoothly animated, but it's kind of straight forward. Easings are used to control the interpolation speed. TweenJS comes with a lot of different cool options, so we'll write some code to pull the options from the library, make strings of them and then put them back into easing selections.
 

@@ -8,10 +8,15 @@ Here's a quick example of a script using either the position of the mouse or the
 
 <iframe src="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"></iframe>
 
-<p style="text-align: center;">[button style="margin-bottom: 15px;" type="flat" shape="rounded" size="medium" href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"][icon type="desktop"]Open in a New Window[/button] [button style="margin-bottom: 15px;" type="flat" shape="rounded" size="medium" href="https://create.goocreate.com/22307/a5b7c39669b04e5cb1e243f9a2d8454d.scene"][icon type="copy"]Scene to Duplicate[/button]</p>
+<a href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/">Open in a New Window</a>
+
+<a href="https://create.goocreate.com/22307/a5b7c39669b04e5cb1e243f9a2d8454d.scene">Scene to Duplicate</a>
+
 Setup: Create two entities, place them both where the camera should look. In the example scene, I've picked (0, 0, 0). Create a camera and arrange the entities like this:
 
-<img class="size-full wp-image-1180" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-15_39_17-Goo-Create.jpg" alt="Entity hierarchy" /> Entity hierarchy
+<img class="size-full wp-image-1180" src="2014-11-11-15_39_17-Goo-Create.jpg" alt="Entity hierarchy" />
+
+Entity hierarchy
 
 Why don't we do this with code? That'd be cleaner, perhaps, but wouldn't let us position the camera before pressing play as easily. If you're interested in how to do this without the helper entities, check out the source of the standard orbit-and-pan camera scripts, for example!
 

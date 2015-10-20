@@ -4,8 +4,10 @@ title: Iframe Communication
 weight: 5790
 indent: 1
 ---
-By default, scripts can't communicate across pages unless they're all from the same host, use the same protocols, et cetera. This poses a problem if we'd like to include a published Create project in an iframe, but have the project react to input coming from the rest of the page. The solution for this is called <strong>postMessage</strong> (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage" target="_blank">read about it here</a>). This tutorial will explain how to use it for communicating with a project in an iframe.
-<h2>The Setup (A Project that Doesn't Work)</h2>
+By default, scripts can't communicate across pages unless they're all from the same host, use the same protocols, et cetera. This poses a problem if we'd like to include a published Create project in an iframe, but have the project react to input coming from the rest of the page. The solution for this is called **postMessage** ([read about it here](https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage)). This tutorial will explain how to use it for communicating with a project in an iframe.
+
+## The Setup (A Project that Doesn't Work)
+
 We are going to use a very simple scene, were we control the color of a cube using the position of the mouse. The scene includes a simple box entity, with the following script attached to it:
 
 {% highlight js %}
@@ -43,10 +45,13 @@ The result, contained in a small iframe, looks like this:
 
 <iframe src="https://goote.ch/0faa7841926b4bf9be6964056e212bb8.project/"></iframe>
 
-<em>Works only when mouse is over iframe</em></p>
+*Works only when mouse is over iframe*
+
 As you can see, the color changes with the position as long as the mouse is hovering over the iframe. Once the cursor goes outside, it won't update anymore. Let's combat that using postMessage!
+
 <h2>A Project that Works</h2>
-We need to forward the info from this page to the iframe. This is what we have put on <em>this very tutorial page,</em> or the page containing the iframe:
+
+We need to forward the info from this page to the iframe. This is what we have put on *this very tutorial page,* or the page containing the iframe:
 
 {% highlight js %}
 function setupMousemoveProxy(iframe) {
@@ -118,14 +123,15 @@ The new project reacts to movements outside its own page!
 
 <iframe id="project_iframe" src="https://goote.ch/b50617b01c0f4aaeb05be87887ecc18f.project/"></iframe>
 
-<em>Works even when the mouse is outside the iframe</em>
+*Works even when the mouse is outside the iframe*
 
-<h2 style="text-align: left">More</h2>
+## More
 
 There are, of course, optimizations to do here. We don't need to send the window size all the time, sending it if it changes is enough. Also, it might be useful to implement both the direct and the postMessage strategy in some kind of fallback mechanism.
 
 Want to take a look at the Create projects? Here they are!
 
-<strong>Projects to Duplicate:</strong>
-<a href="https://app.goocreate.com/4768/2ba38845216d4eeeb9087b305dfbddb0.scene" target="_blank">Scene not using postMessage
-</a><a href="https://app.goocreate.com/4768/d6a9c3d845be4a4496dcbffefbfbfe0c.scene" target="_blank">Scene using postMessage</a>
+Projects to Duplicate:
+
+* [Scene not using postMessage](https://app.goocreate.com/4768/2ba38845216d4eeeb9087b305dfbddb0.scene)
+* [Scene using postMessage](https://app.goocreate.com/4768/d6a9c3d845be4a4496dcbffefbfbfe0c.scene)

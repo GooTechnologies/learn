@@ -6,13 +6,14 @@ indent: 1
 ---
 There may be times when you will want to click something in the scene, and have it affect the HTML Entity. This example will show how to click different things in the scene, and have it tell us the name of the entity we clicked.
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedDone.png"><img class="size-medium wp-image-1043 aligncenter" src="selectedDone-300x193.png" alt="selectedDone" /></a>
+<a href="selectedDone.png"><img class="size-medium wp-image-1043 aligncenter" src="selectedDone.png" alt="selectedDone" /></a>
 
 This is the third tutorial of a four part tutorial series.
-1. <a href="http://goolabs.wpengine.com/learn/?p=986">Placing HTML Entities Along the Borders of the Screen</a>
-2. <a href="http://goolabs.wpengine.com/learn/?p=1025">Using HTML Buttons to Affect the Scene</a>
+
+1. Placing HTML Entities Along the Borders of the Screen
+2. Using HTML Buttons to Affect the Scene
 3. Using Entities to Interact With an HTML Entity
-4. <a href="http://goolabs.wpengine.com/learn/?p=1030">Using Images with HTML Entities</a>
+4. Using Images with HTML Entities
 
 <hr />
 
@@ -64,7 +65,7 @@ Notice the CSS section we added for 'div1', as well as the 'div1', 'text1' and '
 
 Next, we will need to add some entities to click on. I added a sphere, a box, a cone, and a cylinder.  I also swapped out the default material for the Polished Wood material from the Goo Library, and added some color:
 
-<a href="http://goocreate.com/wp-content/uploads/sites/3/2014/09/selectedShapes.png"><img class="size-medium wp-image-1044 aligncenter" src="selectedShapes-300x166.png" alt="selectedShapes" /></a>
+<a href="selectedShapes.png"><img class="size-medium wp-image-1044 aligncenter" src="selectedShapes.png" alt="selectedShapes" /></a>
 
 There are several ways to implement this next part. The main two differences would be to use either Hardware picking or PrimitivePickLogic. We are using a camera, and don't need any fancy raycasting, so lets go with the Hardware picking.
 

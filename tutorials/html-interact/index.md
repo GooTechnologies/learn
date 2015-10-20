@@ -6,12 +6,6 @@ indent: 1
 ---
 There will be times when you may want to use an HTML Entity to do something inside your scene.  In this example, we will use a button to play a sound on an Entities SoundComponent.
 
-This is the second tutorial of a four part tutorial series.
-1. <a href="http://goolabs.wpengine.com/learn/?p=986">Placing HTML Entities Along the Borders of the Screen</a>
-2. Using HTML Buttons to Affect the Scene
-3. <a href="http://goolabs.wpengine.com/learn/?p=1026">Using Entities to Interact With an HTML Entity</a>
-4. <a href="http://goolabs.wpengine.com/learn/?p=1030">Using Images With HTML Entities</a>
-
 <hr />
 
 Because this sound won't be positioned in 3d space, lets go ahead and add it to the Default Camera.

@@ -57,11 +57,11 @@ To add a point light click on <strong>Create</strong> and click the <strong>Poin
 <h2>Add some Materials</h2>
 We will use the same textures as in the Hello World tutorial. You can download the individual images here:
 
-<a href="http://labs.gooengine.com/learn/SolarSystem/sun.png">http://labs.gooengine.com/learn/SolarSystem/sun.png</a>
+<a href="sun.png">sun.png</a>
 
-<a href="http://labs.gooengine.com/learn/SolarSystem/earth.jpg">http://labs.gooengine.com/learn/SolarSystem/earth.jpg</a>
+<a href="earth.jpg">earth.jpg</a>
 
-<a href="http://labs.gooengine.com/learn/SolarSystem/moon.jpg">http://labs.gooengine.com/learn/SolarSystem/moon.jpg</a>
+<a href="moon.jpg">moon.jpg</a>
 
 To assign the Sun texture in the material settings, click on the <em>Sun</em> entity and open up the <strong>Material</strong> settings: Then drag and drop the <em>sun.png</em> file onto the color texture slot:
 

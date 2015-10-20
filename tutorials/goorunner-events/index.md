@@ -3,9 +3,8 @@ layout: tutorial
 title: GooRunner events
 weight: 5730
 indent: 1
+prerequisities: /tutorials/dom-events/index.html
 ---
-Hello! We recommend that you are somewhat familiar with the basics of the DOM Event Listeners first, so please check out the tutorial [DOM Event Listeners](http://goolabs.wpengine.com/learn/dom-event-listeners/ "DOM Event Listeners") if you haven't already. Now, assuming that's done, let's learn how to use event listeners to do some more advanced interaction with Goo scenes.
-
 <iframe src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/"></iframe>
 
 Click around! The GooRunner event listeners work like regular DOM event listeners (and even contains the standard events), but also add some very useful stuff:
@@ -14,7 +13,9 @@ Click around! The GooRunner event listeners work like regular DOM event listener
 *   The point of intersection in the 3D scene.
 *   The depth of the intersection.
 
-<div class="alert alert-info" role="alert">[Read about the details and available event types here!](http://code.gooengine.com/latest/docs/index.html?c=GooRunner#addEventListener)</div>
+<div class="alert alert-info" role="alert">
+	<a href="http://code.gooengine.com/latest/docs/index.html?c=_met_GooRunner_addEventListener">Read about the details and available event types here</a>
+</div>
 
 ## Performance Warning
 

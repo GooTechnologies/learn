@@ -86,22 +86,24 @@ var cleanup = function(args, ctx, goo) {
 The above additions sends some data about the event (whether the world time seconds are even or odd, and what the actual delta is), and the listening entity recieves this data and decides how to act on it.
 <h2> Using the Bus to Trigger State Machine Transitions</h2>
 In Create, pretty much anything can be done with scripts. However, sometimes the State Machine provides an easier and cleaner way of doing certain things. For example, setting animations or playing sounds takes a few lines of code but is really easy to do in the State Machine. With the power of the System Bus, we can set up transitions in the State Machine and trigger them with scrips. Here's how.
-<h3>The Goon Machine</h3>
-We'll start by importing our omnipresent Goon from the Asset Library, and add a State Machine component to the entity. We'll use one single behavior with two states, Idle and Running. We'll also add some <em>set animation</em> actions on the states. Need some refreshment on your State Machine skills? Check out <a title="The State Machine" href="http://www.goocreate.com/learn/the-state-machine/" target="_blank">the State Machine tutorial</a> before moving on! The Goon states will look like this:
 
-<img class="size-full wp-image-1168 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-11_42_10-Goo-Create.jpg" alt="2014-11-11 11_42_10-Goo Create" />
+<h3>The Goon Machine</h3>
+
+We'll start by importing our omnipresent Goon from the Asset Library, and add a State Machine component to the entity. We'll use one single behavior with two states, Idle and Running. We'll also add some <em>set animation</em> actions on the states. Need some refreshment on your State Machine skills? Check out <a title="The State Machine" href="{{ '/tutorials/state-machine' | prepend: site.baseurl }}" target="_blank">the State Machine tutorial</a> before moving on! The Goon states will look like this:
+
+<img class="size-full wp-image-1168 aligncenter" src="2014-11-11-11_42_10-Goo-Create.jpg" alt="2014-11-11 11_42_10-Goo Create" />
 
 A good start! But let's also seize the moment and learn how to work with simple <strong>sounds</strong>! Let's add a sound component to the Goon and import two mp3 files, sigh.mp3 and run.mp3. Unzip the files, and drag them onto the sound component.
 <h3 style="text-align: center;">[<a href="http://www.goocreate.com/learn/wp-content/uploads/sites/2/2014/11/systembus_sounds.zip" target="_blank">FILE HERE</a>]</h3>
-<img class="size-full wp-image-1169 aligncenter" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-12_22_17-Goo-Create.jpg" alt="2014-11-11 12_22_17-Goo Create" />
+<img class="size-full wp-image-1169 aligncenter" src="2014-11-11-12_22_17-Goo-Create.jpg" alt="2014-11-11 12_22_17-Goo Create" />
 
 Now we'll use the State Machine to turn these on and off. Each state will have a <em>Sound Fade In</em> action and a <em>Sound Fade Out</em> action. The actions in the Idle state will fade <strong>out</strong> the run sound and fade <strong>in</strong> the sigh sound. The Run state will of course do the opposite. I've set all time parameters to 100 to fade in/out a little quicker than the standard 1000 ms.
 
-<img class="size-full wp-image-1170" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-12_25_05-Goo-Create.jpg" alt="The running state fades in the corresponding sound and fades out the other one." /> The running state fades in the corresponding sound and fades out the other one.
+<img class="size-full wp-image-1170" src="2014-11-11-12_25_05-Goo-Create.jpg" alt="The running state fades in the corresponding sound and fades out the other one." /> The running state fades in the corresponding sound and fades out the other one.
 
 Now we need to set up the transitions, and this is where the System Bus comes into play again. For both the states, we'll add a Listen action. This action will listen to the correct channel and perform a transition to another state. Note that both states will listen to the same channel!
 
-<img class="size-full wp-image-1171" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/both.jpg" alt="The complete states, side by side" /> The complete states, side by side
+<img class="size-full wp-image-1171" src="both.jpg" alt="The complete states, side by side" /> The complete states, side by side
 
 We can use the same event triggering mechanism as before, but I suggest changing the interval to be more than a second:
 
@@ -126,6 +128,6 @@ var update = function(args, ctx, goo) {
 
 Note here that our State Machine does not use the data, only the channel name. We can still keep the data around in case other entities are interested! We should now be able to play our scene and have the Goon both switch animations and play different sounds. Here's a link to the published version - I've added some extra light effects using another state machine bus listener.
 <h3 style="text-align: center;"><a href="https://goote.ch/c27b938433b34bbc8e99c5ce8c9460c1.scene/" target="_blank">Open the Scene</a></h3>
-<a href="https://goote.ch/c27b938433b34bbc8e99c5ce8c9460c1.scene"><img class="size-full wp-image-1172" src="http://goocreate.com/wp-content/uploads/sites/3/2014/11/2014-11-11-12_39_27-Goo-Create.jpg" alt="Open the Scene" /></a> Click to open! Don't forget to turn up the volume :)
+<a href="https://goote.ch/c27b938433b34bbc8e99c5ce8c9460c1.scene"><img class="size-full wp-image-1172" src="2014-11-11-12_39_27-Goo-Create.jpg" alt="Open the Scene" /></a> Click to open! Don't forget to turn up the volume :)
 <h2> Wrap-Up</h2>
 This was a quick intro of what can be done with the System Bus. It has a lot of use cases. One can use it to react to colissions, trigger timed events (like above), react to user input, et cetera et cetera. It's a very useful weapon to have in the Goo arsenal, and hopefully it can make your apps faster, cleaner and simpler!

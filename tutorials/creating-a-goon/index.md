@@ -58,7 +58,7 @@ Adding a component If we open the newly created state machine panel, we see that
     *   Move the entity forward along its own Z axis.
     *   If W is released, move to idle.
 
-Pretty simple, right? Each of the bullet points above is represented by an action. Let’s start with adding the actions for the idle state. The actions are added by clicking the **add action** button on a state, and then selecting one of the states from the list. Let's try this by adding a **Set Animatio**n action. When the action has been added, we click to choose an animation from the drop-down menu. Let’s choose _Goon_animation_idl_e to have the Goon relax when he’s not running.
+Pretty simple, right? Each of the bullet points above is represented by an action. Let’s start with adding the actions for the idle state. The actions are added by clicking the **add action** button on a state, and then selecting one of the states from the list. Let's try this by adding a **Set Animatio**n action. When the action has been added, we click to choose an animation from the drop-down menu. Let’s choose *Goon_animation_idle* to have the Goon relax when he’s not running.
 
 ![Setting an animation](set_animation.png)
 

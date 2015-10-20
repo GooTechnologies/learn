@@ -4,50 +4,45 @@ title: Mixamo models
 weight: 5880
 indent: 1
 ---
-Mixamo is an online platform to buy or easily create your own animated human-like models. With Mixamo you can mix and match existing or new models with a plethora of ready to use animations.
+Mixamo is an online platform to buy or easily create your own animated human-like models. With Mixamo you can mix and match existing or new models with a plethora of ready to use animations.  
 
-Goo Create has outstanding support for animated FBX models so it comes to no surprise that it works great with the models from <a href="http://www.mixamo.com">Mixamo</a>. This tutorial will show you how easy it is to import and use such a model.
-<h1>Step 1</h1>
-Create an account with Mixamo and log in. Go the the <a href="https://www.mixamo.com/3d-characters">character shop</a> and filter the list of characters using the "<strong>free</strong>" option.
+Goo Create has outstanding support for animated FBX models so it comes to no surprise that it works great with the models from [Mixamo](http://www.mixamo.com). This tutorial will show you how easy it is to import and use such a model.  
 
-<a href="select_char.jpg"><img src="select_char.jpg" /></a>
+## Step 1
 
-We will use <strong>Vincent</strong>. After selecting a model it will be opened in the Mixamo character editor:
+Create an account with Mixamo and log in. Go the the [character shop](https://www.mixamo.com/3d-characters) and filter the list of characters using the "**free**" option.  
 
-<a href="editor1.jpg"><img src="editor1.jpg" /></a> alt="" /></a>
+[![](select_char.jpg)](select_char.jpg)  
 
-&nbsp;
+We will use **Vincent**. After selecting a model it will be opened in the Mixamo character editor:  
 
-We will call our sequence <em>Vincent</em>. Now it's time to choose one or more animation clips. Click on the PLAY SEQUENCE on the bottom left and enter <strong>free</strong> into the filter text field. You can choose any animation, we will choose the <strong>samba dancing</strong> one:
+[![](editor1.jpg)](editor1.jpg)  
 
-<a href="select_samba2.jpg"><img src="select_samba2.jpg" /></a> alt="" /></a>
+We will call our sequence _Vincent_. Now it's time to choose one or more animation clips. Click on the PLAY SEQUENCE on the bottom left and enter **free** into the filter text field. You can choose any animation, we will choose the **samba dancing** one:  
 
-&nbsp;
+[![](select_samba2.jpg)](select_samba2.jpg)  
 
-This will create a new clip with the dance animation. Try it out by clicking on the play button and you should see Vincent samba dancing! You can add more animations if you want but it is important to understand that <strong>all clips will be merged into one animation</strong> when downloading the final sequence. Also, if you don't want the model to start with the initial T pose, you can safely delete the first clip.
+This will create a new clip with the dance animation. Try it out by clicking on the play button and you should see Vincent samba dancing! You can add more animations if you want but it is important to understand that **all clips will be merged into one animation** when downloading the final sequence. Also, if you don't want the model to start with the initial T pose, you can safely delete the first clip.  
 
-OK, the sequence is ready to be downloaded and imported into Goo Create. Click on DOWNLOAD. If you have selected non-free models or animations you will now be asked for your payment information. Next you should see a download popup with all your download history. You can always go back here and change a sequence and download it again.
+OK, the sequence is ready to be downloaded and imported into Goo Create. Click on DOWNLOAD. If you have selected non-free models or animations you will now be asked for your payment information. Next you should see a download popup with all your download history. You can always go back here and change a sequence and download it again.  
 
-<a href="download1.jpg"><img src="download1.jpg" /></a> alt="" /></a>
+[![](download1.jpg)](download1.jpg)  
 
-Select the entry with the new sequence. On the bottom you now need to select the download format. Select FBX (.fbx) and click on DOWNLOAD and it should download an FBX file with a size of around 8 MB.
-<h1> Step 2</h1>
-You can close the Mixamo website now if you like and move over to Goo Create. Login and launch Goo Create. Start a new default project and drag and drop the Mixamo FBX file into Goo Create. After the upload is complete you will probably see two big feet (he reason the model is so big is because the Mixamo model units are in centimeters while Goo Create uses meters):
+Select the entry with the new sequence. On the bottom you now need to select the download format. Select FBX (.fbx) and click on DOWNLOAD and it should download an FBX file with a size of around 8 MB.  
 
-<a href="initial_import1.jpg"><img src="initial_import1.jpg" /></a> alt="" /></a>
+## Step 2
 
-&nbsp;
+You can close the Mixamo website now if you like and move over to Goo Create. Login and launch Goo Create. Start a new default project and drag and drop the Mixamo FBX file into Goo Create. After the upload is complete you will probably see two big feet (he reason the model is so big is because the Mixamo model units are in centimeters while Goo Create uses meters):  
+[![](initial_import1.jpg)](initial_import1.jpg)  
 
-Click on one of the feet and you should have selected the Vincent model and with it you can modify the transform settings to drastically shrink the model. Set the scaling values for X,Y and Z to 0.02.
+Click on one of the feet and you should have selected the Vincent model and with it you can modify the transform settings to drastically shrink the model. Set the scaling values for X,Y and Z to 0.02.  
 
-<a href="transform.jpg"><img src="transform.jpg" /></a>
+[![](transform.jpg)](transform.jpg)  
 
-After you've changed the scale you can press <strong>F</strong> to center and position the camera on the scene.
+After you've changed the scale you can press **F** to center and position the camera on the scene.  
 
-Now press the play button on the bottom <a href="press_play.png"><img class="alignnone size-full wp-image-427" src="press_play.png" alt="press_play" /></a> and you should see Vincent dancing !
+Now press the play button on the bottom [![press_play](press_play.png)](press_play.png) and you should see Vincent dancing !  
 
-<a href="dancing.jpg"><img src="dancing.jpg" /></a>
-
-&nbsp;
+[![](dancing.jpg)](dancing.jpg)  
 
 And that's how easy it is to import an animated model from Mixamo into Goo Create.

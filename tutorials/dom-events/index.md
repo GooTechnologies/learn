@@ -4,7 +4,7 @@ title: DOM Events
 weight: 5670
 indent: 1
 ---
-User input (from mouse, keyboard, touch et cetera) is handled through JavaScript-style event listeners. All the available functionality for interacting with the DOM comes for free, since the engine is written in nothing but JavaScript. It is possible to write any JavaScript code in Goo Create scripts, and that includes scripts which manipulates or interacts with the DOM. In addition to pure and raw DOM events, Goo Engine adds some extra functionality for interacting with objects in the scene (entity picking, scene intersections and more). These types of events are covered in the tutorial [GooRunner Event Listeners](/learn/goorunner-event-listeners/ "GooRunner Event Listeners"). The tutorial you're currently reading will focus on the standard, unembellished, DOM events.
+User input (from mouse, keyboard, touch et cetera) is handled through JavaScript-style event listeners. All the available functionality for interacting with the DOM comes for free, since the engine is written in nothing but JavaScript. It is possible to write any JavaScript code in Goo Create scripts, and that includes scripts which manipulates or interacts with the DOM. The tutorial you're currently reading will focus on the standard, unembellished, DOM events.
 
 ## The Goal
 
@@ -16,7 +16,18 @@ Click and drag!
 
 ## JavaScript Event Listeners
 
-Event handlers can be attached to elements (such as **divs** or **canvases**), to the **document** or to the **window** object. Event listeners are added by using certain event names and callback functions which execute when the selected event triggers. For example, adding a simple **mousedown** event listener to the window object might look like this: {% highlight js %} window.addEventListener('mousedown', function(evt) { console.log('Mouse down event triggered!', evt); } {% endhighlight %} The **evt** object will contain properties of the event. For example, the coordinates where the mouse down event occured. Each type of event has its own set of properties and can be attached to a certain set of elements. Refer to the excellent _MDN_ for full details, or use the console like above to print the evt object. **mousedown** details: [https://developer.mozilla.org/en-US/docs/Web/Events/mousedown](https://developer.mozilla.org/en-US/docs/Web/Events/mousedown "mousedown on MDN") Full event reference: [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events "Full event reference")
+Event handlers can be attached to elements (such as **divs** or **canvases**), to the **document** or to the **window** object. Event listeners are added by using certain event names and callback functions which execute when the selected event triggers. For example, adding a simple **mousedown** event listener to the window object might look like this:
+
+{% highlight js %}
+window.addEventListener('mousedown', function(evt) {
+	console.log('Mouse down event triggered!', evt);
+}
+{% endhighlight %}
+
+The **evt** object will contain properties of the event. For example, the coordinates where the mouse down event occured. Each type of event has its own set of properties and can be attached to a certain set of elements. Refer to the excellent _MDN_ for full details, or use the console like above to print the evt object.
+
+* **mousedown** details: [https://developer.mozilla.org/en-US/docs/Web/Events/mousedown](https://developer.mozilla.org/en-US/docs/Web/Events/mousedown "mousedown on MDN")
+* Full event reference: [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events "Full event reference")
 
 ## Adding and Removing Event Listeners in Scripts
 
@@ -62,7 +73,9 @@ var cleanup = function(args, ctx, goo) {
 
 If you add the functions above to the script and run it, you can open up the console and check out the triggered mouse events!
 
-<a href="console.jpg"><img class="wp-image-175 size-full" src="console.jpg" alt="console" /></a> Testing the basic event listener structure using the console
+<a href="console.jpg"><img class="wp-image-175 size-full" src="console.jpg" alt="console" /></a>
+
+Testing the basic event listener structure using the console
 
 If everything seems to work correctly (testing is <em>important</em>), we can go on with adding some more interesting functionality to the script.
 <h3>Spinning with Speed</h3>

@@ -9,13 +9,6 @@ There could be times when you will want to use Images from the scene with an HTM
 
 <a href="health_bar-300x191.png"><img class="size-medium wp-image-1045 aligncenter" src="health_bar-300x191.png" alt="health_bar" /></a>
 
-This is the fourth tutorial in a four part tutorial series.
-
-1. <a href="http://goolabs.wpengine.com/learn/?p=986">Placing HTML Entities Along the Borders of the Screen</a>
-2. <a href="http://goolabs.wpengine.com/learn/?p=1025">Using HTML Buttons to Affect the Scene</a>
-3. <a href="http://goolabs.wpengine.com/learn/?p=1026">Using Entities to Interact With an HTML Entity</a>
-4. Using Images With HTML Entities
-
 <hr />
 
 The first thing we will need to do, is create a new DIV in our HTML Entity to hold the health bars.  Inside this DIV, we will put place holders to store our 'empty' and 'full' images.  We have structured it this way, so we can easily re-position the health bar without having to touch the images themselves.
@@ -99,7 +92,9 @@ var parameters = [
 {% endhighlight %}
 
 Here are the two images I am using for this tutorial:
+
 <a href="health_empty.png"><img src="health_empty.png" /></a>
+
 <a href="health_full.png"><img src="health_full.png" /></a>
 
 After you save the script, you will need to drag and drop them onto the Empty and Full texture slots which appeared in the Custom script, or else use the browse icon to search for them on your local hard drive.
@@ -161,7 +156,7 @@ In the update function, we first check to see if the world variable for health i
 
 Now whenever ctx.worldData.maxHealth changes, the health bar will automatically re-size to show the changes.
 
-We can tap into the callback function we created in the second tutorial:  <a href="http://goolabs.wpengine.com/learn/?p=1025">Using HTML Buttons to Affect the Scene</a>
+We can tap into the callback function we created in the second tutorial:  <a href="{{ '/tutorials/html-interact' | prepend: site.baseurl }}">Using HTML Buttons to Affect the Scene</a>
 
 Just change the callback function for the sound button like so:
 
@@ -176,7 +171,5 @@ Just change the callback function for the sound button like so:
 {% endhighlight %}
 
 We basically tell it to subtract some random value between 5 and 15 from the current ctx.worldData.health.  We then make sure that if the health falls below 0, we add +100 to it, to keep it from going into the negative.
-
-&nbsp;
 
 The final result is that when you click the button, the ctx.worldData.health value is changed, which then causes our health bar to automatically update its clip settings to the new value.

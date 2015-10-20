@@ -4,12 +4,14 @@ title: Procedural textures
 weight: 5950
 indent: 1
 ---
-A great way to <strong>reduce load times</strong> is to use procedurally generated textures.
-There is one really easy way to generate texture data, and there are a couple of more advanced ones.
-<h2>The Easy Way</h2>
+A great way to **reduce load times** is to use procedurally generated textures. There is one really easy way to generate texture data, and there are a couple of more advanced ones.
+
+## The Easy Way
+
 Simply create an off-screen canvas and paint to it and use the data with the WebGL function to initialize a texture like so:
-{% highlight js %}function createGradientImage(opt_width, opt_height)
-{
+
+{% highlight js %}
+function createGradientImage(opt_width, opt_height){
   var canvas = document.createElement("canvas");
   canvas.width = opt_width || 256;
   canvas.height = opt_height || 256;
@@ -34,8 +36,11 @@ function textureFromCanvas(canvas) {
   return texture;
 }
 {% endhighlight %}
-Here is a <a href="http://rhulha.github.io/self-contained-webgl-demo/">demo using that technique</a>.
-<h2>The Advanced Way</h2>
+
+Here is a [demo using that technique](http://rhulha.github.io/self-contained-webgl-demo/).
+
+## The Advanced Way
+
 The advanced way is to generate raw image data bytes in an array and then pass it to the WebGL texture functions. This gives you the ultimate flexibility, but the easier canvas method above might be preferable.
 {% highlight js %}function createTexture(byteArrayWithRGBAData) {
   var data = new Uint8Array(byteArrayWithRGBAData);
@@ -48,12 +53,13 @@ The advanced way is to generate raw image data bytes in an array and then pass i
   return texture;
 }
 {% endhighlight %}
-Here is a <a href="http://jsfiddle.net/uzMPU/">great demo by Notch</a> (the creator of Minecraft) using this strategy. All the textures are generated in the JavaScript code as RGB byte values. Here is a <a href="https://www.youtube.com/watch?v=WaZvDCmlERc">video</a> explaining the code if you like to know more.
-<h2>Render to texture</h2>
-Another way is to <strong>render a WebGL scene to a texture.</strong> See here for an <a href="http://learningwebgl.com/blog/?p=1786">example using pure WebGL</a>. Here is <a href="http://jsfiddle.net/rherlitz/6mG3W/">one using Goo Engine</a>.
-<h2>Shader effects</h2>
-Finally, you can do a lot of spectacular effects completely without textures by only using shader effects. Here is a <a href="http://rhulha.github.io/ChronosGL/TunnelVision/index.html">demo using Perlin Noise</a>.
 
-<a href="http://www.shadertoy.com">Shadertoy</a> is a great place for many many examples of this approach.
+Here is a [great demo by Notch](http://jsfiddle.net/uzMPU/) (the creator of Minecraft) using this strategy. All the textures are generated in the JavaScript code as RGB byte values. Here is a [video](https://www.youtube.com/watch?v=WaZvDCmlERc) explaining the code if you like to know more.
 
-Next: <a href="../reducing-memory-usage/">Reducing Memory Usage</a>
+## Render to texture
+
+Another way is to **render a WebGL scene to a texture.** See here for an [example using pure WebGL](http://learningwebgl.com/blog/?p=1786). Here is [one using Goo Engine](http://jsfiddle.net/rherlitz/6mG3W/).
+
+## Shader effects
+
+Finally, you can do a lot of spectacular effects completely without textures by only using shader effects. Here is a [demo using Perlin Noise](http://rhulha.github.io/ChronosGL/TunnelVision/index.html). [Shadertoy](http://www.shadertoy.com) is a great place for many many examples of this approach.

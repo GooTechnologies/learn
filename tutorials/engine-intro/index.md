@@ -8,7 +8,9 @@ Hello and welcome, this tutorial will show you how to create a simple solar syst
 
 ## Introduction
 
-Goo Engine is built using what many consider the holy grail of game engine design: The Entity-Component-System. The [Entity-Component-System](http://en.wikipedia.org/wiki/Entity_component_system) is a software design pattern that favors **composition over inheritance**. Users instantiate simple [**entities**](//code.gooengine.com/latest/docs/Entity.html) and then add powerful but focused [**components**](//code.gooengine.com/latest/docs/Component.html) to enable specific features. Finally, single purpose [**systems**](//code.gooengine.com/latest/docs/System.html) update all entities which have a matching **component**. [![ECS](ECS-300x231.png)](ECS.png)
+Goo Engine is built using what many consider the holy grail of game engine design: The Entity-Component-System. The [Entity-Component-System](http://en.wikipedia.org/wiki/Entity_component_system) is a software design pattern that favors **composition over inheritance**. Users instantiate simple [entities](//code.gooengine.com/latest/docs/index.html?c=Entity) and then add powerful but focused [components](//code.gooengine.com/latest/docs/index.html?c=Component) to enable specific features. Finally, single purpose [systems](//code.gooengine.com/latest/docs/index.html?c=System) update all entities which have a matching **component**.
+
+[![ECS](ECS-300x231.png)](ECS-300x231.png)
 
 ## Now contrast this with the traditional way of thinking:
 
@@ -28,7 +30,7 @@ In this tutorial we will create a little solar system with a sun, a world and a
 
 <iframe src="//jsfiddle.net/5mLc3sn5/embedded/result,js,html,css"></iframe>
 
-<div class="alert alert-info" role="alert">You should see a yellow sun orbited by a world looking like earth which in turn is orbited by a little moon. If you don't see this, check if you have a WebGL compatible browser: [get.webgl.org](http://get.webgl.org)</div>
+<div class="alert alert-info" role="alert">You should see a yellow sun orbited by a world looking like earth which in turn is orbited by a little moon. If you don't see this, check if you have a WebGL compatible browser: <a href="http://get.webgl.org">http://get.webgl.org</a></div>
 
 To the left you should see the code for the demo in an online code editor.
 
@@ -93,13 +95,13 @@ This line creates new [MeshData](http://code.gooengine.com/latest/docs/index.htm
 
 ## MeshData
 
-**new goo.Sphere** returns an object of type [**MeshData**](http://code.gooengine.com/latest/docs/index.html?c=MeshData) which contains an **attributeMap** and the actual **vertexData.** MeshData is a real powerhouse and contains some cool code to make rendering complex 3D objects fast by interleaving all vertex data. But what is **vertex data**? Vertex data is at the **heart** of rendering objects, it is the reason why Mozilla invented the [Float32Array](https://developer.mozilla.org/en-US/docs/Web/API/Float32Array) and all the other [typed arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays). The **most important** things vertex data contain are the **x, y and z** **coordinates of the vertex.** Three vertex positions form a **triangle** and triangles are what all models are made of in WebGL. But there is more, next to the position of the vertex you can define the **color** and multiple [texture coordinates](http://en.wikipedia.org/wiki/UV_Mapping) and the [normal vector](http://en.wikipedia.org/wiki/Normal_(geometry)) (which is really useful for lighting models realistically). What is the **attributeMap?** The attributeMap contains name mappings from the names for the different vertex data types in the shader code  to the JavaScript names for them in MeshData. If you use shaders from the Goo [ShaderLibrary](http://code.gooengine.com/latest/docs/index.html?c=ShaderLib) **you don't need to worry about this,** but sometimes you want to use a shader you found online or wrote in the past and with setting the attributeMap you can use them with the Goo Engine. Just map the names that are used in the shader to the fields in MeshData. ([Example](http://jsfiddle.net/WL8rH/6/))
+**new goo.Sphere** returns an object of type [MeshData](http://code.gooengine.com/latest/docs/index.html?c=MeshData) which contains an **attributeMap** and the actual **vertexData.** MeshData is a real powerhouse and contains some cool code to make rendering complex 3D objects fast by interleaving all vertex data. But what is **vertex data**? Vertex data is at the **heart** of rendering objects, it is the reason why Mozilla invented the [Float32Array](https://developer.mozilla.org/en-US/docs/Web/API/Float32Array) and all the other [typed arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays). The **most important** things vertex data contain are the **x, y and z** **coordinates of the vertex.** Three vertex positions form a **triangle** and triangles are what all models are made of in WebGL. But there is more, next to the position of the vertex you can define the **color** and multiple [texture coordinates](http://en.wikipedia.org/wiki/UV_Mapping) and the [normal vector](http://en.wikipedia.org/wiki/Normal_(geometry)) (which is really useful for lighting models realistically). What is the **attributeMap?** The attributeMap contains name mappings from the names for the different vertex data types in the shader code  to the JavaScript names for them in MeshData. If you use shaders from the Goo [ShaderLibrary](http://code.gooengine.com/latest/docs/index.html?c=ShaderLib) **you don't need to worry about this,** but sometimes you want to use a shader you found online or wrote in the past and with setting the attributeMap you can use them with the Goo Engine. Just map the names that are used in the shader to the fields in MeshData. ([Example](http://jsfiddle.net/WL8rH/6/))
 
 ## Material
 
 {% highlight js %}var material = new goo.Material(goo.ShaderLib.uber);
 {% endhighlight %}
-This line creates a new [**Material**](http://code.gooengine.com/latest/docs/index.html?c=Material) instance using the awesome **uber shader** provided by the Goo shader library. A **Material** instance primarily contains the used [WebGL Shader](http://en.wikipedia.org/wiki/OpenGL_Shading_Language) code, **uniforms** and a **map of textures**.
+This line creates a new [Material](http://code.gooengine.com/latest/docs/index.html?c=Material) instance using the awesome **uber shader** provided by the Goo shader library. A **Material** instance primarily contains the used [WebGL Shader](http://en.wikipedia.org/wiki/OpenGL_Shading_Language) code, **uniforms** and a **map of textures**.
 
 ## Shader
 
@@ -111,7 +113,13 @@ _Uber_ is a reference to the German word [über](http://en.wikipedia.org/wiki/%C
 
 ## Textures part 2
 
-Next you can see how you can set an ambient color and add a texture to the **map of textures** in the Material. {% highlight js %}material.uniforms.materialAmbient = color; material.setTexture('DIFFUSE_MAP', texture); {% endhighlight %} The second line tells the material instance to use the provided **texture** as it's diffuse map. Remember that diffuse simply stands for the **basic colors** an object has for each surface pixel. If we wanted some cool bump mapping effects we could similarly set a different texture as a depth or normal map. Other texture map names in uberShader are: NORMAL_MAP, SPECULAR_MAP, LIGHT_MAP, EMISSIVE_MAP, DEPTH_MAP
+Next you can see how you can set an ambient color and add a texture to the **map of textures** in the Material.
+
+{% highlight js %}
+material.uniforms.materialAmbient = color; material.setTexture('DIFFUSE_MAP', texture);
+{% endhighlight %}
+
+The second line tells the material instance to use the provided **texture** as it's diffuse map. Remember that diffuse simply stands for the **basic colors** an object has for each surface pixel. If we wanted some cool bump mapping effects we could similarly set a different texture as a depth or normal map. Other texture map names in uberShader are: NORMAL_MAP, SPECULAR_MAP, LIGHT_MAP, EMISSIVE_MAP, DEPTH_MAP
 
 ## Entities
 
@@ -120,7 +128,7 @@ Next you can see how you can set an ambient color and add a texture to the **map
 }).addToWorld();
 {% endhighlight %}
 
-This piece of code creates our first **[Entity](http://code.gooengine.com/latest/docs/index.html?c=Entity) **by calling **createEntity** on the [**world**](http://code.gooengine.com/latest/docs/index.html?c=World) object. As we read above in an **ECS** an entity is very **simple**. In Goo it only contains an **ID**, a **name** and a **collection** of assigned **components.** **createEntity** hides all of the boilerplate code that is needed to be able to render an entity. The minimum components needed to render an entity are: [**TransformComponent**](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent), [**MeshDataComponent**](http://code.gooengine.com/latest/docs/index.html?c=MeshDataComponent) and [**MeshRendererComponent**](http://code.gooengine.com/latest/docs/index.html?c=MeshRendererComponent). So the way we call it world.createEntity basically does this for us:
+This piece of code creates our first [Entity](http://code.gooengine.com/latest/docs/index.html?c=Entity) by calling **createEntity** on the [world](http://code.gooengine.com/latest/docs/index.html?c=World) object. As we read above in an **ECS** an entity is very **simple**. In Goo it only contains an **ID**, a **name** and a **collection** of assigned **components.** **createEntity** hides all of the boilerplate code that is needed to be able to render an entity. The minimum components needed to render an entity are: [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent), [MeshDataComponent](http://code.gooengine.com/latest/docs/index.html?c=MeshDataComponent) and [MeshRendererComponent](http://code.gooengine.com/latest/docs/index.html?c=MeshRendererComponent). So the way we call it world.createEntity basically does this for us:
 
 {% highlight js %}var entity = new goo.Entity(world);
 entity.setComponent(new goo.TransformComponent());
@@ -133,7 +141,7 @@ So you can see using createEntity saves us from typing a lot of lines, **but 
 
 ## TransformComponent
 
-The [**TransformComponent**](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent) contains the information where an entity is located (**translation**), if and how it is re-sized (**scale**) and where it is looking at (**rotation**). Together these three properties form what is called a **transform** in the math world. You can access these properties like this:
+The [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent) contains the information where an entity is located (**translation**), if and how it is re-sized (**scale**) and where it is looking at (**rotation**). Together these three properties form what is called a **transform** in the math world. You can access these properties like this:
 
 {% highlight js %}entity.transformComponent.transform.translation.set(x, y, z);
 entity.transformComponent.transform.scale.set(xs, ys, zs);
@@ -171,11 +179,11 @@ These helper functions also call <strong>setUpdated</strong> for you when needed
 
 ## MeshDataComponent
 
-Next a [**MeshDataComponent**](http://code.gooengine.com/latest/docs/index.html?c=MeshDataComponent) is added. This component simply contains the **MeshData** instance we created above using the **Sphere** class.
+Next a [MeshDataComponent](http://code.gooengine.com/latest/docs/index.html?c=MeshDataComponent) is added. This component simply contains the **MeshData** instance we created above using the **Sphere** class.
 
 ## MeshRendererComponent
 
-Now a [**MeshRendererComponent**](http://code.gooengine.com/latest/docs/index.html?c=MeshRendererComponent) is added. This component is a bit more interesting - not only does it contain the **Material** instance we created above using the **Material** class but also a couple of very useful settings. They are **cullMode** ('Dynamic' or 'Never') and the boolean settings **castShadows**, **receiveShadows**, **isPickable**, **isReflectable** and **hidden**. (boolean settings can only take the value **true** or **false**). Also keep in mind that a MeshRendererComponent can contain more than one material. That is why **entity.meshRendererComponent.materials** is an array. Finally, the MeshRendererComponent contains the field **worldBound** which is an instance of the class **BoundingVolume** that can be used for [collision detection](http://en.wikipedia.org/wiki/Collision_detection).
+Now a [MeshRendererComponent](http://code.gooengine.com/latest/docs/index.html?c=MeshRendererComponent) is added. This component is a bit more interesting - not only does it contain the **Material** instance we created above using the **Material** class but also a couple of very useful settings. They are **cullMode** ('Dynamic' or 'Never') and the boolean settings **castShadows**, **receiveShadows**, **isPickable**, **isReflectable** and **hidden**. (boolean settings can only take the value **true** or **false**). Also keep in mind that a MeshRendererComponent can contain more than one material. That is why **entity.meshRendererComponent.materials** is an array. Finally, the MeshRendererComponent contains the field **worldBound** which is an instance of the class **BoundingVolume** that can be used for [collision detection](http://en.wikipedia.org/wiki/Collision_detection).
 
 ## ScriptComponent
 
@@ -183,7 +191,7 @@ Now a [**MeshRendererComponent**](http://code.gooengine.com/latest/docs/index.ht
     entity.addRotation(0, 0.5*tpf, 0);
 }
 {% endhighlight %}
-The last component that is added to our astronomical entity is a [**ScriptComponent**](http://code.gooengine.com/latest/docs/index.html?c=ScriptComponent). These components can store one or more objects which contain a **run** method that take two parameters: The entity to which the script is connected to and the time it took to render the last frame (**tpf** for short). The script is called every frame and can be used for an infinite amount of things. In our case we use it to rotate the entity around it's local **Y** axis. Incorporating the **tpf** value in movement and rotation calculations is a good idea for all things **animation** because then you are frame rate independent, i.e. it doesn't matter how long it took to render the last frame because the **tpf** will reflect it and your animation moves at the same speed even on lower performing computers. (At 60 FPS the value for **tpf** will be around 0.016 in seconds) Finally, we add the entity to the world with the call: **addToWorld().**
+The last component that is added to our astronomical entity is a [ScriptComponent](http://code.gooengine.com/latest/docs/index.html?c=ScriptComponent). These components can store one or more objects which contain a **run** method that take two parameters: The entity to which the script is connected to and the time it took to render the last frame (**tpf** for short). The script is called every frame and can be used for an infinite amount of things. In our case we use it to rotate the entity around it's local **Y** axis. Incorporating the **tpf** value in movement and rotation calculations is a good idea for all things **animation** because then you are frame rate independent, i.e. it doesn't matter how long it took to render the last frame because the **tpf** will reflect it and your animation moves at the same speed even on lower performing computers. (At 60 FPS the value for **tpf** will be around 0.016 in seconds) Finally, we add the entity to the world with the call: **addToWorld().**
 
 _It might be interesting to know, that this line does **not** add the entity right away but rather it **schedules** it for addition on the next render call. You can force this by calling:_
 
@@ -234,7 +242,7 @@ light.color.set(1,1,0);
 world.createEntity(light).addToWorld();
 {% endhighlight %}
 
-Here you see how light is added to the world. There are 3 different types of light built into Goo: [**PointLight**](http://code.gooengine.com/latest/docs/index.html?c=PointLight), [**DirectionalLight**](http://code.gooengine.com/latest/docs/index.html?c=DirectionalLight) and [**SpotLight**](http://code.gooengine.com/latest/docs/index.html?c=SpotLight). The light position together with the normal vectors of a model's surface are used in the uber shader to calculate the brightness of the surface. Roughly speaking, the more a surface is turned towards the light, the brighter it will be. A **SpotLight** is a cone of light, where the apex is the light's position. You can think of it like a flashlight. Some of it's properties are **range**, **angle** and **exponent**. The angle sets the angle of the cone's apex. Exponent sets the angle of an inner cone called the **hotspot**. Entities in the hotspot get the full light, the light then falls off linearly to the outer angle. PointLight and SpotLight both have a **range** field that is used to limit the area of effect, both defaulting to 1000 units. A **PointLight** acts like a light bulb. It shines light in all directions starting from the light position. A **DirectionalLight** acts like the sun. It is meant to imitate parallel light rays. It only has one property: **direction**. Example:
+Here you see how light is added to the world. There are 3 different types of light built into Goo: [PointLight](http://code.gooengine.com/latest/docs/index.html?c=PointLight), [DirectionalLight](http://code.gooengine.com/latest/docs/index.html?c=DirectionalLight) and [SpotLight](http://code.gooengine.com/latest/docs/index.html?c=SpotLight). The light position together with the normal vectors of a model's surface are used in the uber shader to calculate the brightness of the surface. Roughly speaking, the more a surface is turned towards the light, the brighter it will be. A **SpotLight** is a cone of light, where the apex is the light's position. You can think of it like a flashlight. Some of it's properties are **range**, **angle** and **exponent**. The angle sets the angle of the cone's apex. Exponent sets the angle of an inner cone called the **hotspot**. Entities in the hotspot get the full light, the light then falls off linearly to the outer angle. PointLight and SpotLight both have a **range** field that is used to limit the area of effect, both defaulting to 1000 units. A **PointLight** acts like a light bulb. It shines light in all directions starting from the light position. A **DirectionalLight** acts like the sun. It is meant to imitate parallel light rays. It only has one property: **direction**. Example:
 
 {% highlight js %}var light = new goo.DirectionalLight();
 light.direction.set(-1,-1,-1); // shines a bit down, to the left and to the front.
@@ -252,7 +260,7 @@ entity.setComponent(new goo.TransformComponent());
 entity.setComponent(new goo.LightComponent(light));
 {% endhighlight %}
 
-A <a href="http://code.gooengine.com/latest/docs/index.html?c=LightComponent"><strong>LightComponent</strong></a> is very simple and only contains a reference to the used light.
+A <a href="http://code.gooengine.com/latest/docs/index.html?c=LightComponent">LightComponent</a> is very simple and only contains a reference to the used light.
 
 <h2>And finally we add the camera</h2>
 
@@ -272,7 +280,7 @@ entity.setComponent(new ScriptComponent(orbitScript));
 entity.setTranslation([0,0,15]);
 {% endhighlight %}
 
-The **TransformComponent** is useful, of course, to position the camera in and make it look at our scene. The [**CameraComponent**](http://code.gooengine.com/latest/docs/index.html?c=CameraComponent) is very simple again and (almost) only contains the reference to our camera. Next, we set a **ScriptComponent** with an instance of an **OrbitCamControlScript** created by the Goo Scripts class. The **OrbitCamControlScript** allows you to **orbit** the camera **around a point** in space if you drag the mouse or to **zoom** in and out using the mouse wheel. Try removing the script, like this and see what happens:
+The **TransformComponent** is useful, of course, to position the camera in and make it look at our scene. The [CameraComponent](http://code.gooengine.com/latest/docs/index.html?c=CameraComponent) is very simple again and (almost) only contains the reference to our camera. Next, we set a **ScriptComponent** with an instance of an **OrbitCamControlScript** created by the Goo Scripts class. The **OrbitCamControlScript** allows you to **orbit** the camera **around a point** in space if you drag the mouse or to **zoom** in and out using the mouse wheel. Try removing the script, like this and see what happens:
 
 {% highlight js %}
 world.createEntity( camera, [0,0,15]).addToWorld();
