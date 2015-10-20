@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: State Machine
-weight: 6060
+weight: 1600
 indent: 1
 ---
 

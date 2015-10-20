@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Hierarchy
-weight: 5740
+weight: 1800
 indent: 1
 ---
 
