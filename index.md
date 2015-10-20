@@ -5,7 +5,7 @@ title: Goo Create Learn
 
 Welcome To the Learn site! Here you can find tutorials and a reference manual. Everything you need to learn Goo Create.
 
-## Tutorials
+## Recommended tutorials
 
 <div class="row-fluid">
 	<div class="col-md-4 col-sm-6">
@@ -21,9 +21,9 @@ Welcome To the Learn site! Here you can find tutorials and a reference manual. E
 		</a>
 	</div>
 	<div class="col-md-4 col-sm-6">
-		<h3>Material &amp; Textures</h3>
-		<a href="{{ '/tutorials/material' | prepend: site.baseurl }}">
-			<img class="img-responsive" src="{{ '/tutorials/material/thumb.jpg' | prepend: site.baseurl }}" />
+		<h3>Material fundamentals</h3>
+		<a href="{{ '/tutorials/material-fundamentals' | prepend: site.baseurl }}">
+			<img class="img-responsive" src="{{ '/tutorials/material-fundamentals/thumb.png' | prepend: site.baseurl }}" />
 		</a>
 	</div>
 	<div class="col-md-4 col-sm-6">
