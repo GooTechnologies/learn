@@ -14,7 +14,7 @@ In the center of the editor, the WebGL-rendered viewport is located. Here you ca
 
 <img src="drop.png" alt="Drag drop from file system"/>
 
-By dragging and dropping files on the viewport you can issue an asset import of that file. 
+By dragging and dropping files on the viewport you will issue an import of that file.
 
 The currently supported importable files include:
 
