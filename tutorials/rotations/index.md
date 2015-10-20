@@ -4,11 +4,14 @@ title: Rotations
 weight: 6020
 indent: 1
 ---
-This article will go over the different ways you can define and set rotations on Goo Engine entities. Accompanying this article is also a live <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">demo scene</a>:
 
-<img class="alignnone wp-image-1186 size-full" src="blue_head2.png" alt="blue_head2" width="965" height="419" />
+This article will go over the different ways you can define and set rotations on Goo Engine entities.
 
-Rotation is one of the three basic transformations you can apply to an object in 3D space. Rotation in Goo Engine is expressed as a <a href="http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3">Matrix3x3</a> object. The default values are:
+Accompanying this article is also a live [demo scene](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/):
+
+![blue_head2](blue_head2.png)
+
+Rotation is one of the three basic transformations you can apply to an object in 3D space. Rotation in Goo Engine is expressed as a [Matrix3x3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3) object. The default values are:
 
 {% highlight js %}
 [1, 0, 0,
@@ -19,16 +22,16 @@ Rotation is one of the three basic transformations you can apply to an object i
 If you look closely at the rows you can see that the default matrix uses (1,0,0) at row 1, (0,1,0) at row 2 and (0,0,1) at row 3.
 
 Now the cool thing is that row 1 contains the values for the right vector, row 2 the values for the up vector and row 3 the values for the back vector.
+  
+[![Goo_Rotation_Matrix](Goo_Rotation_Matrix.png "Goo Rotation Matrix Layout")](Goo_Rotation_Matrix.png)  
 
-<a href="Goo_Rotation_Matrix.png"><img class="wp-image-1159 size-full" title="Goo Rotation Matrix Layout" src="Goo_Rotation_Matrix.png" alt="Goo_Rotation_Matrix" width="670" height="229" /></a>
+Goo Rotation Matrix Layout  
 
-Goo Rotation Matrix Layout
+It is important that these three vectors are and stay one unit in length and that they are orthogonal to each other. This property of rotation matrices is called [Orthonormality](http://en.wikipedia.org/wiki/Orthonormality).  
 
-It is important that these three vectors are and stay one unit in length and that they are orthogonal to each other. This property of rotation matrices is called <a href="http://en.wikipedia.org/wiki/Orthonormality">Orthonormality</a>.
+Rest assured that if you use the built-in functions orthonormality will be preserved.  
 
-Rest assured that if you use the built-in functions orthonormality will be preserved.
-
-If an entity uses the default rotation matrix it will "look" along the <strong>negative z axis</strong> and the "top of the head" will be pointed at the <strong>positive y axis</strong>.
+If an entity uses the default rotation matrix it will "look" along the **negative z axis** and the "top of the head" will be pointed at the **positive y axis**.  
 
 If you would want to look a little bit down you could use this rotation matrix:
 
@@ -40,7 +43,9 @@ If you would want to look a little bit down you could use this rotation matrix:
 
 If you look at the rows again you can see that the right vector still points along the positive x axis. The up vector is still pointing upwards but now it is leaning a bit along the negative z axis. The back vector is still pointing along the positive z axis but now it also leans a bit along the positive y axis. Taken together you can imagine we tilted our virtual head a bit down.
 
-<div class="alert alert-info">Here is a [demo scene](https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/) using different rotation methods including [setting the rotation matrix](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) that makes the head look a bit down.</div>
+<div class="alert alert-info">
+	Here is a <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/">demo scene</a> using different rotation methods including <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">setting the rotation matrix</a> that makes the head look a bit down.
+</div>
 
 ### Why is the third vector backwards and not forward?
 
@@ -55,13 +60,12 @@ Here is a picture showing the difference:
 In the picture above, the **middle finger** of the left hand points forward.  
 
 In a right handed coordinate system forward is along the **negative z** axis, up is positive Y and right is positive X. In the picture above, the **back** of the right hand points forward.
+  
+So up and right stay the same, just forward changes.  
 
-<br>So up and right stay the same, just forward changes.<br>
+### Which class in the Goo Engine is responsible for managing the transform matrix?
 
-<h3>Which class in the Goo Engine is responsible for managing the transform matrix?</h3>
-Fittingly the class is called <a href="http://code.gooengine.com/latest/docs/index.html?c=Transform">Transform</a>. It contains the Vector3 <strong>translation </strong>and <strong>scale</strong>, the Matrix3x3 <strong>rotation</strong> and the combined Matrix4x4 <strong>transform</strong> matrix.
-
-<img class="alignnone wp-image-1131 size-full" src="RotationTutorialDrawing.png" alt="RotationTutorialDrawing" width="585" height="268" />
+Fittingly the class is called [Transform](http://code.gooengine.com/latest/docs/index.html?c=Transform). It contains the Vector3 **translation** and **scale**, the Matrix3x3 **rotation** and the combined Matrix4x4 **transform** matrix. ![RotationTutorialDrawing](RotationTutorialDrawing.png)
 
 The code for this combination is very simple:
 
@@ -98,14 +102,11 @@ Transform.prototype.update = function () {
 	As you can see, the scale is encoded into the 3 direction vectors making them non unit length if the scale is not (1,1,1). m3, m7 and m11 are always 0. m15 is always 1. Also a transform matrix does not need to be orthonormal.
 </div>
 
-
 The layout of the transform matrix looks like this:
 
-<a href="Goo_Rotation_Matrix.png"><img class="wp-image-1157 size-full" title="Goo Transform Matrix Layout" src="Goo_Rotation_Matrix.png" alt="Goo_Rotation_Matrix" width="720" height="223" /></a>
+[![Goo_Rotation_Matrix](Goo_Rotation_Matrix.png "Goo Transform Matrix Layout")](Goo_Rotation_Matrix.png) Goo Transform Matrix Layout
 
-Goo Transform Matrix Layout
-
-<h3>Ok, now that we got the basics covered let's see what we can do with a Matrix3x3 in regards to manipulating rotation.</h3>
+### Ok, now that we got the basics covered let's see what we can do with a Matrix3x3 in regards to manipulating rotation.
 
 Let's use the head from the demo scene:
 
@@ -117,18 +118,17 @@ var head = ctx.world.by.name('Head').first();
 	Please note that the head is a nested entity. The child entity was rotated manually until it looked along the negative z axis. If you use an imported model it might look in the wrong direction too, you can easily solve that by giving it an empty parent entity and then rotating the model to face the negative z direction like in the demo. We will not touch the rotation of the child entity from this point onward, we will only change the rotation on the parent entity.
 </div>
 
-
-Let's say we want the head to look a bit to the left or, in other words, rotate the head <strong>45</strong> degrees counterclockwise around the y axis. The classic way to do this would be to call the <strong>fromAngles</strong> method on the rotation object and pass in <a href="http://en.wikipedia.org/wiki/Radian" target="_blank"><strong>Math.PI/4</strong></a> for the Y parameter.
+Let's say we want the head to look a bit to the left or, in other words, rotate the head **45** degrees counterclockwise around the y axis. The classic way to do this would be to call the **fromAngles** method on the rotation object and pass in [Math.PI/4](http://en.wikipedia.org/wiki/Radian) for the Y parameter.
 
 <div class="alert alert-info">
 	As a <strong>Mnemonic device to remember the rotation direction</strong> you can use this trick: Imagine that you wrap your right hand  around the axis you want to rotate around with your thumb pointing into the positive direction of that axis. Then your index finger will point into the direction of rotation. Here is a picture showing the idea:
 </div>
+  
+[![right_hand_rule](right_hand_rule.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)  
 
-<a href="http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html"><img class="wp-image-1163 size-full" src="right_hand_rule.gif" alt="right_hand_rule" width="143" height="278" /></a>
+Right hand rule  
 
-Right hand rule
-
-So in our case where we pass in Math.PI/4 the result will be a counterclockwise rotation.
+So in our case where we pass in Math.PI/4 the result will be a counterclockwise rotation.  
 
 Let's look at some example code:
 
@@ -136,41 +136,45 @@ Let's look at some example code:
 head.transformComponent.transform.rotation.fromAngles(0,Math.PI/4,0);
 head.transformComponent.setUpdated();
 {% endhighlight %}
+  
+Here you can see a very important part of the overall picture: The Goo Engine uses an entity-component-system, meaning entities are pretty much only slim collections of components.  
 
-Here you can see a very important part of the overall picture: The Goo Engine uses an entity-component-system, meaning entities are pretty much only slim collections of components.
+One of the most important components is the [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent). It wraps the Transform object we talked about above and makes it usable as a component.  
 
-One of the most important components is the <a href="http://code.gooengine.com/latest/docs/index.html?c=TransformComponent">TransformComponent</a>. It wraps the Transform object we talked about above and makes it usable as a component.
+The Transform object of course contains the **rotation** Matrix3x3 object and since we learned that it is unpractical to modify the 9 values of that matrix directly we call a function called **fromAngles** that takes [Euler angles](https://en.wikipedia.org/wiki/Euler_angles) and converts them into the corresponding rotation matrix values.  
 
-The Transform object of course contains the <strong>rotation</strong> Matrix3x3 object and since we learned that it is unpractical to modify the 9 values of that matrix directly we call a function called <strong>fromAngles</strong> that takes <a href="https://en.wikipedia.org/wiki/Euler_angles">Euler angles</a> and converts them into the corresponding rotation matrix values.
+Finally we call **setUpdated** to let the TransformComponent know we modified one of the basic transformations, in our case the rotation, so it will recalculate and update the transform matrix on the next frame.  
 
-Finally we call <strong>setUpdated</strong> to let the TransformComponent know we modified one of the basic transformations, in our case the rotation, so it will recalculate and update the transform matrix on the next frame.
-
-<strong>If this seems like a lot to type, don't worry:</strong> We provide many <a href="http://code.gooengine.com/latest/docs/index.html?c=TransformComponent" target="_blank">helper functions</a> for your convenience, the same result as above can be achieved using this function call:
+**If this seems like a lot to type, don't worry:** We provide many [helper functions](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent) for your convenience, the same result as above can be achieved using this function call:
 
 {% highlight js %}
 head.setRotation(0,Math.PI/8,0);   // all helper functions call setUpdated for you.
 {% endhighlight %}
 
-<a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">entity.setRotation</a> and <strong>rotation.fromAngles</strong> will always set the rotation matrix to fixed values, if you want to rotate relative to the current existing rotation you can call a helper function <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">addRotation</a>.
+[entity.setRotation](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) and **rotation.fromAngles** will always set the rotation matrix to fixed values, if you want to rotate relative to the current existing rotation you can call a helper function [addRotation](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/).
 
 <div class="alert alert-warning">
 	Euler angles are a very intuitive way of setting rotations but unfortunately using them can result in an effect called <a href="https://en.wikipedia.org/wiki/Gimbal_lock">gimbal lock</a>. Wikipedia describes it as the loss of one degree of freedom in a three-dimensional, three-gimbal mechanism that occurs when the axes of two of the three gimbals are driven into a parallel configuration, "locking" the system into rotation in a degenerate two-dimensional space. If you want to see a Gimbal Lock in action click 4 times on the first addRotation button <strong>and then</strong> 5 times on the second one in our <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene" target="_blank">demo scene</a>. So you have to click <strong>9 times</strong> in total to see the effect.
 </div>
+  
 
-<h3>As we have seen Euler angles are prone to an effect called Gimbal Lock, so what other functions can we call on the rotation object ?</h3>
-Other than setting Euler angles we have:
-<ul>
-	<li>LookAt</li>
-	<li>Matrix multiplication</li>
-	<li>fromAngleNormalAxis</li>
-	<li>Quaternions</li>
-	<li>Spherical</li>
-</ul>
-Let's go over them in detail.
-<h2>LookAt</h2>
-This is my personal favorite. The function name pretty much says it all: <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/"><strong>lookAt</strong></a> is a function that creates a rotation matrix that points an entity towards a certain direction or point in space.
+### As we have seen Euler angles are prone to an effect called Gimbal Lock, so what other functions can we call on the rotation object ?
 
-Because of the clearly defined result <strong>lookAt</strong> is a very opinionated function. It can easily happen that you call <strong>lookAt</strong> on an entity just to find it looking into the seemingly wrong direction.
+Other than setting Euler angles we have:  
+
+*   LookAt
+*   Matrix multiplication
+*   fromAngleNormalAxis
+*   Quaternions
+*   Spherical
+
+Let's go over them in detail.  
+
+## LookAt
+
+This is my personal favorite. The function name pretty much says it all: [lookAt](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) is a function that creates a rotation matrix that points an entity towards a certain direction or point in space.  
+
+Because of the clearly defined result **lookAt** is a very opinionated function. It can easily happen that you call **lookAt** on an entity just to find it looking into the seemingly wrong direction.
 
 The lookAt function assumes that an entity is looking along the negative z axis by default with the positive y axis pointing upwards. If your model happens to "face" the negative x axis for example a call to lookAt will only make it's right "ear" point towards the target. There are two ways to fix this, either you can change the model in your favorite 3D program to make it face the negative z axis or you can create an empty entity and nest the model entity under the empty entity. If you then rotate the model entity to "look" along the negative z axis you should then be able to call lookAt on the parent entity with the correct results.
 
@@ -183,16 +187,17 @@ head.lookAt( translation, goo.Vector3.UNIT_Y);
 
 So as you can see the function takes 2 parameter. The first one is the target position the entity shall look at. The second parameter is the up vector the lookAt function shall use. It is optional and defaults to UNIT_Y.
 
-Keep in mind that entity.lookAt() is a helper function calling the <a href="http://code.gooengine.com/latest/docs/index.html?c=Transform">Transform.looAt</a> function, there is also a lookAt function inside the <a href="http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3">Matrix3x3</a> class but since it doesn't know anything about translations it expects a (back) direction vector as it's first parameter instead of a target position and the up parameter is <strong>not optional</strong>.
+Keep in mind that entity.lookAt() is a helper function calling the [Transform.looAt](http://code.gooengine.com/latest/docs/index.html?c=Transform) function, there is also a lookAt function inside the [Matrix3x3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3) class but since it doesn't know anything about translations it expects a (back) direction vector as it's first parameter instead of a target position and the up parameter is **not optional**.
 
 <div class="alert alert-warning">
 	The following paragraph will explain how the lookAt function works internally, feel free to skip it, as it is <strong>not</strong> important to understand how it works internally to use it just fine.
 </div>
 
-
 The way the function works is that it takes the entity and target position and subtracts them to get a back vector. Then it calculates the cross product between the up vector and the back vector to get the right vector. Then it calculates the cross product between the right vector and the back vector to get an up vector that is orthogonal to both the direction and the right vector and finally stores all three vectors normalized inside our rotation Matrix3x3 in their respective rows.
-<h2>Matrix multiplication</h2>
-Another way of changing rotation in a relative way is to use matrix multiplication. To see this in action click on the <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">multiply</a> button in the <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene">demo</a>.
+
+## Matrix multiplication
+
+Another way of changing rotation in a relative way is to use matrix multiplication. To see this in action click on the [multiply](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) button in the [demo](https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene).
 
 And here is the code:
 
@@ -205,7 +210,7 @@ head.transformComponent.setUpdated();
 
 The demo uses the same "looking a bit down" values as before. Clicking on multiply repeatedly will look further and further down regardless of where the head is currently looking, so it is relative to the existing rotation with the added benefit of not being prone to Gimbal lock. The minor problem with this approach that you have to create and potentially create over and over again new matrices with the appropriate values, for example relative to time or mouse movement,
 
-But of course Goo provides helper functions to make this task easy, they are called <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/"><strong>rotateX</strong>, <strong>rotateY</strong> and <strong>rotateZ</strong></a> take one scalar argument in radian. They basically create rotation matrix values on the fly (without creating an object in memory) and multiply the result.
+But of course Goo provides helper functions to make this task easy, they are called [rotateX, rotateY and rotateZ](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) take one scalar argument in radian. They basically create rotation matrix values on the fly (without creating an object in memory) and multiply the result.
 
 The demo contains example buttons for  these as well.
 
@@ -215,11 +220,11 @@ And here is the code for rotateX:
 head.transformComponent.transform.rotation.rotateX(0.1); // relative rotation using the local x axis (not the world x axis)
 head.transformComponent.setUpdated();
 {% endhighlight %}
+## fromAngleNormalAxis
 
-<h2>fromAngleNormalAxis</h2>
-Both the Matrix3x3 and the Quaternion class contain the function <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">fromAngleNormalAxis</a>, while the Quaternion class additionally contains the reverse: <strong>toAngleAxis</strong>.
+Both the Matrix3x3 and the Quaternion class contain the function [fromAngleNormalAxis](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/), while the Quaternion class additionally contains the reverse: **toAngleAxis**.
 
-The purpose of this function is to set a <strong>fixed</strong> rotation based on an axis and a rotation around the axis. The way to visualize the behavior is to imagine that a stake representing the axis is thrust into an entity at identity rotation. Then the stake is twisted according to the angle value. So if you do not twist, that is if you do not give the function a rotation angle the rotation of the entity will stay at identity (looking along -z) no matter what axis you will give it. So if you would want to look a bit up, you would thrust the stake into one of the ears, for example the right ear (1,0,0), and give it a slightly positive angle.
+The purpose of this function is to set a **fixed** rotation based on an axis and a rotation around the axis. The way to visualize the behavior is to imagine that a stake representing the axis is thrust into an entity at identity rotation. Then the stake is twisted according to the angle value. So if you do not twist, that is if you do not give the function a rotation angle the rotation of the entity will stay at identity (looking along -z) no matter what axis you will give it. So if you would want to look a bit up, you would thrust the stake into one of the ears, for example the right ear (1,0,0), and give it a slightly positive angle.
 
 {% highlight js %}
 head.transformComponent.transform.rotation.fromAngleNormalAxis(0.1,1,0,0); // fixed rotation using a local x axis (not the world x axis) and an angle
@@ -230,12 +235,11 @@ head.transformComponent.setUpdated();
 	I personally find it hard to visualize the needed angle and axis to get to a certain rotation other than a rotation around a basic axis, but your mileage may vary.
 </div>
 
-
 ## Quaternions
+  
+Quaternions are a great way to work with rotations. The main benefit of using quaternions is the ability to smoothly interpolate between two different rotations using [slerp](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) which is short for [spherical linear interpolation](https://en.wikipedia.org/wiki/Slerp).  
 
-Quaternions are a great way to work with rotations. The main benefit of using quaternions is the ability to smoothly interpolate between two different rotations using <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/"><strong>slerp</strong></a> which is short for <a href="https://en.wikipedia.org/wiki/Slerp">spherical linear interpolation</a>.
-
-Here is the code for the slerp button in the <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/" target="_blank">demo scene</a>:
+Here is the code for the slerp button in the [demo scene](https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/):
 
 {% highlight js %}
 var rot = head.transformComponent.transform.rotation;

@@ -46,7 +46,7 @@ This is where most of the code usually goes. This function will run *every frame
 
 **args** contains the custom parameters we can define for our script in the parameters array (see below).
 
-[Custom Script Parameters](parameters) **ctx** lets us access a number of things: The Entity onto which the script is attached, the World the entity lives in, the DOM element that is used for rendering, the active camera, the viewport size and custom data we define on the entity or the world.
+**ctx** lets us access a number of things: The Entity onto which the script is attached, the World the entity lives in, the DOM element that is used for rendering, the active camera, the viewport size and custom data we define on the entity or the world.
 
 **goo** provides access to all engine classes such as Vector3, Matrix3 and others.
 
