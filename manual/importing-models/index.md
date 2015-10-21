@@ -127,7 +127,7 @@ Prior to exporting from your creation tool of choice, here are some tips.
 
 ## Model Creation Tools
 
-While there are several paid software out there for creating 3d models, here are some free ones:
+While there are several commerical products out there for creating 3d models, here are some free ones:
 
 - [Blender](http://www.blender.org)
 - [FreeCad](http://www.freecadweb.org)
