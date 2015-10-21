@@ -1,8 +1,10 @@
 ---
 title: Importing 3D Models
-weight: 901
-indent: 2
+weight: 6000
+indent: 1
 ---
+
+In order to make a scene with custom models, you are able to import 3d models from your file system, into create.
 
 ## The Process
 
@@ -10,8 +12,8 @@ indent: 2
 
 There are two ways to upload your 3d model into Create.
 
-1. Drop file on canvas
-	or 
+1. Drop file on canvas.
+
 2. Use the import from disk feature on the "Import Assets"-popup.
 
 After you have selected your model and provided it to Create, the file will be uploaded to our servers.
@@ -21,6 +23,7 @@ After you have selected your model and provided it to Create, the file will be u
 To make the model useable in create, we will convert it to a format which is usable by our 3d-engine. This is all automatic and will take some time, depending on the model size and format.
 
 You can follow the progress of the conversion in the status bar.
+
 
 #### Note: Triangulation
 
@@ -34,8 +37,15 @@ Drag and drop the root node into the viewport to use the model in your scene.
 
 ## File Formats
 
-Due to the fact that we are using Autodesk's FBX SDK as a third-party library for importing model files,
-the FBX format will most likely work best.
+These are the file formats we support:
+
+{% for format in site.data.importable.3d_files %}
+- {{ format.name }}
+	- File ending: <strong>{{ format.suffix }}</strong>
+	- [{{ format.url }}]({{ format.url }})
+{% endfor %}
+
+Due to the fact that we are using Autodesk's FBX SDK as a third-party library for importing model files, the FBX format will most likely work best.
 
 
 ## Features, Attributes
@@ -46,6 +56,13 @@ UV maps, if two are available , the second one can be used for e.g. light maps.
 
 embedded textures ( fbx )
 
+## Add more skeleton-animations
+
+If you already have converted a model with skeleton animations into create, and afterwards added more animations in your modeling tool, you are able to add those new animations onto the existing model in create.
+
+This is done by dropping the file upon the animation panel's animation state drop area. This issues the file upload as usual, but during conversion, only the animation data is exported.
+
+Note that the underlying skeleton rig must be the same for this to work. - If you have done changes to the rig you will need to re-import the model through the regular process.
 
 ## An artist's tips
 
@@ -65,5 +82,5 @@ Animation:
 
 While there are several paid software out there for creating 3d models, here are some free ones:
 
-- http://www.blender.org
-- http://www.freecadweb.org
+- [Blender](http://www.blender.org)
+- [FreeCad](http://www.freecadweb.org)
