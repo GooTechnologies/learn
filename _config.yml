@@ -22,3 +22,6 @@ defaults:
       path: "manual"
     values:
       layout: "page"
+
+# The manus takes a long time to render. Comment out the following line to skip rendering them.
+render_navigation: true
