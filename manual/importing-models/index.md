@@ -24,16 +24,19 @@ To make the model useable in create, we will convert it to a format which is usa
 
 You can follow the progress of the conversion in the status bar.
 
+<div class="well">
+	<strong>Note: Triangulation</strong>
+	<p>
+	Meshes will automatically be triangulated during the conversion. Triangle meshes are a requirement for the engine.
+	</p>
+</div>
 
-#### Note: Triangulation
-
-Meshes will automatically be triangulated during the conversion process. Triangle meshes are a requirement for the engine.
 
 ### 3. Put it in your scene
 
 When the model is successfully converted, it will be included in your Asset Bin as a new pack. 
 
-Drag and drop the root node into the viewport to use the model in your scene.
+Drag and drop the root entity into the viewport to use the model in your scene.
 
 ## File Formats
 
@@ -41,22 +44,53 @@ These are the file formats we support:
 
 {% for format in site.data.importable.3d_files %}
 - {{ format.name }}
-	- File ending: <strong>{{ format.suffix }}</strong>
-	- [{{ format.url }}]({{ format.url }})
+	- File ending: `{{ format.suffix }}`
+	- <{{format.url}}>
 {% endfor %}
 
 Due to the fact that we are using Autodesk's FBX SDK as a third-party library for importing model files, the FBX format will most likely work best.
 
 
-## Features, Attributes
+## Features
 
-Vertex colors
+#### Vertex colors
 
-UV maps, if two are available , the second one can be used for e.g. light maps.
+Per-vertex colors or per-face-vertex colors is supported.
 
-embedded textures ( fbx )
+When the mesh data contains vertex colors, a slider will be available on the mesh's material panel under the diffuse channel. Here you are able to blend between the set diffuse map or color and the vertex color.
 
-## Add more skeleton-animations
+#### UV maps
+
+If two are available, the second one can be used for e.g. light maps or ambient occlusion maps.
+
+In create, you are able to apply these textures on the ambient channel in the material panel.
+
+#### Tangents
+
+If no tangent data is provided, this will be generated during the conversion. 
+
+#### Normals
+
+If no normal data is provided, interpolated normals will be generated during the conversion.
+
+#### Skeleton Animations
+
+Animation via skeleton mesh deformation is supported. You can provide several animations in one file.
+
+<div class="alert alert-info">
+	<strong>Shader limitations</strong>
+	<ul>
+		<li>
+			The maximum number of weights per vertex is <strong>4</strong>.
+			If more are provided, the ones with the least values are removed.
+		</li>
+		<li>
+		Keeping the joint count low will allow supporting a broader set of hardware.
+		</li>
+	</ul>
+</div>
+
+<strong>Adding more animations</strong>
 
 If you already have converted a model with skeleton animations into create, and afterwards added more animations in your modeling tool, you are able to add those new animations onto the existing model in create.
 
@@ -64,15 +98,28 @@ This is done by dropping the file upon the animation panel's animation state dro
 
 Note that the underlying skeleton rig must be the same for this to work. - If you have done changes to the rig you will need to re-import the model through the regular process.
 
+#### Embedded textures (FBX)
+
+When exporting to the fbx binary format, you are able to embed textures into the resulting file.
+
+<div class="alert alert-warning">
+<h4>Object animations</h4>
+<p>
+Currently regular transform-animations on objects is <strong>not supported</strong>.
+</p>
+</div>
+
 ## An artist's tips
 
 Prior to exporting from your creation tool of choice, here are some tips.
+
+### Modeling
 
 - Delete history
 - Freeze transformations
 - Refrain from using "Geometric Transforms" (3d studio max, Maya)
 
-Animation:
+### Skeleton Animation
 
 - Bake the animation
 - Do not use constraints
@@ -80,7 +127,7 @@ Animation:
 
 ## Model Creation Tools
 
-While there are several paid software out there for creating 3d models, here are some free ones:
+While there are several commerical products out there for creating 3d models, here are some free ones:
 
 - [Blender](http://www.blender.org)
 - [FreeCad](http://www.freecadweb.org)
