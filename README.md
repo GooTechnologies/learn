@@ -8,13 +8,17 @@ http://gootechnologies.github.io/learn/
 
 ## Installation 
 
-You will need Ruby >2.1
+1. Install Ruby >2.1 and Rubygems.
+
+2. Install the bundle gem.
+
+3. Run `bundle install` in the repository's root folder.
 
 
 ## Running
 
-To serve locally:
+To serve locally you can run the serve.sh script in the root folder.
 
 ```
-bundle exec jekyll serve --baseurl ''
+./serve.sh
 ```
