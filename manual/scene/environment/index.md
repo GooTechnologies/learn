@@ -1,5 +1,5 @@
 ---
-title: Environment panel
+title: Environment
 layout: manual
 weight: 1404
 indent: 2
