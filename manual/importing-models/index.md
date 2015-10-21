@@ -41,8 +41,8 @@ These are the file formats we support:
 
 {% for format in site.data.importable.3d_files %}
 - {{ format.name }}
-	- File ending: <strong>{{ format.suffix }}</strong>
-	- [{{ format.url }}]({{ format.url }})
+	- File ending: `{{ format.suffix }}`
+	- <{{format.url}}>
 {% endfor %}
 
 Due to the fact that we are using Autodesk's FBX SDK as a third-party library for importing model files, the FBX format will most likely work best.
