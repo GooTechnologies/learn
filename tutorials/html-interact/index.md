@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: HTML Component Interact
+title: HTML component interacting with scene
 weight: 5760
 indent: 1
 ---

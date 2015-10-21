@@ -3,6 +3,7 @@ layout: tutorial
 title: Reducing Memory Usage
 weight: 5990
 indent: 1
+hidden: true
 ---
 ## Object Creation and Garbage Collection
 
@@ -56,11 +57,3 @@ An interesting topic in regards to WebGL performance and bandwidth is polygon re
 * [http://www.topogun.com](http://www.topogun.com)
 * [http://meshlab.sourceforge.net](http://meshlab.sourceforge.net/)
 * [https://www.mixamo.com/decimator](https://www.mixamo.com/decimator)
-
-## Crunch Texture compression
-
-A very advanced option to reduce GPU memory usage is to use [crunch textures](http://code.google.com/p/crunch/). They are compressed in way that allows the graphics card to load and use them unchanged. JPG and PNG textures are uncompressed into GPU memory wasting a lot of space. To load `.crn` textures with TextureCreator.loadTexture2D using the Goo Engine just add this script-tag to your html file:
-
-{% highlight html %}
-<script src="//code.gooengine.com/latest/lib/crunch/crunch.js"></script>
-{% endhighlight %}

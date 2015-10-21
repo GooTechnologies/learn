@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Jump right in!
+title: Quick start
 weight: 1100
 indent: 1
 ---

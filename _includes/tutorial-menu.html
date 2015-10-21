@@ -8,7 +8,7 @@
       {% assign pp = site.pages | sort: 'weight' %}
 
       {% for ppage in pp %}
-        {% if ppage.weight and ppage.url contains '/tutorials' %}
+        {% if ppage.weight and ppage.url contains '/tutorials' and ppage.hidden != true %}
           {% assign u = ppage.url %}
           <a class="list-group-item {% if page.url == u %}active{% endif %}" href="{{ ppage.url | prepend: site.baseurl }}">
             {% case ppage.indent %}

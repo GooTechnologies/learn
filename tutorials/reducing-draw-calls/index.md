@@ -3,6 +3,7 @@ layout: tutorial
 title: Reducing Draw Calls
 weight: 5980
 indent: 1
+hidden: true
 ---
 ## Moving Calculations to the GPU
 

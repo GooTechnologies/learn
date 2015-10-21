@@ -3,6 +3,7 @@ layout: tutorial
 title: Reducing CPU calculations
 weight: 5970
 indent: 1
+hidden: true
 ---
   
 This advice is important for scenes with many individual entities.  

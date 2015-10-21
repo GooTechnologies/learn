@@ -3,6 +3,7 @@ layout: tutorial
 title: Procedural geometry
 weight: 5940
 indent: 1
+hidden: true
 ---
 A great way to reduce load times is to use procedurally generated geometry. There are many ways to generate geometry. Let’s go over the most important ones:
 

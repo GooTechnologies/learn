@@ -11,7 +11,7 @@ Accompanying this article is also a live [demo scene](https://goote.ch/bdfac8ffd
 
 ![blue_head2](blue_head2.png)
 
-Rotation is one of the three basic transformations you can apply to an object in 3D space. Rotation in Goo Engine is expressed as a [Matrix3x3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3) object. The default values are:
+Rotation is one of the three basic transformations you can apply to an object in 3D space. Rotation in Goo Engine is expressed as a [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) object. The default values are:
 
 {% highlight js %}
 [1, 0, 0,
@@ -65,7 +65,7 @@ So up and right stay the same, just forward changes.
 
 ### Which class in the Goo Engine is responsible for managing the transform matrix?
 
-Fittingly the class is called [Transform](http://code.gooengine.com/latest/docs/index.html?c=Transform). It contains the Vector3 **translation** and **scale**, the Matrix3x3 **rotation** and the combined Matrix4x4 **transform** matrix. ![RotationTutorialDrawing](RotationTutorialDrawing.png)
+Fittingly the class is called [Transform](http://code.gooengine.com/latest/docs/index.html?c=Transform). It contains the Vector3 **translation** and **scale**, the Matrix3 **rotation** and the combined Matrix4x4 **transform** matrix. ![RotationTutorialDrawing](RotationTutorialDrawing.png)
 
 The code for this combination is very simple:
 
@@ -106,7 +106,7 @@ The layout of the transform matrix looks like this:
 
 [![Goo_Rotation_Matrix](Goo_Rotation_Matrix.png "Goo Transform Matrix Layout")](Goo_Rotation_Matrix.png) Goo Transform Matrix Layout
 
-### Ok, now that we got the basics covered let's see what we can do with a Matrix3x3 in regards to manipulating rotation.
+### Ok, now that we got the basics covered let's see what we can do with a Matrix3 in regards to manipulating rotation.
 
 Let's use the head from the demo scene:
 
@@ -141,7 +141,7 @@ Here you can see a very important part of the overall picture: The Goo Engine u
 
 One of the most important components is the [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent). It wraps the Transform object we talked about above and makes it usable as a component.  
 
-The Transform object of course contains the **rotation** Matrix3x3 object and since we learned that it is unpractical to modify the 9 values of that matrix directly we call a function called **fromAngles** that takes [Euler angles](https://en.wikipedia.org/wiki/Euler_angles) and converts them into the corresponding rotation matrix values.  
+The Transform object of course contains the **rotation** Matrix3 object and since we learned that it is unpractical to modify the 9 values of that matrix directly we call a function called **fromAngles** that takes [Euler angles](https://en.wikipedia.org/wiki/Euler_angles) and converts them into the corresponding rotation matrix values.  
 
 Finally we call **setUpdated** to let the TransformComponent know we modified one of the basic transformations, in our case the rotation, so it will recalculate and update the transform matrix on the next frame.  
 
@@ -187,13 +187,13 @@ head.lookAt( translation, goo.Vector3.UNIT_Y);
 
 So as you can see the function takes 2 parameter. The first one is the target position the entity shall look at. The second parameter is the up vector the lookAt function shall use. It is optional and defaults to UNIT_Y.
 
-Keep in mind that entity.lookAt() is a helper function calling the [Transform.looAt](http://code.gooengine.com/latest/docs/index.html?c=Transform) function, there is also a lookAt function inside the [Matrix3x3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3) class but since it doesn't know anything about translations it expects a (back) direction vector as it's first parameter instead of a target position and the up parameter is **not optional**.
+Keep in mind that entity.lookAt() is a helper function calling the [Transform.looAt](http://code.gooengine.com/latest/docs/index.html?c=Transform) function, there is also a lookAt function inside the [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) class but since it doesn't know anything about translations it expects a (back) direction vector as it's first parameter instead of a target position and the up parameter is **not optional**.
 
 <div class="alert alert-warning">
 	The following paragraph will explain how the lookAt function works internally, feel free to skip it, as it is <strong>not</strong> important to understand how it works internally to use it just fine.
 </div>
 
-The way the function works is that it takes the entity and target position and subtracts them to get a back vector. Then it calculates the cross product between the up vector and the back vector to get the right vector. Then it calculates the cross product between the right vector and the back vector to get an up vector that is orthogonal to both the direction and the right vector and finally stores all three vectors normalized inside our rotation Matrix3x3 in their respective rows.
+The way the function works is that it takes the entity and target position and subtracts them to get a back vector. Then it calculates the cross product between the up vector and the back vector to get the right vector. Then it calculates the cross product between the right vector and the back vector to get an up vector that is orthogonal to both the direction and the right vector and finally stores all three vectors normalized inside our rotation Matrix3 in their respective rows.
 
 ## Matrix multiplication
 
@@ -203,7 +203,7 @@ And here is the code:
 
 {% highlight js %}
 var aBitDown = [1, 0.0, 0.0, 0, 0.8, -0.6, 0, 0.6, 0.8];
-var mat = new goo.Matrix3x3().set(aBitDown); // new goo.Matrix3x3(aBitDown) is buggy at the moment;
+var mat = new goo.Matrix3().set(aBitDown); // new goo.Matrix3(aBitDown) is buggy at the moment;
 head.transformComponent.transform.rotation.combine(mat);
 head.transformComponent.setUpdated();
 {% endhighlight %}
@@ -222,7 +222,7 @@ head.transformComponent.setUpdated();
 {% endhighlight %}
 ## fromAngleNormalAxis
 
-Both the Matrix3x3 and the Quaternion class contain the function [fromAngleNormalAxis](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/), while the Quaternion class additionally contains the reverse: **toAngleAxis**.
+Both the Matrix3 and the Quaternion class contain the function [fromAngleNormalAxis](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/), while the Quaternion class additionally contains the reverse: **toAngleAxis**.
 
 The purpose of this function is to set a **fixed** rotation based on an axis and a rotation around the axis. The way to visualize the behavior is to imagine that a stake representing the axis is thrust into an entity at identity rotation. Then the stake is twisted according to the angle value. So if you do not twist, that is if you do not give the function a rotation angle the rotation of the entity will stay at identity (looking along -z) no matter what axis you will give it. So if you would want to look a bit up, you would thrust the stake into one of the ears, for example the right ear (1,0,0), and give it a slightly positive angle.
 
@@ -272,7 +272,7 @@ Finally we create a [Tween](https://github.com/sole/tween.js/) animation that s
 
 ### What are the basic transformations you can apply to an object in 3D space ?
 
-They are: translation, scale and rotation. In the Goo Engine a translation is usually expressed in a [Vector3](http://code.gooengine.com/latest/docs/index.html?c=Vector3) object. It contains the translation in x, y and z axis directions. The default values are (0,0,0). Similarly the scale is also expressed in a Vector3 object which contains the multiplication factors for the volume's positions. The default values are (1,1,1). Rotation in contrast is expressed as a [Matrix3x3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3x3) object.
+They are: translation, scale and rotation. In the Goo Engine a translation is usually expressed in a [Vector3](http://code.gooengine.com/latest/docs/index.html?c=Vector3) object. It contains the translation in x, y and z axis directions. The default values are (0,0,0). Similarly the scale is also expressed in a Vector3 object which contains the multiplication factors for the volume's positions. The default values are (1,1,1). Rotation in contrast is expressed as a [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) object.
 
 ### What would happen if the rotation matrix would contain non unit length and non orthogonal vector values?
 
@@ -288,25 +288,4 @@ Quaternions are great and Goo Engine has support for them in the sense that you 
 
 ### So, why not combine a quaternion rotation into a transform matrix?
 
-Combining a translation, a scale and a **quaternion** **rotation** into a transform matrix is a bit **slower **than combining a translation, a scale and a **Matrix3x3** **rotation** into a transform matrix.
-
-### What is the algorithm behind lookAt inside Matrix3x3:
-
-The abbreviated algorithm is:
-
-{% highlight js %}z.set(back_direction).normalize();
-x.set(up).cross(z).normalize();
-y.set(z).cross(x);
-m[0] = x[0];
-m[1] = x[1];
-m[2] = x[2];
-m[3] = y[0];
-m[4] = y[1];
-m[5] = y[2];
-m[6] = z[0];
-m[7] = z[1];
-m[8] = z[2];{% endhighlight %}
-
-<div class="alert alert-danger" role="alert">
-	If you calculate the <a href="http://en.wikipedia.org/wiki/Cross_product">cross product</a> of two vectors the result is a vector orthogonal to both vectors even if the initial vectors are not orthogonal themselves.
-</div>
+Combining a translation, a scale and a **quaternion** **rotation** into a transform matrix is a bit **slower **than combining a translation, a scale and a **Matrix3** **rotation** into a transform matrix.

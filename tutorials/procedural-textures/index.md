@@ -3,6 +3,7 @@ layout: tutorial
 title: Procedural textures
 weight: 5950
 indent: 1
+hidden: true
 ---
 A great way to **reduce load times** is to use procedurally generated textures. There is one really easy way to generate texture data, and there are a couple of more advanced ones.
 

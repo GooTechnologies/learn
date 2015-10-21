@@ -1,12 +1,11 @@
 ---
-title: The Canvas
+title: Canvas
 layout: manual
 weight: 901
 indent: 2
 ---
 
 <img class="size-full" src="../annotated-interface1.jpg" alt="annotated interface"/>
-
 
 In the center of the editor, the WebGL-rendered viewport is located. Here you can nagivate, inspect and preview the contents of your scene.
 

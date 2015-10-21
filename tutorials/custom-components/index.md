@@ -1,10 +1,10 @@
 ---
 layout: tutorial
-title: Entity Component System Tutorial
+title: "Engine: Custom Components"
 weight: 5710
 indent: 1
 ---
-At its core, Goo Engine implements an Entity-Component-System architecture.  In this tutorial, we'll learn what an ECS is, and how it relates to Goo.  We'll also cover the abstract functions available to these Objects, and explain their order of execution.  Finally, we'll create our own Components and System. The main difference between an ECS and typical Inheritance programming, is that an Object is quite literally, the sum of its parts.  Try thinking in the terms of 'has a' instead of 'is a'. In inheritance programming, an Entity could be an Object.  Sub-classA would inherit from Object, adding its own layer of properties and functions.  Yet another Sub-ClassB could inherit from Sub-ClassA, again adding its own layer of properties and functions.  If you were to talk about the final Entity, you could say the Entity 'is a' Sub-ClassB.  The Entity 'is a' Sub-ClassA.  The Entity 'is a' Object.
+At its core, Goo Engine implements an Entity-Component-System architecture. In this tutorial, we'll learn what an ECS is, and how it relates to Goo. We'll also cover the abstract functions available to these Objects, and explain their order of execution.  Finally, we'll create our own Components and System. The main difference between an ECS and typical Inheritance programming, is that an Object is quite literally, the sum of its parts.  Try thinking in the terms of 'has a' instead of 'is a'. In inheritance programming, an Entity could be an Object.  Sub-classA would inherit from Object, adding its own layer of properties and functions.  Yet another Sub-ClassB could inherit from Sub-ClassA, again adding its own layer of properties and functions.  If you were to talk about the final Entity, you could say the Entity 'is a' Sub-ClassB.  The Entity 'is a' Sub-ClassA.  The Entity 'is a' Object.
 
 [![](oinheritance.jpg)](oinheritance.jpg)
 

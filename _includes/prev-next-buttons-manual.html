@@ -7,7 +7,7 @@
       {% assign lastPageTitle = -1 %}
       {% assign lastPageWeight = -1 %}
       {% for ppage in pp %}
-        {% if ppage.url contains '/manual' %}
+        {% if ppage.url contains '/manual' and ppage.hidden != true%}
           {% if lastPageWeight != -1 and ppage.weight and ppage.url == page.url %}
             <a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
               Previous: {{ lastPageTitle }}
@@ -30,7 +30,7 @@
       {% assign lastPageWeight = -1 %}
       {% for ppage in pp %}
         {% if ppage.url contains '/manual' %}
-          {% if ppage.weight and lastPageUrl == page.url %}
+          {% if ppage.weight and lastPageUrl == page.url and ppage.hidden != true %}
             <a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
               Next: {{ ppage.title }}
             </a>
