@@ -1,4 +1,4 @@
-{% if site.render_navigation %}
+{% if site.render_navigation and site.render_breadcrumbs %}
   {% assign pp = site.pages | sort: 'weight' %}
   {% assign parts = page.url | split: '/' %}
   {% assign numParts = parts | size %}

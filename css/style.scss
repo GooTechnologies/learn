@@ -1,114 +1,116 @@
+---
+---
 
-    /*
-     * Style tweaks
-     * --------------------------------------------------
-     */
-    html,
-    body {
-      overflow-x: hidden; /* Prevent scroll on narrow devices */
-    }
-    body {
-    }
-    footer {
-      padding: 30px 0;
-    }
+@import 'vars';
 
-    .content img {
-      max-width: 100%;
-    }
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+	overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+}
+footer {
+	padding: 30px 0;
+}
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-    }
+.content img {
+	max-width: 100%;
+}
 
-    /*
-     * Off Canvas
-     * --------------------------------------------------
-     */
-    @media screen and (max-width: 767px) {
-      .row-offcanvas {
-        position: relative;
-        -webkit-transition: all .25s ease-out;
-             -o-transition: all .25s ease-out;
-                transition: all .25s ease-out;
-      }
+iframe {
+	width: 100%;
+	height: 300px;
+	border: none;
+}
 
-      .row-offcanvas-right {
-        right: 0;
-      }
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+	.row-offcanvas {
+		position: relative;
+		-webkit-transition: all .25s ease-out;
+				 -o-transition: all .25s ease-out;
+						transition: all .25s ease-out;
+	}
 
-      .row-offcanvas-left {
-        left: 0;
-      }
+	.row-offcanvas-right {
+		right: 0;
+	}
 
-      .row-offcanvas-right
-      .sidebar-offcanvas {
-        right: -50%; /* 6 columns */
-      }
+	.row-offcanvas-left {
+		left: 0;
+	}
 
-      .row-offcanvas-left
-      .sidebar-offcanvas {
-        left: -50%; /* 6 columns */
-      }
+	.row-offcanvas-right
+	.sidebar-offcanvas {
+		right: -50%; /* 6 columns */
+	}
 
-      .row-offcanvas-right.active {
-        right: 50%; /* 6 columns */
-      }
+	.row-offcanvas-left
+	.sidebar-offcanvas {
+		left: -50%; /* 6 columns */
+	}
 
-      .row-offcanvas-left.active {
-        left: 50%; /* 6 columns */
-      }
+	.row-offcanvas-right.active {
+		right: 50%; /* 6 columns */
+	}
 
-      .sidebar-offcanvas {
-        position: absolute;
-        top: 0;
-        width: 50%; /* 6 columns */
-      }
-    }
+	.row-offcanvas-left.active {
+		left: 50%; /* 6 columns */
+	}
 
+	.sidebar-offcanvas {
+		position: absolute;
+		top: 0;
+		width: 50%; /* 6 columns */
+	}
+}
 
+.header-link {
+	color: $goo-blue;
+	position: absolute;
+	left: -20px;
+	top: 50%;
+	margin-top: -8px;
+	opacity: 0;
+	font-size: 16px;
 
-    /* anchor links */
-    .header-link {
-      color: black;
-      position: absolute;
-      left: -0.5em;
-      opacity: 0;
-      font-size: 24px;
+	-webkit-transition: opacity 0.2s ease-in-out 0.1s;
+	-moz-transition: opacity 0.2s ease-in-out 0.1s;
+	-ms-transition: opacity 0.2s ease-in-out 0.1s;
+}
 
-      -webkit-transition: opacity 0.2s ease-in-out 0.1s;
-      -moz-transition: opacity 0.2s ease-in-out 0.1s;
-      -ms-transition: opacity 0.2s ease-in-out 0.1s;
-    }
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+	opacity: 1;
+}
 
-    h2:hover .header-link,
-    h3:hover .header-link,
-    h4:hover .header-link,
-    h5:hover .header-link,
-    h6:hover .header-link {
-      opacity: 1;
-    }
-    /* end anchor links */
-
-
-
-    /* syntax.css */
+.recommended-tutorials > div {
+	margin-bottom: $double-padding;
+}
 
 /* to make lines scroll instead of wrap */
 /* from http://stackoverflow.com/a/23393920 */
 
 .highlight pre code * {
-  white-space: nowrap;    // this sets all children inside to nowrap
+	white-space: nowrap;    // this sets all children inside to nowrap
 }
 
 .highlight pre {
-  overflow-x: auto;       // this sets the scrolling in x
+	overflow-x: auto;       // this sets the scrolling in x
 }
 
 .highlight pre code {
-  white-space: pre;       // forces <code> to respect <pre> formatting
+	white-space: pre;       // forces <code> to respect <pre> formatting
 }
 
 /* github style pygments theme for jekyll */

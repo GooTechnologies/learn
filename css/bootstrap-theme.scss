@@ -1,0 +1,147 @@
+---
+---
+
+@import 'vars';
+
+body {
+	font-family: "Roboto", "Helvetica";
+	font-weight: 300;
+	font-size: 14px;
+	color: #b5b5b5;
+	background-color: $goo-black;
+}
+
+.h1,.h2, .h3, h1, h2, h3 {
+	position: relative;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+a {
+	color: $goo-blue;
+
+	&:hover, &:active {
+		text-decoration: none;
+		color: lighten($goo-blue, 10%);
+	}
+}
+
+hr {
+	border-top-color: $border-color;
+}
+
+.navbar-header > svg > path {
+	fill: $goo-white;
+}
+
+.navbar {
+	border: none;
+}
+
+.navbar-default {
+	background-color: #262626;
+
+	.navbar-nav {
+		> .active > a {
+			&,
+			&:focus,
+			&:hover {
+				color: white;
+				background-color: $goo-blue;
+			}
+		}
+
+		> li > a {
+			font-size: 14px;
+			color: $goo-white;
+
+			&:focus,
+			&:hover,
+			&:active {
+				color: $goo-white;
+				background-color: lighten($gray-dark, 3%);
+			}
+		}
+	}
+}
+
+.navbar-btn {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.btn {
+	border: none;
+	font-weight: 300;
+	padding: 10px 15px;
+	border-radius: $border-radius;
+}
+
+.btn-default {
+	color: $gray-light;
+	background: $gray-dark;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $goo-white;
+		background-color: lighten($gray-dark, 3%);
+	}
+}
+
+.btn-primary {
+	color: white;
+	background-color: $goo-blue;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: lighten($goo-blue, 10%);
+	}
+}
+
+a.list-group-item,
+button.list-group-item,
+.list-group-item {
+	color: $goo-white;
+	background-color: lighten($goo-black, 3%);
+	border: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $goo-white;
+		background-color: lighten($gray-dark, 3%);
+	}
+
+	&.active {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			color: white;
+			background-color: $goo-blue;
+		}
+	}
+
+	&:first-child {
+		border-top-right-radius: $border-radius;
+		border-top-left-radius: $border-radius;
+	}
+
+	&:last-child {
+		border-bottom-right-radius: $border-radius;
+		border-bottom-left-radius: $border-radius;
+	}
+}
+
+.breadcrumb {
+	background-color: lighten($goo-black, 3%);
+	border-radius: $border-radius;
+
+	> .active {
+		color: $goo-white;
+	}
+}

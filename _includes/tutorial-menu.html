@@ -1,24 +1,25 @@
-{% assign i = '&nbsp;&nbsp;&nbsp;&nbsp;' %}
-{% assign i2 = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' %}
-{% assign i3 = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' %}
-<div class="col-md-4">
-
+<div class="col-md-3">
   <div class="list-group">
-    {% if site.render_navigation %}
+    {% if site.render_navigation and site.render_menus %}
       {% assign pp = site.pages | sort: 'weight' %}
 
       {% for ppage in pp %}
         {% if ppage.weight and ppage.url contains '/tutorials' and ppage.hidden != true %}
           {% assign u = ppage.url %}
-          <a class="list-group-item {% if page.url == u %}active{% endif %}" href="{{ ppage.url | prepend: site.baseurl }}">
-            {% case ppage.indent %}
-            {% when 1 %}
-              {{ i }}
-            {% when 2 %}
-              {{ i2 }}
-            {% when 3 %}
-              {{ i3 }}
-            {% endcase %}
+          <a
+            class="
+              list-group-item {% if page.url == u %}active{% endif %}
+              {% case ppage.indent %}
+              {% when 1 %}
+                indent-1
+              {% when 2 %}
+                indent-2
+              {% when 3 %}
+                indent-3
+              {% endcase %}
+            "
+            href="{{ ppage.url | prepend: site.baseurl }}"
+          >
             {{ ppage.title }}
           </a>
         {% endif %}

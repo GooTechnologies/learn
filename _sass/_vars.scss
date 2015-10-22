@@ -1,0 +1,24 @@
+$goo-white: #E5E5E5;
+$goo-black: #1D1D1D;
+$goo-blue: #38b3f6;
+$goo-purple: #8a8eea;
+$goo-red: #f76162;
+$goo-yellow: #ffbe55;
+$goo-green:	#91cf4b;
+
+$user-action: $goo-blue;
+$user-alert: $goo-red;
+$user-accept: $goo-green;
+$success-color:	$user-accept;
+$error-color: $user-alert;
+
+$gray-light: #9F9F9F;
+$gray: #6D6D6D;
+$gray-dark:	#363636;
+
+$border-radius: 3px;
+$border-color: lighten($goo-black, 5%);
+
+$padding: 10px;
+$half-padding: $padding / 2;
+$double-padding: $padding * 2;

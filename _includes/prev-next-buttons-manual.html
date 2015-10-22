@@ -1,6 +1,6 @@
-{% if site.render_navigation %}
+{% if site.render_navigation and site.render_prev_next_btns %}
+  <hr>
   <div class="row">
-    <hr>
     <div class="col-md-4 content">
       {% assign pp = site.pages | sort: 'weight' %}
       {% assign lastPageUrl = -1 %}
@@ -19,10 +19,8 @@
         {% endif %}
       {% endfor %}
     </div>
-    
-    <div class="col-md-4 content" style="margin-top:7px">
-      <p class="text-center">{{ page.title }}</p>
-    </div>
+
+    <div class="col-md-4 content"></div>
 
     <div class="col-md-4 content">
       {% assign lastPageUrl = -1 %}

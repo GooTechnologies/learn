@@ -2,15 +2,13 @@
 layout: default
 ---
 
-{% include manual-breadcrumbs.html %}
-<div class="col-md-8">
+<div class="col-md-12">{% include manual-breadcrumbs.html %}</div>
+
+{% include manual-menu.html %}
+<div class="col-md-9">
   <h1>{{ page.title }}</h1>
-  <br>
-  <div class="row">
-    <div class="col-md-12 content">
-    	{{ content }}
-      {% include prev-next-buttons-manual.html %}
-    </div>
+  <div class="content">
+    {{ content }}
+    {% include prev-next-buttons-manual.html %}
   </div>
 </div>
-{% include manual-menu.html %}

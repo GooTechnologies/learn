@@ -22,7 +22,7 @@ defaults:
       path: "manual"
     values:
       layout: "manual"
-  - 
+  -
     scope:
       path: "tutorials"
     values:
@@ -30,3 +30,7 @@ defaults:
 
 # The manus takes a long time to render. Comment out the following line to skip rendering them.
 render_navigation: true
+
+render_menus: true
+render_breadcrumbs: true
+render_prev_next_btns: true
