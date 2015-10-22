@@ -1,6 +1,6 @@
 ---
 title: Publishing
 indent: 1
-weight: 4000
+weight: 5000
 layout: manual
 ---
