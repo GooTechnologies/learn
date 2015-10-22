@@ -29,5 +29,7 @@
 
 	"images": [".jpg", ".jpeg", ".tga", ".png", ".tga"],
 
-	"audio": [".ogg", ".mp3", ".wave", ".wav"]
+	"audio": [".ogg", ".mp3", ".wave", ".wav"],
+
+	"video": [".mp4", ".ogv", ".webm"]
 }

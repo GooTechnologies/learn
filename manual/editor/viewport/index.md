@@ -38,3 +38,8 @@ More on importing 3dmodels can be found at [Importing 3D-models]({{ model-page |
 - {{ suffix }}
 {% endfor %}
 
+### Videos
+
+{% for suffix in site.data.importable.video %}
+- {{ suffix }}
+{% endfor %}
