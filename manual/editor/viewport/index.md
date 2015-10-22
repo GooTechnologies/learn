@@ -23,7 +23,11 @@ The currently supported importable files include:
 - {{ format.suffix }}
 {% endfor %}
 
-{% assign model-page = '/manual/importing-models' %}
+{% for page in site.pages %}
+	{% if page.id == 'model-import' %}
+		{% assign model-page = page.url %}	
+	{% endif %}
+{% endfor %}
 More on importing 3dmodels can be found at [Importing 3D-models]({{ model-page | prepend: site.baseurl }})
 
 ### Images

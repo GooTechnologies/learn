@@ -2,7 +2,7 @@
 title: Models
 weight: 3602
 indent: 2
-layout: manual
+id: model-import
 ---
 
 In order to make a scene with custom models, you are able to import 3d models from your file system, into create.
