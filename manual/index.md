@@ -1,5 +1,5 @@
 ---
-title: Create Reference
+title: User Manual
 weight: 1
 indent: 0
 layout: manual
