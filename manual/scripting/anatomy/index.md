@@ -123,7 +123,7 @@ var parameters = [{
     default: [1, 0, 0]
 }];
 
-var setup = function(args, ctx, goo) {
+var setup = function(args, ctx) {
     console.log(args.velocity); // access the passed argument by key
 };
 {% endhighlight %}
