@@ -6,9 +6,9 @@
 			"url": "http://knowledge.autodesk.com/support/3ds-max"
 		},
 		{
-			"name": "FilmBox",
-			"suffix": ".fbx",
-			"url": "http://www.autodesk.com/products/fbx/overview"
+			"name": "Alembic",
+			"suffix": ".abc",
+			"url": "http://www.alembic.io/"
 		},
 		{
 			"name": "COLLADA",
@@ -16,10 +16,11 @@
 			"url": "https://www.khronos.org/collada/"
 		}, 
 		{
-			"name": "Alembic",
-			"suffix": ".abc",
-			"url": "http://www.alembic.io/"
+			"name": "FilmBox",
+			"suffix": ".fbx",
+			"url": "http://www.autodesk.com/products/fbx/overview"
 		},
+		
 		{
 			"name": "Wavefront OBJ",
 			"suffix": ".obj",
@@ -27,9 +28,11 @@
 		}
 	],
 
-	"images": [".jpg", ".jpeg", ".tga", ".png", ".tga"],
+	"images": [".crn", ".dds", ".jpg", ".jpeg", ".png", ".svg", ".tga"],
 
 	"audio": [".ogg", ".mp3", ".wave", ".wav"],
 
-	"video": [".mp4", ".ogv", ".webm"]
+	"video": [".mp4", ".ogv", ".webm"],
+
+	"scripts": [".js"]
 }
