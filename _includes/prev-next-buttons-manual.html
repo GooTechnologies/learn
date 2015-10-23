@@ -1,44 +1,60 @@
+<div class="row">
+		<div class="col-md-4 content">
+			<a class="btn btn-default btn-block" href="/learn/manual/index.html" style="text-overflow: ellipsis;overflow: hidden;">
+				<span class="glyphicon glyphicon-arrow-left"></span>User Manual
+			</a>
+		</div>
+
+		<div class="col-md-4 content"></div>
+		<div class="col-md-4 content">
+			<a class="btn btn-default btn-block" href="/learn/manual/dashboard/newscene/index.html" style="text-overflow: ellipsis;overflow: hidden;">
+				Creating a new Scene<span class="glyphicon glyphicon-arrow-right"></span>
+			</a>
+		</div>
+		<hr>
+	</div>
+
+
 {% if site.render_navigation and site.render_prev_next_btns %}
-  <hr>
-  <div class="row">
-    <div class="col-md-4 content">
-      {% assign pp = site.pages | sort: 'weight' %}
-      {% assign lastPageUrl = -1 %}
-      {% assign lastPageTitle = -1 %}
-      {% assign lastPageWeight = -1 %}
-      {% for ppage in pp %}
-        {% if ppage.url contains '/manual' and ppage.hidden != true%}
-          {% if lastPageWeight != -1 and ppage.weight and ppage.url == page.url %}
-            <a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
-              Previous: {{ lastPageTitle }}
-            </a>
-          {% endif %}
-          {% assign lastPageUrl = ppage.url %}
-          {% assign lastPageTitle = ppage.title %}
-          {% assign lastPageWeight = ppage.weight %}
-        {% endif %}
-      {% endfor %}
-    </div>
+	<hr>
+	<div class="row">
+		<div class="col-md-4 content">
+			{% assign pp = site.pages | sort: 'weight' %}
+			{% assign lastPageUrl = -1 %}
+			{% assign lastPageTitle = -1 %}
+			{% assign lastPageWeight = -1 %}
+			{% for ppage in pp %}
+				{% if ppage.url contains '/manual' and ppage.hidden != true%}
+					{% if lastPageWeight != -1 and ppage.weight and ppage.url == page.url %}
+						<a class="btn btn-default btn-block" href="{{ lastPageUrl | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
+							<span class="glyphicon glyphicon-arrow-left"></span>{{ lastPageTitle }}
+						</a>
+					{% endif %}
+					{% assign lastPageUrl = ppage.url %}
+					{% assign lastPageTitle = ppage.title %}
+					{% assign lastPageWeight = ppage.weight %}
+				{% endif %}
+			{% endfor %}
+		</div>
 
-    <div class="col-md-4 content"></div>
+		<div class="col-md-4 content"></div>
 
-    <div class="col-md-4 content">
-      {% assign lastPageUrl = -1 %}
-      {% assign lastPageTitle = -1 %}
-      {% assign lastPageWeight = -1 %}
-      {% for ppage in pp %}
-        {% if ppage.url contains '/manual' %}
-          {% if ppage.weight and lastPageUrl == page.url and ppage.hidden != true %}
-            <a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
-              Next: {{ ppage.title }}
-            </a>
-          {% endif %}
-          {% assign lastPageUrl = ppage.url %}
-          {% assign lastPageTitle = ppage.title %}
-          {% assign lastPageWeight = ppage.weight %}
-        {% endif %}
-      {% endfor %}
-    </div>
-    <hr/>
-  </div>
+		<div class="col-md-4 content">
+			{% assign lastPageUrl = -1 %}
+			{% assign lastPageTitle = -1 %}
+			{% assign lastPageWeight = -1 %}
+			{% for ppage in pp %}
+				{% if ppage.url contains '/manual' %}
+					{% if ppage.weight and lastPageUrl == page.url and ppage.hidden != true %}
+						<a class="btn btn-default btn-block" href="{{ ppage.url | prepend: site.baseurl }}" style="text-overflow: ellipsis;overflow: hidden;">
+							{{ ppage.title }}<span class="glyphicon glyphicon-arrow-right"></span>
+						</a>
+					{% endif %}
+					{% assign lastPageUrl = ppage.url %}
+					{% assign lastPageTitle = ppage.title %}
+					{% assign lastPageWeight = ppage.weight %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
 {% endif %}

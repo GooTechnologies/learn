@@ -1,30 +1,30 @@
 <div class="col-md-3">
-  <div class="list-group">
-    {% if site.render_navigation and site.render_menus %}
-      {% assign pp = site.pages | sort: 'weight' %}
+	<div class="list-group">
+		{% if site.render_navigation and site.render_menus %}
+			{% assign pp = site.pages | sort: 'weight' %}
 
-      {% for ppage in pp %}
-        {% if ppage.weight and ppage.url contains '/tutorials' and ppage.hidden != true %}
-          {% assign u = ppage.url %}
-          <a
-            class="
-              list-group-item {% if page.url == u %}active{% endif %}
-              {% case ppage.indent %}
-              {% when 1 %}
-                indent-1
-              {% when 2 %}
-                indent-2
-              {% when 3 %}
-                indent-3
-              {% endcase %}
-            "
-            href="{{ ppage.url | prepend: site.baseurl }}"
-          >
-            {{ ppage.title }}
-          </a>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  </div>
+			{% for ppage in pp %}
+				{% if ppage.weight and ppage.url contains '/tutorials' and ppage.hidden != true %}
+					{% assign u = ppage.url %}
+					<a
+						class="
+							list-group-item {% if page.url == u %}active{% endif %}
+							{% case ppage.indent %}
+							{% when 1 %}
+								indent-1
+							{% when 2 %}
+								indent-2
+							{% when 3 %}
+								indent-3
+							{% endcase %}
+						"
+						href="{{ ppage.url | prepend: site.baseurl }}"
+					>
+						{{ ppage.title }}
+					</a>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</div>
 </div>
 
