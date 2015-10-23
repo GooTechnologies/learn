@@ -2,13 +2,14 @@
 ---
 
 @import 'vars';
+@import 'mixins';
 
 body {
 	font-family: "Roboto", "Helvetica";
 	font-weight: 300;
 	font-size: 14px;
-	color: #b5b5b5;
-	background-color: $goo-black;
+	color: $text-color;
+	background-color: lighten($goo-white, 6%);
 }
 
 .h1,.h2, .h3, h1, h2, h3 {
@@ -41,7 +42,7 @@ hr {
 }
 
 .navbar-default {
-	background-color: #262626;
+	background-color: $goo-blue;
 
 	.navbar-nav {
 		> .active > a {
@@ -49,19 +50,26 @@ hr {
 			&:focus,
 			&:hover {
 				color: white;
-				background-color: $goo-blue;
+				background-color: darken($goo-blue, 10%);
 			}
 		}
 
 		> li > a {
 			font-size: 14px;
-			color: $goo-white;
+			font-weight: 400;
+			color: white;
+			@include transition-property(all);
+			@include transition-duration($transition-duration);
 
 			&:focus,
 			&:hover,
 			&:active {
-				color: $goo-white;
-				background-color: lighten($gray-dark, 3%);
+				color: white;
+				background-color: darken($goo-blue, 5%);
+			}
+
+			> .glyphicon {
+				margin: 0 $half-padding;
 			}
 		}
 	}
@@ -74,46 +82,87 @@ hr {
 
 .btn {
 	border: none;
-	font-weight: 300;
+	font-weight: 400;
 	padding: 10px 15px;
 	border-radius: $border-radius;
-}
+	text-transform: uppercase;
+	@include transition-property(all);
+	@include transition-duration($transition-duration);
 
-.btn-default {
-	color: $gray-light;
-	background: $gray-dark;
+	> .glyphicon {
+		margin: 0 $half-padding;
+	}
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $goo-white;
-		background-color: lighten($gray-dark, 3%);
+		border: none;
+	}
+
+	&.active, &:active {
+		outline: none;
+		box-shadow: none;
+	}
+
+	&.active.focus,
+	&.active:focus,
+	&.focus,
+	&:active.focus,
+	&:active:focus,
+	&:focus {
+		outline: none;
+	}
+}
+
+.btn-default {
+	color: $btn-default-text-color;
+	background: $btn-default-color;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $btn-default-text-color;
+		background-color: lighten($btn-default-color, 3%);
+	}
+
+	&:hover:active {
+		color: $btn-default-text-color;
+		background-color: lighten($btn-default-color, 0%);
 	}
 }
 
 .btn-primary {
-	color: white;
-	background-color: $goo-blue;
+	color: $btn-primary-text-color;
+	background-color: $btn-primary-color;
 
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: lighten($goo-blue, 10%);
+		color: $btn-primary-text-color;
+		background-color: lighten($btn-primary-color, 5%);
+	}
+
+	&:hover:active {
+		color: $btn-primary-text-color;
+		background-color: lighten($btn-primary-color, 0%);
 	}
 }
 
 a.list-group-item,
 button.list-group-item,
 .list-group-item {
-	color: $goo-white;
-	background-color: lighten($goo-black, 3%);
+	color: $text-color;
+	background-color: darken($goo-white, 0%);
 	border: none;
+	font-weight: 400;
+	@include transition-property(all);
+	@include transition-duration($transition-duration);
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: $goo-white;
-		background-color: lighten($gray-dark, 3%);
+		color: $text-color;
+		background-color: darken($goo-white, 3%);
 	}
 
 	&.active {
@@ -138,10 +187,10 @@ button.list-group-item,
 }
 
 .breadcrumb {
-	background-color: lighten($goo-black, 3%);
+	background-color: darken($goo-white, 0%);
 	border-radius: $border-radius;
 
 	> .active {
-		color: $goo-white;
+		color: $text-color;
 	}
 }

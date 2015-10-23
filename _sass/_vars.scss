@@ -17,8 +17,21 @@ $gray: #6D6D6D;
 $gray-dark:	#363636;
 
 $border-radius: 3px;
-$border-color: lighten($goo-black, 5%);
+$border-color: darken($goo-white, 5%);
+
+$text-color: $gray;
 
 $padding: 10px;
 $half-padding: $padding / 2;
 $double-padding: $padding * 2;
+
+$indent: 25px;
+
+// Button Colors
+$btn-default-color: darken($goo-white, 5%);
+$btn-default-text-color: $text-color;
+
+$btn-primary-color: darken($goo-blue, 20%);
+$btn-primary-text-color: white;
+
+$transition-duration: 0.2s;

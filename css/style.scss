@@ -14,7 +14,7 @@ body {
 body {
 }
 footer {
-	padding: 30px 0;
+	padding: 20px 0;
 }
 
 .content img {
@@ -92,6 +92,12 @@ h4:hover .header-link,
 h5:hover .header-link,
 h6:hover .header-link {
 	opacity: 1;
+}
+
+@for $i from 1 through 5 {
+	.indent-#{$i} {
+		padding-left: $indent * $i;
+	}
 }
 
 .recommended-tutorials > div {
