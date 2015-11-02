@@ -1,8 +1,6 @@
 ---
 title: Timeline
-layout: manual
+layout: todo
 weight: 1403
 indent: 3
-todo: Write something.
 ---
-![Timeline Component Panel](timeline-component.png)

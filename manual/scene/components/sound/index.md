@@ -1,8 +1,6 @@
 ---
 title: Sound
-layout: manual
+layout: todo
 weight: 1403
 indent: 3
-todo: Write something.
 ---
-![Sound Component Panel](sound-component.png)

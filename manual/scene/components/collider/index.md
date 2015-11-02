@@ -1,8 +1,6 @@
 ---
 title: Collider
-layout: manual
+layout: todo
 weight: 1403
 indent: 3
-todo: Write something.
 ---
-![Collider Component](collider-component.png)
