@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="col-md-12">{% include manual-breadcrumbs.html %}</div>
+
+{% include manual-menu.html %}
+<div class="col-md-9">
+	<h1>{{ page.title }}</h1>
+	<div class="content">
+		
+		<div class="well">
+		This page has not got any content, yet.
+
+		If you want to make a contribution straight away, feel free to <a href="https://github.com/GooTechnologies/learn/blob/master{{ page.url | replace: '.html', '.md' }}">edit this page</a> and submit your proposal.
+		</div>
+		{% include prev-next-buttons-manual.html %}
+	</div>
+</div>
