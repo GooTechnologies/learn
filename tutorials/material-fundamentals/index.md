@@ -71,6 +71,6 @@ Next up, the Ambient property, used mainly for the base lighting of an object, a
 
 ## You’re done!
 
-Great job, you have mastered the Material fundamentals.
+Great job, you have mastered the Material fundamentals. Below you can interact with the outcome of this tutorial.
 
 <iframe id="advanced_iframe" name="advanced_iframe" src="https://c1.goote.ch/f1ab4e20f8484a39a02e2e38fa7a6423.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
