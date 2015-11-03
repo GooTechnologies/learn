@@ -11,7 +11,7 @@ Let’s get right in to it!
 
 ![](1.png)
 
-For this tutorial, the focus will be on Diffuse, Specular, Emissive and Ambient. A cool Sci-Fi ball will be created. As this is the Material fundamentals a few areas will be left for future tutorials. Things like Normal map input, Opacity and Reflectivity will be covered in another tutorial together with the bottom part of the Material Component. 
+For this tutorial, the focus will be on Diffuse, Specular, Emissive and Ambient. A cool Sci-Fi ball will be created. As this is the Material fundamentals a few areas will be left for future tutorials. 
 
 ![](2.png)
 
