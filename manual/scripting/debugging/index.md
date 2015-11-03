@@ -1,7 +1,6 @@
 ---
 title: Debugging
-layout: manual
+layout: todo
 indent: 2
 weight: 4011
-todo: write something
 ---
