@@ -67,10 +67,10 @@ The Emissive property is associated with strong light, glow, high temperature et
 
 ![](11.png)
 
-Next up, the Ambient property, used mainly for the base lighting of an object, also light bakes and occlusion maps are inserted here. The hexagons facing away from the light have been pitch black until now as no light hits that side, connecting a map to the Ambient  ives the illusion that some reflected light is bouncing of the backside of the sphere. With a mid grey in the color channel the effect is subtle but effective. 
+Next up, the Ambient property, used mainly for the base lighting of an object, also light bakes and occlusion maps are inserted here. The hexagons facing away from the light have been pitch black until now as no light hits that side, connecting a map to the Ambient gives the illusion that some reflected light is bouncing of the backside of the sphere. With a mid grey in the color channel the effect is subtle but effective. 
 
 ## You’re done!
 
 Great job, you have mastered the Material fundamentals.
 
-<iframe id="advanced_iframe" name="advanced_iframe" src="https://goote.ch/f1ab4e20f8484a39a02e2e38fa7a6423.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
+<iframe id="advanced_iframe" name="advanced_iframe" src="https://c1.goote.ch/f1ab4e20f8484a39a02e2e38fa7a6423.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
