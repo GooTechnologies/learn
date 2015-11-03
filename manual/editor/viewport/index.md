@@ -13,13 +13,16 @@ In the center of the editor, the WebGL-rendered viewport is located. Here you ca
 
 For the best navigation experience you will need a two buttoned mouse with a scroll wheel.
 
-All navigation is also documented as a cheat sheet inside create, under help -> shortcut list.
+The complete list of navigation keys are documented as a cheat sheet inside create, under help -> shortcut list.
 
 
-Mouse 1 + click: Select entities inside the scene.
-Mouse 2 + drag: Rotate around the current focus point.
-Mouse wheel scroll: Zoom in and out towards the current focus point.
-Mouse 3 + drag / Shift + Mouse 1 + drag: Pan in x/y directions.
+- Mouse 1: Select entities inside the scene.
+
+- Mouse 2 + drag <strong>or</strong> Alt + Mouse 1 + drag: Rotate around the current focus point.
+
+- Mouse wheel scroll: Zoom in and out towards the current focus point.
+
+- Mouse 3 + drag <strong>or</strong> Shift + Mouse 1 + drag: Pan in x/y directions.
 
 
 ## Dropping external files on the viewport
