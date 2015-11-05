@@ -14,8 +14,6 @@ Prefer playing live? Try this project, and invite a friend or two. Press arrow u
 
 The article won't go into all the implementation details, but don't worry! The complete and commented source code can be found here:  
 
-[SERVER CODE](http://www.goocreate.com/learn/wp-content/uploads/sites/2/2014/12/server.zip)  
-
 [[CREATE SCENE]](https://create.goocreate.com/56434/30fda7504cc04fa1b5ddde499eb88f28.scene)  
 
 A word of warning and encouragement - there is a lot of room for improvements in the implementation. Be wary of bugs! This example has been made to be illustrative, it is neither the most efficient nor a very elegant implementation. With that said, hopefully you'll be inspired to build an improved version!  
