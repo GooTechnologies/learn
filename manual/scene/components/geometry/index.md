@@ -3,10 +3,15 @@ title: Geometry
 weight: 1403
 indent: 3
 layout: manual
-todo: Fix this. This is just bad.
 ---
-A mesh is a set of points (vertices) which defines the _geometry_ of a 3D model. Every renderable 3D entity must therefore have a mesh (and a material, which we'll discuss later). Mesh data is handled by the [MeshDataComponent ](http://code.gooengine.com/latest/docs/MeshDataComponent.html) in the engine. Mesh data not only includes vertices, but also normals and the local bounding volume, for example. At the time of writing, mesh data can not be modified directly in the Create interface. The exceptions are some primitives, where some _geometry parameters_ can be adjusted.  
+The *Geometry* panel contains a renderable mesh or primitive on the entity. When you import a 3D model, or create a primitive from the *Create Entity* dialog, it will always get a Geometry component.
 
-[![](wireframe.jpg)](wireframe.jpg)  
+Together with a Material component, the Geometry can be rendered. If you don't have a Material component, the geometry will be invisible.
 
-Meshes can be viewed in Create by setting the rendering mode to "Wireframe".
+The panel looks different for different kinds of meshes and primitives, but in general, they have these settings:
+
+* Cast shadows
+* Receive shadows
+* Dimensions and/or number of samples (primitives only)
+
+![](sphere-geometry-panel.png)
