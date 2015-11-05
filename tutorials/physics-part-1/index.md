@@ -18,7 +18,7 @@ Please note that this tutorial is written in a way so you can attempt to follow
 
 ## Introduction
 
-Goo Technologies is proud to count the famous [Cannon.js](https://github.com/schteppe/cannon.js) developer Stefan Hedman as one of it's own. Every since he came on board he wanted to add physical components to Goo Create.  
+Goo Technologies is proud to count the famous [Cannon.js](https://github.com/schteppe/cannon.js) developer Stefan Hedman as one of it's own. Ever since he came on board he wanted to add physical components to Goo Create.  
 
 The day has finally arrived and I am happy to say that it is now easier than ever before to use physics in Goo Create.  
 

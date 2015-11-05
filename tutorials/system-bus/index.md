@@ -98,9 +98,7 @@ We'll start by importing our omnipresent Goon from the Asset Library, and add a 
   
 ![2014-11-11 11_42_10-Goo Create](2014-11-11-11_42_10-Goo-Create.jpg)  
 
-A good start! But let's also seize the moment and learn how to work with simple **sounds**! Let's add a sound component to the Goon and import two mp3 files, sigh.mp3 and run.mp3\. Unzip the files, and drag them onto the sound component.  
-
-### [[FILE HERE](http://www.goocreate.com/learn/wp-content/uploads/sites/2/2014/11/systembus_sounds.zip)]
+A good start! But let's also seize the moment and learn how to work with simple **sounds**! Let's add a sound component to the Goon and import two mp3 files, [sigh.mp3](sigh.mp3) and [run.mp3](run.mp3).
 
 ![2014-11-11 12_22_17-Goo Create](2014-11-11-12_22_17-Goo-Create.jpg)  
 
