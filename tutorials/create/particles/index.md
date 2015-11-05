@@ -1,10 +1,10 @@
 ---
 layout: tutorial
 title: Particles
-weight: 5910
+weight: 1005
 indent: 1
 ---
-This article will discuss how to use Particles inside Goo Create. For general information about Particles, please refer to the <a title="Particles in Goo Engine" href="{{ '/tutorials/particles-in-engine' || prepend: site.baseurl }}">Particle Tutorial</a>!
+This article will discuss how to use Particles inside Goo Create. For general information about Particles, please refer to the <a title="Particles in Goo Engine" href="{{ '/tutorials/engine/particles-in-engine' || prepend: site.baseurl }}">Particle Tutorial</a>!
 
 <iframe src="//goote.ch/4648b5ed45266a6cba5cc1dbd8fec0bdd9520226/"></iframe>
 

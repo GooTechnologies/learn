@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Engine overview
-weight: 5700
+weight: 2002
 indent: 1
 ---
 This is an article providing a high-level view of Goo Engine. The article will describe the Entity-Component-System architecture, how the Goo World is updated and how it all fits together.
