@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Procedural textures
-weight: 5950
+weight: 1002
 indent: 1
 hidden: true
 ---

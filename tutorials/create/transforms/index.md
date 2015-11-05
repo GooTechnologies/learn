@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Transforms
-weight: 6100
+weight: 1002
 indent: 1
 ---
 Transforms are fundamental to computer graphics, and this tutorial will talk briefly about what a transform is, how it's constructed and how the transform component in Goo Create works and is used.

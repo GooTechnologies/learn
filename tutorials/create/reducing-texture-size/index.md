@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Reducing Texture Size
-weight: 6000
+weight: 1002
 indent: 1
 hidden: true
 ---

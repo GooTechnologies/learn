@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Highscore list
-weight: 5750
+weight: 1002
 indent: 1
 ---
 <iframe src="//goote.ch/b5bb6d6a2f634e3280ad84c24060e250.project/"></iframe>

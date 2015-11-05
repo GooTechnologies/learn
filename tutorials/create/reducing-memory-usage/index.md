@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Reducing Memory Usage
-weight: 5990
+weight: 1002
 indent: 1
 hidden: true
 ---

@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Animation
-weight: 1500
+weight: 1002
 indent: 1
 ---
 ![](Animation-storyboard2.001.jpg)

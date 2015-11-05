@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Timeline
-weight: 6080
+weight: 1002
 indent: 1
 ---
 In this tutorial, we will go over the basics of the timeline, and see how keyframes can be used to control animations.  

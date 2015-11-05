@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Creating a Goon
-weight: 5650
+weight: 1002
 indent: 1
 ---
 <div class="alert alert-danger" role="alert">Create has been updated many times since the original writing of this tutorial. While the concepts still are similar, there might be slight differences in certain interface and feature details. At this time template projects no longer exist, but you can still create the scene yourself.</div>

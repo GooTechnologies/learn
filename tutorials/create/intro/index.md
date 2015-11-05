@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Intro
-weight: 1200
+weight: 1002
 indent: 1
 ---
 

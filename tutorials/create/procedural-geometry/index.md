@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Procedural geometry
-weight: 5940
+weight: 1002
 indent: 1
 hidden: true
 ---

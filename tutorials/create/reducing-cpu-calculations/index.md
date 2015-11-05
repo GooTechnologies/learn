@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Reducing CPU calculations
-weight: 5970
+weight: 1002
 indent: 1
 hidden: true
 ---

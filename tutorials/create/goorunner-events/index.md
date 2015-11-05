@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: GooRunner events
-weight: 5730
+weight: 1002
 indent: 1
 prerequisities: /tutorials/dom-events/index.html
 ---

@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Camera and light
-weight: 1700
+weight: 1002
 indent: 1
 ---
 

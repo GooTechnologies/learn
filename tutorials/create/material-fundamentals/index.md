@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Material fundamentals
-weight: 1400
+weight: 1002
 indent: 1
 ---
 

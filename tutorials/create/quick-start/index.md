@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Quick start
-weight: 1100
+weight: 1002
 indent: 1
 ---
 Welcome! This is a short tutorial which will take you all the way from scratch to a published Create project in just a few minutes. Jump in!  
