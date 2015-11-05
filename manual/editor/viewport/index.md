@@ -5,7 +5,7 @@ weight: 901
 indent: 2
 ---
 
-<img class="size-full" src="../annotated-interface1.jpg" alt="annotated interface"/>
+![](canvas.png)
 
 In the center of the editor, the WebGL-rendered viewport is located. Here you can navigate, inspect and preview the contents of your scene.
 
@@ -25,9 +25,29 @@ The complete list of navigation keys are documented as a cheat sheet inside crea
 - Mouse 3 + drag <strong>or</strong> Shift + Mouse 1 + drag: Pan in x/y directions.
 
 
+## Edit / Play modes
+
+Press the bottom *Play* button to start your scene. This will start all systems in Create, start animations, run state machines, etc.. During play mode you can press *Pause*. Lastly, you can go back to Edit mode by pressing *Stop*.
+
+
+## Canvas top menu
+
+Above the canvas, there are a number of rendering and editing options. You can:
+
+* **Camera Select:** select which camera to use while in edit mode.
+* **Toggle skybox**.
+* **Toggle grid**.
+* **Toggle post effects**.
+* **Frame current selection**.
+* **Frame all**.
+* **Switch shading mode**.
+* **Switch between local/global gizmos**.
+* **Switch between translation/rotation/scale gizmos**.
+
+
 ## Dropping external files on the viewport
 
-<img src="drop.png" alt="Drag drop from file system"/>
+![Drag drop from file system](drop.png)
 
 By dragging and dropping files on the viewport you will issue an import of that file. It is also possible to import files by dropping on the asset bin.
 
