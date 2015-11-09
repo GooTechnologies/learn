@@ -1,8 +1,7 @@
 ---
-layout: tutorial
 title: Tutorials
-weight: 1000
-indent: 0
 ---
 
-Welcome to the tutorials section.
+Welcome!
+
+Here you will find tutorials for Goo Create and GooJS.
