@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Lights
-weight: 1002
+weight: 1006
 indent: 1
 ---
 <img src="Introduction to Lights (COMPLETE).001.jpg" />

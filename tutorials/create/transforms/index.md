@@ -1,7 +1,7 @@
 ---
 layout: tutorial
-title: Transforms
-weight: 1002
+title: Scripting Transformations
+weight: 1041
 indent: 1
 ---
 Transforms are fundamental to computer graphics, and this tutorial will talk briefly about what a transform is, how it's constructed and how the transform component in Goo Create works and is used.
@@ -93,4 +93,7 @@ The 3D world contains two different coordinate systems and corresponding transfo
 
 In the examples above, we have called **setUpdated()** on the transform component after manually editing the individual parts. This tells the engine that the transforms need to be updated. This is done for efficiency reasons, the engine won't update unchanged values. For more control, one could manually call **updateTransform()** or **updateWorldTransform()** to trigger these recalculations. When we use the helper methods of the TransformComponent, **we don't have to call setUpdated()**! The engine does this for us automatically.  
 
-Refer to the [Hierarchy and Transforms tutorial](http://goolabs.wpengine.com/learn/the-hierachy-and-transforms/ "The Hierarchy and Transforms") for some examples on hierarchies in Create and more discussion about local/global transforms!
+
+
+
+Refer to the [Hierarchy and Transforms tutorial]({{ '/tutorials/create/trasnform-hierarchy' | prepend: site.baseurl }}) for some examples on hierarchies in Create and more discussion about local/global transforms!

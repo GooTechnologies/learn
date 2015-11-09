@@ -2,7 +2,7 @@
 layout: tutorial
 title: System Bus
 indent: 1
-weight: 1002
+weight: 1042
 ---
 The SystemBus, a global instance of the [Bus class](http://code.gooengine.com/latest/docs/index.html?c=Bus), provides a way to communicate across scripts, state machines, and timelines. It's an event-driven mechanism which can be really useful when building interactive apps. This tutorial will provide some basic examples of its use.
 

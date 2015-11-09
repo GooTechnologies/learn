@@ -2,7 +2,7 @@
 layout: tutorial
 title: Scripting
 indent: 1
-weight: 1002
+weight: 1040
 ---
 
 This tutorial will introduce some of the fundamental topics in Create's scripting capabilities. We will script a simple bouncing sphere. The implementation will of course be very basic, but it should familiarize the reader enough with the concepts!

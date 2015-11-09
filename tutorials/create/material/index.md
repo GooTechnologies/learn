@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Assigning textures to material
-weight: 1002
+weight: 1003
 indent: 1
 ---
 
