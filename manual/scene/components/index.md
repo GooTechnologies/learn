@@ -5,11 +5,7 @@ weight: 1402
 indent: 2
 layout: manual
 ---
-Entities and Components are the two fundamental building blocks in the Goo World. Goo Engine uses them at a core level, and the interface of Goo Create approximately reflects their relationship as well.
-
-## Components Represent Functionality
-
-An entity is a container of components. Each component brings a specific functionality to an entity. For example, when a transform component is added to an entity, the entity has a place in the 3D world. If a camera component is added to the same entity, we now have a camera. If a mesh and a meshrenderer component are added to an entity, it is now a 3D model we can render, and so on. In Goo Engine, every type of functionality is implemented in terms of components.
+An entity is a container of components. Each component brings a specific functionality to an entity. For example, when a transform component is added to an entity, the entity has a position in the 3D world. If a camera component is added to the same entity, we now have a camera with a position. If a mesh and a meshrenderer component are added to an entity, it's a 3D model we can render, and so on. Every type of functionality is implemented in terms of components.
 
 ## Entities and Components in Goo Create
 
