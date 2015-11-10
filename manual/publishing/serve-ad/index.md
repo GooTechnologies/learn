@@ -51,7 +51,7 @@ Set to a non-empty string and this will add a timestamp/cachebuster when loading
 
 The z-index of the created DOM element.
 
-### transparentBackground = true
+### transparentBackground = false
 
 Whether the DOM element should allow transparency or not.
 
@@ -187,3 +187,11 @@ An exit macro, that will be prepended to your exit URL. The value of this macro 
 {% highlight html %}
 exitMacro=%%CLICK_URL_ESC%%
 {% endhighlight %}
+
+## Sample tag
+
+{% highlight html %}
+<script id="goo123" src="https://c1.goote.ch/srv/86fb84c42ac50a9eec6ba5456133276db62eb98d/serve.js?elementId=goo123&sceneId=93da54fc80a94abcbeeb8b0a0fdd74b5.scene&width=300&height=300&zIndex=1000&transparentBackground=false&loadingScreen=thumbnail&iframe=false&mraid=false&loadOn=polite&engineVersion=0.15.13&features=statemachine%2Cscript&fallback=thumbnail&tracking=%7B%22imp%22%3A%5B%22%2F%2Fimp_pixel1%22%2C%22%2F%2Fimp_pixel2%22%5D%2C%22myCustomEvent%22%3A%5B%22%2F%2Fcustom_pixel3%22%2C%22%2F%2Fcustom_pixel4%22%5D%7D&exit=%7B%22default%22%3A%7B%22url%22%3A%22http%3A%2F%2Fgoocreate.com%22%2C%22tracking%22%3A%5B%22http%3A%2F%2Ftracking.pixel%22%5D%7D%7D" type="text/javascript"></script>
+{% endhighlight %}
+
+<script id="goo123" src="https://c1.goote.ch/srv/86fb84c42ac50a9eec6ba5456133276db62eb98d/serve.js?elementId=goo123&sceneId=93da54fc80a94abcbeeb8b0a0fdd74b5.scene&width=300&height=300&zIndex=1000&transparentBackground=false&loadingScreen=thumbnail&iframe=false&mraid=false&loadOn=polite&engineVersion=0.15.13&features=statemachine%2Cscript&fallback=thumbnail&tracking=%7B%22imp%22%3A%5B%22%2F%2Fimp_pixel1%22%2C%22%2F%2Fimp_pixel2%22%5D%2C%22myCustomEvent%22%3A%5B%22%2F%2Fcustom_pixel3%22%2C%22%2F%2Fcustom_pixel4%22%5D%7D&exit=%7B%22default%22%3A%7B%22url%22%3A%22http%3A%2F%2Fgoocreate.com%22%2C%22tracking%22%3A%5B%22http%3A%2F%2Ftracking.pixel%22%5D%7D%7D" type="text/javascript"></script>
