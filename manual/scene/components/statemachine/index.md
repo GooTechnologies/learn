@@ -4,57 +4,49 @@ layout: manual
 weight: 1403
 indent: 3
 ---
-Goo Create ships with a state machine, which is one of three ways to add interactivity to your scene. The other two ways are _scripting_ and the _timeline_. Each way has its pros and cons, and there are ways to use several methods simultaneously.  
+The *State Machine Component* adds simple logic to the entity, similarly to scripts. The difference from scripts is that the State machine is much easier to use (no coding required!) and have many built-in Create-specific Actions.
 
-State machines are added via _State machine components_ attached to entities. State machines are good for adding interactivity without coding, and let you work with a large selection of predefined _actions_. Actions are activated when certain _states_ become active, and states are in turn are encapsulated by _behaviors_.  
+The State Machine Component has two main panels, the panel for the Component:
 
-[![goon](goon.png)](goon.png)  
+![](state-machine-component-panel.png)
 
-A Goon with a state machine  
+...and a panel for the Behavior:
 
-## The Building Blocks
+![](behavior-panel.png)
 
-It’s difficult to explain the state machine concepts independently, so it might be worth reading through the following explanations twice to solidify the way things are connected.  
+## Structure
+
+The State machine has a list of *Behaviors*, which contains *States*, which in turn contain *Actions*.
+
+![](abstract-state-machine.png)
+
+[Read more about Finite State Machines on Wikipedia](https://en.wikipedia.org/wiki/Finite-state_machine).
 
 ### Behaviors
 
-A behavior is a collection of states. If an entity’s state machine has several behaviors, they are independent of each other. That means that the transitions in a behavior will not affect the other behaviors! A behavior can be seen as and behaves like _an independent state machine_.  
+A *Behavior* is a collection of states. A state machine component can have several behaviors, and they are independent of each other. A Behavior can be seen as and behaves like *an independent state machine*.
 
 ### States
 
-Each behavior can one or several states, but only one _active_ state. As long as a state is active, all its actions will also be activated. All actions in other states will be deactivated. The active state is changed by_transitions_ in the state’s actions.  
+Each *Behavior* has one or several *States*, but only one *active* state. As long as a state is active, all its *Actions* will also be active. All actions in inactive states are inactive. The *active state* can be changed by *transitions* in the state’s actions.
+
+A Behavior always has one *Default State* which is activated when you press Play.
 
 ### Actions
 
-An action is the thing that eventually gets executed when its state becomes active. There are many types of actions and their effect varies a lot, so it’s very hard to give a complete picture in a document like this. Take a minute to look through the different actions in Create, you might find something useful! In the meantime, here are some examples of actions:  
+An action is some logic gets executed when its State becomes active. There are many types of Actions and their effect varies a lot. Some examples are:
 
-* Emit fire particles from an entity.
-* Listen for and react to key presses.
-* Check for and react to collisions between entities.
-* Transition to another state after a certain amount of time.
-* Move, scale or rotate an entity.
-* Project a camera’s image on an entity’s texture.
-* Select active animation.
+* FireFX: Emits fire particles from an entity.
+* KeyDown: Listen for and react to key presses.
+* Collide: Check for and react to collisions between entities.
+* Wait: Transition to another state after a certain amount of time.
+* Move: Moves an entity.
+* Set Animation: Select active animation.
+* Emit: Emits an event to the System Bus.
 * ...and so on!
 
-## How To Use The State Machine
+## Transitions: How to switch State
 
-### Setting up Transitions
+Many of the Actions have events, and they can trigger Transitions to other states. The simplest example is probably the WaitAction. When the Action starts executing, it sets a timer for a number of seconds. When the timer is up, it can transition to some other State.
 
-Equipped with all this knowledge, how does one tie it together? The key is the transitions. The standard way of working with the state machine is by wiring up a chain of states with transitions between them. For example, an easy example is moving an entity using key listeners. Each state in a “moving behavior” represents one way of moving, including not moving at all. For example, one could use three states. One for moving forward, one for moving backward, and one for standing still. The moving states would both use a “move” action with appropriate parameters, and the idle state would just be empty. Then, one could add a key listener to each of the states and wiring up the transitions appropriately, deciding how to move between the three states.  
-
-### Using The System Bus
-
-There is a convenient way of communicating between states, between scripts and state machines, between the timeline and scripts, and even between behaviors. By emitting and listening to messages on the system bus, any type of actions and scripts can be triggered. The state machine facilitates this by providing Emit Message and Listen actions, both capable of transitions.  
-
-### An Example
-
-[![](graph12-1024x615.png)](graph12.png)  
-
-Application example, explained below (click to open large image)  
-
-The picture above shows a (simplified) little application. The idea is the following: A character can either take cover, move or be dead. If some key is pressed while the character is taking cover, the player enters the “moving” state and starts moving. If the key is released while moving, the character goes back to taking cover. If the system bus emits on the channel “explode”, the character goes into the “dead” state. Here, it waits for some amount of time and then awakes from the dead and moves into the “taking cover” state.  
-
-The other behavior is separate, and might belong to another entity. This behavior moves a bomb between three states; disarmed, armed and exploding. The bomb can be armed or disarmed by pressing a key. If the bomb is armed long enough, it will explode and emit a message on the “explode” channel. It is up to other behaviors to listen to this message and react to it, as in the case with the character.  
-
-Scripts and timelines interacts with the same bus. For example, one could write a script to emit the explosion at any complex combination of requirements. Another option would be to set off explosion at certain points in time using the timeline.
+![](wait-action.png)

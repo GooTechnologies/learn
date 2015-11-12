@@ -10,8 +10,6 @@ The animation component controls the animations of an imported 3D mesh. It conta
 
 ## Adding an Animation component
 
-
-
 When you import your model from your favorite 3D modelling tool into Create, you get a Geometry Component as well as an Animation Component.
 
 ## Animation States
