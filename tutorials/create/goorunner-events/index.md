@@ -112,7 +112,7 @@ ctx.runnerListeners = {
 		var name, point, depth;
 		if (evt.entity) {
 			name = evt.entity.name;
-			point = evt.intersection ? evt.intersection : [0, 0, 0];
+			point = evt.intersection ? evt.intersection.toArray() : [0, 0, 0];
 			depth = evt.depth;
 		} else {
 			name = 'None';
@@ -176,7 +176,7 @@ ctx.runnerListeners = {
 			if (evt.entity) {
 				showMarker(ctx, evt.intersection);   // <----- here
 				name = evt.entity.name;
-				point = evt.intersection ? evt.intersection : [0, 0, 0];
+				point = evt.intersection ? evt.intersection.toArray() : [0, 0, 0];
 				depth = evt.depth;
 			} else {
 				hideMarker(ctx);                     // <----- and here
@@ -213,7 +213,7 @@ var setup = function(args, ctx, goo) {
 				console.log(evt);
 				showMarker(ctx, evt.intersection);
 				name = evt.entity.name;
-				point = evt.intersection ? evt.intersection : [0, 0, 0];
+				point = evt.intersection ? evt.intersection.toArray() : [0, 0, 0];
 				depth = evt.depth;
 			} else {
 				hideMarker(ctx);
