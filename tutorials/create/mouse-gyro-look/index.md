@@ -25,10 +25,10 @@ The camera radius (distance from the middle) is the adjusted by translating the 
 On the root entity, <em>Rot. Around Y</em> in our case, create a custom script. You can copy/paste the whole code below, set the camera as <strong>Main Camera</strong> and you're good to go!
 
 {% highlight js %}
-var setup = function(args, ctx, goo) {
-
+var setup = function(args, ctx) {
+	
 	ctx.dir = args.invert ? 1 : -1;
-
+	
 	// Entities onto which the camera is attached
 	ctx.cameraY = ctx.entity;
 	ctx.cameraX = ctx.entity.transformComponent.children[0].entity;
@@ -37,25 +37,25 @@ var setup = function(args, ctx, goo) {
 		console.error('Camera X and/or Y entities missing');
 		return;
 	}
-
-	ctx.startXRotation = ctx.cameraX.getRotation()[0];
-	ctx.startYRotation = ctx.cameraY.getRotation()[1];
-
+	
+	ctx.startXRotation = ctx.cameraX.getRotation().x;
+	ctx.startYRotation = ctx.cameraY.getRotation().y;
+	
 	// Bounds
 	ctx.rect = ctx.domElement.getBoundingClientRect();
 	goo.SystemBus.addListener('goo.viewportResize', function() {
 		ctx.rect = ctx.domElement.getBoundingClientRect();
 	});
-
+	
 	// Rotation constants for mouse
 	ctx.smoothFactor = args.smoothFactor;
 	ctx.moveFactor = args.moveFactor/50000.0;
-
+	
 	// Values for nice gyro orientation speed
 	ctx.xOrientationMid = args.xOrientationMid;
 	ctx.xOrientationFactor = -args.orientationFactor/800.0;
 	ctx.yOrientationFactor = -args.orientationFactor/800.0;
-
+	
 	// Relative to center (mouse) or neutral angles (gyro)
 	ctx.relative = [0, 0];
 	ctx.relativeSmooth = [0, 0];
@@ -73,7 +73,6 @@ var setup = function(args, ctx, goo) {
 	Object.keys(ctx.windowListeners).forEach(function(v) {
 		window.addEventListener(v, ctx.windowListeners[v]);
 	});
-
 };
 
 var mouseMove = function(ctx, x, y) {
@@ -97,7 +96,7 @@ var deviceOrientation = function(ctx, x, y) {
 	}
 };
 
-var cleanup = function(args, ctx, goo) {
+var cleanup = function(args, ctx) {
 	Object.keys(ctx.windowListeners).forEach(function(v) {
 		window.removeEventListener(v, ctx.windowListeners[v]);
 	});
@@ -121,7 +120,7 @@ var updateRotation = function(ctx) {
 	ctx.cameraX.setRotation(ctx.startXRotation+ctx.dir*ctx.relativeSmooth[1], 0, 0);
 };
 
-var update = function(args, ctx, goo) {
+var update = function(args, ctx) {
 	smoothMove(ctx);
 	updateRotation(ctx);
 };
@@ -141,7 +140,7 @@ var parameters = [
 	max: 50,
 	default: 10,
 	control: 'slider'
-
+	
 },
 {
 	key: 'moveFactor',
