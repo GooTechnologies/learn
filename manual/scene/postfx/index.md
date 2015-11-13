@@ -9,7 +9,7 @@ In the post effects panel it is possible to create a stack of effects, affecting
 The effects in the stack are applied <strong>top to bottom</strong>. <strong>Reordering</strong> the effects is done by drag and dropping one effect box at a time, activated by pressing down on the top side of the effect box. The cursor is changed to a pointer upon hovering on the draggable area.
 
 <div class="well info">
-To see the applied post effects, make sure you have post effects <strong>enabled</strong> in the canvas'/viewport's top menu.
+To see the applied post effects, make sure you have <strong>post effects enabled</strong> in the canvas'/viewport's top menu.
 </div>
 
 ### Effect Controls
@@ -31,40 +31,165 @@ Post effect layers in create are made out of render passes in the engine. You ca
 
 ## Antialias
 
+FXAA based antialiasing. For smoothing out jagged edges.
+
+#### Controls
+
+- Span: Area of the smoothing effect
+
 ## Bloom
 
-## Blur
+Intensify and create glow out of the high valued colors in the input.
 
-## Contrast
+#### Controls
 
-## Edge Detect
+- Opacity: Amount of bloom applied.
 
-## Film Grain
+- Size: Glow area
 
-## HSB
+- Gain: Brightness added
 
-## Radial
-
-## Noise
-
-## Tint
-
-## Overlay
-
-## Vignette
-
-## RGBSHIFT
-
-## Hatch
-
-## Motion Blur
-
-## Levels
-
-## Sepia
+- Intensity: Contrast
 
 ## Bleach
 
+## Blur
+
+Gaussian blur.
+
+#### Controls
+
+- Amount: Blending amount
+
+- Size: Blur area size
+
+
+
+## Contrast
+
+Alters the brightness, contrast and saturation.
+
+#### Controls
+
+- Brightness: Negative values remove brightness, positive adds
+
+- Contrast: Change the contrast
+
+- Saturation: Color saturation
+
 ## Dot
+
+Adds an overlay with "see-through holes". 
+
+- Angle: Change the angle of the hole grid
+
+- Scale: Scale the holes uniformly
+
+- SizeX: Scale the hole size on the x-axis
+
+- SizeY: Scale the hole size on the y-axis
+
+## Edge Detect
+
+Difference of Gaussians based edge detection.
+
+#### Controls
+
+- Gauss Sigma: Sets the base of the two gaussian kernels
+
+- Threshold: Threshold value to be considered an edge
+
+- Background %: Blending amount of the non-edge color (background color) and the input color
+
+- Edge Color: Pick the color of the edges
+
+- Background Color: Pick the color of non-edges
+
+
+## Film Grain
+
+Adds distoring noise and horizontal lines.
+
+#### Controls
+
+- Noise: Amount of noise
+
+- Line Intensity: The lines' color intensity
+
+- Line Count: The number of lines
+
+
+## Hatch
+
+Converts image to grayscale and creates a pattern based on the grayscale value.
+
+#### Controls
+
+- Width: Pattern detail
+
+- Spread: Pattern size
+
+## HSB (Hue Saturation Brightness)
+
+Alters the hue, saturation and brightness
+
+#### Controls
+
+- Hue: Offset the input's hue with this amount
+
+- Saturation: Saturation of color
+
+- Brightness: Add or remove brightness
+
+## Levels
+
+Clamp value levels of input to a new range.
+
+#### Controls
+
+- Gamma: Add or remove gamma
+
+- Min Input: Set the minimum input used
+
+- Max Input: Set the maximum input used
+
+- Min Output: Set the minimum output
+
+- Max Output: Set the maximum output
+
+## Motion Blur
+
+Uses previously rendered frames to produce a motion blur trail.
+
+The scale is applied incrementally on the images from the center of the screen.
+
+#### Controls
+
+- Amount: Blending amount of the previous frames
+
+- Scale: Scale the previous frames image with this amount
+
+## Noise
+
+## Overlay
+
+## Radial
+
+## RGB Shift
+
+## Sepia
+
+## Tint
+
+## Vignette
+
+
+
+
+
+
+
+
+
 
 
