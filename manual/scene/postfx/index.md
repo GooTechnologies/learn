@@ -171,9 +171,27 @@ The scale is applied incrementally on the images from the center of the screen.
 
 ## Noise
 
+Blends colored noise with input
+
+- Noise: Amount to blend input with noise
+
 ## Overlay
 
+Adds a texture as an overlay
+
+- Texture: The texture to be used
+
+- Blend Mode: Blend mode of the overlay and the input
+
+- Amount: Blending amount
+
 ## Radial
+
+Add directional highlight streaks from target color of the input.
+
+- Offset: Use to pick what input value is the highlight target
+
+- Multiplier: Multiplier of the highlighted streaks
 
 ## RGB Shift
 
