@@ -56,21 +56,21 @@ The opacity is used when using the *Translarent Blending* mode. The **Strength**
 
 ### REFLECTIVITY
 
-**Texture**
+**Texture**: Reflectivity texture.
 
-**Environment**
+**Environment**: Environment map that you will see in the reflection. If not selected, the current Skybox will be used.
 
-**Amount**
+**Amount**: Amount of reflectivity to use.
 
-**Fresnel**
+**Fresnel**: A nonzero fresnel value will result in less reflection depending on the normal direction.
 
 ### REFRACTIVITY
 
-The Refraction input takes in a texture or value that simulates the index of refraction of the surface. This is useful for things like glass and water, which refract light that passes through them.
+The Refraction input takes in a texture or value that simulates the index of refraction of the surface. This is useful for things like glass and water, which refract light that passes through them. The environment texture will be used for the refraction.
 
-**Amount**
+**Amount**: How much refraction to blend with the current color.
 
-**Refraction**
+**Refraction**: The ratio of the refractive indices involved in the refraction.
 
 ### BLENDING
 
@@ -99,9 +99,9 @@ Whether to enable depth testing, depth writing and which **RenderQueue** value t
 
 **Wireframe**: Renders the mesh in wireframe mode.
 
-**Wrap factor**
+**Wrap factor**:
 
-**Wrap amount**
+**Wrap amount**:
 
 
 ## Adding Materials to a Material Component

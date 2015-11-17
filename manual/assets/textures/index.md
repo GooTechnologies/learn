@@ -4,15 +4,62 @@ weight: 3601
 indent: 2
 layout: manual
 ---
-Each material has a few different texture channels. A texture ([Texture](http://code.gooengine.com/latest/docs/Texture.html) class in the engine) is basically a 2D image which will get interpreted in different ways depending on the texture type. The simplest channel is the diffuse color channel which maps the pixel colors onto the entity directly. Another example is the normal map channel, will interpret the RGB values as (x, y, z) normal vectors.  
+A Texture asset is a 2D image file with a few settings. You can use it in your Materials, Scripts or use it as a Skybox.
 
-Importing textures is very easy, it's possible to just drag and drop 2D images from the desktop to the dotted texture drop area (or click the little folder icon to browse for the files). Textures can also be reached from the Asset Panel and be dragged around for sharing!  
+## Importing a Texture
 
-[![Moments after importing a texture using a jpg image.](import_tex_11.jpg)](import_tex_11.jpg)  
+To add a Texture Asset to the Asset Bin, simple drag and drop an image file from your desktop on top of the viewport.
 
-Moments after importing a texture using a jpg image  
+## Using a texture
 
-There are advanced texture settings (texture repeat, offset and so on) which are reachable by clicking the edit button next to the texture in the Material Panel.  
+To use a texture, for example, in a Material, just drag and drop it from the Asset Bin into the desired drop area. You can also drop an image file directly into the texture drop area.
 
-[![Accessing texture settings (click for full size image).](tex_edit1-300x201.jpg)](tex_edit1.jpg) Accessing texture settings (click for full size image).  
+![](import_tex_11.jpg)
 
+## Texture settings
+
+There are advanced texture settings (texture repeat, offset and so on) which are reachable by clicking the texture asset in the Asset Bin.
+
+![Texture panel](texture-panel.png)
+
+## Repeat
+
+The scale of the texture. The larger value, the more repeating you get.
+
+## Offset
+
+The texture offset coordinates.
+
+## Anisotropy
+
+## Wrapping
+
+This setting tells the Create what to do when it reads outside of the texture range. The following options are available:
+
+**EdgeClamp**: use the closest pixel value on the texture.
+
+**Repeat**: repeate the texture.
+
+**MirroredRepeat** repeat it but flip the texture each time.
+
+## MagFilter & MinFilter
+
+## Flip Y
+
+Flips the texture upside down.
+
+## LOD bias
+
+## Generate MipMaps
+
+Whether to generate mipmaps for the texture. Mipmaps increases rendering speed and reduces aliasing artifacts, but uses more GPU memory.
+
+## Load Lazily
+
+If this option is used, then the texture won't be loaded until you call
+
+{{% highlight js %}}
+texture.loadImage();
+{{% endhighlight %}}
+
+from a script.
