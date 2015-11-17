@@ -4,8 +4,28 @@ weight: 3601
 indent: 2
 layout: manual
 ---
-A script belongs to a [ScriptComponent](http://code.gooengine.com/latest/docs/ScriptComponent.html), and can be created after adding such a component to an entity. After a script has been created, it will be accessible from the Asset Panel and can from there be shared with other script components! One somewhat tricky thing to keep in mind is that creating or sharing a script actually creates a separate **instance** of that script. This way, scripts can be shared or even added multiple times to the same script component.  
+A *Script Asset* is some JavaScript code that can interact with entities in Create. To add a Script Asset to an entity, the entity needs a Script Component.
 
-[![Adding an existing script to a script component](drag_script1.jpg)](drag_script1.jpg)  
+## Creating a Script Asset
 
-Adding an existing script to a script component  
+There are several ways of creating a Script Asset:
+
+* Create a Script component on an entity, click the + button in the Script Component panel, and choose *Custom Script*.
+* Click the + button in one of your Asset Bin packs, and choose Script.
+* Drop a JavaScript (.js) file on the viewport.
+
+When done, the Script will appear in the Asset Bin.
+
+![Adding an existing script to a script component](script-in-assetbin.png)
+
+## Editing a Script
+
+If you click the Script in the Asset Bin, the Script Panel is opened to the left. Here you can add meta data to your script, or open the Script Editor to edit the code of your script.
+
+![Script editor](script-editor.png)
+
+Read more about scripting in the Scripting section.
+
+## Adding Scripts to Entities
+
+To add a Script Asset to an Entity, it needs a Script Component. To add a Script Asset to the Script Compoent, drag and drop the Script Asset from the Asset Bin to the drop area in the Script Component.

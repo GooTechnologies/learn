@@ -4,8 +4,23 @@ weight: 3601
 indent: 2
 layout: manual
 ---
-A [Sound](http://code.gooengine.com/latest/docs/Sound.html) can be added to a [SoundComponent](//code.gooengine.com/latest/docs/SoundComponent.html). In Create, this is done by simply adding a sound component to an entity and then dragging-and-dropping or browsing for a file (mp3 or wav). Sounds behave a little differently than other assets. If a sound file is dragged and dropped onto the canvas, it will not automatically be added to an entity, but only show up in the Asset Panel. From there, it can of course be added to sound components. Additionally,  sounds _don't play automatically_. They have to be started by a **state machine** instance or a **script**.  
+A *Sound Asset* represents a binary audio file with some settings.
 
-[![The Sound Panel](sound1.jpg)](sound1.jpg)  
+To add a new Sound asset, drop an audio file onto the viewport. When loaded, the asset will end up in the Asset Bin in the *Default Pack*, ready to use.
 
-The Sound Panel  
+![Sound asset in the asset bin](sound-in-assetbin.png)
+
+If you click the Sound Asset, you can edit its settings in the left panel.
+
+![Sound panel](sound-panel.png)
+
+The Sound asset can be added to a Sound Component by dragging the asset from the Asset Bin to drop area in the component.
+
+![The Sound Panel](sound-component-panel.png)
+
+{% for page in site.pages %}
+	{% if page.id == 'sound-component' %}
+		{% assign sound-component-url = page.url %}
+	{% endif %}
+{% endfor %}
+[Read more about the Sound Component here]({{ sound-component-url | prepend: site.baseurl }}).
