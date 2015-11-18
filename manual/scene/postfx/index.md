@@ -1,7 +1,7 @@
 ---
 title: Post Effects
 indent: 2
-weight: 1404
+weight: 3000
 ---
 
 In the post effects panel it is possible to create a stack of effects, affecting the final render composition.

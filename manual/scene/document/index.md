@@ -1,6 +1,6 @@
 ---
 title: Document settings
-weight: 1404
+weight: 3100
 indent: 2
 layout: manual
 ---

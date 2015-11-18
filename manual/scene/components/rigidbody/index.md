@@ -1,7 +1,7 @@
 ---
 title: Rigid Body
 layout: manual
-weight: 1403
+weight: 2400
 indent: 3
 ---
 The *Rigid Body Component* adds physics properties, such as mass and velocity, to the entity. The component will simulate physics for the component and set the position and orientation of the entity accordingly.
@@ -10,11 +10,15 @@ The *Rigid Body Component* adds physics properties, such as mass and velocity, t
 
 ## Adding a collider - needed for collision
 
-If you add a *Collider Component* to the same entity, or any entity below the Rigid Body entity in the hierarchy, then the collider will be used for rigid body collision, with the center of mass being at the same location as the Rigid body entity.
+If you add a *Collider Component* to the entity then the collider will be used for rigid body collision, with the center of mass being at the same location as the Rigid body entity.
 
 ![](rigid-body-component-simple.png)
 
 ## Adding many child colliders - for advanced collision shapes
+
+Adding a single Collider Component and a Rigid Body Component on the same entity is a bit limited - the collider will always be centered in the entity and you cannot move it. The solution is to put it on an entity below the rigid body component in the hierarchy. This way you can place the collider wherever you want (relative to the center of mass) and how many entities you want.
+
+So if you'd like to make a chair consisting out of 6 colliders (4 legs + back rest + seat), you first create a root entity with a Rigid Body Component. Then you create 6 entities with box collider components and put them as children of the root entity. Scale and position them correctly, and you're done.
 
 ![](chair-collider.png)
 

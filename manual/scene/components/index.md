@@ -1,34 +1,38 @@
 ---
 layout: manual
 title: Components
-weight: 1402
+weight: 1600
 indent: 2
 layout: manual
 ---
-An entity is a container of components. Each component brings a specific functionality to an entity. For example, when a transform component is added to an entity, the entity has a position in the 3D world. If a camera component is added to the same entity, we now have a camera with a position. If a mesh and a meshrenderer component are added to an entity, it's a 3D model we can render, and so on. Every type of functionality is implemented in terms of components.
+An entity is a container of components. Each component adds some functionality to an entity. For example, when a transform component is added to an entity, the entity has a position in the 3D world. If a camera component is added to the same entity, we now have a camera with a position. If a Geometry component and a Material component are added to an entity, it's now a 3D model we can render.
 
-## Entities and Components in Goo Create
+There are many types of components built into Create. See the following sections for more information about them.
 
-### The "Create Entity" dialog
+![](many-components.png)
 
-There are shortcuts to create entities with a pre-defined set of components. For example, when we create a camera, we get a transform, a camera, and (possibly) a script component. The script component comes with different types of scripts depending on what type of camera we added. If we create a light, it will have a transform and a light component. A box will have a transform, some geomety and a material, and so on. The component panels are visible in the left-hand *Inspector* panel.
+The Box entity above has many components. If you click the component name, the panel will expand, and you can configure your component. Each component also has a little cog wheel on it, which contains more options.
 
-![](Untitled-1.jpg)
+![](transform-component.png)
 
-*Adding entities from the Create menu gives us presets of component combinations.*
+## Creating a typical entity with pre-added Components
 
-### Adding Components
+To make it easier for you to add entities, all entities have a Transform Component by default.
 
-The presets in the Create menu are just shortcuts, as we've already mentioned. There is nothing special about a "light entity" except for the fact that it happens contain a light component. It can easily be turned into anything else, like a monster-generating and heavy-metal-blasting script entity. Adding components to an entity is easy, we just click the plus sign next to the entity name to get a list of components we can add. This list may very well change in the future as more features are added to Create.
+If you open the *Create Entity* dialog (see button at center top in Create), you can create typical entities with some more pre-added components. For example, you can add a Point light (which is an entity with a light component and a transform component) or a fixed camera (transform component + camera component).
 
-Note that *all entities in Create get a transform component by default*.
+![](create-entity-dialog.png)
 
-![](add.jpg)
+## Adding a component
 
-*Adding a component*
+Adding more components to an entity is easy. Click the *Add Component* button in the Inspector and choose component type. The component will be added with default settings.
 
-After a component has been added to an entity, the panel can be expanded. Each component panel will have its own set of features and controls. In the example below, we have added a sound component to an entity and expanded both the transform and the sound panels. Also note that a component can be reset (all its values set to default) or deleted throgh the gearbox icon.
+![](add-component.png)
 
-![](expanded.jpg)
+## Removing a component
 
-*Expanded component panels in the Inspector*
+To remove a component from the entity, click the cog wheel on the component panel, and then click remove.
+
+Note that some components cannot be removed, for example the Transform Component.
+
+![](remove-component.png)

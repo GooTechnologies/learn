@@ -3,6 +3,7 @@ title: Materials
 weight: 3601
 indent: 2
 layout: manual
+id: materials
 ---
 A renderable Entity must have a Geometry Component and a Material Component. The Material Component holds a single *Material Asset*, which defines the look of the geometry.
 

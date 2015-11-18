@@ -1,7 +1,7 @@
 ---
 title: State Machine
 layout: manual
-weight: 1403
+weight: 2200
 indent: 3
 ---
 The *State Machine Component* adds simple logic to the entity, similarly to scripts. The difference from scripts is that the State machine is much easier to use (no coding required!) and have many built-in Create-specific Actions.

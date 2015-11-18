@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: Stats
-weight: 1404
+weight: 2900
 indent: 2
 ---
 The *Stats panel* gives you some stats about the current scene relating to performance.

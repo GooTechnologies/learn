@@ -1,12 +1,12 @@
 ---
 layout: manual
 title: Snapshots
-weight: 1404
+weight: 2800
 indent: 2
 ---
 The Snapshots panel lets you create a copy of your scene that you can restore later. This is useful when doing experimental changes to the scene.
 
-![](snapshots-panel.png)
+![](snapshot-panel.png)
 
 ## Creating a Snapshot
 

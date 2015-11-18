@@ -1,7 +1,7 @@
 ---
 title: Collider
 layout: manual
-weight: 1403
+weight: 2500
 indent: 3
 ---
 The *Collider Component* adds collision geometry to the entity. If used together with a Rigid Body Component, you can create a dynamic, colliding entity.

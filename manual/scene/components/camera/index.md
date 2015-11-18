@@ -1,7 +1,7 @@
 ---
 title: Camera
 layout: manual
-weight: 1403
+weight: 1800
 indent: 3
 ---
 The Camera Component adds a camera to your entity. In Create, you can use it to define your 3D viewport.

@@ -1,7 +1,7 @@
 ---
 title: Timeline
 layout: manual
-weight: 1403
+weight: 2700
 indent: 3
 ---
 The *Timeline Component* animates properties of an entity over time, such as the transform.

@@ -1,6 +1,6 @@
 ---
 title: Geometry
-weight: 1403
+weight: 2000
 indent: 3
 layout: manual
 ---

@@ -1,7 +1,7 @@
 ---
 title: Light
 layout: manual
-weight: 1403
+weight: 1900
 indent: 3
 ---
 The Light Component adds a light source to the entity. The built in light types are *Directional light*, *Point light*, and *Spot light*.
