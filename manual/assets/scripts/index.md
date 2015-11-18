@@ -3,6 +3,7 @@ title: Scripts
 weight: 3601
 indent: 2
 layout: manual
+id: scripts
 ---
 A *Script Asset* is some JavaScript code that can interact with entities in Create. To add a Script Asset to an entity, the entity needs a Script Component.
 
