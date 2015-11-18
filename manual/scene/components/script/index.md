@@ -3,7 +3,6 @@ title: Script
 layout: manual
 weight: 1403
 indent: 3
-todo: write something
 ---
 The Script component allows you to add scripts to your entity. The component can hold zero or many scripts.
 

@@ -3,7 +3,6 @@ title: Transform
 layout: manual
 weight: 1403
 indent: 3
-todo: Write something.
 ---
 The transform component contains the local transform of the component: translation, rotation and scale. The transform is relative to its parent.
 
