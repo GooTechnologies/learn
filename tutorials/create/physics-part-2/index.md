@@ -4,17 +4,17 @@ title: Physics Part 2
 weight: 1201
 indent: 1
 ---
-In [part 1]({{ "/tutorials/physics-part-1" | prepend: site.baseurl }}) of the "Basic Physics in Goo Create" tutorial we created a tilted pinball table, some bumpers and a ball. Pressing play showed that the ball moved around the pinball table in a physically realistic way.  
+In [part 1]({{ "/tutorials/create/physics-part-1" | prepend: site.baseurl }}) of the "Basic Physics in Goo Create" tutorial we created a tilted pinball table, some bumpers and a ball. Pressing play showed that the ball moved around the pinball table in a physically realistic way.  
 
 Here is a screen shot of the entity hierarchy you should have so far if you followed the first part.  
 
-[![](FlipperHierarchy.png)](FlipperHierarchy.png)  
+![](FlipperHierarchy.png)
 
 In this part we will add the bottom flippers and slants and finally the script to give them the appropriate behavior.  
 
 Remember: before we can add new entities to the table we have to reset the table tilt. The table tilt is set to 36 degrees on the X axis:  
 
-[![](FlipperTableTilt.jpg)](FlipperTableTilt.jpg)  
+![](FlipperTableTilt.jpg)
 
 Hint: To see this you have to click on the table in the entity hierarchy (on the right side) and open up the transform panel (on the left side).  
 
@@ -26,25 +26,25 @@ Hint: If you want the game to be harder you can leave the slants out of course.
 
 To add the slants simply add another two boxes and give them a collider component and the following settings:  
 
-[![](FlipperSlants.png)](FlipperSlants.png)  
+![](FlipperSlants.png)
 
 It should look like this:  
 
-[![](FlipperSlants2-300x76.jpg)](FlipperSlants2-300x76.jpg)  
+![](FlipperSlants2-300x76.jpg)
 
 OK, now it's time to add the actual flippers. Since a flipper needs to flip from the side we need to give them a parent entity or they would spin instead of flip.  
 
 So let's first add two empty entities. Give them each a rigid body component and the following settings:  
 
-[![](FlipperPivots.png)](FlipperPivots.png)  
+![](FlipperPivots.png)
 
 Finally we add the flippers themselves. Add another two boxes. Give them fitting names like LeftFlipper and RightFlipper. Then nest them each under it's appropriate pivot entity. Then give them colliders and the following settings:  
 
-[![](FlipperSettings.png)](FlipperSettings.png)  
+![](FlipperSettings.png)
 
 Here is a screen shot of the final entity hierarchy:  
 
-[![](FlipperFinalHierarchy.jpg)](FlipperFinalHierarchy.jpg)  
+![](FlipperFinalHierarchy.jpg)
 
 OK, we are done with the entity hierarchy. It is time to tilt the pinball table again. Select the table entity and change the X rotation to 36 again.  
 
@@ -52,7 +52,7 @@ Hint: If you want you can move the slants around to fit the flippers better.
 
 Here is my final result:  
 
-[![](FlipperFinalTable-780x1024.jpg)](FlipperFinalTable-780x1024.jpg)  
+![](FlipperFinalTable-780x1024.jpg)
 
 Now we will add the script.  
 
@@ -60,7 +60,7 @@ Make sure you have selected the table entity. Now click on +ADD COMPONENT and s
 
 Click on the edit button  
 
-[![](FlipperEditScript.jpg)](FlipperEditScript.jpg)  
+![](FlipperEditScript.jpg)
 
 and replace the existing script with this one:
 
@@ -164,6 +164,8 @@ var update = function(args, ctx, goo) {
 };
 {% endhighlight %}
 
-Click on play and you should have a working Goo Pinball Game !! PS: If you spend more time on details and involve a graphics artist you get this [https://goote.ch/05779f4996204f14aabff73ee0333afe.scene](https://goote.ch/05779f4996204f14aabff73ee0333afe.scene)
+Click on play and you should have a working Goo Pinball Game !! PS: If you spend more time on details and involve a graphics artist you get this:
 
-[![](FlipperPretty-627x1024.jpg)](FlipperPretty-627x1024.jpg)
+![](FlipperPretty-627x1024.jpg)
+
+<a class="btn btn-primary btn-lg" href="https://goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>

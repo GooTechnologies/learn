@@ -1,5 +1,22 @@
-$goo-white: #E5E5E5;
-$goo-black: #1D1D1D;
+$base-font-family: "Roboto", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+// Width of the content area
+$content-width:    800px;
+
+$phone: 600px;
+$tablet: 1000px;
+$laptop: 1200px;
+
+//------------------------------------------------------------------------------
+// Colors
+//------------------------------------------------------------------------------
+$goo-white: #f6f6f6;
+$goo-black: #212326;
 $goo-blue: #38b3f6;
 $goo-purple: #8a8eea;
 $goo-red: #f76162;
@@ -16,6 +33,12 @@ $gray-light: #9F9F9F;
 $gray: #6D6D6D;
 $gray-dark:	#363636;
 
+$brand-color: $goo-blue;
+
+//------------------------------------------------------------------------------
+
+$navbar-height: 95px;
+
 $border-radius: 3px;
 $border-color: darken($goo-white, 5%);
 
@@ -28,10 +51,13 @@ $double-padding: $padding * 2;
 $indent: 25px;
 
 // Button Colors
-$btn-default-color: darken($goo-white, 5%);
+$btn-default-color: darken($goo-white, 3%);
+$btn-default-hover-color: lighten($btn-default-color, 3%);
 $btn-default-text-color: $text-color;
 
-$btn-primary-color: darken($goo-blue, 20%);
+$btn-primary-color: $goo-blue;
+$btn-primary-hover-color: lighten($btn-primary-color, 5%);
+
 $btn-primary-text-color: white;
 
 $transition-duration: 0.2s;

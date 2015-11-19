@@ -5,15 +5,17 @@
 @import 'mixins';
 
 body {
-	font-family: "Roboto", "Helvetica";
-	font-weight: 300;
-	font-size: 14px;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: 400;
 	color: $text-color;
 	background-color: lighten($goo-white, 6%);
 }
 
 .h1,.h2, .h3, h1, h2, h3 {
 	position: relative;
+	margin-top: 40px;
 
 	&:first-child {
 		margin-top: 0;
@@ -33,44 +35,140 @@ hr {
 	border-top-color: $border-color;
 }
 
-.navbar-header > svg > path {
-	fill: $goo-white;
-}
-
 .navbar {
 	border: none;
+	padding: 22px;
+	margin-bottom: 0;
+
+	@include media-query($laptop) {
+		padding: $padding;
+	}
+
+	@include media-query($phone) {
+		padding: $half-padding;
+	}
 }
 
 .navbar-default {
-	background-color: $goo-blue;
+	background-color: white;
 
 	.navbar-nav {
 		> .active > a {
 			&,
 			&:focus,
 			&:hover {
-				color: white;
-				background-color: darken($goo-blue, 10%);
+				color: $goo-blue;
+				background: transparent;
 			}
 		}
 
 		> li > a {
 			font-size: 14px;
-			font-weight: 400;
-			color: white;
+			font-weight: 500;
+			text-transform: uppercase;
+			color: $text-color;
 			@include transition-property(all);
 			@include transition-duration($transition-duration);
 
 			&:focus,
 			&:hover,
 			&:active {
-				color: white;
-				background-color: darken($goo-blue, 5%);
+				color: darken($goo-blue, 30%);
+			}
+
+			@include media-query($laptop) {
+				padding-left: 5px;
+				padding-right: 5px;
 			}
 
 			> .glyphicon {
-				margin: 0 $half-padding;
+				margin: 0;
+				margin-right: $half-padding;
+
+				@include media-query($laptop) {
+					display: none;
+				}
 			}
+		}
+	}
+
+	.navbar-toggle {
+		position: relative;
+		height: 40px;
+		padding: $padding;
+		margin: $half-padding;
+
+		&, &:focus, &:hover {
+			background: none;
+			border: none;
+		}
+
+		.icon-bar {
+			height: 4px;
+			width: 30px;
+			background: $goo-black;
+			border-radius: 10px;
+			@include transition-property(all);
+			@include transition-duration($transition-duration);
+		}
+
+		&:not(.collapsed) {
+			.icon-bar:nth-child(2) {
+				position: absolute;
+				top: 18px;
+				@include rotate(45);
+			}
+
+			.icon-bar:nth-child(3) {
+				opacity: 0;
+			}
+
+			.icon-bar:nth-child(4) {
+				position: absolute;
+				top: 14px;
+				@include rotate(-45);
+			}
+		}
+	}
+
+	@include media-query(767px) {
+		.navbar-collapse {
+			position: absolute;
+			top: 60px;
+			width: 100%;
+			left: 0;
+			margin: 0;
+			padding: 0;
+			z-index: 999;
+			border: none;
+			text-align: center;
+			background: $goo-white;
+
+			.navbar-btn {
+				width: 200px;
+				margin: $padding * 2;
+			}
+
+			.navbar-nav {
+				margin: 0;
+				margin-top: $padding;
+				margin-bottom: $padding;
+			}
+		}
+	}
+}
+
+.navbar-brand {
+	padding: 0;
+
+	svg {
+		width: 250px;
+		height: 100%;
+		color: #666666;
+		fill: #38b3f6;
+
+		@include media-query($tablet) {
+			width: 200px;
 		}
 	}
 }
@@ -78,25 +176,37 @@ hr {
 .navbar-btn {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-left: $padding;
+}
+
+.jumbotron {
+	color: $goo-white;
+	background-color: $goo-blue;
+	text-align: center;
+	h1 {
+		font-size: 46px;
+		font-weight: 900;
+		line-height: 1.1;
+		margin: 0;
+	}
+
+	@include media-query($phone) {
+		margin-bottom: $padding;
+	}
 }
 
 .btn {
-	border: none;
-	font-weight: 400;
-	padding: 10px 15px;
+	border: solid 1px transparent;
+	font-weight: 500;
+	padding: 10px 15px 9px;
 	border-radius: $border-radius;
 	text-transform: uppercase;
+	font-size: 12px;
 	@include transition-property(all);
 	@include transition-duration($transition-duration);
 
 	> .glyphicon {
 		margin: 0 $half-padding;
-	}
-
-	&:hover,
-	&:focus,
-	&:active {
-		border: none;
 	}
 
 	&.active, &:active {
@@ -117,17 +227,20 @@ hr {
 .btn-default {
 	color: $btn-default-text-color;
 	background: $btn-default-color;
+	border-color: $btn-default-color;
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: $btn-default-text-color;
-		background-color: lighten($btn-default-color, 3%);
+		background-color: $btn-default-hover-color;
+		border-color: $btn-default-hover-color;
 	}
 
 	&:hover:active {
 		color: $btn-default-text-color;
-		background-color: lighten($btn-default-color, 0%);
+		background-color: $btn-default-color;
+		border-color: $btn-default-color;
 	}
 }
 
@@ -139,12 +252,32 @@ hr {
 	&:focus,
 	&:active {
 		color: $btn-primary-text-color;
-		background-color: lighten($btn-primary-color, 5%);
+		background-color: $btn-primary-hover-color;
+		border-color: $btn-primary-hover-color;
 	}
 
 	&:hover:active {
 		color: $btn-primary-text-color;
-		background-color: lighten($btn-primary-color, 0%);
+		background-color: $btn-primary-color;
+		border-color: $btn-primary-color;
+	}
+}
+
+.btn-white {
+	color: $goo-white;
+	background-color: none;
+	border: solid 1px $goo-white;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $text-color;
+		background-color: $goo-white;
+	}
+
+	&:hover:active {
+		color: $text-color;
+		background-color: $goo-white;
 	}
 }
 
@@ -170,7 +303,7 @@ button.list-group-item,
 		&:hover,
 		&:focus,
 		&:active {
-			color: white;
+			color: $goo-white;
 			background-color: $goo-blue;
 		}
 	}
