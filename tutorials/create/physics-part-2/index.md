@@ -68,99 +68,99 @@ and replace the existing script with this one:
 'use strict';
 
 var setup = function(args, ctx, goo) {
-	ctx.speed = 8;
+    ctx.speed = 8;
 
-	ctx.cw = new goo.Vector3(0, ctx.speed, 0);  // clockwise rotation
-	ctx.ccw = new goo.Vector3(0, -ctx.speed, 0); // counterclockwise rotation
-	ctx.tempVec = new goo.Vector3(0,0,0);
-	ctx.tempQuat = new goo.Quaternion();
+    ctx.cw = new goo.Vector3(0, ctx.speed, 0);  // clockwise rotation
+    ctx.ccw = new goo.Vector3(0, -ctx.speed, 0); // counterclockwise rotation
+    ctx.tempVec = new goo.Vector3(0,0,0);
+    ctx.tempQuat = new goo.Quaternion();
 
-	ctx.roundit = function(v) { return Math.round(v * 100) / 100; };
+    ctx.roundit = function(v) { return Math.round(v * 100) / 100; };
 
-	function initFlipper(name, dir, vec) {
-		var f = ctx.world.by.name(name).first();
-		f.on = false;
-		f.lr = f.transformComponent.transform.rotation; // local rotation shortcut
-		f.wr = f.transformComponent.worldTransform.rotation; // world rotation shortcut
-		f.lr.toAngles(ctx.tempVec);
-		f.start = ctx.roundit(ctx.tempVec.y);  // flipper start rotation
-		f.goal = ctx.roundit(ctx.tempVec.y + dir);  // flipper end rotation
-		f.wr.applyPost(vec); // tilt the cw or ccw rotation vector along the table slope
-		return f;
-	}
+    function initFlipper(name, dir, vec) {
+        var f = ctx.world.by.name(name).first();
+        f.on = false;
+        f.lr = f.transformComponent.transform.rotation; // local rotation shortcut
+        f.wr = f.transformComponent.worldTransform.rotation; // world rotation shortcut
+        f.lr.toAngles(ctx.tempVec);
+        f.start = ctx.roundit(ctx.tempVec.y);  // flipper start rotation
+        f.goal = ctx.roundit(ctx.tempVec.y + dir);  // flipper end rotation
+        f.wr.applyPost(vec); // tilt the cw or ccw rotation vector along the table slope
+        return f;
+    }
 
-	ctx.leftFlipper = initFlipper('LeftFlipperPivot', Math.PI * 0.25, ctx.cw);
-	ctx.rightFlipper = initFlipper('RightFlipperPivot', -Math.PI * 0.25, ctx.ccw);
+    ctx.leftFlipper = initFlipper('LeftFlipperPivot', Math.PI * 0.25, ctx.cw);
+    ctx.rightFlipper = initFlipper('RightFlipperPivot', -Math.PI * 0.25, ctx.ccw);
 
-	ctx.ball = ctx.world.by.name('Ball').first();
+    ctx.ball = ctx.world.by.name('Ball').first();
 
-	function react(e, flag, dirLeft, dirRight) {
-		switch(e.keyCode){
-			case goo.ScriptUtils._keys.Leftarrow:
-			case goo.ScriptUtils._keys.A:
-				if(flag === ctx.leftFlipper.on){
-					ctx.leftFlipper.on = !flag;
-					ctx.leftFlipper.rigidBodyComponent.setAngularVelocity(dirLeft);
-				}
-				break;
-			case goo.ScriptUtils._keys.Rightarrow:
-			case goo.ScriptUtils._keys.D:
-				if(flag === ctx.rightFlipper.on){
-					ctx.rightFlipper.on = !flag;
-					ctx.rightFlipper.rigidBodyComponent.setAngularVelocity(dirRight);
-				}
-				break;
-		}
-	}
+    function react(e, flag, dirLeft, dirRight) {
+        switch(e.keyCode){
+            case goo.ScriptUtils._keys.Leftarrow:
+            case goo.ScriptUtils._keys.A:
+                if(flag === ctx.leftFlipper.on){
+                    ctx.leftFlipper.on = !flag;
+                    ctx.leftFlipper.rigidBodyComponent.setAngularVelocity(dirLeft);
+                }
+                break;
+            case goo.ScriptUtils._keys.Rightarrow:
+            case goo.ScriptUtils._keys.D:
+                if(flag === ctx.rightFlipper.on){
+                    ctx.rightFlipper.on = !flag;
+                    ctx.rightFlipper.rigidBodyComponent.setAngularVelocity(dirRight);
+                }
+                break;
+        }
+    }
 
-	ctx.keydown = function(e) {
-		react( e,false,ctx.cw,ctx.ccw);
-	};
-	ctx.keyup = function(e) {
-		react( e,true,ctx.ccw,ctx.cw);
-	};
-	document.body.addEventListener('keydown', ctx.keydown, false);
-	document.body.addEventListener('keyup', ctx.keyup, false);
-	document.body.addEventListener('touchstart', ctx.keydown, false);
-	document.body.addEventListener('touchend', ctx.keyup, false);
+    ctx.keydown = function(e) {
+        react( e,false,ctx.cw,ctx.ccw);
+    };
+    ctx.keyup = function(e) {
+        react( e,true,ctx.ccw,ctx.cw);
+    };
+    document.body.addEventListener('keydown', ctx.keydown, false);
+    document.body.addEventListener('keyup', ctx.keyup, false);
+    document.body.addEventListener('touchstart', ctx.keydown, false);
+    document.body.addEventListener('touchend', ctx.keyup, false);
 
-	ctx.checkTarget = function(flipper, target, speed, comparator) {
-		var tc = flipper.transformComponent;
-		flipper.lr.toAngles(ctx.tempVec);
-		var rot = ctx.roundit(ctx.tempVec.y);
-		if(rot !== flipper.goal){
-			var angle = ctx.tempVec.y + speed * ctx.world.tpf;
-			if( (comparator === '>=' && angle >= target) || (comparator === '<=' && angle <= target)){
-				flipper.rigidBodyComponent.setAngularVelocity(goo.Vector3.ZERO);
-				flipper.lr.fromAngles(0, target, 0);
-				tc.updateTransform();
-				tc.updateWorldTransform();
-				ctx.tempQuat.fromRotationMatrix(tc.worldTransform.rotation);
-				flipper.rigidBodyComponent.setQuaternion(ctx.tempQuat);
-			}
-		}
-	}
+    ctx.checkTarget = function(flipper, target, speed, comparator) {
+        var tc = flipper.transformComponent;
+        flipper.lr.toAngles(ctx.tempVec);
+        var rot = ctx.roundit(ctx.tempVec.y);
+        if(rot !== flipper.goal){
+            var angle = ctx.tempVec.y + speed * ctx.world.tpf;
+            if( (comparator === '>=' && angle >= target) || (comparator === '<=' && angle <= target)){
+                flipper.rigidBodyComponent.setAngularVelocity(goo.Vector3.ZERO);
+                flipper.lr.fromAngles(0, target, 0);
+                tc.updateTransform();
+                tc.updateWorldTransform();
+                ctx.tempQuat.fromRotationMatrix(tc.worldTransform.rotation);
+                flipper.rigidBodyComponent.setQuaternion(ctx.tempQuat);
+            }
+        }
+    }
 };
 
 var cleanup = function(args, ctx, goo) {
-	document.body.removeEventListener('keydown', ctx.keydown);
-	document.body.removeEventListener('keyup', ctx.keyup);
-	document.body.removeEventListener('touchstart', ctx.keydown);
-	document.body.removeEventListener('touchend', ctx.keyup);
+    document.body.removeEventListener('keydown', ctx.keydown);
+    document.body.removeEventListener('keyup', ctx.keyup);
+    document.body.removeEventListener('touchstart', ctx.keydown);
+    document.body.removeEventListener('touchend', ctx.keyup);
 };
 
 var update = function(args, ctx, goo) {
-	if(ctx.leftFlipper.on){
-		ctx.checkTarget( ctx.leftFlipper, ctx.leftFlipper.goal, ctx.speed, '>=');
-	} else {
-		ctx.checkTarget( ctx.leftFlipper, ctx.leftFlipper.start, -ctx.speed, '<=');
-	}
+    if(ctx.leftFlipper.on){
+        ctx.checkTarget( ctx.leftFlipper, ctx.leftFlipper.goal, ctx.speed, '>=');
+    } else {
+        ctx.checkTarget( ctx.leftFlipper, ctx.leftFlipper.start, -ctx.speed, '<=');
+    }
 
-	if(ctx.rightFlipper.on){
-		ctx.checkTarget( ctx.rightFlipper, ctx.rightFlipper.goal, -ctx.speed, '<=');
-	} else {
-		ctx.checkTarget( ctx.rightFlipper, ctx.rightFlipper.start, ctx.speed, '>=');
-	}
+    if(ctx.rightFlipper.on){
+        ctx.checkTarget( ctx.rightFlipper, ctx.rightFlipper.goal, -ctx.speed, '<=');
+    } else {
+        ctx.checkTarget( ctx.rightFlipper, ctx.rightFlipper.start, ctx.speed, '>=');
+    }
 };
 {% endhighlight %}
 
@@ -168,4 +168,4 @@ Click on play and you should have a working Goo Pinball Game !! PS: If you spend
 
 ![](FlipperPretty-627x1024.jpg)
 
-<a class="btn btn-primary btn-lg" href="https://goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
+<a class="btn btn-primary btn-lg" href="https://c1.goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
