@@ -116,19 +116,23 @@ The **goo** object provides access to the [Goo Engine API](http://code.gooengin
 ## Parameters and "args"
 
 {% highlight js %}
+var setup = function(args, ctx) {
+    console.log(args.velocity); // access the passed argument by key
+};
+
 var parameters = [{
     name: "Velocity",
     key: "velocity",
     type: "vec3",
     default: [1, 0, 0]
 }];
-
-var setup = function(args, ctx) {
-    console.log(args.velocity); // access the passed argument by key
-};
 {% endhighlight %}
 
-All parameters that are declared in the _parameters_ array are accessed via the **args **object and are also displayed the _script component panel_ in Create. This makes scripts much easier to work with, and it enables customization of scripts without having to change any code! Below you can read more about what the custom parameters lets you do.  
+All parameters that are declared in the _parameters_ array are accessed via the **args** object and are also displayed the _script component panel_ in Create. This makes scripts much easier to work with, and it enables customization of scripts without having to change any code! The above script will generate the following script component panel:
+
+![](script-velocity.png)
+
+Below you can read more about what the custom parameters lets you do.
 
 ### Parameter Format
 
