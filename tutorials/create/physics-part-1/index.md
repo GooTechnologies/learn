@@ -4,33 +4,28 @@ title: Physics Part 1
 weight: 1200
 indent: 1
 ---
-![PinBall](PinBall.jpg)
-
 Hello and welcome to the "Basic Physics in Goo Create" tutorial.  
 
-The tutorial will be split into two parts:  
+The tutorial will be split into two parts:
 
-The first part will create a tilted box and a few cylinders and a ball to roll along the box and collide with the cylinders.  
+ * The first part will create a tilted box and a few cylinders and a ball to roll along the box and collide with the cylinders.  
+ * The next part will take this basic scene and enhance it to become a simple pinball game.  
 
-The next part will take this basic scene and enhance it to become a simple pinball game.  
+![Pinball game](goo-pinball.gif)
 
-Please note that this tutorial is written in a way so you can attempt to follow it without prior knowledge of Goo Create, but I do recommend to read some of the starter tutorials first.  
+<a class="btn btn-primary btn-lg" href="https://goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
+
+Please note that this tutorial is written in a way so you can attempt to follow it without prior knowledge of Goo Create, but I do recommend to read some of the starter tutorials first.
 
 ## Introduction
 
-Goo Technologies is proud to count the famous [Cannon.js](https://github.com/schteppe/cannon.js) developer Stefan Hedman as one of it's own. Ever since he came on board he wanted to add physical components to Goo Create.  
-
-The day has finally arrived and I am happy to say that it is now easier than ever before to use physics in Goo Create.  
-
-Stefan and the Goo Create team did an amazing job and added two new components to Goo Create.  
-
-The first new component is the rigid body component the second is the collider component.  
+The first component we will use is the rigid body component the second is the collider component.
 
 The rigid body component is mainly responsible to track the position, the rotation and the linear and angular velocity of a physical object.  
 
 The collider component, as the name implies, is responsible to calculate and detect collisions between physical objects. But it serves a double purpose: with a click on a checkbox it can act as a trigger instead, allowing other physical objects to pass through and notify user code so it can take some respective action. (For example this can be used for a jump pad.)  
 
-Together they make it possible to create amazing physical behaviors.  
+Together they make it possible to create physical behaviors.
 
 **Here is a handy list of rules how to configure your physical components:**  
 
@@ -60,15 +55,15 @@ Please note: There is currently a bug where the  table entity also needs a rigi
 
 Click on +CREATE again to add a box shape to the scene. Rename the box entity to "Floor" and with the box still selected open up the TRANSFORM panel to the left in Goo Create. Change the scaling to be 20, 1, 40.  
 
-[![](FlipperFloorScaling.jpg)](FlipperFloorScaling.jpg)  
+![](FlipperFloorScaling.jpg)
 
 Next we add a collider component. Under the transform settings please click on the +ADD COMPONENT button and select COLLIDER:
 
-[![](FlipperCollider-247x300.jpg)](FlipperCollider-247x300.jpg)  
+![](FlipperCollider-247x300.jpg)
 
 Please change the restitution and the friction to zero:  
 
-[![](FlipperFloorCollider.jpg)](FlipperFloorCollider.jpg)  
+![](FlipperFloorCollider.jpg)
 
 Friction is the resistance that one surface or object encounters when moving over another. Restitution in the context of physics is best described as "bouncyness".  
 
@@ -76,7 +71,7 @@ We set both to zero since we don't want the ball to bounce on the pinball flippe
 
 Ok, now we are ready to create the walls. Create another box and change the name to LeftWall. Then give it the following transform values:  
 
-[![](FlipperLeftWall.jpg)](FlipperLeftWall.jpg)  
+![](FlipperLeftWall.jpg)
 
 Also add a collider component and set the friction to zero and the restitution to 0.5 so the ball bounces of the wall.  
 
@@ -84,13 +79,13 @@ Repeat these steps for the right wall, the only difference is the X position: I
 
 Finally we add the TopWall. Add another box and give it these transform settings:  
 
-[![](FlipperTopWall.jpg)](FlipperTopWall.jpg)  
+![](FlipperTopWall.jpg)
 
 Give it the same collider settings as the other walls.  
 
 Your scene should now look like this:  
 
-[![](FlipperSceneMS1-300x164.jpg)](FlipperSceneMS1-300x164.jpg)  
+![](FlipperSceneMS1-300x164.jpg)
 
 Ok, let's test our scene. For this we will nest the floor and walls under the empty Table entity we added at the start of this tutorial.  
 
@@ -98,7 +93,7 @@ Then we will tilt the pinball table 36 degrees and add a ball.
 
 To nest an entity under another entity you simply drag and drop the entity (child) onto the other (parent). Repeat this for the floor and all the walls. Then click on the Table entity and rename it to "Table". Finally go to the transform settings and change the X rotation to be 36\. This should have resulted in your table to be tilted like  this:  
 
-[![](FlipperTableTilted-279x300.jpg)](FlipperTableTilted-279x300.jpg)  
+![](FlipperTableTilted-279x300.jpg)
 
 Finally let's add the ball. Click on +CREATE and select the sphere shape. Rename it to "Ball", set the transform settings to 0, 8.5, -8.5 and change the scale to 1.5, 1.5, 1.5.  
 
@@ -120,13 +115,13 @@ So reset the tilt of the Table entity by setting the X rotation to zero. Then c
 
 Rename the "Cylinder" to "Bumper1" and then go to the transform setting and set the following:  
 
-[![](FlipperBumper1.jpg)](FlipperBumper1.jpg)  
+![](FlipperBumper1.jpg)
 
 ( Note: of course you can place your bumpers where ever you like. Just make sure to keep the 1.5 for the Y translation and the 90 for the X rotation. )  
 
 You should now have your first bumper and it should look something like this:  
 
-[![](FlipperBumper1Scene-300x178.jpg)](FlipperBumper1Scene-300x178.jpg)  
+![](FlipperBumper1Scene-300x178.jpg)
 
 Next we add a collider component to the bumper. Set the friction to zero and the restitution to 2, this will make the bumpers very bouncy, just like we want them to behave. Fell free to play around with even higher values.  
 
@@ -148,13 +143,13 @@ Another nice trick is to change the Material for one of the walls, for example t
 
 And another trick to fake a metal ball is to import any Skybox from the Asset Library and then set the Reflectivity like this:  
 
-[![](FlipperBallMaterial.jpg)](FlipperBallMaterial.jpg)  
+![](FlipperBallMaterial.jpg)
 
 Let's duplicate one of the bumpers two more times. Set the translation to -2.375, 1.5, -4 and to 2.375, 1.5, -4 respectively.  
 
 After tilting the table again, my scene now looks like this:  
 
-[![](Flipper5Bumpers-300x207.jpg)](Flipper5Bumpers-300x207.jpg)  
+![](Flipper5Bumpers-300x207.jpg)
 
 Pressing play reveals a problem of course: The bumper and the ball are perfectly aligned, so the the ball never stops bouncing on it. The fix is simple, we just move the ball a bit to the side. Let's try -1.88 for the X translation.  
 
