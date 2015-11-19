@@ -15,6 +15,8 @@ The tutorial will be split into two parts:
 
 <a class="btn btn-primary btn-lg" href="https://goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
 
+<a class="btn btn-default btn-lg" href="https://app.goocreate.com/edit/05779f4996204f14aabff73ee0333afe.scene">Open scene in Create</a>
+
 Please note that this tutorial is written in a way so you can attempt to follow it without prior knowledge of Goo Create, but I do recommend to read some of the starter tutorials first.
 
 ## Introduction
