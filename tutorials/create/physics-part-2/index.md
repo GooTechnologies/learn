@@ -168,4 +168,4 @@ Click on play and you should have a working Goo Pinball Game !! PS: If you spend
 
 ![](FlipperPretty-627x1024.jpg)
 
-<a class="btn btn-primary btn-lg" href="https://goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
+<a class="btn btn-primary btn-lg" href="https://c1.goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
