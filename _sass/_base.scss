@@ -19,7 +19,6 @@ body {
 	line-height: $base-line-height;
 	font-weight: 300;
 	color: $text-color;
-	background-color: $background-color;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -108,8 +107,8 @@ a {
  * Blockquotes
  */
 blockquote {
-	color: $grey-color;
-	border-left: 4px solid $grey-color-light;
+	color: $gray;
+	border-left: 4px solid $gray-light;
 	padding-left: $spacing-unit / 2;
 	font-size: 18px;
 	letter-spacing: -1px;
@@ -128,7 +127,7 @@ blockquote {
 pre,
 code {
 	font-size: 15px;
-	border: 1px solid $grey-color-light;
+	border: 1px solid $gray-light;
 	border-radius: 3px;
 	background-color: #eef;
 }
@@ -162,7 +161,7 @@ pre {
 	padding-left: $spacing-unit;
 	@extend %clearfix;
 
-	@include media-query($on-laptop) {
+	@include media-query($laptop) {
 		max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
 		max-width:         calc(#{$content-width} - (#{$spacing-unit}));
 		padding-right: $spacing-unit / 2;
@@ -198,7 +197,7 @@ pre {
 		vertical-align: middle;
 
 		path {
-			fill: $grey-color;
+			fill: $gray;
 		}
 	}
 }

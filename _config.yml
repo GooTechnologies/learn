@@ -28,7 +28,7 @@ defaults:
     values:
       layout: "tutorial"
 
-# The manus takes a long time to render. Comment out the following line to skip rendering them.
+# The menus take a long time to render. Comment out the following line to skip rendering them.
 render_navigation: true
 render_menus: true
 render_breadcrumbs: true
