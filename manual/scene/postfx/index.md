@@ -33,15 +33,11 @@ Post effect layers in create are made out of render passes in the engine. You ca
 
 FXAA based antialiasing. For smoothing out jagged edges.
 
-#### Controls
-
 - Span: Area of the smoothing effect
 
 ## Bloom
 
 Intensify and create glow out of the high valued colors in the input.
-
-#### Controls
 
 - Opacity: Amount of bloom applied.
 
@@ -53,23 +49,22 @@ Intensify and create glow out of the high valued colors in the input.
 
 ## Bleach
 
+Alter input color by it's luminace.
+
+- Opacity: Blending multiplier for the effect
+
+
 ## Blur
 
 Gaussian blur.
-
-#### Controls
 
 - Amount: Blending amount
 
 - Size: Blur area size
 
-
-
 ## Contrast
 
 Alters the brightness, contrast and saturation.
-
-#### Controls
 
 - Brightness: Negative values remove brightness, positive adds
 
@@ -93,8 +88,6 @@ Adds an overlay with "see-through holes".
 
 Difference of Gaussians based edge detection.
 
-#### Controls
-
 - Gauss Sigma: Sets the base of the two gaussian kernels
 
 - Threshold: Threshold value to be considered an edge
@@ -110,8 +103,6 @@ Difference of Gaussians based edge detection.
 
 Adds distoring noise and horizontal lines.
 
-#### Controls
-
 - Noise: Amount of noise
 
 - Line Intensity: The lines' color intensity
@@ -123,8 +114,6 @@ Adds distoring noise and horizontal lines.
 
 Converts image to grayscale and creates a pattern based on the grayscale value.
 
-#### Controls
-
 - Width: Pattern detail
 
 - Spread: Pattern size
@@ -132,8 +121,6 @@ Converts image to grayscale and creates a pattern based on the grayscale value.
 ## HSB (Hue Saturation Brightness)
 
 Alters the hue, saturation and brightness
-
-#### Controls
 
 - Hue: Offset the input's hue with this amount
 
@@ -144,8 +131,6 @@ Alters the hue, saturation and brightness
 ## Levels
 
 Clamp value levels of input to a new range.
-
-#### Controls
 
 - Gamma: Add or remove gamma
 
@@ -161,9 +146,7 @@ Clamp value levels of input to a new range.
 
 Uses previously rendered frames to produce a motion blur trail.
 
-The scale is applied incrementally on the images from the center of the screen.
-
-#### Controls
+The scale is applied accumulately per trailing image from the center of the screen.
 
 - Amount: Blending amount of the previous frames
 
@@ -195,14 +178,31 @@ Add directional highlight streaks from target color of the input.
 
 ## RGB Shift
 
+Split the input into red, green and blue , outputs combination with some offset between the colors.
+
+- Amount: Distance between the split images
+
+- Angle: Angle set in radians for the split direction
+
 ## Sepia
+
+Sepia color filter.
+
+- Amount: Blending of the filter, in percentage
 
 ## Tint
 
+Convert the input's luminance to one color.
+
+- Amount: Blending of the input and tinted output
+
 ## Vignette
 
+Adds an vignette effect, gradients around the edges of the image.
 
+- Offset: Area of gradient
 
+- Darkness: The color of the gradient
 
 
 
