@@ -161,7 +161,7 @@ Clamp value levels of input to a new range.
 
 Uses previously rendered frames to produce a motion blur trail.
 
-The scale is applied incrementally on the images from the center of the screen.
+The scale is applied accumulately per trailing image from the center of the screen.
 
 #### Controls
 
