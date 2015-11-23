@@ -46,11 +46,7 @@ hr {
 	margin-bottom: 0;
 
 	@include media-query($laptop) {
-		padding: $padding;
-	}
-
-	@include media-query($phone) {
-		padding: $half-padding;
+		padding: 10px 15px;
 	}
 }
 
@@ -99,9 +95,9 @@ hr {
 
 	.navbar-toggle {
 		position: relative;
-		height: 40px;
-		padding: $padding;
-		margin: $half-padding;
+		height: 50px;
+		padding: 0;
+		margin: 0;
 
 		&, &:focus, &:hover {
 			background: none;
@@ -139,7 +135,7 @@ hr {
 	@include media-query(767px) {
 		.navbar-collapse {
 			position: absolute;
-			top: 60px;
+			top: 70px;
 			width: 100%;
 			left: 0;
 			margin: 0;
@@ -165,23 +161,23 @@ hr {
 }
 
 .navbar-brand {
-	padding: 0;
+	padding: 0 !important;
 
 	svg {
-		width: 250px;
+		width: 140px;
 		height: 100%;
 		color: #666666;
 		fill: #38b3f6;
 
 		@include media-query($tablet) {
-			width: 200px;
+			width: 140px;
 		}
 	}
 }
 
 .navbar-btn {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 6px;
+	margin-bottom: 0;
 	margin-left: $padding;
 }
 
