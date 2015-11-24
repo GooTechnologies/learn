@@ -7,6 +7,8 @@ weight: 1040
 
 This tutorial will introduce some of the fundamental topics in Create's scripting capabilities. We will script a simple bouncing sphere. The implementation will of course be very basic, but it should familiarize the reader enough with the concepts!
 
+For more details on the goo, ctx and args objects, see [The anatomy of a script]({{ "/manual/scripting/anatomy" | prepend:site.baseurl }})
+
 As other functionality in Create (cameras, lights, transforms, meshes et cetera), scripting is handled in a specialized type of Component. Scripts can be added to any entity and enable them to do tons of cool stuff!
 
 The Goo Engine is written in JavaScript to stay close and true to the web. Scripts are no exception to that of course. Everything we will write will be in pure JavaScript, so there is no need to learn any other scripting language.
