@@ -15,7 +15,7 @@ body {
 
 .h1,.h2, .h3, h1, h2, h3 {
 	position: relative;
-	margin-top: 40px;
+	margin-top: 30px;
 
 	&:first-child {
 		margin-top: 0;
@@ -33,6 +33,11 @@ a {
 
 hr {
 	border-top-color: $border-color;
+}
+
+.container {
+	padding-right: $padding * 2;
+	padding-left: $padding * 2;
 }
 
 .navbar {
@@ -147,6 +152,7 @@ hr {
 			.navbar-btn {
 				width: 200px;
 				margin: $padding * 2;
+				margin-bottom: 0;
 			}
 
 			.navbar-nav {
@@ -183,6 +189,7 @@ hr {
 	color: $goo-white;
 	background-color: $goo-blue;
 	text-align: center;
+
 	h1 {
 		font-size: 46px;
 		font-weight: 900;
@@ -191,7 +198,13 @@ hr {
 	}
 
 	@include media-query($phone) {
-		margin-bottom: $padding;
+		margin-bottom: $padding * 2;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		h1 {
+			font-size: 30px;
+		}
 	}
 }
 
