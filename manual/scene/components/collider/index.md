@@ -12,13 +12,6 @@ The *Collider Component* adds collision geometry to the entity. If used together
 
 The collider shapes are rendered with a green wireframe in Create.
 
-## Without a Rigid Body Component: Static
-
-If the collider doesn't have any Rigid Body Component, it will become a static collision geometry in the physics world.
-
-## With a Rigid Body Component: Dynamic
-
-If the entity with a Collider Component or any of its parents has a Rigid Body Component, it will turn into a dynamic collision geometry in the collision world.
 
 ## Shape Types
 
@@ -30,13 +23,18 @@ The currently available shapes are:
 * Infinite plane
 
 
-## Triggers
+## Static Collider
 
-If the collider is a trigger, then it will *not* collide with other physics objects. However, it will emit events when a physics object enters it. Available events are:
+If the collider doesn't have any Rigid Body Component, it will become a static collision geometry in the physics world. We call this a *Static Collider*.
 
-* goo.physics.triggerEnter
-* goo.physics.triggerStay
-* goo.physics.triggerLeave
+## Dynamic Rigid Body Collider
+
+If the entity with a Collider Component or any of its parents has a dynamic Rigid Body Component, it will turn into a dynamic collision geometry in the collision world.
+
+## Kinematic Rigid Body Collider
+
+If the entity with a Collider Component or any of its parents has a kinematic Rigid Body Component, we call it a kinematic collider.
+
 
 ## Friction
 
@@ -53,3 +51,166 @@ If the collider is not a Trigger, it will emit these events during collisions:
 * goo.physics.beginContact
 * goo.physics.duringContact
 * goo.physics.endContact
+
+<table class="table table-bordered">
+<thead>
+<tr>
+	<th colspan="7">
+		Collision detection occurs and messages are sent upon collision
+	</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td></td>
+	<td>Static Collider</td>
+	<td>Rigidbody Collider</td>
+	<td>Kinematic Rigidbody Collider</td>
+	<td>Static Trigger Collider</td>
+	<td>Rigidbody Trigger Collider</td>
+	<td>Kinematic Rigidbody Trigger Collider</td>
+</tr>
+<tr>
+	<td>Static Collider</td>
+	<td></td>
+	<td>Y</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>Rigidbody Collider</td>
+	<td>Y</td>
+	<td>Y</td>
+	<td>Y</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>Kinematic Rigidbody Collider</td>
+	<td></td>
+	<td>Y</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>Static Trigger Collider</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>Rigidbody Trigger Collider</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>Kinematic Rigidbody Trigger Collider</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+
+
+## Triggers
+
+If the collider is a trigger, then it will *not* collide with other physics objects. However, it will emit events when a physics object enters it. Available events are:
+
+### Trigger events
+
+* goo.physics.triggerEnter
+* goo.physics.triggerStay
+* goo.physics.triggerLeave
+
+<table class="table table-bordered">
+<thead>
+<tr>
+	<th colspan="7">
+		Trigger messages are sent upon collision
+	</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td></td>
+	<td>Static Collider</td>
+	<td>Rigidbody Collider</td>
+	<td>Kinematic Rigidbody Collider</td>
+	<td>Static Trigger Collider</td>
+	<td>Rigidbody Trigger Collider</td>
+	<td>Kinematic Rigidbody Trigger Collider</td>
+</tr>
+<tr>
+	<td>Static Collider</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td>Y</td>
+	<td><!-- TODO --></td>
+</tr>
+<tr>
+	<td>Rigidbody Collider</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td>Y</td>
+	<td>Y</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>Kinematic Rigidbody Collider</td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td><!-- todo --></td>
+	<td>Y</td>
+	<td><!-- todo --></td>
+</tr>
+<tr>
+	<td>Static Trigger Collider</td>
+	<td></td>
+	<td>Y</td>
+	<td><!-- todo --></td>
+	<td></td>
+	<td>Y</td>
+	<td><!-- todo --></td>
+</tr>
+<tr>
+	<td>Rigidbody Trigger Collider</td>
+	<td>Y</td>
+	<td>Y</td>
+	<td>Y</td>
+	<td>Y</td>
+	<td>Y</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>Kinematic Rigidbody Trigger Collider</td>
+	<td><!-- todo --></td>
+	<td>Y</td>
+	<td><!-- todo --></td>
+	<td><!-- todo --></td>
+	<td>Y</td>
+	<td><!-- todo --></td>
+</tr>
+</tbody>
+</table>
