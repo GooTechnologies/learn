@@ -45,7 +45,13 @@ Hardware picking perfect when you wait for a single click on a visible entity.
 
 The easiest way to implement hardware picking in Goo Create is using the *PickAction* in the state machine. The PickAction will transition when the entity is hardware picked.
 
-This is an example of a "Click to burn" behavior. The PickAction waits for the pick in the first state, and when it happens it transitions to the "Burn" state. The Burn state adds some Fire Effects to the entity.
+1. Add a State Machine Component to the entity you want to click.
+2. Add a new Behavior
+3. Add a PickAction in the default state.
+4. Create a new State, where you define what should happen when you pick the entity.
+5. In the Pick Action, select your new State in the dropdown.
+
+Below is an example of a "Click to burn" behavior. The PickAction waits for the pick in the first state, and when it happens it transitions to the "Burn" state. The Burn state adds some Fire Effects to the entity.
 
 ![PickAction](pick-action.png)
 
