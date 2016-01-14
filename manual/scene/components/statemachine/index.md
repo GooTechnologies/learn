@@ -34,8 +34,11 @@ A Behavior always has one *Default State* which is activated when you press Play
 
 ### Actions
 
-An action is some logic gets executed when its State becomes active. There are many types of Actions and their effect varies a lot. Some examples are:
+An *Action* is some logic gets executed while its State is active. Some actions executes its logic once and are done, while others execute logic once per frame. There are also Actions that just listens for events, and executes logic when the event happens.
 
+There are many types of Actions and their effect varies a lot. Some examples are:
+
+* Pick: Listen for a click/touch on the entity.
 * FireFX: Emits fire particles from an entity.
 * KeyDown: Listen for and react to key presses.
 * Collide: Check for and react to collisions between entities.
