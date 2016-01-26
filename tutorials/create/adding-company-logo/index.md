@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Adding Company Logo
-weight: 1042
+weight: 2000
 indent: 1
 ---
 
