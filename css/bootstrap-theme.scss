@@ -8,14 +8,16 @@ body {
 	font-family: $base-font-family;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
-	font-weight: 400;
+	font-weight: 300;
 	color: $text-color;
 	background-color: lighten($goo-white, 6%);
 }
 
-.h1,.h2, .h3, h1, h2, h3 {
+.h1,.h2, .h3, .h4, h1, h2, h3, h4 {
 	position: relative;
-	margin-top: 30px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-weight: 300;
 
 	&:first-child {
 		margin-top: 0;
@@ -25,7 +27,7 @@ body {
 a {
 	color: $goo-blue;
 
-	&:hover, &:active {
+	&:hover, &:active, &:visited {
 		text-decoration: none;
 		color: darken($goo-blue, 15%);
 	}
@@ -33,6 +35,8 @@ a {
 
 hr {
 	border-top-color: $border-color;
+	margin-top: $padding * 3;
+	margin-bottom: $padding * 3;
 }
 
 .container {
@@ -168,9 +172,9 @@ hr {
 	padding: 0;
 
 	svg {
-		width: 250px;
+		width: 190px;
 		height: 100%;
-		color: #666666;
+		color: #38b3f6;
 		fill: #38b3f6;
 
 		@include media-query($tablet) {
@@ -192,9 +196,13 @@ hr {
 
 	h1 {
 		font-size: 46px;
-		font-weight: 900;
+		font-weight: 300;
 		line-height: 1.1;
 		margin: 0;
+	}
+
+	p {
+		margin-bottom: 0;
 	}
 
 	@include media-query($phone) {
@@ -263,7 +271,8 @@ hr {
 
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&:visited {
 		color: $btn-primary-text-color;
 		background-color: $btn-primary-hover-color;
 		border-color: $btn-primary-hover-color;
@@ -300,7 +309,11 @@ button.list-group-item,
 	color: $text-color;
 	background-color: lighten($goo-white, 2%);
 	border: none;
-	font-weight: 400;
+	font-weight: 300;
+	padding: ($padding / 2) $padding;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 	@include transition-property(all);
 	@include transition-duration($transition-duration);
 

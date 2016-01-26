@@ -2,19 +2,18 @@
 ---
 
 @import 'vars';
+@import 'mixins';
 
-/*
- * Style tweaks
- * --------------------------------------------------
- */
+@charset "utf-8";
+
 html,
 body {
 	overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
-body {
-}
+
 footer {
-	padding: 20px 0;
+	font-size: 12px;
+	padding-bottom: 30px;
 }
 
 .content {
@@ -22,7 +21,7 @@ footer {
 		max-width: 100%;
 		display: block;
 		margin: 0 auto;
-		padding: $padding * 2;
+		padding: $padding;
 	}
 
 	video {
@@ -38,51 +37,6 @@ iframe {
 	height: 400px;
 	border: none;
 	margin: 0 auto;
-}
-
-/*
- * Off Canvas
- * --------------------------------------------------
- */
-@media screen and (max-width: 767px) {
-	.row-offcanvas {
-		position: relative;
-		-webkit-transition: all .25s ease-out;
-				 -o-transition: all .25s ease-out;
-						transition: all .25s ease-out;
-	}
-
-	.row-offcanvas-right {
-		right: 0;
-	}
-
-	.row-offcanvas-left {
-		left: 0;
-	}
-
-	.row-offcanvas-right
-	.sidebar-offcanvas {
-		right: -50%; /* 6 columns */
-	}
-
-	.row-offcanvas-left
-	.sidebar-offcanvas {
-		left: -50%; /* 6 columns */
-	}
-
-	.row-offcanvas-right.active {
-		right: 50%; /* 6 columns */
-	}
-
-	.row-offcanvas-left.active {
-		left: 50%; /* 6 columns */
-	}
-
-	.sidebar-offcanvas {
-		position: absolute;
-		top: 0;
-		width: 50%; /* 6 columns */
-	}
 }
 
 .header-link {
@@ -109,129 +63,18 @@ h6:hover .header-link {
 
 @for $i from 1 through 5 {
 	.indent-#{$i} {
-		padding-left: $indent * $i;
-	}
-}
-
-.recommended-tutorials > div {
-	margin-bottom: $double-padding;
-
-	h4 {
-		position: absolute;
-		display: block;
-		background: transparentize($goo-black, 0.4);
-		width: 100%;
-		margin: 0;
-		padding: $padding;
-		color: $goo-white;
-		left: 0;
-		bottom: 0;
-		text-align: center;
-		text-transform: uppercase;
-	}
-
-	a {
-		display: block;
-		position: relative;
-		padding-top: 56%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 50%;
-
-		&:hover:before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			background: transparentize(white, 0.8);
+		&a.list-group-item,
+		&button.list-group-item,
+		&.list-group-item {
+			padding: 3px $padding;
+			padding-left: $indent * $i;
+			font-weight: 300 !important;
+			font-size: 14px;
 		}
 	}
 }
 
-/* to make lines scroll instead of wrap */
-/* from http://stackoverflow.com/a/23393920 */
-
-.highlight pre code * {
-	white-space: nowrap;    // this sets all children inside to nowrap
-}
-
-.highlight pre {
-	overflow-x: auto;       // this sets the scrolling in x
-}
-
-.highlight pre code {
-	white-space: pre;       // forces <code> to respect <pre> formatting
-}
-
-/* github style pygments theme for jekyll */
-/* from https://github.com/aahan/pygments-github-style */
-.highlight pre { background-color: #272822; color: #f8f8f2; }
-.highlight .hll { background-color: #272822; }
-.highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #66d9ef } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #f8f8f2 } /* Name */
-.highlight .o { color: #f92672 } /* Operator */
-.highlight .p { color: #f8f8f2 } /* Punctuation */
-.highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
-.highlight .c1 { color: #75715e } /* Comment.Single */
-.highlight .cs { color: #75715e } /* Comment.Special */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .kc { color: #66d9ef } /* Keyword.Constant */
-.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
-.highlight .kn { color: #f92672 } /* Keyword.Namespace */
-.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
-.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
-.highlight .kt { color: #66d9ef } /* Keyword.Type */
-.highlight .ld { color: #e6db74 } /* Literal.Date */
-.highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #e6db74 } /* Literal.String */
-.highlight .na { color: #a6e22e } /* Name.Attribute */
-.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
-.highlight .nc { color: #a6e22e } /* Name.Class */
-.highlight .no { color: #66d9ef } /* Name.Constant */
-.highlight .nd { color: #a6e22e } /* Name.Decorator */
-.highlight .ni { color: #f8f8f2 } /* Name.Entity */
-.highlight .ne { color: #a6e22e } /* Name.Exception */
-.highlight .nf { color: #a6e22e } /* Name.Function */
-.highlight .nl { color: #f8f8f2 } /* Name.Label */
-.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
-.highlight .nx { color: #a6e22e } /* Name.Other */
-.highlight .py { color: #f8f8f2 } /* Name.Property */
-.highlight .nt { color: #f92672 } /* Name.Tag */
-.highlight .nv { color: #f8f8f2 } /* Name.Variable */
-.highlight .ow { color: #f92672 } /* Operator.Word */
-.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
-.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
-.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74 } /* Literal.String.Char */
-.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
-.highlight .se { color: #ae81ff } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74 } /* Literal.String.Other */
-.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
-.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
-.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
-.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
-.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
-.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
-
-.highlight .gh { } /* Generic Heading & Diff Header */
-.highlight .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
-.highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
-.highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "syntax-highlighting";
+@import "off-canvas";
+@import "tutorial-list";

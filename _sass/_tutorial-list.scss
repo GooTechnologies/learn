@@ -1,0 +1,78 @@
+@import "vars";
+@import "mixins";
+
+.tutorial-list {
+	@include flexbox();
+	@include flex-wrap(wrap);
+	@include align-items(center);
+	@include justify-content(center);
+	margin: -$padding;
+	padding: 0;
+
+	li {
+		display: block;
+		width: 30%;
+		padding: 0;
+		margin: $padding;
+		list-style: none;
+		max-width: 450px;
+		@include flex-grow(1);
+		@include flex-shrink(1);
+	}
+
+	a {
+		display: block;
+		position: relative;
+		padding-top: 56%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		border-radius: $border-radius;
+		transition: all 0.1s ease-out;
+		box-shadow: 0 3px 8px transparentize($goo-black, 0.8);
+
+		&:hover {
+			box-shadow: 0 8px 20px transparentize($goo-black, 0.6);
+
+			/*content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background: transparentize(white, 0.8);*/
+		}
+	}
+
+	h4 {
+		position: absolute;
+		display: block;
+		background: transparentize($goo-black, 0.2);
+		width: 100%;
+		margin: 0;
+		padding: $padding * 1.5;
+		color: $goo-white;
+		left: 0;
+		bottom: 0;
+		font-weight: 300;
+		text-align: center;
+		text-transform: uppercase;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+	}
+
+	@include media-query(767px) {
+		li {
+			width: 40%;
+		}
+	}
+
+	@include media-query(500px) {
+		li {
+			width: 100%;
+		}
+	}
+}

@@ -1,8 +1,9 @@
 ---
 title: Create Tutorials
+subtitle: Tutorials for various parts of Create
 weight: 1000
 indent: 0
 ---
 
-Tutorials for various parts of Create.
-
+Here you can find the tutorials that various aspects of Goo Create
+directly. Select one of the tutorials on the navigation bar to get started!
