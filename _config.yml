@@ -4,7 +4,8 @@ email: create@goocreate.com
 description: Resources for Learning Goo Create and Goo Engine
 copyright_notice: © Copyright 2016 Goo Technologies.
 baseurl: ""
-url: "http://gootechnologies.github.io/learn"
+url: "http://learn.goocreate.com"
+redirectFromHost: "gootechnologies.github.io"
 twitter_username: GooTechnologies
 github_username:  GooTechnologies
 

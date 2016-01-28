@@ -19,6 +19,14 @@
 			{% include footer.html %}
 		</div>
 
+		{% if site.redirectFromHost %}
+			<script type="text/javascript">
+				if(window.location.host == '{{ site.redirectFromHost }}'){
+					window.location.href = "{{ site.url }}";
+			    }
+			</script>
+		{% endif %}
+
 		<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 
