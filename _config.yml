@@ -6,6 +6,8 @@ copyright_notice: © Copyright 2016 Goo Technologies.
 baseurl: ""
 url: "http://learn.goocreate.com"
 redirectFromHost: "gootechnologies.github.io"
+redirectFromPath: "/learn"
+redirectToPath: ""
 twitter_username: GooTechnologies
 github_username:  GooTechnologies
 

@@ -21,8 +21,8 @@
 
 		{% if site.redirectFromHost %}
 			<script type="text/javascript">
-				if(window.location.host == '{{ site.redirectFromHost }}'){
-					window.location.href = "{{ site.url }}";
+				if(location.host == '{{ site.redirectFromHost }}'){
+					location.href = "{{ site.url }}".replace(/\/$/,'') + location.pathname.replace('{{ site.redirectFromPath }}', '{{ site.redirectToPath }}');
 			    }
 			</script>
 		{% endif %}
