@@ -28,12 +28,14 @@ Then you'll get a nice sprite animation.
 This is the script that was mentioned above.
 
 {% highlight js %}var setup = function (args, ctx) {
+  if(!ctx.entity.meshRendererComponent) return;
   ctx.tex = ctx.entity.meshRendererComponent.materials[0].getTexture('DIFFUSE_MAP');
+  if(!ctx.tex) return;
   ctx.tex.repeat.setDirect(1/args.tiling[0], 1/args.tiling[1]);
-  ctx.tex.offset.setDirect(0, 0);
 };
 
 var update = function (args, ctx) {
+  if(!ctx.tex) return;
   var t = (args.speed * ctx.world.time) % 1;
   var tileX = Math.floor(args.tiling[0] * args.tiling[1] * t % args.tiling[1]);
   var tileY = Math.floor((args.tiling[1] * t) % args.tiling[1]);
