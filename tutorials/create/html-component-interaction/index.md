@@ -19,36 +19,36 @@ This is the third tutorial of a four part tutorial series.
 
 The first thing we will do, is add another element to our existing HTML Entity. We will also modify the Style CSS, to add styling for the element. To do this, open the code editor for the HTML Entity, and change the code to this:
 
-{% highlight css %}
+{% highlight html %}
 <style type="text/css">
 #button1{
-	position:absolute;
-	top:10px;
-	left:50%;
+    position:absolute;
+    top:10px;
+    left:50%;
 }
 #button2{
-	position:absolute;
-	right:10px;
-	top:50%;
+    position:absolute;
+    right:10px;
+    top:50%;
 }
 #button3{
-	position:absolute;
-	left:50%;
-	bottom:10px;
+    position:absolute;
+    left:50%;
+    bottom:10px;
 }
 #button4{
-	position:absolute;
-	left:10px;
-	top:50%;
+    position:absolute;
+    left:10px;
+    top:50%;
 }
 #div1{
-	position:absolute;
-	left:10px;
-	bottom:10px;
-	background:white;
-	border-radius:5px;
-	padding:0px 10px;
-	width:150px;
+    position:absolute;
+    left:10px;
+    bottom:10px;
+    background:white;
+    border-radius:5px;
+    padding:0px 10px;
+    width:150px;
 }
 </style>
 <button id='button1'>Test Button 1</button>
@@ -56,8 +56,8 @@ The first thing we will do, is add another element to our existing HTML Entity. 
 <button id='button3'>Test Button 3</button>
 <button id='button4'>Test Button 4</button>
 <div id='div1'>
-	<p id='text1'>You have selected:</p>
-	<p id='selected'>Nothing</p>
+    <p id='text1'>You have selected:</p>
+    <p id='selected'>Nothing</p>
 </div>
 {% endhighlight %}
 
@@ -80,37 +80,39 @@ At the bottom of the ScriptComponent, click the 'Add Script' button, and choose 
 Open the script for editing, clear out the current code, and paste this code in its place:
 
 {% highlight js %}var setup = function(args, ctx, goo){
-	ctx.infoBox = document.getElementById('selected');
-	ctx.handleClick = function(e){
-		var hit = null;
-		var x = e.offsetX;
-		var y = e.offsetY;
-		var cam = ctx.activeCameraEntity;
-		ctx.world.gooRunner.pick(x, y, function(index, depth){
-			if(index !== -1){
-				var pos = new goo.Vector3();
-				hit = {entity:ctx.world.entityManager.getEntityByIndex(index)};
-				var pixelRatio = window.devicePixelRatio;
-				hit.point = cam.cameraComponent.camera.getWorldPosition(
-					x * pixelRatio, y * pixelRatio,
-					ctx.viewportWidth, ctx.viewportHeight, depth);
-				goo.Vector3.subv(cam.transformComponent.transform.translation, hit.point, pos);
-				hit.distance = pos.length();
+    ctx.infoBox = document.getElementById('selected');
+    ctx.handleClick = function(e){
+        var hit = null;
+        var x = e.offsetX;
+        var y = e.offsetY;
+        var cam = ctx.activeCameraEntity;
+        ctx.world.gooRunner.pick(x, y, function(index, depth){
+            if(index !== -1){
+                var pos = new goo.Vector3();
+                hit = {entity:ctx.world.entityManager.getEntityByIndex(index)};
+                var pixelRatio = window.devicePixelRatio;
+                hit.point = cam.cameraComponent.camera.getWorldPosition(
+                    x * pixelRatio,
+                    y * pixelRatio,
+                    ctx.viewportWidth,
+                    ctx.viewportHeight,
+                    depth
+                );
 
-				// handle the hit here...
-				ctx.infoBox.innerHTML = hit.entity.name;
-			}
-			else{
-				// there was no hit...
-				ctx.infoBox.innerHTML = 'Nothing';
-			}
-		});
-	};
-	ctx.domElement.addEventListener('click', ctx.handleClick);
+                // handle the hit here...
+                ctx.infoBox.innerHTML = hit.entity.name;
+            }
+            else{
+                // there was no hit...
+                ctx.infoBox.innerHTML = 'Nothing';
+            }
+        });
+    };
+    ctx.domElement.addEventListener('click', ctx.handleClick);
 }
 
 var cleanup = function(args, ctx, goo){
-	ctx.domElement.removeEventListener('click', ctx.handleClick);
+    ctx.domElement.removeEventListener('click', ctx.handleClick);
 }{% endhighlight %}
 
 In the setup function, we first store a reference to the element with the id 'selected'. This is to use later, as we click around the scene.
@@ -119,10 +121,10 @@ Next, we create our click handler, much like we did for the sound button in the 
 
 Inside the click handler, there is a lot going on:
 <ol>
-	<li>First, we create some references to variables.  This is so we don't need to travel up the various 'scope chains' later, since this causes a small amount of overhead in speed.</li>
-	<li>Next we call the ctx.world.gooRunner.pick function (the actual hardware picking function), passing in the mouse position, as well as a callback function.</li>
-	<li>Inside this callback function, we determine if there was a hit or not.  If there was a hit, we create an Object to store a reference to the entity hit, the point in space the hit happened, as well as the distance from the camera the hit occurred.</li>
-	<li>If there was a hit, we change the innerHTML for the 'selected' element to the name of the entity we clicked.  If there is no hit, we change it to 'Nothing'.</li>
+    <li>First, we create some references to variables.  This is so we don't need to travel up the various 'scope chains' later, since this causes a small amount of overhead in speed.</li>
+    <li>Next we call the ctx.world.gooRunner.pick function (the actual hardware picking function), passing in the mouse position, as well as a callback function.</li>
+    <li>Inside this callback function, we determine if there was a hit or not.  If there was a hit, we create an Object to store a reference to the entity hit, the point in space the hit happened.</li>
+    <li>If there was a hit, we change the innerHTML for the 'selected' element to the name of the entity we clicked.  If there is no hit, we change it to 'Nothing'.</li>
 </ol>
 
 As always, anything we create in the setup, we destroy in the cleanup, so we remove the callback for clicking.
