@@ -3,6 +3,13 @@ layout: home
 title: Search
 subtitle: Search tutorials and manuals
 ---
+<style>
+.gsc-control-cse * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: content-box;
+}
+</style>
 <script>
   (function() {
     var cx = '011728574530201801542:_tfj4i2witk';
