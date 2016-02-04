@@ -48,8 +48,9 @@
 			<a href="http://create.goocreate.com" class="btn btn-primary navbar-btn navbar-right">Launch Create</a>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="{% if page.url == "/" %}active{% endif %}"><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+				<li class="{% if page.url == "/search" %}active{% endif %}"><a href="{{ "/search" | prepend: site.baseurl }}">Search</a></li>
 				<li class="{% if page.url contains "/tutorials" %}active{% endif %}"><a href="{{ "/tutorials" | prepend: site.baseurl }}">Tutorials</a></li>
-				<li class="{% if page.url contains "/manual" %}active{% endif %}"><a href="{{ "/manual" | prepend: site.baseurl }}">User Manual</a></li>
+				<li class="{% if page.url contains "/manual" %}active{% endif %}"><a href="{{ "/manual" | prepend: site.baseurl }}">Manual</a></li>
 				<li><a href="http://code.gooengine.com/latest/docs">Scripting API</a></li>
 				<li><a href="http://forum.goocreate.com">Forum</a></li>
 			</ul>
