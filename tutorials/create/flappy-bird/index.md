@@ -4,7 +4,13 @@ title: Flappy Bird game
 weight: 1003
 indent: 1
 ---
-Flappy Bird is a simple (and popular) game. Let's remake it in Goo Create! The aim with this tutorial is to give you an idea how the game can be built, so you can do it too. We made sure that the game uses as little scripting as possible to make it simpler for everyone.
+Flappy Bird is a simple (and popular) game. Let's remake it in Goo Create!
+
+The aim with this tutorial is to give you an idea how the game can be built, so you can do it too. We will look at how to set up a 2D pixel
+
+We made sure that the game uses as little scripting as possible to make it simpler for everyone. If you're a beginner and get stuck, please have a look inside the Create scene, and hopefully you can get past your problems!
+
+Prerequisities: It's assumed you know how to make basic Create scenes, and simple scripts. You should also have some knowledge in how the state machine works.
 
 * [Play the finished game](https://c1.goote.ch/bb3eea5c7dfe4b3b85fbcd9d7e6eddb5.scene)
 * [Open scene in Goo Create](https://create.goocreate.com/edit/bb3eea5c7dfe4b3b85fbcd9d7e6eddb5.scene)
@@ -20,7 +26,7 @@ Start off by creating the scene. Use the *Empty scene* template. We don't need a
 
 Create a fixed camera and set it as *Main Camera*. Set the camera projection mode to parallel (2D). Move it to z=10, and make sure it's looking at the origin, where we will create our game stage. You can now delete the *Default camera* entity, since we won't use it.
 
-Set the frustum size to 1 (no reason really, but it's easy to remember). The height of the viewport will correspond to 256 pixels in the flappy game world (yes, I counted the pixels from top to bottom in the Flappy Bird game). Given this setup, an object in the scene will have the size of a pixel, if it's size is 1/256.
+Set the camera frustum size to 1 (no reason really, but it's easy to remember). The height of the viewport will correspond to 256 pixels in the flappy game world (yes, I counted the pixels from top to bottom in the Flappy Bird game). Given this setup, an object in the scene will have the size of a pixel, if it's size is 1/256.
 
 
 ## Sprites
@@ -31,17 +37,16 @@ The flappy bird spritesheet looks like this.
 
 We will create many small sprite textures from this single image. Let's start off with the logotype as an example.
 
-Note that the position of the logotype in the sprite sheet is (146,61) and its size is 96x22 pixels. The total size of the sprite sheet is 453x256.
+Note that the position of the logotype in the sprite sheet is (146,61) and its size is 96x22 pixels. The total size of the sprite sheet is 453x256. You can use your favorite image viewing/manipulating software to measure this.
 
-1. Create a Quad from the Create menu at top.
+1. Create a Quad from the Create menu at top and name it "Logo".
 2. Set the scale of the logo entity to 0.375 (96 / 256) in X direction and 0.0859375 (22 / 256) in Y.
 3. Open the Material component panel of the entity and drop the spritesheet image in the diffuse channel.
 4. Set material diffuse color to white, specular to black, and ambient to white.
-5. Rename the Material to “Logo material”.
-6. Open the Material, and set its name to "Logo material".
-7. Open the Texture (select it from the asset bin or click its thumbnail on the diffuse channel, where you dropped it).
-8. Set the repeat to 0.2119205298013245 (96/453), 0.0859375 (22/256) and texture offset to 0.32229580573951433 (146/453), 0.23828125 (61/256).
-9. To get the pixelated effect, we need to set MagFilter to NearestNeighbor and MinFilter to NearestNeighborNoMipMaps. Uncheck "Generate Mipmaps" since these aren't necessary.
+5. Open the Material, and set its name to "Logo material".
+6. Open the Texture (select it from the asset bin or click its thumbnail on the diffuse channel, where you dropped it).
+7. Set the repeat to 0.2119205298013245 (96/453), 0.0859375 (22/256) and texture offset to 0.32229580573951433 (146/453), 0.23828125 (61/256).
+8. To get the pixelated effect, we need to set MagFilter to NearestNeighbor and MinFilter to NearestNeighborNoMipMaps. Uncheck "Generate Mipmaps" since these aren't necessary.
 
 You are now done with the logotype sprite entity!
 
@@ -56,13 +61,30 @@ To create another sprite at position (x,y) with size (w,h) in the spritesheet, f
 5. Set the texture UV repeat to (w/453, h/256) and offset to (x/453, y/256).
 
 
+## Physics
+
+The bird has a sphere collider and the rest of the physics-enabled entities have box colliders. In between the pipes, I put a box collider that acts as a trigger, to be able to count points. A state machine on this trigger uses the *TriggerLeave* action to detect when the bird flies through it, and emits a "point" event when this happens.
+
+The only rigid body in the scene is on the bird. The others don't really need dynamics.
+
+![](flappy-physics.png)
+
+On the bird rigid body entity, there's a script listening for taps in play mode. When this happens, we set the velocity of the bird to 0.6 in the up direction:
+
+{% highlight js %}function flap(){
+  ctx.entity.rigidBodyComponent.setVelocity(new goo.Vector3(0,0.6,0));
+}{% endhighlight %}
+
+The reason we *set* the velocity and don't *add an impulse* is because we always want the bird to fly up at the same speed, no matter what velocity it has when tapping.
+
+
 ## Sprite Animation
 
-Since Goo Create dont support sprite animation, we'll do this manually via a script. Let's start with the flapping animation of the bird. Create the 3 sprites needed from the spritesheet. Put all of them as children to an empty entity. Duplicate the first sprite. Name them Bird 1-4. We will now make a script that only shows one sprite at a time, and switches sprite at a given speed.
+Since Goo Create dont support sprite animation, we'll do this manually via a script. Let's start with the flapping animation of the bird. Create the 3 sprites needed from the spritesheet. Put all of them as children to an empty entity. Duplicate the first sprite, and so you have 4 child entities. Name them Bird 1-4 in the correct animation order. We will now make a script that only shows one sprite at a time, and switches sprite at a given speed.
 
 <img src="flappy-frames.png"/>
 
-When the script is on the entity, it looks like this in perspective mode versus parallel mode:
+When the script runs on the parent entity, it looks like this in perspective mode versus parallel mode:
 
 <img src="flappy-animation-perspective.gif" style="width:300px;display:inline-block"/><img src="flappy-animation-parallel.gif" style="width:300px;display:inline-block"/>
 
@@ -95,21 +117,6 @@ var parameters = [{
 }];{% endhighlight %}
 
 
-## Physics
-
-The bird has a sphere collider and the rest of the physics-enabled entities have box colliders. In between the pipes, I put a box collider that acts as a trigger, to be able to count points. A state machine on this trigger uses the *TriggerLeave* action to detect when the bird flies through it, and emits a "point" event when this happens.
-
-The only rigid body in the scene is on the bird. The others don't really need dynamics.
-
-![](flappy-physics.png)
-
-On the bird rigid body entity, there's a script listening for taps in play mode. When this happens, we set the velocity of the bird to 0.6 in the up direction:
-
-{% highlight js %}function flap(){
-  ctx.entity.rigidBodyComponent.setVelocity(new goo.Vector3(0,0.6,0));
-}{% endhighlight %}
-
-The reason we *set* the velocity and don't *add an impulse* is because we always want the bird to fly up at the same speed, no matter what velocity it has when tapping.
 
 ## Game state
 
@@ -117,7 +124,11 @@ The game has only 4 major states:
 
 <img src="flappy-states.png"/>
 
-To keep track of them globally, I made a state machine on the Camera entity, and added these states. I made sure that whenever a state is entered (or exited), an event is emitted (using the *Emit Message Action*). For example, when the start screen is entered, a "start" event is emitted. When the start screen is left, a "leave_start" event is emitted. This strategy makes it really simple to create re-usable state machine behaviors. For example, to make the logotype only show on the start screen, we can create this simple Behavior:
+To keep track of them globally, I made a state machine on the Camera entity, and added these states. I made sure that whenever a state is entered (or exited), an event is emitted (using the *Emit Message Action*). For example, when the start screen is entered, a "start" event is emitted. When the start screen is left, a "leave_start" event is emitted.
+
+<img src="flappy-game-state.png"/>
+
+This strategy makes it really simple to create re-usable state machine behaviors. For example, to make the logotype only show on the start screen, we can create this simple Behavior:
 
 <img src="show-on-start-behavior.png" style="max-width:400px"/>
 
