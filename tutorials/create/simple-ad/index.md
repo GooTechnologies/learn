@@ -6,6 +6,10 @@ indent: 1
 ---
 In this tutorial we will show how to make a customized 300x250 Spinning Cube ad in Goo Create, starting from a template.
 
+**Audience**: the tutorial is made for ad unit makers, who want to make their first 3D ad in Goo Create.
+
+**Prerequisities**: It's assumed that you have a PRO or Enterprise Goo Create account. See [pricing](http://goocreate.com/pricing/).
+
 ## Create the scene
 
 1. Start Goo Create by opening [create.goocreate.com](https://create.goocreate.com) in your browser.
@@ -21,7 +25,9 @@ In this tutorial we will show how to make a customized 300x250 Spinning Cube ad 
 
 Now let's customize the ad. We will add our own brand on all sides of the spinning cube.
 
-We recommend that you use a square texture that is of size 128x128, 256x256 or 512x512 for this ad. Since we won't use alpha/transparency, we recommend the JPG file format.
+We recommend that you use a square texture that is of size 128x128, 256x256 or 512x512 for this ad. Since we won't use alpha/transparency, we recommend the JPG file format. If you don't have one, use the one below.
+
+![](goo.png)
 
 Select one of the CubeSide entities. Open its *Material* panel to the left. Find the image file on your computer, and drag-drop it onto the Material panel, in the *Ambient* slot. Adjust the *Ambient Color* until the ad looks good. Do this for all of the cube sides.
 
@@ -35,7 +41,7 @@ Fantastic. Press play and see your ad in action.
 
 ## Add a thumbnail
 
-Before we make this into an ad, it is recommended to set a thumbnail for the ad, which will be shown to the user while the ad is loading.
+Before we make this into an ad, it is recommended to set a thumbnail for it, which will be shown to the user while the ad is loading.
 
 Click on the top node in the hierarchy, which has the scene title. Open the scene panel to the left. Click "take screenshot" if you want to take a screenshot and set it as thumbnail. Or upload a custom image. The thumbnail should be the same size as your ad unit size. In our case, 300x250.
 
