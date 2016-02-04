@@ -1,6 +1,6 @@
 ---
 layout: manual
-title: HTML 3D
+title: HTML3D
 weight: 1600
 indent: 3
 layout: manual
