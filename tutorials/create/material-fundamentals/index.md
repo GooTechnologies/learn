@@ -13,6 +13,13 @@ Let’s get right in to it!
 
 For this tutorial, the focus will be on Diffuse, Specular, Emissive and Ambient. A cool Sci-Fi ball will be created. As this is the Material fundamentals a few areas will be left for future tutorials. 
 
+The resources used are these 4 images. Save these to disk by right-clicking and choosing "Save image as...".
+
+<a href="diffuse.jpg"><img src="diffuse.jpg" width="200" height="200" style="display:inline-block"/></a>
+<a href="specular.jpg"><img src="specular.jpg" width="200" height="200" style="display:inline-block"/></a>
+<a href="emissive.jpg"><img src="emissive.jpg" width="200" height="200" style="display:inline-block"/></a>
+<a href="ambient.jpg"><img src="ambient.jpg" width="200" height="200" style="display:inline-block"/></a>
+
 ![](2.png)
 
 This is the basic look of the different properties in the Material Component. A color channel where you can select the color value of the property and then the texture input where you add 2d images to be placed on the model. Use the eye icon to disable the color. Note that the default color varies between the properties. Also remember that changing the color input will tint the texture with the selected color. 
@@ -73,4 +80,16 @@ Next up, the Ambient property, used mainly for the base lighting of an object, a
 
 Great job, you have mastered the Material fundamentals. Below you can interact with the outcome of this tutorial.
 
-<iframe id="advanced_iframe" name="advanced_iframe" src="https://c1.goote.ch/f1ab4e20f8484a39a02e2e38fa7a6423.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
+<iframe id="advanced_iframe" allowfullscreen webkitallowfullscreen mozallowfullscreen name="advanced_iframe" src="https://c1.goote.ch/b9379f3a4b6947b19ca1d5c397cbd0ab.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
+
+<p>
+	<center>
+		<a class="btn btn-primary btn-lg" href="https://create.goocreate.com/edit/b9379f3a4b6947b19ca1d5c397cbd0ab.scene">Open scene in Create</a>
+	</center>
+</p>
+
+## Extra, for the curious reader
+
+Here's a normal map! See if you can find the right place for it, in your material panel!
+
+<a href="normal.jpg"><img src="normal.jpg" width="200" height="200" style="display:inline-block"/></a>
