@@ -3,6 +3,7 @@ layout: tutorial
 title: Simple Ad
 weight: 1041
 indent: 1
+difficulty_overall: 0
 ---
 In this tutorial we will show how to make a customized 300x250 Spinning Cube ad in Goo Create, starting from a template.
 

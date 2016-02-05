@@ -3,6 +3,7 @@ layout: tutorial
 title: Multiplayer FPS
 weight: 1999
 indent: 1
+contains_video: true
 ---
 Today we'll have a look a few interesting topics and techniques involved in crafting a multiplayer first-person-shooter game using Goo Create and Node.js. Here's what the gameplay looks like!  
 
