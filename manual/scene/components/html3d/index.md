@@ -32,3 +32,11 @@ To embed an iframe, simply use the following HTML for your HTML 3D component (ju
 {% endhighlight %}
 
 [![](html3d-laptop.png)](https://create.goocreate.com/edit/b929e6a22cd44edebf26b0f32cdc3848.scene)
+
+### Embed a YouTube video
+
+Go to a YouTube video, click *Share*, then *Embed*, and copy the embed code. Paste it into your HTML3D component.
+
+{% highlight html %}
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/qpQFfMofc1I" frameborder="0" allowfullscreen></iframe>
+{% endhighlight %}
