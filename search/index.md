@@ -22,4 +22,4 @@ subtitle: Search tutorials and manuals
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:search queryParameterName="q"></gcse:search>
+<gcse:search queryParameterName="q" linktarget="_self"></gcse:search>
