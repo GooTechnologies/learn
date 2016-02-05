@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: HTML3D
-weight: 1600
+weight: 2701
 indent: 3
 layout: manual
 ---
@@ -20,3 +20,15 @@ The technique behind the HTML 3D component is as follows. The WebGL canvas is pu
 ![](html3d-tech.jpg)
 
 The most prominent limitation is that you cannot use transparency in your HTML. Since there's nothing behind the 3D DOM element, you will see empty background behind it.
+
+## Common use cases
+
+### Embed an iframe
+
+To embed an iframe, simply use the following HTML for your HTML 3D component (just replace the URL).
+
+{% highlight html %}
+<iframe src="https://en.wikipedia.org/wiki/WebGL" width="100%" height="100%"></iframe>
+{% endhighlight %}
+
+[![](html3d-laptop.png)](https://create.goocreate.com/edit/b929e6a22cd44edebf26b0f32cdc3848.scene)
