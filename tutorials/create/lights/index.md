@@ -4,22 +4,30 @@ title: Lights
 weight: 1006
 indent: 1
 ---
-<img src="Introduction to Lights (COMPLETE).001.jpg" />
-<img src="Introduction to Lights (COMPLETE).002.jpg" />
-<img src="Introduction to Lights (COMPLETE).003.jpg" />
-<img src="Introduction to Lights (COMPLETE).004.jpg" />
-<img src="Introduction to Lights (COMPLETE).005.jpg" />
-<img src="Introduction to Lights (COMPLETE).006.jpg" />
-<img src="Introduction to Lights (COMPLETE).007.jpg" />
-<img src="Introduction to Lights (COMPLETE).008.jpg" />
-<img src="Introduction to Lights (COMPLETE).009.jpg" />
-<img src="Introduction to Lights (COMPLETE).010.jpg" />
-<img src="Introduction to Lights (COMPLETE).011.jpg" />
-<img src="Introduction to Lights (COMPLETE).012.jpg" />
-<img src="Introduction to Lights (COMPLETE).013.jpg" />
-<img src="Introduction to Lights (COMPLETE).014.jpg" />
-<img src="Introduction to Lights (COMPLETE).015.jpg" />
-<img src="Introduction to Lights (COMPLETE).016.jpg" />
-<img src="Introduction to Lights (COMPLETE).017.jpg" />
-<img src="Introduction to Lights (COMPLETE).018.jpg" />
-<img src="Introduction to Lights (COMPLETE).019.jpg" />
+
+![](01.jpg)
+
+<p>
+	<center>
+		<a class="btn btn-primary btn-lg" href="https://create.goocreate.com/edit/00798aaa4ebb45549ec6765008a394fa.scene">Open scene in Create</a>
+	</center>
+</p>
+
+![](02.jpg)
+![](03.jpg) 
+![](04.jpg)
+![](05.jpg)
+![](06.jpg)
+![](07.jpg)
+![](08.jpg)
+![](09.jpg)
+![](10.jpg)
+![](11.jpg)
+![](12.jpg)
+![](13.jpg)
+![](14.jpg)
+![](15.jpg)
+![](16.jpg)
+![](17.jpg)
+![](18.jpg)
+![](19.jpg)
