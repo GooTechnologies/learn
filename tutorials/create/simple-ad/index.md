@@ -9,13 +9,13 @@ In this tutorial we will show how to make a customized 300x250 Spinning Cube ad 
 
 **Audience**: the tutorial is made for ad unit makers, who want to make their first 3D ad in Goo Create.
 
-**Prerequisities**: It's assumed that you have a PRO or Enterprise Goo Create account. See [pricing](http://goocreate.com/pricing/).
+**Prerequisities**: It's assumed that you have a Pro or Enterprise Goo Create account. See [pricing](http://goocreate.com/pricing/).
 
 ## Create the scene
 
 1. Start Goo Create by opening [create.goocreate.com](https://create.goocreate.com) in your browser.
 2. Click "New Scene"
-3. Choose the "Spinning Cube Ad" template
+3. Choose the "6-sided Spinning Cube Ad" template
 4. Enter your ad name and click Create.
 
 ![](create-scene-from-ad-template.png)
@@ -30,11 +30,11 @@ We recommend that you use a square texture that is of size 128x128, 256x256 or 5
 
 ![](goo.png)
 
-Select one of the CubeSide entities. Open its *Material* panel to the left. Find the image file on your computer, and drag-drop it onto the Material panel, in the *Ambient* slot. Adjust the *Ambient Color* until the ad looks good. Do this for all of the cube sides.
+Select one of the "CubeSide" entities, in the *Hierarchy* to the right. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow. When you've selected the "CubeSide" entity, open its *Material* panel to the left. Find the image file you want to use on your computer, and drag-and-drop it onto the Material panels' *Ambient Texture* slot. Adjust the *Ambient Color* until the ad looks good. Do this for all of the cube sides.
 
 ![](drop-on-cube-side.jpg)
 
-The cube will look something like this when done:
+The cube will look something like this when done, after adjusting the Ambient color:
 
 ![](branded-hyper-cube.png)
 
@@ -50,7 +50,7 @@ Click on the top node in the hierarchy, which has the scene title. Open the scen
 
 ## Get the script tag for the ad: the Publisher App
 
-Open the ad publisher by Clicking *Scene* and then *Serve Ad...*.
+Open the ad publisher by Clicking *Scene* and then *Serve Ad...*. Note that this menu item don't appear unless you have a [Pro or Enterprise account](http://goocreate.com/pricing).
 
 While in the Ad Publisher app, enter the dimensions for the ad (Width = 300 and Height = 250). Choose *Cover image* as fallback and loading background. This will view our thumbnail when there's no WebGL available, and when the ad is loading.
 
@@ -64,7 +64,7 @@ When you're done with the settings, click *Get Script Tag*. A dialog will open w
 
 ## Embedding the script tag
 
-As an example we will embed the script tag in a simple HTML web page. See the code and result below.
+As an example we will embed the script tag in a simple HTML web page. See the full code and result below.
 
 {% highlight html %}
 <html>
