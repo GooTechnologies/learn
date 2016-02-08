@@ -3,7 +3,7 @@ layout: tutorial
 title: Events
 indent: 1
 weight: 1042
-overall_difficulty: 0
+difficulty_overall: 0
 contains_video: true
 ---
 *Events* is a way to communicate across state machines, timelines and scripts. It's useful when building interactive apps. This tutorial will walk you through how to use events in Goo Create.
