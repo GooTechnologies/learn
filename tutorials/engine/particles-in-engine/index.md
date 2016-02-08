@@ -3,6 +3,7 @@ layout: tutorial
 title: Particles in Goo Engine
 weight: 2010
 indent: 1
+overall_difficulty: 1
 ---
 <p style="color: #363b40">In this tutorial we will learn how to put particles on the screen.</p>
 

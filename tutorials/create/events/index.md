@@ -3,11 +3,11 @@ layout: tutorial
 title: Events
 indent: 1
 weight: 1042
-overall_difficulty: 1
+overall_difficulty: 0
 ---
 *Events* is a way to communicate across state machines, timelines and scripts. It's useful when building interactive apps. This tutorial will walk you through how to use events in Goo Create.
 
-The tutorial assumes that you are somewhat familiar with the State Machine, so you might want to have a look at the [State Machine tutorial]({{ '/tutorials/create/system-bus' | prepend: site.baseurl }}) first.
+The tutorial assumes that you are somewhat familiar with the State Machine, so you might want to have a look at the [State Machine tutorial]({{ '/tutorials/create/state-machine' | prepend: site.baseurl }}) first.
 
 In this tutorial we will make a Box entity rotate when we click a Sphere.
 

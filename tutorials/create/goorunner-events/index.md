@@ -4,6 +4,7 @@ title: GooRunner events
 weight: 1045
 indent: 1
 prerequisities: /tutorials/create/dom-events/index.html
+overall_difficulty: 2
 ---
 <iframe src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/"></iframe>
 
