@@ -4,6 +4,7 @@ title: Events
 indent: 1
 weight: 1042
 overall_difficulty: 0
+contains_video: true
 ---
 *Events* is a way to communicate across state machines, timelines and scripts. It's useful when building interactive apps. This tutorial will walk you through how to use events in Goo Create.
 
@@ -12,6 +13,12 @@ The tutorial assumes that you are somewhat familiar with the State Machine, so y
 In this tutorial we will make a Box entity rotate when we click a Sphere.
 
 ![](events.gif)
+
+## Video
+
+If you'd like to follow the video tutorial, click play below:
+
+<iframe src="https://www.youtube.com/embed/3g07yzQi8EA" allowfullscreen></iframe>
 
 ## Before we start: What is an event?
 
