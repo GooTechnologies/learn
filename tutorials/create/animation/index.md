@@ -3,6 +3,7 @@ layout: tutorial
 title: Animation
 weight: 1010
 indent: 1
+difficulty_overall: 1
 ---
 ![](1.jpg)
 

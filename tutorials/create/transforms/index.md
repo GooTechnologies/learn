@@ -3,6 +3,7 @@ layout: tutorial
 title: Scripting Transformations
 weight: 1041
 indent: 1
+difficulty_overall: 1
 ---
 Transforms are fundamental to computer graphics, and this tutorial will talk briefly about what a transform is, how it's constructed and how the transform component in Goo Create works and is used.
 

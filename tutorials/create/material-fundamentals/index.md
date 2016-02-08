@@ -3,6 +3,7 @@ layout: tutorial
 title: Material fundamentals
 weight: 1002
 indent: 1
+difficulty_overall: 0
 ---
 
 What is a project without colours or textures? Not much, to get more life into your scenes it is important to know the fundamentals of the powerful and essential Material Component.

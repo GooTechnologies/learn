@@ -3,6 +3,7 @@ layout: tutorial
 title: Flappy Bird game
 weight: 1003
 indent: 1
+difficulty_overall: 2
 ---
 Flappy Bird is a simple (and popular) game. Let's remake it in Goo Create!
 

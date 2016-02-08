@@ -3,6 +3,7 @@ layout: tutorial
 title: Physics Part 1
 weight: 1200
 indent: 1
+difficulty_overall: 1
 ---
 Hello and welcome to the "Basic Physics in Goo Create" tutorial.
 

@@ -10,7 +10,7 @@ contains_video: true
   Your browser does not support the video tag.
 </video>
 
-The above video shows you how to go from the dashboard in Create to a normal mapped and shiny rotating sphere, which is published to the Goo cloud. The used texture resources are provided below.
+The above video shows you how to go from the dashboard in Create to a normal mapped and shiny rotating sphere, which is published to the Goo cloud. The used texture resources are provided below. Right click and choose "Save image as..." to save the image to disk.
 
 <img src="chesterfield-color.png" style="width:200px; height: 200px">
 <img src="chesterfield-normal.png" style="width:200px; height: 200px">

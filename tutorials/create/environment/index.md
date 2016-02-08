@@ -3,6 +3,7 @@ layout: tutorial
 title: Environment
 weight: 1003
 indent: 1
+difficulty_overall: 0
 ---
 
 ![](1.jpg)
