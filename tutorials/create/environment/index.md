@@ -8,7 +8,7 @@ difficulty_overall: 0
 
 ![](1.jpg)
 
-The ENVIRONMENT tab is an essential part of Create. For those of you coming from an art background, this tab would roughly constitute the negative space of your scene. Everything surrounding your 3D objects is defined here, and it can also have a lot of influence of how your objects are shown. We'll start by opening the ENVIRONMENT tab.
+The ENVIRONMENT tab is an essential part of Create. For those of you coming from an art background, this tab would roughly constitute the negative space of your scene. Everything surrounding your 3D objects is defined here, and it can also have a lot of influence of how your objects are shown. We'll start by opening the ENVIRONMENT tab to the left.
 
 ![](2.jpg)
 
@@ -16,7 +16,7 @@ Let's take it from the top. The BACKGROUND part lets you set the color of the ba
 
 ![](3.jpg)
 
-The color field works very much like the color fields in the material editor. Simply click the box to open the color picker, and chose your new background color! Displayed here is a favourite of mine; cyan. Very Sci-Fi!
+The color field works very much like the color fields in the material editor. Click the box to open the color picker, and choose your new background color! Displayed here is a favourite of mine; cyan. Very Sci-Fi!
 
 ![](4.jpg)
 
@@ -24,7 +24,7 @@ The opacity slider found just below the background only influences published pro
 
 ![](5.jpg)
 
-The SKYBOX is where things get a bit more interesting. The Color only lets you chose a single color as the background, but the skybox can be anything you want! In simple terms, a skybox can be described as a (virtually) infinitely large box, that you only see the inside of. On this box, you can project a texture of your choice! Let's learn by doing; click on CREATE SKYBOX and turn the page.
+The SKYBOX is where things get a bit more interesting. The Color only lets you choose a single color as the background, but the skybox can be anything you want! In simple terms, a skybox can be described as a (virtually) infinitely large box, that you only see the inside of. On this box, you can project a texture of your choice! Let's learn by doing; click on CREATE SKYBOX and turn the page.
 
 ![](6.jpg)
 
@@ -73,8 +73,7 @@ in the scene. Note that it will not have any effect on the skybox/skysphere.
 
 ![](13.jpg)
 
-Fog is a nice way to help set the mood and atmosphere of a scene. Check the box for it and you can set the color and
-range of the fog. 
+Fog is a nice way to help set the mood and atmosphere of a scene. Check the box for it and you can set the color and range of the fog. Note that you need to have a visible entity in the scene to see the fog effect.
 
 ![](14.jpg)
 

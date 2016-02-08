@@ -12,7 +12,7 @@ In order to begin this tutorial, click on the link above this slideshow and dupl
 
 <p>
 	<center>
-		<a class="btn btn-primary btn-lg" href="https://create.goocreate.com/edit/00798aaa4ebb45549ec6765008a394fa.scene">Open scene in Create</a>
+		<a class="btn btn-primary btn-lg" target="_blank" href="https://create.goocreate.com/edit/00798aaa4ebb45549ec6765008a394fa.scene">Open scene in Create</a>
 	</center>
 </p>
 

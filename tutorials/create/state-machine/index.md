@@ -5,6 +5,7 @@ weight: 1004
 indent: 1
 difficulty_overall: 0
 ---
+Note: This tutorial uses *Lights*, so you may be interested in reading the [Lights tutorial]({{ '/tutorials/create/lights' | prepend: site.baseurl }}) first.
 
 ![](1.jpg)
 

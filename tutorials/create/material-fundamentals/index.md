@@ -12,7 +12,7 @@ Let’s get right in to it!
 
 ![](1.png)
 
-For this tutorial, the focus will be on Diffuse, Specular, Emissive and Ambient. A cool Sci-Fi ball will be created. As this is the Material fundamentals a few areas will be left for future tutorials. 
+For this tutorial, the focus will be on *Diffuse*, *Specular*, *Emissive* and *Ambient*. A cool Sci-Fi ball will be created. As this is the Material fundamentals a few areas will be left for future tutorials. 
 
 The resources used are these 4 images. Save these to disk by right-clicking and choosing "Save image as...".
 
@@ -23,13 +23,17 @@ The resources used are these 4 images. Save these to disk by right-clicking and 
 
 ![](2.png)
 
-This is the basic look of the different properties in the Material Component. A color channel where you can select the color value of the property and then the texture input where you add 2d images to be placed on the model. Use the eye icon to disable the color. Note that the default color varies between the properties. Also remember that changing the color input will tint the texture with the selected color. 
+This is the basic look of the different properties in the *Material Component*. A color channel where you can select the color value of the property and then the texture input where you add 2d images to be placed on the model. Use the eye icon to disable the color. Note that the default color varies between the properties. Also remember that changing the color input will tint the texture with the selected color. 
 
 ## Start from a clean slate
 
 ![](3.png)
 
-Start by creating a new scene and delete the “default light” from the hierarchy, this is the default light setup which is not wanted for this exercise. Then simply create sphere from the + CREATE menu, adjust all the properties in the Material Component so the color channels are set to black. The sphere should be completely black and without any lights in the scene. 
+Start by creating a new scene and delete the “default light” from the hierarchy, this is the default light setup which is not wanted for this exercise.
+
+Then simply create sphere from the *Create dialog* that you can reach from button at top.
+
+Adjust all the properties in the *Material Component* so the color channels are set to black. The sphere should be completely black and without any lights in the scene.
 
 ## Add a light
 
@@ -85,7 +89,7 @@ Great job, you have mastered the Material fundamentals. Below you can interact w
 
 <p>
 	<center>
-		<a class="btn btn-primary btn-lg" href="https://create.goocreate.com/edit/b9379f3a4b6947b19ca1d5c397cbd0ab.scene">Open scene in Create</a>
+		<a class="btn btn-primary btn-lg" target="_blank" href="https://create.goocreate.com/edit/b9379f3a4b6947b19ca1d5c397cbd0ab.scene">Open scene in Create</a>
 	</center>
 </p>
 

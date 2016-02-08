@@ -1,148 +1,76 @@
 ---
 layout: tutorial
-title: System Bus
+title: Events
 indent: 1
 weight: 1042
+overall_difficulty: 1
 ---
-The SystemBus, a global instance of the [Bus class](http://code.gooengine.com/latest/docs/index.html?c=Bus), provides a way to communicate across scripts, state machines, and timelines. It's an event-driven mechanism which can be really useful when building interactive apps. This tutorial will provide some basic examples of its use.
+*Events* is a way to communicate across state machines, timelines and scripts. It's useful when building interactive apps. This tutorial will walk you through how to use events in Goo Create.
 
-## Emitting a Message
+The tutorial assumes that you are somewhat familiar with the State Machine, so you might want to have a look at the [State Machine tutorial]({{ '/tutorials/create/system-bus' | prepend: site.baseurl }}) first.
 
-The most basic message consists of only a **channel name**, represented by a string. This string is typically used to indicate that something happened, and does not imply any particular effect of the event. It's just a way for something to say "_this just happened, and whoever is listening may react however they wan_t"! This way of thinking aligns with the [DOM Event Mode](https://developer.mozilla.org/en/docs/Web/API/Event)l, where for example events such as _mouseup_, _keydown_, _mousemove_, etc are emitted when a user interacts with the browser , and it's up to the listeners do decide what to to with the information. Here's a simple example, emitting a message (roughly) every second:
+In this tutorial we will make a Box entity rotate when we click a Sphere.
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-	ctx.interval = 1;
-	ctx.lastUpdate = ctx.world.time;
-}
+![](events.gif)
 
-var update = function(args, ctx, goo) {
-	var delta = ctx.world.time - ctx.lastUpdate;
-	if (delta > ctx.interval) {
-		goo.SystemBus.emit('it_is_time');
-		ctx.lastUpdate = ctx.world.time;
-	}
-};
-{% endhighlight %}
+## Before we start: What is an event?
 
-## Listening to a Channel
+A basic event consists of a *name*. This name is used to indicate that something happened. For example, if you make a button entity, you can make it emit a ```"buttonClicked"``` event when it's clicked. Other entities can listen to this event and react to it as they want.
 
-Any script or state in the State Machine can listen to a channel, and do whatever it wants with the information. Using the "it_is_time" channel from the example above, we can for example rotate an entity every time it happens. Note that this script can be placed on a different entity than the first one, **everything in the same scene uses the same bus!**
+An event can also carry more information about the event, such as *which* or *how* button was clicked. But for most applications, the event name is good enough.
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-	ctx.rotate = function() {
-		ctx.entity.addRotation(0, 0.1, 0);
-	};
-	goo.SystemBus.addListener('it_is_time', ctx.rotate);
-};
+In our tutorial we will use a ```"sphereClicked"``` event, to indicate when the sphere is clicked.
 
-var cleanup = function(args, ctx, goo) {
-	goo.SystemBus.removeListener('it_is_time', ctx.rotate);
-};
-{% endhighlight %}
 
-Note that we **must remove the listeners we create**, otherwise we'd get duplicates every time we press play!
+## Set up the scene
 
-## Sending Data in Events
+1. Go to [goocreate.com](http://goocreate.com) and log in to Goo Create.
+2. From the Dashboard, create a new Empty scene.
+3. Open the Create dialog by clicking *Create* at the top.
+4. Choose "Sphere".
+5. Create a Box by repeating steps 3 and 4, but instead choosing "Box".
+6. Position the box and sphere so they don't overlap. Use either the Transform panel or mouse drag the gizmos in the viewport.
 
-In addition to the channel name, we can send an Object with the emitted events. If we for example were sending messages every time entities in our scene collides, we could send the names of the colliding entities and the point of collision with the event. Expanding on the previous example, we can add some more code to let our time ticker send some extra data, and have the listening entity react to some of this data:
+When you're done, your scene will look something like this:
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-	ctx.interval = 1;
-	ctx.lastUpdate = ctx.world.time;
-}
+![](sphere-box.png)
 
-var update = function(args, ctx, goo) {
-	var delta = ctx.world.time - ctx.lastUpdate;
-	if (delta > ctx.interval) {
-		var data = {
-			delta: delta,
-			parity: (Math.floor(ctx.world.time) % 2 === 0) ? "even" : "odd",
-		};
-		goo.SystemBus.emit('it_is_time', data);
-		ctx.lastUpdate = ctx.world.time;
-	}
-};
-{% endhighlight %}
 
-The listening entity:
+## Emitting an event from the Sphere
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-	ctx.rotate = function(data) {
-		if (data.parity === 'even') {
-			ctx.entity.addRotation(0, 0.1, 0);
-		} else if (data.parity === 'odd') {
-			ctx.entity.addRotation(0.1, 0, 0);
-		}
-	};
-	goo.SystemBus.addListener('it_is_time', ctx.rotate);
-};
+You can use the State machine to emit an event. Add the "Emit Message" action to a state and it will emit the message when the State is entered.
 
-var cleanup = function(args, ctx, goo) {
-	goo.SystemBus.removeListener('it_is_time', ctx.rotate);
-};
-{% endhighlight %}
+To emit an event in a Script, you would use [goo.SystemBus.emit](http://code.gooengine.com/latest/docs/index.html?c=Bus). This is not needed in our tutorial, but it's good to know.
 
-The above additions sends some data about the event (whether the world time seconds are even or odd, and what the actual delta is), and the listening entity recieves this data and decides how to act on it.
+We want the Sphere to emit a ```"sphereClicked"``` event when it is clicked, so we do the following:
 
-## Using the Bus to Trigger State Machine Transitions
+1. Add a *State Machine Component* to the sphere.
+2. Add a *Behavior* to the State Machine. Name it "Emit on click".
+3. Open the Behavior, and rename the initial state to "Listen for pick".
+4. Add a *Pick action* to the initial state.
+5. Create a second state, name it "Emit Event".
+6. Add an *Emit action* to the second state, and set the channel name to "sphereClicked".
+7. Connect the "to" transition of the Pick action to the second state.
 
-In Create, pretty much anything can be done with scripts. However, sometimes the State Machine provides an easier and cleaner way of doing certain things. For example, setting animations or playing sounds takes a few lines of code but is really easy to do in the State Machine. With the power of the System Bus, we can set up transitions in the State Machine and trigger them with scrips. Here's how.
+The result should look like this:
 
-### The Goon Machine
+![](sphere-behavior.png)
 
-We'll start by importing our omnipresent Goon from the Asset Library, and add a State Machine component to the entity. We'll use one single behavior with two states, Idle and Running. We'll also add some <em>set animation</em> actions on the states. Need some refreshment on your State Machine skills? Check out <a title="The State Machine" href="{{ '/tutorials/state-machine' | prepend: site.baseurl }}" target="_blank">the State Machine tutorial</a> before moving on! The Goon states will look like this:
-  
-![2014-11-11 11_42_10-Goo Create](2014-11-11-11_42_10-Goo-Create.jpg)  
 
-A good start! But let's also seize the moment and learn how to work with simple **sounds**! Let's add a sound component to the Goon and import two mp3 files, [sigh.mp3](sigh.mp3) and [run.mp3](run.mp3).
+## Listening for an event in the Box
 
-![2014-11-11 12_22_17-Goo Create](2014-11-11-12_22_17-Goo-Create.jpg)  
+Any script or state in the State Machine can listen to events, and do whatever they want to react to it.
 
-Now we'll use the State Machine to turn these on and off. Each state will have a _Sound Fade In_ action and a _Sound Fade Out_ action. The actions in the Idle state will fade **out** the run sound and fade **in** the sigh sound. The Run state will of course do the opposite. I've set all time parameters to 100 to fade in/out a little quicker than the standard 1000 ms.  
+To listen to an event using the State Machine, simply use the *Listen* action. Make sure to specify the event name correctly: ```"sphereClicked"```.
 
-![The running state fades in the corresponding sound and fades out the other one.](2014-11-11-12_25_05-Goo-Create.jpg)
+The Listen action has a "to" transition, which you can use to transition when the event happens. We will create a new State, and connect it here. In the new State, we want the box to rotate, so we add a *Rotate action*.
 
-The running state fades in the corresponding sound and fades out the other one.  
+![](box-behavior.png)
 
-Now we need to set up the transitions, and this is where the System Bus comes into play again. For both the states, we'll add a Listen action. This action will listen to the correct channel and perform a transition to another state. Note that both states will listen to the same channel!  
+To listen to events in Scripts, you would use the [goo.SystemBus.addListener](http://code.gooengine.com/latest/docs/index.html?c=Bus) method. We won't do this in this tutorial, but now you know.
 
-![The complete states, side by side](both.jpg)
+## Done!
 
-The complete states, side by side  
+You can now press Play and try to click the sphere. When clicked, it will emit the ```"sphereClicked"``` event. The Box will react to the event, and start rotating.
 
-We can use the same event triggering mechanism as before, but I suggest changing the interval to be more than a second:
-
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-	ctx.interval = 6;
-	ctx.lastUpdate = ctx.world.time;
-}
-
-var update = function(args, ctx, goo) {
-	var delta = ctx.world.time - ctx.lastUpdate;
-	if (delta > ctx.interval) {
-		var data = {
-			delta: delta,
-			parity: (Math.floor(ctx.world.time) % 2 === 0) ? "even" : "odd",
-		};
-		goo.SystemBus.emit('it_is_time', data);
-		ctx.lastUpdate = ctx.world.time;
-	}
-};
-{% endhighlight %}
-
-Note here that our State Machine does not use the data, only the channel name. We can still keep the data around in case other entities are interested! We should now be able to play our scene and have the Goon both switch animations and play different sounds. Here's a link to the published version - I've added some extra light effects using another state machine bus listener.
-
-### [Open the Scene](https://goote.ch/c27b938433b34bbc8e99c5ce8c9460c1.scene/)
-
-[![Open the Scene](2014-11-11-12_39_27-Goo-Create.jpg)](https://goote.ch/c27b938433b34bbc8e99c5ce8c9460c1.scene)
-
-Click to open! Don't forget to turn up the volume :)
-
-## Wrap-Up
-
-This was a quick intro of what can be done with the System Bus. It has a lot of use cases. One can use it to react to colissions, trigger timed events (like above), react to user input, et cetera et cetera. It's a very useful weapon to have in the Goo arsenal, and hopefully it can make your apps faster, cleaner and simpler!
+Next step is to do more complex event systems. Or emit events from the Timeline and/or Scripts. Good luck!
