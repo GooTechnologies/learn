@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'goofont';
+  src:
+    url('/fonts/goofont.ttf?wvgvbh') format('truetype'),
+    url('/fonts/goofont.woff?wvgvbh') format('woff'),
+    url('/fonts/goofont.svg?wvgvbh#goofont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.goofont {
+  display: inline-block;
+  font-family: goofont;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.goofont-icon-script:before {
+  content: "\38";
+}

@@ -3,6 +3,7 @@ layout: tutorial
 title: Solar System
 weight: 1999
 indent: 1
+contains_scripts: true
 ---
 In this tutorial, we will show you how you can use the _ScriptComponent_ to make a solar system, just like in the [Hello World engine tutorial]({{ '/tutorials/engine/engine-intro' | prepend: site.baseurl }})
 

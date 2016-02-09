@@ -4,6 +4,7 @@ title: UV Sprite Animation
 weight: 1041
 indent: 1
 difficulty_overall: 1
+contains_scripts: true
 ---
 This tutorial tells you how to make UV sprite animation via a simple script, like the following:
 

@@ -1,19 +1,22 @@
 ---
 layout: tutorial
-title: Scripting Transformations
+title: Transform Scripting
 weight: 1041
 indent: 1
 difficulty_overall: 1
+contains_scripts: true
 ---
-Transforms are fundamental to computer graphics, and this tutorial will talk briefly about what a transform is, how it's constructed and how the transform component in Goo Create works and is used.
+This tutorial will walk you through how to translate, rotate and scale objects via Scripting in Goo Create.
 
 ## Rotation, Translation and Scale
 
-A transform positions an entity and all of its vertices in space. Transforms can work in any number of dimensions, but we'll be mostly concerned about 3D transforms here. A typical 3D transform consists of three parts: Rotation, translation, and scale.
+A *Transform* positions an entity and all of its vertices in space. A typical 3D transform consists of three parts: rotation, translation, and scale.
 
 ### Translation
 
-The translation is simply a three-dimensional vector ([Vector3](http://code.gooengine.com/latest/docs/index.html?c=Vector3)) describing an entity's position as 3D coordinates *(x, y, z)*. Its default is the origin, *(0, 0, 0)*.
+The translation is simply a three-dimensional vector, describing an entity's position as 3D coordinates *(x, y, z)*. Its default value is the origin, *(0, 0, 0)*.
+
+The following script moves the entity along the X axis.
 
 {% highlight js %}
 var update = function(args, ctx) {
@@ -22,25 +25,32 @@ var update = function(args, ctx) {
 };
 {% endhighlight %}
 
-<iframe src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a/"></iframe>
+```ctx.entity.transformComponent.transform.translation``` is an instance of ```Vector3```. See the [Vector3 API](http://code.gooengine.com/latest/docs/index.html?c=Vector3).
+
+<iframe src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a"></iframe>
 
 ### Rotation
 
-The rotation is used to specify an entity's rotation around the x, y and z axes. It's represented by a *3x3 matrix* ([Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3)), called a ([rotation matrix](http://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions)). All the underlying math is actually represented by matrices and vectors! If you take a look at the Wikipedia article, you'll see that three individual matrices can be used for rotations around the axes. These three are then multiplied together to form the rotation matrix representing the total rotation. If you're familiar with linear algebra, you'll know that the order of multiplication matters! If you're not, now you're informed. Luckily, you won't have to care too much about the details if you don't want to. [The Matrix3 class](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) has plenty of useful functions. For example, ```matrix.rotateX(angle)``` which builds the correct matrix and multiplies the current rotation matrix with it for you.
+The rotation is used to specify an entity's rotation. It's represented by a *3x3 matrix*, also called a [rotation matrix](http://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions). Luckily, you won't have to care too much about the mathy details if you don't want to: Goo Engine takes care of that for you.
+
+The following script animates the entity rotation around the Y axis.
 
 {% highlight js %}
-// Super simple example
 var update = function(args, ctx) {
-	ctx.entity.transformComponent.transform.rotation.rotateY(ctx.world.tpf);
-	ctx.entity.transformComponent.setUpdated();
+    ctx.entity.transformComponent.transform.rotation.rotateY(ctx.world.tpf);
+    ctx.entity.transformComponent.setUpdated();
 };
 {% endhighlight %}
 
-<iframe src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01/"></iframe>
+<iframe src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01"></iframe>
+
+```ctx.entity.transformComponent.transform.rotation``` is an instance of ```Matrix3```. See the [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) API.
 
 ### Scale
 
-The scale is, like the translation, a three-dimensional vector. It starts as the vector *(1, 1, 1)* meaning that an entity's scale along each axis is one, unchanged. If we would use the vector *(2, 2, 2)* instead, that would mean that the entity is *twice as big in each direction*!
+The scale is, like the translation, a three-dimensional vector. Its default value is *(1, 1, 1)* meaning that the entity scale along each axis is one. If we would use the vector *(2, 2, 2)* instead, that would mean that the entity is *twice as big in each direction*.
+
+The following script animates the scale of the entity along the X direction.
 
 {% highlight js %}
 var update = function(args, ctx) {
@@ -49,13 +59,15 @@ var update = function(args, ctx) {
 };
 {% endhighlight %}
 
+```ctx.entity.transformComponent.transform.scale``` is an instance of ```Vector3```. See the [Vector3 API](http://code.gooengine.com/latest/docs/index.html?c=Vector3).
+
 <iframe src="//goote.ch/853e0744b31b6fd66ddd1a18d709439710aa0a64/"></iframe>
 
 ## The Transform
 
 ### The Transform Matrix
 
-Now when we have an understanding of the three parts above, we can grasp the transform a little better. A transform is simply a combination of a translation, a rotation and a scale. These three quantities (two vectors and one matrix) are combined into a final *transform matrix*. This matrix represents the total, combined result of the three components. The transform matrix is of size 4x4 matrix.
+Now when we have an understanding of the three parts above, we can grasp the full transform a little better. A transform is a combination of a translation, a rotation and a scale. These three quantities (two vectors and one matrix) are combined into a final *transform matrix*. This matrix represents the total, combined result of the three components. The transform matrix is of size 4x4.
 
 ### The Transform API
 

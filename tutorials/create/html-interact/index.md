@@ -1,9 +1,10 @@
 ---
 layout: tutorial
-title: HTML component interacting with scene
+title: HTML interacting with scene
 weight: 1999
 indent: 1
 overall_difficulty: 1
+contains_scripts: true
 ---
 There will be times when you may want to use an HTML Entity to do something inside your scene.  In this example, we will use a button to play a sound on an Entities SoundComponent.
 

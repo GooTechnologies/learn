@@ -3,6 +3,7 @@ layout: tutorial
 title: HTML Component Interaction
 weight: 1999
 indent: 1
+contains_scripts: true
 ---
 There may be times when you will want to click something in the scene, and have it affect the HTML Entity. This example will show how to click different things in the scene, and have it tell us the name of the entity we clicked.
 

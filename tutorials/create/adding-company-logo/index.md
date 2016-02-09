@@ -3,6 +3,7 @@ layout: tutorial
 title: Adding Company Logo
 weight: 2000
 indent: 1
+contains_scripts: true
 ---
 
 Sometimes you may want to display your own company's logotype in a published scene instead of Goo's logotype.

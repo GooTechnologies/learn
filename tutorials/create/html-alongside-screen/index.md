@@ -1,9 +1,10 @@
 ---
 layout: tutorial
-title: HTML Components alongside screen
+title: HTML alongside screen
 weight: 1999
 indent: 1
 overall_difficulty: 1
+contains_scripts: true
 ---
 This tutorial will explain how to place HTML Entities along the border of the screen.
 

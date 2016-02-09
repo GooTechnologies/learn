@@ -4,6 +4,7 @@ title: Images in HTML components
 weight: 1999
 indent: 1
 overall_difficulty: 1
+contains_scripts: true
 ---
 
 There could be times when you will want to use Images from the scene with an HTML Entity.  In this example, we will create a 'Health Bar', which will shrink or grow in size based on the current 'health' variable.

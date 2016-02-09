@@ -21,9 +21,14 @@
 						href="{{ ppage.url | prepend: site.baseurl }}"
 					>
 						{{ ppage.title }}
-						{% if ppage.contains_video %}
-							<span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-						{% endif %}
+						<div class="pull-right">
+							{% if ppage.contains_video %}
+								<span class="glyphicon glyphicon-film" aria-hidden="true" title="Video"></span>
+							{% endif %}
+							{% if ppage.contains_scripts %}
+								<span class="goofont goofont-icon-script"></style>
+							{% endif %}
+						</div>
 					</a>
 				{% endif %}
 			{% endfor %}

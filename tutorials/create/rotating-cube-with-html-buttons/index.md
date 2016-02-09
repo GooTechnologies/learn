@@ -3,6 +3,7 @@ layout: tutorial
 title: Interactive Rotating Cube
 weight: 1999
 indent: 1
+contains_scripts: true
 ---
 This tutorial will cover how to create CSS buttons and use them to rotate a model. It will also include how to make smooth animations with the TweenJS library. To get the most out of this tutorial, it is useful to know the absolute basics of Create, and also know some JavaScript and a bit of CSS. The tutorial will contain a lot of code and is broken up into five chapters, all with corresponding projects to look at:
 

@@ -3,6 +3,7 @@ layout: tutorial
 title: Rotations
 weight: 1999
 indent: 1
+contains_scripts: true
 ---
 
 This article will go over the different ways you can define and set rotations on Goo Engine entities.
