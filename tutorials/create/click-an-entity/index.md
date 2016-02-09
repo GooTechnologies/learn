@@ -4,6 +4,7 @@ title: How to click an entity
 weight: 1999
 indent: 1
 contains_scripts: true
+difficulty_overall: 1
 ---
 Problem: you want to know when an entity is clicked, so you do something when it happens. Depending on your scenario, you may need to choose a different approach.
 

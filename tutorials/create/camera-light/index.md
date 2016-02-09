@@ -3,6 +3,7 @@ layout: tutorial
 title: Camera and light
 weight: 1999
 indent: 1
+difficulty_overall: 0
 ---
 
 ![](1.jpg)

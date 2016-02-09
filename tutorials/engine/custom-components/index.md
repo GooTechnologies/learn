@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Custom Components
-weight: 2003
+weight: 2010
 indent: 1
 contains_scripts: true
 ---
@@ -21,21 +21,21 @@ Through the ECS approach, Entities are no longer confined by rigid inheritance c
 
 ## Entity
 
-The Entity is a container which stores the various Components. When you create a new Entity through 'ctx.world.createEntity()', a new Entity is created, and it is given a 'TransformComponent'. By using setComponent() and clearComponent(), you can add and remove various Components, altering the functionality of the Entity.
+The Entity is a container which stores the various Components. When you create a new Entity through ```ctx.world.createEntity()```, a new Entity is created, and it is given a 'TransformComponent'. By using ```.setComponent()``` and ```.clearComponent()```, you can add and remove various Components, altering the functionality of the Entity.
 
 ## Component
 
-The Component is an Object which holds data, and could contain utility functions to help with manipulating that data. For example, theTransformComponent stores an Entities Transform, and WorldTransform. It also comes with lots of utility functions to manipulate these two objects, such as 'setRotation', 'attachChild', 'lookAt', etc. In order for an Entity to have an orientation in the world, it needs a TransformComponent.
+The Component is an Object which holds data, and could contain utility functions to help with manipulating that data. For example, theTransformComponent stores an Entities Transform, and WorldTransform. It also comes with lots of utility functions to manipulate these two objects, such as ```.setRotation()```, ```.attachChild()```, ```.lookAt()```, etc. In order for an Entity to have an orientation in the world, it needs a TransformComponent.
 
 ## System
 
-A System has a list of 'interested' Components, and once all of those Components exist on an Entity, the System kicks in and does something with the data provided on the Component. For example, if an Entity TransformComponent has been flagged as 'dirty', the TransformSystem will go through and update all the Transforms and WorldTransforms for the entity, moving it to the new position, rotation, or scale. **A closer look at the goo.Component:** There are two optional Abstract functions for the goo.Component: attached(entity), and detached(entity). attached(entity) is called right after entity.setComponent(new ComponentType()) is called, and is called BEFORE any System callbacks occur.
+A System has a list of 'interested' Components, and once all of those Components exist on an Entity, the System kicks in and does something with the data provided on the Component. For example, if an Entity TransformComponent has been flagged as 'dirty', the TransformSystem will go through and update all the Transforms and WorldTransforms for the entity, moving it to the new position, rotation, or scale. **A closer look at the goo.Component:** There are two optional Abstract functions for the goo.Component: ```attached(entity)```, and ```detached(entity)```. ```attached(entity)``` is called right after entity.```setComponent(new ComponentType())``` is called, and is called BEFORE any System callbacks occur.
 
 The Entity the Component was attached to is passed into the function, so it is a good place to handle Entity specific setup for the Component.
 
-This is also a good place to assign the Entity to a variable on the Component, for example: this.entity = entity; detached(entity) is called right after entity.clearCompoennt('ComponentType') is called, and is called BEFORE any System callbacks occur.
+This is also a good place to assign the Entity to a variable on the Component, for example: ```this.entity = entity; detached(entity)``` is called right after ```entity.clearCompoennt('ComponentType')``` is called, and is called BEFORE any System callbacks occur.
 
-The Entity the Component was remove from is passed into the function, so it is a good place to handle tearing down anything Entity specific for the Component. **A closer look at the goo.System:** There are three optional Abstract functions for the goo.System: inserted(entity), process(entityArray, tpf), and deleted(entity). inserted(entity) is called after EVERY interested Component is added to the Entity.
+The Entity the Component was remove from is passed into the function, so it is a good place to handle tearing down anything Entity specific for the Component. **A closer look at the goo.System:** There are three optional Abstract functions for the goo.System: ```inserted(entity)```, ```process(entityArray, tpf)```, and ```deleted(entity)```. ```inserted(entity)``` is called after EVERY interested Component is added to the Entity.
 
 For example, if a system is interested in both 'TransformComponent' and 'MeshRendererComponent', the inserted function is called after BOTH components have been added.
 
@@ -47,7 +47,7 @@ An array of all of the Entities with the Systems interested Components is passed
 
 For example, if the System is interested in Entities with both 'TransformComponent' and 'MeshRendererComnponent', the array will contain all of the entities in the world which have already had both Components added, and both of the Components .attached(), and the System .inserted() functions have been called on the Entities.
 
-The second parameter passed in is the ctx.world.tpf(time per frame). deleted(entity) is called when an Entity no longer meets the list of interested Components required.
+The second parameter passed in is the ```ctx.world.tpf(time per frame)```. ```deleted(entity)``` is called when an Entity no longer meets the list of interested Components required.
 
 For example, if an Entity has both a 'TransformComponent' and a 'MeshRendererComponent', and then I remove the MeshRendererComponent from the Entity, now the Entity no longer meets the requirements for the System, so the .deleted function is called, and the Entity is no longer part of the entityArray in the process loop.
 
@@ -57,7 +57,7 @@ To help demonstrate how the ECS works as a whole, we'll be creating our own Heal
 
 The HealthComponent will store the currentHealth and maxHealth, as well as some utility functions to remove from or add to the currentHealth. The RegenerationComponent will store the amount of health to regenerate per 'tick'.
 
-If the currentHealth is under maxHealth, the HealthSystem will increment the currentHealth back up to maxHealth by a set amount per 'tick'. **The first thing we will create is the HealthComponent:**
+If the currentHealth is under maxHealth, the HealthSystem will increment the currentHealth back up to maxHealth by a set amount per 'tick'. The first thing we will create is the *HealthComponent*:
 
 {% highlight js %}var HealthComponent = function(maxHealth){
     goo.Component.apply(this, arguments);
@@ -70,9 +70,9 @@ HealthComponent.prototype.constructor = HealthComponent;
 HealthComponent.prototype.type = 'HealthComponent';
 {% endhighlight %}
 
-The first thing to notice here, is that we are inheriting from the goo.Component.prototype, and our constructor is the HealthComponent.
+The first thing to notice here, is that we are inheriting from the ```goo.Component.prototype```, and our constructor is the ```HealthComponent```.
 
-To make the inheritance work, we need to apply 'this' to the goo.Component, and pass in the arguments Object.
+To make the inheritance work, we need to apply 'this' to the ```goo.Component```, and pass in the arguments Object.
 
 This basically takes care of some internal engine code for the Component.
 

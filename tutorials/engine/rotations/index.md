@@ -1,11 +1,11 @@
 ---
 layout: tutorial
 title: Rotations
-weight: 1999
+weight: 2002
 indent: 1
 contains_scripts: true
+difficulty_overall: 1
 ---
-
 This article will go over the different ways you can define and set rotations on Goo Engine entities.
 
 Accompanying this article is also a live [demo scene](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/):
