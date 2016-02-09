@@ -3,6 +3,7 @@ layout: tutorial
 title: Lights
 weight: 1006
 indent: 1
+difficulty_overall: 0
 ---
 
 ![](1.jpg)

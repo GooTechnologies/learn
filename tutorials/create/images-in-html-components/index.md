@@ -3,10 +3,9 @@ layout: tutorial
 title: Images in HTML components
 weight: 1999
 indent: 1
-overall_difficulty: 1
+difficulty_overall: 1
 contains_scripts: true
 ---
-
 There could be times when you will want to use Images from the scene with an HTML Entity.  In this example, we will create a 'Health Bar', which will shrink or grow in size based on the current 'health' variable.
 
 <a href="health_bar-300x191.png"><img class="size-medium wp-image-1045 aligncenter" src="health_bar-300x191.png" alt="health_bar" /></a>
@@ -15,53 +14,53 @@ There could be times when you will want to use Images from the scene with an HTM
 
 The first thing we will need to do, is create a new DIV in our HTML Entity to hold the health bars.  Inside this DIV, we will put place holders to store our 'empty' and 'full' images.  We have structured it this way, so we can easily re-position the health bar without having to touch the images themselves.
 
-{% highlight css %}
+{% highlight html %}
 <style stype="text/css">
 #button1 {
-	position:absolute;
-	top:10px;
-	left:50%;
+    position:absolute;
+    top:10px;
+    left:50%;
 }
 #button2 {
-	position:absolute;
-	right:10px;
-	top:50%;
+    position:absolute;
+    right:10px;
+    top:50%;
 }
 #button3 {
-	position:absolute;
-	left:50%;
-	bottom:10px;
+    position:absolute;
+    left:50%;
+    bottom:10px;
 }
 #button4 {
-	position:absolute;
-	left:10px;
-	top:50%;
+    position:absolute;
+    left:10px;
+    top:50%;
 }
 #div1 {
-	position:absolute;
-	left:10px;
-	bottom:10px;
-	background:white;
-	border-radius:5px;
-	padding:0px 10px;
-	width:150px;
+    position:absolute;
+    left:10px;
+    bottom:10px;
+    background:white;
+    border-radius:5px;
+    padding:0px 10px;
+    width:150px;
 }
 #health_bar {
-	position:absolute;
-	right:10px;
-	bottom:50px;
+    position:absolute;
+    right:10px;
+    bottom:50px;
 }
 #health_empty {
-	position:absolute;
-	right:0px;
-	bottom:0px;
-	z-index:0;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    z-index:0;
 }
 #health_full {
-	position:absolute;
-	right:0px;
-	bottom:0px;
-	z-index:1;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    z-index:1;
 }
 </style>
 
@@ -71,13 +70,13 @@ The first thing we will need to do, is create a new DIV in our HTML Entity to ho
 <button id='button4'>Test Button &</button>
 
 <div id='div1'>
-	<p id='text1'>You have selected:</p>
-	<p id='selected'>Nothing</p>
+    <p id='text1'>You have selected:</p>
+    <p id='selected'>Nothing</p>
 </div>
 
 <div id='health_bar'>
-	<img id='health_empty' />
-	<img id='health_full' />
+    <img id='health_empty' />
+    <img id='health_full' />
 </div>
 {% endhighlight %}
 
@@ -88,9 +87,11 @@ Now that we have our HTML place holders setup, we will need to create a script t
 Go ahead and add a new Custom script to the HTML Entity's ScriptComponent.  In this script, we will add two parameters for the two textures:
 
 {% highlight js %}
-var parameters = [
- {key:'empty', type:'texture', default:null},
- {key:'full', type:'texture', default:null}];
+var parameters = [{
+    key: 'empty',
+    type:'texture'
+}, {
+    key:'full', type:'texture', default:null}];
 {% endhighlight %}
 
 Here are the two images I am using for this tutorial:

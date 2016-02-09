@@ -3,7 +3,7 @@ layout: tutorial
 title: DOM Events
 weight: 1999
 indent: 1
-overall_difficulty: 1
+difficulty_overall: 1
 contains_scripts: true
 ---
 User input (from mouse, keyboard, touch et cetera) is handled through JavaScript-style event listeners. All the available functionality for interacting with the DOM comes for free, since the engine is written in nothing but JavaScript. It is possible to write any JavaScript code in Goo Create scripts, and that includes scripts which manipulates or interacts with the DOM. The tutorial you're currently reading will focus on the standard, unembellished, DOM events.
