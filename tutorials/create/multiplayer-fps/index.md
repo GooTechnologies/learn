@@ -72,8 +72,8 @@ On the Create side, things are (somewhat) organized into scripts, and sending me
 
 {% highlight js %}
 ctx.worldData.pushMessage = function(message, data) {
-	ctx.ws.send(JSON.stringify({message: message, data: data}));
-	ctx.seq++;
+    ctx.ws.send(JSON.stringify({message: message, data: data}));
+    ctx.seq++;
 };
 {% endhighlight %}
 
@@ -83,9 +83,9 @@ When a message comes back from the server, something similar happens:
 
 {% highlight js %}
 ctx.ws.onmessage = function(messageString) {
-	var message = JSON.parse(messageString.data).message;
-	var data = JSON.parse(messageString.data).data;
-	handleMessage(ctx, message, data);
+    var message = JSON.parse(messageString.data).message;
+    var data = JSON.parse(messageString.data).data;
+    handleMessage(ctx, message, data);
 };
 {% endhighlight %}
 
@@ -98,35 +98,35 @@ The Node server uses the ws module for WebSockets communication. After setting u
 {% highlight js %}
 
 wss.on('connection', function(ws) {
-	var socket_id, player, init_data;
+    var socket_id, player, init_data;
 
-	socket_id = socket_id_counter++;
-	sockets[socket_id] = ws;
-	player = core.newPlayer(socket_id);
+    socket_id = socket_id_counter++;
+    sockets[socket_id] = ws;
+    player = core.newPlayer(socket_id);
 
-	ws.onmessage = function(messageString) {
-		var message, data, seq;
-		message = JSON.parse(messageString.data).message;
-		data = JSON.parse(messageString.data).data;
-		handle_message(socket_id, message, data, seq);
-	};
+    ws.onmessage = function(messageString) {
+        var message, data, seq;
+        message = JSON.parse(messageString.data).message;
+        data = JSON.parse(messageString.data).data;
+        handle_message(socket_id, message, data, seq);
+    };
 
-	ws.on('close', function() {
-		delete sockets[socket_id];
-		core.removePlayer(socket_id);
-		send_to_all('s_player_disconnected', socket_id);
-	});
+    ws.on('close', function() {
+        delete sockets[socket_id];
+        core.removePlayer(socket_id);
+        send_to_all('s_player_disconnected', socket_id);
+    });
 
-	init_data = {
-		player: player,
-		players: core.players,
-		constants: core.constants,
-		occluders: core.occluders,
-		control_number: core.controlNumber
-	};
+    init_data = {
+        player: player,
+        players: core.players,
+        constants: core.constants,
+        occluders: core.occluders,
+        control_number: core.controlNumber
+    };
 
-	send_to_one(socket_id, 's_init', init_data);
-	send_to_all('s_player_connected', player);
+    send_to_one(socket_id, 's_init', init_data);
+    send_to_all('s_player_connected', player);
 });
 {% endhighlight %}
   

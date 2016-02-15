@@ -27,148 +27,147 @@ On the root entity, <em>Rot. Around Y</em> in our case, create a custom script. 
 
 {% highlight js %}
 var setup = function(args, ctx) {
-	
-	ctx.dir = args.invert ? 1 : -1;
-	
-	// Entities onto which the camera is attached
-	ctx.cameraY = ctx.entity;
-	ctx.cameraX = ctx.entity.transformComponent.children[0].entity;
+    ctx.dir = args.invert ? 1 : -1;
+    
+    // Entities onto which the camera is attached
+    ctx.cameraY = ctx.entity;
+    ctx.cameraX = ctx.entity.transformComponent.children[0].entity;
 
-	if (!(ctx.cameraX && ctx.cameraY)) {
-		console.error('Camera X and/or Y entities missing');
-		return;
-	}
-	
-	ctx.startXRotation = ctx.cameraX.getRotation().x;
-	ctx.startYRotation = ctx.cameraY.getRotation().y;
-	
-	// Bounds
-	ctx.rect = ctx.domElement.getBoundingClientRect();
-	goo.SystemBus.addListener('goo.viewportResize', function() {
-		ctx.rect = ctx.domElement.getBoundingClientRect();
-	});
-	
-	// Rotation constants for mouse
-	ctx.smoothFactor = args.smoothFactor;
-	ctx.moveFactor = args.moveFactor/50000.0;
-	
-	// Values for nice gyro orientation speed
-	ctx.xOrientationMid = args.xOrientationMid;
-	ctx.xOrientationFactor = -args.orientationFactor/800.0;
-	ctx.yOrientationFactor = -args.orientationFactor/800.0;
-	
-	// Relative to center (mouse) or neutral angles (gyro)
-	ctx.relative = [0, 0];
-	ctx.relativeSmooth = [0, 0];
+    if (!(ctx.cameraX && ctx.cameraY)) {
+        console.error('Camera X and/or Y entities missing');
+        return;
+    }
+    
+    ctx.startXRotation = ctx.cameraX.getRotation().x;
+    ctx.startYRotation = ctx.cameraY.getRotation().y;
+    
+    // Bounds
+    ctx.rect = ctx.domElement.getBoundingClientRect();
+    goo.SystemBus.addListener('goo.viewportResize', function() {
+        ctx.rect = ctx.domElement.getBoundingClientRect();
+    });
+    
+    // Rotation constants for mouse
+    ctx.smoothFactor = args.smoothFactor;
+    ctx.moveFactor = args.moveFactor/50000.0;
+    
+    // Values for nice gyro orientation speed
+    ctx.xOrientationMid = args.xOrientationMid;
+    ctx.xOrientationFactor = -args.orientationFactor/800.0;
+    ctx.yOrientationFactor = -args.orientationFactor/800.0;
+    
+    // Relative to center (mouse) or neutral angles (gyro)
+    ctx.relative = [0, 0];
+    ctx.relativeSmooth = [0, 0];
 
-	ctx.windowListeners = {
-		mousemove: function(evt) {
-			mouseMove(ctx, evt.clientX, evt.clientY);
-		},
-		deviceorientation: function(evt) {
-			if (evt.beta && evt.gamma) {
-				deviceOrientation(ctx, evt.beta, evt.gamma);
-			}
-		}
-	};
-	Object.keys(ctx.windowListeners).forEach(function(v) {
-		window.addEventListener(v, ctx.windowListeners[v]);
-	});
+    ctx.windowListeners = {
+        mousemove: function(evt) {
+            mouseMove(ctx, evt.clientX, evt.clientY);
+        },
+        deviceorientation: function(evt) {
+            if (evt.beta && evt.gamma) {
+                deviceOrientation(ctx, evt.beta, evt.gamma);
+            }
+        }
+    };
+    Object.keys(ctx.windowListeners).forEach(function(v) {
+        window.addEventListener(v, ctx.windowListeners[v]);
+    });
 };
 
 var mouseMove = function(ctx, x, y) {
-	ctx.relative[0] = (x - ctx.rect.width/2.0)*ctx.moveFactor;
-	ctx.relative[1] = (y - ctx.rect.height/2.0)*ctx.moveFactor;
+    ctx.relative[0] = (x - ctx.rect.width/2.0)*ctx.moveFactor;
+    ctx.relative[1] = (y - ctx.rect.height/2.0)*ctx.moveFactor;
 };
 
 var deviceOrientation = function(ctx, x, y) {
-	if (window.orientation === 0) {
-		// upright
-		ctx.relative[0] = y*ctx.xOrientationFactor;
-		ctx.relative[1] = (x - ctx.xOrientationMid)*ctx.yOrientationFactor;
-	} else if (window.orientation === 90) {
-		// flip CCW
-		ctx.relative[0] = x*ctx.xOrientationFactor;
-		ctx.relative[1] = -(y + ctx.xOrientationMid)*ctx.yOrientationFactor;
-	} else if (window.orientation === -90) {
-		// flip CW
-		ctx.relative[0] = -x*ctx.xOrientationFactor;
-		ctx.relative[1] = (y - ctx.xOrientationMid)*ctx.yOrientationFactor;
-	}
+    if (window.orientation === 0) {
+        // upright
+        ctx.relative[0] = y*ctx.xOrientationFactor;
+        ctx.relative[1] = (x - ctx.xOrientationMid)*ctx.yOrientationFactor;
+    } else if (window.orientation === 90) {
+        // flip CCW
+        ctx.relative[0] = x*ctx.xOrientationFactor;
+        ctx.relative[1] = -(y + ctx.xOrientationMid)*ctx.yOrientationFactor;
+    } else if (window.orientation === -90) {
+        // flip CW
+        ctx.relative[0] = -x*ctx.xOrientationFactor;
+        ctx.relative[1] = (y - ctx.xOrientationMid)*ctx.yOrientationFactor;
+    }
 };
 
 var cleanup = function(args, ctx) {
-	Object.keys(ctx.windowListeners).forEach(function(v) {
-		window.removeEventListener(v, ctx.windowListeners[v]);
-	});
+    Object.keys(ctx.windowListeners).forEach(function(v) {
+        window.removeEventListener(v, ctx.windowListeners[v]);
+    });
 };
 
 var smoothMove = function(ctx) {
-	ctx.relative.forEach(function(v, i) {
-		ctx.delta = Math.abs(ctx.relative[i] - ctx.relativeSmooth[i]);
-		if (ctx.delta < 1*ctx.moveFactor) {
-			ctx.relativeSmooth[i] = ctx.relative[i];
-		} else {
-			ctx.speed = ctx.delta/ctx.smoothFactor;
-			ctx.relativeSmooth[i] = (ctx.relative[i] > ctx.relativeSmooth[i]) ?
-				ctx.relativeSmooth[i]+ctx.speed : ctx.relativeSmooth[i]-ctx.speed;
-		}
-	});
+    ctx.relative.forEach(function(v, i) {
+        ctx.delta = Math.abs(ctx.relative[i] - ctx.relativeSmooth[i]);
+        if (ctx.delta < 1*ctx.moveFactor) {
+            ctx.relativeSmooth[i] = ctx.relative[i];
+        } else {
+            ctx.speed = ctx.delta/ctx.smoothFactor;
+            ctx.relativeSmooth[i] = (ctx.relative[i] > ctx.relativeSmooth[i]) ?
+                ctx.relativeSmooth[i]+ctx.speed : ctx.relativeSmooth[i]-ctx.speed;
+        }
+    });
 };
 
 var updateRotation = function(ctx) {
-	ctx.cameraY.setRotation(0, ctx.startYRotation+ctx.dir*ctx.relativeSmooth[0], 0);
-	ctx.cameraX.setRotation(ctx.startXRotation+ctx.dir*ctx.relativeSmooth[1], 0, 0);
+    ctx.cameraY.setRotation(0, ctx.startYRotation+ctx.dir*ctx.relativeSmooth[0], 0);
+    ctx.cameraX.setRotation(ctx.startXRotation+ctx.dir*ctx.relativeSmooth[1], 0, 0);
 };
 
 var update = function(args, ctx) {
-	smoothMove(ctx);
-	updateRotation(ctx);
+    smoothMove(ctx);
+    updateRotation(ctx);
 };
 
 var parameters = [
 {
-	key: 'invert',
-	name: 'Invert',
-	type: 'boolean',
-	default: false
+    key: 'invert',
+    name: 'Invert',
+    type: 'boolean',
+    default: false
 },
 {
-	key: 'smoothFactor',
-	name: 'Smoothing',
-	type: 'float',
-	min: 0,
-	max: 50,
-	default: 10,
-	control: 'slider'
-	
+    key: 'smoothFactor',
+    name: 'Smoothing',
+    type: 'float',
+    min: 0,
+    max: 50,
+    default: 10,
+    control: 'slider'
+    
 },
 {
-	key: 'moveFactor',
-	name: 'Mouse Force',
-	type: 'float',
-	min: 0,
-	max: 200,
-	default: 50,
-	control: 'slider'
+    key: 'moveFactor',
+    name: 'Mouse Force',
+    type: 'float',
+    min: 0,
+    max: 200,
+    default: 50,
+    control: 'slider'
 },
 {
-	key: 'orientationFactor',
-	name: 'Gyro Force',
-	type: 'float',
-	min: 0,
-	max: 200,
-	default: 20,
-	control: 'slider'
+    key: 'orientationFactor',
+    name: 'Gyro Force',
+    type: 'float',
+    min: 0,
+    max: 200,
+    default: 20,
+    control: 'slider'
 },
 {
-	key: 'xOrientationMid',
-	name: 'Neutral X Orientation',
-	type: 'float',
-	min: -180,
-	max: 180,
-	default: 45.0,
-	control: 'slider'
+    key: 'xOrientationMid',
+    name: 'Neutral X Orientation',
+    type: 'float',
+    min: -180,
+    max: 180,
+    default: 45.0,
+    control: 'slider'
 }
 ];
 {% endhighlight %}

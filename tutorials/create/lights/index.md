@@ -12,9 +12,9 @@ This tutorial aims to cover the basics of using lights in your scene.
 In order to begin this tutorial, click on the link above this slideshow and duplicate the scene to your personal account by pressing the large blue button labeled Duplicate Scene.
 
 <p>
-	<center>
-		<a class="btn btn-primary btn-lg" target="_blank" href="https://create.goocreate.com/edit/00798aaa4ebb45549ec6765008a394fa.scene">Open scene in Create</a>
-	</center>
+    <center>
+        <a class="btn btn-primary btn-lg" target="_blank" href="https://create.goocreate.com/edit/00798aaa4ebb45549ec6765008a394fa.scene">Open scene in Create</a>
+    </center>
 </p>
 
 ![](2.jpg)

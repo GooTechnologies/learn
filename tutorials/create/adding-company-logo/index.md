@@ -15,23 +15,23 @@ Add the following CSS to the Custom CSS area in the Publish Dialog:
 
 {% highlight css %}
 #canvas-outer::after {
-	content: '';
-	width: 50px;
-	height: 50px;
-	/* So that the logo can be placed anyhere with top, left, right, bottom.*/
-	position: absolute;
-	/* Place the logo 20 pixels from the top of the canvas.*/
-	top: 20px;
-	/* Place the logo 20 pixels from the left of the canvas. */
-	left: 20px;
-	/* Replace <logo url> with the URL of the logo you want to display. */
-	background-image: url('<logo url>');
-	/* Make sure the logo is stretched or shrinked to fit the element. */
-	background-size: contain;
-	/* Align the logo so that it is placed in the middle of the element. */
-	background-position: 50%;
-	/* Make sure the logo is not repeated. */
-	background-repeat: no-repeat;
+    content: '';
+    width: 50px;
+    height: 50px;
+    /* So that the logo can be placed anyhere with top, left, right, bottom.*/
+    position: absolute;
+    /* Place the logo 20 pixels from the top of the canvas.*/
+    top: 20px;
+    /* Place the logo 20 pixels from the left of the canvas. */
+    left: 20px;
+    /* Replace <logo url> with the URL of the logo you want to display. */
+    background-image: url('<logo url>');
+    /* Make sure the logo is stretched or shrinked to fit the element. */
+    background-size: contain;
+    /* Align the logo so that it is placed in the middle of the element. */
+    background-position: 50%;
+    /* Make sure the logo is not repeated. */
+    background-repeat: no-repeat;
 }
 {% endhighlight %}
 
@@ -53,13 +53,13 @@ This solution does not require the logo to be hosted in another service but is a
 
 {% highlight html %}
 <style>
-	.custom-logo {
-		position: absolute;
-		display: block;
-		width: 80px;
-		top: 20px;
-		left: 20px;
-	}
+    .custom-logo {
+        position: absolute;
+        display: block;
+        width: 80px;
+        top: 20px;
+        left: 20px;
+    }
 </style>
 
 <img class="custom-logo" data-id="dd6e72ac902e3ea325d1ca3cc61edbb01653bb00.png" />

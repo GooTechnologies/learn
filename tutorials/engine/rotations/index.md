@@ -45,7 +45,7 @@ If you would want to look a little bit down you could use this rotation matrix:
 If you look at the rows again you can see that the right vector still points along the positive x axis. The up vector is still pointing upwards but now it is leaning a bit along the negative z axis. The back vector is still pointing along the positive z axis but now it also leans a bit along the positive y axis. Taken together you can imagine we tilted our virtual head a bit down.
 
 <div class="alert alert-info">
-	Here is a <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/">demo scene</a> using different rotation methods including <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">setting the rotation matrix</a> that makes the head look a bit down.
+    Here is a <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/">demo scene</a> using different rotation methods including <a href="https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/">setting the rotation matrix</a> that makes the head look a bit down.
 </div>
 
 ### Why is the third vector backwards and not forward?
@@ -75,32 +75,32 @@ The code for this combination is very simple:
  * Updates the transform according to set scaling, rotation and translation. This is done automatically by the engine
  */
 Transform.prototype.update = function () {
-	var target = this.matrix.data;
-	var rotation = this.rotation.data;
-	var scale = this.scale.data;
-	var translation = this.translation.data;
+    var target = this.matrix.data;
+    var rotation = this.rotation.data;
+    var scale = this.scale.data;
+    var translation = this.translation.data;
 
-	target[0] = scale[0] * rotation[0];
-	target[1] = scale[0] * rotation[1];
-	target[2] = scale[0] * rotation[2];
-	target[3] = 0.0;
-	target[4] = scale[1] * rotation[3];
-	target[5] = scale[1] * rotation[4];
-	target[6] = scale[1] * rotation[5];
-	target[7] = 0.0;
-	target[8] = scale[2] * rotation[6];
-	target[9] = scale[2] * rotation[7];
-	target[10] = scale[2] * rotation[8];
-	target[11] = 0.0;
-	target[12] = translation[0];
-	target[13] = translation[1];
-	target[14] = translation[2];
-	target[15] = 1.0;
+    target[0] = scale[0] * rotation[0];
+    target[1] = scale[0] * rotation[1];
+    target[2] = scale[0] * rotation[2];
+    target[3] = 0.0;
+    target[4] = scale[1] * rotation[3];
+    target[5] = scale[1] * rotation[4];
+    target[6] = scale[1] * rotation[5];
+    target[7] = 0.0;
+    target[8] = scale[2] * rotation[6];
+    target[9] = scale[2] * rotation[7];
+    target[10] = scale[2] * rotation[8];
+    target[11] = 0.0;
+    target[12] = translation[0];
+    target[13] = translation[1];
+    target[14] = translation[2];
+    target[15] = 1.0;
 };
 {% endhighlight %}
 
 <div class="alert alert-info">
-	As you can see, the scale is encoded into the 3 direction vectors making them non unit length if the scale is not (1,1,1). m3, m7 and m11 are always 0. m15 is always 1. Also a transform matrix does not need to be orthonormal.
+    As you can see, the scale is encoded into the 3 direction vectors making them non unit length if the scale is not (1,1,1). m3, m7 and m11 are always 0. m15 is always 1. Also a transform matrix does not need to be orthonormal.
 </div>
 
 The layout of the transform matrix looks like this:
@@ -116,13 +116,13 @@ var head = ctx.world.by.name('Head').first();
 {% endhighlight %}
 
 <div class="alert alert-info">
-	Please note that the head is a nested entity. The child entity was rotated manually until it looked along the negative z axis. If you use an imported model it might look in the wrong direction too, you can easily solve that by giving it an empty parent entity and then rotating the model to face the negative z direction like in the demo. We will not touch the rotation of the child entity from this point onward, we will only change the rotation on the parent entity.
+    Please note that the head is a nested entity. The child entity was rotated manually until it looked along the negative z axis. If you use an imported model it might look in the wrong direction too, you can easily solve that by giving it an empty parent entity and then rotating the model to face the negative z direction like in the demo. We will not touch the rotation of the child entity from this point onward, we will only change the rotation on the parent entity.
 </div>
 
 Let's say we want the head to look a bit to the left or, in other words, rotate the head **45** degrees counterclockwise around the y axis. The classic way to do this would be to call the **fromAngles** method on the rotation object and pass in [Math.PI/4](http://en.wikipedia.org/wiki/Radian) for the Y parameter.
 
 <div class="alert alert-info">
-	As a <strong>Mnemonic device to remember the rotation direction</strong> you can use this trick: Imagine that you wrap your right hand  around the axis you want to rotate around with your thumb pointing into the positive direction of that axis. Then your index finger will point into the direction of rotation. Here is a picture showing the idea:
+    As a <strong>Mnemonic device to remember the rotation direction</strong> you can use this trick: Imagine that you wrap your right hand  around the axis you want to rotate around with your thumb pointing into the positive direction of that axis. Then your index finger will point into the direction of rotation. Here is a picture showing the idea:
 </div>
   
 [![right_hand_rule](right_hand_rule.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)  
@@ -155,7 +155,7 @@ head.setRotation(0,Math.PI/8,0);   // all helper functions call setUpdated for y
 [entity.setRotation](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) and **rotation.fromAngles** will always set the rotation matrix to fixed values, if you want to rotate relative to the current existing rotation you can call a helper function [addRotation](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/).
 
 <div class="alert alert-warning">
-	Euler angles are a very intuitive way of setting rotations but unfortunately using them can result in an effect called <a href="https://en.wikipedia.org/wiki/Gimbal_lock">gimbal lock</a>. Wikipedia describes it as the loss of one degree of freedom in a three-dimensional, three-gimbal mechanism that occurs when the axes of two of the three gimbals are driven into a parallel configuration, "locking" the system into rotation in a degenerate two-dimensional space. If you want to see a Gimbal Lock in action click 4 times on the first addRotation button <strong>and then</strong> 5 times on the second one in our <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene" target="_blank">demo scene</a>. So you have to click <strong>9 times</strong> in total to see the effect.
+    Euler angles are a very intuitive way of setting rotations but unfortunately using them can result in an effect called <a href="https://en.wikipedia.org/wiki/Gimbal_lock">gimbal lock</a>. Wikipedia describes it as the loss of one degree of freedom in a three-dimensional, three-gimbal mechanism that occurs when the axes of two of the three gimbals are driven into a parallel configuration, "locking" the system into rotation in a degenerate two-dimensional space. If you want to see a Gimbal Lock in action click 4 times on the first addRotation button <strong>and then</strong> 5 times on the second one in our <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene" target="_blank">demo scene</a>. So you have to click <strong>9 times</strong> in total to see the effect.
 </div>
   
 
@@ -191,7 +191,7 @@ So as you can see the function takes 2 parameter. The first one is the target po
 Keep in mind that entity.lookAt() is a helper function calling the [Transform.looAt](http://code.gooengine.com/latest/docs/index.html?c=Transform) function, there is also a lookAt function inside the [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) class but since it doesn't know anything about translations it expects a (back) direction vector as it's first parameter instead of a target position and the up parameter is **not optional**.
 
 <div class="alert alert-warning">
-	The following paragraph will explain how the lookAt function works internally, feel free to skip it, as it is <strong>not</strong> important to understand how it works internally to use it just fine.
+    The following paragraph will explain how the lookAt function works internally, feel free to skip it, as it is <strong>not</strong> important to understand how it works internally to use it just fine.
 </div>
 
 The way the function works is that it takes the entity and target position and subtracts them to get a back vector. Then it calculates the cross product between the up vector and the back vector to get the right vector. Then it calculates the cross product between the right vector and the back vector to get an up vector that is orthogonal to both the direction and the right vector and finally stores all three vectors normalized inside our rotation Matrix3 in their respective rows.
@@ -233,7 +233,7 @@ head.transformComponent.setUpdated();
 {% endhighlight %}
 
 <div class="alert alert-info">
-	I personally find it hard to visualize the needed angle and axis to get to a certain rotation other than a rotation around a basic axis, but your mileage may vary.
+    I personally find it hard to visualize the needed angle and axis to get to a certain rotation other than a rotation around a basic axis, but your mileage may vary.
 </div>
 
 ## Quaternions

@@ -32,27 +32,27 @@ In order to have our buttons align with the sides of the screen, inside the HTML
 Once the editor is open clear out the existing code and replace it with the following:
 
 
-{% highlight css %}
+{% highlight html %}
 <style type="text/css">
 #button1{
-	position:absolute;
-	top:10px;
-	left:50%;
+    position:absolute;
+    top:10px;
+    left:50%;
 }
 #button2{
-	position:absolute;
-	right:10px;
-	top:50%;
+    position:absolute;
+    right:10px;
+    top:50%;
 }
 #button3{
-	position:absolute;
-	left:50%;
-	bottom:10px;
+    position:absolute;
+    left:50%;
+    bottom:10px;
 }
 #button4{
-	position:absolute;
-	left:10px;
-	top:50%;
+    position:absolute;
+    left:10px;
+    top:50%;
 }
 </style>
 <button id='button1'>Test Button 1</button>

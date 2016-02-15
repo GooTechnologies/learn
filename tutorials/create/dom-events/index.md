@@ -22,7 +22,7 @@ Event handlers can be attached to elements (such as **divs** or **canvases**), t
 
 {% highlight js %}
 window.addEventListener('mousedown', function(evt) {
-	console.log('Mouse down event triggered!', evt);
+    console.log('Mouse down event triggered!', evt);
 }
 {% endhighlight %}
 
@@ -67,9 +67,9 @@ var setup = function(args, ctx, goo) {
 };
 
 var cleanup = function(args, ctx, goo) {
-	for (var handle in ctx.evtListeners) {
-		ctx.domElement.removeEventListener(handle, ctx.evtListeners[handle]);
-	}
+    for (var handle in ctx.evtListeners) {
+        ctx.domElement.removeEventListener(handle, ctx.evtListeners[handle]);
+    }
 };
 {% endhighlight %}
 
@@ -119,12 +119,12 @@ Now, let's write the functions that will do the actual work.
 
 {% highlight js %}
 var startDrag = function(ctx, x) {
-	ctx.dragging = true;
-	ctx.currentX = x;
+    ctx.dragging = true;
+    ctx.currentX = x;
 };
 
 var stopDrag = function(ctx) {
-	ctx.dragging = false;
+    ctx.dragging = false;
 };
 
 var drag = function(ctx, x) {
@@ -139,11 +139,11 @@ var drag = function(ctx, x) {
 };
 
 var update = function(args, ctx, goo) {
-	// Use the accumulated velocity to add rotation around the y axis.
-	// Make sure to apply the elapsed time to get framerate independent!
-	ctx.entity.addRotation(0, args.sensitivity * ctx.velocity * ctx.world.tpf, 0);
-	// Apply damping
-	ctx.velocity *= (1-args.damping);
+    // Use the accumulated velocity to add rotation around the y axis.
+    // Make sure to apply the elapsed time to get framerate independent!
+    ctx.entity.addRotation(0, args.sensitivity * ctx.velocity * ctx.world.tpf, 0);
+    // Apply damping
+    ctx.velocity *= (1-args.damping);
 };
 
 {% endhighlight %}
@@ -154,27 +154,27 @@ Now, let's hook up the functions. Since we did write nice functions, it's fairly
 
 {% highlight js %}
 ctx.evtListeners = {
-	mousedown: function(evt) {
-		startDrag(ctx, evt.clientX);
-	},
-	mouseup: function() {
-		stopDrag(ctx);
-	},
-	mouseout: function() {
-		stopDrag(ctx);
-	},
-	mousemove: function(evt) {
-		drag(ctx, evt.clientX);
-	},
-	touchstart: function(evt) {
-		startDrag(ctx, evt.touches[0].clientX);
-	},
-	touchend: function() {
-		stopDrag(ctx);
-	},
-	touchmove: function(evt) {
-		drag(ctx, evt.touches[0].clientX);
-	}
+    mousedown: function(evt) {
+        startDrag(ctx, evt.clientX);
+    },
+    mouseup: function() {
+        stopDrag(ctx);
+    },
+    mouseout: function() {
+        stopDrag(ctx);
+    },
+    mousemove: function(evt) {
+        drag(ctx, evt.clientX);
+    },
+    touchstart: function(evt) {
+        startDrag(ctx, evt.touches[0].clientX);
+    },
+    touchend: function() {
+        stopDrag(ctx);
+    },
+    touchmove: function(evt) {
+        drag(ctx, evt.touches[0].clientX);
+    }
 };
 {% endhighlight %}
 
@@ -186,59 +186,59 @@ That's all the needed code for the app at the beginning of the page. If you have
 
 {% highlight js %}
 var setup = function(args, ctx, goo) {
-	ctx.dragging = false;
-	ctx.velocity = 0;
-	ctx.lastX = 0;
-	ctx.currentX = 0;
+    ctx.dragging = false;
+    ctx.velocity = 0;
+    ctx.lastX = 0;
+    ctx.currentX = 0;
 
-	ctx.evtListeners = {
-		mousedown: function(evt) { startDrag(ctx, evt.clientX);	},
-		mouseup: function() { stopDrag(ctx); },
-		mouseout: function() { stopDrag(ctx); },
-		mousemove: function(evt) { drag(ctx, evt.clientX); },
-		touchstart: function(evt) { startDrag(ctx, evt.touches[0].clientX); },
-		touchend: function() { stopDrag(ctx); },
-		touchmove: function(evt) { drag(ctx, evt.touches[0].clientX);}
-	};
+    ctx.evtListeners = {
+        mousedown: function(evt) { startDrag(ctx, evt.clientX);    },
+        mouseup: function() { stopDrag(ctx); },
+        mouseout: function() { stopDrag(ctx); },
+        mousemove: function(evt) { drag(ctx, evt.clientX); },
+        touchstart: function(evt) { startDrag(ctx, evt.touches[0].clientX); },
+        touchend: function() { stopDrag(ctx); },
+        touchmove: function(evt) { drag(ctx, evt.touches[0].clientX);}
+    };
 
-	for (var l in ctx.evtListeners) {
-		ctx.domElement.addEventListener(l, ctx.evtListeners[l]);
-	}
+    for (var l in ctx.evtListeners) {
+        ctx.domElement.addEventListener(l, ctx.evtListeners[l]);
+    }
 };
 
 var cleanup = function(args, ctx, goo) {
-	for (var l in ctx.evtListeners) {
-		ctx.domElement.removeEventListener(l, ctx.evtListeners[l]);
-	}
+    for (var l in ctx.evtListeners) {
+        ctx.domElement.removeEventListener(l, ctx.evtListeners[l]);
+    }
 };
 
 var startDrag = function(ctx, x) {
-	ctx.dragging = true;
-	ctx.currentX = x;
+    ctx.dragging = true;
+    ctx.currentX = x;
 };
 
 var stopDrag = function(ctx) {
-	ctx.dragging = false;
+    ctx.dragging = false;
 };
 
 var drag = function(ctx, x) {
-	if (ctx.dragging) {
-		ctx.lastX = ctx.currentX;
-		ctx.currentX = x;
-		ctx.velocity += ctx.currentX - ctx.lastX;
-	}
+    if (ctx.dragging) {
+        ctx.lastX = ctx.currentX;
+        ctx.currentX = x;
+        ctx.velocity += ctx.currentX - ctx.lastX;
+    }
 };
 
 var update = function(args, ctx, goo) {
-	ctx.entity.addRotation(0, args.sensitivity*ctx.velocity*ctx.world.tpf, 0);
-	ctx.velocity *= (1-args.damping);
+    ctx.entity.addRotation(0, args.sensitivity*ctx.velocity*ctx.world.tpf, 0);
+    ctx.velocity *= (1-args.damping);
 };
 
 var parameters = [
-	{key: 'sensitivity', name: 'Sensitivity', type: 'float', control: 'slider',
-	min: 0.01, max: 1.00, default: 0.05 },
-	{key: 'damping', name: 'Damping', type: 'float', control: 'slider',
-	min: 0,max: 1,default: 0.05}
+    {key: 'sensitivity', name: 'Sensitivity', type: 'float', control: 'slider',
+    min: 0.01, max: 1.00, default: 0.05 },
+    {key: 'damping', name: 'Damping', type: 'float', control: 'slider',
+    min: 0,max: 1,default: 0.05}
 ];
 {% endhighlight %}
 
