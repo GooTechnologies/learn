@@ -24,6 +24,10 @@ footer {
 		padding: $padding;
 	}
 
+	table img {
+		min-width: 100px;
+	}
+
 	video {
 		max-width: 100%;
 		display: block;
