@@ -4,6 +4,8 @@ title: Getting started Video
 weight: 1041
 indent: 1
 contains_video: true
+difficulty_overall: -1
+
 ---
 <video controls autoplay>
   <source src="http://labs.gooengine.com/video/goo-material-flow.mp4" type="video/mp4">

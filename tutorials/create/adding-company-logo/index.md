@@ -3,6 +3,7 @@ layout: tutorial
 title: Adding Company Logo
 weight: 2000
 indent: 1
+difficulty_overall: 1
 contains_scripts: true
 ---
 

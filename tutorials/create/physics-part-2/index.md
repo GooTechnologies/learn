@@ -3,7 +3,7 @@ layout: tutorial
 title: Physics Part 2
 weight: 1201
 indent: 1
-difficulty_overall: 1
+difficulty_overall: 0
 contains_scripts: true
 ---
 In [part 1]({{ "/tutorials/create/physics-part-1" | prepend: site.baseurl }}) of the "Basic Physics in Goo Create" tutorial we created a tilted pinball table, some bumpers and a ball. Pressing play showed that the ball moved around the pinball table in a physically realistic way.  

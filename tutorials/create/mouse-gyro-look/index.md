@@ -4,6 +4,8 @@ title: Mouse Gyro Look
 weight: 1999
 indent: 1
 contains_scripts: true
+difficulty_overall: 1
+
 ---
 Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera. To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
 

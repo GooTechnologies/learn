@@ -3,6 +3,7 @@ layout: tutorial
 title: Creating Santa (Christmas Special)
 weight: 1999
 indent: 1
+difficulty_overall: 1
 ---
 
 Create comes with a Christmas template project. In this game scene, Santa is traveling around the world with his loyal jetpack. Use the Left and Right keys to accelerate/decelerate and the Up and Down keys to fly higher or lower. This tutorial presents how Santa has been built for this scene and goes through some special Christmas features added in Goo Create.

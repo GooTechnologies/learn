@@ -3,6 +3,9 @@ layout: tutorial
 title: Assigning textures to material
 weight: 1003
 indent: 1
+difficulty_overall: 1
+
+
 ---
 
 ![](1.jpg)
