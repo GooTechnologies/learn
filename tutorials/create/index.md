@@ -1,7 +1,7 @@
 ---
 title: Create Tutorials
 subtitle: Tutorials for various parts of Create
-weight: 1000
+weight: 50
 indent: 0
 ---
 
