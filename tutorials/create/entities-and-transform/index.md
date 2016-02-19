@@ -17,6 +17,7 @@ The things you'll learn about in this tutorial:
     * Translation
     * Rotation
     * Scale
+* Hierarchy
     
 
 
