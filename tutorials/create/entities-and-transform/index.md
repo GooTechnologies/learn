@@ -8,12 +8,7 @@ contains_scripts: false
 ---
 
 In this first tutorial of Goo Create you will learn how to make a house on water:
-<<<<<<< HEAD
 <iframe width="800" height="450" src="https://c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished" allowfullscreen></iframe>
-=======
-
-<iframe allowfullscreen width="800" height="450" src="//c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished"></iframe>
->>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
 
 The things you'll learn about in this tutorial:
 
@@ -23,13 +18,6 @@ The things you'll learn about in this tutorial:
     * Rotation
     * Scale
 * Hierarchy
-
-<<<<<<< HEAD
-![](before.jpg)
-![](entities-and-transform-thumbnail.jpg)
-
-=======
->>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
 
 
 ##Part 1: Open the scene
@@ -41,7 +29,8 @@ The first thing you'll have to do is to open the scene we will work in for this 
 3. Select 'Drafts' and click on 'Duplicate'
  ![](duplicate.gif)
 
- You are now able to edit the scene.
+ You are now able to edit the scene. It should look like this:
+ ![](before.jpg)
 
 ##Part 2: Creating a support post
 
@@ -57,27 +46,6 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 
 ![Create Entity popup](createEntityScreen.jpg)
 
-**3D Primitives**
- - The 3D primitives are all the 3D entities, like 3D boxes and spheres.
-
-**2D Primitives**
- - The 2D primitives are all the 2D entities, like 2D circles, rectangles and triangles.
-
-**Others**
- - We will come back to these entities in other tutorials. For now it's only useful to know that the 'entity' entity can be used as a folder, so that you can keep the hierarchy of your scene clear.
-
-![Empty entity](emptyEntity.jpg)
-
-**Lights**
-<<<<<<< HEAD
- - The light entities are used for creating light in a scene. What light entities you need for what light sources will be treated in tutorials later on this course. This scene is already provided of a light entity.
-=======
- - The light entities are used for for creating light in a scene. What light entities you need for what light sources will be treated in tutorials later on this course. This scene is already provided of a light entity.
->>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
-
-**Cameras**
- - The camera entities are used creating a point of view in the scene. For instance, you can position a camera in front of a cube, set it as main camera and then, when you press on the play button, the point of view is focused on the cube.
-
 ###Adding a cylinder to the scene
 
  For the posts that will support the house, we're going to use the 3D cylinder entity
@@ -85,7 +53,7 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
  1. Click on the cylinder in the 'Create Entity' pop-up screen
  ![Create cylinder](createCylinder.gif)
 
- 2. Rename the entity to 'support post' by unfolding the first item in the panel on the left.
+ 2. Rename the entity to 'support post' by unfolding the first item in the panel on the left. You can unfold an item by clicking on it.
   ![Rename entity](RenameEntity.gif)
 
 ###Change the 'translation' and 'rotation' values of the cylinder entity
@@ -120,10 +88,12 @@ We will create the other support posts in part 4 of this tutoral.
 To put the house together, follow the steps below.
 
 1. Click on 'House' in the hierarchy panel
-2. Press 'S' so that the camera will focus on the house
-3. Unfold the 'House' entity in the hierarchy and select the 'floor' entity
+2. Click on the 'Frame selection' icon at the left top above the canvas, or press 'S'
+![Frame selection](frameselected.gif)
+
+3. Unfold the 'House' entity in the hierarchy by clicking on the little arrow in front of the entity and select the 'floor' entity
 ![Select floor](selectFloor.gif)
-4. Drag the 'floor' entity ont top of the 'ground' entity with the arrows or  by adjusting the translation values
+4. Drag the 'floor' entity on top of the 'ground' entity with the arrows or  by adjusting the translation values
 ![putFloorOnGround](putFloorOnGround.gif)
     Zoom in a little and make sure the floor aligns perfectly with the ground
 5. Do the same thing with the 'roof' entity, but then on top of the floor
@@ -134,7 +104,7 @@ In this part we will put the house on the water and create the rest of the suppo
 
 1. Select the 'house' entity in the hierarchy panel and drag the house on the support post
 ![Drag House on post](dragHouseOnPost.gif)
-2. Make a new empty entity and rename it to 'Support posts' to keep the hierarchy clear since we are going to add more support posts
+2. Create a new empty entity by clicking on the 'Entity' in the 'Create Entity' panel and rename it to 'Support posts' to keep the hierarchy clear since we are going to add more support posts
 ![Empty entity](emptyEntity.jpg)
 3. Drag the 'Support post' entity in the 'Support posts' entity
 ![Post in posts](postsinpost.gif)
@@ -157,8 +127,7 @@ In this part we will put the house on the water and create the rest of the suppo
  ![](publish.gif)
 5. After it's done publishing, click on 'Close'. Now you can share your projects by clicking on one of the social media icons.
  ![](sharegif.gif)
-<<<<<<< HEAD
-=======
+
 
 
 
