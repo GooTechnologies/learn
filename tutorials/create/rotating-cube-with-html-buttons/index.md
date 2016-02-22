@@ -17,7 +17,7 @@ This tutorial will cover how to create CSS buttons and use them to rotate a mode
 
 <h2>What We'll Do</h2>
 
-<iframe src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/"></iframe>
+<iframe allowfullscreen src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/"></iframe>
 
 <em>The end result. Try it!</em>
 
@@ -31,7 +31,7 @@ In addition, a fixed camera has been set up, overlooking the cube slightly from 
 
 If you don't want to set the scene up yourself, it can be found <a href="https://app.goocreate.com/4768/e3cb2c2744bd4fa0b8250b3dc6ee70e3.scene" target="_blank">here</a>. Of course, you can also use your own 3D model instead of the cube if you want to.
 
-<iframe src="//goote.ch/1b1d89c829df385d72cdf028f964760378b45d71/"></iframe>
+<iframe allowfullscreen src="//goote.ch/1b1d89c829df385d72cdf028f964760378b45d71/"></iframe>
 
 <em>The starting scene</em>
 
@@ -132,13 +132,13 @@ var parameters = [{
 
 That's it for the rotation part! The script in the component panel should now look like this:
 
-<img class="wp-image-300 size-full" src="rotation_script.png" alt="rotation_script" /> 
+<img class="wp-image-300 size-full" src="rotation_script.png" alt="rotation_script" />
 
 Controls for the rotation
 
 Now press play, and you should see the cube in action.
 
-<iframe src="//goote.ch/8ca9bba522acfb9fcacd28c6a51d873a1f68cb15/"></iframe>
+<iframe allowfullscreen src="//goote.ch/8ca9bba522acfb9fcacd28c6a51d873a1f68cb15/"></iframe>
 
 <p style="text-align: center"><em>The rotation works, hopefully.</em></p>
 It might be hard to get all the code into the right spots, so <a href="https://app.goocreate.com/4768/634702606f30485893c2c8f2caae2fe0.scene" target="_blank">here's a scene</a> matching the tutorial's current state.
@@ -260,7 +260,7 @@ And, finally, here's the code for the new parameters:
 
 Press play, and voila! The rotation can now be triggered by these awesome buttons:
 
-<iframe src="//goote.ch/d62a1cc980b32510b43ef3ae75d3384446b1c347/"></iframe>
+<iframe allowfullscreen src="//goote.ch/d62a1cc980b32510b43ef3ae75d3384446b1c347/"></iframe>
 
 <em>Function and style in a beautiful combination</em>
 
@@ -366,7 +366,7 @@ ctx.easing = window.TWEEN.Easing[easingSplit[0]][easingSplit[1]];
 
 Phew! That's all, folks. Try out some of the easings! A really cool one, and the one we use in the final project, is Bounce.Out. By the way, the final scene can be found <a href="https://app.goocreate.com/4768/1a910cf043334213aa88ea28f82e6b25.scene" target="_blank">here</a>, or a published version <a href="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/" target="_blank">here</a>.
 
-<iframe src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/"></iframe>
+<iframe allowfullscreen src="//goote.ch/162b6be8fed505e211e5f05f0219d3332cade834/"></iframe>
 
 <a name="wrap-up"></a>
 <h2>Wrap-up</h2>

@@ -39,7 +39,7 @@ Adjust all the properties in the *Material Component* so the color channels are 
 
 ![](4.png)
 
-Lights and colors go hand in hand and a lot of the settings in the Material panel react to the lights in your scene. Place a directional light over the sphere and rotate it about -25 degrees in the X axis. Since everything is set to black the light should not affect the sphere and it will still be completely black.  
+Lights and colors go hand in hand and a lot of the settings in the Material panel react to the lights in your scene. Place a directional light over the sphere and rotate it about -25 degrees in the X axis. Since everything is set to black the light should not affect the sphere and it will still be completely black.
 
 ## Diffuse color
 
@@ -57,7 +57,7 @@ Adding a texture to a channel will wrap the image around the sphere. The part of
 
 ![](7.png)
 
-Specularity is used for the highlight and the roughness of the material’s surface. It works to some extend in the same way as the diffuse property, both of them are determined by the lights in your scene. The big difference is that specularity is depending on the observer's angle of view. Which results in that the highlight “moves” across surface. The shininess slider controls the highlights concentration, where a high value gives a dense highlight seen in polished surfaces like car paint. A low value gives more spread to the highlight as in brushed metal.  
+Specularity is used for the highlight and the roughness of the material’s surface. It works to some extend in the same way as the diffuse property, both of them are determined by the lights in your scene. The big difference is that specularity is depending on the observer's angle of view. Which results in that the highlight “moves” across surface. The shininess slider controls the highlights concentration, where a high value gives a dense highlight seen in polished surfaces like car paint. A low value gives more spread to the highlight as in brushed metal.
 
 ![](8.png)
 
@@ -85,7 +85,7 @@ Next up, the Ambient property, used mainly for the base lighting of an object, a
 
 Great job, you have mastered the Material fundamentals. Below you can interact with the outcome of this tutorial.
 
-<iframe id="advanced_iframe" allowfullscreen webkitallowfullscreen mozallowfullscreen name="advanced_iframe" src="https://c1.goote.ch/b9379f3a4b6947b19ca1d5c397cbd0ab.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
+<iframe allowfullscreen webkitallowfullscreen mozallowfullscreen name="advanced_iframe" src="//c1.goote.ch/b9379f3a4b6947b19ca1d5c397cbd0ab.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
 
 <p>
     <center>

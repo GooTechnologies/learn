@@ -27,7 +27,7 @@ var update = function(args, ctx) {
 
 ```ctx.entity.transformComponent.transform.translation``` is an instance of ```Vector3```. See the [Vector3 API](http://code.gooengine.com/latest/docs/index.html?c=Vector3).
 
-<iframe src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a"></iframe>
+<iframe allowfullscreen src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a"></iframe>
 
 ### Rotation
 
@@ -42,7 +42,7 @@ var update = function(args, ctx) {
 };
 {% endhighlight %}
 
-<iframe src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01"></iframe>
+<iframe allowfullscreen src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01"></iframe>
 
 ```ctx.entity.transformComponent.transform.rotation``` is an instance of ```Matrix3```. See the [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) API.
 
@@ -61,7 +61,7 @@ var update = function(args, ctx) {
 
 ```ctx.entity.transformComponent.transform.scale``` is an instance of ```Vector3```. See the [Vector3 API](http://code.gooengine.com/latest/docs/index.html?c=Vector3).
 
-<iframe src="//goote.ch/853e0744b31b6fd66ddd1a18d709439710aa0a64/"></iframe>
+<iframe allowfullscreen src="//goote.ch/853e0744b31b6fd66ddd1a18d709439710aa0a64/"></iframe>
 
 ## The Transform
 
@@ -81,7 +81,7 @@ Goo Engine implements transforms in the [TransformComponent](http://code.gooengi
 
 The API has functions for *adding* or directly *setting* rotation, translation or scale. There are also *getters* for accessing these values. To build hierarchies and parent/children relationships between entities, one uses the *attachChild* or *detachChild* functions. The function lookAt can be used to orient an entity in a certain direction.
 
-<iframe src="//goote.ch/1107233399a27f819dd36d3e10abf2088e1717c8/"></iframe>
+<iframe allowfullscreen src="//goote.ch/1107233399a27f819dd36d3e10abf2088e1717c8/"></iframe>
 
 {% highlight js %}
 // Have the entity (Cone) look at the Sphere
@@ -100,8 +100,8 @@ var update = function(args, ctx) {
 
 ### Local and Global Coordinates and Hierarchies
 
-The 3D world contains two different coordinate systems and corresponding transforms. The local transform orients an entity relative to its parent, and the global transform is the resulting transform relative to the root, or the world coordinate. The root is represented by the Scene in the Goo world. The TransformComponent has two transform members, the *transform* (local) as well as *worldTransform*!  
+The 3D world contains two different coordinate systems and corresponding transforms. The local transform orients an entity relative to its parent, and the global transform is the resulting transform relative to the root, or the world coordinate. The root is represented by the Scene in the Goo world. The TransformComponent has two transform members, the *transform* (local) as well as *worldTransform*!
 
-In the examples above, we have called *setUpdated()* on the transform component after manually editing the individual parts. This tells the engine that the transforms need to be updated. This is done for efficiency reasons, the engine won't update unchanged values. For more control, one could manually call *updateTransform()* or *updateWorldTransform()* to trigger these recalculations. When we use the helper methods of the TransformComponent, *we don't have to call setUpdated()*! The engine does this for us automatically.  
+In the examples above, we have called *setUpdated()* on the transform component after manually editing the individual parts. This tells the engine that the transforms need to be updated. This is done for efficiency reasons, the engine won't update unchanged values. For more control, one could manually call *updateTransform()* or *updateWorldTransform()* to trigger these recalculations. When we use the helper methods of the TransformComponent, *we don't have to call setUpdated()*! The engine does this for us automatically.
 
 Refer to the [Hierarchy and Transforms tutorial]({{ '/tutorials/create/trasnform-hierarchy' | prepend: site.baseurl }}) for some examples on hierarchies in Create and more discussion about local/global transforms.

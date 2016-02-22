@@ -8,7 +8,12 @@ contains_scripts: false
 ---
 
 In this first tutorial of Goo Create you will learn how to make a house on water:
+<<<<<<< HEAD
 <iframe width="800" height="450" src="https://c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished" allowfullscreen></iframe>
+=======
+
+<iframe allowfullscreen width="800" height="450" src="//c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished"></iframe>
+>>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
 
 The things you'll learn about in this tutorial:
 
@@ -19,9 +24,12 @@ The things you'll learn about in this tutorial:
     * Scale
 * Hierarchy
 
+<<<<<<< HEAD
 ![](before.jpg)
 ![](entities-and-transform-thumbnail.jpg)
 
+=======
+>>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
 
 
 ##Part 1: Open the scene
@@ -61,7 +69,11 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 ![Empty entity](emptyEntity.jpg)
 
 **Lights**
+<<<<<<< HEAD
  - The light entities are used for creating light in a scene. What light entities you need for what light sources will be treated in tutorials later on this course. This scene is already provided of a light entity.
+=======
+ - The light entities are used for for creating light in a scene. What light entities you need for what light sources will be treated in tutorials later on this course. This scene is already provided of a light entity.
+>>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
 
 **Cameras**
  - The camera entities are used creating a point of view in the scene. For instance, you can position a camera in front of a cube, set it as main camera and then, when you press on the play button, the point of view is focused on the cube.
@@ -145,3 +157,25 @@ In this part we will put the house on the water and create the rest of the suppo
  ![](publish.gif)
 5. After it's done publishing, click on 'Close'. Now you can share your projects by clicking on one of the social media icons.
  ![](sharegif.gif)
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 4cda9d18f960dfcdd5031ec7c9a277683312539a
