@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Physics Part 1
-weight: 1200
+weight: 800
 indent: 1
 difficulty_overall: 0
 ---

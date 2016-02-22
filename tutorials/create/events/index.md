@@ -2,7 +2,7 @@
 layout: tutorial
 title: Events
 indent: 1
-weight: 1042
+weight: 730
 difficulty_overall: 0
 contains_video: true
 ---

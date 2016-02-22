@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Environment
-weight: 1003
+weight: 780
 indent: 1
 difficulty_overall: 0
 ---
@@ -38,7 +38,7 @@ then choose and add LUNAR LANDSCAPE.
 Great! You can see in the ENVIRONMENT tab how each image slot is filled, and together they make up the
 background in the viewport. This is of course not limited to only landscape images. Lets try a pattern instead! Go
 ahead and open up the ASSET LIBRARY, and import any of the GRID assets. I'm a big fan of ROUNDED CORNERS, so
-that is what I'll use. 
+that is what I'll use.
 
 ![](8.jpg)
 

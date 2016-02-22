@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Building a Solar System
-weight: 2002
+weight: 6005
 indent: 1
 contains_scripts: true
 ---

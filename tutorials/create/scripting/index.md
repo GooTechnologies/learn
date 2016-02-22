@@ -2,7 +2,7 @@
 layout: tutorial
 title: Scripting
 indent: 1
-weight: 1040
+weight: 715
 difficulty_overall: 0
 contains_scripts: true
 ---

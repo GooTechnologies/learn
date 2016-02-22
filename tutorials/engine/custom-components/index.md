@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Custom Components
-weight: 2010
+weight: 6010
 indent: 1
 contains_scripts: true
 ---

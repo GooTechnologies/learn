@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Physics Part 2
-weight: 1201
+weight: 900
 indent: 1
 difficulty_overall: 0
 contains_scripts: true

@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Multiplayer FPS
-weight: 1999
+weight: 3000
 indent: 1
 contains_video: true
 difficulty_overall: 2
@@ -129,7 +129,7 @@ wss.on('connection', function(ws) {
     send_to_all('s_player_connected', player);
 });
 {% endhighlight %}
-  
+
 The main flow of events when a client connects is:
 
 1. The connection (the ws object) it stored by a simple ID.  

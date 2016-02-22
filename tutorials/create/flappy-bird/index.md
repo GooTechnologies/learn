@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Flappy Bird game
-weight: 1003
+weight: 1015
 indent: 1
 difficulty_overall: 2
 contains_scripts: true

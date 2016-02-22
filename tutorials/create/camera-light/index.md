@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Camera and light
-weight: 1999
+weight: 300
 indent: 1
 difficulty_overall: 0
 ---

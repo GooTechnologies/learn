@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Transform Hierarchy
-weight: 1003
+weight: 750
 indent: 1
 difficulty_overall: 0
 ---

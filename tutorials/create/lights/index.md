@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Lights
-weight: 1006
+weight: 400
 indent: 1
 difficulty_overall: 0
 ---
@@ -21,7 +21,7 @@ In order to begin this tutorial, click on the link above this slideshow and dupl
 
 This starting scene is simply rigged with a character, a car, a lamp pole and ground. The scene is also complemented with a simple fog.
 
-![](3.jpg) 
+![](3.jpg)
 
 Every new scene in Goo Create starts of with a couple entities. One of which being a directional light entity. A light entity can be one out of three different types; directional, spot or point.
 A light entity in Create does not require a mesh or geometry as source inducing that the source of the light is not visible unless you assign a mesh to it.
