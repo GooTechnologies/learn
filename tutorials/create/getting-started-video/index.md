@@ -4,7 +4,7 @@ title: Getting started Video
 weight: 100
 indent: 1
 contains_video: true
-difficulty_overall: -1
+difficulty_overall: 0
 
 ---
 <video controls autoplay>
