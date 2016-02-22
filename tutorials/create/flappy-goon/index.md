@@ -6,16 +6,16 @@ indent: 1
 difficulty_overall: 0
 contains_scripts: false
 ---
-<iframe src="https://c1.goote.ch/80272d90cd6c47618e647117e2615902.scene" title="Flappy Goon"></iframe>
+<iframe allowfullscreen src="//c1.goote.ch/80272d90cd6c47618e647117e2615902.scene" title="Flappy Goon"></iframe>
 
-In this tutorial you will learn how to replace the head of The Goon, our beloved Goo Create mascot, with you own head in the embedded game above. Also, you will be able to rename the game. 
+In this tutorial you will learn how to replace the head of The Goon, our beloved Goo Create mascot, with you own head in the embedded game above. Also, you will be able to rename the game.
 
 
 
 **Duration**: This tutorial will take about 10 minutes to complete.
 
 **Pre-requisitions**: This tutorial has no pre-requisitions. Even for the people that never used Goo Create before, this tutorial shouldn't be a problem!
-                      
+
 
 
 
@@ -27,7 +27,7 @@ To open and being able to edit the scene:
 2. Click on 'Duplicate scene' in the top left corner
 3. Select 'Drafts' and click on 'Duplicate'
  ![](duplicate.gif)
- 
+
  You are now able to edit the scene.
 
 
@@ -55,7 +55,7 @@ You can now play the game with your own picture by clicking on the 'play' button
 3. Edit the title of the game
  ![](replaceTitle.gif)
 4. Click on the blue 'Save' button
- 
+
 
 ## Step 4: Publish and share the scene
 

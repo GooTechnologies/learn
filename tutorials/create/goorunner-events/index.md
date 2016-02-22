@@ -7,7 +7,7 @@ prerequisities: /tutorials/create/dom-events/index.html
 difficulty_overall: 2
 contains_scripts: true
 ---
-<iframe src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/"></iframe>
+<iframe allowfullscreen src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/"></iframe>
 
 Click around! The GooRunner event listeners work like regular DOM event listeners (and even contains the standard events), but also add some very useful stuff:
 

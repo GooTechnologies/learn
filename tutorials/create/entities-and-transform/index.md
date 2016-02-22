@@ -8,7 +8,8 @@ contains_scripts: false
 ---
 
 In this first tutorial of Goo Create you will learn how to make a house on water:
-<iframe width="800" height="450" src="https://c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished"></iframe>
+
+<iframe allowfullscreen width="800" height="450" src="//c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished"></iframe>
 
 The things you'll learn about in this tutorial:
 
@@ -18,18 +19,18 @@ The things you'll learn about in this tutorial:
     * Rotation
     * Scale
 * Hierarchy
-    
+
 
 
 ##Part 1: Open the scene
 The first thing you'll have to do is open the scene we will work in for this tutorial:
 
-1. [Click here to open the scene](https://create.goocreate.com/edit/aed83406fcb44bc3ab738c2ee8b4901b.scene) 
+1. [Click here to open the scene](https://create.goocreate.com/edit/aed83406fcb44bc3ab738c2ee8b4901b.scene)
 2. If you're not logged in yet, log in with your Goo Create account
 2. Click on 'Duplicate scene' in the top left corner
 3. Select 'Drafts' and click on 'Duplicate'
  ![](duplicate.gif)
- 
+
  You are now able to edit the scene.
 
 ##Part 2: Creating a support post
@@ -38,7 +39,7 @@ In this part we will make the support posts for our house on water. The support 
 
 ###What is an entity?
 
-Entities are the components of a scene, so a scene is basically a group of entities. 
+Entities are the components of a scene, so a scene is basically a group of entities.
 
 There are different kinds of entities in Goo Create. If you open the 'create entity' panel in the top center of the interface, an overview will show up with all the different entities.
 
@@ -59,22 +60,22 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 
 **Lights**
  - The light entities are used for for creating light in a scene. What light entities you need for what light sources will be treated in tutorials later on this course. This scene is already provided of a light entity.
- 
+
 **Cameras**
- - The camera entities are used creating a point of view in the scene. For instance, you can position a camera in front of a cube, set it as main camera and then, when you press on the play button, the point of view is focused on the cube. 
- 
+ - The camera entities are used creating a point of view in the scene. For instance, you can position a camera in front of a cube, set it as main camera and then, when you press on the play button, the point of view is focused on the cube.
+
 ###Adding a cylinder to the scene
 
  For the posts that will support the house, we're going to use the 3D cylinder entity
- 
+
  1. Click on the cylinder in the 'Create Entity' pop-up screen
  ![Create cylinder](createCylinder.gif)
- 
+
  2. Rename the entity to 'support post' by unfolding the first item in the panel on the left.
   ![Rename entity](RenameEntity.gif)
-  
+
 ###Change the 'translation' and 'rotation' values of the cylinder entity
-  
+
 Now we have added and renamed the entity, but it doesn't really looks like a support post yet. We have to change the dimensions of the entity, and rotate the entity so it stands straight.
 
 **Hint**: If you click on an entity in the scene or in the hierarchy panel and press 'S', the camera will focus on that entity
@@ -82,7 +83,7 @@ Now we have added and renamed the entity, but it doesn't really looks like a sup
 
 1. Unfold the 'Transform' item, which is in the same panel as where we changed the name of entity. Try it out!
   ![Unfold transform item](unfoldTransform.gif)
-  
+
 2. Play around with the values to see what happens when you change them. As you probably noticed:
     * The first row of values is for changing the postion of the entity. This is called **translation**.
     * The second row of values is for rotating the the entity. This is called... * drums *... **rotation**.
@@ -150,14 +151,14 @@ In this part we will put the house on the water and create the rest of the suppo
 
 
 
-    
 
 
 
- 
- 
 
 
-  
-  
+
+
+
+
+
 

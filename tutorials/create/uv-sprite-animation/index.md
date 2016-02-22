@@ -8,7 +8,7 @@ contains_scripts: true
 ---
 This tutorial tells you how to make UV sprite animation via a simple script, like the following:
 
-<iframe src="https://c1.goote.ch/5a3c485848cf4289bed1af5213b70d41.scene"></iframe>
+<iframe allowfullscreen src="https://c1.goote.ch/5a3c485848cf4289bed1af5213b70d41.scene"></iframe>
 
 Say you want to make an old school pixel style game, where you have animations defined in sprite sheets, like in the following image (right-click and click "Save image as..." to save to disk):
 

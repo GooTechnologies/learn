@@ -9,9 +9,9 @@ difficulty_overall: 1
 ---
 Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera. To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
 
-<iframe src="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"></iframe>
+<iframe allowfullscreen src="//goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"></iframe>
 
-<a href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/">Open in a New Window</a>
+<a href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/">Open in a new window</a>
 
 <a href="https://create.goocreate.com/22307/a5b7c39669b04e5cb1e243f9a2d8454d.scene">Scene to Duplicate</a>
 
@@ -30,7 +30,7 @@ On the root entity, <em>Rot. Around Y</em> in our case, create a custom script. 
 {% highlight js %}
 var setup = function(args, ctx) {
     ctx.dir = args.invert ? 1 : -1;
-    
+
     // Entities onto which the camera is attached
     ctx.cameraY = ctx.entity;
     ctx.cameraX = ctx.entity.transformComponent.children[0].entity;
@@ -39,25 +39,25 @@ var setup = function(args, ctx) {
         console.error('Camera X and/or Y entities missing');
         return;
     }
-    
+
     ctx.startXRotation = ctx.cameraX.getRotation().x;
     ctx.startYRotation = ctx.cameraY.getRotation().y;
-    
+
     // Bounds
     ctx.rect = ctx.domElement.getBoundingClientRect();
     goo.SystemBus.addListener('goo.viewportResize', function() {
         ctx.rect = ctx.domElement.getBoundingClientRect();
     });
-    
+
     // Rotation constants for mouse
     ctx.smoothFactor = args.smoothFactor;
     ctx.moveFactor = args.moveFactor/50000.0;
-    
+
     // Values for nice gyro orientation speed
     ctx.xOrientationMid = args.xOrientationMid;
     ctx.xOrientationFactor = -args.orientationFactor/800.0;
     ctx.yOrientationFactor = -args.orientationFactor/800.0;
-    
+
     // Relative to center (mouse) or neutral angles (gyro)
     ctx.relative = [0, 0];
     ctx.relativeSmooth = [0, 0];
@@ -142,7 +142,7 @@ var parameters = [
     max: 50,
     default: 10,
     control: 'slider'
-    
+
 },
 {
     key: 'moveFactor',

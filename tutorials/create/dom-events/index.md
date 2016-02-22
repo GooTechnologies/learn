@@ -12,7 +12,7 @@ User input (from mouse, keyboard, touch et cetera) is handled through JavaScript
 
 At the end of this tutorial, we'll have a super simple Create scene with which we can interact by clicking (or touching) and dragging.
 
-<iframe src="//goote.ch/88bde37c06e6b111432dc6804dbb40846231fd22/"></iframe>
+<iframe allowfullscreen src="//goote.ch/88bde37c06e6b111432dc6804dbb40846231fd22/"></iframe>
 
 Click and drag!
 
