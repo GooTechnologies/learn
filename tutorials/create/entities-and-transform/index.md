@@ -20,13 +20,14 @@ The things you'll learn about in this tutorial:
 * Hierarchy
 
 
-##Part 1: Open the scene
+## Part 1: Open the scene
 The first thing you'll have to do is to open the scene we will work in for this tutorial:
 
 1. <a href="https://create.goocreate.com/edit/aed83406fcb44bc3ab738c2ee8b4901b.scene" target="_blank">Click here to open the scene</a>
 2. If you're not logged in yet, log in with your Goo Create account
 2. Click on 'Duplicate scene' in the top left corner
 3. Select 'Drafts' and click on 'Duplicate'
+
  ![](duplicate.gif)
 
  You are now able to edit the scene. It should look like this:
