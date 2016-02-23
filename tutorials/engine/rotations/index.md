@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Rotations
-weight: 2002
+weight: 6002
 indent: 1
 contains_scripts: true
 difficulty_overall: 1
@@ -23,7 +23,7 @@ Rotation is one of the three basic transformations you can apply to an object i
 If you look closely at the rows you can see that the default matrix uses (1,0,0) at row 1, (0,1,0) at row 2 and (0,0,1) at row 3.
 
 Now the cool thing is that row 1 contains the values for the right vector, row 2 the values for the up vector and row 3 the values for the back vector.
-  
+
 [![Goo_Rotation_Matrix](Goo_Rotation_Matrix.png "Goo Rotation Matrix Layout")](Goo_Rotation_Matrix.png)  
 
 Goo Rotation Matrix Layout  
@@ -61,7 +61,7 @@ Here is a picture showing the difference:
 In the picture above, the **middle finger** of the left hand points forward.  
 
 In a right handed coordinate system forward is along the **negative z** axis, up is positive Y and right is positive X. In the picture above, the **back** of the right hand points forward.
-  
+
 So up and right stay the same, just forward changes.  
 
 ### Which class in the Goo Engine is responsible for managing the transform matrix?
@@ -124,7 +124,7 @@ Let's say we want the head to look a bit to the left or, in other words, rotate 
 <div class="alert alert-info">
     As a <strong>Mnemonic device to remember the rotation direction</strong> you can use this trick: Imagine that you wrap your right hand  around the axis you want to rotate around with your thumb pointing into the positive direction of that axis. Then your index finger will point into the direction of rotation. Here is a picture showing the idea:
 </div>
-  
+
 [![right_hand_rule](right_hand_rule.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)  
 
 Right hand rule  
@@ -137,7 +137,7 @@ Let's look at some example code:
 head.transformComponent.transform.rotation.fromAngles(0,Math.PI/4,0);
 head.transformComponent.setUpdated();
 {% endhighlight %}
-  
+
 Here you can see a very important part of the overall picture: The Goo Engine uses an entity-component-system, meaning entities are pretty much only slim collections of components.  
 
 One of the most important components is the [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent). It wraps the Transform object we talked about above and makes it usable as a component.  
@@ -157,7 +157,7 @@ head.setRotation(0,Math.PI/8,0);   // all helper functions call setUpdated for y
 <div class="alert alert-warning">
     Euler angles are a very intuitive way of setting rotations but unfortunately using them can result in an effect called <a href="https://en.wikipedia.org/wiki/Gimbal_lock">gimbal lock</a>. Wikipedia describes it as the loss of one degree of freedom in a three-dimensional, three-gimbal mechanism that occurs when the axes of two of the three gimbals are driven into a parallel configuration, "locking" the system into rotation in a degenerate two-dimensional space. If you want to see a Gimbal Lock in action click 4 times on the first addRotation button <strong>and then</strong> 5 times on the second one in our <a href="https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene" target="_blank">demo scene</a>. So you have to click <strong>9 times</strong> in total to see the effect.
 </div>
-  
+
 
 ### As we have seen Euler angles are prone to an effect called Gimbal Lock, so what other functions can we call on the rotation object ?
 
@@ -237,7 +237,7 @@ head.transformComponent.setUpdated();
 </div>
 
 ## Quaternions
-  
+
 Quaternions are a great way to work with rotations. The main benefit of using quaternions is the ability to smoothly interpolate between two different rotations using [slerp](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) which is short for [spherical linear interpolation](https://en.wikipedia.org/wiki/Slerp).  
 
 Here is the code for the slerp button in the [demo scene](https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/):
