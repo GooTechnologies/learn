@@ -6,150 +6,65 @@ weight: 715
 difficulty_overall: 0
 contains_scripts: true
 ---
+This tutorial will introduce you to scripting in Goo Create. We will make a script that moves a sphere back and forth. Prerequisities is basic knowledge of Goo Create and JavaScript.
 
-This tutorial will introduce some of the fundamental topics in Create's scripting capabilities. We will script a simple bouncing sphere. The implementation will of course be very basic, but it should familiarize the reader enough with the concepts!
+![](moving-sphere.gif)
 
-For more details on the goo, ctx and args objects, see [The anatomy of a script]({{ "/manual/scripting/anatomy" | prepend:site.baseurl }})
+*This is what we will make*
 
-As other functionality in Create (cameras, lights, transforms, meshes et cetera), scripting is handled in a specialized type of Component. Scripts can be added to any entity and enable them to do tons of cool stuff!
+## Step 1: Create a new Scene
 
-The Goo Engine is written in JavaScript to stay close and true to the web. Scripts are no exception to that of course. Everything we will write will be in pure JavaScript, so there is no need to learn any other scripting language.
+When you log into Create, you end up in the Dashboard. From here, choose the Default Template, and type a name for your scene. Click the blue *Create* button.
 
-
-## A sphere with a ScriptComponent
-
-The scene for this scripting tutorial will be simple. All we need is a sphere! The first step is therefore to make one from the Create menu and pick a nice color for it. Step number two is almost as simple: Select the sphere entity and click **Add Component**  and add a **Script** component.
-
-![A sphere entity with a script component](sphere-with-script.jpg)
-
-Next, inside the Script component press **Add Script** . You'll be presented with a list of pre-made scripts. try adding some of them and see what happens later too! But for this tutorial we want to write our own script, so add a **Custom script** .
-
-![A sphere with a script component, which in turn has a script.](sphere-with-script-script.jpg)
+![](create-new-scene.gif)
 
 
-## Anatomy of a Script
+## Step 2: Create a Sphere
 
-To access the script itself, click the little edit button next to the script name, it looks like a little sheet of paper with a pen on it. This opens up a new window with the scripting code.
+To add a Sphere to your scene, click the *Create Entity* button in the top bar of Create. Then click on the Sphere icon.
 
-![The script editor](script-editor.jpg)
+![](create-add-sphere.gif)
 
-We can ignore the left hand panel for now and take a look at the code itself. We'll glance over the main functions in the code before diving into code writing.
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {};
-var cleanup = function(args, ctx, goo) {};
-{% endhighlight %}
+## Step 3: Add a Script Component and a Script to the Sphere
 
-At the top are the **setup** and **cleanup**  functions. These will be called when starting and stopping scripts, respectively. Their arguments will make sense once we have talked about the main function, the update function.
+Click the *Add Component* button in the Inspector panel to the left, and choose *Script Component* to add a script component.
 
-{% highlight js %}
-var update = function(args, ctx, goo) {};
-{% endhighlight %}
+A Script component panel appears. To add a *Script* to the script component, click the + button. You will be presented with a number of preset scripts. For this tutorial we want to write our own script, so choose *Custom script*.
 
-This is where most of the code usually goes. This function will run *every frame* and can therefore be used to continually update objects, react to input and changes et cetera. The function has three arguments:
+![](create-add-script.gif)
 
-**args** contains the custom parameters we can define for our script in the parameters array (see below).
+## Step 4: Open the Script Editor
 
-**ctx** lets us access a number of things: The Entity onto which the script is attached, the World the entity lives in, the DOM element that is used for rendering, the active camera, the viewport size and custom data we define on the entity or the world.
+Click the pencil symbol in the script that you just created. The Script editor will appear.
 
-**goo** provides access to all engine classes such as Vector3, Matrix3 and others.
+![](script-editor.png)
 
-{% highlight js %}
-var parameters = [];
-{% endhighlight %}
+## Step 5: Add some code to the script
 
-Many scripts will want to use some easy to change script parameters. If we define these variables in the **parameters** array (on the given format), then they will be conveniently available from the Script Component panel. This enables the user to change them without having to re-visit the code.
+The script has three functions in it, *setup*, *update* and *cleanup*. For our simple script, we only need to worry about the *update* function. This function is called on every render frame, perfect if you want to make animation.
 
-## Let's Write Some Code!
+Copy the following code into the *update* function:
 
-With the brief scripting intro out of the way, let's make the sphere bounce. The (primitive) implementation will eventually use *acceleration*, *damping *and bounce height variables. Let's start with adding those to the parameters array to see what happens.
+{% highlight js %}ctx.entity.transformComponent.transform.translation.x = Math.sin(ctx.world.time);
+ctx.entity.transformComponent.setUpdated();{% endhighlight %}
 
-The comments just above the parameters array specify the format with which we define the parameters. It also lets us know that some of the properties are required. Adding the three variables with useful info looks like this:
+The first line of code will set the X-position of the sphere to the sine of the current time. This value will oscillate between -1 and 1 as time goes by, making the sphere entity move back and forth.
 
-{% highlight js %}
-var parameters = [
-{
-    key: 'acceleration',
-    name: 'Acceleration',
-    type: 'float',
-    control: 'slider',
-    default: -10,
-    min: -20,
-    max: 20
-},
-{
-    key: 'damping',
-    name: 'Damping',
-    type: 'float',
-    control: 'slider',
-    default: 0.25,
-    min: 0.01,
-    max: 0.99,
-},
-{
-    key: 'bounceHeight',
-    name: 'Height',
-    type: 'float',
-    control: 'slider',
-    min: -5,
-    max: 5,
-    default: -2
-}
-];
-{% endhighlight %}
+The second line of code will tell the ```TransformComponent``` that you updated a value in its transform. This is needed because you changed the translation property.
 
-Clicking the big **Save**  button immediately updates the script component panel and you get nice controls for the variables!
+## Step 6: Save the Script
 
-![Updated script controls](controls.jpg)
+Click the big blue *Save* button in the script editor to save.
 
-With the parameters in place, let's move on to the code that will move the sphere. First thing we'll need is another variable, a velocity. Assuming we always want to start at standstill, the velocity is a prime candidate for defining in the **setup**  function.
+![](create-save-script.gif)
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-    ctx.velocity = 0;
-};
-{% endhighlight %}
+## Step 7: Click Play and enjoy
 
-By attaching it to the **ctx**  object, we can reach it from the update function as we'll see below.
+Close the Script editor and return to Create. Click the Play button and watch your sphere move back and forth.
 
-{% highlight js %}
-var update = function(args, ctx, goo) {
-
-    // Get the entity's translation
-    var translation = ctx.entity.getTranslation();
-
-    // Compare the height (Y axis value) with the bounce height parameter
-    if (translation.y <= args.bounceHeight) {
-
-        // Apply damping
-        ctx.velocity *= args.damping - 1;
-
-        // Adjust the position to avoid numerical problems (hacky!)
-        translation.y = args.bounceHeight + 0.001;
-
-    }
-
-    // Update the velocity using the acceleration and time since last frame
-    ctx.velocity += args.acceleration * ctx.world.tpf;
-
-    // Update the position using the velocity and time since last frame
-    translation.y += ctx.velocity * ctx.world.tpf;
-
-    // Let the system know that the transform is updated
-    ctx.entity.transformComponent.setUpdated();
-
-};
-{% endhighlight %}
-
-This code should be pretty straight forward, but let's highlight a few important things.
-
-We access the entity using the **ctx**  object.
-The **ctx** object is also used to access the previously defined velocity variable.
-Our parameters, like *bounceHeight* and *damping*, are properties on the **args** object.
-The Goo world object (and then the time per frame tpf) is accessed using **ctx** again.
+![](moving-sphere.gif)
 
 ## Done!
 
-This is all we need for the bounce to happen! Saving the code and pressing **Play** in Create should do the trick. The implementation is neither nice looking nor stable. See if you can improve it!
-
-Good Luck with the scripting!
+For more details on how Scripts work, see the [The anatomy of a script manual page]({{ "/manual/scripting/anatomy" | prepend:site.baseurl }})
