@@ -4,11 +4,11 @@ weight: 3601
 indent: 2
 layout: manual
 ---
-A Texture asset is a 2D image file with a few settings. You can use it in your Materials, Scripts or use it as a Skybox.
+A *Texture* asset is a 2D image file with a few settings. You can use it in your Materials, Scripts or use it in a Skybox.
 
 ## Importing a Texture
 
-To add a Texture Asset to the Asset Bin, simple drag and drop an image file from your desktop on top of the viewport.
+To add a texture asset to the asset bin, drag and drop an image file from your desktop on top of the asset bin.
 
 ## Using a texture
 
@@ -58,8 +58,6 @@ Whether to generate mipmaps for the texture. Mipmaps increases rendering speed a
 
 If this option is used, then the texture won't be loaded until you call
 
-{{% highlight js %}}
-texture.loadImage();
-{{% endhighlight %}}
+{% highlight js %}texture.loadImage();{% endhighlight %}
 
 from a script.
