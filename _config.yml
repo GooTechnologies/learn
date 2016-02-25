@@ -36,3 +36,5 @@ render_navigation: true
 render_menus: true
 render_breadcrumbs: true
 render_prev_next_btns: true
+
+host: 0.0.0.0

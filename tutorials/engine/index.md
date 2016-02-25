@@ -1,7 +1,7 @@
 ---
 title: Engine Tutorials
 subtitle: Tutorials for when using only the Goo Engine
-weight: 6025
+weight: 6000
 indent: 0
 ---
 

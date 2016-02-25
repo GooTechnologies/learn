@@ -27,6 +27,7 @@ The first thing you'll have to do is to open the scene we will work in for this 
 2. If you're not logged in yet, log in with your Goo Create account
 2. Click on 'Duplicate scene' in the top left corner
 3. Select 'Drafts' and click on 'Duplicate'
+
  ![](duplicate.gif)
 
  You are now able to edit the scene. It should look like this:
