@@ -35,29 +35,24 @@ The scene does not really matter. Create any scene with a few entities or use an
 
 Add an empty entity, attach a script component, and add an empty script. We'll start by adding a simple event listener in the setup function, in the same manner as in the DOM Event Listener tutorial:
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
-    console.clear();
+{% highlight js %}var setup = function(args, ctx, goo) {
     ctx.runnerListeners = {
         click: function(evt) {
-        console.log('Click event', evt);
+            console.log('Click event', evt);
+        }
+    };
+
+    for (var l in ctx.runnerListeners) {
+        ctx.world.gooRunner.addEventListener(l, ctx.runnerListeners[l]);
     }
 };
 
-for (var l in ctx.runnerListeners) {
-    ctx.world.gooRunner.addEventListener(l, ctx.runnerListeners[l]);
-}
-{% endhighlight %}
-
-Also, let's remember to clean up after ourselves:
-
-{% highlight js %}
+// Remember to clean up after ourselves:
 var cleanup = function(args, ctx, goo) {
     for (var l in ctx.runnerListeners) {
         ctx.world.gooRunner.removeEventListener(l, ctx.runnerListeners[l]);
     }
-};
-{% endhighlight %}
+};{% endhighlight %}
 
 You can pause here, click around in your scene and explore the printed event details using the developer console in your browser. We have all the info we need, but we'll do something a little more visual with it in a minute.
 
@@ -112,7 +107,7 @@ ctx.runnerListeners = {
     click: function(evt) {
         console.log('Click event', evt);
         var name, point, depth;
-        if (evt.entity) {
+        if (evt.entity && evt.intersection) {
             name = evt.entity.name;
             point = evt.intersection ? evt.intersection.toArray() : [0, 0, 0];
             depth = evt.depth;
@@ -175,7 +170,7 @@ ctx.runnerListeners = {
         click: function(evt) {
             console.log('Click event', evt);
             var name, point, depth;
-            if (evt.entity) {
+            if (evt.entity && evt.intersection) {
                 showMarker(ctx, evt.intersection);   // <----- here
                 name = evt.entity.name;
                 point = evt.intersection ? evt.intersection.toArray() : [0, 0, 0];
@@ -211,7 +206,7 @@ var setup = function(args, ctx, goo) {
         click: function(evt) {
             console.log('Click event', evt);
             var name, point, depth;
-            if (evt.entity) {
+            if (evt.entity && evt.intersection) {
                 console.log(evt);
                 showMarker(ctx, evt.intersection);
                 name = evt.entity.name;
