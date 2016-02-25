@@ -20,11 +20,9 @@ Click and drag!
 
 Event handlers can be attached to elements (such as **divs** or **canvases**), to the **document** or to the **window** object. Event listeners are added by using certain event names and callback functions which execute when the selected event triggers. For example, adding a simple **mousedown** event listener to the window object might look like this:
 
-{% highlight js %}
-window.addEventListener('mousedown', function(evt) {
+{% highlight js %}window.addEventListener('mousedown', function(evt) {
     console.log('Mouse down event triggered!', evt);
-}
-{% endhighlight %}
+});{% endhighlight %}
 
 The **evt** object will contain properties of the event. For example, the coordinates where the mouse down event occured. Each type of event has its own set of properties and can be attached to a certain set of elements. Refer to the excellent _MDN_ for full details, or use the console like above to print the evt object.
 
@@ -48,7 +46,7 @@ After adding a box, choosing some nice colors and creating a customscript. Red c
 Using DOM event listeners in script inside Create is not complicated, but there are some things we need to keep in mind. For example, remember that scripts have a **setup** and a **cleanup** function which run when pressing play or stop, respectively. That makes the setup function is perfect for adding event listeners, but it also means that we need to remove them in cleanup, because otherwise the _added_ _event listeners will persist_ and we'll get another set everytime we press play! When removing event listeners, one needs a stored handle to them. That means that we wouldn't be able to remove the simple mousedown event from the window in the example above, since we used an _anonymous function_ to add it. Luckily, storing handles are easy. Additionality, having a nice structure makes it easy to customize and work with the event listeners. Let's open the _script editor_ and write some code. Since we'll need the script handles in both the setup and in the cleanup functions, the script-wide ctx objects is a good candidate to use for storage. Let's start by adding some event listeners by first storing them as properties on the ctx object, and then using a simple loop to attach them to the **canvas**, and another one to clean them up.
 
 {% highlight js %}
-var setup = function(args, ctx, goo) {
+var setup = function(args, ctx) {
 
     ctx.evtListeners = {
         mousedown: function(evt) {
@@ -66,7 +64,7 @@ var setup = function(args, ctx, goo) {
 
 };
 
-var cleanup = function(args, ctx, goo) {
+var cleanup = function(args, ctx) {
     for (var handle in ctx.evtListeners) {
         ctx.domElement.removeEventListener(handle, ctx.evtListeners[handle]);
     }
@@ -138,7 +136,7 @@ var drag = function(ctx, x) {
     }
 };
 
-var update = function(args, ctx, goo) {
+var update = function(args, ctx) {
     // Use the accumulated velocity to add rotation around the y axis.
     // Make sure to apply the elapsed time to get framerate independent!
     ctx.entity.addRotation(0, args.sensitivity * ctx.velocity * ctx.world.tpf, 0);
@@ -184,8 +182,7 @@ Note that the loops which add and remove the listeners don't need to be changed.
 
 That's all the needed code for the app at the beginning of the page. If you have problems with getting things to work or just want to skip to the finish, [here's a link to the scene](https://app.goocreate.com/4768/62995e70005c4f399445382f6bf887cb.scene). Feel free to ducplicate it and play around with it. Here's the simple script in its entireity, with some space-saving skipping of newlines:
 
-{% highlight js %}
-var setup = function(args, ctx, goo) {
+{% highlight js %}var setup = function(args, ctx) {
     ctx.dragging = false;
     ctx.velocity = 0;
     ctx.lastX = 0;
@@ -206,7 +203,7 @@ var setup = function(args, ctx, goo) {
     }
 };
 
-var cleanup = function(args, ctx, goo) {
+var cleanup = function(args, ctx) {
     for (var l in ctx.evtListeners) {
         ctx.domElement.removeEventListener(l, ctx.evtListeners[l]);
     }
@@ -229,18 +226,28 @@ var drag = function(ctx, x) {
     }
 };
 
-var update = function(args, ctx, goo) {
-    ctx.entity.addRotation(0, args.sensitivity*ctx.velocity*ctx.world.tpf, 0);
+var update = function(args, ctx) {
+    ctx.entity.addRotation(0, args.sensitivity * ctx.velocity * ctx.world.tpf, 0);
     ctx.velocity *= (1-args.damping);
 };
 
-var parameters = [
-    {key: 'sensitivity', name: 'Sensitivity', type: 'float', control: 'slider',
-    min: 0.01, max: 1.00, default: 0.05 },
-    {key: 'damping', name: 'Damping', type: 'float', control: 'slider',
-    min: 0,max: 1,default: 0.05}
-];
-{% endhighlight %}
+var parameters = [{
+    key: 'sensitivity',
+    name: 'Sensitivity',
+    type: 'float',
+    control: 'slider',
+    min: 0.01,
+    max: 1.00,
+    default: 0.05
+},{
+    key: 'damping',
+    name: 'Damping',
+    type: 'float',
+    control: 'slider',
+    min: 0,
+    max: 1,
+    default: 0.05
+}];{% endhighlight %}
 
 ## Next Steps
 
