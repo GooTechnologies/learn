@@ -8,7 +8,7 @@ difficulty_overall: 0
 ---
 In this tutorial, we will show you how you how to make a solar system by using the state machine.
 
-<iframe width="800" height="450" src="https://c1.goote.ch/b19faaf0006c4244a178466491719a6c.scene" title="Solar system tutorial finished"></iframe>
+<iframe width="800" height="450" src="//c1.goote.ch/b19faaf0006c4244a178466491719a6c.scene" title="Solar system tutorial finished" allowfullscreen></iframe>
 
 Here are the steps we will take in this tutorial:
 
