@@ -21,3 +21,7 @@
 .goofont-icon-script:before {
   content: "\38";
 }
+
+.goofont-icon-checked:before {
+    content: "\56";
+}

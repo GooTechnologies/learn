@@ -25,9 +25,14 @@
 				</p>
 				{% endif %}
 
+				{% if site.url + page.url == site.url + '/' %}
+					{% include searchbar.html %}
+				{% endif %}
+
 			</div>
 		</div>
 		<div class="container">
+
 			<div class="row">
 				{{ content }}
 			</div>
@@ -44,6 +49,8 @@
 
 		<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+		<script src="{{ '/js/progressbar.min.js' | prepend: site.baseurl }}"></script>
+		<script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script>
 
 		<script type="text/javascript">
 			$(document).ready(function () {

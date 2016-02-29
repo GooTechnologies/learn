@@ -83,6 +83,200 @@ h6:hover .header-link {
 	}
 }
 
+
+
+.searchcontainer {
+	$searchinputheight : 35px;
+
+	margin-top: 30px;
+	width: 100%;
+	height: 50px;
+	background-color: $goo-blue;
+	input[type='text'], select, .checkboxholder{
+		width: 100%;
+		color: $gray;
+		border: none;
+		height: $searchinputheight;
+    padding: 6px 12px !important;
+	}
+	select {
+		padding: 1px 0;
+		color: $goo-blue;
+		font-weight: bold;
+	}
+	select option[selected], label{
+		color: $goo-blue;
+		font-weight: bold;
+	}
+	.checkboxholder {
+		background-color: white;
+		display: inline-block;
+		width: 150px;
+		float: left;
+		height: $searchinputheight;
+		text-align: left;
+		padding-top: 6px;
+		.checkbox {
+    	display:none;
+		}
+		.checkbox + label{
+		  background:url('../fonts/single_icons/checkbox.svg') no-repeat;
+		  height: 16px;
+		  width: 16px;
+		  display:inline-block;
+		  padding: 0 0 0 0px;
+		}
+		.checkbox:checked + label{
+		  background:url('../fonts/single_icons/checkbox_checked.svg') no-repeat;
+		  height: 16px;
+		  width: 16px;
+		  display:inline-block;
+		  padding: 0 0 0 0px;
+		}
+	}
+	.searchbutton {
+		display: inline-block;
+		float: right;
+		background-color: white;
+		height: $searchinputheight;
+		width: 45px;
+		padding-top: 6px;
+		cursor: pointer;
+		.glyphicon-search {
+			color: $goo-blue;
+		}
+	}
+}
+
+.overviewblock {
+	background-color: $gray-verylight;
+	padding: 15px 25px;
+	margin: 0 4px 35px 4px;
+	text-align: center;
+	p {
+		margin-bottom: 15px;
+	}
+	h2, .difficulty {
+		margin-bottom: 10px;
+	}
+	.difficulty, .button {
+		font-size: 18px;
+	}
+	hr {
+		border-top-color: $gray-light;
+		margin: 15px 0;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 25px;
+	}
+	.button {
+		background-color: $goo-blue;
+		padding: 15px 0;
+		margin: 25px 0 10px 0;
+		color: white;
+	}
+	.progressbarcontainer {
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+		margin: 0 auto;
+		.progressbar-text {
+			font-weight: bold;
+		}
+		.progressbar-text:after {
+  		content: "%";
+		}
+	}
+}
+
+//Course overview
+
+.tag {
+	display: inline-block;
+	float: left;
+	font-size: 14px;
+	background-color: $gray-dark;
+	padding: 3px 7px;
+	margin: 0 5px 5px 0;
+	color: white;
+}
+.tag:last-of-type {
+	margin-bottom: 15px;
+}
+
+.coursepartdetails {
+	.row:first-of-type {
+		position: relative;
+		.verticalhr {
+			width: 1px;
+			height: 100%;
+			background-color: $gray;
+			position: absolute;
+			left: 50%;
+		}
+		.horizontalhr {
+			width: 100%;
+			height: 1px;
+			background-color: $gray;
+			position: absolute;
+			bottom: 0;
+		}
+
+	}
+	.col-md-12 {
+		text-align: left;
+		p {
+			margin-bottom: 0;
+		}
+		.goofont-icon-checked {
+			color: #8bc34a;
+			padding: 4px 4px 0 0;
+		}
+		.time {
+			font-size: 25px;
+		}
+	}
+}
+
+.imagedescription {
+	text-align: center;
+	font-size: 14px;
+}
+
+.stepsoverview {
+	h1, h2 {
+		margin-top: 0;
+		margin-bottom: 20px;
+		font-weight: normal;
+	}
+	h2 {
+		span {
+			font-weight: lighter;
+		}
+	}
+	img {
+		padding: 0 !important;
+		width: 100%;
+		height: auto;
+	}
+	.flexbox {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		overflow: hidden;
+	}
+	.coursepartdetails {
+		text-align: left;
+		height: 100%;
+		.goofont-icon-checked {
+			color: #8bc34a;
+			padding: 4px 4px 0 0;
+		}
+	}
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
 @import "off-canvas";
