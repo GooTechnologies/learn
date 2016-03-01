@@ -105,7 +105,7 @@ ctx.acceleration = 9.82;
 ctx.entityData.acceleration = 9.82;
 
 // Accessible to all scripts
-ctx.worldData.acceleration = 9.82;{% endhighlight %}  
+ctx.worldData.acceleration = 9.82;{% endhighlight %}
 
 ## The global goo object
 
@@ -132,7 +132,7 @@ Below you can read more about what the custom parameters lets you do.
 
 ### Parameter Format
 
-Parameters need to be defined on a specific format. It is mentioned in the comments of an empty script too, but here's a walkthrough of the structure.  
+Parameters need to be defined on a specific format. It is mentioned in the comments of an empty script too, but here's a walkthrough of the structure.
 
 *Required:*
 
@@ -154,7 +154,7 @@ Parameters need to be defined on a specific format. It is mentioned in the comme
 
 ### Parameter Types
 
-The type property must be set to one of a few predefined strings, each corresponding to a type of parameter.  
+The type property must be set to one of a few predefined strings, each corresponding to a type of parameter.
 
 *   **int** - Integer number variable (e.g. *5*).
 *   **float** - Number variable (e.g. *3.14*).
@@ -163,20 +163,20 @@ The type property must be set to one of a few predefined strings, each correspon
 *   **vec2** - An array of 2 numbers.
 *   **vec3** - An array of 3 numbers.
 *   **vec4** - An array of 4 numbers.
-*   **texture, image, sound, entity, camera, animation, key** - Direct references to different types of objects, controlled by drag-and-drop boxes in the script panel.
+*   **texture, sound, entity, camera, animation** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
 
 ### Parameter Controls
 
-Different types can have different controls which in turn have several different available options:  
+Different types can have different controls which in turn have several different available options:
 
 #### control: "slider"
 
-A slider for numbers. The specific options _scale_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.  
+A slider for numbers. The specific options _scale_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.
 
 {% highlight js %}{
     key: "magnitude",
     name: "Magnitude",
-    type: "float",  
+    type: "float",
     default: 10,
     min: 5,
     max: 15,
@@ -187,25 +187,25 @@ A slider for numbers. The specific options _scale_ and _exponential_ can be used
 
 #### control: "color"
 
-Brings up an RBG color picker for the _vec3_ type.  
+Brings up an RBG color picker for the _vec3_ type.
 
 {% highlight js %}{
     key: "playerColor",
-    name: "Player Color",  
+    name: "Player Color",
     type: "vec3",
     default: [0, 1, 0],
     control: "color"
-}{% endhighlight %}  
+}{% endhighlight %}
 
 ![](control-color.png)
 
 #### control: "select" or *"dropdown"
 
-Used to define a list of options of the selected type.  Use the options array to define the available options.  
+Used to define a list of options of the selected type.  Use the options array to define the available options.
 
 {% highlight js %}{
     key: "weapon",
-    name: "Weapon",  
+    name: "Weapon",
     type: "string",
     default: "Wooden Sword",
     control: "select",
@@ -225,9 +225,9 @@ Used together with an int, to get the ID of a joint. Needs to be used on scripts
 {% highlight js %}{
     key: "joint",
     name: "Joint",
-    type: "int",  
+    type: "int",
     default: 0,
     control: "jointSelector"
-}{% endhighlight %}  
+}{% endhighlight %}
 
 ![Joint selector](control-joint.png)
