@@ -56,7 +56,7 @@ subtitle: Tutorials, reference manual and everything you need to learn Goo Creat
 	<li>
 		<a
 			href="{{ '/tutorials/create/scripting' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/scripting/script-editor.jpg' | prepend: site.baseurl }}');"
+			style="background-image: url('{{ '/tutorials/create/scripting/thumb.png' | prepend: site.baseurl }}');"
 		><h4>9. Scripting</h4></a>
 	</li>
 
