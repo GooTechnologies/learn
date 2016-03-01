@@ -24,15 +24,15 @@ If you look closely at the rows you can see that the default matrix uses (1,0,0)
 
 Now the cool thing is that row 1 contains the values for the right vector, row 2 the values for the up vector and row 3 the values for the back vector.
 
-[![Goo_Rotation_Matrix](Goo_Rotation_Matrix.png "Goo Rotation Matrix Layout")](Goo_Rotation_Matrix.png)  
+[![Goo_Rotation_Matrix](Goo_Rotation_Matrix.png "Goo Rotation Matrix Layout")](Goo_Rotation_Matrix.png)
 
-Goo Rotation Matrix Layout  
+Goo Rotation Matrix Layout
 
-It is important that these three vectors are and stay one unit in length and that they are orthogonal to each other. This property of rotation matrices is called [Orthonormality](http://en.wikipedia.org/wiki/Orthonormality).  
+It is important that these three vectors are and stay one unit in length and that they are orthogonal to each other. This property of rotation matrices is called [Orthonormality](http://en.wikipedia.org/wiki/Orthonormality).
 
-Rest assured that if you use the built-in functions orthonormality will be preserved.  
+Rest assured that if you use the built-in functions orthonormality will be preserved.
 
-If an entity uses the default rotation matrix it will "look" along the **negative z axis** and the "top of the head" will be pointed at the **positive y axis**.  
+If an entity uses the default rotation matrix it will "look" along the **negative z axis** and the "top of the head" will be pointed at the **positive y axis**.
 
 If you would want to look a little bit down you could use this rotation matrix:
 
@@ -50,19 +50,19 @@ If you look at the rows again you can see that the right vector still points alo
 
 ### Why is the third vector backwards and not forward?
 
-Goo is based on WebGL which adopted the so called [right handed](http://en.wikipedia.org/wiki/Right-hand_rule) [coordinate system](http://en.wikipedia.org/wiki/Cartesian_coordinate_system). [DirectX](http://programmers.stackexchange.com/questions/17519/why-does-directx-use-a-left-handed-coordinate-system) in comparison adopted the left hand coordinate system, but the standard seems to be right handedness.  
+Goo is based on WebGL which adopted the so called [right handed](http://en.wikipedia.org/wiki/Right-hand_rule) [coordinate system](http://en.wikipedia.org/wiki/Cartesian_coordinate_system). [DirectX](http://programmers.stackexchange.com/questions/17519/why-does-directx-use-a-left-handed-coordinate-system) in comparison adopted the left hand coordinate system, but the standard seems to be right handedness.
 
-Here is a picture showing the difference:  
+Here is a picture showing the difference:
 
-[![left_right_hand](left_right_hand.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)  
+[![left_right_hand](left_right_hand.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)
 
-**It is important to understand that both "hands" in the picture above are "looking" forward.** So in a **left** handed coordinate system forward is along the **positive z** axis, up is positive Y and right is positive X.  
+**It is important to understand that both "hands" in the picture above are "looking" forward.** So in a **left** handed coordinate system forward is along the **positive z** axis, up is positive Y and right is positive X.
 
-In the picture above, the **middle finger** of the left hand points forward.  
+In the picture above, the **middle finger** of the left hand points forward.
 
 In a right handed coordinate system forward is along the **negative z** axis, up is positive Y and right is positive X. In the picture above, the **back** of the right hand points forward.
 
-So up and right stay the same, just forward changes.  
+So up and right stay the same, just forward changes.
 
 ### Which class in the Goo Engine is responsible for managing the transform matrix?
 
@@ -125,11 +125,11 @@ Let's say we want the head to look a bit to the left or, in other words, rotate 
     As a <strong>Mnemonic device to remember the rotation direction</strong> you can use this trick: Imagine that you wrap your right hand  around the axis you want to rotate around with your thumb pointing into the positive direction of that axis. Then your index finger will point into the direction of rotation. Here is a picture showing the idea:
 </div>
 
-[![right_hand_rule](right_hand_rule.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)  
+[![right_hand_rule](right_hand_rule.gif)](http://viz.aset.psu.edu/gho/sem_notes/3d_fundamentals/html/3d_coordinates.html)
 
-Right hand rule  
+Right hand rule
 
-So in our case where we pass in Math.PI/4 the result will be a counterclockwise rotation.  
+So in our case where we pass in Math.PI/4 the result will be a counterclockwise rotation.
 
 Let's look at some example code:
 
@@ -138,13 +138,13 @@ head.transformComponent.transform.rotation.fromAngles(0,Math.PI/4,0);
 head.transformComponent.setUpdated();
 {% endhighlight %}
 
-Here you can see a very important part of the overall picture: The Goo Engine uses an entity-component-system, meaning entities are pretty much only slim collections of components.  
+Here you can see a very important part of the overall picture: The Goo Engine uses an entity-component-system, meaning entities are pretty much only slim collections of components.
 
-One of the most important components is the [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent). It wraps the Transform object we talked about above and makes it usable as a component.  
+One of the most important components is the [TransformComponent](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent). It wraps the Transform object we talked about above and makes it usable as a component.
 
-The Transform object of course contains the **rotation** Matrix3 object and since we learned that it is unpractical to modify the 9 values of that matrix directly we call a function called **fromAngles** that takes [Euler angles](https://en.wikipedia.org/wiki/Euler_angles) and converts them into the corresponding rotation matrix values.  
+The Transform object of course contains the **rotation** Matrix3 object and since we learned that it is unpractical to modify the 9 values of that matrix directly we call a function called **fromAngles** that takes [Euler angles](https://en.wikipedia.org/wiki/Euler_angles) and converts them into the corresponding rotation matrix values.
 
-Finally we call **setUpdated** to let the TransformComponent know we modified one of the basic transformations, in our case the rotation, so it will recalculate and update the transform matrix on the next frame.  
+Finally we call **setUpdated** to let the TransformComponent know we modified one of the basic transformations, in our case the rotation, so it will recalculate and update the transform matrix on the next frame.
 
 **If this seems like a lot to type, don't worry:** We provide many [helper functions](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent) for your convenience, the same result as above can be achieved using this function call:
 
@@ -161,7 +161,7 @@ head.setRotation(0,Math.PI/8,0);   // all helper functions call setUpdated for y
 
 ### As we have seen Euler angles are prone to an effect called Gimbal Lock, so what other functions can we call on the rotation object ?
 
-Other than setting Euler angles we have:  
+Other than setting Euler angles we have:
 
 *   LookAt
 *   Matrix multiplication
@@ -169,11 +169,11 @@ Other than setting Euler angles we have:
 *   Quaternions
 *   Spherical
 
-Let's go over them in detail.  
+Let's go over them in detail.
 
 ## LookAt
 
-This is my personal favorite. The function name pretty much says it all: [lookAt](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) is a function that creates a rotation matrix that points an entity towards a certain direction or point in space.  
+This is my personal favorite. The function name pretty much says it all: [lookAt](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) is a function that creates a rotation matrix that points an entity towards a certain direction or point in space.
 
 Because of the clearly defined result **lookAt** is a very opinionated function. It can easily happen that you call **lookAt** on an entity just to find it looking into the seemingly wrong direction.
 
@@ -203,9 +203,9 @@ Another way of changing rotation in a relative way is to use matrix multiplicati
 And here is the code:
 
 {% highlight js %}
-var aBitDown = [1, 0.0, 0.0, 0, 0.8, -0.6, 0, 0.6, 0.8];
-var mat = new goo.Matrix3().set(aBitDown); // new goo.Matrix3(aBitDown) is buggy at the moment;
-head.transformComponent.transform.rotation.combine(mat);
+var aBitDown = [1, 0, 0, 0, 0.8, -0.6, 0, 0.6, 0.8];
+var mat = new goo.Matrix3(aBitDown);
+head.transformComponent.transform.rotation.mul(mat);
 head.transformComponent.setUpdated();
 {% endhighlight %}
 
@@ -238,7 +238,7 @@ head.transformComponent.setUpdated();
 
 ## Quaternions
 
-Quaternions are a great way to work with rotations. The main benefit of using quaternions is the ability to smoothly interpolate between two different rotations using [slerp](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) which is short for [spherical linear interpolation](https://en.wikipedia.org/wiki/Slerp).  
+Quaternions are a great way to work with rotations. The main benefit of using quaternions is the ability to smoothly interpolate between two different rotations using [slerp](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/) which is short for [spherical linear interpolation](https://en.wikipedia.org/wiki/Slerp).
 
 Here is the code for the slerp button in the [demo scene](https://goote.ch/0e7df388f6ca4787be8884a87504955e.scene/):
 
@@ -249,16 +249,17 @@ var end = new goo.Quaternion();
 var work = new goo.Quaternion();
 
 if( start.equals(end)) {
- end.fromAngleNormalAxis(Math.PI/2,new goo.Vector3(0.8,0.6,0));
+    end.fromAngleNormalAxis(Math.PI/2,new goo.Vector3(0.8,0.6,0));
 }
 
-var tween = new TWEEN.Tween({x:0}).to({x:1}, 3000)
-.easing( TWEEN.Easing.Quadratic.InOut )
-.onUpdate(function(){
- goo.Quaternion.slerp(start, end, this.x, work);
- work.toRotationMatrix(rot);
- head.transformComponent.setUpdated();
-}).start(ctx.world.time *1000);
+var tween = new TWEEN.Tween({ x: 0 })
+    .to({ x: 1 }, 3000)
+    .easing( TWEEN.Easing.Quadratic.InOut )
+    .onUpdate(function(){
+        goo.Quaternion.slerp(start, end, this.x, work);
+        work.toRotationMatrix(rot);
+        head.transformComponent.setUpdated();
+    }).start(ctx.world.time * 1000);
 {% endhighlight %}
 
 Let's go over it line by line.
