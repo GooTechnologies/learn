@@ -1,8 +1,45 @@
 ---
 layout: default
 ---
-{% include overviewblock.html %}
+{% if page.url == "/tutorials" %}
+<script>
+window.location.href = "/#tutorials";
+</script>
+{% else if page.url == "/courses" %}
+<script>
+window.location.href = "/#courses";
+</script>
+{% endif %}
 
-<div class="col-md-12">
-	{{ content }}
+
+
+
+{% assign pp = site.pages | sort: 'difficulty_overall' %}
+<div class="row">
+	<div class="col-md-12">
+		<a class="homeh1" name="courses">
+		<h1 >Courses</h1>
+		</a>
+	</div>
+	{% for ppage in pp %}
+		{% if ppage.layout == "courseoverview" %}
+			{% include overviewblock_course.html %}
+			{% include overviewblock_course.html %}
+
+		{% endif %}
+	{% endfor %}
+</div>
+
+{% assign pp = site.pages | sort: 'weight' %}
+<div class="row">
+	<div class="col-md-12">
+		<a class="homeh1" name="tutorials">
+		<h1 >Tutorials</h1>
+	</a>
+	</div>
+	{% for ppage in pp %}
+		{% if ppage.layout == "tutorial" %}
+			{% include overviewblock_tutorial.html %}
+		{% endif %}
+	{% endfor %}
 </div>

@@ -83,6 +83,16 @@ h6:hover .header-link {
 	}
 }
 
+.homeh1 {
+	color: $goo-blue;
+	text-align: center;
+	:hover {
+		color: $goo-blue;
+
+	}
+}
+
+
 
 
 .searchcontainer {
@@ -148,16 +158,68 @@ h6:hover .header-link {
 	}
 }
 
+.titlepart {
+	font-weight: normal;
+}
+
+.button {
+	background-color: $goo-blue;
+	padding: 15px 30px;
+	color: white;
+	text-align: center;
+	display: table;
+}
+
+.largebutton {
+	font-size: 18px;
+	font-weight: normal;
+	span {
+		font-weight: lighter;
+	}
+}
+
+.width100 {
+	width: 100%;
+}
+
+.centerbutton {
+	margin: 0 auto;
+}
+
+.videotutcontainer {
+	background-color: $gray-dark;
+	.container {
+		background-color: $gray-dark;
+		.videotutorial {
+			height: 500px;
+		}
+	}
+}
+
+
+
 .overviewblock {
 	background-color: $gray-verylight;
 	padding: 15px 25px;
 	margin: 0 4px 35px 4px;
 	text-align: center;
+	.shortdescription {
+		height: 95px;
+	}
+	.button {
+		margin: 25px 0 10px 0;
+		width: 100%;
+
+	}
 	p {
 		margin-bottom: 15px;
 	}
 	h2, .difficulty {
 		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: 20px;
+		font-weight: normal;
 	}
 	.difficulty, .button {
 		font-size: 18px;
@@ -166,17 +228,16 @@ h6:hover .header-link {
 		border-top-color: $gray-light;
 		margin: 15px 0;
 	}
-	img {
-		width: 100%;
-		height: auto;
+	.imgcontainer {
+		height: 160px;
 		margin-bottom: 25px;
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 25px;
+		}
 	}
-	.button {
-		background-color: $goo-blue;
-		padding: 15px 0;
-		margin: 25px 0 10px 0;
-		color: white;
-	}
+
 	.progressbarcontainer {
 		width: 100px;
 		height: 100px;
@@ -201,12 +262,17 @@ h6:hover .header-link {
 	padding: 3px 7px;
 	margin: 0 5px 5px 0;
 	color: white;
+	text-transform: capitalize;
 }
 .tag:last-of-type {
 	margin-bottom: 15px;
 }
 
 .coursepartdetails {
+	margin-bottom: 20px;
+	.progressbarcontainer {
+		margin-bottom: 25px;
+	}
 	.row:first-of-type {
 		position: relative;
 		.verticalhr {
@@ -223,7 +289,6 @@ h6:hover .header-link {
 			position: absolute;
 			bottom: 0;
 		}
-
 	}
 	.col-md-12 {
 		text-align: left;
@@ -246,6 +311,9 @@ h6:hover .header-link {
 }
 
 .stepsoverview {
+	a, a:hover {
+		color: $gray;
+	}
 	h1, h2 {
 		margin-top: 0;
 		margin-bottom: 20px;
@@ -261,15 +329,13 @@ h6:hover .header-link {
 		width: 100%;
 		height: auto;
 	}
-	.flexbox {
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		overflow: hidden;
-	}
 	.coursepartdetails {
 		text-align: left;
 		height: 100%;
+
+		p {
+			margin-bottom: 5px;
+		}
 		.goofont-icon-checked {
 			color: #8bc34a;
 			padding: 4px 4px 0 0;

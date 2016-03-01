@@ -4,6 +4,8 @@ title: Camera and light
 weight: 300
 indent: 1
 difficulty_overall: 0
+short_description: "Test"
+thumbnail: tutorials\create\camera-light\1.jpg
 ---
 
 ![](1.jpg)

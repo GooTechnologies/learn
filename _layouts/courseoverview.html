@@ -7,7 +7,13 @@ layout: default
 		{{ page.description }}
 	</p>
 	<br />
-	<iframe width="800" height="450" src="https://c1.goote.ch/{{ page.scene }}" title="Entities and transform tutorial scene" allowfullscreen></iframe>
+	<iframe width="800" height="450" src="https://c1.goote.ch/{{ page.scene }}" allowfullscreen></iframe>
+	<p class="imagedescription">
+		This is the result of what you're going to make this course<br />
+		<a href="https://c1.goote.ch/{{ page.scene }}" target="_blank">
+			Click here to check out the scene full screen in a new tab
+		</a>
+	</p>
 </div>
 
 <div class="col-md-4">
@@ -37,7 +43,7 @@ layout: default
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					In this course you will learn about:
+					In this part you will learn about:
 				</p>
 				{% assign words = page.achievements | split: ", " %}
 				{% for word in words  %}
@@ -52,58 +58,88 @@ layout: default
 				</p>
 			</div>
 		</div>
-
+	</div>
+	<div style="padding: 0 4px;">
+		<a href="{{ page.url }}/1">
+			<div class="button largebutton width100">
+				Start the course
+			</div>
+		</a>
 	</div>
 </div>
 
-<div class="col-md-8">
-	<p class="imagedescription">
-		This is the result of what you're going to make this course<br />
-		<a href="https://c1.goote.ch/{{ page.scene }}" target="_blank">
-			Click here to check the scene out full screen in a new tab
-		</a>
-	</p>
-</div>
+
 <div class="col-md-12">
 	<br />
 	<div class="content stepsoverview">
-		<h1>Steps overview</h1>
-		<h2>Step 1: <span>Making the spaceship</span></h2>
-		<div class="row">
-			<div class="col-md-8">
-				<img src="/tutorials/create/lights/1.jpg" />
-			</div>
-			<div class="col-md-4">
-				<div class="overviewblock coursepartdetails">
-					<p>
-						In this course you will learn about:
-					</p>
-					{% assign words = page.achievements | split: ", " %}
-					{% for word in words  %}
-					<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
-					{% endfor %}
-					<br />
-					<p>
-						Tags
-					</p>
-					{% assign words = page.tags | split: ", " %}
-					{% for word in words  %}
-					<div class="tag">{{ word }}</div>
-					{% endfor %}
+		<h1>Parts overview</h1>
 
+
+		{% assign pp = site.pages | sort: 'part' %}
+		{% for ppage in pp %}
+			{% if ppage.part %}
+			<a href="{{ ppage.url }}">
+		<div class="stepblock">
+			<div class="row">
+				<div class="col-md-12">
+						<h2>Part {{ ppage.part }}: <span>{{ ppage.title }}</span></h2>
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col-md-8">
+					<img src="{{ ppage.thumbnail }}" />
+				</div>
+				<div class="col-md-4">
+					<div class="overviewblock coursepartdetails">
+						<div class="row">
+							<div class="col-md-12">
+								<p>
+									Tags
+								</p>
+
+										{% assign words = ppage.tags | split: ", " %}
+										{% for word in words  %}
+										<div class="tag">{{ word }}</div>
+										{% endfor %}
+
+
+							</div>
+						</div>
+							<div class="row">
+								<div class="col-md-12">
+								<p>
+									In this course you will learn about:
+								</p>
+								{% assign words = page.achievements | split: ", " %}
+								{% for word in words  %}
+								<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
+
+		</a>
+		<br />
+		{% endif %}
+	{% endfor %}
+
 		{% include prev-next-buttons-tutorial.html %}
 	</div>
 </div>
-
-
-	{% assign pp = site.pages | sort: 'part' %}
-
-	{% for ppage in pp %}
-		{% if ppage.part %}
-				{{ ppage.title }}
+	<div class="col-md-12">
+		{% assign pp = site.pages | sort: 'part' %}
+		{% for ppage in pp %}
+			{% if ppage.part == 1 %}
+			<a href="{{ppage.url}}">
+		<div class="button centerbutton largebutton ">
+			Go to the first part:<span> {{ppage.title}}</span>
+		</div>
+	</a>
 		{% endif %}
 	{% endfor %}
+	</div>

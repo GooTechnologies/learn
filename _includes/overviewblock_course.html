@@ -1,0 +1,36 @@
+<div class="col-md-4">
+  <div class="overviewblock">
+    <h2>{{ppage.title}}</h2>
+    <p>
+      <span class="difficulty">
+        {% case ppage.difficulty_overall %}
+        {% when 0 %}
+          Beginner
+        {% when 1 %}
+          Intermediate
+        {% when 2 %}
+          Expert
+        {% else %}
+        <br />
+
+        {% endcase %}
+        {% if ppage.contains_scripts == true %}
+          </span> <span class="goofont goofont-icon-script"></span>
+        {% endif %}
+    </p>
+    <hr />
+    <div class="imgcontainer">
+      <img src="{{ ppage.thumbnail }}" />
+    </div>
+    <p class="shortdescription">
+        {{ ppage.short_description }}
+    </p>
+    <div class="progressbarcontainer">
+    </div>
+    <a href="{{ ppage.url }}">
+      <div class="button">
+        Pick up where you left
+      </div>
+    </a>
+  </div>
+</div>
