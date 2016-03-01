@@ -8,8 +8,6 @@ contains_scripts: true
 ---
 There will be times when you may want to use an HTML Entity to do something inside your scene.  In this example, we will use a button to play a sound on an Entities SoundComponent.
 
-<hr />
-
 Because this sound won't be positioned in 3d space, lets go ahead and add it to the Default Camera.
 
 First select the Default Camera in the scene Hierarchy on the right side of the screen.
@@ -28,7 +26,7 @@ First, expand the Script category.  At the bottom of all the camera settings, y
 
 Now we need to open and edit this script.  You do this by clicking the icon which looks like a pencil writing inside a square:
 
-<a href="edit-script.png"><img src="edit-script.png" /></a>
+![](edit-script.png)
 
 Remove all the existing code from the code editor, and then paste this inside it:
 
@@ -39,19 +37,18 @@ var setup = function(args, ctx, goo){
   for(var i = 0, ilen = soundArray.length; i < ilen; i++){
     sound[soundArray[i].name] = soundArray[i];
   }
-
   ctx.playSound = function(){
     sound['212600__pgi__machine-gun-001-triple-shot'].stop();
     sound['212600__pgi__machine-gun-001-triple-shot'].play();
-  }
+  };
   var button = document.getElementById('button1');
   button.addEventListener('click', ctx.playSound);
-}
+};
 
 var cleanup = function(args, ctx, goo){
   var button = document.getElementById('button1');
   button.removeEventListener('click', ctx.playSound);
-}
+};
 {% endhighlight %}
 
 In the setup() function, we first create a sound map, to map the sound names to the actual sound objects. This isn't so important in this demo, because we only have one single sound, but when you start adding more and more sounds, this becomes a necessary step.
