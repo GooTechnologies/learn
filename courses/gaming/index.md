@@ -1,6 +1,6 @@
 ---
 layout: courseoverview
-title: Beginner course
+title: Game course
 indent: 1
 weight: 730
 difficulty_overall: 0

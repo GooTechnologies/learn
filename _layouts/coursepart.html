@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
+{% assign pp = site.pages %}
+{% assign nextpart = page.part | plus: 1 %}
+{% assign urlparts = page.url | split: '/' %}
+{% assign urlcount = urlparts.count | plus: -2  %}
+{% assign parent = urlparts[urlcount]  %}
+
+<script>
+	localStorage.setItem("lastvisitedurl", "{{page.url}}");
+</script>
 
 <div class="col-md-8">
 	<p>
@@ -25,8 +34,10 @@ layout: default
 				<p>
 					Your progress
 				</p>
-				<div class="progressbarcontainer">
-				</div>
+				<div class="progressbarcontainer" data-tutorials="
+				{% assign pp = site.pages %}{% for ppage in pp %}{% if ppage.layout == "coursepart" and ppage.url contains parent %}{{ ppage.url }} {% endif %}{% endfor %}
+				"></div>
+
 			</div>
 			<div class="col-md-6">
 				<p>
@@ -78,12 +89,12 @@ layout: default
 </div>
 
 	<div class="col-md-12">
-		{% assign pp = site.pages | sort: 'part' %}
+
 		{% for ppage in pp %}
-		{% assign nextpart = page.part | plus: 1 %}
-			{% if ppage.part == nextpart %}
+			{% if ppage.part == nextpart and ppage.url contains parent  %}
 			<a href="{{ppage.url}}">
-		<div class="button centerbutton largebutton ">
+		<div class="button centerbutton largebutton" onclick="setTutorialDoneStatus('{{ page.url }}')">
+
 			Go to the next part:<span> {{ppage.title}}</span>
 		</div>
 		</a>

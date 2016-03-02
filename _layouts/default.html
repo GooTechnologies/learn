@@ -57,6 +57,7 @@
 		<script src="{{ '/js/progressbar.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script>
 
+
 		<script type="text/javascript">
 			$(document).ready(function () {
 				$('[data-toggle="offcanvas"]').click(function () {
@@ -69,7 +70,7 @@
 		$(function() {
 			return $("h2, h3, h4, h5, h6").each(function(i, el) {
 				var $el, icon, id;
-				$el = $(el);
+				$el = $(el) ;
 				id = $el.attr('id');
 				icon = '<i class="fa fa-link"></i>';
 				if (id) {

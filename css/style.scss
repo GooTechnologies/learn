@@ -114,7 +114,7 @@ h6:hover .header-link {
 		color: $goo-blue;
 		font-weight: bold;
 	}
-	select option[selected], label{
+	select option[selected], label, .checkboxholder{
 		color: $goo-blue;
 		font-weight: bold;
 	}
@@ -122,40 +122,28 @@ h6:hover .header-link {
 		background-color: white;
 		display: inline-block;
 		width: 150px;
-		float: left;
+		transition: all 0.3s ease 0s;
 		height: $searchinputheight;
-		text-align: left;
-		padding-top: 6px;
-		.checkbox {
-    	display:none;
-		}
-		.checkbox + label{
-		  background:url('../fonts/single_icons/checkbox.svg') no-repeat;
-		  height: 16px;
-		  width: 16px;
-		  display:inline-block;
-		  padding: 0 0 0 0px;
-		}
-		.checkbox:checked + label{
-		  background:url('../fonts/single_icons/checkbox_checked.svg') no-repeat;
-		  height: 16px;
-		  width: 16px;
-		  display:inline-block;
-		  padding: 0 0 0 0px;
-		}
-	}
-	.searchbutton {
-		display: inline-block;
-		float: right;
-		background-color: white;
-		height: $searchinputheight;
-		width: 45px;
+		text-align: center;
 		padding-top: 6px;
 		cursor: pointer;
-		.glyphicon-search {
-			color: $goo-blue;
+
+		.checkbox{
+		  height: 16px;
+		  width: 16px;
+		  display:inline-block;
+			float: right;
+		  padding: 0 0 0 0px;
 		}
 	}
+	.checkboxholder:hover {
+		background-color: #DDF3FF;
+
+	}
+}
+
+.col-md-4 {
+	min-height: 0;
 }
 
 .titlepart {
@@ -168,6 +156,11 @@ h6:hover .header-link {
 	color: white;
 	text-align: center;
 	display: table;
+	transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+	background-color: #309DD8;
 }
 
 .largebutton {

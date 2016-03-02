@@ -1,13 +1,21 @@
-<div class="searchcontainer">
-  <form action="" method="post">
+{% assign pp = site.pages | sort: 'difficulty_overall' %}
+	{% for ppage in pp %}
+		{% if ppage.layout == "courseoverview" %}
+    {{ assign courses[forloop.index] = ppage }}
+    {% endif %}
+  {% endfor %}
+
+
+<div class="searchcontainer" onload="getPosts({{ courses }});">
+  <form action="">
     <div class="row">
-      <div class="col-md-3">
-        <input type="text" placeholder="Search Goo Learn"/>
+      <div class="col-md-2">
+        <br />
       </div>
-      <div class="col-md-3">
-        <select name="difficulty">
+      <div class="col-md-2">
+        <select class="difficulty">
           <option disabled selected>
-            Difficulty
+            Select difficulty
           </option>
           <option>
             Beginner
@@ -20,30 +28,45 @@
           </option>
         </select>
       </div>
-      <div class="col-md-3">
-        <select name="usecase" placeholder="test">
+      <div class="col-md-2">
+        <select class="usecase" placeholder="test">
           <option disabled selected>
-            Usecase
+            Select usecase
           </option>
           <option>
             Games
           </option>
           <option>
-            Product config
+            Webdesign
           </option>
           <option>
-            Advertisement
+            Other usecases
           </option>
         </select>
+    </div>
+    <div class="col-md-2">
+      <select class="coding">
+        <option disabled selected>
+          Coding options
+        </option>
+        <option>
+          Code
+        </option>
+        <option>
+          No code
+        </option>
+        <option>
+          Both
+        </option>
+      </select>
+    </div>
+      <div class="col-md-2">
+        <div class="checkboxholder reset">
+          Reset filter
+        </div>
       </div>
-      <div class="col-md-3">
-        <div class="checkboxholder">
-          <input type="checkbox" name="code" class="checkbox"/>
-          <label></label>
-        </div>
-        <div class="searchbutton">
-          <span class="glyphicon glyphicon-search" aria-hidden="true" title="Search"></span>
-        </div>
+      <div class="col-md-2">
+        <br />
       </div>
     </div>
   </form>

@@ -1,5 +1,30 @@
 <div class="col-md-4">
-  <div class="overviewblock">
+  <div class="tutorial overviewblock
+  {% case ppage.difficulty_overall %}
+  {% when 0 %}
+    Beginner
+  {% when 1 %}
+    Intermediate
+  {% when 2 %}
+    Expert
+  {% else %}
+  {% endcase %}
+
+  {% if ppage.usecase %}
+    {% case ppage.usecase %}
+    {% when 0 %}
+      Games
+    {% when 1 %}
+      Webdesign
+    {% when 2 %}
+      Else
+    {% endcase %}
+  {% else %}
+  Else
+  {% endif %}
+  {% if ppage.contains_scripts == true %}
+  code {% else %} nocode {% endif %}
+  ">
     <h2>{{ppage.title}}</h2>
     <p>
       <span class="difficulty">
@@ -12,9 +37,11 @@
           Expert
         {% else %}
         <br />
+
         {% endcase %}
-      {% if ppage.contains_scripts == true %}
-        </span> <span class="goofont goofont-icon-script"></span>
+        {% if ppage.contains_scripts == true %}
+          </span>
+        <span class="goofont goofont-icon-script"></span>
       {% endif %}
     </p>
     <hr />
