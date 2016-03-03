@@ -1,5 +1,6 @@
 ---
-title: State Machine
+title: State Machine Component
+menutitle: State Machine
 layout: manual
 weight: 2200
 indent: 3

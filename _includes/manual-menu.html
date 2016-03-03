@@ -20,7 +20,7 @@
 						"
 						href="{{ ppage.url | prepend: site.baseurl }}"
 					>
-						{{ ppage.title }}
+						{% if ppage.menutitle %}{{ ppage.menutitle }}{% else %}{{ ppage.title }}{% endif %}
 					</a>
 				{% endif %}
 			{% endfor %}

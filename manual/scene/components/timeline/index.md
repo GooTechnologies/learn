@@ -1,5 +1,6 @@
 ---
-title: Timeline
+title: Timeline Component
+menutitle: Timeline
 layout: manual
 weight: 2700
 indent: 3

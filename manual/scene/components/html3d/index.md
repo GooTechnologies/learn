@@ -1,6 +1,7 @@
 ---
 layout: manual
-title: HTML3D
+title: HTML3D Component
+menutitle: HTML3D
 weight: 2701
 indent: 3
 layout: manual

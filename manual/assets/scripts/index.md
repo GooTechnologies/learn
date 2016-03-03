@@ -5,9 +5,9 @@ indent: 2
 layout: manual
 id: scripts
 ---
-A *Script Asset* is some JavaScript code that can interact with entities in Create. To add a Script Asset to an entity, the entity needs a Script Component.
+A *Script Asset* is some JavaScript code that can interact with entities in Create. To add a Script Asset to an entity, the entity needs a [Script Component]({{ '/manual/scene/components/script' | append: site.baseurl }}).
 
-## Creating a Script Asset
+## Creating a Script
 
 There are several ways of creating a Script Asset:
 
