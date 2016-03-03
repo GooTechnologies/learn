@@ -231,3 +231,13 @@ Used together with an int, to get the ID of a joint. Needs to be used on scripts
 }{% endhighlight %}
 
 ![Joint selector](control-joint.png)
+
+## External dependencies
+
+You can add external JavaScript dependencies to your script. To do this, enter a URL in the left panel of the script editor, and click the *+* button.
+
+Note that the URLs you enter should start with *//* and not *http://* or *https://*.
+
+![](script-editor.png)
+
+The JavaScript dependencies will be loaded and executed immediately inside the Create editor (click "Refresh resources" to re-download and execute). In your published scene, all dependencies will be loaded and executed during the loading phase.
