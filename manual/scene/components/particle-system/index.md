@@ -142,7 +142,7 @@ Here you can choose between a few (procedurally generated) texture presets, or c
 </tr>
 <tr>
 	<td>Blending</td>
-	<td>What kind of blending to use, for example *Additive Blending*.</td>
+	<td>What kind of blending to use, for example <em>Additive Blending</em>.</td>
 </tr>
 <tr>
 	<td>Depth write</td>
