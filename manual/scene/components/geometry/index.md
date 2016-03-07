@@ -1,5 +1,6 @@
 ---
-title: Geometry
+title: Geometry Component
+menutitle: Geometry
 weight: 2000
 indent: 3
 layout: manual

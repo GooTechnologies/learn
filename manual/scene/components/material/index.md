@@ -1,5 +1,6 @@
 ---
-title: Material
+title: Material Component
+menutitle: Material
 layout: manual
 weight: 2050
 indent: 3

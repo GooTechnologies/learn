@@ -1,5 +1,6 @@
 ---
-title: Sound
+title: Sound Component
+menutitle: Sound
 layout: manual
 weight: 2100
 indent: 3

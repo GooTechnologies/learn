@@ -1,5 +1,6 @@
 ---
-title: Animation
+title: Animation Component
+menutitle: Animation
 weight: 2600
 indent: 3
 layout: manual

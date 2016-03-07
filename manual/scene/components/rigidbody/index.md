@@ -1,5 +1,6 @@
 ---
-title: Rigid Body
+title: Rigid Body Component
+menutitle: Rigid Body
 layout: manual
 weight: 2400
 indent: 3

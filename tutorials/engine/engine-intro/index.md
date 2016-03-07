@@ -29,7 +29,7 @@ An Entity-Component-System provides the ultimate flexibility in game design: Mix
 
 In this tutorial we will create a little solar system with a sun, a world and a moon. Here is a preview:
 
-<iframe allowfullscreen src="//jsfiddle.net/5mLc3sn5/embedded/result,js,html,css"></iframe>
+<iframe allowfullscreen src="//jsfiddle.net/5mLc3sn5/7/embedded/result,js,html,css"></iframe>
 
 <div class="alert alert-info" role="alert">You should see a yellow sun orbited by a world looking like earth which in turn is orbited by a little moon. If you don't see this, check if you have a WebGL compatible browser: <a href="http://get.webgl.org">http://get.webgl.org</a></div>
 
