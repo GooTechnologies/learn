@@ -51,11 +51,11 @@
     <p class="shortdescription">
         {{ ppage.short_description }}
     </p>
-    <div class="progressbarcontainer">
+    <div class="progressbarcontainer" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
     </div>
     <a id="buttonlink" href="{{ ppage.url }}">
       <div class="button">
-        Pick up where you left
+        
       </div>
     </a>
   </div>

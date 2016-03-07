@@ -23,7 +23,7 @@ layout: default
 	</a>
 	</div>
 	{% for ppage in pp %}
-		{% if ppage.layout == "tutorial" %}
+		{% if ppage.layout == "tutorial" and ppage.difficulty_overall %}
 			{% include overviewblock_tutorial.html %}
 		{% endif %}
 	{% endfor %}

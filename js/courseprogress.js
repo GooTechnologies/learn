@@ -39,7 +39,6 @@ function replacehref(){
 
 
 $(document).ready(function(){
- debugger
   var container = document.querySelector('.progressbarcontainer');
   var urls = container.dataset.tutorials.split(/\s+/g).filter(function(url){return url});
 
@@ -50,6 +49,9 @@ $(document).ready(function(){
       return a + b;
   });
   var percent = numCompleted / numTotal;
+
+  var button = document.getElementsByClassName('button');
+  console.log(button);
 
   var elements = document.getElementsByClassName('progressbarcontainer');
   for (var i = 0; i < elements.length; i++){
