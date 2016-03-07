@@ -6,6 +6,8 @@ layout: manual
 ---
 The *Particle System Component* simulates fluid entities such as liquids, clouds and flames by generating and animating large numbers of small 2D images in the scene.
 
+![](particle-component.png)
+
 ## General
 
 <table class="table">
