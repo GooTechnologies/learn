@@ -1,15 +1,18 @@
 ---
 layout: tutorial
 title: Getting started Video
-weight: 1041
+weight: 100
 indent: 1
+contains_video: true
+difficulty_overall: 0
+
 ---
 <video controls autoplay>
   <source src="http://labs.gooengine.com/video/goo-material-flow.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-The above video shows you how to go from the dashboard in Create to a normal mapped and shiny rotating sphere, which is published to the Goo cloud. The used texture resources are provided below.
+The above video shows you how to go from the dashboard in Create to a normal mapped and shiny rotating sphere, which is published to the Goo cloud. The used texture resources are provided below. Right click and choose "Save image as..." to save the image to disk.
 
 <img src="chesterfield-color.png" style="width:200px; height: 200px">
 <img src="chesterfield-normal.png" style="width:200px; height: 200px">

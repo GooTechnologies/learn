@@ -1,8 +1,9 @@
 ---
 layout: tutorial
 title: Timeline
-weight: 1008
+weight: 700
 indent: 1
+difficulty_overall: 0
 ---
 In this tutorial, we will go over the basics of the timeline, and see how keyframes can be used to control animations.  
 
@@ -30,7 +31,7 @@ A new, fresh and empty timeline entity
 
 We choose what entities we want to control by opening the timeline and then dragging and dropping them from the right-hand hierarchy menu to the drop area on the timeline. Note: This behavior is new as of June 2014\. Previously, timeline entities animated their child entities. Drag the entities UFOWorldCenter and UFORelative to the timeline.  
 
-![dragged-entities](dragged-entities.jpg) 
+![dragged-entities](dragged-entities.jpg)
 
 After opening the timeline and dragging the two entities to it  
 

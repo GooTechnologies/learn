@@ -4,7 +4,7 @@ layout: manual
 indent: 2
 weight: 4010
 ---
-When you start the script editor, you get an empty script that looks like this:
+When you create a new script, and open it in the script editor, you get something that looks like this:
 
 {% highlight js %}
 'use strict';
@@ -94,29 +94,26 @@ The context is an object, unique per Script, that you can use to store your scri
 
 ### Data objects and scoping
 
-The **ctx** object is itself unique to each script, and any properties we define on it will only be accssebile by that script. Some of its properties are shared between scripts. *entityData* is shared by all scripts on the entity and *worldData* is shared by all scripts. They are all initially empty, and can be used to store any kind of data
+The **ctx** object unique to each script, and properties we define on it will only be accessible by that script. Some of its properties are shared between scripts. *entityData* is shared by all scripts on the entity and *worldData* is shared by all scripts. They are all initially empty, and can be used to store any kind of data
 
-For example, if we'd like to define a property called _acceleration_, we could make it available on three levels:
+For example, if we'd like to define a property called *acceleration*, we could make it available on three levels:
 
-{% highlight js %}  
-// Only accessible to the script that defined the property
+{% highlight js %}// Only accessible to the script that defined the property
 ctx.acceleration = 9.82;
 
 // Accessible to all scripts on the entity
 ctx.entityData.acceleration = 9.82;
 
 // Accessible to all scripts
-ctx.worldData.acceleration = 9.82;
-{% endhighlight %}  
+ctx.worldData.acceleration = 9.82;{% endhighlight %}
 
 ## The global goo object
 
-The **goo** object provides access to the [Goo Engine API](http://code.gooengine.com/latest/docs/). You can use it in your script to access goo classes.
+The **goo** object provides access to classes in the [Goo Engine API](http://code.gooengine.com/latest/docs/).
 
 ## Parameters and "args"
 
-{% highlight js %}
-var setup = function(args, ctx) {
+{% highlight js %}var setup = function(args, ctx) {
     console.log(args.velocity); // access the passed argument by key
 };
 
@@ -125,89 +122,90 @@ var parameters = [{
     key: "velocity",
     type: "vec3",
     default: [1, 0, 0]
-}];
-{% endhighlight %}
+}];{% endhighlight %}
 
-All parameters that are declared in the _parameters_ array are accessed via the **args** object and are also displayed the _script component panel_ in Create. This makes scripts much easier to work with, and it enables customization of scripts without having to change any code! The above script will generate the following script component panel:
+All parameters that are declared in the *parameters* array can be accessed via the **args** during runtime. The parameters are also displayed the *Script component panel* in Create. The above script will generate the following script component panel:
 
 ![](script-velocity.png)
 
 Below you can read more about what the custom parameters lets you do.
 
-### Parameter Format
+### Parameter Format
 
-Parameters need to be defined on a specific format. It is mentioned in the comments of an empty script too, but here's a walkthrough of the structure.  
+Parameters need to be defined on a specific format. It is mentioned in the comments of an empty script too, but here's a walkthrough of the structure.
 
-*   **key [string]** - _Required_. The key with which the variable is accessed as a property of the **args** object.
+*Required:*
+
+*   **key [string]** - The property key in the **args** object that should be used for this parameter.
+*   **type [string]** - Parameter type (see available types further down).
+*   **default** - Default value for the parameter.
+
+*Optional:*
+
 *   **name [string]** - The name that shows up in the script component panel.
-*   **type [string enum]** - _Required_. Parameter type, will be discussed in detail further down.
 *   **control [string enum]** - Type of control in the script component panel. Will be discussed later.
 *   **description [string]** - Tooltip for the script component panel.
-*   **options [array of *]** - Used with the _select_ control type.
-*   **default [*]** - _Required_ (not for object references). Default value for the parameter.
-*   **min [number]** - Used with _int_ or _float_ types.
-*   **max [number]** - Used with _int_ or _float_ types.
-*   **precision [number]** - Number of significant digits for _float_ values.
-*   **scale [number]** - Used with _slider_ control type.
-*   **exponential [boolean]** - Used with _slider_ control type.
+*   **options [array]** - Used with the *select* control type.
+*   **min [number]** - Used with *int* or *float* types.
+*   **max [number]** - Used with *int* or *float* types.
+*   **precision [number]** - Number of significant digits for *float* values.
+*   **scale [number]** - Used with *slider* control type.
+*   **exponential [boolean]** - Used with *slider* control type.
 
 ### Parameter Types
 
-The type property must be set to one of a few predefined strings, each corresponding to a type of parameter.  
+The type property must be set to one of a few predefined strings, each corresponding to a type of parameter.
 
-*   **"int" -** Simple integer variable (e.g. _5_).
-*   **"float" -** Simple float variable (e.g. _3.14_).
-*   **"string" -** Simple string variable (e.g. _"HelloGoo"_).
-*   **"boolean" **- Simple boolean (e.g. _false_).
-*   **"vecX"** - An array of X (2, 3 or 4) float numbers. Not a goo.Vector!
-*   **"texture", "image", "sound", "entity", "camera", "animation", "key"** - Direct references to different types of objects, controlled by drag-and-drop boxes in the script panel.
+*   **int** - Integer number variable (e.g. *5*).
+*   **float** - Number variable (e.g. *3.14*).
+*   **string** - String (e.g. *"HelloGoo"*).
+*   **boolean** - boolean (*true* or *false*).
+*   **vec2** - An array of 2 numbers.
+*   **vec3** - An array of 3 numbers.
+*   **vec4** - An array of 4 numbers.
+*   **texture, sound, entity, camera, animation** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
 
 ### Parameter Controls
 
-Different types can have different controls which in turn have several different available options:  
+Different types can have different controls which in turn have several different available options:
 
 #### control: "slider"
 
-A slider for numbers. The specific options _scale_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.  
+A slider for numbers. The specific options _scale_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.
 
-{% highlight js %}  
-{
+{% highlight js %}{
     key: "magnitude",
     name: "Magnitude",
-    type: "float",  
-    default: 10.0,
-    min: 5.0,
-    max: 15.0,
+    type: "float",
+    default: 10,
+    min: 5,
+    max: 15,
     control: "slider"
-}  
-{% endhighlight %}  
+}{% endhighlight %}
 
 ![](control-slider.png)
 
 #### control: "color"
 
-Brings up an RBG color picker for the _vec3_ type.  
+Brings up an RBG color picker for the _vec3_ type.
 
-{% highlight js %}  
-{
+{% highlight js %}{
     key: "playerColor",
-    name: "Player Color",  
+    name: "Player Color",
     type: "vec3",
     default: [0, 1, 0],
     control: "color"
-}
-{% endhighlight %}  
+}{% endhighlight %}
 
 ![](control-color.png)
 
 #### control: "select" or *"dropdown"
 
-Used to define a list of options of the selected type.  Use the options array to define the available options.  
+Used to define a list of options of the selected type.  Use the options array to define the available options.
 
-{% highlight js %}  
-{
+{% highlight js %}{
     key: "weapon",
-    name: "Weapon",  
+    name: "Weapon",
     type: "string",
     default: "Wooden Sword",
     control: "select",
@@ -216,8 +214,7 @@ Used to define a list of options of the selected type.  Use the options array t
         "Banana",
         "Laser Bazooka"
     ]
-}
-{% endhighlight %}
+}{% endhighlight %}
 
 ![](control-dropdown.png)
 
@@ -225,14 +222,22 @@ Used to define a list of options of the selected type.  Use the options array t
 
 Used together with an int, to get the ID of a joint. Needs to be used on scripts whose parent entities have joints.
 
-{% highlight js %}  
-{
+{% highlight js %}{
     key: "joint",
     name: "Joint",
-    type: "int",  
+    type: "int",
     default: 0,
     control: "jointSelector"
-}
-{% endhighlight %}  
+}{% endhighlight %}
 
 ![Joint selector](control-joint.png)
+
+## External dependencies
+
+You can add external JavaScript dependencies to your script. To do this, enter a URL in the left panel of the script editor, and click the *+* button.
+
+Note that the URLs you enter should start with *//* and not *http://* or *https://*.
+
+![](script-editor.png)
+
+The JavaScript dependencies will be loaded and executed immediately inside the Create editor (click "Refresh resources" to re-download and execute). In your published scene, all dependencies will be loaded and executed during the loading phase.

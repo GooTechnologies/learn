@@ -1,8 +1,10 @@
 ---
 layout: tutorial
 title: Physics Part 2
-weight: 1201
+weight: 900
 indent: 1
+difficulty_overall: 0
+contains_scripts: true
 ---
 In [part 1]({{ "/tutorials/create/physics-part-1" | prepend: site.baseurl }}) of the "Basic Physics in Goo Create" tutorial we created a tilted pinball table, some bumpers and a ball. Pressing play showed that the ball moved around the pinball table in a physically realistic way.  
 
@@ -64,10 +66,7 @@ Click on the edit button
 
 and replace the existing script with this one:
 
-{% highlight js %}
-'use strict';
-
-var setup = function(args, ctx, goo) {
+{% highlight js %}var setup = function(args, ctx, goo) {
     ctx.speed = 8;
 
     ctx.cw = new goo.Vector3(0, ctx.speed, 0);  // clockwise rotation
@@ -161,11 +160,10 @@ var update = function(args, ctx, goo) {
     } else {
         ctx.checkTarget( ctx.rightFlipper, ctx.rightFlipper.start, ctx.speed, '>=');
     }
-};
-{% endhighlight %}
+};{% endhighlight %}
 
-Click on play and you should have a working Goo Pinball Game !! PS: If you spend more time on details and involve a graphics artist you get this:
+Click on play and you should have a working Goo Pinball Game! PS: If you spend more time on details and involve a graphics artist you get this:
 
 ![](FlipperPretty-627x1024.jpg)
 
-<a class="btn btn-primary btn-lg" href="https://c1.goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>
+<a class="btn btn-primary btn-lg" target="_blank" href="https://c1.goote.ch/05779f4996204f14aabff73ee0333afe.scene">Launch finished game</a>

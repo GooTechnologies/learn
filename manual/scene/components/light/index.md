@@ -1,5 +1,6 @@
 ---
-title: Light
+title: Light Component
+menutitle: Light
 layout: manual
 weight: 1900
 indent: 3

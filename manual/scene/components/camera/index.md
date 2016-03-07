@@ -1,5 +1,6 @@
 ---
-title: Camera
+title: Camera Component
+menutitle: Camera
 layout: manual
 weight: 1800
 indent: 3

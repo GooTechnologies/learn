@@ -7,56 +7,57 @@ subtitle: Tutorials, reference manual and everything you need to learn Goo Creat
 <ul class="tutorial-list">
 	<li>
 		<a
-			href="{{ '/tutorials/create/solar-system' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/solar-system/solar.png' | prepend: site.baseurl }}');"
-		><h4>Solar System</h4></a>
+			href="{{ '/tutorials/create/getting-started-video' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/getting-started-video/getting-started-thumbnail.jpg' | prepend: site.baseurl }}');"
+		><h4>1. Getting started</h4></a>
 	</li>
 	<li>
 		<a
-			href="{{ '/tutorials/create/physics-part-1' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/physics-part-1/thumb.png' | prepend: site.baseurl }}');"
-		><h4>Physics</h4></a>
+			href="{{ '/tutorials/create/flappy-goon' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/flappy-goon/flappy-goon-thumbnail.jpg' | prepend: site.baseurl }}');"
+		><h4>2. Flappy Goon</h4></a>
 	</li>
 	<li>
 		<a
-			href="{{ '/tutorials/create/material-fundamentals' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/material-fundamentals/thumb.png' | prepend: site.baseurl }}');"
-		><h4>Material fundamentals</h4></a>
+			href="{{ '/tutorials/create/entities-and-transform' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/entities-and-transform/entities-and-transform-thumbnail.jpg' | prepend: site.baseurl }}');"
+		><h4>3. Entities &amp; transformation</h4></a>
 	</li>
 	<li>
 		<a
 			href="{{ '/tutorials/create/camera-light' | prepend: site.baseurl }}"
 			style="background-image: url('{{ '/tutorials/create/camera-light/thumb.jpg' | prepend: site.baseurl }}');"
-		><h4>Lights &amp; Cameras</h4></a>
-	</li>
-	<li>
-		<a
-			href="{{ '/tutorials/create/animation' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/animation/thumb.jpg' | prepend: site.baseurl }}');"
-		><h4>Animation</h4></a>
-	</li>
-	<li>
-		<a
-			href="{{ '/tutorials/create/state-machine' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/state-machine/thumb.jpg' | prepend: site.baseurl }}');"
-		><h4>State Machine</h4></a>
-	</li>
-	<li>
-		<a
-			href="{{ '/tutorials/create/transform-hierarchy' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/transform-hierarchy/thumb.png' | prepend: site.baseurl }}');"
-		><h4>Transform Hierarchy</h4></a>
-	</li>
-	<li>
-		<a
-			href="{{ '/tutorials/create/environment' | prepend: site.baseurl }}"
-			style="background-image: url('{{ '/tutorials/create/environment/thumb.png' | prepend: site.baseurl }}');"
-		><h4>Environment</h4></a>
+		><h4>4. Camera &amp; light</h4></a>
 	</li>
 	<li>
 		<a
 			href="{{ '/tutorials/create/lights' | prepend: site.baseurl }}"
 			style="background-image: url('{{ '/tutorials/create/lights/thumb.jpg' | prepend: site.baseurl }}');"
-		><h4>Lights</h4></a>
+		><h4>5. Lights</h4></a>
 	</li>
+	<li>
+		<a
+			href="{{ '/tutorials/create/material-fundamentals' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/material-fundamentals/1.png' | prepend: site.baseurl }}');"
+		><h4>6. Material fundamentals</h4></a>
+	</li>
+	<li>
+		<a
+			href="{{ '/tutorials/create/state-machine' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/state-machine/thumb.jpg' | prepend: site.baseurl }}');"
+		><h4>7. State Machine</h4></a>
+	</li>
+	<li>
+		<a
+			href="{{ '/tutorials/create/timeline' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/timeline/thumb.jpg' | prepend: site.baseurl }}');"
+		><h4>8. Timeline</h4></a>
+	</li>
+	<li>
+		<a
+			href="{{ '/tutorials/create/scripting' | prepend: site.baseurl }}"
+			style="background-image: url('{{ '/tutorials/create/scripting/thumb.png' | prepend: site.baseurl }}');"
+		><h4>9. Scripting</h4></a>
+	</li>
+
 </ul>

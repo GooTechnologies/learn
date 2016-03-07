@@ -1,8 +1,9 @@
 ---
 layout: tutorial
 title: Building a Solar System
-weight: 2002
+weight: 6005
 indent: 1
+contains_scripts: true
 ---
 Hello and welcome, this tutorial will show you how to create a simple solar system using Goo Engine. Please note that it much easier to [create this scene in Goo Create](http://create.goocreate.com) and that it is recommended to use Goo Create for most use cases anyways. But if you really want to or must use the Goo Engine directly this tutorial will get you started.
 
@@ -28,7 +29,7 @@ An Entity-Component-System provides the ultimate flexibility in game design: Mix
 
 In this tutorial we will create a little solar system with a sun, a world and a moon. Here is a preview:
 
-<iframe src="//jsfiddle.net/5mLc3sn5/embedded/result,js,html,css"></iframe>
+<iframe allowfullscreen src="//jsfiddle.net/5mLc3sn5/7/embedded/result,js,html,css"></iframe>
 
 <div class="alert alert-info" role="alert">You should see a yellow sun orbited by a world looking like earth which in turn is orbited by a little moon. If you don't see this, check if you have a WebGL compatible browser: <a href="http://get.webgl.org">http://get.webgl.org</a></div>
 
