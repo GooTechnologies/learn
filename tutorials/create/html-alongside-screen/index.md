@@ -11,13 +11,8 @@ duration: 15 minutes
 short_description: This tutorial will explain how to place HTML Entities along the border of the screen.
 thumbnail: tutorials\create\html-alongside-screen\thumbnail.jpg
 ---
-<<<<<<< HEAD
-<a href="side-buttons.png"><img class="size-medium wp-image-1001 aligncenter" src="side-buttons.png" alt="side buttons" /></a>
-=======
-This tutorial will show how to place an HTML Component aligned to the side the screen.
 
 ![](side-buttons.png)
->>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
 
 First, we will create a new HTML Entity. We do this by clicking *Create Entity* in the top bar. Next, we choose the *HTML Entity* inside the list.
 

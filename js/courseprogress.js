@@ -57,7 +57,6 @@ $(document).ready(function(){
   });
   var percent = numCompleted / numTotal;
 
-<<<<<<< HEAD
 
   if (percent == 0) {
     $(".coursebutton").html("Start course");
@@ -67,9 +66,8 @@ $(document).ready(function(){
   }
 
 
-=======
+
   var button = document.getElementsByClassName('button');
->>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
 
   var elements = document.getElementsByClassName('progressbarcontainer');
   for (var i = 0; i < elements.length; i++){

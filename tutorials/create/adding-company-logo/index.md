@@ -64,9 +64,4 @@ This solution does not require the logo to be hosted in another service but is a
     }
 </style>
 
-<<<<<<< HEAD
-<img class="custom-logo" data-id="dd6e72ac902e3ea325d1ca3cc61edbb01653bb00.png" />
-{% endhighlight %}
-=======
 <img class="custom-logo" data-id="dd6e72ac902e3ea325d1ca3cc61edbb01653bb00.png" />{% endhighlight %}
->>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2

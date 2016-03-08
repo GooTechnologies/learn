@@ -12,13 +12,8 @@ short_description: Here's a quick example of a script using either the position 
 thumbnail: tutorials\create\mouse-gyro-look\thumbnail.jpg
 scene: b7be03dbf7e741a9814b080ea3c61d5e.scene
 ---
-<<<<<<< HEAD
-To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
-=======
-Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera. To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
 
-<iframe allowfullscreen src="//c1.goote.ch/2b256a9988534a8bbd87f0b54a6a7c67.scene"></iframe>
->>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
+To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
 
 <a href="https://goote.ch/2b256a9988534a8bbd87f0b54a6a7c67.scene/">Open in a new window</a>
 
