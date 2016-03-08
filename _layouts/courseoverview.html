@@ -33,9 +33,7 @@ layout: default
 					Tags
 				</p>
 				{% assign words = page.tags | split: ", " %}
-				{% for word in words  %}
-				<div class="tag">{{ word }}</div>
-				{% endfor %}
+				{% for word in words  %}<div class="tag">{{ word }}</div>{% endfor %}
 			</div>
 			<hr />
 		</div>
@@ -97,13 +95,8 @@ layout: default
 								<p>
 									Tags
 								</p>
-
-										{% assign words = ppage.tags | split: ", " %}
-										{% for word in words  %}
-										<div class="tag">{{ word }}</div>
-										{% endfor %}
-
-
+								{% assign words = ppage.tags | split: ", " %}
+								{% for word in words  %}<div class="tag">{{ word }}</div>{% endfor %}
 							</div>
 						</div>
 							<div class="row">
@@ -131,15 +124,16 @@ layout: default
 		{% include prev-next-buttons-tutorial.html %}
 	</div>
 </div>
-	<div class="col-md-12">
-		{% assign pp = site.pages | sort: 'part' %}
-		{% for ppage in pp %}
-			{% if ppage.part == 1 and ppage.url contains page.url %}
-			<a href="{{ppage.url}}">
-		<div class="button centerbutton largebutton " onclick="setTutorialDoneStatus('{{ page.url }}')">
-			Go to the first part:<span> {{ppage.title}}</span>
-		</div>
-	</a>
-		{% endif %}
-	{% endfor %}
-	</div>
+
+<div class="col-md-12">
+{% assign pp = site.pages | sort: 'part' %}
+{% for ppage in pp %}
+	{% if ppage.part == 1 and ppage.url contains page.url %}
+		<a href="{{ppage.url}}">
+			<div class="button centerbutton largebutton " onclick="setTutorialDoneStatus('{{ page.url }}')">
+				Go to the first part:<span> {{ppage.title}}</span>
+			</div>
+		</a>
+	{% endif %}
+{% endfor %}
+</div>

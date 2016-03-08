@@ -12,11 +12,17 @@ short_description: Here's a quick example of a script using either the position 
 thumbnail: tutorials\create\mouse-gyro-look\thumbnail.jpg
 scene: b7be03dbf7e741a9814b080ea3c61d5e.scene
 ---
+<<<<<<< HEAD
 To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
+=======
+Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera. To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
 
-<a href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/">Open in a new window</a>
+<iframe allowfullscreen src="//c1.goote.ch/2b256a9988534a8bbd87f0b54a6a7c67.scene"></iframe>
+>>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
 
-<a href="https://create.goocreate.com/22307/a5b7c39669b04e5cb1e243f9a2d8454d.scene">Scene to Duplicate</a>
+<a href="https://goote.ch/2b256a9988534a8bbd87f0b54a6a7c67.scene/">Open in a new window</a>
+
+<a href="https://create.goocreate.com/22307/2b256a9988534a8bbd87f0b54a6a7c67.scene">Scene to Duplicate</a>
 
 Setup: Create two entities, place them both where the camera should look. In the example scene, I've picked (0, 0, 0). Create a camera and arrange the entities like this:
 
@@ -30,13 +36,12 @@ The camera radius (distance from the middle) is the adjusted by translating the 
 
 On the root entity, <em>Rot. Around Y</em> in our case, create a custom script. You can copy/paste the whole code below, set the camera as <strong>Main Camera</strong> and you're good to go!
 
-{% highlight js %}
-var setup = function(args, ctx) {
+{% highlight js %}var setup = function(args, ctx) {
     ctx.dir = args.invert ? 1 : -1;
 
     // Entities onto which the camera is attached
     ctx.cameraY = ctx.entity;
-    ctx.cameraX = ctx.entity.transformComponent.children[0].entity;
+    ctx.cameraX = ctx.entity.transformComponent.children.length && ctx.entity.transformComponent.children[0].entity;
 
     if (!(ctx.cameraX && ctx.cameraY)) {
         console.error('Camera X and/or Y entities missing');
@@ -102,6 +107,7 @@ var deviceOrientation = function(ctx, x, y) {
 };
 
 var cleanup = function(args, ctx) {
+    if(!ctx.cameraX) return;
     Object.keys(ctx.windowListeners).forEach(function(v) {
         window.removeEventListener(v, ctx.windowListeners[v]);
     });
@@ -126,6 +132,8 @@ var updateRotation = function(ctx) {
 };
 
 var update = function(args, ctx) {
+    if(!ctx.cameraX) return;
+
     smoothMove(ctx);
     updateRotation(ctx);
 };
@@ -174,5 +182,10 @@ var parameters = [
     default: 45.0,
     control: 'slider'
 }
+<<<<<<< HEAD
 ];
 {% endhighlight %}
+=======
+];{% endhighlight %}
+
+>>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2

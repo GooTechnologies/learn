@@ -1,5 +1,6 @@
 ---
-title: Transform
+title: Transform Component
+menutitle: Transform
 layout: manual
 weight: 1700
 indent: 3

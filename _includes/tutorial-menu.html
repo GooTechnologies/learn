@@ -1,5 +1,5 @@
 <div class="col-md-3">
-	<div class="list-group">
+	<div class="list-group tutorial-nav">
 		{% if site.render_navigation and site.render_menus %}
 			{% assign pp = site.pages | sort: 'weight' %}
 
@@ -20,7 +20,7 @@
 						"
 						href="{{ ppage.url | prepend: site.baseurl }}"
 					>
-						{{ ppage.title }}
+						{% if ppage.menutitle %}{{ ppage.menutitle }}{% else %}{{ ppage.title }}{% endif %}
 						<div class="pull-right">
 							{% if ppage.contains_video %}
 								<span class="glyphicon glyphicon-film" aria-hidden="true" title="Video"></span>

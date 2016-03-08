@@ -16,7 +16,7 @@ scene: 62a480a03dfd80991c08fbfa4f8023bc9614fcc6
 ## Part 1: Open the scene
 The first thing you'll have to do is to open the scene we will work in for this tutorial:
 
-1. <a href="https://create.goocreate.com/edit/aed83406fcb44bc3ab738c2ee8b4901b.scene" target="_blank">Click here to open the scene</a>
+1. <a href="https://create.goocreate.com/edit/aed83406fcb44bc3ab738c2ee8b4901b.scene" target="blank">Click here to open the scene</a>
 2. If you're not logged in yet, log in with your Goo Create account
 2. Click on 'Duplicate scene' in the top left corner
 3. Select 'Drafts' and click on 'Duplicate'
@@ -26,11 +26,11 @@ The first thing you'll have to do is to open the scene we will work in for this 
  You are now able to edit the scene. It should look like this:
  ![](before.jpg)
 
-##Part 2: Creating a support post
+## Part 2: Creating a support post
 
 In this part we will make the support posts for our house on water. The support posts consists of an entity, like every other element in a scene.
 
-###What is an entity?
+### What is an entity?
 
 Entities are the components of a scene, so a scene is basically a group of entities.
 
@@ -40,7 +40,7 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 
 ![Create Entity popup](createEntityScreen.jpg)
 
-###Adding a cylinder to the scene
+### Adding a cylinder to the scene
 
  For the posts that will support the house, we're going to use the 3D cylinder entity
 
@@ -50,7 +50,7 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
  2. Rename the entity to 'support post' by unfolding the first item in the panel on the left. You can unfold an item by clicking on it.
   ![Rename entity](RenameEntity.gif)
 
-###Change the 'translation' and 'rotation' values of the cylinder entity
+### Change the 'translation' and 'rotation' values of the cylinder entity
 
 Now we have added and renamed the entity, but it doesn't really looks like a support post yet. We have to change the dimensions of the entity, and rotate the entity so it stands straight.
 
@@ -75,9 +75,9 @@ Press the play button at the bottom center of the interface to see what we've ma
 ![Press play](pressPlay.gif)
 Look pretty nice with the water reflection, don't you think?
 
-We will create the other support posts in part 4 of this tutoral.
+We will create the other support posts in part 4 of this tutorial.
 
-##Part 3: Building the house
+## Part 3: Building the house
 
 To put the house together, follow the steps below.
 
@@ -86,13 +86,13 @@ To put the house together, follow the steps below.
 ![Frame selection](frameselected.gif)
 
 3. Unfold the 'House' entity in the hierarchy by clicking on the little arrow in front of the entity and select the 'floor' entity
-![Select floor](selectFloor.gif)
+![Select floor](selectfloor.gif)
 4. Drag the 'floor' entity on top of the 'ground' entity with the arrows or  by adjusting the translation values
 ![putFloorOnGround](putFloorOnGround.gif)
     Zoom in a little and make sure the floor aligns perfectly with the ground
 5. Do the same thing with the 'roof' entity, but then on top of the floor
 
-##Part 4: Put the house on the support posts
+## Part 4: Put the house on the support posts
 
 In this part we will put the house on the water and create the rest of the support posts
 
@@ -109,7 +109,7 @@ In this part we will put the house on the water and create the rest of the suppo
 ![Drag copied entity](dragCopiedEntity.gif)
 6. Do this for all the support posts
 
-###Well done, You've just made your first Goo Create scene!
+### Well done, You've just made your first Goo Create scene!
 
 ## Publish and share the scene
 

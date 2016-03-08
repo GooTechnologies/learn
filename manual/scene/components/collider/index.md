@@ -1,5 +1,6 @@
 ---
-title: Collider
+title: Collider Component
+menutitle: Collider
 layout: manual
 weight: 2500
 indent: 3

@@ -1,0 +1,41 @@
+---
+---
+@import "syntax-highlighting";
+
+.in-iframe .navbar,
+.in-iframe footer,
+.in-iframe .tutorial-nav,
+.in-iframe hr,
+.in-iframe .breadcrumb {
+	display: none;
+}
+.in-iframe img {
+	max-width: 100%;
+}
+.in-iframe h1,
+.in-iframe h2,
+.in-iframe h3,
+.in-iframe h4,
+.in-iframe h5,
+.in-iframe h6 {
+	font-weight: bold;
+}
+.in-iframe .next-button, .in-iframe .prev-button {
+	margin-bottom: 5px;
+}
+
+.in-iframe figure.highlight {
+	margin: 0;
+}
+.in-iframe figure.highlight pre {
+    padding: 10px;
+    font-size: 12px;
+}
+.in-iframe table {
+    font-size: 12px;
+}
+.in-iframe iframe {
+    width:  100%;
+    height: 50vw;
+    border: 0;
+}

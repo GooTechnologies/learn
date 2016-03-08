@@ -61,7 +61,7 @@ This image below illustrated how the main parts fit together. GooRunner holds th
 
 ![graph1](graph11.png)
 
-A schematic overview of the main parts in Goo Engine
+*A schematic overview of the main parts in Goo Engine*
 
 ## Details and Disclaimers
 

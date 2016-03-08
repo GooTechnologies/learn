@@ -8,8 +8,8 @@ The hierarchy panel shows all entities in the scene and their parent-child relat
 
 To move entities around in the graph, simply drag and drop the entities in the menu.
 
-At the top of the hierarchy there's the Scene root. Click it to start editing the Scene properties in the *Inspactor*.
+At the top of the hierarchy there's the Scene root. Click it to start editing the Scene properties in the *Inspector*.
 
-![Hierarchy panel](hierarchy.png)  
+![Hierarchy panel](hierarchy.png)
 
 The panel has controls for hiding and showing entities, expanding or collapsing hierarchies, to duplicate or delete entities, or undo the latest action (any action in Create).

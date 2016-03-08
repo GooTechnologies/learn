@@ -12,6 +12,12 @@ short_description: In this tutorial, we will show you how you how to make a sola
 thumbnail: tutorials\create\solar-system\thumbnail.jpg
 scene: b19faaf0006c4244a178466491719a6c.scene
 ---
+<<<<<<< HEAD
+=======
+In this tutorial, we will show you how you how to make a solar system by using the state machine.
+
+<iframe width="800" height="450" src="//c1.goote.ch/b19faaf0006c4244a178466491719a6c.scene" title="Solar system tutorial finished" allowfullscreen></iframe>
+>>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
 
 Here are the steps we will take in this tutorial:
 

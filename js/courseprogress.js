@@ -1,3 +1,5 @@
+/* global ProgressBar, $ */
+
 // Set current tutorial/page as "done"
 function setTutorialDoneStatus(pageUrl){
     if(typeof(localStorage) !== 'undefined'){
@@ -37,12 +39,15 @@ function replacehref(){
   }
 }
 
-
 $(document).ready(function(){
   var courses = document.getElementsByClassName('course');
 
   var container = document.querySelector('.progressbarcontainer');
-  var urls = container.dataset.tutorials.split(/\s+/g).filter(function(url){return url});
+  if(!container) return;
+
+  var urls = container.dataset.tutorials.split(/\s+/g).filter(function(url){
+    return url;
+  });
 
   var numTotal = urls.length;
   var numCompleted = urls.map(function(url){
@@ -52,6 +57,7 @@ $(document).ready(function(){
   });
   var percent = numCompleted / numTotal;
 
+<<<<<<< HEAD
 
   if (percent == 0) {
     $(".coursebutton").html("Start course");
@@ -61,13 +67,15 @@ $(document).ready(function(){
   }
 
 
+=======
+  var button = document.getElementsByClassName('button');
+>>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
 
   var elements = document.getElementsByClassName('progressbarcontainer');
   for (var i = 0; i < elements.length; i++){
     var circle = new ProgressBar.Circle(elements[i], {
         color: '#38b3f6',
         strokeWidth: 5,
-        trailWidth: 1,
         duration: 1500,
         trailWidth: 5,
         trailColor: '#a3b1bf',
@@ -80,6 +88,6 @@ $(document).ready(function(){
     });
     circle.animate(percent, function() {
         // circle.animate(0);
-    })
+    });
   }
 });
