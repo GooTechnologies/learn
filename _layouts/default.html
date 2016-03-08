@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-
 	<body>
+		<script>
+		(function() {
+			// Check if iframe
+			if(window.top !== window){
+				document.body.classList.add('in-iframe');
+
+				// Remove/add CSS includes
+				var e = document.getElementsByTagName('link');
+				for(var i=e.length-1; i>=0; i--){
+					if(e[i].dataset.removeInCreate){
+						document.head.removeChild(e[i]);
+					}
+					if(e[i].dataset.addInCreate){
+						e[i].href = e[i].dataset.href;
+					}
+				}
+			}
+		})();
+		</script>
 
 		{% include header.html %}
-
 		<div class="jumbotron">
 			<div class="container">
 				<h1>
@@ -33,7 +50,6 @@
 				{% if page.url == "/" %}
 					{% include searchbar.html %}
 				{% endif %}
-
 			</div>
 		</div>
 		<div class="container">
@@ -56,7 +72,6 @@
 		<script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/progressbar.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script>
-
 
 		<script type="text/javascript">
 			$(document).ready(function () {
@@ -89,5 +104,4 @@
 			ga('send', 'pageview');
 		</script>
 	</body>
-
 </html>

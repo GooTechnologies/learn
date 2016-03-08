@@ -124,15 +124,16 @@ layout: default
 		{% include prev-next-buttons-tutorial.html %}
 	</div>
 </div>
-	<div class="col-md-12">
-	{% assign pp = site.pages | sort: 'part' %}
-	{% for ppage in pp %}
-		{% if ppage.part == 1 and ppage.url contains page.url %}
-			<a href="{{ppage.url}}">
-				<div class="button centerbutton largebutton " onclick="setTutorialDoneStatus('{{ page.url }}')">
-					Go to the first part:<span> {{ppage.title}}</span>
-				</div>
-			</a>
-		{% endif %}
-	{% endfor %}
-	</div>
+
+<div class="col-md-12">
+{% assign pp = site.pages | sort: 'part' %}
+{% for ppage in pp %}
+	{% if ppage.part == 1 and ppage.url contains page.url %}
+		<a href="{{ppage.url}}">
+			<div class="button centerbutton largebutton " onclick="setTutorialDoneStatus('{{ page.url }}')">
+				Go to the first part:<span> {{ppage.title}}</span>
+			</div>
+		</a>
+	{% endif %}
+{% endfor %}
+</div>

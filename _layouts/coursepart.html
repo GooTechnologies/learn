@@ -88,16 +88,16 @@ layout: default
 	</div>
 </div>
 
-	<div class="col-md-12">
+<div class="col-md-12">
 
-		{% for ppage in pp %}
-			{% if ppage.part == nextpart and ppage.url contains parent  %}
-			<a href="{{ppage.url}}">
-		<div class="button centerbutton largebutton" onclick="setTutorialDoneStatus('{{ page.url }}')">
+	{% for ppage in pp %}
+		{% if ppage.part == nextpart and ppage.url contains parent  %}
+		<a href="{{ppage.url}}">
+	<div class="button centerbutton largebutton" onclick="setTutorialDoneStatus('{{ page.url }}')">
 
-			Go to the next part:<span> {{ppage.title}}</span>
-		</div>
-		</a>
-		{% endif %}
-	{% endfor %}
+		Go to the next part:<span> {{ppage.title}}</span>
 	</div>
+	</a>
+	{% endif %}
+{% endfor %}
+</div>

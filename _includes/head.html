@@ -9,12 +9,14 @@
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
-	<link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/css/bootstrap-theme.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/css/font-awesome.css' | prepend: site.baseurl }}">
+	<link data-remove-in-create="true" rel="stylesheet" href="{{ '/css/bootstrap.min.css' | prepend: site.baseurl }}">
+	<link data-remove-in-create="true" rel="stylesheet" href="{{ '/css/style.css' | prepend: site.baseurl }}">
+	<link data-remove-in-create="true" rel="stylesheet" href="{{ '/css/bootstrap-theme.css' | prepend: site.baseurl }}">
+	<link data-remove-in-create="true" rel="stylesheet" href="{{ '/css/font-awesome.css' | prepend: site.baseurl }}">
+	<link data-add-in-create="true" rel="stylesheet" data-href="{{ '/css/gooui.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/css/goofont.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/css/style.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,900,700,500italic,700italic" type="text/css" media="all">
+	<link rel="stylesheet" href="{{ '/css/create-style.css' | prepend: site.baseurl }}">
 
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | prepend: site.baseurl }}" />

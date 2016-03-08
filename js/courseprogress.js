@@ -56,7 +56,6 @@ $(document).ready(function(){
   var percent = numCompleted / numTotal;
 
   var button = document.getElementsByClassName('button');
-  console.log(button);
 
   var elements = document.getElementsByClassName('progressbarcontainer');
   for (var i = 0; i < elements.length; i++){
