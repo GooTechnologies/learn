@@ -3,11 +3,14 @@ layout: tutorial
 title: HTML alongside screen
 weight: 1999
 indent: 1
-overall_difficulty: 1
+difficulty_overall: 1
 contains_scripts: true
+tags: HTML, HTML positioning
+achievements: Positioning HTML components
+duration: 15 minutes
+short_description: This tutorial will explain how to place HTML Entities along the border of the screen.
+thumbnail: tutorials\create\html-alongside-screen\thumbnail.jpg
 ---
-This tutorial will explain how to place HTML Entities along the border of the screen.
-
 <a href="side-buttons.png"><img class="size-medium wp-image-1001 aligncenter" src="side-buttons.png" alt="side buttons" /></a>
 
 This is the first tutorial of a four part tutorial series:

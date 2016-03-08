@@ -5,10 +5,14 @@ weight: 2000
 indent: 1
 difficulty_overall: 1
 contains_scripts: true
+tags: logo, watermark, css, html
+achievements: Position HTML element, Using CSS in Create
+duration: 10 minutes
+short_description: Sometimes you may want to display your own company's logotype in a published scene instead of Goo's logotype. There are two options to do this.
+thumbnail: tutorials/create/adding-company-logo/thumbnail.jpg
 ---
 
-Sometimes you may want to display your own company's logotype in a published scene instead of Goo's logotype.
-There are two options to do this.
+
 
 ##Option 1
 

@@ -5,20 +5,13 @@ weight: 200
 indent: 1
 difficulty_overall: 0
 contains_scripts: false
+tags: entities, transform, rotation, scale, translation, hierarchy, water
+achievements: Entities, Transformation, Hierarchy
+duration: 30 minutes
+short_description: In this first tutorial of Goo Create you will learn how to make a house on water by using entities, the hierarchy and transformation
+thumbnail: tutorials\create\entities-and-transform\thumbnail.jpg
+scene: 62a480a03dfd80991c08fbfa4f8023bc9614fcc6
 ---
-
-In this first tutorial of Goo Create you will learn how to make a house on water:
-<iframe width="800" height="450" src="https://c1.goote.ch/62a480a03dfd80991c08fbfa4f8023bc9614fcc6" title="Entities and transform tutorial scene finished" allowfullscreen></iframe>
-
-The things you'll learn about in this tutorial:
-
-* Entities
-* Transformation
-    * Translation
-    * Rotation
-    * Scale
-* Hierarchy
-
 
 ## Part 1: Open the scene
 The first thing you'll have to do is to open the scene we will work in for this tutorial:

@@ -5,20 +5,18 @@ weight: 1015
 indent: 1
 difficulty_overall: 2
 contains_scripts: true
+tags: sprites, sprite animation, physics, state machine, sound, local storage, 2D
+achievements: Using sprites, physics, sprite animation, sound, state machine, local storage
+duration: 1 hour
+short_description: Flappy Bird is a simple (and popular) game. Let's remake it in Goo Create! The aim with this tutorial is to give you an idea how the game can be built, so you can do it too.
+thumbnail: tutorials\create\flappy-bird\thumbnail.jpg
+scene: bb3eea5c7dfe4b3b85fbcd9d7e6eddb5.scene
 ---
-Flappy Bird is a simple (and popular) game. Let's remake it in Goo Create!
-
-The aim with this tutorial is to give you an idea how the game can be built, so you can do it too. We will look at how to set up a 2D pixel
-
 We made sure that the game uses as little scripting as possible to make it simpler for everyone. If you're a beginner and get stuck, please have a look inside the Create scene, and hopefully you can get past your problems!
 
 Prerequisities: It's assumed you know how to make basic Create scenes, and simple scripts. You should also have some knowledge in how the state machine works.
 
-* [Play the finished game](https://c1.goote.ch/bb3eea5c7dfe4b3b85fbcd9d7e6eddb5.scene)
-* [Open scene in Goo Create](https://create.goocreate.com/edit/bb3eea5c7dfe4b3b85fbcd9d7e6eddb5.scene)
-
 ![](create-flappy.gif)
-
 
 ## Scene setup
 

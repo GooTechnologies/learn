@@ -5,6 +5,12 @@ weight: 900
 indent: 1
 difficulty_overall: 0
 contains_scripts: true
+tags: pinball, physics, rigid body, collider
+achievements: Rigid body, collider, translation, hierarchy
+short_description: The second part will create the flippers and add the script that make the flippers move on user input.
+thumbnail: tutorials\create\physics-part-2\thumbnail.jpg
+scene: 05779f4996204f14aabff73ee0333afe.scene
+duration: 15 minutes
 ---
 In [part 1]({{ "/tutorials/create/physics-part-1" | prepend: site.baseurl }}) of the "Basic Physics in Goo Create" tutorial we created a tilted pinball table, some bumpers and a ball. Pressing play showed that the ball moved around the pinball table in a physically realistic way.  
 

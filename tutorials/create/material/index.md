@@ -4,8 +4,11 @@ title: Assigning textures to material
 weight: 1003
 indent: 1
 difficulty_overall: 1
-
-
+tags: material, diffuse, normal, specular, emissive, ambient
+achievements: Material
+duration: 15 minutes
+short_description: In this tutorial you will learn how to make material look good in your scene.
+thumbnail: tutorials\create\material\thumbnail.jpg
 ---
 
 ![](1.jpg)

@@ -5,8 +5,13 @@ weight: 6002
 indent: 1
 contains_scripts: true
 difficulty_overall: 1
+tags: matrix3, LookAt, Matrix multiplication, Rotation, quaternion, fromAngleNormalAxis
+achievements: matrix3, LookAt, Matrix multiplication, Rotation
+duration: 20 minutes
+short_description: This article will go over the different ways you can define and set rotations on Goo Engine entities.
+thumbnail: tutorials\engine\rotations\thumbnail.jpg
 ---
-This article will go over the different ways you can define and set rotations on Goo Engine entities.
+
 
 Accompanying this article is also a live [demo scene](https://goote.ch/bdfac8ffdb4644f689ec583e9d3fb7a1.scene/):
 

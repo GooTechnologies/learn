@@ -4,6 +4,11 @@ title: Timeline
 weight: 700
 indent: 1
 difficulty_overall: 0
+tags: timeline, keyframes, easing
+achievements: timeline, easing, animating
+duration: 15 minutes
+short_description: In this tutorial, we will go over the basics of the timeline, and see how keyframes can be used to control animations.  
+thumbnail: tutorials\create\timeline\thumbnail.jpg
 ---
 In this tutorial, we will go over the basics of the timeline, and see how keyframes can be used to control animations.  
 

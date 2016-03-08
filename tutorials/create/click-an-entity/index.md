@@ -5,9 +5,11 @@ weight: 1999
 indent: 1
 contains_scripts: true
 difficulty_overall: 1
+tags: picking, Hardware picking, raycasting, performance, state machine
+achievements: Hardware picking, Bounding box raycasting, collider raycasting
+short_description: You want to know when an entity is clicked, so you do something when it happens. Depending on your scenario, you may need to choose a different approach.
+thumbnail: tutorials\create\click-an-entity\thumbnail.jpg
 ---
-Problem: you want to know when an entity is clicked, so you do something when it happens. Depending on your scenario, you may need to choose a different approach.
-
 <table class="table table-bordered">
 <tbody>
 <tr>
@@ -84,7 +86,7 @@ var setup = function(args, ctx) {
             goo.SystemBus.emit(args.channel);
         }
     };
-    
+
     ctx.domElement.addEventListener('click', ctx.onClick);
 };
 
@@ -129,7 +131,7 @@ var setup = function(args, ctx) {
         }
         ctx.result.reset();
     };
-    
+
     ctx.domElement.addEventListener('click', ctx.onClick);
 };
 

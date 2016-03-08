@@ -1,13 +1,70 @@
 ---
 layout: default
 ---
+{% assign thumb = page.thumbnail | split: "/" %}
+
 <div class="col-md-12">{% include tutorial-breadcrumbs.html %}</div>
 
-<div class="col-md-9">
+<div class="col-md-8">
+	<p>
+		{{ page.short_description }}
+	</p>
+	<br />
+	{% if page.scene %}
+	<iframe width="800" height="450" src="https://c1.goote.ch/{{ page.scene }}" allowfullscreen></iframe>
+	<p class="imagedescription">
+		This is the result of what you're going to make this course<br />
+		<a href="https://c1.goote.ch/{{ page.scene }}" target="_blank">
+			Click here to check out the scene full screen in a new tab
+		</a>
+	</p>
+	{% else %}
+	<img src="/{{ page.thumbnail }}" style="margin: 0 auto; display: table; margin-bottom: 20px;" />
+	{% endif %}
+</div>
+
+
+
+
+<div class="col-md-4">
+	<div class="overviewblock coursepartdetails">
+		<div class="row">
+			<div class="col-md-12">
+				<p style="margin-bottom: 5px;">
+					Tags
+				</p>
+				{% assign words = page.tags | split: ", " %}
+				{% for word in words  %}
+				<div class="tag">{{ word }}</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p>
+					In this tutorial you will learn about:
+				</p>
+				{% assign words = page.achievements | split: ", " %}
+				{% for word in words  %}
+				<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
+				{% endfor %}
+				<br />
+				{% if page.duration %}
+				<p>
+					Duration:
+				</p>
+				<p>
+					<span class="time">{{ page.duration }}</span>
+				</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12">
 	<div class="content">
 		{{ content }}
 		{% include prev-next-buttons-tutorial.html %}
 	</div>
 </div>
-
-{% include tutorial-menu.html %}

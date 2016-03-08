@@ -4,8 +4,13 @@ title: Transform Hierarchy
 weight: 750
 indent: 1
 difficulty_overall: 0
+tags: Hierarchy, 3d transform, coordinates
+achievements: Hierarchy, Local and global coordinates
+duration: 20 minutes
+short_description: In this tutorial, we'll have a look at the basics of the hierarchy and some of its uses.
+thumbnail: tutorials\create\transform-hierarchy\thumbnail.jpg
 ---
-The hierarchy in Goo Create lets us build a *scene graph*. In short, the hierarchy makes it possible to make entities follow other entities when moved, by connecting their 3D transforms in a graph structure. In this tutorial, we'll have a look at the basics of the hierarchy and some of its uses.
+The hierarchy in Goo Create lets us build a *scene graph*. In short, the hierarchy makes it possible to make entities follow other entities when moved, by connecting their 3D transforms in a graph structure.
 
 This tutorial uses *Lights*, so you may be interested in reading the [Lights tutorial]({{ '/tutorials/create/lights' | prepend: site.baseurl }}) first.
 

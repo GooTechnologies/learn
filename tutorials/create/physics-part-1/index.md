@@ -4,8 +4,14 @@ title: Physics Part 1
 weight: 800
 indent: 1
 difficulty_overall: 0
+tags: pinball, physics, rigid body, collider
+achievements: Rigid body, collider, translation, hierarchy
+short_description: The first part will create a tilted box and a few cylinders and a ball to roll along the box and collide with the cylinders.
+thumbnail: tutorials\create\physics-part-1\thumbnail.jpg
+scene: 05779f4996204f14aabff73ee0333afe.scene
+duration: 20 minutes
 ---
-Hello and welcome to the "Basic Physics in Goo Create" tutorial.
+Hello and welcome to the "Basic Physics in Goo Create" tutorial. Use the arrow or WSAD keys to play the pinball game embedded above.
 
 The tutorial will be split into two parts:
 

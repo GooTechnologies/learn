@@ -4,6 +4,11 @@ title: Creating a Goon
 weight: 1999
 indent: 1
 difficulty_overall: 1
+tags: translation, state machine, transitions, actions, keybinding, animation, light
+achievements: State machine and animation, keybinding, light
+duration: 30 minutes
+short_description: In this tutorial you will learn how to make a small game wherein you can move the Goon with WSAD.
+thumbnail: tutorials\create\creating-a-goon\thumbnail.jpg
 ---
 <div class="alert alert-danger" role="alert">Create has been updated many times since the original writing of this tutorial. While the concepts still are similar, there might be slight differences in certain interface and feature details. At this time template projects no longer exist, but you can still create the scene yourself.</div>
 

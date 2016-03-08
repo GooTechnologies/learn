@@ -5,9 +5,14 @@ weight: 1999
 indent: 1
 contains_scripts: true
 difficulty_overall: 1
-
+tags: JS, css, tween, interactivity, buttons
+achievements: Tweening, Rotation script, Rotate when click
+short_description: This tutorial will cover how to create CSS buttons and use them to rotate a model. It will also include how to make smooth animations with the TweenJS library.
+duration: 20 minutes
+thumbnail: tutorials\create\rotating-cube-with-html-buttons\thumbnail.jpg
+scene: 162b6be8fed505e211e5f05f0219d3332cade834
 ---
-This tutorial will cover how to create CSS buttons and use them to rotate a model. It will also include how to make smooth animations with the TweenJS library. To get the most out of this tutorial, it is useful to know the absolute basics of Create, and also know some JavaScript and a bit of CSS. The tutorial will contain a lot of code and is broken up into five chapters, all with corresponding projects to look at:
+To get the most out of this tutorial, it is useful to know the absolute basics of Create, and also know some JavaScript and a bit of CSS. The tutorial will contain a lot of code and is broken up into five chapters, all with corresponding projects to look at:
 
 * <a href="#starting-off">Starting Off</a>
 * <a href="#making-a-rotation-script">Making a Rotation Script</a>

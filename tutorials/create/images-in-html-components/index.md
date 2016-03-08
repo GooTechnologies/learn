@@ -5,9 +5,12 @@ weight: 1999
 indent: 1
 difficulty_overall: 0
 weight: 715
+tags: HTML, HTML Entity, image
+achievements: HTML Entity, Adding images
+duration: 10 minutes
+short_description: This tutorial will show you how to add an image into your scene by adding an HTML component.
+thumbnail: tutorials\create\images-in-html-components\thumbnail.jpg
 ---
-This tutorial will show you how to add an image to your HTML component.
-
 Prerequisities: You should have basic knowledge about HTML.
 
 ![](create-html-image.png)

@@ -6,8 +6,13 @@ indent: 1
 contains_video: true
 difficulty_overall: 2
 contains_scripts: true
+tags: multiplayer, fps game, nodeJS, online
+achievements: Client-Side Communication and Events, Server Connections, Server Game Loop and Events, Client Prediction, Entity Interpolation, Lag Compensation
+short_description: In this article we'll have a look a few interesting topics and techniques involved in crafting a multiplayer first-person-shooter game using Goo Create and Node.js
+thumbnail: tutorials\create\multiplayer-fps\thumbnail.jpg
+scene: 30fda7504cc04fa1b5ddde499eb88f28.scene
 ---
-Today we'll have a look a few interesting topics and techniques involved in crafting a multiplayer first-person-shooter game using Goo Create and Node.js. Here's what the gameplay looks like!  
+In this article we'll have a look a few interesting topics and techniques involved in crafting a multiplayer first-person-shooter game using Goo Create and Node.js. Here's what the gameplay looks like!  
 
 <iframe src="//player.vimeo.com/video/114006218"></iframe>  
 

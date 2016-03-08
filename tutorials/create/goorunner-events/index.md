@@ -6,9 +6,13 @@ indent: 1
 prerequisities: /tutorials/create/dom-events/index.html
 difficulty_overall: 2
 contains_scripts: true
+tags: GooRunner, events, eventlistener, intersection marker
+achievements: GooRunner event listeners
+duration: 20 minutes
+short_description: In this tutorial you will learn about how to use event listeners in a 3D environment with the GooRunner Event Listeners
+thumbnail: tutorials\create\goorunner-events\thumbnail.jpg
+scene: 3140d3c9a48ea9bc3b8897827f690e9243aa9b74
 ---
-<iframe allowfullscreen src="//goote.ch/3140d3c9a48ea9bc3b8897827f690e9243aa9b74/"></iframe>
-
 Click around! The GooRunner event listeners work like regular DOM event listeners (and even contains the standard events), but also add some very useful stuff:
 
 *   The picked entity.

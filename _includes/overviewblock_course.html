@@ -44,7 +44,6 @@
           <span class="goofont goofont-icon-script"></span>
         {% endif %}
     </p>
-    <hr />
     <div class="imgcontainer">
       <img src="{{ ppage.thumbnail }}" />
     </div>
@@ -54,8 +53,8 @@
     <div class="progressbarcontainer" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
     </div>
     <a id="buttonlink" href="{{ ppage.url }}">
-      <div class="button">
-        
+      <div class="button coursebutton">
+
       </div>
     </a>
   </div>

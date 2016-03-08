@@ -5,11 +5,13 @@ weight: 1041
 indent: 1
 difficulty_overall: 1
 contains_scripts: true
+tags: sprite, animation
+achievements: Sprite animations
+duration: 20 minutes
+short_description: This tutorial tells you how to make UV sprite animation via a simple script.
+thumbnail: tutorials\create\uv-sprite-animation\thumbnail.jpg
+scene: 5a3c485848cf4289bed1af5213b70d41.scene
 ---
-This tutorial tells you how to make UV sprite animation via a simple script, like the following:
-
-<iframe allowfullscreen src="https://c1.goote.ch/5a3c485848cf4289bed1af5213b70d41.scene"></iframe>
-
 Say you want to make an old school pixel style game, where you have animations defined in sprite sheets, like in the following image (right-click and click "Save image as..." to save to disk):
 
 <img src="spritesheet.png" style="max-width:50%"/>

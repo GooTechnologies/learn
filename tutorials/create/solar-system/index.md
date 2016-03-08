@@ -5,10 +5,13 @@ weight: 950
 indent: 1
 contains_scripts: false
 difficulty_overall: 0
+tags: entities, transformation, state machine, after effect, bloom
+achievements: Adding and transforming entities, materials, state machine, hierarchy, after effects
+duration: 15 minutes
+short_description: In this tutorial, we will show you how you how to make a solar system by using the state machine.
+thumbnail: tutorials\create\solar-system\thumbnail.jpg
+scene: b19faaf0006c4244a178466491719a6c.scene
 ---
-In this tutorial, we will show you how you how to make a solar system by using the state machine.
-
-<iframe width="800" height="450" src="https://c1.goote.ch/b19faaf0006c4244a178466491719a6c.scene" title="Solar system tutorial finished"></iframe>
 
 Here are the steps we will take in this tutorial:
 

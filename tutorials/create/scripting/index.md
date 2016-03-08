@@ -5,8 +5,13 @@ indent: 1
 weight: 715
 difficulty_overall: 0
 contains_scripts: true
+tags: scripting, transformComponent
+achievements: Adding script to entity, moving entity by using script
+duration: 10 minutes
+short_description: This tutorial will introduce you to scripting in Goo Create. We will make a script that moves a sphere back and forth.
+thumbnail: tutorials\create\scripting\thumbnail.jpg
 ---
-This tutorial will introduce you to scripting in Goo Create. We will make a script that moves a sphere back and forth. Prerequisities is basic knowledge of Goo Create and JavaScript.
+Prerequisities are basic knowledge of Goo Create and JavaScript.
 
 ![](moving-sphere.gif)
 

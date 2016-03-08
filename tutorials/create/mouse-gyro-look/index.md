@@ -5,11 +5,14 @@ weight: 1999
 indent: 1
 contains_scripts: true
 difficulty_overall: 1
-
+tags: mouse gyro, interaction, camera
+achievements: Adding a script to the camera
+duration: 5 minutes
+short_description: Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera.
+thumbnail: tutorials\create\mouse-gyro-look\thumbnail.jpg
+scene: b7be03dbf7e741a9814b080ea3c61d5e.scene
 ---
-Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera. To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
-
-<iframe allowfullscreen src="//goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/"></iframe>
+To make things simple, the camera is attached to two root entities. Rotating these entities around X and Y, respectively, moves the camera in an orbiting fashion.
 
 <a href="https://goote.ch/b7be03dbf7e741a9814b080ea3c61d5e.scene/">Open in a new window</a>
 
@@ -173,4 +176,3 @@ var parameters = [
 }
 ];
 {% endhighlight %}
-

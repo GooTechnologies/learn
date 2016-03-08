@@ -4,9 +4,12 @@ title: Simple Ad
 weight: 1041
 indent: 1
 difficulty_overall: 0
+tags: Advertisement, 3D, publish
+achievements: Making and publishing a 3D ad
+duration: 10 minutes
+short_description: In this tutorial we will show how to make a customized 300x250 Spinning Cube ad in Goo Create, starting from a template.
+thumbnail: tutorials\create\simple-ad\thumbnail.jpg
 ---
-In this tutorial we will show how to make a customized 300x250 Spinning Cube ad in Goo Create, starting from a template.
-
 **Audience**: the tutorial is made for ad unit makers, who want to make their first 3D ad in Goo Create.
 
 **Prerequisities**: It's assumed that you have a Pro or Enterprise Goo Create account. See [pricing](http://goocreate.com/pricing/).

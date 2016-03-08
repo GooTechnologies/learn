@@ -4,6 +4,12 @@ title: Material fundamentals
 weight: 500
 indent: 1
 difficulty_overall: 0
+tags: adding texture, material, specular, shininess, emissive, ambient,
+achievements: Adding texture, Specular color and shininess, Texture mode, Emissive color, Ambient
+duration: 15 minutes
+short_description: This tutorial aims to cover the basics of adding textures and optimizing materials
+thumbnail: tutorials\create\material-fundamentals\thumbnail.jpg
+scene: b9379f3a4b6947b19ca1d5c397cbd0ab.scene
 ---
 
 What is a project without colours or textures? Not much, to get more life into your scenes it is important to know the fundamentals of the powerful and essential Material Component.
@@ -83,10 +89,7 @@ Next up, the Ambient property, used mainly for the base lighting of an object, a
 
 ## You’re done!
 
-Great job, you have mastered the Material fundamentals. Below you can interact with the outcome of this tutorial.
-
-<iframe allowfullscreen webkitallowfullscreen mozallowfullscreen name="advanced_iframe" src="//c1.goote.ch/b9379f3a4b6947b19ca1d5c397cbd0ab.scene/" width="100%" height="500" scrolling="auto" frameborder="0" border="0" allowtransparency="true"></iframe>
-
+Great job, you have mastered the Material fundamentals.
 <p>
     <center>
         <a class="btn btn-primary btn-lg" target="_blank" href="https://create.goocreate.com/edit/b9379f3a4b6947b19ca1d5c397cbd0ab.scene">Open scene in Create</a>
