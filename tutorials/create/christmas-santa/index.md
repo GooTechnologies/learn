@@ -4,9 +4,12 @@ title: Creating Santa
 weight: 1999
 indent: 1
 difficulty_overall: 1
+tags: modelling, primitives, geometry, material, grouping
+achievements: Modelling, Creating primitives, Hierarchy
+duration: 25 minutes
+short_description: This tutorial presents how Santa has been built for the Christmas scene and goes through some special Christmas features added in Goo Create.
+thumbnail: tutorials\create\christmas-santa\thumbnail.jpg
 ---
-
-Create comes with a Christmas template project. In this game scene, Santa is traveling around the world with his loyal jetpack. Use the Left and Right keys to accelerate/decelerate and the Up and Down keys to fly higher or lower. This tutorial presents how Santa has been built for this scene and goes through some special Christmas features added in Goo Create.
 
 ## It’s All About Primitives
 

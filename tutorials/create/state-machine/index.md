@@ -4,6 +4,11 @@ title: State Machine
 weight: 600
 indent: 1
 difficulty_overall: 0
+tags: State machine, actions, behavior, rotation, hierarchy
+achievements: State machine, pick action, rotate action, hierarchy
+duration: 15 minutes
+short_description: In this tutorial, we will show you how you how to make a solar system by using the state machine.
+thumbnail: tutorials\create\state-machine\thumbnail.jpg
 ---
 Note: This tutorial uses *Lights*, so you may be interested in reading the [Lights tutorial]({{ '/tutorials/create/lights' | prepend: site.baseurl }}) first.
 

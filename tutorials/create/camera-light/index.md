@@ -5,7 +5,11 @@ weight: 300
 indent: 1
 difficulty_overall: 0
 short_description: "Test"
-thumbnail: tutorials\create\camera-light\1.jpg
+tags: camera, light, shadows, directional, point, spot, orbit, fly, fixed, 3D
+achievements: Camera types, light types
+duration: 15 minutes
+short_description: In this first tutorial of Goo Create you will learn how to make a house on water by using entities, the hierarchy and transformation
+thumbnail: tutorials\create\camera-light\thumbnail.jpg
 ---
 
 ![](1.jpg)

@@ -5,8 +5,14 @@ indent: 1
 weight: 730
 difficulty_overall: 0
 contains_video: true
+tags: events, state machine, actions, systembus, emit, listen
+achievements: Events, state machine
+duration: 10 minutes
+short_description: Events is a way to communicate across state machines, timelines and scripts. It's useful when building interactive apps. This tutorial will walk you through how to use events in Goo Create.
+thumbnail: tutorials\create\events\thumbnail.jpg
+scene: c495ffee4a6d448aa80ec9798f24fee9.scene
 ---
-*Events* is a way to communicate across state machines, timelines and scripts. It's useful when building interactive apps. This tutorial will walk you through how to use events in Goo Create.
+
 
 The tutorial assumes that you are somewhat familiar with the State Machine, so you might want to have a look at the [State Machine tutorial]({{ '/tutorials/create/state-machine' | prepend: site.baseurl }}) first.
 

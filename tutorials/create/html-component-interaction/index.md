@@ -5,8 +5,13 @@ weight: 1999
 indent: 1
 difficulty_overall: 1
 contains_scripts: true
+tags: HTML, pick, GooRunner
+achievements: Getting the name of a clicked entity,
+duration: 15 minutes
+short_description: There may be times when you want to click something in the scene, and have it affect an HTML Entity. This tutorial will show you how to do this.
+thumbnail: tutorials\create\html-component-interaction\thumbnail.jpg
 ---
-This tutorial will show how to display the name of a clicked entity in an HTML component.
+
 
 ![](html-component-interaction.gif)
 

@@ -40,6 +40,8 @@ function replacehref(){
 }
 
 $(document).ready(function(){
+  var courses = document.getElementsByClassName('course');
+
   var container = document.querySelector('.progressbarcontainer');
   if(!container) return;
 
@@ -54,6 +56,16 @@ $(document).ready(function(){
       return a + b;
   });
   var percent = numCompleted / numTotal;
+
+
+  if (percent == 0) {
+    $(".coursebutton").html("Start course");
+  }
+  else {
+    $(".coursebutton").html("Continue where you left");
+  }
+
+
 
   var button = document.getElementsByClassName('button');
 

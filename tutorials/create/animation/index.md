@@ -4,6 +4,11 @@ title: Animation
 weight: 1010
 indent: 1
 difficulty_overall: 1
+tags: animation, fbx, state machine
+achievements: Animation, State machine and animation
+duration: 10 minutes
+short_description: In this tutorial you will learn how to use animations in Goo Create, and how to import them.
+thumbnail: tutorials\create\animation\thumbnail.jpg
 ---
 ![](1.jpg)
 
@@ -15,7 +20,7 @@ If you have several animations for your character, just export them as .fbx and 
 
 ![](3.jpg)
 
-You can then set your new layer as default by checking the default option. 
+You can then set your new layer as default by checking the default option.
 
 ![](4.jpg)
 

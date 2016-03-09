@@ -5,16 +5,16 @@ weight: 1999
 indent: 1
 difficulty_overall: 1
 contains_scripts: true
+tags: Dom events, eventlisteners, interactivity, js, spinning
+achievements: Dom events, interactivity
+duration: 20 minutes
+short_description: At the end of this tutorial, we'll have a super simple Create scene with which we can interact by clicking (or touching) and dragging.
+thumbnail: tutorials\create\dom-events\thumbnail.jpg
+scene: 88bde37c06e6b111432dc6804dbb40846231fd22
 ---
-User input (from mouse, keyboard, touch et cetera) is handled through JavaScript-style event listeners. All the available functionality for interacting with the DOM comes for free, since the engine is written in nothing but JavaScript. It is possible to write any JavaScript code in Goo Create scripts, and that includes scripts which manipulates or interacts with the DOM. The tutorial you're currently reading will focus on the standard, unembellished, DOM events.
-
-## The Goal
-
 At the end of this tutorial, we'll have a super simple Create scene with which we can interact by clicking (or touching) and dragging.
 
-<iframe allowfullscreen src="//goote.ch/88bde37c06e6b111432dc6804dbb40846231fd22/"></iframe>
-
-Click and drag!
+User input (from mouse, keyboard, touch et cetera) is handled through JavaScript-style event listeners. All the available functionality for interacting with the DOM comes for free, since the engine is written in nothing but JavaScript. It is possible to write any JavaScript code in Goo Create scripts, and that includes scripts which manipulates or interacts with the DOM. The tutorial you're currently reading will focus on the standard, unembellished, DOM events.
 
 ## JavaScript Event Listeners
 

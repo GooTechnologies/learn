@@ -3,10 +3,14 @@ layout: tutorial
 title: HTML alongside screen
 weight: 1999
 indent: 1
-overall_difficulty: 1
+difficulty_overall: 1
 contains_scripts: true
+tags: HTML, HTML positioning
+achievements: Positioning HTML components
+duration: 15 minutes
+short_description: This tutorial will explain how to place HTML Entities along the border of the screen.
+thumbnail: tutorials\create\html-alongside-screen\thumbnail.jpg
 ---
-This tutorial will show how to place an HTML Component aligned to the side the screen.
 
 ![](side-buttons.png)
 
@@ -108,4 +112,8 @@ Once the editor is open clear out the existing code and replace it with the foll
 </div>
 {% endhighlight %}
 
+<<<<<<< HEAD
+Also note, we use the ctx.domElement.parentNode instead of the document.body, in case the project is being published on an iFrame or other situation. That is it!  Now when you run the project, the buttons should appear along the sides of the screen, like they appear in the screen shot.
+=======
 This will give us nine buttons with different alignment. Note that to center horizontally, we used ```width``` and a ```margin-left``` set to half of the width but negative. Play around with the buttons and classes and find one that fits your needs!
+>>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
