@@ -4,7 +4,6 @@ title: Rotations
 weight: 6002
 indent: 1
 contains_scripts: true
-difficulty_overall: 1
 tags: matrix3, LookAt, Matrix multiplication, Rotation, quaternion, fromAngleNormalAxis
 achievements: matrix3, LookAt, Matrix multiplication, Rotation
 duration: 20 minutes
