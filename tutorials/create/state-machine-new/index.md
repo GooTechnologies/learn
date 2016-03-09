@@ -4,9 +4,9 @@ title: State Machine
 weight: 600
 indent: 1
 difficulty_overall: 0
-tags: logo, watermark, css, html
-achievements: Position HTML element, Using CSS in Create
-duration: 10 minutes
+tags: state machine, transition, action, behavior, click event, states, state graph
+achievements: State machine, Actions, Events, Behavior, Transitions, Interactivity
+duration: 15 minutes
 short_description: This tutorial will teach you how to create a basic state machine by hoisting or lowering a flag when clicking on it.
 thumbnail: tutorials/create/state-machine/thumbnail.jpg
 scene: 7554b322bb8e4a64a70b7197533c45dc.scene
