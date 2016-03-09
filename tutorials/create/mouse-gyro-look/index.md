@@ -177,10 +177,4 @@ var parameters = [
     default: 45.0,
     control: 'slider'
 }
-<<<<<<< HEAD
-];
-{% endhighlight %}
-=======
 ];{% endhighlight %}
-
->>>>>>> d7c04cad306437ca0ae27488f3be44f3ff7e98f2
