@@ -1,6 +1,8 @@
 /* global $ */
 
 document.addEventListener("DOMContentLoaded", function() {
+
+  // Reset the filter to first option
   $(".reset").click(function() {
     $(".overviewblock").hide().fadeIn();
     $(".difficulty").val($(".difficulty option:first").val());
@@ -8,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
     $(".coding").val($(".coding option:first").val());
   });
 
+  // Listen for change
   $('.difficulty,.usecase,.coding').on('change', function () {
+
+    // Hide all blocks
     $(".overviewblock").hide();
 
     var difficultySelector = $(".difficulty option:selected").val();
@@ -26,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
       codeSelector = ".code" + codeSelector;
     }
 
+    // Show filtered blocks
     var filterSelector = ".overviewblock" + difficultySelector + usecaseSelector + codeSelector;
     $(filterSelector).fadeIn();
   });

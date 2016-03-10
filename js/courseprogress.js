@@ -40,13 +40,6 @@ function setResumeURL(url){
     }
 }
 
-function replacehref(){
-  var courseurl = document.getElementById("buttonlink").href;
-  if (getResumeURL.indexOf(courseurl)){
-    document.getElementById("buttonlink").href = courseurl;
-  }
-}
-
 $(document).ready(function(){
 
   var resumeURL = getResumeURL();
@@ -71,8 +64,6 @@ $(document).ready(function(){
         return a + b;
     });
     var percent = numCompleted / numTotal;
-
-    var button = courses[ii].getElementsByClassName('button');
     var elements = courses[ii].getElementsByClassName('progressbarcontainer');
     for (var i = 0; i < elements.length; i++){
       var circle = new ProgressBar.Circle(elements[i], {
@@ -93,6 +84,4 @@ $(document).ready(function(){
       });
     }
   }
-
-
 });

@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: Search
 subtitle: Search tutorials and manuals
 ---
