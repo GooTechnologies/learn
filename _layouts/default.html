@@ -18,6 +18,22 @@
 					}
 				}
 			}
+
+			// Redirect if on github
+			{% if site.redirectFromHost %}
+				if(location.host == '{{ site.redirectFromHost }}'){
+					location.href = "{{ site.url }}".replace(/\/$/,'') + location.pathname.replace('{{ site.redirectFromPath }}', '{{ site.redirectToPath }}');
+				}
+			{% endif %}
+
+			// Redirects
+			if(location.pathname == '/courses/'){
+				location.href = location.href.replace('/courses/', '#courses');
+			}
+			if(location.pathname == '/tutorials/'){
+				location.href = location.href.replace('/tutorials/', '#tutorials');
+			}
+
 		})();
 		</script>
 
@@ -95,20 +111,15 @@
 			{% include footer.html %}
 		</div>
 
-		{% if site.redirectFromHost %}
-			<script type="text/javascript">
-				if(location.host == '{{ site.redirectFromHost }}'){
-					location.href = "{{ site.url }}".replace(/\/$/,'') + location.pathname.replace('{{ site.redirectFromPath }}', '{{ site.redirectToPath }}');
-			    }
-			</script>
-		{% endif %}
-
 		<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/progressbar.min.js' | prepend: site.baseurl }}"></script>
-		<!-- <script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script> -->
+		<script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script>
+		<script src="{{ '/js/filterbarhandler.js' | prepend: site.baseurl }}"></script>
 
 		<script type="text/javascript">
+
+			// Off canvas
 			$(document).ready(function () {
 				$('[data-toggle="offcanvas"]').click(function () {
 					$('.row-offcanvas').toggleClass('active')
@@ -120,20 +131,29 @@
 				});
 
 			});
-		</script>
 
-		<script>
-		$(function() {
-			return $("h2, h3, h4, h5, h6").each(function(i, el) {
-				var $el, icon, id;
-				$el = $(el) ;
-				id = $el.attr('id');
-				icon = '<i class="fa fa-link"></i>';
-				if (id) {
-					return $el.prepend($(" <a />").addClass("header-link").attr("href", "#" + id).html(icon));
-				}
+			// Header anchor links
+			$(function() {
+				return $("h2, h3, h4, h5, h6").each(function(i, el) {
+					var $el, icon, id;
+					$el = $(el) ;
+					id = $el.attr('id');
+					icon = '<i class="fa fa-link"></i>';
+					if (id) {
+						return $el.prepend($(" <a />").addClass("header-link").attr("href", "#" + id).html(icon));
+					}
+				});
 			});
-		});
+
+			// Set resume/done status
+			$(document).ready(function () {
+				{% if page.difficulty_overall or page.part %}
+					setResumeURL('{{ page.url }}');
+				{% endif %}
+				{% if page.part %}
+					setTutorialDoneStatus('{{ page.url }}');
+				{% endif %}
+			});
 		</script>
 
 		<script type="text/javascript">

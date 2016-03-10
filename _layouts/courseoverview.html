@@ -130,7 +130,7 @@ layout: default
 {% for ppage in pp %}
 	{% if ppage.part == 1 and ppage.url contains page.url %}
 		<a href="{{ppage.url}}">
-			<div class="button centerbutton largebutton " onclick="setTutorialDoneStatus('{{ page.url }}')">
+			<div class="button centerbutton largebutton ">
 				Go to the first part:<span> {{ppage.title}}</span>
 			</div>
 		</a>

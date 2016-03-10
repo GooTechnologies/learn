@@ -25,21 +25,26 @@ function getTutorialDoneStatus(pageUrl){
 
 function getResumeURL(){
     try {
-        return !!localStorage.getItem("lastvisitedurl");
+        return localStorage.getItem("lastvisitedurl");
     } catch(err){
-        console.error('Could not get last visited coursepart.');
+        console.error('Could not get last visited URL.');
         return false;
     }
 }
 
-function replacehref(){
-  var courseurl = document.getElementById("buttonlink").href;
-  if (getResumeURL.indexOf(courseurl)){
-    document.getElementById("buttonlink").href = courseurl;
-  }
+function setResumeURL(url){
+    try {
+        localStorage.setItem("lastvisitedurl", url);
+    } catch(err){
+        console.error('Could not set last visited URL.');
+    }
 }
 
 $(document).ready(function(){
+
+  var resumeURL = getResumeURL();
+  if(resumeURL)
+    $('.continue-button').show().attr('href', resumeURL);
 
   var courses = document.getElementsByClassName('course');
 
@@ -59,19 +64,6 @@ $(document).ready(function(){
         return a + b;
     });
     var percent = numCompleted / numTotal;
-
-    console.log(percent);
-    if (percent == 0) {
-      $(courses[ii]).find(".coursebutton").html("Start course");
-    }
-    else {
-      $(courses[ii]).find(".coursebutton").html("Continue where you left");
-    }
-
-
-
-    var button = courses[ii].getElementsByClassName('button');
-
     var elements = courses[ii].getElementsByClassName('progressbarcontainer');
     for (var i = 0; i < elements.length; i++){
       var circle = new ProgressBar.Circle(elements[i], {
@@ -92,6 +84,4 @@ $(document).ready(function(){
       });
     }
   }
-
-
 });

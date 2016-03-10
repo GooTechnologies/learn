@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<p>
+			<a class="btn btn-primary btn-lg btn-block continue-button">Continue where you left <span class="glyphicon glyphicon-forward" aria-hidden="true"></span></a>
+		</p>
+	</div>
+</div>
+
 {% assign pp = site.pages | sort: 'difficulty_overall' %}
 <div class="row courses">
 	<div class="col-md-12">
@@ -8,11 +16,20 @@ layout: default
 		<h1 >Courses</h1>
 		</a>
 	</div>
+	<div class="row">
+	{% assign i = 0 %}
 	{% for ppage in pp %}
 		{% if ppage.layout == "courseoverview" %}
 			{% include overviewblock_course.html %}
+			{% assign i = i | plus: 1 %}
+			{% assign leftover = i | modulo:3 %}
+			{% if leftover == 0 %}
+				</div>
+				<div class="row">
+			{% endif %}
 		{% endif %}
 	{% endfor %}
+	</div>
 </div>
 
 {% assign pp = site.pages | sort: 'weight' %}
@@ -22,11 +39,18 @@ layout: default
 		<h1 >Tutorials</h1>
 	</a>
 	</div>
+	<div class="row">
+	{% assign i = 0 %}
 	{% for ppage in pp %}
 		{% if ppage.layout == "tutorial" and ppage.difficulty_overall %}
 			{% include overviewblock_tutorial.html %}
+			{% assign i = i | plus: 1 %}
+			{% assign leftover = i | modulo:3 %}
+			{% if leftover == 0 %}
+				</div>
+				<div class="row">
+			{% endif %}
 		{% endif %}
 	{% endfor %}
+	</div>
 </div>
-
-<script src="{{ '/js/filterbarhandler.js' | prepend: site.baseurl }}"></script>

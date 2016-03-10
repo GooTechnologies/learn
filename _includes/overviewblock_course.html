@@ -1,29 +1,8 @@
 <div class="col-md-4">
   <div class="course overviewblock
-{% case ppage.difficulty_overall %}
-  {% when 0 %}
-    Beginner
-  {% when 1 %}
-    Intermediate
-  {% when 2 %}
-    Expert
-  {% else %}
-  {% endcase %}
-
-  {% if ppage.usecase %}
-    {% case ppage.usecase %}
-    {% when 0 %}
-      Games
-    {% when 1 %}
-      Webdesign
-    {% when 2 %}
-      Else
-    {% endcase %}
-  {% else %}
-  Else
-  {% endif %}
-    {% if ppage.contains_scripts == true %}
-    code {% else %} nocode {% endif %}
+    {% if ppage.difficulty_overall %} difficulty{{ ppage.difficulty_overall }}{% endif %}
+    {% if ppage.usecase %} usecase{{ ppage.usecase }}{% endif %}
+    {% if ppage.contains_scripts == true %}code1{% else %}code0{% endif %}
   ">
     <h2>{{ppage.title}}</h2>
     <p>
@@ -53,9 +32,7 @@
     <div class="progressbarcontainer" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
     </div>
     <a id="buttonlink" href="{{ ppage.url }}">
-      <div class="button coursebutton">
-
-      </div>
+      <div class="button coursebutton">Go to course</div>
     </a>
   </div>
 </div>

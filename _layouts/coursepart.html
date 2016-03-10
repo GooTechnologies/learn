@@ -7,10 +7,6 @@ layout: default
 {% assign urlcount = urlparts.count | plus: -2  %}
 {% assign parent = urlparts[urlcount]  %}
 
-<script>
-	localStorage.setItem("lastvisitedurl", "{{page.url}}");
-</script>
-
 <div class="col-md-8">
 	<p>
 		{{ page.description }}
@@ -93,7 +89,7 @@ layout: default
 	{% for ppage in pp %}
 		{% if ppage.part == nextpart and ppage.url contains parent  %}
 		<a href="{{ppage.url}}">
-	<div class="button centerbutton largebutton" onclick="setTutorialDoneStatus('{{ page.url }}')">
+	<div class="button centerbutton largebutton">
 
 		Go to the next part:<span> {{ppage.title}}</span>
 	</div>

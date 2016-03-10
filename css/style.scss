@@ -95,27 +95,33 @@ h6:hover .header-link {
 	}
 }
 
-
-
+.continue-button {
+	font-size: 24px;
+}
 
 .searchcontainer {
 	$searchinputheight : 35px;
 
+	.btn {
+		font-size: 16px;
+	}
+
 	margin-top: 30px;
 	width: 100%;
-	height: 50px;
 	background-color: $goo-blue;
 	input[type='text'], select, .checkboxholder{
 		width: 100%;
 		color: $gray;
 		border: none;
 		height: $searchinputheight;
-    padding: 6px 12px !important;
+		padding: 6px 12px !important;
 	}
 	select {
 		padding: 1px 0;
+		margin-bottom: 5px;
 		color: $goo-blue;
 		font-weight: bold;
+		background-color: white;
 	}
 	select option[selected], label, .checkboxholder{
 		color: $goo-blue;
@@ -124,7 +130,6 @@ h6:hover .header-link {
 	.checkboxholder {
 		background-color: white;
 		display: inline-block;
-		width: 150px;
 		transition: all 0.3s ease 0s;
 		height: $searchinputheight;
 		text-align: center;
@@ -132,11 +137,11 @@ h6:hover .header-link {
 		cursor: pointer;
 
 		.checkbox{
-		  height: 16px;
-		  width: 16px;
-		  display:inline-block;
+			height: 16px;
+			width: 16px;
+			display:inline-block;
 			float: right;
-		  padding: 0 0 0 0px;
+			padding: 0 0 0 0px;
 		}
 	}
 	.checkboxholder:hover {
@@ -199,13 +204,9 @@ h6:hover .header-link {
 	padding: 15px 25px;
 	margin: 0 4px 35px 4px;
 	text-align: center;
-	.shortdescription {
-		height: 95px;
-	}
 	.button {
 		margin: 25px 0 10px 0;
 		width: 100%;
-
 	}
 	p {
 		margin-bottom: 15px;
@@ -225,12 +226,10 @@ h6:hover .header-link {
 		margin: 15px 0;
 	}
 	.imgcontainer {
-		height: 160px;
 		margin-bottom: 25px;
 		img {
 			width: 100%;
 			height: auto;
-			margin-bottom: 25px;
 		}
 	}
 
