@@ -10,13 +10,13 @@ You can learn how to set up animations, how to use the timeline, how add images 
 <ul class="tutorial-list" style="margin-top: 10px">
     <li>
         <a
-            href="/tutorials/create"
+            href="/tutorials/create/"
             style="background-image: url('{{ '/tutorials/create/cover.jpg' | prepend: site.baseurl }}');"
         ><h4>Create Tutorials</h4></a>
     </li>
     <li>
         <a
-            href="/tutorials/engine"
+            href="/tutorials/engine/"
             style="background-image: url('{{ '/tutorials/engine/cover.jpg' | prepend: site.baseurl }}');"
         ><h4>Engine Tutorials</h4></a>
     </li>
