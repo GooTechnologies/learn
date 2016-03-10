@@ -7,7 +7,6 @@
 			// Check if iframe
 			if(window.top !== window){
 				document.body.classList.add('in-iframe');
-
 				// Remove/add CSS includes
 				var e = document.getElementsByTagName('link');
 				for(var i=e.length-1; i>=0; i--){
@@ -52,6 +51,42 @@
 				{% endif %}
 			</div>
 		</div>
+		<div class="create-course-info">
+			<div class="learncreate-header">
+				<span class="learnlogo"></span><span class="title">Goo Learn</span>
+			</div>
+			<div class="infocontainer">
+				<div class="info-title">
+					<span class="collapseicon icon-arrow-right"></span>
+					{{ page.title }}{% if page.part %} - Part {{ page.part }}{% endif %}
+				</div>
+				<div class="info-content {% if page.layout == "courseoverview" or page.layout == "tutorial" %}expanded{% endif %}">
+					<div class="course">
+						<p>
+							Your progress
+						</p>
+						<div class="progressbarcontainer" data-tutorials="
+						{% assign pp = site.pages %}{% for ppage in pp %}{% if ppage.layout == "coursepart" and ppage.url contains parent %}{{ ppage.url }} {% endif %}{% endfor %}
+						">
+						</div>
+						<p>
+							In this course you will learn about:
+						</p>
+						{% assign words = page.achievements | split: ", " %}
+						{% for word in words  %}
+						<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
+						{% endfor %}
+					</div>
+					<p>
+						Tags
+					</p>
+					{% assign words = page.tags | split: ", " %}
+					{% for word in words  %}
+					<div class="tag">{{ word }}</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 		<div class="container">
 
 			<div class="row">
@@ -71,13 +106,19 @@
 		<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/progressbar.min.js' | prepend: site.baseurl }}"></script>
-		<script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script>
+		<!-- <script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script> -->
 
 		<script type="text/javascript">
 			$(document).ready(function () {
 				$('[data-toggle="offcanvas"]').click(function () {
 					$('.row-offcanvas').toggleClass('active')
 				});
+				$('.info-content').hide();
+				$('.infocontainer').click(function(){
+					$('.info-content').slideToggle();
+					$('.collapseicon').toggleClass('icon-arrow-right icon-arrow-down')
+				});
+
 			});
 		</script>
 

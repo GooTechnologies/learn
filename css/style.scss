@@ -10,6 +10,10 @@ body {
 	overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
+.create-course-info {
+	display: none;
+}
+
 footer {
 	font-size: 12px;
 	padding-bottom: 30px;
@@ -304,7 +308,7 @@ h6:hover .header-link {
 
 .stepsoverview {
 	a, a:hover {
-		color: $gray;
+		color: $gray !important;
 	}
 	h1, h2 {
 		margin-top: 0;

@@ -25,3 +25,7 @@
 .goofont-icon-checked:before {
     content: "\56";
 }
+
+.goofont-icon-triangle:before {
+    content: "\e600";
+}
