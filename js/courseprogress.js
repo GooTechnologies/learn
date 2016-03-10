@@ -58,6 +58,9 @@ $(document).ready(function(){
     });
 
     var numTotal = urls.length;
+
+    if(!numTotal) continue;
+
     var numCompleted = urls.map(function(url){
         return url && getTutorialDoneStatus(url) ? 1 : 0;
     }).reduce(function(a,b){
