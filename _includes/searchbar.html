@@ -1,12 +1,11 @@
 {% assign pp = site.pages | sort: 'difficulty_overall' %}
-	{% for ppage in pp %}
-		{% if ppage.layout == "courseoverview" %}
-    {{ assign courses[forloop.index] = ppage }}
-    {% endif %}
-  {% endfor %}
+{% for ppage in pp %}
+	{% if ppage.layout == "courseoverview" %}
+  {{ assign courses[forloop.index] = ppage }}
+  {% endif %}
+{% endfor %}
 
-
-<div class="searchcontainer" onload="getPosts({{ courses }});">
+<div class="searchcontainer">
   <form action="">
     <div class="row">
       <div class="col-md-2">
@@ -14,49 +13,46 @@
       </div>
       <div class="col-md-2">
         <select class="difficulty">
-          <option disabled selected>
+          <option disabled selected value="">
             Select difficulty
           </option>
-          <option>
+          <option value="0">
             Beginner
           </option>
-          <option>
+          <option value="1">
             Intermediate
           </option>
-          <option>
+          <option value="2">
             Expert
           </option>
         </select>
       </div>
       <div class="col-md-2">
         <select class="usecase" placeholder="test">
-          <option disabled selected>
+          <option disabled selected value="">
             Select usecase
           </option>
-          <option>
+          <option value="0">
             Games
           </option>
-          <option>
+          <option value="1">
             Webdesign
           </option>
-          <option>
-            Other usecases
+          <option value="2">
+            Other
           </option>
         </select>
     </div>
     <div class="col-md-2">
       <select class="coding">
-        <option disabled selected>
+        <option disabled selected value="">
           Coding options
         </option>
-        <option>
-          Code
-        </option>
-        <option>
+        <option value="0">
           No code
         </option>
-        <option>
-          Both
+        <option value="1">
+          Code
         </option>
       </select>
     </div>
