@@ -3,9 +3,12 @@ layout: default
 ---
 {% assign pp = site.pages %}
 {% assign nextpart = page.part | plus: 1 %}
+{% assign previouspart = page.part | minus: 1 %}
 {% assign urlparts = page.url | split: '/' %}
 {% assign urlcount = urlparts.count | plus: -2  %}
 {% assign parent = urlparts[urlcount]  %}
+{% assign printed = false %}
+
 
 <div class="col-md-8">
 	<p>
@@ -27,7 +30,7 @@ layout: default
 			<div class="verticalhr"></div>
 			<div class="horizontalhr"></div>
 			<div class="col-md-6 course">
-				<p> 
+				<p>
 					Your progress
 				</p>
 				<div class="progressbarcontainer" data-tutorials="
@@ -85,15 +88,37 @@ layout: default
 </div>
 
 <div class="col-md-12">
-
 	{% for ppage in pp %}
-		{% if ppage.part == nextpart and ppage.url contains parent  %}
+		{% if ppage.part == previouspart and previouspart >= 1 and ppage.url contains parent  %}
 		<a href="{{ppage.url}}">
-	<div class="button centerbutton largebutton">
-
-		Go to the next part:<span> {{ppage.title}}</span>
-	</div>
+			<div class="button centerbutton largebutton previousbutton">
+				Go to the previous part:<span> {{ppage.title}}</span>
+			</div>
+		</a>
+		{% endif %}
+		{% if previouspart < 1 and ppage.url contains parent and ppage.layout == "courseoverview" %}
+		<a href="{{ppage.url}}">
+			<div class="button centerbutton largebutton previousbutton">
+				Go back to the overview</span>
+			</div>
+		</a>
+	{% endif %}
+	{% if ppage.part == nextpart and ppage.url contains parent  %}
+	{% assign printed = true %}
+	<a href="{{ppage.url}}">
+		<div class="button centerbutton largebutton nextbutton">
+			Go to the next part:<span> {{ppage.title}}</span>
+		</div>
 	</a>
 	{% endif %}
+
 {% endfor %}
+{% if printed == false %}
+<a href="/">
+	<div class="button centerbutton largebutton nextbutton">
+		Go to the overview
+	</div>
+</a>
+{% endif %}
+
 </div>

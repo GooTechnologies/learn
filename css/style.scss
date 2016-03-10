@@ -113,6 +113,7 @@ h6:hover .header-link {
 		width: 100%;
 		color: $gray;
 		border: none;
+		border-radius: 3px;
 		height: $searchinputheight;
 		padding: 6px 12px !important;
 	}
@@ -129,6 +130,7 @@ h6:hover .header-link {
 	}
 	.checkboxholder {
 		background-color: white;
+		text-transform: none;
 		display: inline-block;
 		transition: all 0.3s ease 0s;
 		height: $searchinputheight;
@@ -171,6 +173,14 @@ h6:hover .header-link {
 	background-color: #309DD8;
 }
 
+.nextbutton {
+	float: right
+}
+
+.previousbutton {
+	float: left;
+}
+
 .largebutton {
 	font-size: 18px;
 	font-weight: normal;
@@ -204,6 +214,13 @@ h6:hover .header-link {
 	padding: 15px 25px;
 	margin: 0 4px 35px 4px;
 	text-align: center;
+	.shortdescription {
+		height: 94.546px;
+		@media (max-width: 767px) {
+  		height: auto;
+  	}
+	}
+	}
 	.button {
 		margin: 25px 0 10px 0;
 		width: 100%;
@@ -245,7 +262,7 @@ h6:hover .header-link {
   		content: "%";
 		}
 	}
-}
+
 
 //Course overview
 

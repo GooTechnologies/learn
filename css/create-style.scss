@@ -36,6 +36,10 @@ body {
 		display: block;
 	}
 
+	.hidden {
+		display: none;
+	}
+
 	.hide {
 		display: none;
 	}
@@ -86,15 +90,36 @@ body {
 			background-color: #252525;
 			margin: 10px;
 			padding: 4px 8px;
+			cursor: pointer;
 			.info-title {
 				padding: 5px 0;
 				text-align: center;
+
 				.icon-arrow-right, .icon-arrow-down {
 					float: left;
 				}
 			}
 			.info-content {
 				padding: 5px 0;
+				margin-bottom: 10px;
+				.tag {
+					display: inline-block;
+					font-size: 14px;
+					background-color: #1d1d1d;
+					padding: 3px 7px;
+					margin: 0 5px 5px 0;
+					text-transform: capitalize;
+				}
+				.tag:last-of-type {
+					margin-bottom: 10px;
+				}
+				.goofont-icon-checked {
+					color: #8bc34a;
+					padding: 4px 4px 0 0;
+				}
+				.achievement {
+					font-size: 14px;
+				}
 				.progressbarcontainer {
 					width: 100px;
 					height: 100px;
@@ -106,6 +131,7 @@ body {
 					.progressbar-text:after {
 						content: "%";
 					}
+
 				}
 			}
 		}
@@ -115,5 +141,24 @@ body {
 		padding: 5px 0;
 		text-align: center;
 		background-color: #252525;
+	}
+	.button {
+		width: 100%;
+		padding: 15px 10px;
+		color: white;
+		background-color: #6d6d6d;
+		text-align: center;
+		text-transform: uppercase;
+		border-radius: 3px;
+		transition: all 0.3s ease 0s;
+		margin-bottom: 10px;
+	}
+
+	.button:hover {
+		background-color: #545454;
+	}
+
+	a:hover {
+		text-decoration: none;
 	}
 }

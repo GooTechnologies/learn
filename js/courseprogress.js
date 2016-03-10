@@ -51,7 +51,12 @@ $(document).ready(function(){
   for (var ii = 0; ii < courses.length; ii++) {
 
     var container = courses[ii].querySelector('.progressbarcontainer');
-    if(!container) return;
+
+    if ( $(courses[ii]).css('display') == 'none' ){
+      continue;
+    }
+
+    if(!container) continue;
 
     var urls = container.dataset.tutorials.split(/\s+/g).filter(function(url){
       return url;

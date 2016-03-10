@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
+
+	{% assign pp = site.pages %}
+	{% assign nextpart = page.part | plus: 1 %}
+	{% assign previouspart = page.part | minus: 1 %}
+	{% assign urlparts = page.url | split: '/' %}
+	{% assign urlcount = urlparts.count | plus: -2  %}
+	{% assign parent = urlparts[urlcount]  %}
+	{% assign printed = false %}
+
 	<body>
 		<script>
 		(function() {
@@ -77,7 +86,7 @@
 					{{ page.title }}{% if page.part %} - Part {{ page.part }}{% endif %}
 				</div>
 				<div class="info-content {% if page.layout == "courseoverview" or page.layout == "tutorial" %}expanded{% endif %}">
-					<div class="course">
+					<div class="course {% if page.layout == "tutorial" %}hidden{% endif %}">
 						<p>
 							Your progress
 						</p>
@@ -85,21 +94,29 @@
 						{% assign pp = site.pages %}{% for ppage in pp %}{% if ppage.layout == "coursepart" and ppage.url contains parent %}{{ ppage.url }} {% endif %}{% endfor %}
 						">
 						</div>
-						<p>
-							In this course you will learn about:
-						</p>
-						{% assign words = page.achievements | split: ", " %}
-						{% for word in words  %}
-						<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
-						{% endfor %}
 					</div>
-					<p>
-						Tags
-					</p>
-					{% assign words = page.tags | split: ", " %}
-					{% for word in words  %}
-					<div class="tag">{{ word }}</div>
-					{% endfor %}
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								Tags
+							</p>
+							{% assign words = page.tags | split: ", " %}
+							{% for word in words  %}
+							<div class="tag">{{ word }}</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								In this {% if page.layout == "courseoverview" %}course{% elsif page.layout == "coursepart" %}part{% elsif page.layout == "tutorial" %}tutorial{% endif %} you will learn about:
+							</p>
+							{% assign words = page.achievements | split: ", " %}
+							{% for word in words  %}
+							<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
+							{% endfor %}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
