@@ -53,9 +53,7 @@
     <div class="progressbarcontainer" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
     </div>
     <a id="buttonlink" href="{{ ppage.url }}">
-      <div class="button coursebutton">
-
-      </div>
+      <div class="button coursebutton">Go to course</div>
     </a>
   </div>
 </div>
