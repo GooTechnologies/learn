@@ -102,6 +102,15 @@ body {
 			.info-content {
 				padding: 5px 0;
 				margin-bottom: 10px;
+				.course {
+					p {
+						text-align: center;
+					}
+					.progressbarcontainer {
+						margin: 0 auto;
+						display: block;
+					}
+				}
 				.tag {
 					display: inline-block;
 					font-size: 14px;
