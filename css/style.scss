@@ -135,16 +135,20 @@ h6:hover .header-link {
 		padding: 1px 0;
 		margin-bottom: 5px;
 		color: $goo-blue;
-		font-weight: bold;
 		background-color: white;
+		font-weight: normal;
+		font-size: 16px;
+
 	}
 	select option[selected], label, .checkboxholder{
 		color: $goo-blue;
-		font-weight: bold;
 	}
 	.checkboxholder {
-		background-color: white;
-		text-transform: none;
+		color: white;
+		background-color: #076AA0;
+		font-size: 12px;
+		line-height: 22px;
+		text-transform: uppercase;
 		display: inline-block;
 		transition: all 0.3s ease 0s;
 		height: $searchinputheight;
@@ -161,8 +165,7 @@ h6:hover .header-link {
 		}
 	}
 	.checkboxholder:hover {
-		background-color: #DDF3FF;
-
+		background-color: #0a8fd8;
 	}
 }
 
@@ -182,6 +185,9 @@ h6:hover .header-link {
 	display: table;
 	transition: all 0.3s ease 0s;
 		margin: 10px 0 10px 0;
+		font-size: 12px;
+		border-radius: 3px;
+		text-transform: uppercase;
 }
 
 .coursebutton, .tutorialbutton {
@@ -256,7 +262,7 @@ h6:hover .header-link {
 		font-weight: normal;
 	}
 	.difficulty, .button {
-		font-size: 18px;
+		font-size: 15px;
 	}
 	hr {
 		border-top-color: $gray-light;
