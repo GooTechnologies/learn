@@ -1,0 +1,41 @@
+<div class="create-course-info">
+  <div class="infocontainer">
+    <div class="info-title">
+      <span class="collapseicon icon-arrow-right"></span>
+      {{ page.title }}{% if page.part %} - Part {{ page.part }}{% endif %}
+    </div>
+    <div class="info-content {% if page.layout == "courseoverview" or page.layout == "tutorial" %}expanded{% endif %}">
+      <div class="course {% if page.layout == "tutorial" %}hidden{% endif %}">
+        <p>
+          Your progress
+        </p>
+        <div class="progressbarcontainer" data-tutorials="
+        {% assign pp = site.pages %}{% for ppage in pp %}{% if ppage.layout == "coursepart" and ppage.url contains page.url %}{{ ppage.url }} {% endif %}{% endfor %}
+        ">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Tags
+          </p>
+          {% assign words = page.tags | split: ", " %}
+          {% for word in words  %}
+          <div class="tag">{{ word }}</div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            In this {% if page.layout == "courseoverview" %}course{% elsif page.layout == "coursepart" %}part{% elsif page.layout == "tutorial" %}tutorial{% endif %} you will learn about:
+          </p>
+          {% assign words = page.achievements | split: ", " %}
+          {% for word in words  %}
+          <span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

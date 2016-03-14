@@ -11,9 +11,11 @@ body {
   footer,
  .tutorial-nav,
  hr,
- .breadcrumb, .coursepartdetails {
+ .breadcrumb, .coursepartdetails, .progressbarcreate {
 	 display: none;
  }
+
+
 
  img {
  max-width: 100%;
@@ -21,7 +23,40 @@ body {
  margin: 10px auto;
 }
 
+.homeh1 h1 {
+	text-align: center;
+}
+
+.continue-tutorial, .createhr, .lear {
+	display: block ;
+}
+
+.createhr {
+	margin-top: 20px;
+	color: #6d6d6d;
+}
+
 	.overviewblock {
+		h2 {
+			height: 34px;
+		}
+		.title {
+			padding: 0 10px;
+
+		}
+
+		.shortdescription, .difparent {
+			display: none;
+		}
+
+		.button {
+			margin: 0;
+			// display: block;
+			text-align: center;
+			width: 170px;
+			padding: 5px 0;
+		}
+
 		.imgcontainer {
 			display: none;
 		}
@@ -30,9 +65,11 @@ body {
 				display: block;
 				width: auto;
 				height: 60px;
-				float: left;
+				float: right;
+				margin-top: 0;
 			}
 		}
+
 	}
 
 
@@ -83,26 +120,36 @@ body {
 	.jumbotron{
 		display: none;
 	}
+
+	.learncreate-header {
+		margin-bottom: 10px;
+		height: 40px;
+		line-height: 30px;
+		.goback {
+			position: absolute;
+			padding-left: 10px;
+			// width: 40px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.learnlogo {
+
+		}
+		.title {
+			text-transform: uppercase;
+			letter-spacing: .05em;
+			font-weight: 500;
+			background-image: url("../fonts/single_icons/learn.svg");
+			background-position: left;
+			background-repeat: no-repeat;
+			padding-left: 30px;
+		}
+	}
+
 	.create-course-info{
 		display: block;
 
-		.learncreate-header {
-			margin-bottom: 10px;
-			height: 40px;
-			line-height: 30px;
-			.learnlogo {
 
-			}
-			.title {
-				text-transform: uppercase;
-				letter-spacing: .05em;
-				font-weight: 500;
-				background-image: url("../fonts/single_icons/learn.svg");
-				background-position: left;
-				background-repeat: no-repeat;
-				padding-left: 30px;
-			}
-		}
 		.infocontainer {
 			background-color: #252525;
 			margin: 10px;

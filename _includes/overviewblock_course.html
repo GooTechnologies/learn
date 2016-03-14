@@ -7,8 +7,10 @@
     <div class="imgcontainer-create">
       <img src="{{ ppage.thumbnail }}" />
     </div>
-    <h2>{{ppage.title}}</h2>
-    <p>
+    <div class="title">
+      <h2>{{ppage.title}}</h2>
+    </div>
+    <p class="difparent">
       <span class="difficulty">
         {% case ppage.difficulty_overall %}
         {% when 0 %}
@@ -32,10 +34,11 @@
     <p class="shortdescription">
         {{ ppage.short_description }}
     </p>
-    <div class="progressbarcontainer" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
+    <div class="progressbarcontainer progressbarcreate" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
     </div>
     <a id="buttonlink" href="{{ ppage.url }}">
       <div class="button coursebutton">Go to course</div>
     </a>
   </div>
 </div>
+<hr class="createhr">

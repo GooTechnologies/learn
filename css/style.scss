@@ -10,7 +10,7 @@ body {
 	overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
-.create-course-info, .imgcontainer-create {
+.create-course-info, .imgcontainer-create, .learncreate-header {
 	display: none;
 }
 
@@ -50,6 +50,11 @@ iframe {
 	border: none;
 	margin: 0 auto;
 }
+
+.continue-tutorial, .createhr {
+	display: none;
+}
+
 
 .header-link {
 	color: $goo-blue;
@@ -101,6 +106,15 @@ h6:hover .header-link {
 
 .searchcontainer {
 	$searchinputheight : 35px;
+
+	.continue-button-parent {
+		float: none;
+		margin: 20px auto 0 auto;
+	}
+
+	.glyphicon {
+		margin-right: 0;
+	}
 
 	.btn {
 		font-size: 16px;

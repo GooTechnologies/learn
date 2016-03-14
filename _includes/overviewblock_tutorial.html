@@ -7,8 +7,11 @@
     <div class="imgcontainer-create">
       <img src="{{ ppage.thumbnail }}" />
     </div>
-    <h2>{{ppage.title}}</h2>
-    <p>
+    <div class="title">
+      <h2>{{ppage.title}}</h2>
+    </div>
+
+    <p class="difparent">
       <span class="difficulty">
         {% case ppage.difficulty_overall %}
         {% when 0 %}
@@ -39,3 +42,4 @@
     </a>
   </div>
 </div>
+<hr class="createhr">
