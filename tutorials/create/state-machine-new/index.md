@@ -5,7 +5,7 @@ weight: 600
 indent: 1
 difficulty_overall: 0
 tags: state machine, transition, action, behavior, click event, states, state graph
-achievements: State machine, Actions, Events, Behavior, Transitions, Interactivity
+achievements: State machine, Actions, Events, Behaviors, Transitions, Interactivity
 duration: 15 minutes
 short_description: This tutorial will teach you how to create a basic state machine by hoisting or lowering a flag when clicking on it.
 thumbnail: tutorials/create/state-machine/thumbnail.jpg
@@ -13,7 +13,7 @@ scene: 7554b322bb8e4a64a70b7197533c45dc.scene
 ---
 ## What is a state machine?
 
-An example of a state machine is the flag in the scene above. It has two states: *up* and *down*. A *state* is simply a behavior of an object at a certain point in time.
+An example of a state machine is the flag in the scene above. It has two states: *up* and *down*. A *state* is simply a behavior of an object at a certain point in time. Click the flag a couple of times to see the transition between the two states.
 
 Between the states, the flag has two *events* that make the *transition* from one state to another: *hoisting* and *lowering*. When the flag is in the *up* state, it is possible to use the *lowering* event, and when in the *down* state, it is possible to use the *hoisting* event.
 
@@ -61,7 +61,7 @@ The 'Down' state is blue because it is set as the initial state.
 
 ## Part 5: Add click actions
 
-The transition from 'up' to 'down' or 'down' to 'up' will be triggered by clicking the flag. To add this, we need to add an action to the state. The action we need is the 'Pick' action.
+The transition from 'up' to 'down' or 'down' to 'up' will be triggered by clicking the flag. To add this, we need to add an action to the state. The action we need is the 'Pick' action. The pick action is a transition action that can trigger a transition when an entity is clicked. In this case, we add it to the state machine of the flag, so it will be triggered when you click the flag.
 
 1. Select the 'Down' state in the state graph and click on 'Add action' in the panel on the left.
   ![](addaction.jpg)
@@ -71,7 +71,7 @@ The transition from 'up' to 'down' or 'down' to 'up' will be triggered by clicki
 
 ## Part 6: Add the transitions between the states
 
-To create the transition from the 'down' to 'up' state, or the 'up' to 'down' state when clicking on the flag, you can simply click on 'On pick entity' in the state graph, hold down your mouse button , and let it go on the state where you want to make the transition to when the entity (in this case the flag) is clicked.
+To create the transition from the 'down' to 'up' state, and the 'up' to 'down' state when clicking on the flag, we have to add transitions between the states. you can simply click on 'On pick entity' in the state graph, hold down your mouse button , and let it go on the state where you want to make the transition to when the entity (in this case the flag) is clicked.
   ![](connectstates.gif)
 
 Now when you click the 'play' button and click on the flag, you can see the transition between the states with each click.
