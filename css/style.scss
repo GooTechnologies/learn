@@ -193,6 +193,7 @@ h6:hover .header-link {
 .coursebutton, .tutorialbutton {
 	width: 100%;
 	margin-top: 25px;
+	margin-bottom: 0;
 }
 
 .button:hover {
@@ -239,7 +240,7 @@ h6:hover .header-link {
 
 .overviewblock {
 	background-color: $gray-verylight;
-	padding: 15px 25px;
+	padding: 20px;
 	margin: 0 4px 35px 4px;
 	text-align: center;
 	.shortdescription {
@@ -269,7 +270,7 @@ h6:hover .header-link {
 		margin: 15px 0;
 	}
 	.imgcontainer {
-		margin-bottom: 25px;
+		margin: 15px -20px;
 		img {
 			width: 100%;
 			height: auto;
