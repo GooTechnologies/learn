@@ -25,12 +25,6 @@ layout: default
 	{% for ppage in pp %}
 		{% if ppage.layout == "courseoverview" %}
 			{% include overviewblock_course.html %}
-			{% assign i = i | plus: 1 %}
-			{% assign leftover = i | modulo:3 %}
-			{% if leftover == 0 %}
-				</div>
-				<div class="row">
-			{% endif %}
 		{% endif %}
 	{% endfor %}
 	</div>
@@ -49,12 +43,6 @@ layout: default
 	{% for ppage in pp %}
 		{% if ppage.layout == "tutorial" and ppage.difficulty_overall %}
 			{% include overviewblock_tutorial.html %}
-			{% assign i = i | plus: 1 %}
-			{% assign leftover = i | modulo:3 %}
-			{% if leftover == 0 %}
-				</div>
-				<div class="row">
-			{% endif %}
 		{% endif %}
 	{% endfor %}
 	</div>

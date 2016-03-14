@@ -1,7 +1,7 @@
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
   <div class="course overviewblock
     {% if ppage.difficulty_overall %} difficulty{{ ppage.difficulty_overall }}{% endif %}
-    {% if ppage.usecase %} usecase{{ ppage.usecase }}{% endif %}
+    {% if ppage.usecase %}usecase{{ ppage.usecase }}{% else %}usecase2{% endif %}
     {% if ppage.contains_scripts == true %}code1{% else %}code0{% endif %}
   ">
     <div class="imgcontainer-create">
@@ -39,6 +39,6 @@
     <a id="buttonlink" href="{{ ppage.url }}">
       <div class="button coursebutton">Go to course</div>
     </a>
+    <hr class="createhr">
   </div>
 </div>
-<hr class="createhr">

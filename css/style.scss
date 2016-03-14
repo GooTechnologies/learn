@@ -166,7 +166,7 @@ h6:hover .header-link {
 	}
 }
 
-.col-md-4 {
+.col-md-4, .col-md-6, .col-sm-6, .col-xs-12 {
 	min-height: 0;
 }
 
@@ -181,6 +181,12 @@ h6:hover .header-link {
 	text-align: center;
 	display: table;
 	transition: all 0.3s ease 0s;
+		margin: 10px 0 10px 0;
+}
+
+.coursebutton, .tutorialbutton {
+	width: 100%;
+	margin-top: 25px;
 }
 
 .button:hover {
@@ -188,11 +194,13 @@ h6:hover .header-link {
 }
 
 .nextbutton {
-	float: right
+	float: right;
+	width: auto;
 }
 
 .previousbutton {
 	float: left;
+	width: auto;
 }
 
 .largebutton {
@@ -235,10 +243,7 @@ h6:hover .header-link {
   	}
 	}
 	}
-	.button {
-		margin: 25px 0 10px 0;
-		width: 100%;
-	}
+
 	p {
 		margin-bottom: 15px;
 	}

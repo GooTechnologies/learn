@@ -5,7 +5,6 @@ indent: 1
 difficulty_overall: 0
 contains_video: false
 duration: 15 minutes
-usecase: 2
 tags: state machine, primitives, events, entities, transformation
 achievements: entities, events, state machine
 thumbnail: /courses/beginner/thumbnail.jpg

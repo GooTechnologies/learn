@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Show filtered blocks
     var filterSelector = ".overviewblock" + difficultySelector + usecaseSelector + codeSelector;
+    console.log(filterSelector);
     $(filterSelector).fadeIn();
   });
 });
