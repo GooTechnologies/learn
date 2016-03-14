@@ -10,7 +10,7 @@ body {
 	overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
-.create-course-info {
+.create-course-info, .imgcontainer-create {
 	display: none;
 }
 
@@ -230,6 +230,7 @@ h6:hover .header-link {
 	}
 	h2, .difficulty {
 		margin-bottom: 10px;
+		margin-top: 0;
 	}
 	h2 {
 		font-size: 20px;

@@ -2,13 +2,6 @@
 <html>
 	{% include head.html %}
 
-	{% assign pp = site.pages %}
-	{% assign nextpart = page.part | plus: 1 %}
-	{% assign previouspart = page.part | minus: 1 %}
-	{% assign urlparts = page.url | split: '/' %}
-	{% assign urlcount = urlparts.count | plus: -2  %}
-	{% assign parent = urlparts[urlcount]  %}
-	{% assign printed = false %}
 
 	<body>
 		<script>
@@ -76,6 +69,7 @@
 				{% endif %}
 			</div>
 		</div>
+		{% if page.layout == "tutorial" or page.layout == "coursepart" or page.layout == "courseoverview" %}
 		<div class="create-course-info">
 			<div class="learncreate-header">
 				<span class="learnlogo"></span><span class="title">Goo Learn</span>
@@ -120,6 +114,7 @@
 				</div>
 			</div>
 		</div>
+		{% endif %}
 		<div class="container">
 
 			<div class="row">

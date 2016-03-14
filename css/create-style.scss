@@ -14,11 +14,28 @@ body {
  .breadcrumb, .coursepartdetails {
 	 display: none;
  }
-  img {
-	 max-width: 100%;
-	 display: block;
-	 margin: 10px auto;
- }
+
+ img {
+ max-width: 100%;
+ display: block;
+ margin: 10px auto;
+}
+
+	.overviewblock {
+		.imgcontainer {
+			display: none;
+		}
+		.imgcontainer-create {
+			img {
+				display: block;
+				width: auto;
+				height: 60px;
+				float: left;
+			}
+		}
+	}
+
+
 
   h1,
   h2,

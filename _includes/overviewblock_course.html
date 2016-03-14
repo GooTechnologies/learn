@@ -1,9 +1,12 @@
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" col-sm->
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
   <div class="course overviewblock
     {% if ppage.difficulty_overall %} difficulty{{ ppage.difficulty_overall }}{% endif %}
     {% if ppage.usecase %} usecase{{ ppage.usecase }}{% endif %}
     {% if ppage.contains_scripts == true %}code1{% else %}code0{% endif %}
   ">
+    <div class="imgcontainer-create">
+      <img src="{{ ppage.thumbnail }}" />
+    </div>
     <h2>{{ppage.title}}</h2>
     <p>
       <span class="difficulty">
