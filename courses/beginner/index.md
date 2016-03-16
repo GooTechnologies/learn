@@ -9,6 +9,6 @@ tags: state machine, primitives, events, entities, transformation
 achievements: entities, events, state machine
 thumbnail: /courses/beginner/thumbnail.jpg
 scene: 80272d90cd6c47618e647117e2615902.scene
-description: "et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui. Nemo enim ipsam voluptatem quia voluptas. et quasi architecto beatae vitae dicta sunt explicabo.<br> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui. Nemo enim ipsam voluptatem quia voluptas"
-short_description: "Test description"
+description: In this course you will be introduced with the most important parts of Goo Create. At the end of this course you will have a 3D moon landscape that contains interactivity, animations and much more. Check out the final scene below!
+short_description: In the beginner course you will be introduced with the most important parts of Goo Create. It is strongly recommended to follow this course before starting with other courses and tutorials.
 ---

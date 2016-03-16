@@ -57,12 +57,12 @@ Now we have added and renamed the entity, but it doesn't really looks like a sup
 **Hint**: If you click on an entity in the scene or in the hierarchy panel and press 'S', the camera will focus on that entity
 
 
-1. Unfold the 'Transform' item, which is in the same panel as where we changed the name of entity. Try it out!
+1. Unfold the 'Transform' item, which is in the same panel as where we changed the name of the entity.
   ![Unfold transform item](unfoldTransform.gif)
 
 2. Play around with the values to see what happens when you change them. As you probably noticed:
-    * The first row of values is for changing the postion of the entity. This is called **translation**.
-    * The second row of values is for rotating the the entity. This is called... * drums *... **rotation**.
+    * The first row of values is for changing the position of the entity. This is called **translation**.
+    * The second row of values is for rotating the entity. This is called... * drums * ... **rotation**.
     * The last row of values is for changing the dimension of the entity. This is called **scale**.
     * The **X, Y and Z** on top represent the coordinates.
 
