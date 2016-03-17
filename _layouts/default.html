@@ -124,10 +124,10 @@
 			if(window.top == window){
 				$( document ).ready(function() {
 					var fs = document.getElementsByClassName('finishedscene');
-					console.log(fs);
-					var sceneurl = fs[0].dataset.src;
-					console.log(sceneurl);
-					fs[0].src = sceneurl;
+					if (fs.length === 1){
+						var sceneurl = fs[0].dataset.src;
+						fs[0].src = sceneurl;
+					}
 				});
 			}
 
