@@ -1,13 +1,13 @@
 ---
 layout: coursepart
-title: Making the moon station
+title: Welcome to Goo Create
 part: 1
 thumbnail: /tutorials/create/lights/1.jpg
-scene_partfinished: 80272d90cd6c47618e647117e2615902.scene
+scene_partfinished: 1f21f415f66c4f7bb854d3d5e4d8f9f2.scene
 youtube_video_id: 3g07yzQi8EA
 tags: entity, material, transformation, test
 achievements: entities, events, state machine
-description: In the this part of the beginner tutorial, we will give a short introduction of the Goo Create interface so you roughly know where to find what. At first, it may be a bit vague, but it will become clear when you've made some progress in this course. <br><br> In this part, we're also going to make the moon station.
+description: In the this part of the beginner tutorial, we will give a short introduction of the Goo Create interface so you roughly know where to find what. At first, it may be a bit vague, but it will become clear when you've made some progress in this course. <br><br> In this part, we're also going to make the Moon station.
 ---
 
 # Short introduction to Goo Create

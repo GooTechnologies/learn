@@ -257,6 +257,7 @@ li {
 	padding: 20px;
 	margin: 0 4px 35px 4px;
 	text-align: center;
+	border-radius: 3px;
 	.shortdescription {
 		height: 94.546px;
 		@media (max-width: 767px) {
@@ -310,9 +311,10 @@ li {
 .tag {
 	display: inline-block;
 	float: left;
-	font-size: 14px;
-	background-color: $gray-dark;
+	font-size: 12px;
+	background-color: #90D8FF;
 	padding: 3px 7px;
+	border-radius: 3px;
 	margin: 0 5px 5px 0;
 	color: white;
 	text-transform: capitalize;
@@ -331,16 +333,21 @@ li {
 		.verticalhr {
 			width: 1px;
 			height: 100%;
-			background-color: $gray;
+			background-color: #CECECE;;
 			position: absolute;
 			left: 50%;
 		}
 		.horizontalhr {
-			width: 100%;
+			width: 90%;
 			height: 1px;
-			background-color: $gray;
+			background-color: #CECECE;;
 			position: absolute;
 			bottom: 0;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+
 		}
 	}
 	.col-md-12 {

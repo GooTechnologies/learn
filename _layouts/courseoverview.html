@@ -104,7 +104,7 @@ layout: default
 								<p>
 									In this course you will learn about:
 								</p>
-								{% assign words = page.achievements | split: ", " %}
+								{% assign words = ppage.achievements | split: ", " %}
 								{% for word in words  %}
 								<span class="goofont goofont-icon-checked"></span><span class="achievement">{{ word }}</span><br />
 								{% endfor %}

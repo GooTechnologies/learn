@@ -6,7 +6,7 @@ thumbnail: /courses/beginner/2/thumbnail.jpg
 scene_partfinished: 3ca61686b4b94092bbfe872d761aa188.scene
 tags: entity, transformation, scale, rotate, translate, duplication
 achievements: What entities are, How to add entities, Transformation, Duplicating entities
-description: Okay, now you're a little bit familiar with the Goo Create Interface, and ready to create the Moon station! The Moon station consists out of entities, just as every other element in the scene.
+description: Okay, now you're a little bit familiar with the Goo Create Interface, and ready to create the Moon station! The Moon station consists out of entities, just as every other element in the scene. 
 ---
 
 
