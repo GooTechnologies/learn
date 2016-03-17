@@ -11,23 +11,10 @@ duration: 10 minutes
 short_description: In this tutorial you will learn how to replace the head of The Goon, our beloved Goo Create mascot, with you own head in the embedded game above.
 thumbnail: tutorials\create\flappy-goon\thumbnail.jpg
 scene: 80272d90cd6c47618e647117e2615902.scene
+startscene: 80272d90cd6c47618e647117e2615902.scene
+prerequisites: This tutorial has no pre-requisitions. Even for the people that never used Goo Create before, this tutorial shouldn't be a problem!
 ---
-
-**Pre-requisites**: This tutorial has no pre-requisitions. Even for the people that never used Goo Create before, this tutorial shouldn't be a problem!
-
-## Step 1: Open the scene
-
-To open and being able to edit the scene:
-
-1. <a href="https://create.goocreate.com/edit/80272d90cd6c47618e647117e2615902.scene/" target="_blank">Click here to open the new scene</a>
-2. Click on 'Duplicate scene' in the top left corner
-3. Select 'Drafts' and click on 'Duplicate'
- ![](duplicate.gif)
-
- You are now able to edit the scene.
-
-
-## Step 2: Replace the Goon's head with your own
+## Step 1: Replace the Goon's head with your own
 
 1. Navigate with your mouse to the hierarchy panel
  ![](navigateToHierarchy.gif)
@@ -42,7 +29,7 @@ You can now play the game with your own picture by clicking on the 'play' button
 ![](playbutton.gif)
 
 
-## Step 3: Rename the game
+## Step 2: Rename the game
 
 1. Select 'logo' in the hierarchy panel
  ![](selectLogoInHierarchy.gif)
@@ -53,7 +40,7 @@ You can now play the game with your own picture by clicking on the 'play' button
 4. Click on the blue 'Save' button
 
 
-## Step 4: Publish and share the scene
+## Step 3: Publish and share the scene
 
 1. Click on 'Scene' > 'Publish' in the top left corner
  ![](publishbutton.gif)

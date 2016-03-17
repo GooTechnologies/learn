@@ -1,5 +1,4 @@
 ---
-layout: tutorial
 title: Getting started Video
 weight: 100
 indent: 1

@@ -11,13 +11,20 @@ layout: default
 	</p>
 	<br />
 	{% if page.scene %}
-	<iframe width="800" height="450" src="https://c1.goote.ch/{{ page.scene }}" allowfullscreen></iframe>
-	<p class="imagedescription">
+	<iframe class="hidewhenincreate" width="800" height="450" src="https://c1.goote.ch/{{ page.scene }}" allowfullscreen></iframe>
+	<p class="imagedescription hidewhenincreate">
 		This is the result of what you're going to make this tutorial<br />
 		<a href="https://c1.goote.ch/{{ page.scene }}" target="_blank">
 			Click here to check out the scene full screen in a new tab
 		</a>
 	</p>
+	<div class="showwhenincreate">
+			<a href="https://c1.goote.ch/{{ page.scene }}" target="_blank">
+				<div class="button centerbutton largebutton tutbutton">
+					Check out the finished scene
+				</div>
+		</a>
+	</div>
 	{% else %}
 	<img src="/{{ page.thumbnail }}" style="margin: 0 auto; display: table; margin-bottom: 20px;" />
 	{% endif %}
@@ -64,11 +71,34 @@ layout: default
 
 <div class="col-md-12">
 	<div class="content">
+		{% if page.prerequisites %}
+			<p>
+				<span style="font-weight: bold;">Pre-requisites: </span>{{ page.prerequisites }}
+			</p>
+		{% endif %}
+		{% if page.startscene %}
+		<div class="hidewhenincreate">
+			<h2>Open the scene</h2>
+			<p>To open and being able to edit the scene:</p>
+			<ol>
+				<li><a href="https://create.goocreate.com/edit/{{page.startscene}}/" target="_blank">Click here to open the new scene</a></li>
+				<li>Click on ‘Duplicate scene’ in the top left corner</li>
+				<li>Select ‘Drafts’ and click on ‘Duplicate’
+				<img src="duplicate.gif" alt=""></li>
+			</ol>
+		</div>
+		{% endif %}
 		{{ content }}
-		<a href="/">
+		<a href="/" class="hidewhenincreate">
 			<div class="button centerbutton largebutton tutbutton">
 				Go back to the overview page
 			</div>
 		</a>
+		<a href="http://learn.goocreate.com/" class="showwhenincreate">
+			<div class="button centerbutton largebutton tutbutton">
+				Learn more about Goo Create
+			</div>
+		</a>
+
 	</div>
 </div>

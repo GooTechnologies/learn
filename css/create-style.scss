@@ -11,9 +11,14 @@ body {
   footer,
  .tutorial-nav,
  hr,
- .breadcrumb, .coursepartdetails, .progressbarcreate {
+ .breadcrumb, .coursepartdetails, .progressbarcreate, .hidewhenincreate {
 	 display: none;
  }
+
+.showwhenincreate {
+	display: block;
+}
+
 
 
 
@@ -82,6 +87,11 @@ body {
   h6 {
 	 font-weight: bold;
  }
+
+ p, li, ol {
+	 font-size: 12px;
+	 font-weight: normal;
+ }
   .next-button,  .prev-button {
 	 margin-bottom: 5px;
  }
@@ -99,7 +109,7 @@ body {
 	}
 
  .container, .infocontainer {
-	 margin: 10px;
+	 margin: 15px;
  }
 
   figure.highlight {
@@ -122,6 +132,7 @@ body {
 	}
 
 	.learncreate-header {
+		display: none;
 		margin-bottom: 10px;
 		height: 40px;
 		line-height: 30px;
@@ -148,9 +159,7 @@ body {
 
 	.create-course-info{
 		display: block;
-
-
-		.infocontainer {
+			.infocontainer {
 			background-color: #252525;
 			margin: 10px;
 			padding: 4px 8px;
@@ -217,7 +226,7 @@ body {
 	}
 	.button {
 		width: 100%;
-		padding: 15px 10px;
+		padding: 10px 10px;
 		color: white;
 		background-color: #6d6d6d;
 		text-align: center;
@@ -225,6 +234,7 @@ body {
 		border-radius: 3px;
 		transition: all 0.3s ease 0s;
 		margin-bottom: 10px;
+		font-size: 12px;
 	}
 
 	.button:hover {
