@@ -11,6 +11,11 @@ redirectToPath: ""
 twitter_username: GooTechnologies
 github_username:  GooTechnologies
 
+lsi: false
+safe: true
+gist:
+  noscript: false
+
 # Build settings
 markdown: kramdown
 
