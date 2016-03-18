@@ -24,6 +24,8 @@ sass:
 
 highlighter: rouge
 
+exclude: [node_modules]
+
 defaults:
   -
     scope:
@@ -35,6 +37,7 @@ defaults:
       path: "tutorials"
     values:
       layout: "tutorial"
+
 
 # The menus take a long time to render. Comment out the following line to skip rendering them.
 render_navigation: true

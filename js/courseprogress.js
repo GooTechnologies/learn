@@ -92,6 +92,7 @@ $(document).ready(function(){
       }
     }
 
+
     var elements = courses[ii].getElementsByClassName('progressbarcontainer');
     for (var i = 0; i < elements.length; i++){
       var circle = new ProgressBar.Circle(elements[i], {
