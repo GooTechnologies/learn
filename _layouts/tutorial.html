@@ -31,8 +31,6 @@ layout: default
 </div>
 
 
-
-
 <div class="col-md-4">
 	<div class="overviewblock coursepartdetails">
 		<div class="row">
@@ -89,6 +87,7 @@ layout: default
 		</div>
 		{% endif %}
 		{{ content }}
+		<div id="triggerfinished"></div>
 		<a href="/" class="hidewhenincreate">
 			<div class="button centerbutton largebutton tutbutton">
 				Go back to the overview page
@@ -102,3 +101,22 @@ layout: default
 
 	</div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+	debugger
+	var triggered = false;
+	if (!triggered){
+	$(window).scroll(function() {
+			var hT = $('#triggerfinished').offset().top,
+					hH = $('#triggerfinished').outerHeight(),
+					wH = $(window).height(),
+					wS = $(this).scrollTop();
+			if (wS > (hT+hH-wH)){
+				setTutorialDoneStatus('{{ page.url }}');
+				triggered = true;
+			}
+	});
+	}
+});
+</script>

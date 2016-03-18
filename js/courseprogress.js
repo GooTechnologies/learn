@@ -23,6 +23,17 @@ function getTutorialDoneStatus(pageUrl){
     }
 }
 
+function markTutorialsAsFinished() {
+  var completionmarks = document.getElementsByClassName('completionmark');
+  for (var i = 0; i < completionmarks.length; i++) {
+    url = completionmarks[i].dataset.url;
+    var completed = getTutorialDoneStatus(url);
+    if (completed){
+      completionmarks[i].style.display = "block";
+    }
+  }
+}
+
 function getResumeURL(){
     try {
         return localStorage.getItem("lastvisitedurl");

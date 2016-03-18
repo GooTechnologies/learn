@@ -4,6 +4,12 @@
     {% if ppage.usecase %}usecase{{ ppage.usecase }}{% else %}usecase2{% endif %}
     {% if ppage.contains_scripts == true %}code1{% else %}code0{% endif %}
   ">
+    <div class="ribboncontainer">
+      <div class="completionmark ribbon" data-url="{{ ppage.url }}" >
+        completed
+      </div>
+    </div>
+
     <div class="imgcontainer-create">
       <img src="{{ ppage.thumbnail }}" />
     </div>

@@ -19,6 +19,10 @@ footer {
 	padding-bottom: 30px;
 }
 
+.completionmark {
+	display: none;
+}
+
 .content {
 	img {
 		max-width: 100%;
@@ -258,6 +262,30 @@ li {
 	margin: 0 4px 35px 4px;
 	text-align: center;
 	border-radius: 3px;
+	.ribboncontainer {
+		position: absolute;
+    top: -1px;
+    right: 17px;
+    overflow: hidden;
+    width: 100px;
+    height: 80px;
+		.ribbon{
+			-webkit-transform: rotate(40deg) translate(-50%, -50%);
+			transform: rotate(40deg) translate(-50%, -50%);
+			position: absolute;
+			top: 72%;
+			left: 47%;
+			padding: 5px 25px;
+			font-size: 10px;
+			color: #E5E5E5;
+			background: #81C784;
+			text-transform: uppercase;
+			letter-spacing: 0;
+			font-weight: 700;
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+		}
+
+	}
 	.shortdescription {
 		height: 94.546px;
 		@media (max-width: 767px) {
