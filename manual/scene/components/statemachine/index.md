@@ -37,7 +37,7 @@ A Behavior always has one *Default State* which is activated when you press Play
 
 An *Action* is some logic gets executed while its State is active. Some actions executes its logic once and are done, while others execute logic once per frame. There are also Actions that just listens for events, and executes logic when the event happens.
 
-There are many types of Actions and their effect varies a lot. See the [Actions list](http://learn.goocreate.com/manual/scene/components/statemachine/#actions-list).
+There are many types of Actions and their effect varies a lot. See the [Actions list]({{ '/manual/scene/components/statemachine/#actions-list' | prepend: site.baseurl }}).
 
 ## Transitions: How to switch State
 

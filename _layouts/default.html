@@ -20,6 +20,15 @@
 					}
 				}
 			}
+
+			//check if working local or not
+			var cururl = window.location.href;
+			if (!cururl.includes('localhost')){
+				//Always redirect to https
+				if (window.location.protocol != "https:")
+				window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+			}
+
 			// Redirect if on github
 			{% if site.redirectFromHost %}
 				if(location.host == '{{ site.redirectFromHost }}'){
