@@ -48,7 +48,7 @@ We also have to increase the *strength* of the material
 
 3. Go back to the *Material* settings by clicking on the entity name, in our case 'Moon Surface', at the top above the texture name
 ![](gobacktomaterial.gif)
-4. Unfold the *Normal* item and increase the strength to '10'.
+4. Unfold the *Normal* item and increase the value to '10'. The slider is locked to '2' for more precision between 0 and 2, so you have to type it in manually.
 ![](increasestrength.gif)
 
 Look's much better, don't you think?
