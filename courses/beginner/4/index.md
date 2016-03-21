@@ -3,9 +3,9 @@ layout: coursepart
 title: Beautify the scene
 part: 4
 thumbnail: /courses/beginner/4/thumbnail.jpg
-scene_partfinished: 3ca61686b4b94092bbfe872d761aa188.scene
-tags: entity, transformation, scale, rotate, translate, duplication
-achievements: What entities are, How to add entities, Transformation, Duplicating entities
+scene_partfinished: 2826d587605e486f9e9c9fd031526153.scene
+tags: asset, material, texture, color, texture placement, ambient, skybox
+achievements: Importing assets, Materials, Textures, Changing colors, Skyboxes
 description: In this part we're going to add a material to the Moon surface, the Moon station and the Earth. We're also going to add the starry sky to our scene.
 ---
 # The Moon surface
@@ -73,7 +73,7 @@ You can do this for the Moon station as well!
 I've changed the colors of my Moon station to black and white:
 ![](spacestationcolor.jpg)
 
-## Add a texture to the Earth
+# Add a texture to the Earth
 
 For the Earth we are going to use an image of a flat version of the Earth and wrap it around our 'Earth' sphere entity.
 
@@ -84,4 +84,43 @@ For the Earth we are going to use an image of a flat version of the Earth and wr
 4. Drag and drop the earth image in the texture box
 ![](addearthtexture.gif)
 
-Because there doesn't shine any light on the Earth, 
+If you look closely, you can see that the image of the Earth is now wrapped around our sphere, but it's very hard to see because there doesn't shine any light on the Earth Sphere. You can fix this by following the steps below.
+
+1. In the *Material component* of the Earth entity, unfold *Ambient*
+2. Change the *Ambient color* to white.
+![](ambientcolor.gif)
+
+Finally, give the following rotation values to the earth in the *Transform component*:
+![](earthrotation.jpg)
+
+Your scene should now look like this:
+![](scenewithearth.jpg)
+
+# The Starry sky
+
+To can add a sky to our scene by creating a skybox.
+
+1. <a href="/courses/beginner/4/earth.jpg" download="starpattern">Click here to download the star pattern image</a>
+2. Select the name of your project in the *Hierarchy panel*
+![](selectparent.gif)
+3. Unfold *Environment* in the *Inspector Panel*
+4. Unfold *Skybox*
+5. Click on the **+** to create a new skybox
+6. Click on the pencil icon to edit the skybox
+![](createskybox.gif)
+7. Unfold *Textures*
+8. Make sure the *shape* is set to 'box'.
+9. Drag and drop the star pattern image that you've downloaded in step 1 in all the sides of the box
+![](fillskybox.gif)
+![](skybox.jpg)
+
+Looks good, but the horizon of the Moon doesn't really fades away in the sky. To accomplish this, we have to set the ambient color of the Moon surface entity to black.
+
+1. Select the *Moon surface* entity in the *Hierarchy panel*
+2. Unfold the *Material component* in the *Inspector panel*
+3. Unfold *Ambient*
+4. Set the *Ambient color* to black
+![](ambienttoblack.gif)
+
+Your scene should now look like this:
+![](part4finalscene.jpg)

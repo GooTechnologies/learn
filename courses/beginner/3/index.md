@@ -14,7 +14,7 @@ description: In this part we're going to expand our scene by adding the Moon sur
 For the Moon surface, we are going to use the *disk* entity.
 
 1. Click on *Create entity* at the top center of the canvas
-2. Click on the disk below *3D Primitives* 
+2. Click on the disk below *3D Primitives*
 ![](diskentity.jpg)
 3. Rename the disk entity to 'Moon surface'
 4. Add the following transformation values to the disk:
