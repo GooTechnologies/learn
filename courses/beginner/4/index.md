@@ -21,7 +21,7 @@ The first entity we're going to add a material to is the Moon surface. We have t
 4.  The Concrete Material should now appear. Add it to your scene by double-clicking the asset.
 ![](doubleclickasset.gif)
 
-The material is now added to the Asset binary
+The material is now added to the Asset bin
 ![](addedtobin.jpg)
 
 
@@ -44,11 +44,11 @@ The material looks very blurry and stretched right now because the Moon surface 
 2. Unfold the *Placement* item and change *Repeat U* to '200' and *Repeat V* to 130.
 ![](changeplacement.gif)
 
-We also have to increase the *strength* of the material
+We also have to increase the *Normal Map Strength* of the material
 
 3. Go back to the *Material* settings by clicking on the entity name, in our case 'Moon Surface', at the top above the texture name
 ![](gobacktomaterial.gif)
-4. Unfold the *Normal* item and increase the value to '10'. The slider is locked to '2' for more precision between 0 and 2, so you have to type it in manually.
+4. Unfold the *Normal* item and increase the *strength* value to '10'. The slider is locked to '2' for more precision between 0 and 2, so you have to type it in manually.
 ![](increasestrength.gif)
 
 Look's much better, don't you think?

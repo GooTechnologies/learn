@@ -6,7 +6,7 @@ thumbnail: /courses/beginner/2/thumbnail.jpg
 scene_partfinished: 3ca61686b4b94092bbfe872d761aa188.scene
 tags: entity, transformation, scale, rotate, translate, duplication
 achievements: What entities are, How to add entities, Transformation, Duplicating entities
-description: Okay, now you're a little bit familiar with the Goo Create Interface, and ready to create the Moon station! The Moon station consists out of entities, just as every other element in the scene. 
+description: Okay, now you're a little bit familiar with the Goo Create Interface, and ready to create the Moon station! The Moon station consists out of entities, just as every other element in the scene.
 ---
 
 
@@ -34,7 +34,7 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 
 Now we have added and renamed the entity, but it doesn't really looks like a part of our Moon station yet. We have to change the dimensions of the entity, and rotate the entity so it stands straight.
 
-**Hint**: If you click on an entity in the scene or in the hierarchy panel and press 'S', the camera will focus on that entity
+**Hint**: If you click on an entity in the scene or in the hierarchy panel and press 'S', the editor camera will focus on that entity.
 
 
 1. Unfold the 'Transform' item, which is also in the inspector panel. Try it out!

@@ -59,7 +59,7 @@ Your scene should now look like this:
 
 ## Change clipping plane of the camera
 
-We only have one small problem now, and that is when we put the scene in play mode by pressing the play button at the center bottom of the canvas, the earth will disappear because the camera's view can't reach it.
+We only have one small problem now, and that is when we put the scene in play mode by pressing the play button at the center bottom of the canvas, the earth will disappear because the camera's view frustum can't reach it.
 ![](playbutton.jpg)
 
 To change the range of how far you can look with a camera, you have to change the *clipping plane* of the camera.

@@ -5,11 +5,10 @@ part: 1
 thumbnail: /tutorials/create/lights/1.jpg
 scene_partfinished: 1f21f415f66c4f7bb854d3d5e4d8f9f2.scene
 youtube_video_id: 3g07yzQi8EA
-tags: entity, material, transformation, test
+tags: entity, material, transformation
 achievements: entities, events, state machine
-description: In the this part of the beginner tutorial, we will give a short introduction of the Goo Create interface so you roughly know where to find what. At first, it may be a bit vague, but it will become clear when you've made some progress in this course. <br><br> In this part, we're also going to make the Moon station.
+description: In the this part of the beginner tutorial, we will give a short introduction of the Goo Create interface so you roughly know where to find what. At first, it may be a bit vague, but it will become clear when you've made some progress in this course. In this part, we're also going to make the Moon station.
 ---
-
 # Short introduction to Goo Create
 
 ## Creating a new scene
@@ -28,7 +27,7 @@ You've now entered Goo Create. As you can see, there are several panels and butt
 
 First of all, the canvas. Here you can navigate, inspect and preview the contents of your scene. You can change the point of view of the camera by pressing your right mouse button on the canvas and drag the mouse, like this:
 ![](changecamerapov.gif)
-You can zoom in and out by using the scroll on your mouse.
+You can zoom in and out by using the scroll wheel on your mouse.
 
 ### Topbar
 
