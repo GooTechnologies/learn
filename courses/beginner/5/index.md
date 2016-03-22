@@ -3,7 +3,7 @@ layout: coursepart
 title: The Moon Lander and the astronaut
 part: 5
 thumbnail: /courses/beginner/5/thumbnail.jpg
-scene_partfinished: 977e0532348e4663bfd5de28cf1904cc.scene
+scene_partfinished: f15efa108fec429aabc56a8a7bbb9ff0.scene
 tags: entity, light, camera, clipping plane, sphere, disk
 achievements: How to create a sphere and disk, Adding light to a scene, Clipping plane of the camera
 description: In this part we're going to add the last assets to our scene, which are The Moon Lander, the astronaut, the satellite and the flag.
@@ -74,7 +74,18 @@ You can see that the flag is really dark. This is because the light source is lo
 2. Unfold *Ambient* in the *Material Component*
 3. Set the color to white
 
+When you press the play button at the bottom center of the canvas, you can see that the flag is waving. This isn't very realistic, because there is no wind at the Moon. Turn the animation off by:
+
+1. Unfolding the *Animation component* In the *Inspector panel*
+2. Click the 'x' next to *default* to delete the animation state
+![](deleteanimation.gif)
+
 You can replace the Swedish flag with a picture of for instance the flag of your own country by:
+
 1. Unfolding *Color (Diffuse)* in the *Material Component*
 2. Drag and dropping your own image in the box where you can find the Swedish flag right now
 ![](changeflag.jpg)
+
+
+
+![](finishedscene.jpg)
