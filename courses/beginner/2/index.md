@@ -6,7 +6,7 @@ thumbnail: /courses/beginner/2/thumbnail.jpg
 scene_partfinished: 3ca61686b4b94092bbfe872d761aa188.scene
 tags: entity, transformation, scale, rotate, translate, duplication
 achievements: What entities are, How to add entities, Transformation, Duplicating entities
-description: Okay, now you're a little bit familiar with the Goo Create Interface, and ready to create the Moon station! The Moon station consists out of entities, just as every other element in the scene. 
+description: Okay, now you're a little bit familiar with the Goo Create Interface, and ready to create the Moon station! The Moon station consists out of entities, just as every other element in the scene.
 ---
 
 
@@ -22,7 +22,7 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 
 ## Adding a cylinder to the scene
 
- For the posts that will support the house, we're going to use the 3D cylinder entity
+ For the cylinder shaped Moon station parts, we're going to use the 3D cylinder entity
 
  1. Click on the cylinder in the 'Create Entity' pop-up screen
  ![Create cylinder](createCylinder.gif)
@@ -58,7 +58,7 @@ Now we have added and renamed the entity, but it doesn't really looks like a par
 
 In the result scene of this part, you probably noticed that there are multiple Moon station parts that are connected by tunnels. First, we are going to clone the 'Moon station part' entity a couple of times and change the position of the cloned entities.
 
-  1. Create a folder in the hierarchy by clicking on 'Entity' in the 'Create Entity' panel. Rename the entity to 'Moon station' to keep the hierarchy clear since we are going to add more Moon station parts.
+  1. Create an empty entity (which we are going to use as a folder) by clicking on 'Entity' in the 'Create Entity' panel. Rename the entity to 'Moon station' to keep the hierarchy clear since we are going to add more Moon station parts.
   ![Empty entity](emptyEntity.jpg)
   2. Drag the 'Moon station part' entity into the 'Moon station' entity
   ![](dragentityinentity.gif)

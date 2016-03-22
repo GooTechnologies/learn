@@ -1,6 +1,6 @@
 ---
 layout: coursepart
-title: The Moon Lander and the astronaut
+title: The Moon Lander
 part: 5
 thumbnail: /courses/beginner/5/thumbnail.jpg
 scene_partfinished: f15efa108fec429aabc56a8a7bbb9ff0.scene

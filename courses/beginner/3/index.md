@@ -35,7 +35,11 @@ There are different types of light you can use in Create. The one we are going t
 3. Change the *Y translation* of the light to '365':
 ![](lighttransformvalues.jpg)
 
-You will notice that the light isn't visible in the scene anymore. That's because we've putted it very high, and the light simply can't reach the Moon station and the Moon surface. So, we have to change the range and intensity of the light. We also have to change the *specular*, because otherwise the materials would reflect to much.
+You will notice that the light isn't visible in the scene anymore. That's because we've putted it very high, and the light simply can't reach the Moon station and the Moon surface.
+![](frustrumreach.jpg)
+
+
+So, we have to change the range and intensity of the light. We also have to change the *specular*, because otherwise the materials would reflect to much.
 
 4. Make sure the light entity you just added is selected in the hierarchy panel and unfold the *Light* component below the *transform* component in the inspector panel
 ![](openlightcomponent.gif)

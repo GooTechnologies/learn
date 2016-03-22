@@ -83,6 +83,7 @@ $(document).ready(function(){
         return a + b;
     });
     var percent = numCompleted / numTotal;
+    percent = percent.toFixed(0);
 
 
     if (percent === 1){
