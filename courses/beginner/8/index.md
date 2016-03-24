@@ -4,8 +4,8 @@ title: The Rocket flames
 part: 8
 thumbnail: /courses/beginner/8/thumbnail.jpg
 scene_partfinished: f15efa108fec429aabc56a8a7bbb9ff0.scene
-tags: particles
-achievements: State machine
+tags: particle system, particles, hierarchy, flames
+achievements: Particle System, Hierarchy,  
 description: The final part of the beginner course! In this part we're going to give our scene the finishing touch by creating the rocket flames for the Moon rocket for when it launches.
 ---
 
