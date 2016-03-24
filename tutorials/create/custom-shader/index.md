@@ -151,4 +151,3 @@ All left to do now is to make the `time` value update. It is always zero right n
 };{% endhighlight %}
 
 ## Step 4: Done!
-
