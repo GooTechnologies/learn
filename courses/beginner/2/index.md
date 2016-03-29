@@ -34,7 +34,7 @@ There are different kinds of entities in Goo Create. If you open the 'create ent
 
 Now we have added and renamed the entity, but it doesn't really looks like a part of our Moon station yet. We have to change the dimensions of the entity, and rotate the entity so it stands straight.
 
-**Hint**: If you click on an entity in the scene or in the hierarchy panel and press 'S', the camera will focus on that entity
+**Hint**: If you click on an entity in the scene or in the hierarchy panel and press 'S', the editor camera will focus on that entity.
 
 
 1. Unfold the 'Transform' item, which is also in the inspector panel. Try it out!
