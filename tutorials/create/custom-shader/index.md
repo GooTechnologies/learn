@@ -18,7 +18,11 @@ The first thing you need to to is adding an entity to apply the shader on. Let's
 1. Click *Create Entity* in the top menu
 2. Click Box
 
+![](no-shader.png)
+
 ## Step 2: Add a minimal custom shader script
+
+To add a shader to the cube, we need to create a custom script and add it to the cube.
 
 1. Select the box
 2. Click "Add component" in the inspector
@@ -84,8 +88,9 @@ var parameters = [];{% endhighlight %}
 
 If you now press Play in the editor, the custom shader material will replace the current material on the box. Right now the custom shader isn't very exciting, it's just plain white.
 
+![](empty-shader.png)
 
-## Step 3: Update the shader to become a plasma shader
+## Step 3: Update the shader to a plasma shader
 
 Now let's make it more interesting. Replace the `vertexShader`, `fragmentShader` and the `shaderDefinition` with the following.
 
@@ -106,11 +111,11 @@ In the vertex shader source we want to add the UV coordinates from the mesh as a
 In the fragment shader we replace almost everything that we had in the previous shader, and add some magic formulas to get the plasma effect. We add a couple of *uniforms* `time` and `k`. Also note that we assume a *define* called `PI`.
 
 {% highlight js %}var fragmentShader = [
-    'uniform float time;', <-- add
-    'uniform vec2 k;', <-- add
-    'varying vec2 texCoord0;', <-- add
+    'uniform float time;', // <-- add
+    'uniform vec2 k;', // <-- add
+    'varying vec2 texCoord0;', // <-- add
     'void main(void){',
-    '    float v = 0.0;',  <-- add all of these magic formulas
+    '    float v = 0.0;',  // <-- add all of these magic formulas
     '    vec2 c = texCoord0 * k - k/2.0;',
     '    v += sin(c.x + time);',
     '    v += sin((c.y + time)/2.0);',
@@ -147,7 +152,18 @@ All left to do now is to make the `time` value update. It is always zero right n
 
 {% highlight js %}var update = function (args, ctx) {
     // Pass the current time via uniforms to the shader.
-    ctx.material.uniforms.time = ctx.world.time;
+    // This will override the "time" uniform on the shader.
+    ctx.material.uniforms.time = ctx.world.time; // <-- add this!
 };{% endhighlight %}
 
-## Step 4: Done!
+## Step 4: Press Play
+
+When you press the Play button in Create, the `setup()` function will be run, and the shader will be added to the cube. Try it!
+
+![](plasma-shader.png)
+
+## Step 5: Done!
+
+You've now made a custom shader. Congrats! What will you use this knowledge for next?
+
+![](plasma.gif)
