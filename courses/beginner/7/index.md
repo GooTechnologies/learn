@@ -3,7 +3,7 @@ layout: coursepart
 title: Ready for Takeoff
 part: 7
 thumbnail: /courses/beginner/7/thumbnail.jpg
-scene_partfinished: fec0e9f826584d1ca7f0b304d042c6e2.scene
+scene_partfinished: 492ce64a7bd649d8b8b8ccfeaab8a0aa.scene
 tags: timeline, events, messages, animation, state machine, fixed camera
 achievements: Timeline, Events, State machine, Creating a fixed camera
 description: Our Moon Rocket is ready for takeoff! We're going to make the animation of the Launching Moon Rocket with the Timeline component. We're also going to create and animate the camera, so it moves with the Moon Rocket.
