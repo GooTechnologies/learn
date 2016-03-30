@@ -72,18 +72,18 @@ $(document).ready(function(){
     var urls = container.dataset.tutorials.split(/\s+/g).filter(function(url){
       return url;
     });
-
     var numTotal = urls.length;
 
     if(!numTotal) continue;
 
     var numCompleted = urls.map(function(url){
+
         return url && getTutorialDoneStatus(url) ? 1 : 0;
     }).reduce(function(a,b){
         return a + b;
     });
+    debugger
     var percent = numCompleted / numTotal;
-    percent = percent.toFixed(0);
 
 
     if (percent === 1){
