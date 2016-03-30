@@ -102,7 +102,7 @@ To make this, we are going to use an HTML entity
 ![](sharescene.gif)
 
 # Congratulations!! You've finished the Beginner Course!
-![](welldone.gif)
+![](welldoneleo.gif)
 **A list of the things you've learned about:**
 
 * Creating a new scene
