@@ -42,13 +42,13 @@ You can now play the game with your own picture by clicking on the 'play' button
 
 ## Step 3: Publish and share the scene
 
+**Hint:** Read the whole step before trying it yourself
+
 1. Click on 'Scene' > 'Publish' in the top left corner
  ![](publishbutton.gif)
 2. Fill in the name and the description of the scene
  ![](namedescription.gif)
-3. Check 'Enable Alpha' (because we use a so-called 3D HTML entity for the logo)
- ![](enableAlpha.gif)
-4. Click on 'publish' and then on 'OK'
+3. Click on 'publish' and then on 'OK'
  ![](publish.gif)
-5. After it's done publishing, click on 'Close'. Now you can share your projects by clicking on one of the social media icons.
+4. After it's done publishing, click on 'Close'. Now you can share your projects by clicking on one of the social media icons.
  ![](sharegif.gif)

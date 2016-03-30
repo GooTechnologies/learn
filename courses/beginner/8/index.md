@@ -4,8 +4,8 @@ title: The Rocket flames
 part: 8
 thumbnail: /courses/beginner/8/thumbnail.jpg
 scene_partfinished: fec0e9f826584d1ca7f0b304d042c6e2.scene
-tags: particle system, particles, hierarchy, flames
-achievements: Particle System, Hierarchy
+tags: particle system, particles, hierarchy, flames, html
+achievements: Particle System, Hierarchy, HTML in Create
 description: The final part of the beginner course! In this part we're going to give our scene the finishing touch by creating the rocket flames for the Moon rocket for when it launches.
 ---
 
@@ -20,6 +20,7 @@ Now you have an idea of what a particle system is, we can start creating the roc
 ## Adding a particle system to the scene
 
 1. Click the *Create Entity* button at the top center of the canvas
+2. Click on *Particles*
 ![](addparticles.jpg)
 2. Rename the Particle System to 'Rocket Particle System'
 3. Set the *Transform component* > *X Rotation* to 180
@@ -54,3 +55,52 @@ Well done, you've made your first particle in Goo Create! If you want to learn m
 We put the Rocket particle system inside the Moon Lander entity, because it will make the rocket particle system a part of the Moon Lander. So when the Moon Lander moves, the Rocket particle system will move as well, and that is exactly what we want.
 
 Press the *Play button* to checkout your scene in action!
+
+# User instructions
+
+The only thing that's left now are the instructions for the people that are going to check out the scene. After that we can publish the scene!
+![](instructions.jpg)
+
+To make this, we are going to use an HTML entity
+
+1. Click the *Create Entity* button at the top center of the canvas
+2. Add the *HTML entity* by clicking the code icon under *2D shapes*
+![](addhtml.jpg)
+3. Make sure the *HTML entity* is selected in the *Hierarchy*
+4. Unfold *HTML* in the *Inspector panel* and deselect *Move with Transform*
+![](unfoldhtml.gif)
+5. Click *Open in editor*. There should open a pop-up window.
+![](openineditor.jpg)
+6. Replace everything for the code below:
+  {% highlight html %}
+      <style>
+      	.instructions {
+      		font-size: 16px;
+      		padding: 10px;
+      		border-radius: 3px;
+      		margin: 0;
+      		font-family: roboto;
+      		color: white;
+      	}
+      </style>
+
+      <p class="instructions">
+      	Click the flag to lower/hoist the flag
+      	<br><br>
+      	Click the Moon Rocket to launch it
+      </p>
+  {% endhighlight %}
+7. Click the big blue *Save button* at the bottom left corner and close the pop-up window
+
+# Publish and share the scene!
+
+1. Click *Scene > Publish* in the top left corner of the interface
+![](scenepublish.gif)
+2. In the pop-up window, click on ‘publish’ and then on ‘OK’
+![](publish.gif)
+3. After it’s done publishing, click on ‘Close’. Now you can share your projects by clicking on one of the social media icons.
+![](sharescene.gif)
+
+
+
+# Congratulations!! You've finished the Beginner Course!
