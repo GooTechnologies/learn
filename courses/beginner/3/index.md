@@ -14,7 +14,7 @@ description: In this part we're going to expand our scene by adding the Moon sur
 For the Moon surface, we are going to use the *disk* entity.
 
 1. Click on *Create entity* at the top center of the canvas
-2. Click on the disk below *3D Primitives* 
+2. Click on the disk below *3D Primitives*
 ![](diskentity.jpg)
 3. Rename the disk entity to 'Moon surface'
 4. Add the following transformation values to the disk:
@@ -35,7 +35,11 @@ There are different types of light you can use in Create. The one we are going t
 3. Change the *Y translation* of the light to '365':
 ![](lighttransformvalues.jpg)
 
-You will notice that the light isn't visible in the scene anymore. That's because we've putted it very high, and the light simply can't reach the Moon station and the Moon surface. So, we have to change the range and intensity of the light. We also have to change the *specular*, because otherwise the materials would reflect to much.
+You will notice that the light isn't visible in the scene anymore. That's because we've putted it very high, and the light simply can't reach the Moon station and the Moon surface.
+![](frustrumreach.jpg)
+
+
+So, we have to change the range and intensity of the light. We also have to change the *specular*, because otherwise the materials would reflect to much.
 
 4. Make sure the light entity you just added is selected in the hierarchy panel and unfold the *Light* component below the *transform* component in the inspector panel
 ![](openlightcomponent.gif)
@@ -59,7 +63,7 @@ Your scene should now look like this:
 
 ## Change clipping plane of the camera
 
-We only have one small problem now, and that is when we put the scene in play mode by pressing the play button at the center bottom of the canvas, the earth will disappear because the camera's view can't reach it.
+We only have one small problem now, and that is when we put the scene in play mode by pressing the play button at the center bottom of the canvas, the earth will disappear because the camera's view frustum can't reach it.
 ![](playbutton.jpg)
 
 To change the range of how far you can look with a camera, you have to change the *clipping plane* of the camera.

@@ -83,6 +83,17 @@ $(document).ready(function(){
         return a + b;
     });
     var percent = numCompleted / numTotal;
+    percent = percent.toFixed(0);
+
+
+    if (percent === 1){
+      var coursecompletionmarks = courses[ii].getElementsByClassName('coursecompletionmark');
+      for (var i = 0; i < coursecompletionmarks.length; i++) {
+          coursecompletionmarks[i].style.display = "block";
+      }
+    }
+
+
     var elements = courses[ii].getElementsByClassName('progressbarcontainer');
     for (var i = 0; i < elements.length; i++){
       var circle = new ProgressBar.Circle(elements[i], {

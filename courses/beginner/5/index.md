@@ -1,10 +1,10 @@
 ---
 layout: coursepart
-title: The Moon Lander and the astronaut
+title: The Moon Lander
 part: 5
 thumbnail: /courses/beginner/5/thumbnail.jpg
 scene_partfinished: f15efa108fec429aabc56a8a7bbb9ff0.scene
-tags:
+tags: assets, hierarchy, transform, rotate, translate, scale
 achievements: Importing assets, Hierarchy, Transformation
 description: In this part we're going to add the last assets to our scene, which are The Moon Lander, the astronaut, the satellite and the flag.
 ---
@@ -57,6 +57,8 @@ It could be that the Moon Lander gets in the way of your Moon station, depending
 ![](transformbutton.gif)
 6. Drag the Y and Z arrows to put the satellite in the right position
 ![](dragsatellite.gif)
+7. Drag and drop the Satellite dish entity in the Moon station Entity in the *Hierarchy panel*
+![](satelliteinmoonstation.gif)
 
 # Adding the flag
 

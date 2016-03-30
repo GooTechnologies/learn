@@ -21,15 +21,15 @@ layout: default
 		<div class="row">
 			<div class="verticalhr"></div>
 			<div class="horizontalhr"></div>
-			<div class="col-md-6 course">
+			<div class="col-md-6 col-sm-6 course">
 				<p>
 					Your progress
 				</p>
 				<div class="progressbarcontainer" data-tutorials="{% assign pp = site.pages %}{% for ppage in pp %}{% if ppage.layout == "coursepart" and ppage.url contains page.url %}{{ ppage.url }} {% endif %}{% endfor %}"></div>
 
 		</div>
-			<div class="col-md-6">
-				<p>
+			<div class="col-md-6 col-sm-6">
+				<p class="tagheader">
 					Tags
 				</p>
 				{% assign words = page.tags | split: ", " %}
@@ -41,7 +41,7 @@ layout: default
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					In this part you will learn about:
+					In this course you will learn about:
 				</p>
 				{% assign words = page.achievements | split: ", " %}
 				{% for word in words  %}

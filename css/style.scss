@@ -19,7 +19,7 @@ footer {
 	padding-bottom: 30px;
 }
 
-.completionmark {
+.completionmark, .coursecompletionmark {
 	display: none;
 }
 
@@ -34,6 +34,8 @@ footer {
 	table img {
 		min-width: 100px;
 	}
+
+
 
 	table h4 {
 		font-weight: bold;
@@ -246,6 +248,7 @@ li {
 
 .videotutcontainer {
 	background-color: $gray-dark;
+	margin-bottom:30px;
 	.container {
 		background-color: $gray-dark;
 		.videotutorial {
@@ -265,7 +268,7 @@ li {
 	.ribboncontainer {
 		position: absolute;
     top: -1px;
-    right: 17px;
+    right: 18px;
     overflow: hidden;
     width: 100px;
     height: 80px;
@@ -311,6 +314,9 @@ li {
 	hr {
 		border-top-color: $gray-light;
 		margin: 15px 0;
+		@media (max-width: 767px) {
+			display: none;
+		}
 	}
 	.imgcontainer {
 		margin: 15px -20px;
@@ -324,7 +330,7 @@ li {
 		width: 100px;
 		height: 100px;
 		display: inline-block;
-		margin: 0 auto;
+		margin: 30px auto 0 auto;
 		.progressbar-text {
 			font-weight: bold;
 		}
@@ -335,7 +341,11 @@ li {
 
 
 //Course overview
-
+.tagheader {
+	@media (max-width: 767px) {
+		text-align: left;
+	}
+}
 .tag {
 	display: inline-block;
 	float: left;
@@ -364,6 +374,9 @@ li {
 			background-color: #CECECE;;
 			position: absolute;
 			left: 50%;
+			@media (max-width: 767px) {
+				display: none;
+			}
 		}
 		.horizontalhr {
 			width: 90%;
@@ -375,7 +388,9 @@ li {
 			right: 0;
 			margin-left: auto;
 			margin-right: auto;
-
+			@media (max-width: 767px) {
+				display: none;
+			}
 		}
 	}
 	.col-md-12 {
