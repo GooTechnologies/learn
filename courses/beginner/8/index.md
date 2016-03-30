@@ -101,6 +101,26 @@ To make this, we are going to use an HTML entity
 3. After it’s done publishing, click on ‘Close’. Now you can share your projects by clicking on one of the social media icons.
 ![](sharescene.gif)
 
-
-
 # Congratulations!! You've finished the Beginner Course!
+![](welldone.gif)
+**A list of the things you've learned about:**
+
+* Creating a new scene
+* The Create UI
+* What entities are
+* How to add entities
+* Transformation
+* Duplicating entities
+* Adding light to a scene
+* Clipping plane of the camera
+* Importing assets
+* Materials
+* Textures
+* Changing colors
+* Skyboxes
+* Hierarchy
+* State machine
+* Timeline
+* Events
+* Creating a fixed camera
+* Particle System
