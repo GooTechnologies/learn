@@ -9,8 +9,8 @@ tags: sprites, sprite animation, physics, state machine, sound, local storage, 2
 achievements: Using sprites, physics, sprite animation, sound, state machine, local storage
 duration: 1 hour
 short_description: Flappy Bird is a simple (and popular) game. Let's remake it in Goo Create! The aim with this tutorial is to give you an idea how the game can be built, so you can do it too.
-thumbnail: tutorials\create\flappy-bird\thumbnail.jpg
-scene: bb3eea5c7dfe4b3b85fbcd9d7e6eddb5.scene
+thumbnail: tutorials/create/flappy-bird/thumbnail.jpg
+scene: b1949f57dee346adb677f3ae5fa976ec.scene
 ---
 We made sure that the game uses as little scripting as possible to make it simpler for everyone. If you're a beginner and get stuck, please have a look inside the Create scene, and hopefully you can get past your problems!
 
