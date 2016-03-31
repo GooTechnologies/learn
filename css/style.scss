@@ -210,6 +210,10 @@ li {
 	font-weight: normal;
 }
 
+.courseoverviewblock {
+	background-color: #cdedff !important;
+}
+
 .coursebutton, .tutorialbutton {
 	width: 100%;
 	margin-top: 25px;
@@ -256,14 +260,22 @@ li {
 		}
 	}
 }
-
-
+.noresults {
+	text-align: center;
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+	span {
+		font-size: 20px;
+	}
+}
 
 .overviewblock {
 	background-color: $gray-verylight;
 	padding: 20px;
 	margin: 0 4px 35px 4px;
-	text-align: center;
+	text-align: left;
 	border-radius: 3px;
 	.ribboncontainer {
 		position: absolute;
@@ -327,12 +339,15 @@ li {
 	}
 
 	.progressbarcontainer {
-		width: 100px;
-		height: 100px;
-		display: inline-block;
-		margin: 30px auto 0 auto;
+		width: 60px;
+    height: 59px;
+    display: block;
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
 		.progressbar-text {
 			font-weight: bold;
+			font-size: 15px;
 		}
 		.progressbar-text:after {
   		content: "%";

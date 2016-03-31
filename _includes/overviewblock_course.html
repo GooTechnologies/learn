@@ -1,5 +1,5 @@
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-  <div class="course overviewblock
+  <div class="course courseoverviewblock overviewblock
     {% if ppage.difficulty_overall %} difficulty{{ ppage.difficulty_overall }}{% endif %}
     {% if ppage.usecase %}usecase{{ ppage.usecase }}{% else %}usecase2{% endif %}
     {% if ppage.contains_scripts == true %}code1{% else %}code0{% endif %}
@@ -7,6 +7,8 @@
   <div class="ribboncontainer">
     <div class="coursecompletionmark ribbon" data-url="{{ ppage.url }}" >
       completed
+    </div>
+    <div class="progressbarcontainer progressbarcreate" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
     </div>
   </div>
     <div class="imgcontainer-create">
@@ -39,8 +41,7 @@
     <p class="shortdescription">
         {{ ppage.short_description }}
     </p>
-    <div class="progressbarcontainer progressbarcreate" data-tutorials="{% assign tt = site.pages %}{% for tpage in tt %}{% if tpage.layout == "coursepart" and tpage.url contains ppage.url %}{{ tpage.url }} {% endif %}{% endfor %}">
-    </div>
+
     <a id="buttonlink" href="{{ ppage.url }}">
       <div class="button coursebutton">Go to course</div>
     </a>

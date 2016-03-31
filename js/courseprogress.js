@@ -82,7 +82,7 @@ $(document).ready(function(){
     }).reduce(function(a,b){
         return a + b;
     });
-    debugger
+
     var percent = numCompleted / numTotal;
 
 
@@ -98,9 +98,9 @@ $(document).ready(function(){
     for (var i = 0; i < elements.length; i++){
       var circle = new ProgressBar.Circle(elements[i], {
           color: '#38b3f6',
-          strokeWidth: 5,
+          strokeWidth: 8,
           duration: 1500,
-          trailWidth: 5,
+          trailWidth: 8,
           trailColor: '#a3b1bf',
           text: {
               value: '0'

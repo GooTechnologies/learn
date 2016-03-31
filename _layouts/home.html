@@ -10,35 +10,29 @@ layout: default
 			<a class="btn btn-primary btn-lg btn-block continue-button">Continue where you left <span class="glyphicon glyphicon-forward" aria-hidden="true"></span></a>
 		</p>
 	</div>
-</div>
 
-{% assign pp = site.pages | sort: 'difficulty_overall' %}
-<div class="row courses">
-	<div class="col-md-12">
-		<a class="homeh1" name="courses">
-		<h1 >Courses</h1>
-		</a>
-		<hr class="createhr">
-	</div>
-	<div class="row">
-	{% assign i = 0 %}
-	{% for ppage in pp %}
-		{% if ppage.layout == "courseoverview" %}
-			{% include overviewblock_course.html %}
-		{% endif %}
-	{% endfor %}
-	</div>
 </div>
+<a class="homeh1" name="tutorials">
+</a>		<a class="homeh1" name="courses">
+</a>
 
-{% assign pp = site.pages | sort: 'weight' %}
 <div class="row tutorials">
 	<div class="col-md-12">
 		<a class="homeh1" name="tutorials">
-		<h1 >Tutorials</h1>
-	</a>
+	</a>		<a class="homeh1" name="courses">
+		</a>
 	<hr class="createhr">
 	</div>
 	<div class="row">
+		{% assign pp = site.pages | sort: 'difficulty_overall' %}
+		{% assign i = 0 %}
+		{% for ppage in pp %}
+			{% if ppage.layout == "courseoverview" %}
+				{% include overviewblock_course.html %}
+			{% endif %}
+		{% endfor %}
+
+		{% assign pp = site.pages | sort: 'weight' %}
 	{% assign i = 0 %}
 	{% for ppage in pp %}
 		{% if ppage.layout == "tutorial" and ppage.difficulty_overall %}
@@ -46,6 +40,12 @@ layout: default
 		{% endif %}
 	{% endfor %}
 	</div>
+</div>
+
+<div class="noresults">
+	<img src="img/create-crying-goon.gif" alt="" />
+	<span>We found nothing that meets your requirements</span>
+
 </div>
 
 <script>

@@ -1,6 +1,7 @@
 /* global $ */
 
 document.addEventListener("DOMContentLoaded", function() {
+  $('.noresults').hide();
 
   // Reset the filter to first option
   $(".reset").click(function() {
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Listen for change
   $('.difficulty,.usecase,.coding').on('change', function () {
-
+    $('.noresults').hide();
     // Hide all blocks
     $(".overviewblock").hide();
 
@@ -35,5 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var filterSelector = ".overviewblock" + difficultySelector + usecaseSelector + codeSelector;
     console.log(filterSelector);
     $(filterSelector).fadeIn();
+
+    if ($(".overviewblock:visible").length === 0){
+      $('.noresults').show();
+    }
   });
 });
