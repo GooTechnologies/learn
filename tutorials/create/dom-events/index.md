@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: DOM Events
+lastupdated: 2014-08-16
 weight: 1999
 indent: 1
 difficulty_overall: 1

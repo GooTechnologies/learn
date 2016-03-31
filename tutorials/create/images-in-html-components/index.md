@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Images in HTML components
+lastupdated: 2016-03-10
 weight: 1999
 indent: 1
 difficulty_overall: 0

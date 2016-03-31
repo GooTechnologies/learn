@@ -62,6 +62,15 @@ layout: default
 					<span class="time">{{ page.duration }}</span>
 				</p>
 				{% endif %}
+				{% if page.lastupdated %}
+				<br />
+				<p>
+					Last updated on:
+				</p>
+				<p style="font-weight: normal">
+					{{ page.lastupdated | date: '%B %d, %Y'  }}
+				</p>
+				{% endif %}
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: UV Sprite Animation
+lastupdated: 2016-02-19
 weight: 1041
 indent: 1
 difficulty_overall: 1

@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Creating Santa
+lastupdated: 2014-06-02
 weight: 1999
 indent: 1
 difficulty_overall: 1

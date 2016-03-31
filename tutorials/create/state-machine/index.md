@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: State Machine
+lastupdated: 2016-03-20
 weight: 600
 indent: 1
 difficulty_overall: 0

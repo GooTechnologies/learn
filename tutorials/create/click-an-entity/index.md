@@ -1,7 +1,9 @@
 ---
 layout: tutorial
 title: How to click an entity
+lastupdated: 2015-10-19
 weight: 1999
+duration: 15 minutes
 indent: 1
 contains_scripts: true
 difficulty_overall: 1

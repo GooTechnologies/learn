@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: HTML alongside screen
+lastupdated: 2015-08-08
 weight: 1999
 indent: 1
 difficulty_overall: 1

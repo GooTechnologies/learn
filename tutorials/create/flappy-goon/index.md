@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Flappy Goon
+lastupdated: 2016-03-30
 weight: 150
 indent: 1
 difficulty_overall: 0

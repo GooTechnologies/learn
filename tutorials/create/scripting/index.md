@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Scripting
+lastupdated: 2015-12-06
 indent: 1
 weight: 715
 difficulty_overall: 0

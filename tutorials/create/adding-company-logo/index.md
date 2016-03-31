@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Adding Company Logo
+lastupdated: 2016-02-16
 weight: 2000
 indent: 1
 difficulty_overall: 1

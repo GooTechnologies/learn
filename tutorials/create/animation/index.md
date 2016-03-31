@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Animation
+lastupdated: 2015-03-27
 weight: 1010
 indent: 1
 difficulty_overall: 1

@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Solar System
+lastupdated: 2016-02-19
 weight: 950
 indent: 1
 contains_scripts: false

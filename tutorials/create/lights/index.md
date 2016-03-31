@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Lights
+lastupdated: 2015-10-19
 weight: 400
 indent: 1
 difficulty_overall: 0

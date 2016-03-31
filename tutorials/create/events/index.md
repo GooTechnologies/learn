@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Events
+lastupdated: 2016-02-16
 indent: 1
 weight: 730
 difficulty_overall: 0

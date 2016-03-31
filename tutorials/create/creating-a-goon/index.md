@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Creating a Goon
+lastupdated: 2014-05-07
 weight: 1999
 indent: 1
 difficulty_overall: 1

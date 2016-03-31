@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Custom shader
+lastupdated: 2016-03-29
 weight: 1999
 indent: 1
 contains_scripts: true

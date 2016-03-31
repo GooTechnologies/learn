@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Interactive Rotating Cube
+lastupdated: 2015-01-08
 weight: 1999
 indent: 1
 contains_scripts: true

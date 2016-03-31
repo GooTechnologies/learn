@@ -1,12 +1,13 @@
 ---
 layout: tutorial
 title: Transform Scripting
+lastupdated: 2016-01-11
 weight: 1041
 indent: 1
 difficulty_overall: 1
 contains_scripts: true
 tags: scripting, translation, rotation, scale, lookAt, coordinates, hierarchies
-achievements: Transform matrix, Scripting transformations, Scripting rotation, Scripting scale, 
+achievements: Transform matrix, Scripting transformations, Scripting rotation, Scripting scale,
 duration: 20 minutes
 short_description: In this tutorial, we'll have a look at the basics of the hierarchy and some of its uses.
 thumbnail: tutorials\create\transforms/thumbnail.jpg

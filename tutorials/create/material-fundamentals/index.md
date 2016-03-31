@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Material fundamentals
+lastupdated: 2016-03-01
 weight: 500
 indent: 1
 difficulty_overall: 0

@@ -1,6 +1,7 @@
 ---
 layout: tutorial
 title: Assigning textures to material
+lastupdated: 2015-03-27
 weight: 1003
 indent: 1
 difficulty_overall: 1
