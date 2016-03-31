@@ -22,7 +22,7 @@ layout: default
 			<div class="verticalhr"></div>
 			<div class="horizontalhr"></div>
 			<div class="col-md-6 col-sm-6 course">
-				<p>
+				<p style="margin-bottom: 0;">
 					Your progress
 				</p>
 				<div class="progressbarcontainer" data-tutorials="{% assign pp = site.pages %}{% for ppage in pp %}{% if ppage.layout == "coursepart" and ppage.url contains page.url %}{{ ppage.url }} {% endif %}{% endfor %}"></div>

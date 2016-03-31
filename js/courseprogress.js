@@ -85,33 +85,32 @@ $(document).ready(function(){
 
     var percent = numCompleted / numTotal;
 
-
-    if (percent === 1){
-      var coursecompletionmarks = courses[ii].getElementsByClassName('coursecompletionmark');
+    var coursecompletionmarks = courses[ii].getElementsByClassName('coursecompletionmark');
+    if (percent === 1 && coursecompletionmarks.length !== 0){
       for (var i = 0; i < coursecompletionmarks.length; i++) {
           coursecompletionmarks[i].style.display = "block";
       }
     }
-
-
-    var elements = courses[ii].getElementsByClassName('progressbarcontainer');
-    for (var i = 0; i < elements.length; i++){
-      var circle = new ProgressBar.Circle(elements[i], {
-          color: '#38b3f6',
-          strokeWidth: 8,
-          duration: 1500,
-          trailWidth: 8,
-          trailColor: '#a3b1bf',
-          text: {
-              value: '0'
-          },
-          step: function(state, bar) {
-              bar.setText((bar.value() * 100).toFixed(0));
-          }
-      });
-      circle.animate(percent, function() {
-          // circle.animate(0);
-      });
+    else {
+      var elements = courses[ii].getElementsByClassName('progressbarcontainer');
+      for (var i = 0; i < elements.length; i++){
+        var circle = new ProgressBar.Circle(elements[i], {
+            color: '#38b3f6',
+            strokeWidth: 8,
+            duration: 1500,
+            trailWidth: 8,
+            trailColor: '#a3b1bf',
+            text: {
+                value: '0'
+            },
+            step: function(state, bar) {
+                bar.setText((bar.value() * 100).toFixed(0));
+            }
+        });
+        circle.animate(percent, function() {
+            // circle.animate(0);
+        });
+      }
     }
   }
 });
