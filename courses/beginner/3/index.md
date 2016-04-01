@@ -35,7 +35,7 @@ There are different types of light you can use in Create. The one we are going t
 3. Change the *Y translation* of the light to '365':
 ![](lighttransformvalues.jpg)
 
-You will notice that the light isn't visible in the scene anymore. That's because we've putted it very high, and the light simply can't reach the Moon station and the Moon surface.
+You will notice that the light isn't visible in the scene anymore. That's because we've put it very high up, and the light simply can't reach the Moon station and the Moon surface.
 ![](frustrumreach.jpg)
 
 
