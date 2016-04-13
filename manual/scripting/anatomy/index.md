@@ -156,8 +156,9 @@ Parameters need to be defined on a specific format. It is mentioned in the comme
 *   **options [array]** - Used with the *select* control type.
 *   **min [number]** - Used with *int* or *float* types.
 *   **max [number]** - Used with *int* or *float* types.
-*   **precision [number]** - Number of significant digits for *float* values.
 *   **decimal [number]** - Number of fractional digits for *float* values.
+*   **step [number]** - Step (increment) amount for *float* values.
+*   **precision [number]** - Number of significant digits for *float* values.
 *   **exponential [boolean]** - Used with *slider* control type.
 
 ### Parameter Types
