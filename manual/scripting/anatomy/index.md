@@ -12,18 +12,26 @@ When you create a new script, and open it in the script editor, you get somethin
 /* global goo */
 
 var setup = function (args, ctx) {
-    // Will be called when the script is attached to an entity, or you press Play in Create.
+    // Will be called when the script is attached to an entity, or when you press Play in Create.
+};
+
+var fixedUpdate = function (args, ctx) {
+    // Will be called once per physics update.
+};
+
+var update = function (args, ctx) {
+    // Will be called once per render frame, if the script is set up.
+};
+
+var lateUpdate = function (args, ctx) {
+    // Will be called after all script "update" methods in the scene has been run.
 };
 
 var cleanup = function (args, ctx) {
     // Will be called when the script component is removed from the entity, or when you press *Stop* in Create.
 };
 
-var update = function (args, ctx) {
-    // Will be called once per render frame, after the script was set up.
-};
-
-// Script parameter definitions
+// Script parameter definitions, will show in the script panel
 var parameters = [];
 {% endhighlight %}
 
@@ -149,7 +157,7 @@ Parameters need to be defined on a specific format. It is mentioned in the comme
 *   **min [number]** - Used with *int* or *float* types.
 *   **max [number]** - Used with *int* or *float* types.
 *   **precision [number]** - Number of significant digits for *float* values.
-*   **scale [number]** - Used with *slider* control type.
+*   **decimal [number]** - Number of fractional digits for *float* values.
 *   **exponential [boolean]** - Used with *slider* control type.
 
 ### Parameter Types
@@ -163,7 +171,7 @@ The type property must be set to one of a few predefined strings, each correspon
 *   **vec2** - An array of 2 numbers.
 *   **vec3** - An array of 3 numbers.
 *   **vec4** - An array of 4 numbers.
-*   **texture, sound, entity, camera, animation** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
+*   **texture, sound, entity, camera, animation, json** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
 
 ### Parameter Controls
 
@@ -171,7 +179,7 @@ Different types can have different controls which in turn have several different
 
 #### control: "slider"
 
-A slider for numbers. The specific options _scale_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.
+A slider for numbers. The specific options _decimal_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.
 
 {% highlight js %}{
     key: "magnitude",
