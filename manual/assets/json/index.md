@@ -1,5 +1,7 @@
 ---
-title: JSON
+title: JSON Asset
+menutitle: JSON
+subtitle: Structured data for your scripts
 weight: 3601
 indent: 2
 layout: manual
