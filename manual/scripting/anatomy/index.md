@@ -173,72 +173,31 @@ The type property must be set to one of a few predefined strings, each correspon
 *   **vec4** - An array of 4 numbers.
 *   **texture, sound, entity, camera, animation, json** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
 
-### Parameter Controls
+All types in action, including a sample script:
 
-Different types can have different controls which in turn have several different available options:
+![](all-parameter-types.png)
 
-#### control: "slider"
-
-A slider for numbers. The specific options _decimal_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.
-
-{% highlight js %}{
-    key: "magnitude",
-    name: "Magnitude",
-    type: "float",
-    default: 10,
-    min: 5,
-    max: 15,
-    control: "slider"
-}{% endhighlight %}
-
-![](control-slider.png)
-
-#### control: "color"
-
-Brings up an RBG color picker for the _vec3_ type.
-
-{% highlight js %}{
-    key: "playerColor",
-    name: "Player Color",
-    type: "vec3",
-    default: [0, 1, 0],
-    control: "color"
-}{% endhighlight %}
-
-![](control-color.png)
-
-#### control: "select" or *"dropdown"
-
-Used to define a list of options of the selected type.  Use the options array to define the available options.
-
-{% highlight js %}{
-    key: "weapon",
-    name: "Weapon",
-    type: "string",
-    default: "Wooden Sword",
-    control: "select",
-    options: [
-        "Wooden Sword",
-        "Banana",
-        "Laser Bazooka"
-    ]
-}{% endhighlight %}
-
-![](control-dropdown.png)
-
-#### control: "jointSelector"
-
-Used together with an int, to get the ID of a joint. Needs to be used on scripts whose parent entities have joints.
-
-{% highlight js %}{
-    key: "joint",
-    name: "Joint",
-    type: "int",
-    default: 0,
-    control: "jointSelector"
-}{% endhighlight %}
-
-![Joint selector](control-joint.png)
+{% highlight js %}var parameters = [
+    { type: 'int', key: 'int', 'default': 1, description: 'Integer input' },
+    { type: 'float', key: 'float', 'default': 0.1, description: 'Float input' },
+    { type: 'string', key: 'string', 'default': 'Hello!', description: 'String input' },
+    { type: 'boolean', key: 'boolean', 'default': true, description: 'Checkbox' },
+    { type: 'vec2', key: 'vec2', 'default': [0, 0], description: 'Vector2 input' },
+    { type: 'vec3', key: 'vec3', 'default': [0, 0, 0], description: 'Vector3 input' },
+    { type: 'vec4', key: 'vec4', 'default': [0, 0, 0, 0], description: 'Vector4 input' },
+    { type: 'texture', key: 'texture', description: 'Texture asset drop area' },
+    { type: 'sound', key: 'sound', description: 'Sound asset drop area' },
+    { type: 'entity', key: 'entity', description: 'Entity drop area' },
+    { type: 'camera', key: 'camera', description: 'Camera drop down' },
+    { type: 'animation', key: 'animation', description: 'Animation state from the Animation component on the same entity' },
+    { type: 'json', key: 'json', description: 'JSON asset drop area' },
+    { type: 'float', control: 'slider', key: 'floatSlider', 'default': 10.1, min: 5, max: 15, exponential: false, decimal: 1, description: 'Float slider input' },
+    { type: 'int', control: 'slider', key: 'intSlider', 'default': 10, min: 5, max: 15, exponential: false, description: 'Integer slider input' },
+    { type: 'vec3', control: 'color', key: 'vec3Color', 'default': [1, 0, 0], description: 'RGB color input' },
+    { type: 'vec4', control: 'color', key: 'vec4Color', 'default': [1, 0, 0, 1], description: 'RGBA color input' },
+    { type: 'string', control: 'select', key: 'select', 'default': 'a', options: ['a', 'b', 'c'], description: 'Dropdown/select' },
+    { type: 'int', control: 'jointSelector', key: 'jointSelector, description: 'Joint select from the animation component on a parent entity' }
+];{% endhighlight %}
 
 ## External dependencies
 
