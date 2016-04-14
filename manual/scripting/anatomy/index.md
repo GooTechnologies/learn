@@ -60,7 +60,7 @@ The context is an object, unique per Script, that you can use to store your scri
 		<td>Data object, shared between all scripts on the Entity.</td>
 	</tr>
 	<tr>
-		<td>activeCameraComponent</td>
+		<td>activeCameraEntity</td>
 		<td>
 			<a href="http://code.gooengine.com/latest/docs/index.html?c=Entity">Entity</a>
 		</td>
