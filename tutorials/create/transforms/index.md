@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Transform Scripting
-lastupdated: 2016-01-11
+lastupdated: 2016-04-13
 weight: 1041
 indent: 1
 difficulty_overall: 1
@@ -24,33 +24,52 @@ The translation is simply a three-dimensional vector, describing an entity's po
 
 The following script moves the entity along the X axis.
 
-{% highlight js %}
-var update = function(args, ctx) {
-    ctx.entity.transformComponent.transform.translation.x = Math.sin(ctx.world.time);
-    ctx.entity.transformComponent.setUpdated(); // Trigger update
-};
-{% endhighlight %}
+{% highlight js %}var update = function(args, ctx) {
+    ctx.entity.transformComponent.setTranslation(Math.sin(ctx.world.time), 0, 0);
+};{% endhighlight %}
 
-```ctx.entity.transformComponent.transform.translation``` is an instance of ```Vector3```. See the [Vector3 API](http://code.gooengine.com/latest/docs/index.html?c=Vector3).
+To get the local translation vector, use `ctx.entity.transformComponent.getTranslation()`. To get the world translation vector, use `ctx.entity.transformComponent.getWorldTranslation()`. See the [TransformComponent API](http://code.gooengine.com/latest/docs/index.html?c=TransformComponent).
 
-<iframe allowfullscreen src="//goote.ch/f8d0392727657e78d65a60e0931c2e95cacf896a"></iframe>
+![Translation script](star-translate.gif)
 
 ### Rotation
 
-The rotation is used to specify an entity's rotation. It's represented by a *3x3 matrix*, also called a [rotation matrix](http://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions). Luckily, you won't have to care too much about the mathy details if you don't want to: Goo Engine takes care of that for you.
+The rotation is used to specify an entity's rotation. It's represented by a *3x3 matrix*, also called a [rotation matrix](http://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions). Luckily, you won't have to care too much about the mathy details if you don't want to.
 
-The following script animates the entity rotation around the Y axis.
+The following sample script sets the entity rotation around the Y axis.
 
-{% highlight js %}
-var update = function(args, ctx) {
-    ctx.entity.transformComponent.transform.rotation.rotateY(ctx.world.tpf);
-    ctx.entity.transformComponent.setUpdated();
+{% highlight js %}var update = function(args, ctx) {
+    ctx.entity.transformComponent.setRotation(0, ctx.world.time, 0);
+};{% endhighlight %}
+
+If you want to use rotation matrices instead, you can do something like this:
+
+{% highlight js %}var setup = function(args, ctx) {
+    ctx.matrix = new goo.Matrix3();
 };
-{% endhighlight %}
 
-<iframe allowfullscreen src="//goote.ch/61d1568b11d596370b34a3dbd4e97c680d050e01"></iframe>
+var update = function(args, ctx) {
+    ctx.matrix.fromAngles(0, ctx.world.time, 0);
+    ctx.entity.transformComponent.setRotationMatrix(ctx.matrix);
+};{% endhighlight %}
 
-```ctx.entity.transformComponent.transform.rotation``` is an instance of ```Matrix3```. See the [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) API.
+And quaternions:
+
+{% highlight js %}var setup = function(args, ctx) {
+    ctx.quaternion = new goo.Quaternion();
+    ctx.matrix = new goo.Matrix3();
+};
+
+var update = function(args, ctx) {
+    ctx.quaternion.fromAngleAxis(ctx.world.time, goo.Vector3.UNIT_Y);
+    ctx.matrix.copyQuaternion(ctx.quaternion);
+    ctx.entity.transformComponent.setRotationMatrix(ctx.matrix);
+};{% endhighlight %}
+
+![Rotation script](star-rotate.gif)
+
+See the [Matrix3](http://code.gooengine.com/latest/docs/index.html?c=Matrix3) and [Quaternion](http://code.gooengine.com/latest/docs/index.html?c=Quaternion) APIs.
+
 
 ### Scale
 
@@ -58,18 +77,12 @@ The scale is, like the translation, a three-dimensional vector. Its default valu
 
 The following script animates the scale of the entity along the X direction.
 
-{% highlight js %}
-var update = function(args, ctx) {
-    ctx.entity.transformComponent.transform.scale.x = 2 * Math.abs(Math.sin(ctx.world.time));
-    ctx.entity.transformComponent.setUpdated(); // Trigger update
-};
-{% endhighlight %}
+{% highlight js %}var update = function(args, ctx) {
+    ctx.entity.transformComponent.setScale(2 * Math.abs(Math.sin(ctx.world.time), 1, 1);
+};{% endhighlight %}
 
-```ctx.entity.transformComponent.transform.scale``` is an instance of ```Vector3```. See the [Vector3 API](http://code.gooengine.com/latest/docs/index.html?c=Vector3).
+![Scale script](star-scale.gif)
 
-<iframe allowfullscreen src="//goote.ch/853e0744b31b6fd66ddd1a18d709439710aa0a64/"></iframe>
-
-## The Transform
 
 ### The Transform Matrix
 

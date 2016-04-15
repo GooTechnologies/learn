@@ -12,18 +12,26 @@ When you create a new script, and open it in the script editor, you get somethin
 /* global goo */
 
 var setup = function (args, ctx) {
-    // Will be called when the script is attached to an entity, or you press Play in Create.
+    // Will be called when the script is attached to an entity, or when you press Play in Create.
+};
+
+var fixedUpdate = function (args, ctx) {
+    // Will be called once per physics update.
+};
+
+var update = function (args, ctx) {
+    // Will be called once per render frame, if the script is set up.
+};
+
+var lateUpdate = function (args, ctx) {
+    // Will be called after all script "update" methods in the scene has been run.
 };
 
 var cleanup = function (args, ctx) {
     // Will be called when the script component is removed from the entity, or when you press *Stop* in Create.
 };
 
-var update = function (args, ctx) {
-    // Will be called once per render frame, after the script was set up.
-};
-
-// Script parameter definitions
+// Script parameter definitions, will show in the script panel
 var parameters = [];
 {% endhighlight %}
 
@@ -52,7 +60,7 @@ The context is an object, unique per Script, that you can use to store your scri
 		<td>Data object, shared between all scripts on the Entity.</td>
 	</tr>
 	<tr>
-		<td>activeCameraComponent</td>
+		<td>activeCameraEntity</td>
 		<td>
 			<a href="http://code.gooengine.com/latest/docs/index.html?c=Entity">Entity</a>
 		</td>
@@ -148,8 +156,9 @@ Parameters need to be defined on a specific format. It is mentioned in the comme
 *   **options [array]** - Used with the *select* control type.
 *   **min [number]** - Used with *int* or *float* types.
 *   **max [number]** - Used with *int* or *float* types.
+*   **decimal [number]** - Number of fractional digits for *float* values.
+*   **step [number]** - Step (increment) amount for *float* values.
 *   **precision [number]** - Number of significant digits for *float* values.
-*   **scale [number]** - Used with *slider* control type.
 *   **exponential [boolean]** - Used with *slider* control type.
 
 ### Parameter Types
@@ -163,74 +172,33 @@ The type property must be set to one of a few predefined strings, each correspon
 *   **vec2** - An array of 2 numbers.
 *   **vec3** - An array of 3 numbers.
 *   **vec4** - An array of 4 numbers.
-*   **texture, sound, entity, camera, animation** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
+*   **texture, sound, entity, camera, animation, json** - Direct references to different types of objects, controlled by drag-and-drop areas in the script panel.
 
-### Parameter Controls
+All types in action, including a sample script:
 
-Different types can have different controls which in turn have several different available options:
+![](all-parameter-types.png)
 
-#### control: "slider"
-
-A slider for numbers. The specific options _scale_ and _exponential_ can be used with it, in addition to the number options _min,_ _max_ and _precision_.
-
-{% highlight js %}{
-    key: "magnitude",
-    name: "Magnitude",
-    type: "float",
-    default: 10,
-    min: 5,
-    max: 15,
-    control: "slider"
-}{% endhighlight %}
-
-![](control-slider.png)
-
-#### control: "color"
-
-Brings up an RBG color picker for the _vec3_ type.
-
-{% highlight js %}{
-    key: "playerColor",
-    name: "Player Color",
-    type: "vec3",
-    default: [0, 1, 0],
-    control: "color"
-}{% endhighlight %}
-
-![](control-color.png)
-
-#### control: "select" or *"dropdown"
-
-Used to define a list of options of the selected type.  Use the options array to define the available options.
-
-{% highlight js %}{
-    key: "weapon",
-    name: "Weapon",
-    type: "string",
-    default: "Wooden Sword",
-    control: "select",
-    options: [
-        "Wooden Sword",
-        "Banana",
-        "Laser Bazooka"
-    ]
-}{% endhighlight %}
-
-![](control-dropdown.png)
-
-#### control: "jointSelector"
-
-Used together with an int, to get the ID of a joint. Needs to be used on scripts whose parent entities have joints.
-
-{% highlight js %}{
-    key: "joint",
-    name: "Joint",
-    type: "int",
-    default: 0,
-    control: "jointSelector"
-}{% endhighlight %}
-
-![Joint selector](control-joint.png)
+{% highlight js %}var parameters = [
+    { type: 'int', key: 'int', 'default': 1, description: 'Integer input' },
+    { type: 'float', key: 'float', 'default': 0.1, description: 'Float input' },
+    { type: 'string', key: 'string', 'default': 'Hello!', description: 'String input' },
+    { type: 'boolean', key: 'boolean', 'default': true, description: 'Checkbox' },
+    { type: 'vec2', key: 'vec2', 'default': [0, 0], description: 'Vector2 input' },
+    { type: 'vec3', key: 'vec3', 'default': [0, 0, 0], description: 'Vector3 input' },
+    { type: 'vec4', key: 'vec4', 'default': [0, 0, 0, 0], description: 'Vector4 input' },
+    { type: 'texture', key: 'texture', description: 'Texture asset drop area' },
+    { type: 'sound', key: 'sound', description: 'Sound asset drop area' },
+    { type: 'entity', key: 'entity', description: 'Entity drop area' },
+    { type: 'camera', key: 'camera', description: 'Camera drop down' },
+    { type: 'animation', key: 'animation', description: 'Animation state from the Animation component on the same entity' },
+    { type: 'json', key: 'json', description: 'JSON asset drop area' },
+    { type: 'float', control: 'slider', key: 'floatSlider', 'default': 10.1, min: 5, max: 15, exponential: false, decimal: 1, description: 'Float slider input' },
+    { type: 'int', control: 'slider', key: 'intSlider', 'default': 10, min: 5, max: 15, exponential: false, description: 'Integer slider input' },
+    { type: 'vec3', control: 'color', key: 'vec3Color', 'default': [1, 0, 0], description: 'RGB color input' },
+    { type: 'vec4', control: 'color', key: 'vec4Color', 'default': [1, 0, 0, 1], description: 'RGBA color input' },
+    { type: 'string', control: 'select', key: 'select', 'default': 'a', options: ['a', 'b', 'c'], description: 'Dropdown/select' },
+    { type: 'int', control: 'jointSelector', key: 'jointSelector, description: 'Joint select from the animation component on a parent entity' }
+];{% endhighlight %}
 
 ## External dependencies
 
