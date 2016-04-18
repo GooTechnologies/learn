@@ -6,8 +6,7 @@ weight: 4010
 ---
 When you create a new script, and open it in the script editor, you get something that looks like this:
 
-{% highlight js %}
-'use strict';
+{% highlight js %}'use strict';
 
 /* global goo */
 
@@ -31,11 +30,14 @@ var cleanup = function (args, ctx) {
     // Will be called when the script component is removed from the entity, or when you press *Stop* in Create.
 };
 
-// Script parameter definitions, will show in the script panel
-var parameters = [];
-{% endhighlight %}
+var arsUpdated = function (args, ctx) {
+    // Will be called when the parameters of the script is updated during play mode (live edit).
+};
 
-The script lets you define three functions and some parameters.
+// Script parameter definitions, will show in the script panel
+var parameters = [];{% endhighlight %}
+
+The script lets you define a few functions that will be called when the scene is playing, and some [parameters](#parameter-format).
 
 ## The ctx object
 
