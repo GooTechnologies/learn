@@ -6,7 +6,7 @@ weight: 2701
 indent: 3
 layout: manual
 ---
-The HTML 3D entity lets you mix 3D DOM elements and WebGL easily. The embedded DOM element behaves like a Quad in 3D space and you can edit its content in the Script editor.
+The HTML 3D component adds a 3D DOM element to the entity, and lets you mix it with WebGL easily. The 3D DOM element behaves like a Quad in 3D space and you can edit its content in the Script editor.
 
 ![](html3d-in-create.png)
 
