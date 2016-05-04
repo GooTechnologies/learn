@@ -16,13 +16,14 @@ thumbnail: tutorials/create/android-app/thumbnail.jpg
 * Be creative!
 * Look at the other tutorials on this site to get inspiration.
 * Note that external links don't work properly from within the app. To make them open in a new window you have to add some code. Read more in the [Cocoon docs](https://cocoonio.github.io/cocoon-canvasplus/dist/doc/js/Cocoon.App.html).
+* Publish your Goo Create scene to the web (*Scene... > Publish... > Publish*).
 
+![](publish.png)
 
 ## Step 2: Test the scene in Cocoon Developer app
 
 The Cocoon Developer app lets you test your app quickly before taking the next steps, and saves you a lot of work.
 
-1. Publish your Goo Create scene to the web (*Scene... > Publish... > Publish*).
 2. [Download the Cocoon Developer app](https://play.google.com/store/apps/details?id=com.ludei.devapp).
 3. Open the app and register.
 4. Choose *My App*.
@@ -30,15 +31,19 @@ The Cocoon Developer app lets you test your app quickly before taking the next s
 6. Enter the URL to your Goo scene.
 7. Click *WebView+* to launch your app.
 
+![](cocoondevapp.jpg)
 
 ## Step 2: Export the scene as webpage
 
+When you're done with testing your app, it's time to export it and upload it to Cocoon.
+
 Click *Scene* -> *Export* -> *Webpage*. The browser will start to download a `.zip` file.
 
+![](export.png)
 
-## Step 3: Go to cocoon.io and follow the instructions!
+## Step 3: Create a project on Cocoon.io
 
-1. Register on [https://cocoon.io](cocoon.io).
+1. Register on [https://cocoon.io](cocoon.io) if you didn't already.
 2. Create a new Project by dropping the `.zip` file on the Projects page.
 3. Uncheck the iOS checkbox to the left (see screenshot). We only want to target Android in this tutorial.
 4. Choose *WebView Engine: WebView+* in the settings, and enter details of your app. The defaults should be good.
