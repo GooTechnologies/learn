@@ -83,7 +83,7 @@ $(document).ready(function(){
         return a + b;
     });
 
-    var percent = numCompleted / numTotal;
+    var percent = Math.abs(numCompleted / numTotal);
 
     var coursecompletionmarks = courses[ii].getElementsByClassName('coursecompletionmark');
     if (percent === 1 && coursecompletionmarks.length !== 0){
@@ -104,7 +104,7 @@ $(document).ready(function(){
                 value: '0'
             },
             step: function(state, bar) {
-                bar.setText((bar.value() * 100).toFixed(0));
+                bar.setText((Math.abs(bar.value()) * 100).toFixed(0));
             }
         });
         circle.animate(percent, function() {
