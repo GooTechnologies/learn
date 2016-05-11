@@ -9,7 +9,7 @@ tags: Advertisement, 3D, publish
 achievements: Making and publishing a 3D ad
 duration: 10 minutes
 short_description: In this tutorial we will show how to make a customized 300x250 Spinning Cube ad in Goo Create, starting from a template.
-thumbnail: tutorials\create\simple-ad\thumbnail.jpg
+thumbnail: tutorials/create/simple-ad/thumbnail.jpg
 ---
 
 <div class="hidewhenincreate">

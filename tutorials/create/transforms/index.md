@@ -10,7 +10,7 @@ tags: scripting, translation, rotation, scale, lookAt, coordinates, hierarchies
 achievements: Transform matrix, Scripting transformations, Scripting rotation, Scripting scale,
 duration: 20 minutes
 short_description: In this tutorial, we'll have a look at the basics of the hierarchy and some of its uses.
-thumbnail: tutorials\create\transforms/thumbnail.jpg
+thumbnail: tutorials/create/transforms/thumbnail.jpg
 ---
 This tutorial will walk you through how to translate, rotate and scale objects via Scripting in Goo Create.
 

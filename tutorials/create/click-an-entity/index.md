@@ -10,7 +10,7 @@ difficulty_overall: 1
 tags: picking, Hardware picking, raycasting, performance, state machine
 achievements: Hardware picking, Bounding box raycasting, collider raycasting
 short_description: You want to know when an entity is clicked, so you do something when it happens. Depending on your scenario, you may need to choose a different approach.
-thumbnail: tutorials\create\click-an-entity\thumbnail.jpg
+thumbnail: tutorials/create/click-an-entity/thumbnail.jpg
 ---
 <table class="table table-bordered">
 <tbody>

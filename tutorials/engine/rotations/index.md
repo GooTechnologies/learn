@@ -8,7 +8,7 @@ tags: matrix3, LookAt, Matrix multiplication, Rotation, quaternion, fromAngleNor
 achievements: matrix3, LookAt, Matrix multiplication, Rotation
 duration: 20 minutes
 short_description: This article will go over the different ways you can define and set rotations on Goo Engine entities.
-thumbnail: tutorials\engine\rotations\thumbnail.jpg
+thumbnail: tutorials/engine/rotations/thumbnail.jpg
 ---
 
 
