@@ -17,19 +17,19 @@ prerequisites: None. Should be easy, even for people that never used Goo Create 
 ---
 ## Step 1: Replace the Goon's head with your own
 
-<span>1.</span> Navigate with your mouse to the hierarchy panel
+**1.** Navigate with your mouse to the hierarchy panel
 
 ![](navigateToHierarchy.gif)
 
-<span>2.</span> Select 'head 1'
+**2.** Select 'head 1'
 
 ![](selectHead1.gif)
 
-<span>3.</span> Go to the left panel and unfold 'Material'.
+**3.** Go to the left panel and unfold 'Material'.
 
 ![](unfoldMaterial.gif)
 
-<span>4.</span> Drag and drop the picture you want to use for the game instead of The Goon's head in the ‘Color (diffuse): texture’ box.
+**4.** Drag and drop the picture you want to use for the game instead of The Goon's head in the ‘Color (diffuse): texture’ box.
 
 ![](dragAndDropYourHead.gif)
 
@@ -40,37 +40,37 @@ You can now play the game with your own picture by clicking on the 'play' button
 
 ## Step 2: Rename the game
 
-<span>1.</span> Select 'logo' in the hierarchy panel
+**1.** Select 'logo' in the hierarchy panel
 
 ![](selectLogoInHierarchy.gif)
 
-<span>2.</span> Open the HTML editor in the component panel on the left side of the screen
+**2.** Open the HTML editor in the component panel on the left side of the screen
 
 ![](openHTMLEditor.gif)
 
-<span>3.</span> Edit the title of the game
+**3.** Edit the title of the game
 
 ![](replaceTitle.gif)
 
-<span>4.</span> Click on the blue 'Save' button
+**4.** Click on the blue 'Save' button
 
 
 ## Step 3: Publish and share the scene
 
 **Hint:** Read the whole step before trying it yourself
 
-<span>1.</span> Click on 'Scene' > 'Publish' in the top left corner
+**1.** Click on 'Scene' > 'Publish' in the top left corner
 
 ![](publishbutton.gif)
 
-<span>2.</span> Fill in the name and the description of the scene
+**2.** Fill in the name and the description of the scene
 
 ![](namedescription.gif)
 
-<span>3.</span> Click on 'publish' and then on 'OK'
+**3.** Click on 'publish' and then on 'OK'
 
 ![](publish.gif)
 
-<span>4.</span> After it's done publishing, click on 'Close'. Now you can share your projects by clicking on one of the social media icons.
+**4.** After it's done publishing, click on 'Close'. Now you can share your projects by clicking on one of the social media icons.
 
 ![](sharegif.gif)
