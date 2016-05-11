@@ -11,20 +11,31 @@ duration: 10 minutes
 short_description: In this tutorial we will show how to make a customized 300x250 Spinning Cube ad in Goo Create, starting from a template.
 thumbnail: tutorials\create\simple-ad\thumbnail.jpg
 ---
-**Audience**: the tutorial is made for ad unit makers, who want to make their first 3D ad in Goo Create.
 
-**Prerequisities**: It's assumed that you have a Pro or Enterprise Goo Create account. See [pricing](http://goocreate.com/pricing/).
+<div class="hidewhenincreate">
 
-## Create the scene
+<p>
+<b>Audience</b>: the tutorial is made for ad unit makers, who want to make their first 3D ad in Goo Create.
+</p>
 
-1. Start Goo Create by opening [create.goocreate.com](https://create.goocreate.com) in your browser.
-2. Click "New Scene"
-3. Choose the "6-sided Spinning Cube Ad" template
-4. Enter your ad name and click Create.
+<p>
+<b>Prerequisities</b>: It's assumed that you have a Pro or Enterprise Goo Create account. See <a href="http://goocreate.com/pricing/">pricing</a>.
+</p>
 
-![](create-scene-from-ad-template.png)
+<h2>Create the scene</h2>
 
-![](hyper-cube-in-create.png)
+<ol>
+<li>Start Goo Create by opening <a href="https://create.goocreate.com</a> in your browser.</li>
+<li>Click "New Scene"</li>
+<li>Choose the "6-sided Spinning Cube Ad" template</li>
+<li>Enter your ad name and click Create.</li>
+</ol>
+
+<img src="create-scene-from-ad-template.png">
+
+<img src="hyper-cube-in-create.png">
+
+</div>
 
 ## Customize the ad
 
