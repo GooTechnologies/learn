@@ -39,13 +39,15 @@ thumbnail: tutorials\create\simple-ad\thumbnail.jpg
 
 ## Customize the ad
 
-Now let's customize the ad. We will add our own brand on all sides of the spinning cube.
+We will add our own brand on all sides of the spinning cube.
 
 We recommend that you use a square texture that is of size 128x128, 256x256 or 512x512 for this ad. Since we won't use alpha/transparency, we recommend the JPG file format. If you don't have one, use the one below.
 
 ![](goo.png)
 
-Select one of the "CubeSide" entities, in the *Hierarchy* to the right. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow. When you've selected the "CubeSide" entity, open its *Material* panel to the left. Find the image file you want to use on your computer, and drag-and-drop it onto the Material panels' *Ambient Texture* slot. Adjust the *Ambient Color* until the ad looks good. Do this for all of the cube sides.
+Select one of the "CubeSide" entities, in the *Hierarchy* to the right. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow.
+
+When you've selected the "CubeSide" entity, open its *Material* panel to the left. Find the image file you want to use on your computer, and drag-and-drop it onto the Material panels' *Ambient Texture* slot. Adjust the *Ambient Color* until the ad looks good. Do this for all of the cube sides.
 
 ![](drop-on-cube-side.jpg)
 
@@ -59,7 +61,7 @@ Fantastic. Press play and see your ad in action.
 
 Before we make this into an ad, it is recommended to set a thumbnail for it, which will be shown to the user while the ad is loading.
 
-Click on the top node in the hierarchy, which has the scene title. Open the scene panel to the left. Click "take screenshot" if you want to take a screenshot and set it as thumbnail. Or upload a custom image. The thumbnail should be the same size as your ad unit size. In our case, 300x250.
+Click on the top node in the hierarchy, which has the scene title. Open the scene panel to the left. Click "take screenshot" if you want to take a screenshot and set it as thumbnail (or upload a custom image). The thumbnail should be the same size as your ad unit size. In our case, 300x250.
 
 ![](add-thumbnail.png)
 
