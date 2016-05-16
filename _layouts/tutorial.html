@@ -6,7 +6,8 @@ layout: default
 <div class="col-md-12">{% include tutorial-breadcrumbs.html %}</div>
 
 <div class="col-md-8">
-	<p>
+	<h2></h2>
+	<p class="hidefromsecondstep">
 		{{ page.short_description }}
 	</p>
 	<br />
@@ -79,8 +80,8 @@ layout: default
 <div class="col-md-12">
 	<div class="content">
 		{% if page.prerequisites %}
-			<p>
-				<span style="font-weight: bold;">Pre-requisites: </span>{{ page.prerequisites }}
+			<p class="hidefromsecondstep">
+				<span style="font-weight: bold;" >Pre-requisites: </span>{{ page.prerequisites }}
 			</p>
 		{% endif %}
 		{% if page.startscene %}
@@ -108,6 +109,9 @@ layout: default
 			</div>
 		</a>
 
+
+	</div>
+	<div id="createbuttons">
 	</div>
 </div>
 

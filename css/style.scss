@@ -365,6 +365,25 @@ li {
 	}
 
 
+.nextpagepart, .previouspagepart {
+	background-color: $goo-blue;
+	padding: 15px 30px;
+	color: white;
+	text-align: center;
+	display: table;
+	transition: all 0.3s ease 0s;
+		margin: 10px 0 10px 0;
+		font-size: 12px;
+		border-radius: 3px;
+		text-transform: uppercase;
+		cursor: pointer;
+}
+
+.nextpagepart {
+	float: right;
+}
+
+
 //Course overview
 .tagheader {
 	@media (max-width: 767px) {

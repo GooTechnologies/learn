@@ -37,6 +37,8 @@ body {
 		display: block ;
 	}
 
+
+
 	.createhr {
 		margin-top: 20px;
 		color: #6d6d6d;
@@ -225,7 +227,7 @@ body {
 		text-align: center;
 		background-color: #252525;
 	}
-	.button {
+	.button, .previouspagepart, .nextpagepart {
 		width: 100%;
 		padding: 10px 10px 12px 10px;
 		color: white;
@@ -236,6 +238,7 @@ body {
 		transition: all 0.3s ease 0s;
 		margin-bottom: 10px;
 		font-size: 12px;
+		cursor: pointer;
 	}
 
 	.button:hover {

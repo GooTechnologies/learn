@@ -9,6 +9,7 @@
 			// Check if iframe
 			if(window.top !== window){
 								document.body.classList.add('in-iframe');
+
 				// Remove/add CSS includes
 				var e = document.getElementsByTagName('link');
 				for(var i=e.length-1; i>=0; i--){
@@ -19,6 +20,7 @@
 						e[i].href = e[i].dataset.href;
 					}
 				}
+
 			}
 
 			// redirect to https if http
@@ -44,7 +46,6 @@
 			if(location.pathname == '/tutorials/create/'){
 				location.href = location.href.replace('/tutorials/create/', '#tutorials');
 			}
-
 		})();
 		</script>
 
@@ -98,9 +99,12 @@
 		<script src="{{ '/js/progressbar.min.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/courseprogress.js' | prepend: site.baseurl }}"></script>
 		<script src="{{ '/js/filterbarhandler.js' | prepend: site.baseurl }}"></script>
+		<script src="{{ '/js/tutorialpagedivider.js' | prepend: site.baseurl }}"></script>
 
 		<script type="text/javascript">
-
+		if(window.top !== window){
+			tutorialPageDivider();
+		}
 			// Off canvas
 			$(document).ready(function () {
 				$('[data-toggle="offcanvas"]').click(function () {
@@ -133,7 +137,7 @@
 					var fs = document.getElementsByClassName('finishedscene');
 					if (fs.length === 1){
 						var sceneurl = fs[0].dataset.src;
-						fs[0].src = sceneurl;
+			 			fs[0].src = sceneurl;
 					}
 				});
 			}
