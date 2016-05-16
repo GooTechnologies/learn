@@ -105,7 +105,7 @@ Many of the Actions have events, and they can trigger Transitions to other state
 <tr><td><h4 id="SetMaterialColorAction">Set Material Color</h4>Sets the color of a material</td><td></td></tr>
 <tr><td><h4 id="SetRenderTargetAction">Set Render Target</h4>Renders what a camera sees on the current entity's texture</td><td></td></tr>
 <tr><td><h4 id="SetRigidBodyAngularVelocityAction">Set Rigid Body Angular Velocity</h4></td><td></td></tr>
-<tr><td><h4 id="SetRigidBodyPositionAction">Set Rigid Body Position</h4></td><td></td></tr>
+<tr><td><h4 id="SetRigidBodyPositionAction">Set Rigid Body Position</h4>Set the position of the rigid body.</td><td></td></tr>
 <tr><td><h4 id="SetRigidBodyRotationAction">Set Rigid Body Rotation</h4></td><td></td></tr>
 <tr><td><h4 id="SetRigidBodyVelocityAction">Set Rigid Body Velocity</h4></td><td></td></tr>
 <tr><td><h4 id="SetRotationAction">Set Rotation</h4></td><td></td></tr>
