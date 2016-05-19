@@ -10,7 +10,7 @@ function tutorialPageDivider(){
     var previousppbutton;
     for (var i = 0; i < pageparts.length; i++){
     }
-  
+
     nextppbutton = document.createElement('div');
     nextppbutton.className = 'nextpagepart';
     nextppbutton.innerHTML = 'Next step';
@@ -20,7 +20,6 @@ function tutorialPageDivider(){
     document.getElementById('createbuttons').appendChild(nextppbutton);
     document.getElementById('createbuttons').appendChild(previousppbutton);
 
-    console.log(document.getElementsByClassName('nextpagepart'));
     var i = 0;
     pageparts[i].style.display = 'block';
     for (var ii= 0; ii < pageparts.length; ii++){
