@@ -9,7 +9,7 @@ contains_scripts: false
 tags: flappy goon, texture, material, html editor
 achievements: Material, Publishing a scene
 duration: 10 minutes
-short_description: Welcome to Goo Create! In this first tutorial you will learn how to replace the head of The Goon, our beloved Goo Create mascot, with you own head.
+short_description: Welcome to Goo Create! In this tutorial you will learn how to replace the head of The Goon, our beloved Goo Create mascot, with you own head.
 thumbnail: tutorials/create/flappy-goon/thumbnail.jpg
 scene: 80272d90cd6c47618e647117e2615902.scene
 startscene: 80272d90cd6c47618e647117e2615902.scene

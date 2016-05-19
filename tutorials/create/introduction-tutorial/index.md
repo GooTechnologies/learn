@@ -78,7 +78,7 @@ The Helicopter Goon should now be added to the scene
 
 **1.** Make sure the Helicopter Goon is still selected. If not, select it in the Hierarchy panel on the right
 
-**2.** Click the arrow pointing upwards and hold your mousebutton down.
+**2.** Click the arrow pointing upwards and hold your mouse button down.
 
 ![](52.jpg)
 
@@ -150,9 +150,9 @@ To 'program' the movement of the Goon and connecting it to the W, A and D button
 
 ![](84.jpg)
 
-You've now entered the state machine editor
+You've now created a state machine and opened the state machine editor
 
-## Step 9:  Creating the the vertical movement p1
+## Step 9:  Creating the vertical movement
 
 **1.** On the left side of the screen, unfold *Details*
 
@@ -166,7 +166,7 @@ You've now entered the state machine editor
 
 ![](94.jpg)
 
-## Step 10:  Creating the the vertical movement p2
+## Step 10:  Creating the vertical movement
 
 **1.** Click *Add action*
 
@@ -184,7 +184,7 @@ You've now entered the state machine editor
 
 **HINT:** The *Key down* action enables to make a transition to another state when a button is pressed
 
-## Step 11:  Creating the the vertical movement p3
+## Step 11:  Creating the vertical movement
 
 **1.** Click 'Add state'
 
@@ -212,7 +212,7 @@ You've now entered the state machine editor
 
 Press the *Play button* and see the transition between the states when you press 'W' on your keyboard
 
-## Step 12:  Creating the the vertical movement p4
+## Step 12:  Creating the vertical movement
 
 We're now going to add a *force* to the 'Move up' state to let the Goon move up when the state is active.
 
@@ -238,7 +238,7 @@ We're now going to add a *force* to the 'Move up' state to let the Goon move up 
 
 Press the play button and press 'W' to fly with the Goon!
 
-## Step 13:  Creating the horizontal movement p1
+## Step 13:  Creating the horizontal movement
 
 The Horizontal movement state machine is going to be very similar to the Vertical movement state machine. That's why we're going to copy the Vertical movement state machine and then edit the copied version.
 
@@ -254,7 +254,7 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 
 ![](133.gif)
 
-## Step 14:  Creating the horizontal movement p2
+## Step 14:  Creating the horizontal movement
 
 **1.** Change the name of the state machine from 'Vertical movement 2' to 'Horizontal movement'
 
@@ -274,7 +274,7 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 
 ![](144.gif)
 
-## Step 15:  Creating the horizontal movement p3
+## Step 15:  Creating the horizontal movement
 
 **1.** Copy the 'move left' state by clicking *DUPLICATE STATE*, which is located next to the *+ ADD STATE* button
 
@@ -296,7 +296,7 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 
 ![](155.gif)
 
-## Step 16:  Creating the horizontal movement p4
+## Step 16:  Creating the horizontal movement
 
 **1.** Select the 'No movement' state
 
@@ -308,7 +308,7 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 
 You should now have two *Key down* actions in the 'No movement' state
 
-## Step 17:  Creating the horizontal movement p5
+## Step 17:  Creating the horizontal movement
 
 **1.** Change one *Key down* key to 'A', and one to 'D'
 
@@ -322,4 +322,28 @@ You should now have two *Key down* actions in the 'No movement' state
 
 ![](174.jpg)
 
-**Congratulations!! You've just made your first (mini)game in Goo Create!**
+## Step 18: Publish the scene
+
+**1.** Click the *Scene* button at the top left of the screen
+
+![](181.jpg)
+
+**2.** Click *Publish*
+
+![](182.jpg)
+
+**3.** In the pop-up window, click *Publish* again
+
+![](183.jpg)
+
+**4.** Click the *Ok* button
+
+**5.** Click 'View' to play your game in full screen!
+
+![](184.jpg)
+
+**HINT:** You can also share this link with other people!
+
+**Congratulations!! You've just made your first game in Goo Create!**
+
+Go to the next tutorial by clicking the button below
