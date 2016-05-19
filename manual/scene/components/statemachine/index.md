@@ -48,6 +48,7 @@ Many of the Actions have events, and they can trigger Transitions to other state
 ## Actions list
 
 <table class="table">
+
 <tr><td><h4 id="AddLightAction">Add light</h4>Adds a point light to the entity</td><td><img src="actions/actions-add-light.gif"></td></tr>
 <tr><td><h4 id="ApplyForceAction">Apply force</h4>Apply a force to the attached rigid body.</td><td></td></tr>
 <tr><td><h4 id="ApplyImpulseAction">Apply impulse</h4>Apply an impulse to the attached rigid body.</td><td></td></tr>
@@ -141,4 +142,5 @@ Many of the Actions have events, and they can trigger Transitions to other state
 <tr><td><h4 id="UnmuteAction">Unmute</h4>Unmute all sounds globally.</td><td></td></tr>
 <tr><td><h4 id="WaitAction">Wait</h4>Performs a transition after a specified amount of time. A random time can be set, this will add between 0 and the set random time to the specified wait time.</td><td></td></tr>
 <tr><td><h4 id="WasdAction">WASD Keys</h4>Transitions to other states when the WASD keys are pressed</td><td></td></tr>
+
 </table>
