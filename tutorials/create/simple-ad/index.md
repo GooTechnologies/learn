@@ -25,7 +25,7 @@ thumbnail: tutorials/create/simple-ad/thumbnail.jpg
 <h2>Create the scene</h2>
 
 <ol>
-<li>Start Goo Create by opening <a href="https://create.goocreate.com</a> in your browser.</li>
+<li>Start Goo Create by opening <a href="https://create.goocreate.com">Goo Create</a> in your browser.</li>
 <li>Click "New Scene"</li>
 <li>Choose the "6-sided Spinning Cube Ad" template</li>
 <li>Enter your ad name and click Create.</li>
