@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Flappy Goon
+title: Helicopter Goon
 lastupdated: 2016-03-30
 weight: 150
 indent: 1
