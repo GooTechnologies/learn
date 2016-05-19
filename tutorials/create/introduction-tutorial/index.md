@@ -6,20 +6,19 @@ weight: 150
 indent: 1
 difficulty_overall: 0
 contains_scripts: false
-tags: physics, state machine, minigame, hierarchy panel, inspector panel, rigid body, collider
+tags: physics, state machine, mini game, hierarchy panel, inspector panel, rigid body, collider
 achievements: Creating entities, Importing assets, Physics, State Machine
 duration: 10 minutes
-short_description: Welcome to Goo Create! In this first tutorial you will add the Goon, our beloved mascot, with a helicopter on his back, and make it fly by pressing the W, A and D buttons.
+short_description: Welcome to Goo Create! In this first tutorial you will add the Goon, our beloved mascot, with a helicopter on his back, and make it fly by pressing the W, A and D buttons. <img src="preview.gif">
 thumbnail: tutorials/create/introduction-tutorial/thumbnail.jpg
 scene: 64f9a993b79c4a2e81dca58025348f12.scene
 startscene: 64f9a993b79c4a2e81dca58025348f12.scene
 ---
-![](preview.gif)
 
 ## Step 1: Add a box to the scene
 
 **1.** Click *+ CREATE ENTITY* at the top center
-
+ 
 ![](11.jpg)
 
 **2.** Click on the box in the popup menu
