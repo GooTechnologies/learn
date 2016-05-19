@@ -6,15 +6,16 @@ weight: 150
 indent: 1
 difficulty_overall: 0
 contains_scripts: false
-tags: physics, state machine, 
-achievements: Material, Publishing a scene
+tags: physics, state machine, minigame, hierarchy panel, inspector panel, rigid body, collider
+achievements: Creating entities, Importing assets, Physics, State Machine
 duration: 10 minutes
 short_description: Welcome to Goo Create! In this first tutorial you will add the Goon, our beloved mascot, with a helicopter on his back, and make it fly by pressing the W, A and D buttons.
-thumbnail: tutorials/create//thumbnail.jpg
-scene: 80272d90cd6c47618e647117e2615902.scene
-startscene: 80272d90cd6c47618e647117e2615902.scene
-prerequisites: None. Should be easy, even for people that never used Goo Create before!
+thumbnail: tutorials/create/introduction-tutorial/thumbnail.jpg
+scene: 64f9a993b79c4a2e81dca58025348f12.scene
+startscene: 64f9a993b79c4a2e81dca58025348f12.scene
 ---
+![](preview.gif)
+
 ## Step 1: Add a box to the scene
 
 **1.** Click *+ CREATE ENTITY* at the top center
@@ -25,7 +26,7 @@ prerequisites: None. Should be easy, even for people that never used Goo Create 
 
 ![](12.jpg)
 
-You've now added a box to your scene. 
+You've now added a box to your scene.
 
 **HINT:** Change your point of view by holding the right mouse button + moving the mouse. Scroll to zoom in/out.
 
@@ -53,7 +54,7 @@ The box should now look like this
 
 ![](31.jpg)
 
-**2.** Type *Helicopter goon* in the search box 
+**2.** Type *Helicopter goon* in the search box
 
 ![](32.jpg)
 
@@ -78,7 +79,7 @@ The Helicopter Goon should now be added to the scene
 
 **1.** Make sure the Helicopter Goon is still selected. If not, select it in the Hierarchy panel on the right
 
-**2.** Click the arrow pointing upwards and hold your mousebutton down. 
+**2.** Click the arrow pointing upwards and hold your mousebutton down.
 
 ![](52.jpg)
 
@@ -112,13 +113,13 @@ To expose the Helicopter Goon to gravity, we're going to add a rigid body to the
 
 Press the *play button* and see what happens!
 
-As you can see, the Goon falls and moves thru the box. In the next step we're going to do something about this!
+As you can see, the Goon falls and moves through the box. In the next step we're going to do something about this!
 
 ## Step 7:  Add a *collider* to the box
 
-To prevent that the Goon moves thru the box, we're going to add a collider
+To prevent that the Goon moves through the box, we're going to add a collider
 
-**1.** Select the box in the Hierarchy panel on the right
+**1.** Select the box in the *Hierarchy panel* on the right
 
 ![](71.gif)
 
@@ -150,7 +151,7 @@ To 'program' the movement of the Goon and connecting it to the W, A and D button
 
 ![](84.jpg)
 
-You now entered the state machine editor
+You've now entered the state machine editor
 
 ## Step 9:  Creating the the vertical movement p1
 
@@ -214,7 +215,7 @@ Press the *Play button* and see the transition between the states when you press
 
 ## Step 12:  Creating the the vertical movement p4
 
-We're now going to add a *force* to the 'Move up' state to let the Goon move up when it's in the state.
+We're now going to add a *force* to the 'Move up' state to let the Goon move up when the state is active.
 
 **1.** Select the 'Move up' state by clicking on it
 
@@ -240,13 +241,13 @@ Press the play button and press 'W' to fly with the Goon!
 
 ## Step 13:  Creating the horizontal movement p1
 
-The Horizontal movement state machine is going to be very similar to the Vertical movement state machine. That's why we're going to copy the Vertical movement state machine and then edit the copy
+The Horizontal movement state machine is going to be very similar to the Vertical movement state machine. That's why we're going to copy the Vertical movement state machine and then edit the copied version.
 
 **1.** Press the state machine logo in the Bin at the bottom right of the screen
 
 ![](131.gif)
 
-**2.** Click the copy icon for the *Vertical movement* state machine
+**2.** Hover with your mouse over the *Vertical movement* state machine and click the copy icon
 
 ![](132.gif)
 
@@ -284,7 +285,7 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 
 ![](152.gif)
 
-**3.** Set the second force value to '0' and the first to '8'
+**3.** Set the first *Force* value from '-8' to '8'
 
 ![](153.jpg)
 
@@ -292,7 +293,7 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 
 ![](154.gif)
 
-**5.** Drag the 'move right' state down 
+**5.** Drag the 'move right' state down
 
 ![](155.gif)
 
@@ -322,13 +323,4 @@ You should now have two *Key down* actions in the 'No movement' state
 
 ![](174.jpg)
 
-
-
-
-
-
-
-
-    
-
-
+**Congratulations!! You've just made your first (mini)game in Goo Create!**
