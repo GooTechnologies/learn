@@ -40,10 +40,6 @@ Wait for the script to load, then drag the *VR Camera* entity from the Asset bin
 
 ![](drag-vr-camera.gif)
 
-Note that you get a camera and a description text in the viewport. The description text can be removed. Unfold the *VR Camera* entity in the hierarchy and remove the *VRDescription* by selecting it and clicking on the trashcan at the top of the hierarchy panel.
-
-![](delete-vr-description.gif)
-
 Select the *VR Camera* entity, open the Camera component panel, and check the *Main Camera* checkbox. This make the engine render from this camera when the scene starts.
 
 ![](main-camera.png)
