@@ -5,7 +5,7 @@ lastupdated: 2016-05-16
 weight: 3000
 indent: 1
 contains_video: false
-difficulty_overall: 3
+difficulty_overall: 2
 contains_scripts: false
 tags: optimization, performance
 achievements: Optimization
