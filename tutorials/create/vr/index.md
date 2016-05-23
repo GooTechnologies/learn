@@ -57,6 +57,8 @@ Press play. Notice that nothing happens. What?
 
 Actually, the reason why is simple. The scene is empty and the skysphere is symmetric, so you can't see the stereoscopic rendering. (Also, you cannot look around, but let's worry about that later).
 
+To notice the stereoscopic rendering, we need to add something to the scene.
+
 
 ## Add something to the scene
 
