@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Simple Ad
-lastupdated: 2016-01-13
+lastupdated: 2016-05-19
 weight: 1041
 indent: 1
 difficulty_overall: 0
