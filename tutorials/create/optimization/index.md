@@ -5,12 +5,12 @@ lastupdated: 2016-05-16
 weight: 3000
 indent: 1
 contains_video: false
-difficulty_overall: 3
+difficulty_overall: 2
 contains_scripts: false
 tags: optimization, performance
 achievements: Optimization
 short_description: General tips and tricks to get good performance in your Goo Create scene.
-thumbnail: tutorials/create/optimization/statspanel.png
+thumbnail: tutorials/create/optimization/thumbnail.png
 ---
 ## Scripts
 
@@ -56,3 +56,5 @@ thumbnail: tutorials/create/optimization/statspanel.png
 * In a similar manner, **'antialiasing'** can also be expensive, especially on mobile. Enabling antialiasing will make the image look less "jagged" and pixelated, but more fragments have to be sampled, so it can make the framerate drop.
 * If you embed your scene on a desktop website, it can be good to know that using full screen rendering costs more than non-fullscreen.
 * If you know that the canvas don't need to re-render, you can turn on/off rendering in a script with `ctx.world.gooRunner.doRender = false;`.
+
+![](statspanel.png)
