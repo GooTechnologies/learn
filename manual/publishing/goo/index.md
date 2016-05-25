@@ -65,9 +65,11 @@ These are rendering settings. Anti-aliasing will render triangles more smoothly.
 
 Using device pixel ratio will enable higher resolution on some devices, for example Retina screens. Warning: using too high resolution may kill performance.
 
-### Enable Alpha
+### Enable Alpha (transparent background)
 
 If your scene has a transparent background, and you want to use it, for example when embedding as an iframe on top of something else, then you should check this checkbox.
+
+Note that you need to remove the Skybox to make transparent background work.
 
 ### Generate a new URL each time you publish
 

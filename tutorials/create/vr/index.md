@@ -40,10 +40,6 @@ Wait for the script to load, then drag the *VR Camera* entity from the Asset bin
 
 ![](drag-vr-camera.gif)
 
-Note that you get a camera and a description text in the viewport. The description text can be removed. Open the *VR Camera* entity and remove the *VRDecription* entity.
-
-![](delete-vr-description.gif)
-
 Select the *VR Camera* entity, open the Camera component panel, and check the *Main Camera* checkbox. This make the engine render from this camera when the scene starts.
 
 ![](main-camera.png)
@@ -64,16 +60,16 @@ To notice the stereoscopic rendering, we need to add something to the scene.
 
 Click *Import Assets* again. Search for "zombie" and select the *Zombie Character*.
 
-When the asset is loaded, drag and drop the *Zombie* entity from the Asset bin onto the viewport. Place it in front of the camera, for example at `(0, -1, -3)`.
+When the asset is loaded, drag and drop the *Zombie* entity from the Asset bin onto the viewport. Place it in front of the camera: select the camera and drag it backwards using the tranform gizmo.
 
-![](drag-vr-camera.png)
+![](vr-camera-move.gif)
 
 
 ## Try it on your phone
 
 Now press play to preview the scene. You will notice that you see two zombies! Stereoscopic vision! But hey, you can't look around... That's because the desktop computer you're using doesn't have any orientation sensors. Let's try it on a smartphone instead!
 
-Click *Scene > Publish* from the top meny and then the blue *Publish* button at the bottom of the dialog.
+Click *Scene > Publish* from the top menu and then the blue *Publish* button at the bottom of the dialog.
 
 ![](publish.png)
 
