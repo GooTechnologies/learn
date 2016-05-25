@@ -41,14 +41,14 @@ thumbnail: tutorials/create/simple-ad/thumbnail.jpg
 
 We will add our own brand on all six sides of the spinning cube.
 
-We recommend that you use a square texture that is of size 128x128, 256x256 or 512x512 for this ad. Since we won't use alpha/transparency, we recommend the JPG file format. You can use one image for all sides, or separate images for each side. If you don't have any image, use the one below, for all sides (right click and click *Save Image As...*).
+We recommend that you use a square image (.JPG recommended) that is of size 128x128, 256x256 or 512x512 for this ad. You can use one image for all sides, or separate images for each side. If you don't have any image, use the one below, for all sides (right click and click *Save Image As...*).
 
 ![](goo.png)
 
 
 ## Put the image(s) on the cube
 
-Select one of the "CubeSide" entities, in the *Hierarchy* on the right side in Create. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow.
+Select one of the "CubeSide" entities, in the *Hierarchy* on the right side in Create. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow. 
 
 ![](hypercube-expand.gif)
 
