@@ -31,15 +31,11 @@ You've now added a box to your scene.
 
 ## Step 2: Change the dimension of the box
 
-**1.** Select the box you've just added in the hierarchy panel on the right
-
-![](21.gif)
-
-**2.** Unfold *Transform* in the inspector panel on the left
+**1.** Unfold *Transform* in the inspector panel on the left
 
 ![](22.gif)
 
-**3.** Add the following values to the *Transform* settings
+**2.** Add the following values to the *Transform* settings
 
 ![](23.jpg)
 
@@ -154,15 +150,11 @@ You've now created a state machine and opened the state machine editor
 
 ## Step 9:  Creating the vertical movement
 
-**1.** On the left side of the screen, unfold *Details*
-
-**2.** Change the name from 'Behavior' to 'Vertical movement'
+**1.** On the left side of the screen under *Details*, change the name from 'Behavior' to 'Vertical movement'
 
 ![](92.jpg)
 
-**3.** Unfold *Selected state*
-
-**4.** Rename the state to *No movement*
+**2.** Under selected state, rename the state to *No movement*
 
 ![](94.jpg)
 
@@ -206,11 +198,13 @@ You've now created a state machine and opened the state machine editor
 
 ![](116.gif)
 
-**7.** Connect the states with arrows, like this:
+**7.** Move the new state down by clicking the state, holding your mouse button down and dragging the mouse down
+
+**8.** Connect the states with arrows, like this:
 
 ![](117.gif)
 
-Press the *Play button* and see the transition between the states when you press 'W' on your keyboard
+Press the *Play button* and see the transition between the states when you press 'W' on your keyboard. It's correct that the Helicopter Goon isn't moving yet.
 
 ## Step 12:  Creating the vertical movement
 
@@ -236,7 +230,7 @@ We're now going to add a *force* to the 'Move up' state to let the Goon move up 
 
 ![](125.jpg)
 
-Press the play button and press 'W' to fly with the Goon!
+Press the play button and press 'W' to fly with the Goon! After you're done, press stop.
 
 ## Step 13:  Creating the horizontal movement
 
@@ -253,6 +247,12 @@ The Horizontal movement state machine is going to be very similar to the Vertica
 **3.** There should appear a *Vertical movement 2* in the Bin. Hover over it and click on the pencil icon.
 
 ![](133.gif)
+
+**4.** Select the Helicopter Goon
+
+**5.** Drag the copied state machine (*Vertical movement 2*) from the bin into the *Drop behavior* box in the inspector panel on the left
+
+![](135.gif)
 
 ## Step 14:  Creating the horizontal movement
 
@@ -314,9 +314,9 @@ You should now have two *Key down* actions in the 'No movement' state
 
 ![](171.jpg)
 
-**2.** Connect *On key D down* to the *move right* state
+**2.** In the editor where you connect the states with arrows, connect *On key D down* of the *No movement* state to the *move right* state
 
-**3.** Connect *On key A down* to the *move left* state
+**3.** Connect *On key A down* of the *No movement* state to the *move left* state
 
 **4.** Connect the *move left* and *move right* states to the *No movement* state
 
