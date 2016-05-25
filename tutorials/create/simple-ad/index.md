@@ -48,11 +48,13 @@ We recommend that you use a square image (.JPG recommended) that is of size 128x
 
 ## Put the image(s) on the cube
 
-Select one of the "CubeSide" entities, in the *Hierarchy* on the right side in Create. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow. 
+Select one of the "CubeSide" entities, in the *Hierarchy* on the right side in Create. You may have to expand the "Hypercube" entity and its children in the list, by double-clicking on it, or clicking the small arrow.
 
 ![](hypercube-expand.gif)
 
-When you've selected the "CubeSide" entity, open its *Material* panel to the left. Find the image file you want to use on your computer, and drag-and-drop it onto the *Ambient Texture* slot in the Material panel. Adjust the *Ambient Color* until the cube looks good. Do this for all of the cube sides.
+When you've selected the "CubeSide" entity, open its *Material* panel to the left. Now unfold *Ambient* and click on the current texture. Now hover over the texture and click *Browse*. Select the image file you want to use for this side. Do this for all the different sides.
+
+
 
 ![](drop-texture-ambient.png)
 
@@ -65,9 +67,9 @@ Fantastic. Press play and see your ad in action.
 
 ## Add a thumbnail
 
-We recommended to set a thumbnail for all scenes. For ad units, the thumbnail can be shown to the user while the ad is loading (or when WebGL is not supported).
+We recommended to set a thumbnail for all scenes. For ad units, the thumbnail can be shown to the user while the ad is loading.
 
-Click on the top node in the hierarchy, which has the scene title. Open the scene panel to the left. Click "take screenshot".
+Click on the top node in the hierarchy, which has the scene title. Unfold the scene panel to the left by clicking on the name of the scene. Click "take screenshot".
 
 ![](hypercube-thumb.gif)
 

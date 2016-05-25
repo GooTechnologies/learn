@@ -125,7 +125,7 @@ To prevent that the Goon moves through the box, we're going to add a collider
 
 ![](73.jpg)
 
-**4.** Select the Goon in the Hierarchy panel
+**4.** Select the Helicopter Goon in the Hierarchy panel
 
 **5.** Repeat **2.** and **3.**
 
