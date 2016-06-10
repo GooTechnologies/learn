@@ -161,6 +161,7 @@ var cleanup = function(args, ctx) {
   window.removeEventListener('mousemove', ctx.mousemoveListener);
 }{% endhighlight %}
 
+<!--
 <iframe id="goo-scene" src="https://goote.ch/cb8a64d8b7be4fbda23a2cd935b717b6.scene/"></iframe>
 <script>
 var iframe = document.getElementById('goo-scene');
@@ -175,4 +176,4 @@ iframe.onload = function() {
     iframe.contentWindow.postMessage(data, '*');
   });
 };
-</script>
+</script>-->
