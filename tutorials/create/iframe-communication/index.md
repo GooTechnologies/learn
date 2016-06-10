@@ -1,20 +1,49 @@
 ---
 layout: tutorial
-title: Iframe communication (postMessage)
+title: Iframe communication
 lastupdated: 2016-06-07
 weight: 2000
 indent: 1
-difficulty_overall: 2
+difficulty_overall: 1
 contains_scripts: true
 tags: iframe, postmessage
 achievements: Scripting
 duration: 30 minutes
 short_description: Sometimes you want to embed your Goo scene in an iframe, but still want to to communicate with it from outside.
-thumbnail: tutorials/create/postmessage/thumbnail.jpg
+thumbnail: tutorials/create/iframe-communication/thumbnail.jpg
 ---
 The goal of this tututorial is to embed a Goo scene in an iframe, but make the Goo scene react to mouse movements outside the iframe.
 
-## Step 1: The "mousemove" event
+![](mousemove-iframe-works.gif)
+
+To solve this problem, you need to know if you're going to host the Goo scene on your own server (same-domain) or on the Goo cloud (cross domain).
+
+<table class="table table-bordered">
+
+<thead>
+<tr>
+	<th></th>
+	<th>Same-domain iframe</th>
+	<th>Cross-domain iframe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<th>Detect mouse inside iframe</th>
+  <td><a href="#solution-1-the-mousemove-event-on-the-window">window</a></td>
+  <td><a href="#solution-1-the-mousemove-event-on-the-window">window</a></td>
+</tr>
+<tr>
+	<th>Detect mouse outside iframe</th>
+  <td><a href="#solution-2-listening-for-mousemove-on-windowparent">window.parent</a></td>
+  <td><a href="#solution-3-using-postmessage">postMessage</a></td>
+</tr>
+</tbody>
+
+</table>
+
+## Solution 1: The "mousemove" event on the window
 
 To track the mouse movement on a page, traditionally we use an event listener on the `window` object. Let's try this.
 
@@ -43,7 +72,7 @@ Now embed the scene in a HTML page:
 
 If you open the HTML page in a browser, and open the JavaScript console, you will notice that the mouse position is only logging when the mouse is inside of the iframe. The reason is because we are listening to the *iframe window* and not the *parent window*.
 
-## Step 2: Listening for "mousemove" on window.parent
+## Solution 2: Listening for "mousemove" on window.parent
 
 Now let's attach the listener on the correct *Window* object, by using `window.parent`. Update the code so it looks like this:
 
@@ -65,7 +94,7 @@ Unfortunately, we now get the following error message:
 
 The browser automatically blocks the iframe from reaching out of its frame, because of security concerns. So how can we get around this? One option is to download the scene as a webpage, and put it on the same domain as the main webpage. If you do it this way, the browser will allow the iframe to "reach out" and not throw an error.
 
-## Step 3: Using postMessage
+## Solution 3: Using postMessage
 
 Let's say we would like to include a published Create scene in an `iframe`, without having to put it in our own server. A solution we can use here is called `postMessage`.
 
@@ -160,6 +189,10 @@ var cleanup = function(args, ctx) {
   window.removeEventListener('message', ctx.messageListener);
   window.removeEventListener('mousemove', ctx.mousemoveListener);
 }{% endhighlight %}
+
+## Conclusion
+
+Iframes makes it easy to embed a Goo Create scene into a webpage. Due to the security policies around iframes, one has to develop special solutions to communicate with the rest of the webpage, especially in the cross-origin case.
 
 <!--
 <iframe id="goo-scene" src="https://goote.ch/cb8a64d8b7be4fbda23a2cd935b717b6.scene/"></iframe>
