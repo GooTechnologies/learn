@@ -11,7 +11,9 @@ layout: default
 		{{ page.short_description }}
 	</p>
 	<br />
-	<img src="{{ page.create_preview_gif }}" class="hidefromsecondsetp hideinlearn" />
+	{% if page.create_preview_gif %}
+	<img src="{{ page.create_preview_gif }}" class="hideinlearn" />
+	{% endif %}
 	{% if page.scene %}
 	<iframe class="finishedscene" width="800" height="450" data-src="https://c1.goote.ch/{{ page.scene }}" allowfullscreen></iframe>
 	<p class="imagedescription hidewhenincreate">
