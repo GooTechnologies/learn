@@ -5,7 +5,7 @@
 
 	<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }} | {{ site.title }}{% else if page.title %}{{ page.title | strip_html | strip_newlines | truncate: 160 }} | {{ site.title }}{% else %}{{ site.title }} | {{ site.description }}{% endif %}">
-
+	<meta property="fb:app_id" content="1484362951879257" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
