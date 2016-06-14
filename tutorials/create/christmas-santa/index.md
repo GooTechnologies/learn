@@ -9,7 +9,7 @@ tags: modelling, primitives, geometry, material, grouping
 achievements: Modelling, Creating primitives, Hierarchy
 duration: 25 minutes
 short_description: This tutorial presents how Santa has been built for the Christmas scene and goes through some special Christmas features added in Goo Create.
-thumbnail: tutorials\create\christmas-santa\thumbnail.jpg
+thumbnail: tutorials/create/christmas-santa/thumbnail.jpg
 ---
 
 ## It’s All About Primitives

@@ -9,7 +9,7 @@ tags: environment, skybox, after effect, color
 achievements: Skyboxes, after effects
 duration: 15 minutes
 short_description: In this first tutorial of Goo Create you will learn how to make a house on water by using entities, the hierarchy and transformation
-thumbnail: tutorials\create\environment\thumbnail.jpg
+thumbnail: tutorials/create/environment/thumbnail.jpg
 ---
 
 ![](1.jpg)

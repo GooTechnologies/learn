@@ -83,7 +83,7 @@ The reason we *set* the velocity and don't *add an impulse* is because we always
 
 Since Goo Create dont support sprite animation, we'll do this manually via a script. Let's start with the flapping animation of the bird. Create the 3 sprites needed from the spritesheet. Put all of them as children to an empty entity. Duplicate the first sprite, and so you have 4 child entities. Name them Bird 1-4 in the correct animation order. We will now make a script that only shows one sprite at a time, and switches sprite at a given speed.
 
-<img src="flappy-frames.png"/>
+![](flappy-frames.png)
 
 When the script runs on the parent entity, it looks like this in perspective mode versus parallel mode:
 
@@ -123,15 +123,15 @@ var parameters = [{
 
 The game has only 4 major states:
 
-<img src="flappy-states.png"/>
+![](flappy-states.png)
 
 To keep track of them globally, I made a state machine on the Camera entity, and added these states. I made sure that whenever a state is entered (or exited), an event is emitted (using the *Emit Message Action*). For example, when the start screen is entered, a "start" event is emitted. When the start screen is left, a "leave_start" event is emitted.
 
-<img src="flappy-game-state.png"/>
+![](flappy-game-state.png)
 
 This strategy makes it really simple to create re-usable state machine behaviors. For example, to make the logotype only show on the start screen, we can create this simple Behavior:
 
-<img src="show-on-start-behavior.png" style="max-width:400px"/>
+![](show-on-start-behavior.png)
 
 
 ## Sounds
@@ -140,7 +140,7 @@ All sounds effects are put in a Sound Component on the camera. Putting them on t
 
 To play the sounds when things happen in the scene, create a state machine that listens for events and plays (fades in) a sound effect when the event happens.
 
-<img src="sound-fsm.png" style="max-width:400px"/>
+![](sound-fsm.png)
 
 
 ## High score: Local storage

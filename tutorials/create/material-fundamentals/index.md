@@ -9,7 +9,7 @@ tags: adding texture, material, specular, shininess, emissive, ambient,
 achievements: Adding texture, Specular color and shininess, Texture mode, Emissive color, Ambient
 duration: 15 minutes
 short_description: This tutorial aims to cover the basics of adding textures and optimizing materials
-thumbnail: tutorials\create\material-fundamentals\thumbnail.jpg
+thumbnail: tutorials/create/material-fundamentals/thumbnail.jpg
 scene: b9379f3a4b6947b19ca1d5c397cbd0ab.scene
 ---
 

@@ -6,10 +6,12 @@ layout: default
 <div class="col-md-12">{% include tutorial-breadcrumbs.html %}</div>
 
 <div class="col-md-8">
-	<p>
+	<h2></h2>
+	<p class="hidefromsecondstep">
 		{{ page.short_description }}
 	</p>
 	<br />
+	<img src="{{ page.create_preview_gif }}" class="hidefromsecondsetp hideinlearn" />
 	{% if page.scene %}
 	<iframe class="finishedscene" width="800" height="450" data-src="https://c1.goote.ch/{{ page.scene }}" allowfullscreen></iframe>
 	<p class="imagedescription hidewhenincreate">
@@ -20,13 +22,13 @@ layout: default
 	</p>
 	<div class="showwhenincreate">
 			<a href="https://c1.goote.ch/{{ page.scene }}" target="_blank">
-				<div class="button centerbutton largebutton tutbutton">
+				<div class="button centerbutton largebutton tutbutton hidewhenincreate">
 					Check out the finished scene
 				</div>
 		</a>
 	</div>
 	{% else %}
-	<img src="/{{ page.thumbnail }}" style="margin: 0 auto; display: table; margin-bottom: 20px;" />
+	<img src="/{{ page.thumbnail }}" style="margin: 0 auto; display: table; margin-bottom: 20px; max-width: 100%;" />
 	{% endif %}
 </div>
 
@@ -79,8 +81,8 @@ layout: default
 <div class="col-md-12">
 	<div class="content">
 		{% if page.prerequisites %}
-			<p>
-				<span style="font-weight: bold;">Pre-requisites: </span>{{ page.prerequisites }}
+			<p class="hidefromsecondstep">
+				<span style="font-weight: bold;" >Pre-requisites: </span>{{ page.prerequisites }}
 			</p>
 		{% endif %}
 		{% if page.startscene %}
@@ -104,10 +106,13 @@ layout: default
 		</a>
 		<a href="http://learn.goocreate.com/courses/beginner/1/" class="showwhenincreate" target="_blank">
 			<div class="button centerbutton largebutton tutbutton">
-				Start the beginner course
+				Beginner course <span class="collapseicon icon-arrow-right"></span>
 			</div>
 		</a>
 
+
+	</div>
+	<div id="createbuttons">
 	</div>
 </div>
 

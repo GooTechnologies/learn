@@ -10,7 +10,7 @@ tags: Dom events, eventlisteners, interactivity, js, spinning
 achievements: Dom events, interactivity
 duration: 20 minutes
 short_description: At the end of this tutorial, we'll have a super simple Create scene with which we can interact by clicking (or touching) and dragging.
-thumbnail: tutorials\create\dom-events\thumbnail.jpg
+thumbnail: tutorials/create/dom-events/thumbnail.jpg
 scene: 88bde37c06e6b111432dc6804dbb40846231fd22
 ---
 At the end of this tutorial, we'll have a super simple Create scene with which we can interact by clicking (or touching) and dragging.

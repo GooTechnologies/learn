@@ -9,7 +9,7 @@ tags: animation, fbx, state machine
 achievements: Animation, State machine and animation
 duration: 10 minutes
 short_description: In this tutorial you will learn how to use animations in Goo Create, and how to import them.
-thumbnail: tutorials\create\animation\thumbnail.jpg
+thumbnail: tutorials/create/animation/thumbnail.jpg
 ---
 ![](1.jpg)
 

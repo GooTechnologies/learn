@@ -10,7 +10,7 @@ tags: mouse gyro, interaction, camera
 achievements: Adding a script to the camera
 duration: 5 minutes
 short_description: Here's a quick example of a script using either the position of the mouse or the orientation of a device to move the camera.
-thumbnail: tutorials\create\mouse-gyro-look\thumbnail.jpg
+thumbnail: tutorials/create/mouse-gyro-look/thumbnail.jpg
 scene: b7be03dbf7e741a9814b080ea3c61d5e.scene
 ---
 

@@ -1,45 +1,52 @@
 ---
 ---
 @import "syntax-highlighting";
+@import 'vars';
 
 body {
 	margin: 0 !important;
+	background-color: white !important;
+	color: $gray-dark !important;
+
 }
 
 .in-iframe {
 	.navbar,
-  footer,
- .tutorial-nav,
- hr,
- .breadcrumb, .coursepartdetails, .progressbarcreate, .hidewhenincreate, iframe {
-	 display: none;
- }
+	footer,
+ 	.tutorial-nav,
+ 	hr,
+ 	.breadcrumb, .coursepartdetails, .progressbarcreate, .hidewhenincreate, iframe {
+	 	display: none;
+ 	}
 
-.showwhenincreate {
-	display: block;
-}
+	.showwhenincreate {
+		display: block;
+	}
+
+	.hideinlearn {
+		display: block;
+	}
+
+	img {
+		max-width: 100%;
+		display: block;
+		margin: 20px auto 40px auto;
+	}
+
+	.homeh1 h1 {
+		text-align: center;
+	}
+
+	.continue-tutorial, .createhr, .lear {
+		display: block ;
+	}
 
 
 
-
- img {
- max-width: 100%;
- display: block;
- margin: 20px auto 40px auto;
-}
-
-.homeh1 h1 {
-	text-align: center;
-}
-
-.continue-tutorial, .createhr, .lear {
-	display: block ;
-}
-
-.createhr {
-	margin-top: 20px;
-	color: #6d6d6d;
-}
+	.createhr {
+		margin-top: 20px;
+		color: #6d6d6d;
+	}
 
 	.overviewblock {
 		h2 {
@@ -74,27 +81,28 @@ body {
 				margin-top: 0;
 			}
 		}
-
 	}
 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: bold;
+		color: $gray-dark;
+	}
 
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-	 font-weight: bold;
- }
-
- p, li, ol {
-	 font-size: 12px;
-	 font-weight: normal;
- }
-  .next-button,  .prev-button {
-	 margin-bottom: 5px;
- }
+	p, li, ol {
+		font-size: 12px;
+		font-weight: normal;
+	}
+	ol, ul {
+		padding-left: 20px;
+	}
+	.next-button,  .prev-button {
+		margin-bottom: 5px;
+	}
 
 	.expanded {
 		display: block;
@@ -108,25 +116,25 @@ body {
 		display: none;
 	}
 
- .container, .infocontainer {
-	 margin: 15px;
- }
+	.container, .infocontainer {
+		margin: 15px;
+	}
 
-  figure.highlight {
-	 margin: 0;
- }
-  figure.highlight pre {
-		 padding: 10px;
-		 font-size: 12px;
- }
-  table {
-		 font-size: 12px;
- }
-  iframe {
-		 width:  100%;
-		 height: 50vw;
-		 border: 0;
- 	}
+	figure.highlight {
+		margin: 0;
+	}
+	figure.highlight pre {
+		padding: 10px;
+		font-size: 12px;
+	}
+	table {
+		font-size: 12px;
+	}
+	iframe {
+		width:  100%;
+		height: 50vw;
+		border: 0;
+	}
 	.jumbotron{
 		display: none;
 	}
@@ -159,15 +167,14 @@ body {
 
 	.create-course-info{
 		display: block;
-			.infocontainer {
-			background-color: #252525;
+		.infocontainer {
+			background-color: #e6ecf2;
 			margin: 10px;
-			padding: 4px 8px;
+			padding: 4px 15px;
 			cursor: pointer;
 			.info-title {
 				padding: 5px 0;
 				text-align: center;
-
 				.icon-arrow-right, .icon-arrow-down {
 					float: left;
 				}
@@ -187,7 +194,8 @@ body {
 				.tag {
 					display: inline-block;
 					font-size: 14px;
-					background-color: #1d1d1d;
+					background-color: #90D8FF;
+					color: white;
 					padding: 3px 7px;
 					margin: 0 5px 5px 0;
 					text-transform: capitalize;
@@ -213,7 +221,6 @@ body {
 					.progressbar-text:after {
 						content: "%";
 					}
-
 				}
 			}
 		}
@@ -224,21 +231,22 @@ body {
 		text-align: center;
 		background-color: #252525;
 	}
-	.button {
+	.button, .previouspagepart, .nextpagepart {
 		width: 100%;
-		padding: 10px 10px;
+		padding: 10px 10px 12px 10px;
 		color: white;
-		background-color: #6d6d6d;
+		background-color: $goo-blue;
 		text-align: center;
 		text-transform: uppercase;
 		border-radius: 3px;
 		transition: all 0.3s ease 0s;
 		margin-bottom: 10px;
 		font-size: 12px;
+		cursor: pointer;
 	}
 
 	.button:hover {
-		background-color: #545454;
+		background-color: #75c6f3;
 	}
 
 	a:hover {

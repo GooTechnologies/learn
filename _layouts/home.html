@@ -24,7 +24,7 @@ layout: default
 	<hr class="createhr">
 	</div>
 	<div class="row">
-		{% assign pp = site.pages | sort: 'difficulty_overall' %}
+		{% assign pp = site.pages | sort: 'difficulty_overall' %} 
 		{% assign i = 0 %}
 		{% for ppage in pp %}
 			{% if ppage.layout == "courseoverview" %}

@@ -9,7 +9,7 @@ tags: interaction, sound
 achievements: Creating interaction, adding sound
 duration: 15 minutes
 short_description: In this tutorial, we will use a button to play a sound on an Entities SoundComponent.
-thumbnail: tutorials\create\html-interact\thumbnail.jpg
+thumbnail: tutorials/create/html-interact/thumbnail.jpg
 ---
 
 Because this sound won't be positioned in 3d space, lets go ahead and add it to the Default Camera.

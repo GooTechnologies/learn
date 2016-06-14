@@ -9,7 +9,7 @@ tags: lights, point, directional, spot, color, intensity, specular, range
 achievements: Different types of light, adjusting light
 duration: 15 minutes
 short_description: This tutorial aims to cover the basics of using lights in your scene.
-thumbnail: tutorials\create\lights\thumbnail.jpg
+thumbnail: tutorials/create/lights/thumbnail.jpg
 ---
 
 ![](1.jpg)

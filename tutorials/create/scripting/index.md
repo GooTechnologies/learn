@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Scripting
-lastupdated: 2015-12-06
+lastupdated: 2016-04-13
 indent: 1
 weight: 715
 difficulty_overall: 0
@@ -10,7 +10,7 @@ tags: scripting, transformComponent
 achievements: Adding script to entity, moving entity by using script
 duration: 10 minutes
 short_description: This tutorial will introduce you to scripting in Goo Create. We will make a script that moves a sphere back and forth.
-thumbnail: tutorials\create\scripting\thumbnail.jpg
+thumbnail: tutorials/create/scripting/thumbnail.jpg
 ---
 Prerequisities are basic knowledge of Goo Create and JavaScript.
 
@@ -52,8 +52,7 @@ The script has three functions in it, *setup*, *update* and *cleanup*. For our s
 
 Copy the following code into the *update* function:
 
-{% highlight js %}ctx.entity.transformComponent.transform.translation.x = Math.sin(ctx.world.time);
-ctx.entity.transformComponent.setUpdated();{% endhighlight %}
+{% highlight js %}ctx.entity.transformComponent.setTranslation(Math.sin(ctx.world.time), 0, 0);{% endhighlight %}
 
 The first line of code will set the X-position of the sphere to the sine of the current time. This value will oscillate between -1 and 1 as time goes by, making the sphere entity move back and forth.
 
@@ -62,8 +61,6 @@ The second line of code will tell the ```TransformComponent``` that you updated 
 ## Step 6: Save the Script
 
 Click the big blue *Save* button in the script editor to save.
-
-![](create-save-script.gif)
 
 ## Step 7: Click Play and enjoy
 
