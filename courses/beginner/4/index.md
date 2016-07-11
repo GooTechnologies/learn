@@ -100,7 +100,7 @@ Your scene should now look like this:
 
 To can add a sky to our scene by creating a skybox.
 
-1. <a href="/courses/beginner/4/earth.jpg" download="starpattern">Click here to download the star pattern image</a>
+1. <a href="/courses/beginner/4/starpattern.jpg" download="starpattern">Click here to download the star pattern image</a>
 2. Select the name of your project in the *Hierarchy panel*
 ![](selectparent.gif)
 3. Unfold *Environment* in the *Inspector Panel*
