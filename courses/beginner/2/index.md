@@ -47,7 +47,7 @@ Now we have added and renamed the entity, but it doesn't really looks like a par
     * The **X, Y and Z** on top represent the coordinates.
 
 3. Adjust the transform values of the entity to the following values to create your first Moon station part
-  ![Moon station part transform values](Moonstationparttransform.jpg)
+  ![Moon station part transform values](moonstationparttransform.jpg)
 
     You probably have to zoom out a bit to see the result of the transformation
 
@@ -89,7 +89,7 @@ How it is going to look like when we add the Moon surface:
  <br> **Hint:** You can rotate instead of change the position of an entity by clicking the rotate icon on the top right side of the canvas.
 ![](rotateicon.gif) ![](rotateentity.gif)
 5. Rename the cylinder to 'Tunnel' and drag it in the 'Moon station' folder
-![](dragtunnelinMoonstation.gif)
+![](dragtunnelinmoonstation.gif)
 6. Copy the 'Tunnel' entity and repeat step 4
 ![](copytunnel.gif)
 7. Repeat step 6 until all your Moon station parts are connected with tunnels. At the end it should look like this:
